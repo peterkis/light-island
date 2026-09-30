@@ -1,0 +1,207 @@
+{
+  "platform": "Windows Tauri Release / WebView2",
+  "geometry": [
+    {
+      "theme": "ink",
+      "mode": "compact",
+      "x": 454,
+      "y": 0,
+      "width": 192,
+      "height": 56
+    },
+    {
+      "theme": "ink",
+      "mode": "expanded",
+      "x": 90,
+      "y": 0,
+      "width": 920,
+      "height": 56
+    },
+    {
+      "theme": "cloud",
+      "mode": "compact",
+      "x": 454,
+      "y": 0,
+      "width": 192,
+      "height": 56
+    },
+    {
+      "theme": "cloud",
+      "mode": "expanded",
+      "x": 90,
+      "y": 0,
+      "width": 920,
+      "height": 56
+    },
+    {
+      "theme": "dusk",
+      "mode": "compact",
+      "x": 454,
+      "y": 0,
+      "width": 192,
+      "height": 56
+    },
+    {
+      "theme": "dusk",
+      "mode": "expanded",
+      "x": 90,
+      "y": 0,
+      "width": 920,
+      "height": 56
+    }
+  ],
+  "antialias": [
+    {
+      "theme": "ink",
+      "mode": "compact",
+      "windowRect": [
+        410,
+        0,
+        1510,
+        80
+      ],
+      "alphaBounds": [
+        454,
+        0,
+        646,
+        56
+      ],
+      "partiallyCoveredPixels": 188,
+      "clippedAntialiasPixels": 0,
+      "tightRegionClippedPixels": 144,
+      "topDocked": true,
+      "primaryCentered": true
+    },
+    {
+      "theme": "ink",
+      "mode": "expanded",
+      "windowRect": [
+        410,
+        0,
+        1510,
+        80
+      ],
+      "alphaBounds": [
+        90,
+        0,
+        1010,
+        56
+      ],
+      "partiallyCoveredPixels": 188,
+      "clippedAntialiasPixels": 0,
+      "tightRegionClippedPixels": 144,
+      "topDocked": true,
+      "primaryCentered": true
+    },
+    {
+      "theme": "cloud",
+      "mode": "compact",
+      "windowRect": [
+        410,
+        0,
+        1510,
+        80
+      ],
+      "alphaBounds": [
+        454,
+        0,
+        646,
+        56
+      ],
+      "partiallyCoveredPixels": 188,
+      "clippedAntialiasPixels": 0,
+      "tightRegionClippedPixels": 144,
+      "topDocked": true,
+      "primaryCentered": true
+    },
+    {
+      "theme": "cloud",
+      "mode": "expanded",
+      "windowRect": [
+        410,
+        0,
+        1510,
+        80
+      ],
+      "alphaBounds": [
+        90,
+        0,
+        1010,
+        56
+      ],
+      "partiallyCoveredPixels": 188,
+      "clippedAntialiasPixels": 0,
+      "tightRegionClippedPixels": 144,
+      "topDocked": true,
+      "primaryCentered": true
+    },
+    {
+      "theme": "dusk",
+      "mode": "compact",
+      "windowRect": [
+        410,
+        0,
+        1510,
+        80
+      ],
+      "alphaBounds": [
+        454,
+        0,
+        646,
+        56
+      ],
+      "partiallyCoveredPixels": 188,
+      "clippedAntialiasPixels": 0,
+      "tightRegionClippedPixels": 144,
+      "topDocked": true,
+      "primaryCentered": true
+    },
+    {
+      "theme": "dusk",
+      "mode": "expanded",
+      "windowRect": [
+        410,
+        0,
+        1510,
+        80
+      ],
+      "alphaBounds": [
+        90,
+        0,
+        1010,
+        56
+      ],
+      "partiallyCoveredPixels": 188,
+      "clippedAntialiasPixels": 0,
+      "tightRegionClippedPixels": 144,
+      "topDocked": true,
+      "primaryCentered": true
+    }
+  ],
+  "frames": [
+    {
+      "engine": "mini",
+      "visible": true,
+      "frames": 372,
+      "averageFps": 59.999032273673016,
+      "p95ms": 16.900000000001455,
+      "over25ms": 0,
+      "maxHeightDeviation": 0,
+      "maxTopGap": 0,
+      "centerDrift": 0.0078125
+    },
+    {
+      "engine": "css",
+      "visible": true,
+      "frames": 372,
+      "averageFps": 59.99999999999999,
+      "p95ms": 16.900000000001455,
+      "over25ms": 0,
+      "maxHeightDeviation": 0,
+      "maxTopGap": 0,
+      "centerDrift": 0.0078125
+    }
+  ],
+  "errors": [],
+  "receiptRoundtrip": true
+}

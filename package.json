@@ -1,0 +1,40 @@
+{
+  "name": "samewave-island-prototype",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "demo:server": "node server/demo-server.mjs",
+    "dev:all": "concurrently -k -n WEB,DEMO \"npm:dev\" \"npm:demo:server\"",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "tauri": "tauri",
+    "desktop:dev": "tauri dev",
+    "desktop:build": "tauri build --no-bundle"
+  },
+  "dependencies": {
+    "@gsap/react": "2.1.2",
+    "@tauri-apps/api": "^2.8.0",
+    "gsap": "3.15.0",
+    "lucide-react": "^0.468.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.55.0",
+    "@tailwindcss/vite": "4.3.3",
+    "@tauri-apps/cli": "^2.8.0",
+    "@types/react": "^19.1.10",
+    "@types/react-dom": "^19.1.9",
+    "@vitejs/plugin-react": "^5.0.0",
+    "concurrently": "^9.2.1",
+    "tailwindcss": "4.3.3",
+    "typescript": "~5.9.2",
+    "vite": "^7.1.0",
+    "vitest": "^3.2.4",
+    "ws": "^8.18.3"
+  }
+}

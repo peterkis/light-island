@@ -1,0 +1,5 @@
+/* Utilities only: don't reset the existing studio or native notification controls. */
+@layer theme, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities) source(none);
+@source "./components/NotchSurface.tsx";

@@ -1,0 +1,44 @@
+﻿[
+    {
+        "IDProcess":  12208,
+        "Name":  "msedgewebview2#12",
+        "WorkingSetPrivate":  32071680,
+        "PrivateBytes":  41578496
+    },
+    {
+        "IDProcess":  17148,
+        "Name":  "msedgewebview2#13",
+        "WorkingSetPrivate":  1597440,
+        "PrivateBytes":  2551808
+    },
+    {
+        "IDProcess":  10608,
+        "Name":  "msedgewebview2#14",
+        "WorkingSetPrivate":  35209216,
+        "PrivateBytes":  66789376
+    },
+    {
+        "IDProcess":  37352,
+        "Name":  "msedgewebview2#15",
+        "WorkingSetPrivate":  6176768,
+        "PrivateBytes":  12189696
+    },
+    {
+        "IDProcess":  37460,
+        "Name":  "msedgewebview2#16",
+        "WorkingSetPrivate":  2678784,
+        "PrivateBytes":  8212480
+    },
+    {
+        "IDProcess":  11112,
+        "Name":  "msedgewebview2#17",
+        "WorkingSetPrivate":  17178624,
+        "PrivateBytes":  28700672
+    },
+    {
+        "IDProcess":  29400,
+        "Name":  "samewave-island",
+        "WorkingSetPrivate":  4931584,
+        "PrivateBytes":  6664192
+    }
+]

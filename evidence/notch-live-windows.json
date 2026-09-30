@@ -1,0 +1,42 @@
+[
+  {
+    "hwnd": 34277102,
+    "title": "Samewave Island",
+    "rect": [
+      876,
+      0,
+      1044,
+      38
+    ]
+  },
+  {
+    "hwnd": 41484960,
+    "title": "同频 Island · 原型试验台 · 仅模拟数据",
+    "rect": [
+      262,
+      10,
+      1658,
+      1029
+    ]
+  },
+  {
+    "hwnd": 2753434,
+    "title": "local.samewave.island.prototype-siw",
+    "rect": [
+      0,
+      0,
+      16,
+      16
+    ]
+  },
+  {
+    "hwnd": 41879258,
+    "title": "",
+    "rect": [
+      0,
+      0,
+      16,
+      16
+    ]
+  }
+]

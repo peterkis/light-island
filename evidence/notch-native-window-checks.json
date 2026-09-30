@@ -1,0 +1,32 @@
+{
+  "witnessHwnd": 34408346,
+  "witnessVisible": true,
+  "focusBefore": 34408346,
+  "islandHwnd": 723294,
+  "compactRegion": {
+    "kind": 3,
+    "bounds": [
+      4,
+      -2,
+      164,
+      36
+    ]
+  },
+  "insideHitsIsland": true,
+  "routineFocusPreserved": true,
+  "criticalFocusPreserved": true,
+  "outsideHitRoot": 34408346,
+  "outsideExcludesIsland": true,
+  "backgroundClickReceived": true,
+  "expandedRegion": {
+    "kind": 3,
+    "bounds": [
+      4,
+      -2,
+      884,
+      58
+    ]
+  },
+  "windowTop": 0,
+  "primaryCentered": true
+}

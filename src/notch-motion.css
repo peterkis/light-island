@@ -1,0 +1,37 @@
+/* U-notch surface and independent presentation layers. This overrides no studio layout. */
+.island.notch-island{--face-width:160px;--face-height:34px;--visible-height:34px;background:transparent!important;box-shadow:none!important;border-radius:0;overflow:visible;width:160px;height:34px;transform:none;pointer-events:none}
+.notch-island .notch-surface{display:block;overflow:visible;top:0;left:0;z-index:0;shape-rendering:geometricPrecision}
+.notch-stop-top{stop-color:#111315}.notch-stop-bottom{stop-color:#050607}
+.theme-cloud .notch-stop-top{stop-color:#fbfdfc}.theme-cloud .notch-stop-bottom{stop-color:#f0f5f2}
+.theme-dusk .notch-stop-top{stop-color:#29394e}.theme-dusk .notch-stop-bottom{stop-color:#182232}
+.notch-outline{stroke:rgba(255,255,255,.10);stroke-width:.6}
+.theme-cloud .notch-outline{stroke:rgba(27,52,39,.12)}
+/* Clip content, not the anti-aliased SVG silhouette. Text is laid out once at destination width. */
+.notch-content-clip{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:1;border-radius:0 0 18px 18px}
+.notch-content{position:absolute;top:0;left:50%;width:var(--face-width);height:var(--face-height);margin-left:calc(var(--face-width) / -2);--copy-alpha:1;--actions-alpha:1;pointer-events:auto;transform-origin:center top}
+.notch-content[inert]{pointer-events:none}
+.notch-island .horizontal-face{width:100%;height:var(--face-height);top:0;left:0;margin:0;animation:none!important;padding:0 24px;gap:12px}
+.notch-island .compact-face{height:var(--face-height);padding:0 20px;gap:7px;border-radius:0;background:none!important}
+.notch-island .compact-face .mini-mark svg{width:18px;height:18px}
+.notch-island .compact-label{font-size:10px;letter-spacing:.2px;line-height:14px}
+.notch-island .status-light{width:4px;height:4px}
+.notch-island .rail-copy,.notch-island .rail-heading{opacity:var(--copy-alpha)}
+.notch-island .rail-actions,.notch-island .rail-close,.notch-island .rail-pager{opacity:var(--actions-alpha)}
+.notch-island .rail-copy strong,.notch-island .rail-copy h2{font-weight:550;font-size:14px;letter-spacing:.1px}
+.notch-island .source-tile{width:32px;height:32px;border-radius:10px}
+.notch-island .rail-meta{font-size:10px;color:var(--island-muted)}
+.notch-island .icon-button{width:28px;height:28px}
+.notch-island .reveal-button{min-width:24px;height:24px}
+.notch-island .rail-error{pointer-events:auto;z-index:3;border-radius:0 0 18px 18px}
+.notch-island .peek-timer{left:32px;right:32px;bottom:1px;height:1px;opacity:.16}
+.notch-island[data-shape=capsule] .notch-content-clip{border-radius:28px}
+.notch-island[data-shape=capsule] .compact-label{font-size:11px}
+.notch-island[data-shape=capsule] .mini-mark svg{width:22px;height:22px}
+.notch-island[data-motion-phase=settled] .notch-content{will-change:auto}
+.shape-selector{margin-top:13px}.shape-selector .segmented button{font-size:10px}
+.motion-spec{font-variant-numeric:tabular-nums;line-height:1.9;color:#65786d!important}
+.theme-sample{border-radius:0 0 9px 9px}
+/* A finite hover response replaces an infinite breathing/pulse loop. */
+@container(max-width:470px){.notch-island .horizontal-face{padding:0 16px;gap:7px}.notch-island .source-tile{display:none}.notch-island .rail-copy strong,.notch-island .rail-copy h2{font-size:12px}.notch-island .rail-meta{font-size:9px}.notch-island .rail-actions{gap:2px}.notch-island .rail-aux{width:24px}}
+@media(prefers-reduced-motion:reduce){.notch-island .spin{animation:none!important}}
+.reduced .spin{animation:none!important}

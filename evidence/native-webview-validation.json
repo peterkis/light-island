@@ -1,0 +1,25 @@
+{
+  "platform": "Windows / Tauri release / WebView2",
+  "url": "http://tauri.localhost/index.html?view=island",
+  "receiptRoundtrip": true,
+  "criticalText": "检验系统\n模拟事件 · 11:16\n危急 · 待确认\n患者相关消息 · 点击后查看脱敏详情\n危急提醒需要你的关注\n\n消息含患者相关信息。查看脱敏详情后，请进入源系统核对。\n\n确认收到\n协作脉络\n仅模拟数据 · 确认收到不代表临床处置完成",
+  "frames": [
+    {
+      "engine": "mini",
+      "visible": true,
+      "frames": 372,
+      "averageFps": 60.00096775754449,
+      "p95ms": 17.099999999998545,
+      "over25ms": 0
+    },
+    {
+      "engine": "css",
+      "visible": true,
+      "frames": 372,
+      "averageFps": 60.00290336629191,
+      "p95ms": 17,
+      "over25ms": 0
+    }
+  ],
+  "errors": []
+}

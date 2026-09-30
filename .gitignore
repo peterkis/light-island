@@ -1,0 +1,17 @@
+node_modules/
+dist/
+src-tauri/target/
+.firecrawl/
+*.log
+*.tsbuildinfo
+.env
+.env.local
+.env.*
+!.env.example
+*.pid
+.prototype-transfer.b64
+.horizontal-transfer.b64
+.horizontal-patch-stage/
+evidence/backups/
+playwright-report/
+test-results/
