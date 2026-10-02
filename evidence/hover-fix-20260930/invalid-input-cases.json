@@ -1,0 +1,12 @@
+[
+  "gsap:notch:false:left",
+  "css:notch:false:left",
+  "gsap:capsule:false:left",
+  "css:capsule:false:left",
+  "css:capsule:false:right",
+  "css:capsule:false:bottom",
+  "gsap:notch:true:left",
+  "css:notch:true:left",
+  "gsap:capsule:true:left",
+  "css:capsule:true:left"
+]

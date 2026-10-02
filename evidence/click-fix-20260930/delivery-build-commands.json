@@ -1,0 +1,26 @@
+[
+  {
+    "command": "npx.cmd tsc -b --pretty false",
+    "start": "2026-09-30T22:47:55.993565+08:00",
+    "end": "2026-09-30T22:47:58.593388+08:00",
+    "exit": 0
+  },
+  {
+    "command": "npm.cmd test",
+    "start": "2026-09-30T22:47:58.593925+08:00",
+    "end": "2026-09-30T22:48:00.511063+08:00",
+    "exit": 0
+  },
+  {
+    "command": "npm.cmd run desktop:build",
+    "start": "2026-09-30T22:48:00.511930+08:00",
+    "end": "2026-09-30T22:51:18.169996+08:00",
+    "exit": 0
+  },
+  {
+    "command": "cargo test --manifest-path src-tauri/Cargo.toml --lib --release --locked",
+    "start": "2026-09-30T22:51:18.171189+08:00",
+    "end": "2026-09-30T22:51:19.111451+08:00",
+    "exit": 0
+  }
+]

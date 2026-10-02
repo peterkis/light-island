@@ -1,0 +1,101 @@
+{
+  "baseline": "c3eb719c8a8eba7e0dd09d8e74d3797a4437a94c",
+  "branch": "main",
+  "hoverPass": 32,
+  "hoverTotal": 32,
+  "notchCanvas100Percent": [
+    179,
+    41
+  ],
+  "capsuleCanvas100Percent": [
+    211,
+    60
+  ],
+  "nativeDpi": [
+    96
+  ],
+  "antialiasClipped": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "receiptRoundtrip": true,
+  "interruptedReceipt": true,
+  "clickThrough": true,
+  "ordinaryFocusPreserved": true,
+  "criticalFocusPreserved": true,
+  "sourceChangesAfterTests": [],
+  "realWindowsDpiNotRun": [
+    125,
+    150,
+    200
+  ],
+  "nativeCompactMultiCornerClicks": "NOT_RUN: supplemental fixture write blocked by tool safety check; existing expanded transparent-corner real-click test passed.",
+  "frontendUnitTests": {
+    "passed": 52,
+    "total": 52
+  },
+  "rustTests": {
+    "passed": 4,
+    "total": 4
+  },
+  "browserTests": {
+    "passed": 30,
+    "total": 30
+  },
+  "normalLaunch": {
+    "Pid": 33716,
+    "Path": "D:\\Projects\\island-protype\\src-tauri\\target\\release\\samewave-island.exe",
+    "Responding": true,
+    "DebugPortOpen": false,
+    "Arguments": "\"D:\\Projects\\island-protype\\src-tauri\\target\\release\\samewave-island.exe\" ",
+    "SHA256": "149CAF544A4A34DA4A2E9B4C040D101B95E012E979A6FC7A36D0D7568659387B"
+  },
+  "baselineReproduction": "Transient same-position enter/leave feedback reproduced; sustained infinite oscillation not reproduced.",
+  "invalidInputSamples": "Three holds and one departure had actual extra cursor movement. Raw first run retained; each affected case repeated with the identical binary.",
+  "finalNativeCommands": [
+    {
+      "name": "native-hover-audit",
+      "command": [
+        "python",
+        "scripts/audit-hover-evidence.py"
+      ],
+      "start": "2026-09-30T17:12:43.480175+08:00",
+      "exit": 0,
+      "end": "2026-09-30T17:12:43.734048+08:00"
+    },
+    {
+      "name": "native-epochs",
+      "command": [
+        "node",
+        "scripts/qa-hover-epochs.mjs"
+      ],
+      "start": "2026-09-30T17:12:43.734844+08:00",
+      "exit": 0,
+      "end": "2026-09-30T17:12:55.557971+08:00"
+    },
+    {
+      "name": "native-shape-ack",
+      "command": [
+        "node",
+        "scripts/qa-notch-native.mjs"
+      ],
+      "start": "2026-09-30T17:12:55.559389+08:00",
+      "exit": 0,
+      "end": "2026-09-30T17:13:28.663607+08:00"
+    },
+    {
+      "name": "native-click-focus",
+      "command": [
+        "python",
+        "scripts/qa-notch-windows.py"
+      ],
+      "start": "2026-09-30T17:13:28.664616+08:00",
+      "exit": 0,
+      "end": "2026-09-30T17:13:34.583073+08:00"
+    }
+  ]
+}

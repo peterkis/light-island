@@ -4,6 +4,7 @@ import assert from 'node:assert/strict';
 import { writeFile } from 'node:fs/promises';
 import { execFileSync } from 'node:child_process';
 const base='http://127.0.0.1:17321';
+const evidence=process.env.ISLAND_QA_OUTPUT || 'evidence';
 async function post(data){const r=await fetch(base+'/api/push',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});assert(r.ok);}
 const browser=await chromium.connectOverCDP('http://127.0.0.1:9223');
 const page=browser.contexts().flatMap(c=>c.pages()).find(p=>p.url().includes('view=island'));
@@ -17,7 +18,7 @@ for(const theme of ['ink','cloud','dusk']){
  for(const mode of ['compact','expanded']){
   if(mode==='expanded')await post({type:'demo',scenario:'critical'});
   await settled(mode);const b=await island.boundingBox();assert.equal(b.height,mode==='compact'?34:56);assert.equal(b.y,0);
-  const file=`evidence/notch-native-${theme}-${mode}.png`;await page.screenshot({path:file,omitBackground:true,scale:'device'});
+  const file=`${evidence}/notch-native-${theme}-${mode}.png`;await page.screenshot({path:file,omitBackground:true,scale:'device'});
   const alpha=JSON.parse(execFileSync('python',['scripts/probe-horizontal-region.py',file],{encoding:'utf8'}));
   report.geometry.push({theme,mode,...b,...alpha});
  }
@@ -48,5 +49,5 @@ await post({type:'configure',settings:{engine:'gsap'}});await post({type:'demo',
 for(const mode of ['compact','expanded','inbox','compact','expanded']){await post({type:'view',mode});await page.waitForTimeout(40);}
 await settled('expanded');await page.getByRole('button',{name:'确认收到',exact:true}).click();await settled('success');report.interruptedReceipt=true;
 await post({type:'reset'});await post({type:'configure',settings:{shape:'notch',theme:'ink',engine:'gsap'}});await settled('compact');
-assert.equal(errors.length,0);await writeFile('evidence/notch-native-validation.json',JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));
+assert.equal(errors.length,0);await writeFile(`${evidence}/notch-native-validation.json`,JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));
 await browser.close();

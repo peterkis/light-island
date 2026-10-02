@@ -1,0 +1,36 @@
+[
+  {
+    "name": "delivery-physical-click",
+    "command": [
+      "node",
+      "scripts/qa-click-native.mjs"
+    ],
+    "start": "2026-09-30T22:52:18.840624+08:00",
+    "end": "2026-09-30T22:53:49.840326+08:00",
+    "exit": 0
+  },
+  {
+    "name": "delivery-gsap-render",
+    "command": [
+      "node",
+      "scripts/qa-click-render.mjs",
+      "delivery-gsap",
+      "gsap"
+    ],
+    "start": "2026-09-30T22:53:49.841604+08:00",
+    "end": "2026-09-30T22:54:00.369333+08:00",
+    "exit": 0
+  },
+  {
+    "name": "delivery-css-render",
+    "command": [
+      "node",
+      "scripts/qa-click-render.mjs",
+      "delivery-css",
+      "css"
+    ],
+    "start": "2026-09-30T22:54:00.370246+08:00",
+    "end": "2026-09-30T22:54:10.585490+08:00",
+    "exit": 0
+  }
+]

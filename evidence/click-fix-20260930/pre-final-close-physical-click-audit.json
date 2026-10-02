@@ -1,0 +1,168 @@
+{
+  "input": "Win32 SendInput; verified own HWND before clicking",
+  "cases": [
+    {
+      "name": "gsap-notch-false-open",
+      "epochs": 1,
+      "windowMoves": 0,
+      "ipcErrors": 0,
+      "finalPhase": "settled",
+      "finalOpacity": 1,
+      "finalInert": false
+    },
+    {
+      "name": "gsap-notch-false-close",
+      "epochs": 1,
+      "windowMoves": 0,
+      "ipcErrors": 0,
+      "finalPhase": "settled",
+      "finalOpacity": 1,
+      "finalInert": false
+    },
+    {
+      "name": "gsap-notch-false-critical-close",
+      "epochs": 1,
+      "windowMoves": 0,
+      "ipcErrors": 0,
+      "finalPhase": "settled",
+      "finalOpacity": 1,
+      "finalInert": false
+    },
+    {
+      "name": "css-notch-false-open",
+      "epochs": 1,
+      "windowMoves": 0,
+      "ipcErrors": 0,
+      "finalPhase": "settled",
+      "finalOpacity": 1,
+      "finalInert": false
+    },
+    {
+      "name": "css-notch-false-close",
+      "epochs": 1,
+      "windowMoves": 0,
+      "ipcErrors": 0,
+      "finalPhase": "settled",
+      "finalOpacity": 1,
+      "finalInert": false
+    },
+    {
+      "name": "css-notch-false-critical-close",
+      "epochs": 1,
+      "windowMoves": 0,
+      "ipcErrors": 0,
+      "finalPhase": "settled",
+      "finalOpacity": 1,
+      "finalInert": false
+    },
+    {
+      "name": "gsap-capsule-false-open",
+      "epochs": 1,
+      "windowMoves": 0,
+      "ipcErrors": 0,
+      "finalPhase": "settled",
+      "finalOpacity": 1,
+      "finalInert": false
+    },
+    {
+      "name": "gsap-capsule-false-close",
+      "epochs": 1,
+      "windowMoves": 0,
+      "ipcErrors": 0,
+      "finalPhase": "settled",
+      "finalOpacity": 1,
+      "finalInert": false
+    },
+    {
+      "name": "gsap-capsule-false-critical-close",
+      "epochs": 1,
+      "windowMoves": 0,
+      "ipcErrors": 0,
+      "finalPhase": "settled",
+      "finalOpacity": 1,
+      "finalInert": false
+    },
+    {
+      "name": "css-capsule-false-open",
+      "epochs": 1,
+      "windowMoves": 0,
+      "ipcErrors": 0,
+      "finalPhase": "settled",
+      "finalOpacity": 1,
+      "finalInert": false
+    },
+    {
+      "name": "css-capsule-false-close",
+      "epochs": 1,
+      "windowMoves": 0,
+      "ipcErrors": 0,
+      "finalPhase": "settled",
+      "finalOpacity": 1,
+      "finalInert": false
+    },
+    {
+      "name": "css-capsule-false-critical-close",
+      "epochs": 1,
+      "windowMoves": 0,
+      "ipcErrors": 0,
+      "finalPhase": "settled",
+      "finalOpacity": 1,
+      "finalInert": false
+    },
+    {
+      "name": "gsap-notch-true-open",
+      "epochs": 1,
+      "windowMoves": 0,
+      "ipcErrors": 0,
+      "finalPhase": "settled",
+      "finalOpacity": 1,
+      "finalInert": false
+    },
+    {
+      "name": "gsap-notch-true-close",
+      "epochs": 1,
+      "windowMoves": 0,
+      "ipcErrors": 0,
+      "finalPhase": "settled",
+      "finalOpacity": 1,
+      "finalInert": false
+    },
+    {
+      "name": "gsap-notch-true-critical-close",
+      "epochs": 1,
+      "windowMoves": 0,
+      "ipcErrors": 0,
+      "finalPhase": "settled",
+      "finalOpacity": 1,
+      "finalInert": false
+    },
+    {
+      "name": "css-notch-true-open",
+      "epochs": 1,
+      "windowMoves": 0,
+      "ipcErrors": 0,
+      "finalPhase": "settled",
+      "finalOpacity": 1,
+      "finalInert": false
+    },
+    {
+      "name": "css-notch-true-close",
+      "epochs": 1,
+      "windowMoves": 0,
+      "ipcErrors": 0,
+      "finalPhase": "settled",
+      "finalOpacity": 1,
+      "finalInert": false
+    },
+    {
+      "name": "css-notch-true-critical-close",
+      "epochs": 1,
+      "windowMoves": 0,
+      "ipcErrors": 0,
+      "finalPhase": "settled",
+      "finalOpacity": 1,
+      "finalInert": false
+    }
+  ],
+  "pass": true
+}

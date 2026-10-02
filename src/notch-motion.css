@@ -35,3 +35,7 @@
 @container(max-width:470px){.notch-island .horizontal-face{padding:0 16px;gap:7px}.notch-island .source-tile{display:none}.notch-island .rail-copy strong,.notch-island .rail-copy h2{font-size:12px}.notch-island .rail-meta{font-size:9px}.notch-island .rail-actions{gap:2px}.notch-island .rail-aux{width:24px}}
 @media(prefers-reduced-motion:reduce){.notch-island .spin{animation:none!important}}
 .reduced .spin{animation:none!important}
+
+/* The painted SVG fill persists while descendants exit or become inert. No rectangular hit shield. */
+.notch-island .notch-surface path[data-silhouette=fill]{pointer-events:fill}
+.notch-island .notch-surface path[data-silhouette=outline]{pointer-events:none}

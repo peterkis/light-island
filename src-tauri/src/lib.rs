@@ -103,7 +103,10 @@ mod win32 {
     extern "system" { pub fn ShowWindow(hwnd: *mut std::ffi::c_void, cmd: i32) -> i32; }
 }
 mod notch_window;
-use notch_window::{island_metrics, resize_island_window, commit_island_geometry};
+mod notch_geometry;
+mod hover_diagnostics;
+use hover_diagnostics::hover_diagnostics;
+use notch_window::{island_metrics, resize_island_window, commit_island_geometry, update_island_region, cancel_island_transition, island_pointer_inside};
 #[tauri::command]
 fn position_island(app: AppHandle, top: f64) -> Result<(), String> {
     let _ = top;
@@ -134,7 +137,7 @@ pub fn run() {
     tauri::Builder::default()
         .plugin(tauri_plugin_single_instance::init(|app, _, _| { let _ = open_studio(app.clone()); }))
         .manage(Arc::new(Transport::default()))
-        .invoke_handler(tauri::generate_handler![connect_stream, send_wire, island_metrics, resize_island_window, commit_island_geometry, position_island, open_studio])
+        .invoke_handler(tauri::generate_handler![update_island_region, cancel_island_transition, island_pointer_inside, hover_diagnostics, connect_stream, send_wire, island_metrics, resize_island_window, commit_island_geometry, position_island, open_studio])
         .setup(|app| {
             use tauri::menu::{Menu, MenuItem};
             use tauri::tray::TrayIconBuilder;

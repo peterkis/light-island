@@ -1,9 +1,10 @@
 """Synthetic-only native focus, region and click-through probe. Run while the demo app is open."""
+import os
 import ctypes as C, ctypes.wintypes as W, json, time, urllib.request, pathlib, tkinter as tk
 from PIL import ImageGrab
 u=C.windll.user32; g=C.windll.gdi32; u.SetProcessDPIAware()
 u.SetWindowPos.argtypes=[W.HWND,W.HWND,C.c_int,C.c_int,C.c_int,C.c_int,W.UINT];u.GetForegroundWindow.restype=W.HWND; u.GetAncestor.argtypes=[W.HWND,W.UINT];u.GetAncestor.restype=W.HWND;u.WindowFromPoint.argtypes=[W.POINT];u.WindowFromPoint.restype=W.HWND;u.GetWindowRect.argtypes=[W.HWND,C.POINTER(W.RECT)];u.GetWindowRgn.argtypes=[W.HWND,W.HRGN];g.CreateRectRgn.restype=W.HRGN;g.GetRgnBox.argtypes=[W.HRGN,C.POINTER(W.RECT)];g.DeleteObject.argtypes=[W.HANDLE]
-rootdir=pathlib.Path(__file__).resolve().parent.parent; out=rootdir/'evidence'; out.mkdir(exist_ok=True); report={}; windows=[]
+rootdir=pathlib.Path(__file__).resolve().parent.parent; out=rootdir/os.environ.get('ISLAND_QA_OUTPUT','evidence'); out.mkdir(exist_ok=True); report={}; windows=[]
 @C.WINFUNCTYPE(W.BOOL,W.HWND,W.LPARAM)
 def enum(h,l):
     s=C.create_unicode_buffer(512);u.GetWindowTextW(h,s,512)

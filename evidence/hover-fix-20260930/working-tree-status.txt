@@ -1,0 +1,24 @@
+ M AGENTS.md
+ M README.md
+ M docs/NOTCH-MOTION-UPDATE.md
+ M scripts/qa-notch-native.mjs
+ M scripts/qa-notch-windows.py
+ M src-tauri/src/lib.rs
+ M src-tauri/src/notch_window.rs
+ M src/components/Island.tsx
+ M src/hooks/useMorph.ts
+ M src/lib/geometry.ts
+ M src/notch-motion.css
+?? docs/HOVER-STABILITY-FIX.md
+?? evidence/hover-fix-20260930/
+?? scripts/audit-hover-evidence.py
+?? scripts/hover-win32-probe.py
+?? scripts/qa-hover-epochs.mjs
+?? scripts/qa-hover-native.mjs
+?? src-tauri/src/hover_diagnostics.rs
+?? src-tauri/src/notch_geometry.rs
+?? src/hooks/useIslandHover.ts
+?? src/lib/hoverDiagnostics.ts
+?? tests/hover-geometry.test.ts
+?? tests/hover-harness.tsx
+?? tests/hover-regression.spec.ts

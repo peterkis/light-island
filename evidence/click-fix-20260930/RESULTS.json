@@ -1,0 +1,64 @@
+{
+  "time": "2026-09-30T22:56:33.040806+08:00",
+  "branch": "main",
+  "head": "c3eb719c8a8eba7e0dd09d8e74d3797a4437a94c",
+  "typecheck": "PASS",
+  "unitTests": 52,
+  "rustTests": 4,
+  "e2eTests": 35,
+  "physicalClickCases": 24,
+  "screenFrames": 273,
+  "blankFrames": 0,
+  "physicalWindowRects": [
+    "[462,0,1457,60]"
+  ],
+  "antialiasClipped": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "receiptRoundtrip": true,
+  "interruptedReceipt": true,
+  "idleMutations": 0,
+  "cadence": [
+    {
+      "engine": "gsap",
+      "visible": true,
+      "frames": 480,
+      "averageFps": 60.001500037500804,
+      "p95ms": 16.89999999999418,
+      "over25ms": 0,
+      "minHeight": 34,
+      "maxHeight": 56,
+      "maxTopGap": 0,
+      "maxCenterDeviation": 0.0078125,
+      "maxWidth": 885.5625
+    },
+    {
+      "engine": "css",
+      "visible": true,
+      "frames": 480,
+      "averageFps": 59.99999999999999,
+      "p95ms": 16.89999999999418,
+      "over25ms": 0,
+      "minHeight": 34,
+      "maxHeight": 56,
+      "maxTopGap": 0,
+      "maxCenterDeviation": 0.0078125,
+      "maxWidth": 880.265625
+    }
+  ],
+  "clickThrough": true,
+  "routineFocusPreserved": true,
+  "criticalFocusPreserved": true,
+  "sourceChangesAfterFinalTests": [],
+  "exeSHA256": "c68443d3fdbae3c6bdfee4ce4134dca7fe983515e6a13c7ea94e56ae6539394f",
+  "exeBytes": 4329472,
+  "limitations": [
+    "Windows 11 / native DPI 96 tested; Windows 10, OS DPI 125/150/200 and mixed-monitor transitions NOT_RUN",
+    "Finite screen sampling is not a complete DWM/PresentMon trace; native rAF cadence is not guaranteed presented FPS"
+  ]
+}

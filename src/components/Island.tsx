@@ -1,6 +1,8 @@
-import { useEffect, useRef, useState } from 'react';
+import { hoverTrace } from '../lib/hoverDiagnostics';
+import { useEffect, useState } from 'react';
 import { ArrowLeft, ArrowUpRight, Check, CheckCheck, ChevronLeft, ChevronRight, EyeOff, Inbox, LoaderCircle, Network, X } from 'lucide-react';
 import { useMorph } from '../hooks/useMorph';
+import { useIslandHover } from '../hooks/useIslandHover';
 import type { IslandController } from '../hooks/useIsland';
 import type { Notice } from '../lib/domain';
 import { priorityNames, sorted, sourceNames, statusNames } from '../lib/domain';
@@ -27,27 +29,24 @@ export function Island({ c: live }: { c: IslandController }) {
   const [cursor, setCursor] = useState(0);
   const [threadCursor, setThreadCursor] = useState(0);
   const [revealed, setRevealed] = useState(false);
-  const hover = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+  const hover = useIslandHover(live, ref);
   const priority = todo[0]?.priority ?? n?.priority ?? 'routine';
   const count = unread.length;
   useEffect(() => { setRevealed(false); setThreadCursor(0); }, [n?.id, mode]);
   useEffect(() => { setCursor(0); }, [filter, mode]);
-  useEffect(() => () => clearTimeout(hover.current), []);
   useEffect(() => {
     const key = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') { c.setMode('compact'); (event.target as HTMLElement)?.blur?.(); }
+      if (event.key === 'Escape') { hover.cancelPeek(true); c.setMode('compact'); (event.target as HTMLElement)?.blur?.(); }
       if (event.ctrlKey && event.shiftKey && event.key.toLowerCase() === 'i') { event.preventDefault(); c.setMode('inbox'); }
     };
     window.addEventListener('keydown', key);
     return () => window.removeEventListener('keydown', key);
   }, [c.setMode]);
-  const close = () => { clearTimeout(hover.current); c.setMode('compact'); };
-  const open = () => { clearTimeout(hover.current); c.open(n ?? undefined); };
-  const enter = () => {
-    live.setHovered(true);
-    if (mode === 'compact' && (count || todo.length)) hover.current = setTimeout(() => c.setMode('peek'), 120);
-  };
-  const leave = () => { clearTimeout(hover.current); live.setHovered(false); };
+  // The right-edge close button lies outside the compact body: end this explicit hover intent with the close.
+  // Escape keeps its separate behavior so a pointer over the center may remain hovered.
+  const close = () => { hover.cancelPeek(true); live.setHovered(false); live.setMode('compact'); };
+  const open = () => { hover.cancelPeek(); live.open(n ?? undefined); };
+  useEffect(() => { hoverTrace('hover-state', { value: live.hovered }, ref.current); }, [live.hovered]);
   const list = sorted(c.items).filter(x => filter === 'all' || (filter === 'pending' ? x.requiresAck && x.status !== 'acknowledged' : x.status === 'unread'));
   const listIndex = Math.max(0, Math.min(cursor, list.length - 1));
   const selected = list[listIndex];
@@ -62,12 +61,12 @@ export function Island({ c: live }: { c: IslandController }) {
   const closeButton = <button className="icon-button rail-close" onClick={close} aria-label="收起灵动岛"><X size={15}/></button>;
 
   return <div className={`island-anchor ${nativeIsland ? 'native-anchor' : ''}`}>
-    <div ref={ref} data-testid="island" data-mode={mode} data-theme={settings.theme} data-shape={settings.shape}
+    <div ref={ref} data-testid="island" data-mode={mode} data-theme={settings.theme} data-shape={settings.shape} data-hovered={String(live.hovered)}
       className={`island notch-island theme-${settings.theme} priority-${priority} ${reduced ? 'reduced' : ''}` }
-      onMouseEnter={enter} onMouseLeave={leave}>
+      onMouseEnter={hover.enter} onMouseLeave={hover.leave}>
       <NotchSurface/>
       <div className="notch-content-clip"><div ref={contentRef} className="notch-content">
-      {mode === 'compact' && <button className="compact-face" aria-label={`打开消息中心，${count}条未读，${todo.length}条待确认`} onClick={() => c.setMode('inbox')}>
+      {mode === 'compact' && <button className="compact-face" aria-label={`打开消息中心，${count}条未读，${todo.length}条待确认`} onClick={() => { hover.cancelPeek(true); live.setMode('inbox'); }}>
         <span className={`mini-mark ${offline ? 'is-offline' : ''}`}><WaveMark/></span>
         <span className="compact-label">{offline ? '连接中断' : todo.length ? `${todo.length} 条待确认` : count ? `${count} 条新消息` : settings.focus ? '专注进行中' : '同频 · 在线'}</span>
         <span className={`status-light ${offline ? 'offline' : todo.length ? priority : ''}`}/>

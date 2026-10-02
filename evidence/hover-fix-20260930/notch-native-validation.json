@@ -1,0 +1,193 @@
+{
+  "platform": "Windows / Tauri release / WebView2",
+  "geometry": [
+    {
+      "theme": "ink",
+      "mode": "compact",
+      "x": 9.5,
+      "y": 0,
+      "width": 160,
+      "height": 34,
+      "windowRect": [
+        870,
+        0,
+        1049,
+        41
+      ],
+      "alphaBounds": [
+        10,
+        0,
+        170,
+        35
+      ],
+      "partiallyCoveredPixels": 248,
+      "clippedAntialiasPixels": 0,
+      "tightRegionClippedPixels": 22,
+      "topDocked": true,
+      "primaryCentered": true
+    },
+    {
+      "theme": "ink",
+      "mode": "expanded",
+      "x": 4,
+      "y": 0,
+      "width": 880,
+      "height": 56,
+      "windowRect": [
+        516,
+        0,
+        1404,
+        60
+      ],
+      "alphaBounds": [
+        4,
+        0,
+        884,
+        57
+      ],
+      "partiallyCoveredPixels": 1010,
+      "clippedAntialiasPixels": 0,
+      "tightRegionClippedPixels": 88,
+      "topDocked": true,
+      "primaryCentered": true
+    },
+    {
+      "theme": "cloud",
+      "mode": "compact",
+      "x": 9.5,
+      "y": 0,
+      "width": 160,
+      "height": 34,
+      "windowRect": [
+        870,
+        0,
+        1049,
+        41
+      ],
+      "alphaBounds": [
+        10,
+        0,
+        170,
+        35
+      ],
+      "partiallyCoveredPixels": 248,
+      "clippedAntialiasPixels": 0,
+      "tightRegionClippedPixels": 22,
+      "topDocked": true,
+      "primaryCentered": true
+    },
+    {
+      "theme": "cloud",
+      "mode": "expanded",
+      "x": 4,
+      "y": 0,
+      "width": 880,
+      "height": 56,
+      "windowRect": [
+        516,
+        0,
+        1404,
+        60
+      ],
+      "alphaBounds": [
+        4,
+        0,
+        884,
+        57
+      ],
+      "partiallyCoveredPixels": 1010,
+      "clippedAntialiasPixels": 0,
+      "tightRegionClippedPixels": 88,
+      "topDocked": true,
+      "primaryCentered": true
+    },
+    {
+      "theme": "dusk",
+      "mode": "compact",
+      "x": 9.5,
+      "y": 0,
+      "width": 160,
+      "height": 34,
+      "windowRect": [
+        870,
+        0,
+        1049,
+        41
+      ],
+      "alphaBounds": [
+        10,
+        0,
+        170,
+        35
+      ],
+      "partiallyCoveredPixels": 248,
+      "clippedAntialiasPixels": 0,
+      "tightRegionClippedPixels": 22,
+      "topDocked": true,
+      "primaryCentered": true
+    },
+    {
+      "theme": "dusk",
+      "mode": "expanded",
+      "x": 4,
+      "y": 0,
+      "width": 880,
+      "height": 56,
+      "windowRect": [
+        516,
+        0,
+        1404,
+        60
+      ],
+      "alphaBounds": [
+        4,
+        0,
+        884,
+        57
+      ],
+      "partiallyCoveredPixels": 1010,
+      "clippedAntialiasPixels": 0,
+      "tightRegionClippedPixels": 88,
+      "topDocked": true,
+      "primaryCentered": true
+    }
+  ],
+  "frames": [
+    {
+      "engine": "gsap",
+      "visible": true,
+      "frames": 480,
+      "averageFps": 59.99925000937506,
+      "p95ms": 16.900000000023283,
+      "over25ms": 0,
+      "minHeight": 34,
+      "maxHeight": 56,
+      "maxTopGap": 0,
+      "maxCenterDeviation": 0.0078125,
+      "maxWidth": 885.5625
+    },
+    {
+      "engine": "css",
+      "visible": true,
+      "frames": 479,
+      "averageFps": 59.99949896034254,
+      "p95ms": 16.900000000023283,
+      "over25ms": 0,
+      "minHeight": 34,
+      "maxHeight": 56,
+      "maxTopGap": 0,
+      "maxCenterDeviation": 0.0078125,
+      "maxWidth": 880.265625
+    }
+  ],
+  "errors": [],
+  "receiptRoundtrip": true,
+  "hover": {
+    "x": 4.5,
+    "y": 0,
+    "width": 170,
+    "height": 37
+  },
+  "idleMutations": 0,
+  "interruptedReceipt": true
+}

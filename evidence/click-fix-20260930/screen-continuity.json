@@ -1,0 +1,24 @@
+[
+  {
+    "engine": "gsap",
+    "count": 136,
+    "blankFrames": 0,
+    "physicalRects": [
+      "[462,0,1457,60]"
+    ],
+    "nativeMoves": 0,
+    "ipcErrors": 0,
+    "path": "evidence/click-fix-20260930/delivery-gsap-render"
+  },
+  {
+    "engine": "css",
+    "count": 137,
+    "blankFrames": 0,
+    "physicalRects": [
+      "[462,0,1457,60]"
+    ],
+    "nativeMoves": 0,
+    "ipcErrors": 0,
+    "path": "evidence/click-fix-20260930/delivery-css-render"
+  }
+]

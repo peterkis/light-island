@@ -1,0 +1,42 @@
+[
+  {
+    "name": "native-hover-audit",
+    "command": [
+      "python",
+      "scripts/audit-hover-evidence.py"
+    ],
+    "start": "2026-09-30T17:12:43.480175+08:00",
+    "exit": 0,
+    "end": "2026-09-30T17:12:43.734048+08:00"
+  },
+  {
+    "name": "native-epochs",
+    "command": [
+      "node",
+      "scripts/qa-hover-epochs.mjs"
+    ],
+    "start": "2026-09-30T17:12:43.734844+08:00",
+    "exit": 0,
+    "end": "2026-09-30T17:12:55.557971+08:00"
+  },
+  {
+    "name": "native-shape-ack",
+    "command": [
+      "node",
+      "scripts/qa-notch-native.mjs"
+    ],
+    "start": "2026-09-30T17:12:55.559389+08:00",
+    "exit": 0,
+    "end": "2026-09-30T17:13:28.663607+08:00"
+  },
+  {
+    "name": "native-click-focus",
+    "command": [
+      "python",
+      "scripts/qa-notch-windows.py"
+    ],
+    "start": "2026-09-30T17:13:28.664616+08:00",
+    "exit": 0,
+    "end": "2026-09-30T17:13:34.583073+08:00"
+  }
+]

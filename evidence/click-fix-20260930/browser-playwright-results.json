@@ -1,0 +1,1307 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "D:\\Projects\\island-protype\\node_modules\\@playwright\\test\\cli.js",
+      "test"
+    ],
+    "configFile": "D:\\Projects\\island-protype\\playwright.config.ts",
+    "rootDir": "D:/Projects/island-protype/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/Projects/island-protype/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "D:/Projects/island-protype/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "/.*\\.spec\\.ts/"
+        ],
+        "timeout": 35000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "evidence/playwright-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "click-transition.spec.ts",
+      "file": "click-transition.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "gsap: click open and close do not restart the outgoing content",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5822,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-30T14:48:32.636Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e549834517b212c2a4fc-15c514ca6eb12a03b02b",
+          "file": "click-transition.spec.ts",
+          "line": 12,
+          "column": 36
+        },
+        {
+          "title": "css: click open and close do not restart the outgoing content",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5251,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-30T14:48:39.003Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e549834517b212c2a4fc-a17fbd36854228b61e01",
+          "file": "click-transition.spec.ts",
+          "line": 12,
+          "column": 36
+        },
+        {
+          "title": "closing under a stationary center pointer does not replay the content exit",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4707,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-30T14:48:44.362Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e549834517b212c2a4fc-b16a8183ebc9e6d5d10a",
+          "file": "click-transition.spec.ts",
+          "line": 25,
+          "column": 1
+        },
+        {
+          "title": "rapid open-close-open settles on the newest click and removes CSS measuring elements",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5346,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-30T14:48:49.159Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e549834517b212c2a4fc-d1e7f67ea27d661ec539",
+          "file": "click-transition.spec.ts",
+          "line": 34,
+          "column": 1
+        },
+        {
+          "title": "explicit close suppresses unread peek until a genuine new entry",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6572,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-30T14:48:54.647Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e549834517b212c2a4fc-297240616e20b51195f5",
+          "file": "click-transition.spec.ts",
+          "line": 45,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "experience.spec.ts",
+      "file": "experience.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "quiet state, background interaction and studio screenshot",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2201,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-30T14:49:01.444Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "116f6b4a9defd92cdbb9-76884f4c426dffd07591",
+          "file": "experience.spec.ts",
+          "line": 9,
+          "column": 1
+        },
+        {
+          "title": "three real themes share the interaction model",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5726,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-30T14:49:03.690Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "116f6b4a9defd92cdbb9-63e13da982c4254ac0d9",
+          "file": "experience.spec.ts",
+          "line": 15,
+          "column": 1
+        },
+        {
+          "title": "routine message retracts without acknowledging",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8255,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-30T14:49:09.459Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "116f6b4a9defd92cdbb9-0dc986955e96186b9ec1",
+          "file": "experience.spec.ts",
+          "line": 26,
+          "column": 1
+        },
+        {
+          "title": "critical stays pending, server confirms only after roundtrip",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 11722,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-30T14:49:17.758Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "116f6b4a9defd92cdbb9-0ed0e7650e2d2c3f4c08",
+          "file": "experience.spec.ts",
+          "line": 34,
+          "column": 1
+        },
+        {
+          "title": "ordinary arrivals cannot replace pending critical",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2173,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-30T14:49:29.532Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "116f6b4a9defd92cdbb9-516c91a2f6475b26e3f7",
+          "file": "experience.spec.ts",
+          "line": 49,
+          "column": 1
+        },
+        {
+          "title": "focus suppresses routine but not critical",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2519,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-30T14:49:31.772Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "116f6b4a9defd92cdbb9-185d77995bc4d0c1492c",
+          "file": "experience.spec.ts",
+          "line": 55,
+          "column": 1
+        },
+        {
+          "title": "twelve routine updates aggregate into one item",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4165,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-30T14:49:34.350Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "116f6b4a9defd92cdbb9-623582c7c8bf8b4e4f57",
+          "file": "experience.spec.ts",
+          "line": 62,
+          "column": 1
+        },
+        {
+          "title": "CSS engine, inbox, escape and reduced motion",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3597,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-30T14:49:38.586Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "116f6b4a9defd92cdbb9-36e00feade654bd33696",
+          "file": "experience.spec.ts",
+          "line": 67,
+          "column": 1
+        },
+        {
+          "title": "narrow viewport stays within bounds",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2849,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-30T14:49:42.263Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "116f6b4a9defd92cdbb9-9003614c4dbed43b07b4",
+          "file": "experience.spec.ts",
+          "line": 77,
+          "column": 1
+        },
+        {
+          "title": "visible compositor cadence sample and browser runtime errors",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 9358,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-30T14:49:45.181Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "116f6b4a9defd92cdbb9-d2fb63e99319ccd5768e",
+          "file": "experience.spec.ts",
+          "line": 84,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "horizontal.spec.ts",
+      "file": "horizontal.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "gsap: bounded shallow height and no center drift during live transitions",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4163,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-30T14:49:54.613Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f14eeca23ccd8c4e2eb0-da08969fd6ba6a2462de",
+          "file": "horizontal.spec.ts",
+          "line": 10,
+          "column": 39
+        },
+        {
+          "title": "css: bounded shallow height and no center drift during live transitions",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4269,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-30T14:49:58.810Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f14eeca23ccd8c4e2eb0-450c4c0a08b0eb0d5c86",
+          "file": "horizontal.spec.ts",
+          "line": 10,
+          "column": 39
+        },
+        {
+          "title": "message center, thread, confirmation and success remain a single horizontal row",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7368,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-30T14:50:03.150Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f14eeca23ccd8c4e2eb0-eb73530393f1787beffd",
+          "file": "horizontal.spec.ts",
+          "line": 30,
+          "column": 1
+        },
+        {
+          "title": "narrow preview keeps the acknowledgement and close controls within the pill",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6593,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-30T14:50:10.732Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f14eeca23ccd8c4e2eb0-bcd9694b7dd1e4f03914",
+          "file": "horizontal.spec.ts",
+          "line": 44,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "hover-regression.spec.ts",
+      "file": "hover-regression.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "gsap: center/edge stationary hover and rapid reversals keep one target",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 16196,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-30T14:50:17.637Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3473dbf71ed4502bcb43-5871628b0aeab6b337a0",
+          "file": "hover-regression.spec.ts",
+          "line": 9,
+          "column": 37
+        },
+        {
+          "title": "css: center/edge stationary hover and rapid reversals keep one target",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 16041,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-30T14:50:33.928Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3473dbf71ed4502bcb43-2d67bafb7671bcb4690c",
+          "file": "hover-regression.spec.ts",
+          "line": 9,
+          "column": 37
+        },
+        {
+          "title": "stable painted surface remains a hover target through inert and child replacement",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7873,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-30T14:50:50.048Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3473dbf71ed4502bcb43-e57fca45f5b3570544aa",
+          "file": "hover-regression.spec.ts",
+          "line": 28,
+          "column": 1
+        },
+        {
+          "title": "gsap: reduced hover changes business hover but no epoch or empty animation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 11061,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-30T14:50:58.037Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3473dbf71ed4502bcb43-030ae6b123ec4e21196f",
+          "file": "hover-regression.spec.ts",
+          "line": 41,
+          "column": 37
+        },
+        {
+          "title": "css: reduced hover changes business hover but no epoch or empty animation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 9588,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-30T14:51:09.192Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3473dbf71ed4502bcb43-65cfe49d182cc8ffea01",
+          "file": "hover-regression.spec.ts",
+          "line": 41,
+          "column": 37
+        },
+        {
+          "title": "ordinary auto-collapse pauses on hover and resumes after a real departure",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 16170,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-30T14:51:18.862Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3473dbf71ed4502bcb43-49e90fcba39ce9078e26",
+          "file": "hover-regression.spec.ts",
+          "line": 51,
+          "column": 1
+        },
+        {
+          "title": "StrictMode timers: quick leave cancels peek, mode changes cancel peek, unmount cancels both timers",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2734,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-30T14:51:35.061Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3473dbf71ed4502bcb43-687f05f4db254cc4cb50",
+          "file": "hover-regression.spec.ts",
+          "line": 57,
+          "column": 1
+        },
+        {
+          "title": "compact close cancels its pending 120ms preview without acknowledging a critical event",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2871,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-30T14:51:37.817Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3473dbf71ed4502bcb43-72600dcea4ac3b29adfa",
+          "file": "hover-regression.spec.ts",
+          "line": 85,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "notch-motion.spec.ts",
+      "file": "notch-motion.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "U-shaped idle and finite hover expansion return to a quiet state",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2453,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-30T14:51:40.734Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e4eeb52a24d651a095a0-2baf5a7e6d07066b1713",
+          "file": "notch-motion.spec.ts",
+          "line": 8,
+          "column": 1
+        },
+        {
+          "title": "content survives an exit, then swaps; text is never scaled",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2349,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-30T14:51:43.214Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e4eeb52a24d651a095a0-46f8662b00b3f0cea023",
+          "file": "notch-motion.spec.ts",
+          "line": 19,
+          "column": 1
+        },
+        {
+          "title": "rapid interrupts settle at the newest state, with no invisible interaction layer",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3973,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-30T14:51:45.584Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e4eeb52a24d651a095a0-e1308b968745ed506b07",
+          "file": "notch-motion.spec.ts",
+          "line": 29,
+          "column": 1
+        },
+        {
+          "title": "reduced-motion updates live, restores opacity and keeps the receipt path",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3170,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-30T14:51:49.595Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e4eeb52a24d651a095a0-c8f49d078984a57f93ba",
+          "file": "notch-motion.spec.ts",
+          "line": 37,
+          "column": 1
+        },
+        {
+          "title": "legacy capsule remains fixed-height across all modes",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5832,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-30T14:51:52.803Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e4eeb52a24d651a095a0-3e40d14871885dfdb3e3",
+          "file": "notch-motion.spec.ts",
+          "line": 44,
+          "column": 1
+        },
+        {
+          "title": "browser DPR 1.25: U silhouette, centering and actions remain bounded",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4367,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-30T14:51:58.671Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e4eeb52a24d651a095a0-074aba242514c4c19290",
+          "file": "notch-motion.spec.ts",
+          "line": 51,
+          "column": 37
+        },
+        {
+          "title": "browser DPR 1.5: U silhouette, centering and actions remain bounded",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4363,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-30T14:52:03.075Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e4eeb52a24d651a095a0-9aad5ea95d93c3c4db66",
+          "file": "notch-motion.spec.ts",
+          "line": 51,
+          "column": 37
+        },
+        {
+          "title": "browser DPR 2: U silhouette, centering and actions remain bounded",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4407,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-30T14:52:07.472Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e4eeb52a24d651a095a0-8b2bde9d8b6b95ee695d",
+          "file": "notch-motion.spec.ts",
+          "line": 51,
+          "column": 37
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-09-30T14:48:29.768Z",
+    "duration": 224015.149,
+    "expected": 35,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

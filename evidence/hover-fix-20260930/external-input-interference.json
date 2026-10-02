@@ -1,0 +1,8 @@
+{
+  "invalidCases": [
+    "css:capsule:false:left",
+    "css:capsule:false:right",
+    "css:capsule:false:bottom"
+  ],
+  "note": "SendInput absolute-coordinate quantization may differ from the requested point by one physical pixel; this alone is not external input."
+}

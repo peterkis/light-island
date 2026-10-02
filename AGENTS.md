@@ -39,3 +39,20 @@
 - The default primary-screen/top-zero rule, acknowledgement semantics and privacy still apply.
 - Tailwind utilities are opt-in; do not enable global preflight over the existing studio.
 - React StrictMode is enabled; dispose listeners and every transition context. Superseded native epochs must never resize the active transition.
+
+## Compact hover stability (2026-09-30)
+- Compact idle and compact hover share the derived `compactCanvas` at begin AND commit. This is the narrow exception to "shrink HWND to the current surface at rest"; never reintroduce target.width+8 for compact commits.
+- Compute the canvas from the existing silhouette, CSS overshoot/reversal bound, available width and physical AA/stroke/rounding margin. It is not a universal 178x41 constant.
+- A fixed canvas is NOT a rectangular hit target. Keep the current dilated silhouette during finite compact animation updates; SVG fill sensing must survive content replacement/inert.
+- Compare actual physical HWND rectangles and skip SetWindowPos when unchanged. Map the silhouette using the actual retained client width and DPI.
+- Preserve cancellation, ordered frame updates and closed-epoch rejection. Synchronous native commands stay on the existing UI thread; no new worker scheduler.
+- `--hover-diagnostics` is opt-in, bounded and memory-only. Normal launches must not record pointer diagnostics. Test-only finite SendInput/sampling is not an application polling loop.
+- Current explanation and evidence: `docs/HOVER-STABILITY-FIX.md` and `evidence/hover-fix-20260930/`.
+
+## Click/close paint continuity (2026-09-30)
+- `renderCanvas` now bounds all existing horizontal states and supersedes the older shrink-to-shell allocation policy. Keep HWND coordinates fixed during clicks, close and hover; display-environment changes can replan it.
+- The render canvas is NOT an input rectangle. Keep animated silhouette regions, the physical AA margin and the finite previous/next-paint handoff.
+- Present a new native surface only after its region is ready. CSS uses a temporary hidden measuring element so it follows the same handoff as GSAP; remove it on settle/cancel/unmount.
+- A leave during collapse updates business hover but must not replay outgoing content. Enable compact micro-hover after the content transition settles.
+- Recheck actual screen continuity as well as rAF/final dimensions. A high rAF rate alone did not catch the historical blank frame on HWND contraction.
+- Current patch: `docs/CLICK-FLICKER-FIX.md`; evidence: `evidence/click-fix-20260930/`.

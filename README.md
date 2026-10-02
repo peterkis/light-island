@@ -39,3 +39,13 @@ Windows 10 真机、多屏热拔插、真实 OS DPI 矩阵、锁屏/投屏隐私
 `--qa-cdp` 仅在显式本机验收时开放 9223，正常启动不开放。测试只能连接本项目窗口和独立浏览器配置，不能接入个人浏览器会话。
 `scripts/qa-notch-native.mjs`：原生形态、抗锯齿、回执、中断及短时帧节奏；`qa-notch-windows.py`：仅合成测试窗口的真实鼠标穿透与焦点检查。
 Esc 和 Ctrl+Shift+I 仅在应用窗口内生效，不是系统级全局热键。本轮没有复制候选仓库代码、推送 GitHub、修改其他项目或系统安全策略。
+
+## Hover stability patch (2026-09-30)
+Compact idle/hover now share a geometry- and DPI-derived native canvas at both begin and commit. A common canvas does not mean a rectangular hit target: finite compact morphs retain the live dilated silhouette. Stable SVG sensing survives content replacement/inert; a cancellable leave check and guarded 120ms peek preserve interaction.
+See `docs/HOVER-STABILITY-FIX.md` and `evidence/hover-fix-20260930/` for this patch's baseline, evidence, commands and explicitly untested OS-DPI combinations. Earlier validation files remain historical.
+Use `--qa-cdp --hover-diagnostics` only for a deliberate native audit, or `?hoverDiagnostics=1` in a browser. Normal launches disable diagnostics. New regressions: `tests/hover-geometry.test.ts`, `tests/hover-regression.spec.ts`, `scripts/qa-hover-native.mjs`, `scripts/audit-hover-evidence.py`, `scripts/qa-hover-epochs.mjs`. Existing native scripts accept `ISLAND_QA_OUTPUT` to avoid replacing historical evidence.
+
+## 点击展开与关闭闪烁修复（2026-09-30）
+当前采用从所有现有横向状态推导的薄型渲染画布，点击、关闭与 hover 不再改变 HWND 原点或尺寸。可点击区域仍跟随实际外壳轮廓，不能把画布大小理解为透明挡板。这个策略替代上文历史版本中的“结束后收紧 HWND”。
+关闭中的真实 leave 不再重播内容退场；GSAP/CSS 共用轮廓准备后再呈现的原生交接。详见 `docs/CLICK-FLICKER-FIX.md` 和本轮独立的 `evidence/click-fix-20260930/`，不要用旧帧率或静态尺寸记录替代本轮中间帧验收。
+新增回归：`tests/click-transition.spec.ts`；渲染采样：`scripts/qa-click-render.mjs`（本应用 DOM 激活，不是物理鼠标）；受限真实输入回归：`scripts/qa-click-native.mjs`（只允许命中本应用后点击）。
