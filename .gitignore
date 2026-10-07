@@ -11,6 +11,7 @@ src-tauri/target/
 *.pid
 .prototype-transfer.b64
 .horizontal-transfer.b64
+.clinical-transfer.b64
 .horizontal-patch-stage/
 evidence/backups/
 playwright-report/

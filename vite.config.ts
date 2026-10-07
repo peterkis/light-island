@@ -5,5 +5,5 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   clearScreen: false,
   server: { host: '127.0.0.1', port: 1420, strictPort: true, watch: { ignored: ['**/src-tauri/**', '**/evidence/**', '**/test-results/**'] } },
-  build: { target: 'es2022', sourcemap: true, chunkSizeWarningLimit: 350 },
+  build: { rollupOptions: { input: ['index.html', 'clinical.html'] }, target: 'es2022', sourcemap: true, chunkSizeWarningLimit: 350 },
 });

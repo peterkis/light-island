@@ -7,13 +7,16 @@
     "dev": "vite --host 127.0.0.1",
     "demo:server": "node server/demo-server.mjs",
     "dev:all": "concurrently -k -n WEB,DEMO \"npm:dev\" \"npm:demo:server\"",
-    "build": "tsc -b && vite build",
+    "build": "npm run tokens:clinical && tsc -b && vite build",
     "preview": "vite preview --host 127.0.0.1",
     "test": "vitest run",
     "test:e2e": "playwright test",
     "tauri": "tauri",
     "desktop:dev": "tauri dev",
-    "desktop:build": "tauri build --no-bundle"
+    "desktop:build": "tauri build --no-bundle",
+    "tokens:clinical": "node scripts/generate-clinical-tokens.mjs",
+    "clinical:server": "node scripts/start-clinical-development.mjs",
+    "dev:clinical": "concurrently -k -n WEB,CLINICAL \"npm:dev\" \"npm:clinical:server\""
   },
   "dependencies": {
     "@gsap/react": "2.1.2",

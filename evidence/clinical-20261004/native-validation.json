@@ -1,0 +1,130 @@
+{
+  "platform": "Windows / native WebView2 / clinical safe geometry fallback",
+  "transitions": [
+    {
+      "iteration": 0,
+      "expanded": {
+        "x": 91,
+        "y": 0,
+        "width": 400,
+        "height": 480
+      },
+      "regionChanges": 3,
+      "windowChanges": 0
+    },
+    {
+      "iteration": 1,
+      "expanded": {
+        "x": 91,
+        "y": 0,
+        "width": 400,
+        "height": 480
+      },
+      "regionChanges": 3,
+      "windowChanges": 0
+    },
+    {
+      "iteration": 2,
+      "expanded": {
+        "x": 91,
+        "y": 0,
+        "width": 400,
+        "height": 480
+      },
+      "regionChanges": 3,
+      "windowChanges": 0
+    },
+    {
+      "iteration": 3,
+      "expanded": {
+        "x": 91,
+        "y": 0,
+        "width": 400,
+        "height": 480
+      },
+      "regionChanges": 3,
+      "windowChanges": 0
+    },
+    {
+      "iteration": 4,
+      "expanded": {
+        "x": 91,
+        "y": 0,
+        "width": 400,
+        "height": 480
+      },
+      "regionChanges": 3,
+      "windowChanges": 0
+    },
+    {
+      "iteration": 5,
+      "expanded": {
+        "x": 91,
+        "y": 0,
+        "width": 400,
+        "height": 480
+      },
+      "regionChanges": 3,
+      "windowChanges": 0
+    },
+    {
+      "iteration": 6,
+      "expanded": {
+        "x": 91,
+        "y": 0,
+        "width": 400,
+        "height": 480
+      },
+      "regionChanges": 3,
+      "windowChanges": 0
+    },
+    {
+      "iteration": 7,
+      "expanded": {
+        "x": 91,
+        "y": 0,
+        "width": 400,
+        "height": 480
+      },
+      "regionChanges": 3,
+      "windowChanges": 0
+    }
+  ],
+  "errors": [],
+  "baseline": {
+    "at": 1791089552331.7434,
+    "rect": [
+      669,
+      0,
+      1251,
+      483
+    ],
+    "cursor": [
+      40,
+      140
+    ],
+    "dpi": 96,
+    "foreground": 658716,
+    "hitRoot": 658716,
+    "hwnd": 9044430
+  },
+  "metrics": {
+    "available": 1920,
+    "canvasHeight": 483,
+    "canvasWidth": 582,
+    "height": 1032,
+    "scale": 1,
+    "y": 0
+  },
+  "clinicalWriteAndSimulatorDenied": true,
+  "sourceOpenedExactObject": true,
+  "idleMutations": 0,
+  "frameCadence": {
+    "frames": 359,
+    "averageFps": 60.002339924119624,
+    "p95ms": 17.100000000002183,
+    "over25ms": 0,
+    "visible": true
+  },
+  "pass": true
+}

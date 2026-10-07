@@ -1,0 +1,99 @@
+{
+  "alpha": [
+    {
+      "view": "idle",
+      "windowRect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "alphaBounds": [
+        193,
+        0,
+        389,
+        35
+      ],
+      "partiallyCoveredPixels": 274,
+      "clippedAntialiasPixels": 0,
+      "tightRegionClippedPixels": 20,
+      "topDocked": true,
+      "primaryCentered": true
+    },
+    {
+      "view": "compact",
+      "windowRect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "alphaBounds": [
+        143,
+        0,
+        439,
+        41
+      ],
+      "partiallyCoveredPixels": 404,
+      "clippedAntialiasPixels": 0,
+      "tightRegionClippedPixels": 24,
+      "topDocked": true,
+      "primaryCentered": true
+    },
+    {
+      "view": "expanded",
+      "windowRect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "alphaBounds": [
+        83,
+        0,
+        499,
+        481
+      ],
+      "partiallyCoveredPixels": 1414,
+      "clippedAntialiasPixels": 0,
+      "tightRegionClippedPixels": 1156,
+      "topDocked": true,
+      "primaryCentered": true
+    }
+  ],
+  "largeText": [
+    {
+      "textScale": 2,
+      "font": 30,
+      "box": {
+        "x": 11,
+        "y": 0,
+        "width": 560,
+        "height": 480
+      },
+      "cta": {
+        "x": 31,
+        "y": 283,
+        "width": 230,
+        "height": 52
+      }
+    },
+    {
+      "textScale": 2.25,
+      "font": 33.75,
+      "box": {
+        "x": 11,
+        "y": 0,
+        "width": 560,
+        "height": 480
+      },
+      "cta": {
+        "x": 31,
+        "y": 266,
+        "width": 252.75,
+        "height": 57
+      }
+    }
+  ],
+  "pass": true
+}

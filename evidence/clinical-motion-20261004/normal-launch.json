@@ -1,0 +1,8 @@
+﻿{
+    "Pid":  30112,
+    "Path":  "D:\\Projects\\island-protype\\src-tauri\\target\\release\\samewave-island.exe",
+    "Responding":  true,
+    "Arguments":  "\"D:\\Projects\\island-protype\\src-tauri\\target\\release\\samewave-island.exe\" --studio ",
+    "DebugPortOpen":  false,
+    "SHA256":  "9FA9B8BC8F1904B778A964E5A1AB30B3E45171BC0911E789FC737509B2FB4079"
+}

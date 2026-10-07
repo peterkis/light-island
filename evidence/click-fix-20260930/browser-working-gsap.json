@@ -1,7 +1,7 @@
 {
   "openEvents": [
     {
-      "at": 1790779716182,
+      "at": 1791096752592.5999,
       "seq": 7,
       "kind": "motion-start",
       "hover": false,
@@ -15,7 +15,7 @@
         "width": 995,
         "height": 60
       },
-      "epoch": "1790779714190",
+      "epoch": "1791096751622",
       "phase": "preparing",
       "mode": "compact",
       "hovered": "true",
@@ -33,7 +33,7 @@
   ],
   "closeEvents": [
     {
-      "at": 1790779717447.2,
+      "at": 1791096753594.2,
       "seq": 8,
       "kind": "motion-start",
       "hover": false,
@@ -47,7 +47,7 @@
         "width": 995,
         "height": 60
       },
-      "epoch": "1790779714191",
+      "epoch": "1791096751623",
       "phase": "preparing",
       "mode": "inbox",
       "hovered": "false",
@@ -63,11 +63,11 @@
       }
     },
     {
-      "at": 1790779717449.7,
+      "at": 1791096753595.0999,
       "seq": 9,
       "kind": "hover-state",
       "value": false,
-      "epoch": "1790779714191",
+      "epoch": "1791096751623",
       "phase": "exiting",
       "mode": "inbox",
       "hovered": "false",
@@ -83,45 +83,45 @@
       }
     },
     {
-      "at": 1790779717554.6,
+      "at": 1791096753698.2998,
       "seq": 10,
       "kind": "mouseleave",
       "screen": [
         1025,
         411
       ],
-      "epoch": "1790779714191",
+      "epoch": "1791096751623",
       "phase": "exiting",
       "mode": "inbox",
       "hovered": "false",
       "bounds": {
-        "x": 172.921875,
+        "x": 145.171875,
         "y": 286.1875,
-        "width": 764.140625,
-        "height": 48.953125,
+        "width": 819.65625,
+        "height": 50.71875,
         "top": 286.1875,
-        "right": 937.0625,
-        "bottom": 335.140625,
-        "left": 172.921875
+        "right": 964.828125,
+        "bottom": 336.90625,
+        "left": 145.171875
       }
     },
     {
-      "at": 1790779717643.5,
+      "at": 1791096753786.5,
       "seq": 11,
       "kind": "leave-accepted",
-      "epoch": "1790779714191",
+      "epoch": "1791096751623",
       "phase": "exiting",
       "mode": "inbox",
       "hovered": "false",
       "bounds": {
-        "x": 404.421875,
+        "x": 401.8125,
         "y": 286.1875,
-        "width": 301.140625,
-        "height": 36.078125,
+        "width": 306.375,
+        "height": 36.1875,
         "top": 286.1875,
-        "right": 705.5625,
-        "bottom": 322.265625,
-        "left": 404.421875
+        "right": 708.1875,
+        "bottom": 322.375,
+        "left": 401.8125
       }
     }
   ]

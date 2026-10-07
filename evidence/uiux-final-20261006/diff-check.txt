@@ -1,0 +1,6 @@
+warning: in the working copy of 'evidence/click-fix-20260930/browser-working-css.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'evidence/click-fix-20260930/browser-working-gsap.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'evidence/playwright-results.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'package.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/start-prototype.ps1', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/stop-prototype.ps1', LF will be replaced by CRLF the next time Git touches it

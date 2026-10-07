@@ -1,0 +1,9 @@
+﻿{
+    "capturedAt":  "2026-10-06T23:57:12.4557563+08:00",
+    "pid":  13464,
+    "executable":  "D:\\Projects\\island-protype\\src-tauri\\target\\release\\samewave-island.exe",
+    "commandLine":  "\"D:\\Projects\\island-protype\\src-tauri\\target\\release\\samewave-island.exe\" ",
+    "sha256":  "0BE2D9F8D651F7121779FE39C937ECDB8AD80A6117295686415C12F1417F122E",
+    "qaPortClosed":  true,
+    "studioRequested":  true
+}

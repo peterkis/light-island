@@ -56,3 +56,32 @@
 - A leave during collapse updates business hover but must not replay outgoing content. Enable compact micro-hover after the content transition settles.
 - Recheck actual screen continuity as well as rAF/final dimensions. A high rAF rate alone did not catch the historical blank frame on HWND contraction.
 - Current patch: `docs/CLICK-FLICKER-FIX.md`; evidence: `evidence/click-fix-20260930/`.
+
+## Clinical PRD implementation (2026-10-04)
+- `clinical.html` is the default; `--legacy` selects the preserved historical prototype. New clinical PRDs and `Dynamic-Island-UI-Spec.md` override old horizontal-only/received-ack rules only in the new module.
+- Clinical source states are read-only. Never send acknowledgements, completion, dispatch, finance, prescribing or treatment writes from the new surface. `clinical:personal` controls only a personal timer.
+- Simulator role/state controls belong to the standalone studio, not the island. Use synthetic data only. Source windows are explicitly simulated, version- and identity-guarded boundaries.
+- New native layout uses the spec's safe fallback: stable bounded canvas plus state-boundary silhouette changes and content fading. No per-frame native geometry IPC. Do not describe the browser animation as native continuous morph validation.
+- Generate tokens from the single documented JSON with `npm run tokens:clinical`. Typography is scoped to `.ci-anchor` so 200%/225% must change computed font sizes, not only the canvas.
+- Clinical source runs on loopback 17322; legacy on 17321. Do not stop an unrelated or unverified process to free ports.
+- Windows secondary WebViews inherit identical existing browser arguments when sharing the profile; normal launches never add a QA endpoint.
+- Follow `docs/CLINICAL-IMPLEMENTATION.md`; use only fresh `evidence/clinical-20261004` results for this delivery. Figma quota prevented online pixel-level inspection; real OS lock/fullscreen hooks, production identity and clinical workflow integration remain outside the prototype.
+
+## Clinical U-notch / continuous motion (2026-10-04, supersedes the clinical static fallback)
+- The accepted default contour is the legacy inward-ear cubic U, 160x34 DIP at normal text scale. Do not restore the 180-wide external circular ears.
+- Rich clinical content remains measured, scrollable and read-only. Hover never auto-expands clinical details.
+- Use UI spec 1.1/generated tokens. Restore the finite 540ms width spring / monotone height and 340ms collapse; never scale text or replay exit on mouseleave.
+- Ordinary transitions keep HWND fixed. Finite single-in-flight HRGN previous/next silhouette handoff is explicitly permitted; per-frame HWND resize, idle region updates and full-canvas hit targets remain forbidden.
+- Protect epoch, sequence, completion and cleanup at both sides. Authorization changes remove sensitive DOM immediately, including during outgoing presentation.
+- Fresh evidence belongs to evidence/clinical-motion-20261004. Native geometry cadence and actual screen continuity are separate tests.
+
+SVG width/height/viewBox/path must have one animation owner. React declares only the initial size and must not replace the SVG viewport with target dimensions while the previously painted path is still present. Native screen capture caught transient collapse artifacts from that mismatch; the finite native regression samples viewport/surface equality as well as FPS.
+
+## Windows UI/UX v1.0 (2026-10-06; latest clinical visual authority)
+- User-authored `docs/Windows 灵动岛 UI UX 设计规范 v1.0.md` is immutable input. Generate CSS/adapter tokens from section 12; maintain its SHA256 in tokens. This supersedes the old 160x34/7px ear/540ms easing ONLY for the clinical module.
+- S0 124x32 body + external 10-DIP ears, S1 268x36 with 124 central blank, Minimal 36, Alert 372x88, Rich 372x168, Stack 400x<=280. Keep source details in a scrollable secondary panel, not a crowded Rich.
+- Shape motion is a bounded numerical spring, not sampled GSAP easing. Retarget position/velocity without reset. GSAP is for finite content opacity/blur/entry only. Do not let React write the animated SVG viewport.
+- Keep the stable native canvas and ordered silhouette handoff. A separate nonactivating WS_EX_LAYERED|WS_EX_TRANSPARENT shadow is allowed; never expand the hit region for shadow pixels.
+- Local control settings are not authorization. Clinical writes stay forbidden. Source importance may interrupt the personal tool, but never change its timer deadline or simulate clinical receipt.
+- Same-size content changes must reveal and unlock the content; panel ownership resets on object/auth changes. Never count stale 15px/old-card accessibility tests as current compliance.
+- Current implementation decisions and explicit deviations: `docs/UIUX-V1-IMPLEMENTATION.md`. Fresh evidence only: `evidence/uiux-final-20261006`. No commit/push without instruction.

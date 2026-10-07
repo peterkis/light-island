@@ -1,0 +1,149 @@
+{
+  "at": "2026-10-06T23:59:00.673735+08:00",
+  "overall": "CORE_IMPLEMENTED_AND_TESTED; full specification acceptance remains PARTIAL",
+  "branch": "main",
+  "head": "fcf599088d8c6f413339ef3086946c0417f7c847",
+  "committed": false,
+  "pushed": false,
+  "allTestedSourceAndExeHashesMatch": true,
+  "authoritativeSpec": "docs/Windows 灵动岛 UI UX 设计规范 v1.0.md",
+  "specUnchanged": true,
+  "tests": {
+    "typecheck": "PASS",
+    "typescriptUnit": {
+      "passed": 172,
+      "failed": 0
+    },
+    "rustUnit": {
+      "passed": 6,
+      "failed": 0
+    },
+    "selectedE2E": {
+      "passed": 48,
+      "failed": 0,
+      "excluded": [
+        "clinical-accessibility.spec.ts: obsolete 15px/old-card assertions; replacement write blocked by tool safety check, not counted as passing"
+      ]
+    },
+    "desktopBuild": "PASS",
+    "gitDiffCheck": 0
+  },
+  "windows": {
+    "environment": "Windows 11, primary 1920x1080, 96 DPI",
+    "physicalOpenClose": 8,
+    "normalTransitionHWNDChanges": 0,
+    "exactSourceObjectOpened": true,
+    "clinicalWriteDenied": true,
+    "ownedBackgroundClicks": 6,
+    "actualShadowClick": true,
+    "pushPreservesFocus": true,
+    "screenFrames": 95,
+    "blankFrames": 0,
+    "idleDOMMutations": 0
+  },
+  "performance": {
+    "luminanceBeforeMs": [
+      2098.5,
+      3198.8000000715256,
+      3200.6999999284744
+    ],
+    "luminanceAfterMs": [
+      22,
+      15.700000047683716,
+      16.399999976158142
+    ],
+    "rAFfps": 60.00092309112444,
+    "p95ms": 16.899999999999636,
+    "over25ms": 0,
+    "beforeUnchangedMovingSamples": 180,
+    "beforeMovingSamples": 195,
+    "afterUnchangedMovingSamples": 27,
+    "afterMovingSamples": 197,
+    "cadenceMeaning": "rAF/geometry samples, not DWM present telemetry or a dropped-frame-rate measurement",
+    "memory": {
+      "capturedAt": "2026-10-06T23:57:09.1020507+08:00",
+      "scope": "Native application and all discovered WebView2 descendants; no studio; excludes Node demo and development tools",
+      "sampleSeconds": 11.3694055,
+      "privateWorkingSetMiB": 97.04,
+      "privateMiB": 157.26,
+      "cpuMachinePercent": 0,
+      "processes": [
+        {
+          "pid": 13464,
+          "name": "samewave-island",
+          "privateMiB": 6.89,
+          "workingSetMiB": 25.33,
+          "cpuDeltaSeconds": 0
+        },
+        {
+          "pid": 35672,
+          "name": "msedgewebview2",
+          "privateMiB": 34.64,
+          "workingSetMiB": 112.86,
+          "cpuDeltaSeconds": 0
+        },
+        {
+          "pid": 17000,
+          "name": "msedgewebview2",
+          "privateMiB": 2.43,
+          "workingSetMiB": 9.49,
+          "cpuDeltaSeconds": 0
+        },
+        {
+          "pid": 40428,
+          "name": "msedgewebview2",
+          "privateMiB": 66.84,
+          "workingSetMiB": 81.49,
+          "cpuDeltaSeconds": 0
+        },
+        {
+          "pid": 39012,
+          "name": "msedgewebview2",
+          "privateMiB": 11.15,
+          "workingSetMiB": 33.71,
+          "cpuDeltaSeconds": 0
+        },
+        {
+          "pid": 29036,
+          "name": "msedgewebview2",
+          "privateMiB": 7.35,
+          "workingSetMiB": 19.22,
+          "cpuDeltaSeconds": 0
+        },
+        {
+          "pid": 10608,
+          "name": "msedgewebview2",
+          "privateMiB": 27.96,
+          "workingSetMiB": 65.57,
+          "cpuDeltaSeconds": 0
+        }
+      ]
+    }
+  },
+  "notRun": [
+    "Windows 10 physical",
+    "125/150/200% physical OS scaling and mixed-DPI/hotplug",
+    "120Hz display and DWM/ETW frame pacing",
+    "GPU utilization",
+    "Narrator UI Automation walkthrough",
+    "full touch target matrix",
+    "all external screen-sharing products and Windows Focus Assist integration"
+  ],
+  "partial": [
+    "S2 separate satellite is functional; viscous neck not implemented",
+    "dedicated button spring hook and failure shake not implemented; CSS press feedback present",
+    "source-specific mute, full swipe-dismiss/undo and compact marquee are not complete",
+    "Hidden entry/exit uses safe immediate visibility at OS/privacy boundary instead of every decorative stage",
+    "universal media/email/call/AI adapters are not included in clinical prototype",
+    "3 original accessibility cases retain obsolete dimensions and were excluded; replacement write was blocked"
+  ],
+  "normalLaunch": {
+    "capturedAt": "2026-10-06T23:57:12.4557563+08:00",
+    "pid": 13464,
+    "executable": "D:\\Projects\\island-protype\\src-tauri\\target\\release\\samewave-island.exe",
+    "commandLine": "\"D:\\Projects\\island-protype\\src-tauri\\target\\release\\samewave-island.exe\" ",
+    "sha256": "0BE2D9F8D651F7121779FE39C937ECDB8AD80A6117295686415C12F1417F122E",
+    "qaPortClosed": true,
+    "studioRequested": true
+  }
+}

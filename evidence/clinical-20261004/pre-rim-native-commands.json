@@ -1,0 +1,16 @@
+[
+  {
+    "command": "node scripts/qa-clinical-native.mjs",
+    "name": "interaction",
+    "start": "2026-10-04T12:34:14.008663+08:00",
+    "end": "2026-10-04T12:34:39.644168+08:00",
+    "exit": 0
+  },
+  {
+    "command": "node scripts/qa-clinical-boundaries.mjs",
+    "name": "boundaries",
+    "start": "2026-10-04T12:34:39.644737+08:00",
+    "end": "2026-10-04T12:34:40.999694+08:00",
+    "exit": 3221226505
+  }
+]

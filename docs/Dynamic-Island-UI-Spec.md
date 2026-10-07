@@ -1,10 +1,12 @@
+> **历史规范说明（2026-10-06）：** 当前临床界面已按用户新增的 `Windows 灵动岛 UI UX 设计规范 v1.0.md` 实现。本文保留上一轮设计记录，不再作为当前视觉 token 生成源。差异解释见 `UIUX-V1-IMPLEMENTATION.md`。
+
 # Windows 桌面灵动岛 UI 设计与交互规范
 
-版本：1.0  
+版本：1.1（2026-10-04：恢复已选定的 U 型与连续动效）
 研究日期：2026 年 10 月 1 日  
 适用实现：Rust 原生窗口层、Tauri 2、React 内容层、GSAP 动效层  
 交付对象：产品设计者、前端与 Rust Coding Agent、无障碍与测试工程师  
-规范性质：可执行的设计基线，尚未经过本项目真实应用、硬件和性能测试
+规范性质：产品约束与工程契约；具体 PASS / FAIL / NOT_RUN 以本轮 evidence/clinical-motion-20261004/ 为准，不将目标值写成实测。
 
 ## 0 如何使用本规范
 
@@ -77,9 +79,9 @@ HIG 另表列出 compact/minimal 的整岛宽度 230 或 250 pt。不能把单�
 
 ### 1.4 本规范不作的承诺
 
-- MUST NOT 将桌面宽高、圆角、8 DIP 耳角、特定黑色、450 ms 或某组弹簧参数称为 Apple 官方 Dynamic Island 精确规范
+- MUST NOT 将桌面宽高、圆角、7 DIP 内侧耳角、特定黑色、450 ms 或某组弹簧参数称为 Apple 官方 Dynamic Island 精确规范
 - MUST NOT 宣称 GSAP `elastic.out(1, 0.75)` 等价于 SwiftUI `response: 0.44, dampingFraction: 0.74`
-- MUST NOT 声称本规范已经解决当前代码中的窗口抖动；本次没有对现有仓库执行审计或实测
+- MUST NOT 声称本规范已经解决当前代码中的窗口抖动；未列入本轮 evidence 的硬件组合不得据此冒称已验证
 - MUST NOT 把“看起来透明”当成“鼠标能穿透”，把“有 ARIA”当成“Windows 读屏已经可用”
 - MUST NOT 把“始终置顶”解释为可覆盖安全桌面、UAC、锁屏或任意独占全屏
 
@@ -89,7 +91,7 @@ HIG 另表列出 compact/minimal 的整岛宽度 230 或 250 pt。不能把单�
 
 | 参考稿选择 | 判断 | 本规范处理 |
 | --- | --- | --- |
-| 180 × 34 待机、280 × 36 紧凑 | 桌面提案，非 Apple 尺寸；36 高搭配 24 高内容仅允许上下各 6 | 待机保留 180 × 34；紧凑基线改为 280 × 40，上下各 8；随文字缩放增高 |
+| 180 × 34 待机、280 × 36 紧凑 | 桌面提案，非 Apple 尺寸；36 高搭配 24 高内容仅允许上下各 6 | 待机恢复 160 × 34；紧凑基线改为 280 × 40，上下各 8；随文字缩放增高 |
 | 展开 380–420 × 110–140 | 富内容和操作区预算偏紧 | 默认宽 400；简卡基线 160、媒体等复杂卡 192，真实高度由内容计算 |
 | 所有子元素必须同心圆角 | 范围过宽，图标、头像、按钮并非等距内嵌轮廓 | 仅等距嵌套容器参考内外圆角关系；头像、图标、胶囊各有独立形状语义 |
 | 38 × 38、圆角 10 等同 Squircle | 普通圆角矩形不等于连续曲率超椭圆 | 使用明确的 rounded rectangle；若将来采用连续曲率，需要独立路径和可测算法 |
@@ -98,8 +100,8 @@ HIG 另表列出 compact/minimal 的整岛宽度 230 或 250 pt。不能把单�
 | 右区 36–48 同时放时间和关闭 | 无法稳定容纳 `2m ago`、间距及可点击目标 | 右区只固定关闭目标；时间进入中区元数据行，或用独立测量列 |
 | 11 px caption | 桌面高密度、缩放及中英文混排下可读性弱 | 最小语义文字基线 12，默认正文 14；不得缩小文字来救布局 |
 | “所有字重 Medium 以上” | HIG 确实建议 Medium 或以上；稿内 Regular caption 与此方向不一致 | 保留 Medium+ 方向；正文与辅助文字 500、标题 600，并验证实际字体可用字重、对比度和留白 |
-| 0.74 为超阻尼且轻微弹跳 | 0.74 是欠阻尼；理想超阻尼没有振荡回弹 | 使用无外壳回弹的默认曲线；真实弹簧作为可选实验，不宣称复刻 |
-| 展开 450，内容延后 50；收起 320 | 可作为桌面节奏起点，非官方时间线 | 保留总时序提案，但把内容缩放 .92 改为 1，仅淡入与轻位移，避免文字缩放模糊 |
+| 0.74 为超阻尼且轻微弹跳 | 0.74 是欠阻尼；理想超阻尼没有振荡回弹 | 默认恢复旧版有限欠阻尼宽度曲线（ζ=0.84）；高度单调，另保留关闭的物理积分实验，不宣称 Apple 精确复刻 |
+| 展开 450，内容延后 50；收起 320 | 可作为桌面节奏起点，非官方时间线 | 由 1.1 的展开 540ms、收回 340ms 外壳时序替代；内容只淡入与轻微水平位移，文字缩放恒为 1 |
 
 [WINDOWS-SPEC] 普通文本的 WCAG 对比度基线为 4.5:1；#666666 对 #000000 约 3.66:1，不满足该基线。[W1] 对本项目而言这是直接影响可读性的设计修正。全部候选状态色、按钮色和材质最终仍须逐对计算与实测。
 
@@ -139,32 +141,25 @@ bottom = Oy + ceil((y+h)*d)
 
 [PROPOSED] 有摄像头刘海的概念不代表 Windows 屏幕上存在必须绕开的真实摄像头孔。禁止凭 1920×1080 或“2K”硬编码中央硬件保留区。
 
-### 3.3 外轮廓
+### 3.3 外轮廓（1.1，替代圆弧外耳版）
 
-V1 采用**顶部平直、底部圆角、两侧反向耳角**的明确路径，不称为 Squircle；默认耳角半径 8 DIP。允许在工程降级或设置变体中关闭耳角。
+恢复此前用户认可的 U 型：上沿贴顶、两侧小型反向过渡、下角由两段三次曲线柔化。宽度 `w` 是包含耳角的视觉总宽，范围为 `[0,w] × [0,h]`，不得再额外加 `2e` 或把 SVG 向左移 `e`。待机基线为 160×34 DIP，耳角参数 7，底角参数 18；文字放大仍按内容增高，不能缩小字来保住 34。
 
-- 核心主体宽度为 `w`，高度为 `h`；底部圆角为 `r`
-- 耳角半径为 `e`，各向主体左右外伸 `e`；视觉总宽为 `w + 2e`
-- `e >= 0`、`r >= 0`、`w >= 2r`、`h >= e+r`；耳角只占顶部 `e` 高，不占内容内边距。每个稳定态与动画中间态均须通过这些条件，否则侧边会反向或圆弧重叠
-- 主体内容坐标原点 `(0, 0)`；整条路径范围为 `[-e, w+e] × [0,h]`
-- 耳角打开时，路径与顶边、侧边切线连续；不存在独立伪元素越界参与命中的第二套几何
-
-以下为本项目圆弧版路径定义。每个 `A` 是 SVG 圆弧，半径单位为 DIP。Agent MUST 生成这条路径的采样快照确认凹凸方向，不得仅凭参数字符串假定形状正确。
+`e=min(ear,w/8,h/4)`，`r=min(radius,(w-2e)/2,h-e)`。与旧版 `src/lib/geometry.ts` 的 U 形一致，临床实现的 SVG 和原生多边形在同一曲线上采样。它是本产品拟合曲线，不称为精确 Apple Squircle。
 
 ```text
-M -e,0
-L w+e,0
-A e,e 0 0 0 w,e
-L w,h-r
-A r,r 0 0 1 w-r,h
-L r,h
-A r,r 0 0 1 0,h-r
-L 0,e
-A e,e 0 0 0 -e,0
-Z
+M 0,0 L w,0
+C w-.55e,0 w-e,.45e w-e,e
+L w-e,h-r
+C w-e,h-.55r w-e,h-.35r w-e-.175r,h-.175r
+C w-e-.35r,h w-e-.55r,h w-e-r,h
+L e+r,h
+C e+.55r,h e+.35r,h e+.175r,h-.175r
+C e,h-.35r e,h-.55r e,h-r
+L e,e C e,.45e .55e,0 0,0 Z
 ```
 
-`e=0` 时走无耳角的独立分支，省略零半径圆弧。耳角是否启用是视觉变体，不改变所有内容列的宽度预算。顶部不绘制向屏幕外扩散的阴影。
+每段曲线采样形成原生轮廓；内容单独按同一外壳裁切，不以普通 border-radius 代替外形，也不裁掉外壳抗锯齿。临床富内容继续采用 400 DIP 基线宽度与可滚动详情，不回退为旧横向单行内容。
 
 ### 3.4 单一形状与三个不同区域
 
@@ -174,7 +169,7 @@ MUST 区分：
 2. `nativeInputShape`：原生窗口应接收输入的区域；无障碍目标可以在可见外壳内部扩大，不能形成大块不可见的桌面遮罩
 3. `effectBounds`：阴影等装饰的包围框；该区域不得仅因有阴影而捕获输入
 
-`visualShape` 与 `nativeInputShape` MUST 由同一个 `ShapeModel` 和同一组活动几何值派生。React、CSS、Rust 不得分别猜一套半径。在**稳定态**，视觉抗锯齿与原生离散像素边缘允许最多 1 个物理像素的取整差；不能出现整个耳角可见却不可点、圆角外大面积透明却可点的情况。动画中的同步由第 10.3 节阶段门单独验证，不能把同一公式误当作两个进程已逐帧同步的证明。
+`visualShape` 与 `nativeInputShape` MUST 由同一个 `ShapeModel` 和同一组活动几何值派生。React、CSS、Rust 不得分别猜一套半径。在**稳定态**，视觉抗锯齿与原生离散像素边缘保留 2 个物理像素的抗锯齿余量，允许亚像素取整差；不能出现整个耳角可见却不可点、圆角外大面积透明却可点的情况。动画中的同步由第 10.3 节阶段门单独验证，不能把同一公式误当作两个进程已逐帧同步的证明。
 
 [VERIFY] Windows 透明窗口、WebView2 合成、窗口区域与跨进程鼠标穿透的组合能力必须用真实桌面测试。透明样式、CSS `pointer-events:none`、Tauri 整窗忽略光标、某个 `WM_NCHITTEST` 返回值，都不能单独证明透明区会正确把点击交给背后的其他应用。
 
@@ -196,14 +191,28 @@ MUST 区分：
 
 ```json
 {
-  "schemaVersion": "1.0.0",
+  "schemaVersion": "1.1.0",
   "platform": "windows-tauri2-react-gsap",
-  "units": { "geometry": "dip", "time": "ms", "fontBase": "cssPxAtTextScale1" },
+  "units": {
+    "geometry": "dip",
+    "time": "ms",
+    "fontBase": "cssPxAtTextScale1"
+  },
   "geometry": {
     "anchor": "target-monitor-usable-top-center",
-    "earRadius": 8,
-    "idle": { "width": 180, "height": 34, "bottomRadius": 18 },
-    "compact": { "width": 280, "minHeight": 40, "bottomRadius": 20, "paddingX": 12, "paddingY": 8 },
+    "earRadius": 7,
+    "idle": {
+      "width": 160,
+      "height": 34,
+      "bottomRadius": 18
+    },
+    "compact": {
+      "width": 280,
+      "minHeight": 40,
+      "bottomRadius": 20,
+      "paddingX": 12,
+      "paddingY": 8
+    },
     "expanded": {
       "baseWidth": 400,
       "preferredMaxWidth": 560,
@@ -217,11 +226,26 @@ MUST 区分：
       "paddingY": 16
     },
     "viewportMargin": 16,
-    "pixelBoundaryTolerance": 1,
-    "effectInset": { "left": 24, "right": 24, "bottom": 32, "top": 0 },
-    "effectInsetStatus": "candidate-needs-shadow-clipping-test"
+    "pixelBoundaryTolerance": 2,
+    "effectInset": {
+      "left": 24,
+      "right": 24,
+      "bottom": 32,
+      "top": 0
+    },
+    "effectInsetStatus": "candidate-needs-shadow-clipping-test",
+    "contour": "legacy-u-cubic-ears-inside-total-width"
   },
-  "space": { "s0": 0, "s1": 4, "s2": 8, "s3": 12, "s4": 16, "s5": 20, "s6": 24, "s7": 32 },
+  "space": {
+    "s0": 0,
+    "s1": 4,
+    "s2": 8,
+    "s3": 12,
+    "s4": 16,
+    "s5": 20,
+    "s6": 24,
+    "s7": 32
+  },
   "layout": {
     "iconTextGap": 12,
     "textStackGap": 4,
@@ -234,19 +258,53 @@ MUST 区分：
     "expandedBodyPreviewLines": 2
   },
   "templates": {
-    "compactExample": { "indicatorWidth": 64 },
-    "notification": { "twoLineWithActionsMinHeight": 168, "headerHeight": 40, "sectionGap": 12 },
-    "media": { "headerHeight": 56, "bottomPadding": 24, "controlRowHeight": 44 }
+    "compactExample": {
+      "indicatorWidth": 64
+    },
+    "notification": {
+      "twoLineWithActionsMinHeight": 168,
+      "headerHeight": 40,
+      "sectionGap": 12
+    },
+    "media": {
+      "headerHeight": 56,
+      "bottomPadding": 24,
+      "controlRowHeight": 44
+    }
   },
   "type": {
     "fontFamily": "\"Segoe UI Variable Text\", \"Segoe UI\", \"Microsoft YaHei UI\", \"Microsoft YaHei\", sans-serif",
     "numericVariant": "tabular-nums lining-nums",
-    "title": { "size": 15, "lineHeight": 20, "weight": 600 },
-    "body": { "size": 14, "lineHeight": 20, "weight": 500 },
-    "compact": { "size": 13, "lineHeight": 20, "weight": 500 },
-    "caption": { "size": 12, "lineHeight": 16, "weight": 500 },
-    "button": { "size": 13, "lineHeight": 20, "weight": 600 },
-    "digit": { "size": 26, "lineHeight": 32, "weight": 600 }
+    "title": {
+      "size": 15,
+      "lineHeight": 20,
+      "weight": 600
+    },
+    "body": {
+      "size": 14,
+      "lineHeight": 20,
+      "weight": 500
+    },
+    "compact": {
+      "size": 13,
+      "lineHeight": 20,
+      "weight": 500
+    },
+    "caption": {
+      "size": 12,
+      "lineHeight": 16,
+      "weight": 500
+    },
+    "button": {
+      "size": 13,
+      "lineHeight": 20,
+      "weight": 600
+    },
+    "digit": {
+      "size": 26,
+      "lineHeight": 32,
+      "weight": 600
+    }
   },
   "color": {
     "surface": "#000000",
@@ -270,17 +328,73 @@ MUST 区分：
     "mode": "opaque",
     "backdropBlur": 0,
     "rimWidth": 1,
-    "shadow": { "x": 0, "y": 8, "blur": 24, "spread": 0, "rgba": "rgba(0,0,0,0.40)" }
+    "shadow": {
+      "x": 0,
+      "y": 8,
+      "blur": 24,
+      "spread": 0,
+      "rgba": "rgba(0,0,0,0.40)"
+    }
   },
-  "icon": { "compactGlyph": 18, "compactBox": 24, "expandedArt": 40, "artRadius": 10, "controlGlyph": 18, "stroke": 1.75 },
-  "control": { "minPointerTarget": 32, "preferredTouchTarget": 44, "buttonMinHeight": 32, "buttonPaddingX": 12, "focusRingWidth": 2, "focusRingInset": 2 },
+  "icon": {
+    "compactGlyph": 18,
+    "compactBox": 24,
+    "expandedArt": 40,
+    "artRadius": 10,
+    "controlGlyph": 18,
+    "stroke": 1.75
+  },
+  "control": {
+    "minPointerTarget": 32,
+    "preferredTouchTarget": 44,
+    "buttonMinHeight": 32,
+    "buttonPaddingX": 12,
+    "focusRingWidth": 2,
+    "focusRingInset": 2
+  },
   "motion": {
-    "hover": { "duration": 120, "ease": "power1.out" },
-    "press": { "duration": 80, "ease": "power1.out" },
-    "expand": { "total": 450, "shellDuration": 450, "shellEase": "power3.out", "contentDelay": 50, "contentDuration": 200, "contentTranslateY": 4, "contentScaleFrom": 1 },
-    "collapse": { "total": 320, "contentDuration": 100, "shellDelay": 60, "shellDuration": 260, "shellEase": "power3.inOut" },
-    "replace": { "duration": 160, "ease": "power1.out" },
-    "reduced": { "duration": 0, "translate": 0, "scale": 1, "overshoot": 0 },
+    "hover": {
+      "duration": 120,
+      "ease": "power1.out"
+    },
+    "press": {
+      "duration": 80,
+      "ease": "power1.out"
+    },
+    "expand": {
+      "total": 565,
+      "shellDuration": 540,
+      "shellEase": "clinical-legacy-spring",
+      "contentDelay": 60,
+      "contentDuration": 180,
+      "contentTranslateY": 0,
+      "contentScaleFrom": 1,
+      "shellDelay": 25,
+      "contentTranslateX": 4,
+      "heightEase": "power3.out",
+      "spring": {
+        "dampingRatio": 0.84,
+        "angularFrequency": 13,
+        "maxWidthOvershootRatio": 0.01
+      }
+    },
+    "collapse": {
+      "total": 410,
+      "contentDuration": 55,
+      "shellDelay": 70,
+      "shellDuration": 340,
+      "shellEase": "power3.out"
+    },
+    "replace": {
+      "duration": 160,
+      "ease": "power1.out"
+    },
+    "reduced": {
+      "duration": 0,
+      "translate": 0,
+      "scale": 1,
+      "overshoot": 0
+    },
     "springExperiment": {
       "enabledByDefault": false,
       "model": "second-order-linear-analytic",
@@ -293,6 +407,13 @@ MUST 区分：
       "positionToleranceDip": 0.25,
       "speedToleranceDipPerSecond": 2,
       "settledConsecutiveSamples": 3
+    },
+    "handoff": {
+      "exitDuration": 55,
+      "finalPaintFrames": 2,
+      "occludedFinalizeTimeout": 100,
+      "watchdogTimeout": 1500,
+      "maxInFlight": 1
     }
   },
   "behavior": {
@@ -310,19 +431,30 @@ MUST 区分：
   "accessibility": {
     "normalTextMinContrast": 4.5,
     "uiComponentMinContrast": 3,
-    "testTextScaleFactors": [1, 2, 2.25],
+    "testTextScaleFactors": [
+      1,
+      2,
+      2.25
+    ],
     "respectReducedMotion": true,
     "respectForcedColors": true,
     "autoAnnounceEveryTick": false
   },
   "validation": {
-    "dpiPercentages": [100, 125, 150, 175, 200],
+    "dpiPercentages": [
+      100,
+      125,
+      150,
+      175,
+      200
+    ],
     "motionFrameBudget60Hz": 16.67,
     "motionFrameBudget120Hz": 8.33,
     "inputFeedbackP95": 100,
-    "nativeGeometryMutationsPerNormalTransitionMax": 2,
+    "nativeGeometryMutationsPerNormalTransitionMax": 0,
     "steadyIdlePollingHz": 0,
-    "performanceStatus": "proposedNotMeasured"
+    "performanceStatus": "requires-current-native-validation",
+    "nativeOutlinePolicy": "finite-motion-only-coalesced-previous-next-union"
   }
 }
 ```
@@ -554,23 +686,23 @@ MUST 在 hover、focus、菜单和用户操作期间暂停。恢复时保留剩�
 
 [WINDOWS-SPEC] GSAP 的 `elastic` 是时间归一化的 easing 函数，可用振幅和周期调整视觉响应，不是自动接收 SwiftUI 的 stiffness/damping/velocity 模型。[G1] `back`、三次贝塞尔和物理弹簧同样不是可互换参数格式。
 
-[PROPOSED] V1 默认外壳不回弹。贴顶窗口的回弹容易放大遮挡、边界抖动和命中差异，采用 GSAP `power3.out` 展开、`power3.inOut` 收起。保留参考稿的总节奏作为起点，不宣称 Apple 原样。
+[PROPOSED] 1.1 默认恢复此前选定的轻弹簧展开：宽度使用 `motion.expand.spring` 的归一化响应，允许有界小超调；高度与收回保持单调 `power3.out`。这不是物理速度连续模拟，更不是 Apple 内部参数。固定画布与原生轮廓交接另行验收，不能用曲线遮掩闪烁。
 
 Apple 对 widget/Live Activity 数据更新动画还存在系统管理的时长等限制，但这些 API 约束不是 Windows 450/320 ms 的来源。[A9]
 
-### 9.2 时间线
+### 9.2 时间线（恢复旧版流畅路径）
 
-| 动作 | 时间段 | 属性 | 规则 |
-| --- | --- | --- | --- |
-| 展开外壳 | 0–450 ms | 外壳几何/clip | 从当前宽高到最终布局测得宽高，顶锚点不动 |
-| 展开内容 | 50–250 ms | opacity 0→1，translateY 4→0 | 文字 scale 始终 1；在最终排版画布中淡入 |
-| 展开结束 | 450 ms | 提交稳定状态 | 最后一次校验 shape、焦点及布局 |
-| 收起内容 | 0–100 ms | opacity 1→0 | 立即停止展开区可操作性，但不要遗留焦点到隐藏元素 |
-| 收起外壳 | 60–320 ms | 外壳几何/clip | 内容消退与外壳收缩有重叠，不硬切 |
-| 同类内容替换 | 0–160 ms | 交叉淡化或单层淡出入 | 只对身份/布局变化，不能对每个计时 tick 触发 |
-| 减少动态效果 | 0 ms | 直接最终状态 | 保留逻辑、焦点、状态通知；取消位移、缩放和弹跳 |
+离开当前视图先保留旧视图并在 55ms 内退出；随后新内容按最终宽高排版，测量其固有高度后开始形变。隐私/权限变化必须立即剔除敏感 DOM，不能为退场保留旧患者内容。
 
-动画期间内部排版基于最终布局，不随着外壳每一帧变窄而反复换行。外壳作为遮罩显示内容，内容栅格保持稳定。不能给包含文字的整棵 DOM 做明显 `scaleX/scaleY` 拉伸来伪装几何变化。
+| 动作 | 本产品默认 | 约束 |
+| --- | --- | --- |
+| 展开外壳 | 几何阶段延后 25ms，持续 540ms | 宽度使用旧版 ζ=.84、ω=13 归一化响应；只允许一次小超调，高度 power3.out 单调 |
+| 收回外壳 | 几何阶段延后 70ms，持续 340ms | power3.out；leave 不重启整个退场；不恢复原生 HWND 收紧 |
+| 内容进入 | 几何阶段延后 60ms，180ms 淡入 | 水平位移最多 4 DIP；文字 scale=1，无 blur，无逐帧重排 |
+| 同类内容更新 | 160ms 淡化，几何不变不重做外壳动画 | 计时 tick 不启动入场；焦点和来源状态保持 |
+| 减少动态 | 0ms 视觉形变 | 最终原生轮廓和语义仍正确；原生交接延迟不算动画 |
+
+实际端到端时间还包括短暂退出、内容测量及有界原生交接。不能把“540ms 外壳曲线”说成所有设备在 540ms 内完成。内容在最终排版尺寸内呈现，外壳使用 SVG 几何裁切，文字不缩放。
 
 ### 9.3 动画可中断契约
 
@@ -588,9 +720,9 @@ MUST 将每次目标变更赋予递增 `transitionId`。新命令进入后：读
 - 禁止无意义的持续呼吸、循环缩放与全彩波形；真实录音/媒体指示也必须受减少动态效果及电量策略控制
 - 数据刷新保持平静：进度更新可平滑插值，数值文本不做滚动翻牌，错误和完成只有一次明确转变
 
-### 9.5 可选物理弹簧实验
+### 9.5 可选物理弹簧实验（不是 1.1 默认曲线）
 
-若未来需要弹性，必须记录质量、刚度、阻尼、初始速度、终止阈值或明确的物理模型，给出位移曲线与超调测试；不要只写“像 iOS”。理论二阶线性系统在单位阶跃、静止初值下，0<ζ<1 为欠阻尼，ζ=1 为临界阻尼，ζ>1 为过阻尼。理论模型说明不能证明 Apple 系统实际使用同一参数。
+若未来启用速度连续的物理积分实验，必须记录质量、刚度、阻尼、初始速度、终止阈值或明确的物理模型，给出位移曲线与超调测试；不要只写“像 iOS”。理论二阶线性系统在单位阶跃、静止初值下，0<ζ<1 为欠阻尼，ζ=1 为临界阻尼，ζ>1 为过阻尼。理论模型说明不能证明 Apple 系统实际使用同一参数。
 
 默认关闭的具体实验起点见 `motion.springExperiment`：取质量 m=1、阻尼比 ζ=0.74，选择 ω₀=2π/0.44≈14.28 rad/s，则 k=mω₀²≈203.92，c=2mζω₀≈21.13。这里把 0.44 当作本项目的周期约定，**不是证明 SwiftUI response 与 ω₀ 存在该恒等式**。以上近似值由 JSON 中公式推导，不能再复制为第二份权威配置。
 
@@ -601,7 +733,7 @@ x'' + 2ζω₀x' + ω₀²(x-target) = 0
 
 使用解析求解或经测试的积分器，不能把掉帧后的大 dt 直接喂给不稳定的显式 Euler。单一 owner 保存 position、velocity、target；中断时保留当前 position/velocity，仅更新 target。误差小于 0.25 DIP 且速度小于 2 DIP/s，连续 3 次样本后精确落到目标并停止 ticker。该终止规则不保证固定 450 ms，启用实验时不得继续把主时间线总长当弹簧沉降承诺。
 
-这条实验路径不得覆盖 reduced motion，并且不能让形状越过屏幕顶边或把 native envelope 逐帧拉大。必须事先验证全部中间态满足 `h>=e+r` 等几何条件并为真实超调留空间；不能先允许无效路径，再靠硬裁切掩盖。未通过几何或原生命中阶段门，就选择无超调默认路径。
+这条实验路径不得覆盖 reduced motion，并且不能让形状越过屏幕顶边或把 native envelope 逐帧拉大。必须事先验证全部中间态满足 `h>=e+r` 等几何条件并为真实超调留空间；不能先允许无效路径，再靠硬裁切掩盖。未通过阶段门则明确回退静态路径并报告；不得把静态加淡入冒称为连续原生形变。
 
 ## 10 Windows 与 Tauri 2 原生交互契约
 
@@ -616,15 +748,15 @@ x'' + 2ζω₀x' + ω₀²(x-target) = 0
 
 [VERIFY] Tauri 和 WebView2 的具体 API、权限与平台表现需按项目锁定版本核实。本规范是能力契约，不保证某个单一高层 API 就能完成精确透明区命中。[T1]
 
-### 10.2 稳定窗口包围框
+### 10.2 稳定窗口包围框与有界轮廓交接（1.1）
 
-[PROPOSED] 在一次形变期间使用稳定的、有边界的 native window envelope，容纳起点、目标、耳角和效果范围。正常过渡最多两次原生尺寸/位置变更：动画前准备必要包围框，动画后在需要时收缩。若现有包围框已经够用，则不必变更。
+同一显示器/DPI 下，idle、compact、expanded 共用从所有尺寸上界、实际小超调和物理抗锯齿余量推导的固定 canvas。正常打开/收回/悬停的 HWND move/resize 必须为 **0 次**；仅启动或显示器条件改变时允许重新定位。canvas 不是输入矩形，不使用全屏透明窗。
 
-MUST NOT 在 GSAP `onUpdate`、`requestAnimationFrame`、每次 pointer move 或每次数字变化中调用窗口 resize、重建窗口区域或往返 IPC 请求窗口大小。监听窗口变化可以触发布局更新，但 `onResized` → React measurement → `setSize` 不能形成无条件反馈回路；只提交确实改变且属于当前布局版本的结果。统计 move/resize 调用次数时，还必须单独记录 region 变更；不能以“不叫 resize”为理由规避逐帧禁止。
+MUST NOT 在动画帧、pointer move 或数据 tick 中 resize HWND。1.0 把 region 与 resize 一并逐帧禁止的条款在此精确修订：**允许仅在有限形变期间进行轮廓交接**，单个在途请求，同一帧合并到最新目标，携带 epoch、递增 sequence 和阶段。原生先安装前一已绘制轮廓与下一轮廓的并集，ACK 后绘制下一帧，最终绘制后收敛为精确轮廓。并集不是整个起终点大矩形，也不承诺过渡边缘绝对零延迟。
 
-阴影 `blur=24` 不表示可见影响恰好在 24 DIP 处归零。`effectInset` 只是候选包围预算，MUST 在白底和黑底检查硬切边；需要时增大有限边距，或减弱/禁用阴影，不能以错误的裁切换取更小窗口。
+空闲无 RAF/鼠标轮询/轮廓刷新。完成、取消、卸载、减少动态切换均释放 timeline、计时器和队列；晚到旧回复不允许绘制。必须分别报告 HWND 变更次数和有限 HRGN 更新次数，不能借“零 resize”隐去开销。双帧最终收敛有 100ms 遮挡兜底，整体有界超时 1500ms。
 
-这不是允许透明包围框拦截桌面：MUST 先通过第 3.4 节的原生命中契约。不能验证穿透时，应退回有明确可见边界的普通小窗或限制到真实可见矩形，不能以桌面大小的透明窗口“暂时解决”。
+外阴影本轮保持关闭，不扩大透明输入区域。透明角、旧详情区域和 canvas 余量必须真实点击到合成背景窗口。当前路径未通过原生实测时必须明确标记降级，不得只以 rAF≈60fps 代替绘制连续性。
 
 ### 10.3 输入形状的实现边界
 
@@ -633,7 +765,7 @@ MUST NOT 在 GSAP `onUpdate`、`requestAnimationFrame`、每次 pointer move 或
 - 鼠标落在 visualShape 内，必须到达本产品；落在壳外但 envelope 内，必须到达背后的正确窗口
 - 阴影、透明圆角、耳角外侧、未使用的展开包围框必须纳入真实跨应用测试
 - 若采用 `WM_NCHITTEST`、分层窗口或 region 路线，MUST 核实其线程/进程和合成条件，不照搬网络片段后宣称工作
-- 形变中需要精确 shape 时，原生层与视觉层必须消费同一过渡定义；不能通过每帧修改 HRGN 来替代架构设计
+- 形变中需要精确 shape 时，原生层与视觉层必须消费同一过渡定义；遵守 10.2 的有限、单在途、可取消轮廓交接；不得无条件全窗口重绘或保留无限 IPC 队列
 
 [WINDOWS-SPEC] `WM_NCHITTEST` 中 `HTTRANSPARENT` 的文档描述涉及同一线程的下层窗口，不构成任意跨进程应用鼠标穿透的保证。[W10] 不能把返回 -1 当成已完成本需求。
 
@@ -776,14 +908,14 @@ WCAG 2.2 的 AA 目标尺寸标准有 24 CSS px 的基线及间距等例外；�
 
 ## 13 性能与可观测性
 
-以下均为 `[PROPOSED][VERIFY]` 性能预算，**没有实测结果**。
+以下为 `[PROPOSED][VERIFY]` 性能预算；实测必须引用当前 evidence，不能从预算推断已通过。
 
 | 指标 | 目标 | 记录方法 |
 | --- | --- | --- |
 | 输入到首个可见反馈 P95 | ≤100 ms | 时间戳记录实际输入与首帧可见反馈 |
 | 60 Hz 动画帧预算 | 16.67 ms/帧 | 浏览器及系统性能工具，检查长帧分布 |
 | 120 Hz 动画帧预算 | 8.33 ms/帧 | 真实 120 Hz 显示器验证，不能从 60 Hz 推断 |
-| 正常过渡原生几何变更 | ≤2 次 | 记录窗口 move/resize/region 调用计数；region 改变不得逐帧 |
+| 正常过渡 HWND 几何变更 | 0 次 | 独立记录有限轮廓交接次数；idle 无轮廓更新 |
 | 无活动静默轮询 | 0 Hz | 无持续 RAF、间隔轮询和闪烁；保留必要事件订阅 |
 | 下载聚合发布 | 默认 250 ms 合并窗口 | 合并高频源更新；完成/失败立即传播，不等下一 tick |
 

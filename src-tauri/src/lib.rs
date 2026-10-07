@@ -24,7 +24,7 @@ fn connect_stream(app: AppHandle, state: tauri::State<'_, Arc<Transport>>) -> Re
         return Ok(());
     }
     let transport = state.inner().clone();
-    let url = std::env::var("ISLAND_DEMO_URL").unwrap_or_else(|_| "ws://127.0.0.1:17321/events".into());
+    let url = std::env::var("ISLAND_DEMO_URL").unwrap_or_else(|_| (if std::env::args().any(|a|a=="--legacy") { "ws://127.0.0.1:17321/events" } else { "ws://127.0.0.1:17322/events" }).into());
     // Prototype transport is deliberately loopback-only. Production requires a different authenticated adapter.
     let safe_url = url::Url::parse(&url).is_ok_and(|u| u.scheme() == "ws" && matches!(u.host_str(), Some("127.0.0.1") | Some("localhost")) && u.username().is_empty() && u.password().is_none());
     if !safe_url {
@@ -87,9 +87,14 @@ fn connect_stream(app: AppHandle, state: tauri::State<'_, Arc<Transport>>) -> Re
 }
 
 #[tauri::command]
-fn send_wire(payload: Value, state: tauri::State<'_, Arc<Transport>>) -> Result<(), String> {
+fn send_wire(window: tauri::WebviewWindow, payload: Value, state: tauri::State<'_, Arc<Transport>>) -> Result<(), String> {
     let kind = payload.get("type").and_then(Value::as_str).ok_or("Missing event type")?;
-    if !["ack", "demo", "configure", "reset", "view"].contains(&kind) { return Err("Unsupported event type".into()); }
+    let clinical = window.url().map_err(|e|e.to_string())?.path().ends_with("clinical.html");
+    if clinical {
+        let readonly = ["clinical:sync", "clinical:refresh", "clinical:open", "clinical:source-read", "clinical:personal", "clinical:preferences"];
+        let simulator = ["clinical:scenario", "clinical:configure", "clinical:reset", "clinical:view"];
+        if !readonly.contains(&kind) && !(window.label()=="studio" && simulator.contains(&kind)) { return Err("Clinical surface is read-only; simulator commands require the studio".into()); }
+    } else if !["ack", "demo", "configure", "reset", "view"].contains(&kind) { return Err("Unsupported event type".into()); }
     if !state.online.load(Ordering::SeqCst) { return Err("Message channel is offline".into()); }
     let encoded = serde_json::to_string(&payload).map_err(|e| e.to_string())?;
     if encoded.len() > 32768 { return Err("Payload exceeds prototype limit".into()); }
@@ -103,6 +108,12 @@ mod win32 {
     extern "system" { pub fn ShowWindow(hwnd: *mut std::ffi::c_void, cmd: i32) -> i32; }
 }
 mod notch_window;
+mod clinical_window;
+mod clinical_input;
+mod clinical_shadow;
+use clinical_shadow::clinical_background_luminance;
+use clinical_input::clinical_platform_status;
+use clinical_window::{clinical_layout, clinical_metrics, open_clinical_source, close_clinical_source};
 mod notch_geometry;
 mod hover_diagnostics;
 use hover_diagnostics::hover_diagnostics;
@@ -110,24 +121,34 @@ use notch_window::{island_metrics, resize_island_window, commit_island_geometry,
 #[tauri::command]
 fn position_island(app: AppHandle, top: f64) -> Result<(), String> {
     let _ = top;
-    notch_window::redock(&app.get_webview_window("island").ok_or("Island unavailable")?)
+    let w=app.get_webview_window("island").ok_or("Island unavailable")?;
+    if std::env::args().any(|a|a=="--legacy") { notch_window::redock(&w) } else { clinical_window::redock(&w) }
 }
 
 #[tauri::command]
-fn open_studio(app: AppHandle) -> Result<(), String> {
+async fn open_studio(app: AppHandle) -> Result<(), String> {
     if let Some(window) = app.get_webview_window("studio") {
         window.show().map_err(|e| e.to_string())?;
         window.set_focus().map_err(|e| e.to_string())?;
         return Ok(());
     }
-    tauri::WebviewWindowBuilder::new(&app, "studio", tauri::WebviewUrl::App("index.html".into()))
+    let mut builder = tauri::WebviewWindowBuilder::new(&app, "studio", tauri::WebviewUrl::App(if std::env::args().any(|a|a=="--legacy") { "index.html" } else { "clinical.html" }.into()))
         .title("同频 Island · 原型试验台 · 仅模拟数据").inner_size(1380.0, 980.0)
-        .min_inner_size(900.0, 700.0).center().build().map_err(|e| e.to_string())?;
+        .min_inner_size(900.0, 700.0).center();
+    // A shared WebView2 data directory requires identical browser arguments in every window.
+    // Read the existing config: normal launches have no debugging arguments.
+    if let Some(args) = app.config().app.windows.iter().find(|w|w.label=="island").and_then(|w|w.additional_browser_args.as_ref()) {
+        builder = builder.additional_browser_args(args);
+    }
+    builder.build().map_err(|e|e.to_string())?;
     Ok(())
 }
 
 pub fn run() {
     let mut context = tauri::generate_context!();
+    if std::env::args().any(|a|a=="--legacy") {
+        if let Some(w)=context.config_mut().app.windows.iter_mut().find(|w|w.label=="island") { w.url=tauri::WebviewUrl::App("index.html?view=island".into()); }
+    }
     // Explicit local QA opt-in; normal launches expose no debugging endpoint.
     if std::env::args().any(|a| a == "--qa-cdp") {
         if let Some(window) = context.config_mut().app.windows.iter_mut().find(|w| w.label == "island") {
@@ -135,9 +156,9 @@ pub fn run() {
         }
     }
     tauri::Builder::default()
-        .plugin(tauri_plugin_single_instance::init(|app, _, _| { let _ = open_studio(app.clone()); }))
+        .plugin(tauri_plugin_single_instance::init(|app, _, _| { let app=app.clone(); tauri::async_runtime::spawn(async move { let _=open_studio(app).await; }); }))
         .manage(Arc::new(Transport::default()))
-        .invoke_handler(tauri::generate_handler![update_island_region, cancel_island_transition, island_pointer_inside, hover_diagnostics, connect_stream, send_wire, island_metrics, resize_island_window, commit_island_geometry, position_island, open_studio])
+        .invoke_handler(tauri::generate_handler![clinical_background_luminance, clinical_platform_status, clinical_layout, clinical_metrics, open_clinical_source, close_clinical_source, update_island_region, cancel_island_transition, island_pointer_inside, hover_diagnostics, connect_stream, send_wire, island_metrics, resize_island_window, commit_island_geometry, position_island, open_studio])
         .setup(|app| {
             use tauri::menu::{Menu, MenuItem};
             use tauri::tray::TrayIconBuilder;
@@ -149,15 +170,16 @@ pub fn run() {
             let mut tray = TrayIconBuilder::with_id("samewave").tooltip("同频 Island · 模拟原型").menu(&menu);
             if let Some(icon) = app.default_window_icon() { tray = tray.icon(icon.clone()); }
             tray.on_menu_event(|app, event| match event.id.as_ref() {
-                "studio" => { let _ = open_studio(app.clone()); },
+                "studio" => { let app=app.clone(); tauri::async_runtime::spawn(async move { let _=open_studio(app).await; }); },
                 "inbox" | "compact" => {
                     #[cfg(target_os = "windows")]
                     if let Some(w) = app.get_webview_window("island") { if let Ok(h) = w.hwnd() { unsafe { win32::ShowWindow(h.0 as _, 4); } } }
                     let _ = app.emit("island://wire", json!({"type":"view", "mode":event.id.as_ref()})); },
-                "quit" => app.exit(0), _ => {}
+                "quit" => {clinical_input::stop();clinical_shadow::close();app.exit(0)}, _ => {}
             }).build(app)?;
             let _ = position_island(app.handle().clone(), 0.0);
-            if std::env::args().any(|a| a == "--studio") { let _ = open_studio(app.handle().clone()); }
+            if !std::env::args().any(|a|a=="--legacy"){clinical_input::start(app.handle().clone());}
+            if std::env::args().any(|a| a == "--studio") { let app=app.handle().clone(); tauri::async_runtime::spawn(async move { let _=open_studio(app).await; }); }
             Ok(())
         })
         .on_window_event(|window, event| {
@@ -165,7 +187,7 @@ pub fn run() {
                 if let tauri::WindowEvent::ScaleFactorChanged { .. } = event {
                     let _ = position_island(window.app_handle().clone(), 0.0);
                 }
-                if let tauri::WindowEvent::CloseRequested { api, .. } = event { api.prevent_close(); let _ = window.hide(); }
+                if let tauri::WindowEvent::CloseRequested { api, .. } = event { api.prevent_close(); clinical_shadow::hide(); let _ = window.hide(); }
             }
         })
         .run(context)

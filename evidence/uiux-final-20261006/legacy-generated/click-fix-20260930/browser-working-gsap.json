@@ -1,0 +1,128 @@
+{
+  "openEvents": [
+    {
+      "at": 1791301698254.7002,
+      "seq": 7,
+      "kind": "motion-start",
+      "hover": false,
+      "key": "inbox",
+      "fixedCompact": false,
+      "canvas": {
+        "width": 995,
+        "height": 60
+      },
+      "restCanvas": {
+        "width": 995,
+        "height": 60
+      },
+      "epoch": "1791301695621",
+      "phase": "preparing",
+      "mode": "compact",
+      "hovered": "true",
+      "bounds": {
+        "x": 470,
+        "y": 286.1875,
+        "width": 170,
+        "height": 37,
+        "top": 286.1875,
+        "right": 640,
+        "bottom": 323.1875,
+        "left": 470
+      }
+    }
+  ],
+  "closeEvents": [
+    {
+      "at": 1791301699078.3,
+      "seq": 8,
+      "kind": "motion-start",
+      "hover": false,
+      "key": "compact",
+      "fixedCompact": false,
+      "canvas": {
+        "width": 995,
+        "height": 60
+      },
+      "restCanvas": {
+        "width": 995,
+        "height": 60
+      },
+      "epoch": "1791301695622",
+      "phase": "preparing",
+      "mode": "inbox",
+      "hovered": "false",
+      "bounds": {
+        "x": 65,
+        "y": 286.1875,
+        "width": 980,
+        "height": 56,
+        "top": 286.1875,
+        "right": 1045,
+        "bottom": 342.1875,
+        "left": 65
+      }
+    },
+    {
+      "at": 1791301699080.6,
+      "seq": 9,
+      "kind": "hover-state",
+      "value": false,
+      "epoch": "1791301695622",
+      "phase": "exiting",
+      "mode": "inbox",
+      "hovered": "false",
+      "bounds": {
+        "x": 65,
+        "y": 286.1875,
+        "width": 980,
+        "height": 56,
+        "top": 286.1875,
+        "right": 1045,
+        "bottom": 342.1875,
+        "left": 65
+      }
+    },
+    {
+      "at": 1791301699184.9001,
+      "seq": 10,
+      "kind": "mouseleave",
+      "screen": [
+        1025,
+        411
+      ],
+      "epoch": "1791301695622",
+      "phase": "exiting",
+      "mode": "inbox",
+      "hovered": "false",
+      "bounds": {
+        "x": 161.25,
+        "y": 286.1875,
+        "width": 787.484375,
+        "height": 49.6875,
+        "top": 286.1875,
+        "right": 948.734375,
+        "bottom": 335.875,
+        "left": 161.25
+      }
+    },
+    {
+      "at": 1791301699267.6,
+      "seq": 11,
+      "kind": "leave-accepted",
+      "epoch": "1791301695622",
+      "phase": "exiting",
+      "mode": "inbox",
+      "hovered": "false",
+      "bounds": {
+        "x": 389.140625,
+        "y": 286.1875,
+        "width": 331.703125,
+        "height": 36.765625,
+        "top": 286.1875,
+        "right": 720.84375,
+        "bottom": 322.953125,
+        "left": 389.140625
+      }
+    }
+  ]
+}

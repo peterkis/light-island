@@ -1,0 +1,17 @@
+from pathlib import Path
+root=Path(__file__).resolve().parent.parent
+p=root/'src-tauri/src/lib.rs';s=p.read_text(encoding='utf8')
+s=s.replace('mod clinical_window;','mod clinical_window;\nmod clinical_input;\nuse clinical_input::clinical_platform_status;')
+s=s.replace('tauri::generate_handler![clinical_layout','tauri::generate_handler![clinical_platform_status, clinical_layout')
+s=s.replace('let _ = position_island(app.handle().clone(), 0.0);','let _ = position_island(app.handle().clone(), 0.0);\n            if !std::env::args().any(|a|a=="--legacy"){clinical_input::start(app.handle().clone());}')
+s=s.replace('"quit" => app.exit(0)','"quit" => {clinical_input::stop();app.exit(0)}')
+p.write_text(s,encoding='utf8')
+p=root/'src-tauri/src/clinical_window.rs';s=p.read_text(encoding='utf8')
+s=s.replace('polygons:Option<Vec<Vec<[f64;2]>>>)->Result<bool,String>','polygons:Option<Vec<Vec<[f64;2]>>>,expanded:Option<bool>)->Result<bool,String>')
+s=s.replace('let hwnd=window.hwnd().map_err(|e|e.to_string())?;\n  if !visible','let hwnd=window.hwnd().map_err(|e|e.to_string())?;\n  crate::clinical_input::set_surface(hwnd.0 as isize,visible&&expanded.unwrap_or(false));\n  if !visible')
+p.write_text(s,encoding='utf8')
+p=root/'src/clinical/useClinicalLayout.ts';s=p.read_text(encoding='utf8').replace('epoch,sequence:++order,phase,bodyWidth:',"epoch,sequence:++order,phase,expanded:requestedView==='expanded',bodyWidth:");p.write_text(s,encoding='utf8')
+p=root/'src/clinical/useSurfaceInput.ts';s=p.read_text(encoding='utf8').replace('expanded:boolean;hidden:boolean;reduced:boolean','expanded:boolean;hidden:boolean;reduced:boolean')
+s=s.replace("latest.current.expand();}).then(off=>", "latest.current.expand();}).then(off=>")
+p.write_text(s,encoding='utf8')
+print('Native outside pointer-up and explicit Ctrl+Alt+Space integrated')

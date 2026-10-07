@@ -1,1 +1,1 @@
-{"island-local":{"identifier":"island-local","description":"Local prototype windows only. No filesystem, shell, remote navigation or broad network plugin permissions.","local":true,"windows":["island","studio"],"permissions":["core:default"]}}
+{"island-local":{"identifier":"island-local","description":"Local prototype windows only. No filesystem, shell, remote navigation or broad network plugin permissions.","local":true,"windows":["island","studio","clinical-source"],"permissions":["core:default"]}}

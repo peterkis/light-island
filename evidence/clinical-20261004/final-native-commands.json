@@ -1,0 +1,30 @@
+[
+  {
+    "command": "node scripts/qa-clinical-boundaries.mjs",
+    "name": "boundaries",
+    "start": "2026-10-04T12:43:52.426608+08:00",
+    "end": "2026-10-04T12:43:56.294425+08:00",
+    "exit": 0
+  },
+  {
+    "command": "node scripts/qa-clinical-native.mjs",
+    "name": "interaction",
+    "start": "2026-10-04T12:43:56.294804+08:00",
+    "end": "2026-10-04T12:44:22.153307+08:00",
+    "exit": 0
+  },
+  {
+    "command": "python scripts/qa-clinical-windows.py",
+    "name": "windows",
+    "start": "2026-10-04T12:44:22.153876+08:00",
+    "end": "2026-10-04T12:44:30.897991+08:00",
+    "exit": 1
+  },
+  {
+    "name": "windows-corrected-fixture",
+    "command": "python scripts/qa-clinical-windows.py",
+    "start": "2026-10-04T12:46:22.589042+08:00",
+    "end": "2026-10-04T12:46:30.734157+08:00",
+    "exit": 1
+  }
+]

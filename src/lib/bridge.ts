@@ -4,7 +4,7 @@ export const native = Boolean(window.__TAURI_INTERNALS__);
 export const nativeIsland = native && new URLSearchParams(location.search).get('view') === 'island';
 export type Wire = { type: string; [key: string]: unknown };
 export type Connection = 'connecting' | 'online' | 'offline';
-const endpoint = import.meta.env.VITE_ISLAND_DEMO_URL || 'ws://127.0.0.1:17321/events';
+const endpoint = import.meta.env.VITE_ISLAND_DEMO_URL || (location.pathname.endsWith('clinical.html') ? 'ws://127.0.0.1:17322/events' : 'ws://127.0.0.1:17321/events');
 let connectionGeneration = 0;
 let sender: ((event: Wire) => Promise<boolean>) | undefined;
 export async function send(event: Wire): Promise<boolean> { return sender ? sender(event) : false; }

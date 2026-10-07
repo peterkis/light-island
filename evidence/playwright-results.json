@@ -65,6 +65,786 @@
   },
   "suites": [
     {
+      "title": "click-transition.spec.ts",
+      "file": "click-transition.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "gsap: click open and close do not restart the outgoing content",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3765,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T06:52:30.995Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e549834517b212c2a4fc-15c514ca6eb12a03b02b",
+          "file": "click-transition.spec.ts",
+          "line": 12,
+          "column": 36
+        },
+        {
+          "title": "css: click open and close do not restart the outgoing content",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3996,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T06:52:34.990Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e549834517b212c2a4fc-a17fbd36854228b61e01",
+          "file": "click-transition.spec.ts",
+          "line": 12,
+          "column": 36
+        },
+        {
+          "title": "closing under a stationary center pointer does not replay the content exit",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3942,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T06:52:39.026Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e549834517b212c2a4fc-b16a8183ebc9e6d5d10a",
+          "file": "click-transition.spec.ts",
+          "line": 25,
+          "column": 1
+        },
+        {
+          "title": "rapid open-close-open settles on the newest click and removes CSS measuring elements",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3930,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T06:52:43.002Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e549834517b212c2a4fc-d1e7f67ea27d661ec539",
+          "file": "click-transition.spec.ts",
+          "line": 34,
+          "column": 1
+        },
+        {
+          "title": "explicit close suppresses unread peek until a genuine new entry",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5786,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T06:52:46.962Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e549834517b212c2a4fc-297240616e20b51195f5",
+          "file": "click-transition.spec.ts",
+          "line": 45,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "clinical-accessibility.spec.ts",
+      "file": "clinical-accessibility.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "actual computed font at 1 scale preserves source actions",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3676,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T06:52:52.840Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e28326ccfd8817f652f4-18b35f5c85e3e3848310",
+          "file": "clinical-accessibility.spec.ts",
+          "line": 3,
+          "column": 31
+        },
+        {
+          "title": "actual computed font at 2 scale preserves source actions",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2794,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T06:52:56.555Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e28326ccfd8817f652f4-d7c026613e4eb0739dc6",
+          "file": "clinical-accessibility.spec.ts",
+          "line": 3,
+          "column": 31
+        },
+        {
+          "title": "actual computed font at 2.25 scale preserves source actions",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2905,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T06:52:59.370Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e28326ccfd8817f652f4-1cbb269e46558d505312",
+          "file": "clinical-accessibility.spec.ts",
+          "line": 3,
+          "column": 31
+        }
+      ]
+    },
+    {
+      "title": "clinical-experience.spec.ts",
+      "file": "clinical-experience.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "clinical hover stays compact; explicit details do not close when pointer leaves",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5081,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T06:53:02.313Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fcd25cd039499f026565-d9f4bbff232ed6fc3c42",
+          "file": "clinical-experience.spec.ts",
+          "line": 9,
+          "column": 1
+        },
+        {
+          "title": "all fourteen source scenarios expose six read-only states; no clinical acknowledgement CTA",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 13807,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T06:53:07.418Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fcd25cd039499f026565-b7e2fde7c505fd881bda",
+          "file": "clinical-experience.spec.ts",
+          "line": 10,
+          "column": 1
+        },
+        {
+          "title": "source route validates identity and version; opening is not clinical receipt",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8667,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T06:53:21.258Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fcd25cd039499f026565-00f507249cca4e2ba755",
+          "file": "clinical-experience.spec.ts",
+          "line": 11,
+          "column": 1
+        },
+        {
+          "title": "privacy and finance authorization remove sensitive details from the DOM",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2890,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T06:53:29.974Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fcd25cd039499f026565-8761a50c32e320396fdb",
+          "file": "clinical-experience.spec.ts",
+          "line": 12,
+          "column": 1
+        },
+        {
+          "title": "stale source, route failure, mismatch and withdrawal remain distinct",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5191,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T06:53:32.898Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fcd25cd039499f026565-7ed013a863080ea22131",
+          "file": "clinical-experience.spec.ts",
+          "line": 13,
+          "column": 1
+        },
+        {
+          "title": "new activity waits while a user is reading; timer deadline remains unchanged",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1563,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T06:53:38.116Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fcd25cd039499f026565-130295100a17e3da7b15",
+          "file": "clinical-experience.spec.ts",
+          "line": 14,
+          "column": 1
+        },
+        {
+          "title": "text scale 1: footer and source CTA remain reachable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3992,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T06:53:39.710Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fcd25cd039499f026565-ac8ea9c7c59104bdea9b",
+          "file": "clinical-experience.spec.ts",
+          "line": 15,
+          "column": 31
+        },
+        {
+          "title": "text scale 2: footer and source CTA remain reachable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3436,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T06:53:43.735Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fcd25cd039499f026565-aa1b649cdc5ef033226e",
+          "file": "clinical-experience.spec.ts",
+          "line": 15,
+          "column": 31
+        },
+        {
+          "title": "text scale 2.25: footer and source CTA remain reachable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3785,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T06:53:47.201Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fcd25cd039499f026565-a5faf8c8845a2254d886",
+          "file": "clinical-experience.spec.ts",
+          "line": 15,
+          "column": 31
+        },
+        {
+          "title": "rapid open/close, reduced motion and simulated lock leave no stale controls",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4006,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T06:53:51.022Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fcd25cd039499f026565-9fae4749254a14c39e0b",
+          "file": "clinical-experience.spec.ts",
+          "line": 16,
+          "column": 1
+        },
+        {
+          "title": "forced colors preserve control outlines; empty idle has no perpetual DOM updates",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2012,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T06:53:55.064Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fcd25cd039499f026565-da43e7f39439acfe688f",
+          "file": "clinical-experience.spec.ts",
+          "line": 17,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "clinical-motion.spec.ts",
+      "file": "clinical-motion.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "restored 160x34 U is the actual surface and stays still on hover",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1989,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T06:53:57.143Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c90474b715093b048d69-6d39158a3398ba1ec69e",
+          "file": "clinical-motion.spec.ts",
+          "line": 7,
+          "column": 1
+        },
+        {
+          "title": "visible expansion and collapse have intermediate sizes, fixed center and unscaled text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3094,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T06:53:59.165Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c90474b715093b048d69-7b8ecf80affcfb164b10",
+          "file": "clinical-motion.spec.ts",
+          "line": 12,
+          "column": 1
+        },
+        {
+          "title": "rapid reversal, privacy during exit, live reduced motion and idle cleanup",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4192,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T06:54:02.287Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c90474b715093b048d69-871a453e00ca6fbd1db0",
+          "file": "clinical-motion.spec.ts",
+          "line": 18,
+          "column": 1
+        }
+      ]
+    },
+    {
       "title": "experience.spec.ts",
       "file": "experience.spec.ts",
       "column": 0,
@@ -86,12 +866,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 2178,
+                  "duration": 1309,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-09-30T07:18:18.467Z",
+                  "startTime": "2026-10-04T06:54:06.508Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -120,12 +900,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 4992,
+                  "duration": 5670,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-09-30T07:18:21.090Z",
+                  "startTime": "2026-10-04T06:54:07.839Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -154,12 +934,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 8318,
+                  "duration": 8548,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-09-30T07:18:26.114Z",
+                  "startTime": "2026-10-04T06:54:13.543Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -188,12 +968,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 10957,
+                  "duration": 11237,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-09-30T07:18:34.464Z",
+                  "startTime": "2026-10-04T06:54:22.126Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -222,12 +1002,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 2301,
+                  "duration": 2025,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-09-30T07:18:45.467Z",
+                  "startTime": "2026-10-04T06:54:33.421Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -256,12 +1036,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 2847,
+                  "duration": 2547,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-09-30T07:18:47.814Z",
+                  "startTime": "2026-10-04T06:54:35.490Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -290,12 +1070,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 4464,
+                  "duration": 4526,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-09-30T07:18:50.714Z",
+                  "startTime": "2026-10-04T06:54:38.089Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -324,12 +1104,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 2950,
+                  "duration": 3392,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-09-30T07:18:55.230Z",
+                  "startTime": "2026-10-04T06:54:42.661Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -358,12 +1138,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 2133,
+                  "duration": 2445,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-09-30T07:18:58.218Z",
+                  "startTime": "2026-10-04T06:54:46.099Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -392,12 +1172,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 9092,
+                  "duration": 8702,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-09-30T07:19:00.375Z",
+                  "startTime": "2026-10-04T06:54:48.587Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -434,12 +1214,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 6451,
+                  "duration": 4141,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-09-30T07:19:09.585Z",
+                  "startTime": "2026-10-04T06:54:57.354Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -468,12 +1248,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 6673,
+                  "duration": 4195,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-09-30T07:19:16.170Z",
+                  "startTime": "2026-10-04T06:55:01.532Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -502,12 +1282,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 6560,
+                  "duration": 4657,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-09-30T07:19:22.941Z",
+                  "startTime": "2026-10-04T06:55:05.761Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -536,12 +1316,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 5573,
+                  "duration": 3564,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-09-30T07:19:29.622Z",
+                  "startTime": "2026-10-04T06:55:10.448Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -552,6 +1332,286 @@
           "id": "f14eeca23ccd8c4e2eb0-bcd9694b7dd1e4f03914",
           "file": "horizontal.spec.ts",
           "line": 44,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "hover-regression.spec.ts",
+      "file": "hover-regression.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "gsap: center/edge stationary hover and rapid reversals keep one target",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8925,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T06:55:14.062Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3473dbf71ed4502bcb43-5871628b0aeab6b337a0",
+          "file": "hover-regression.spec.ts",
+          "line": 9,
+          "column": 37
+        },
+        {
+          "title": "css: center/edge stationary hover and rapid reversals keep one target",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8840,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T06:55:23.011Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3473dbf71ed4502bcb43-2d67bafb7671bcb4690c",
+          "file": "hover-regression.spec.ts",
+          "line": 9,
+          "column": 37
+        },
+        {
+          "title": "stable painted surface remains a hover target through inert and child replacement",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4538,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T06:55:31.871Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3473dbf71ed4502bcb43-e57fca45f5b3570544aa",
+          "file": "hover-regression.spec.ts",
+          "line": 28,
+          "column": 1
+        },
+        {
+          "title": "gsap: reduced hover changes business hover but no epoch or empty animation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8970,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T06:55:36.435Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3473dbf71ed4502bcb43-030ae6b123ec4e21196f",
+          "file": "hover-regression.spec.ts",
+          "line": 41,
+          "column": 37
+        },
+        {
+          "title": "css: reduced hover changes business hover but no epoch or empty animation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8949,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T06:55:45.437Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3473dbf71ed4502bcb43-65cfe49d182cc8ffea01",
+          "file": "hover-regression.spec.ts",
+          "line": 41,
+          "column": 37
+        },
+        {
+          "title": "ordinary auto-collapse pauses on hover and resumes after a real departure",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 16436,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T06:55:54.418Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3473dbf71ed4502bcb43-49e90fcba39ce9078e26",
+          "file": "hover-regression.spec.ts",
+          "line": 51,
+          "column": 1
+        },
+        {
+          "title": "StrictMode timers: quick leave cancels peek, mode changes cancel peek, unmount cancels both timers",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2712,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T06:56:10.883Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3473dbf71ed4502bcb43-687f05f4db254cc4cb50",
+          "file": "hover-regression.spec.ts",
+          "line": 57,
+          "column": 1
+        },
+        {
+          "title": "compact close cancels its pending 120ms preview without acknowledging a critical event",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2944,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T06:56:13.618Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3473dbf71ed4502bcb43-72600dcea4ac3b29adfa",
+          "file": "hover-regression.spec.ts",
+          "line": 85,
           "column": 1
         }
       ]
@@ -578,12 +1638,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 4200,
+                  "duration": 2735,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-09-30T07:19:35.360Z",
+                  "startTime": "2026-10-04T06:56:16.611Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -612,12 +1672,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 4125,
+                  "duration": 2738,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-09-30T07:19:39.644Z",
+                  "startTime": "2026-10-04T06:56:19.377Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -646,12 +1706,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 3660,
+                  "duration": 3422,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-09-30T07:19:43.851Z",
+                  "startTime": "2026-10-04T06:56:22.153Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -680,12 +1740,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 2131,
+                  "duration": 2357,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-09-30T07:19:47.533Z",
+                  "startTime": "2026-10-04T06:56:25.612Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -714,12 +1774,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 5070,
+                  "duration": 4886,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-09-30T07:19:49.688Z",
+                  "startTime": "2026-10-04T06:56:27.997Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -748,12 +1808,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 4120,
+                  "duration": 3940,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-09-30T07:19:54.773Z",
+                  "startTime": "2026-10-04T06:56:32.908Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -782,12 +1842,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 4217,
+                  "duration": 4407,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-09-30T07:19:58.912Z",
+                  "startTime": "2026-10-04T06:56:36.875Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -816,12 +1876,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 4229,
+                  "duration": 4838,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-09-30T07:20:03.147Z",
+                  "startTime": "2026-10-04T06:56:41.318Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -839,9 +1899,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-09-30T07:18:15.787Z",
-    "duration": 112775.47600000001,
-    "expected": 22,
+    "startTime": "2026-10-04T06:52:30.345Z",
+    "duration": 257942.614,
+    "expected": 52,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0

@@ -1,0 +1,1396 @@
+[
+  {
+    "id": "S02",
+    "name": "病危医嘱",
+    "source": "HIS",
+    "scope": "clinician",
+    "guard": "医嘱事实以源系统为准；此处不接收、不执行、不撤销医嘱。",
+    "actionLabel": "打开医嘱单",
+    "figmaNode": "3:270",
+    "extension": false,
+    "stages": [
+      {
+        "label": "新增",
+        "title": "病危医嘱有新增",
+        "body": "源系统发布一项新医嘱。请在原医嘱单核对。",
+        "sourceState": "源系统：已发布",
+        "tone": "warning",
+        "fields": [
+          {
+            "label": "变更类型",
+            "value": "新增"
+          },
+          {
+            "label": "执行状态",
+            "value": "来源未提供"
+          }
+        ]
+      },
+      {
+        "label": "内容变更",
+        "title": "病危医嘱内容已变更",
+        "body": "此快览只显示来源给出的变更摘要，不生成护理或处置建议。",
+        "sourceState": "源系统：已变更",
+        "tone": "warning",
+        "fields": [
+          {
+            "label": "变更类型",
+            "value": "源摘要已更新"
+          },
+          {
+            "label": "来源操作者",
+            "value": "医师 A（模拟）"
+          }
+        ]
+      },
+      {
+        "label": "待核对",
+        "title": "医嘱仍待源系统核对",
+        "body": "打开医嘱单不会在本组件形成临床接收回执。",
+        "sourceState": "源系统：接收状态未知",
+        "tone": "info",
+        "fields": [
+          {
+            "label": "接收状态",
+            "value": "来源未提供"
+          }
+        ]
+      },
+      {
+        "label": "源已查看",
+        "title": "来源显示已查看",
+        "body": "这是来源的只读镜像；本地打开与该状态没有自动映射。",
+        "sourceState": "源系统：已查看",
+        "tone": "neutral",
+        "fields": [
+          {
+            "label": "来源状态",
+            "value": "已查看，不代表执行完成"
+          }
+        ]
+      },
+      {
+        "label": "撤回",
+        "title": "原医嘱已撤回",
+        "body": "新的来源版本撤回了该医嘱。旧版本不会覆盖这一状态。",
+        "sourceState": "源系统：已撤回",
+        "tone": "neutral",
+        "fields": [
+          {
+            "label": "变更类型",
+            "value": "撤回"
+          },
+          {
+            "label": "执行状态",
+            "value": "以当前源医嘱为准"
+          }
+        ],
+        "withdrawn": true,
+        "actionLabel": "查看当前医嘱"
+      },
+      {
+        "label": "跳转失败",
+        "title": "医嘱入口暂不可用",
+        "body": "可重试打开；本地未将该医嘱标记为已收到或已执行。",
+        "sourceState": "源系统：状态待核实",
+        "tone": "warning",
+        "fields": [],
+        "routeFault": "failed"
+      }
+    ]
+  },
+  {
+    "id": "S03",
+    "name": "危急值",
+    "source": "LIS",
+    "scope": "clinician",
+    "guard": "辅助快览；接收、复核、升级与处置在原危急值流程完成。",
+    "actionLabel": "打开危急值流程",
+    "figmaNode": "3:538",
+    "extension": false,
+    "stages": [
+      {
+        "label": "新动态",
+        "title": "检验危急值已发布",
+        "body": "血清钾 · 来源标记危急。请进入原危急值流程核对。",
+        "sourceState": "源系统：待接收",
+        "tone": "error",
+        "fields": [
+          {
+            "label": "项目",
+            "value": "血清钾"
+          },
+          {
+            "label": "分级依据",
+            "value": "来源标记危急"
+          },
+          {
+            "label": "当前责任人",
+            "value": "来源未提供"
+          }
+        ],
+        "important": true
+      },
+      {
+        "label": "摘要",
+        "title": "危急值动态待核对",
+        "body": "此处不设“确认收到”按钮，不判断阈值，也不替代电话或原系统通知。",
+        "sourceState": "源系统：待接收",
+        "tone": "error",
+        "fields": [
+          {
+            "label": "接收岗位",
+            "value": "当班岗位（源分派）"
+          },
+          {
+            "label": "处置状态",
+            "value": "来源未提供"
+          }
+        ],
+        "important": true
+      },
+      {
+        "label": "入口就绪",
+        "title": "原流程入口已关联",
+        "body": "将按当前院区、就诊与检验对象打开来源边界。",
+        "sourceState": "源系统：待接收",
+        "tone": "error",
+        "fields": [
+          {
+            "label": "业务对象",
+            "value": "DEMO-LAB-006"
+          },
+          {
+            "label": "入口校验",
+            "value": "精确对象与版本"
+          }
+        ],
+        "important": true
+      },
+      {
+        "label": "源已接收",
+        "title": "来源显示已接收",
+        "body": "原系统已回传接收状态。这里只做镜像，不代表处置结束。",
+        "sourceState": "源系统：已接收",
+        "tone": "warning",
+        "fields": [
+          {
+            "label": "源接收人",
+            "value": "岗位 A（模拟）"
+          },
+          {
+            "label": "处置状态",
+            "value": "来源：进行中"
+          }
+        ]
+      },
+      {
+        "label": "源已闭环",
+        "title": "来源显示流程已闭环",
+        "body": "闭环状态来自原危急值流程，不由本地打开或计时推导。",
+        "sourceState": "源系统：已闭环",
+        "tone": "success",
+        "fields": [
+          {
+            "label": "闭环依据",
+            "value": "源流程状态更新"
+          }
+        ]
+      },
+      {
+        "label": "同步过期",
+        "title": "当前源状态尚未核实",
+        "body": "上次记录保留参考，但不能视为当前接收或闭环状态。",
+        "sourceState": "上次记录：已接收（非当前）",
+        "tone": "warning",
+        "fields": [
+          {
+            "label": "同步状态",
+            "value": "等待重新读取来源"
+          }
+        ],
+        "stale": true,
+        "unknownTime": true
+      }
+    ]
+  },
+  {
+    "id": "S04",
+    "name": "关注报告",
+    "source": "PACS / LIS",
+    "scope": "clinician",
+    "guard": "个人关注不转移业务责任；本地打开不代表已临床确认。",
+    "actionLabel": "查看源报告",
+    "figmaNode": "3:806",
+    "extension": false,
+    "stages": [
+      {
+        "label": "等待",
+        "title": "关注的报告仍在等待",
+        "body": "有新进展时显示轻量提示，不重复打断当前工作。",
+        "sourceState": "源系统：等待报告",
+        "tone": "info",
+        "fields": [
+          {
+            "label": "报告状态",
+            "value": "待发布"
+          }
+        ]
+      },
+      {
+        "label": "部分回报",
+        "title": "已有 3 / 5 项结果回报",
+        "body": "总数由来源明确提供；另 2 项待回报。",
+        "sourceState": "源系统：部分回报",
+        "tone": "info",
+        "fields": [
+          {
+            "label": "已回报",
+            "value": "3 项"
+          },
+          {
+            "label": "待回报",
+            "value": "2 项"
+          }
+        ],
+        "actionLabel": "查看已回报项目"
+      },
+      {
+        "label": "影像先到",
+        "title": "影像已可查看",
+        "body": "影像已归档，报告尚未发布。两者不是同一状态。",
+        "sourceState": "源系统：影像可用，报告待出",
+        "tone": "info",
+        "fields": [
+          {
+            "label": "影像",
+            "value": "来源：可查看"
+          },
+          {
+            "label": "报告",
+            "value": "来源：未发布"
+          }
+        ],
+        "actionLabel": "查看影像"
+      },
+      {
+        "label": "正式报告",
+        "title": "正式报告已发布",
+        "body": "当前来源版本可查看；不在此解释报告结论。",
+        "sourceState": "源系统：正式报告",
+        "tone": "success",
+        "fields": [
+          {
+            "label": "报告类型",
+            "value": "正式"
+          },
+          {
+            "label": "项目",
+            "value": "胸部影像（模拟）"
+          }
+        ]
+      },
+      {
+        "label": "更正动态",
+        "title": "关注的报告有新版本",
+        "body": "新版本需要单独打开，旧版本的本地查看记录不会继承。",
+        "sourceState": "源系统：版本更新",
+        "tone": "warning",
+        "fields": [
+          {
+            "label": "报告类型",
+            "value": "更正版本"
+          }
+        ]
+      },
+      {
+        "label": "个人记录",
+        "title": "报告保持可查看",
+        "body": "下方个人关注开关只影响自己的展示。源系统状态不随本地打开改变。",
+        "sourceState": "源系统：正式报告",
+        "tone": "neutral",
+        "fields": [
+          {
+            "label": "临床确认",
+            "value": "来源未提供"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "S05",
+    "name": "费用协同",
+    "source": "费用中心",
+    "scope": "finance",
+    "guard": "仅授权费用协同岗位可见；费用提醒不阻断临床工作，不代表催缴或到账。",
+    "actionLabel": "打开费用中心",
+    "figmaNode": "3:1074",
+    "extension": false,
+    "stages": [
+      {
+        "label": "低余额",
+        "title": "费用协同有一项动态",
+        "body": "核对预交金与待入账记录；信息仅供授权行政协同。",
+        "sourceState": "来源：待核对",
+        "tone": "info",
+        "fields": [
+          {
+            "label": "预交金余额",
+            "value": "¥320"
+          },
+          {
+            "label": "待核对入账",
+            "value": "¥1,000"
+          }
+        ]
+      },
+      {
+        "label": "详情",
+        "title": "预交金记录待核实",
+        "body": "余额与待入账记录来自不同环节，不据此判断患者付款状态。",
+        "sourceState": "来源：核对中",
+        "tone": "info",
+        "fields": [
+          {
+            "label": "预交金余额",
+            "value": "¥320"
+          },
+          {
+            "label": "待核对入账",
+            "value": "¥1,000"
+          }
+        ]
+      },
+      {
+        "label": "核对中",
+        "title": "待核对记录尚未更新",
+        "body": "没有来源到账记录时，不显示“已缴费”。",
+        "sourceState": "来源：待核对",
+        "tone": "neutral",
+        "fields": [
+          {
+            "label": "到账记录",
+            "value": "来源未确认"
+          }
+        ]
+      },
+      {
+        "label": "源入口",
+        "title": "费用中心可继续核对",
+        "body": "打开费用中心仅作为行政业务入口。",
+        "sourceState": "来源：待核对",
+        "tone": "info",
+        "fields": [
+          {
+            "label": "协同岗位",
+            "value": "费用管理员（模拟）"
+          }
+        ]
+      },
+      {
+        "label": "源已对账",
+        "title": "来源显示已对账",
+        "body": "“已对账”不等于已缴费；请以来源具体明细为准。",
+        "sourceState": "来源：已对账",
+        "tone": "success",
+        "fields": [
+          {
+            "label": "对账",
+            "value": "来源：已完成"
+          },
+          {
+            "label": "缴费",
+            "value": "来源未提供"
+          }
+        ]
+      },
+      {
+        "label": "取消关注",
+        "title": "此费用记录仍可在来源查询",
+        "body": "可取消个人关注，不撤销任何费用流程或岗位任务。",
+        "sourceState": "来源：已对账",
+        "tone": "neutral",
+        "fields": [
+          {
+            "label": "个人操作",
+            "value": "仅取消本人的展示关注"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "S06",
+    "name": "交班未结项",
+    "source": "护理交班",
+    "scope": "clinician",
+    "guard": "交接不等于事项办结；不支持在灵动岛“一键全部接收”。",
+    "actionLabel": "打开交班单",
+    "figmaNode": "6:2",
+    "extension": false,
+    "stages": [
+      {
+        "label": "未结摘要",
+        "title": "本次交班有 3 项未结",
+        "body": "先查看来源中的交班对象，再按原流程交接。",
+        "sourceState": "源系统：待交接",
+        "tone": "warning",
+        "fields": [
+          {
+            "label": "未结 1",
+            "value": "报告待回报"
+          },
+          {
+            "label": "未结 2",
+            "value": "检查资料待补齐"
+          },
+          {
+            "label": "未结 3",
+            "value": "源护理记录待核对"
+          }
+        ]
+      },
+      {
+        "label": "任务快览",
+        "title": "交班事项快览",
+        "body": "最多展示三项关键事项，全部内容以原交班单为准。",
+        "sourceState": "源系统：待交接",
+        "tone": "info",
+        "fields": [
+          {
+            "label": "未结事项",
+            "value": "3 项（来源统计）"
+          }
+        ]
+      },
+      {
+        "label": "来源入口",
+        "title": "交班单可打开",
+        "body": "保持当前交班对象与版本，不根据下班时间自动转移责任。",
+        "sourceState": "源系统：待交接",
+        "tone": "info",
+        "fields": [
+          {
+            "label": "原交班对象",
+            "value": "DEMO-HANDOFF-01"
+          }
+        ]
+      },
+      {
+        "label": "待接收",
+        "title": "来源显示等待接收",
+        "body": "这里不代替当班人员完成交接确认。",
+        "sourceState": "源系统：等待接收",
+        "tone": "warning",
+        "fields": [
+          {
+            "label": "接收岗",
+            "value": "由原流程分派"
+          }
+        ]
+      },
+      {
+        "label": "源已交接",
+        "title": "来源显示已交接",
+        "body": "交接记录更新，不自动关闭其关联事项。",
+        "sourceState": "源系统：已交接",
+        "tone": "success",
+        "fields": [
+          {
+            "label": "交接状态",
+            "value": "已交接"
+          },
+          {
+            "label": "关联事项",
+            "value": "2 项仍未结"
+          }
+        ]
+      },
+      {
+        "label": "仍未结",
+        "title": "已交接，仍有 2 项未结",
+        "body": "关注剩余事项的来源进展，不把“交接完成”显示为“任务全结”。",
+        "sourceState": "源系统：已交接 / 2 项未结",
+        "tone": "warning",
+        "fields": [
+          {
+            "label": "事项 1",
+            "value": "报告仍待回报"
+          },
+          {
+            "label": "事项 2",
+            "value": "资料待核对"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "S07",
+    "name": "出院后回报",
+    "source": "随访中心",
+    "scope": "clinician",
+    "guard": "关联原始就诊；不自动联系患者、不附着到新一次入院。",
+    "actionLabel": "打开随访中心",
+    "figmaNode": "6:270",
+    "extension": false,
+    "stages": [
+      {
+        "label": "原就诊等待",
+        "title": "出院后仍有结果待回报",
+        "body": "持续关联原就诊 DEMO-VISIT-OLD，而非姓名匹配。",
+        "sourceState": "来源：待回报",
+        "tone": "info",
+        "fields": [
+          {
+            "label": "关联就诊",
+            "value": "DEMO-VISIT-OLD"
+          }
+        ]
+      },
+      {
+        "label": "报告到达",
+        "title": "原就诊的新报告已到达",
+        "body": "来源负责分派随访责任，这里不推定责任人。",
+        "sourceState": "来源：报告已发布",
+        "tone": "warning",
+        "fields": [
+          {
+            "label": "来源责任人",
+            "value": "来源未提供"
+          }
+        ]
+      },
+      {
+        "label": "源已分派",
+        "title": "来源已提供随访归属",
+        "body": "仅镜像来源分派；个人关注不替代该归属。",
+        "sourceState": "来源：已分派",
+        "tone": "info",
+        "fields": [
+          {
+            "label": "来源责任岗",
+            "value": "随访岗 A（模拟）"
+          }
+        ]
+      },
+      {
+        "label": "入口就绪",
+        "title": "随访中心可打开",
+        "body": "按原始就诊与报告对象进入随访来源边界。",
+        "sourceState": "来源：待随访",
+        "tone": "info",
+        "fields": [
+          {
+            "label": "关联就诊",
+            "value": "DEMO-VISIT-OLD"
+          }
+        ]
+      },
+      {
+        "label": "源处理中",
+        "title": "来源显示随访处理中",
+        "body": "本地打开不能产生“已联系患者”的结论。",
+        "sourceState": "来源：处理中",
+        "tone": "info",
+        "fields": [
+          {
+            "label": "患者联系状态",
+            "value": "以源随访记录为准"
+          }
+        ]
+      },
+      {
+        "label": "源已闭环",
+        "title": "来源显示随访已闭环",
+        "body": "闭环依据为来源事件，不是岛内查看次数。",
+        "sourceState": "来源：已闭环",
+        "tone": "success",
+        "fields": [
+          {
+            "label": "依据",
+            "value": "来源随访状态更新"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "S08",
+    "name": "报告更正 / 撤回",
+    "source": "报告中心",
+    "scope": "clinician",
+    "guard": "版本按源对象追踪；旧报告已打开不代表新版已核对。",
+    "actionLabel": "打开新版报告",
+    "figmaNode": "6:538",
+    "extension": false,
+    "stages": [
+      {
+        "label": "初版",
+        "title": "报告 v1 已发布",
+        "body": "此版本的本地打开记录不适用于后续更正。",
+        "sourceState": "来源：正式报告 v1",
+        "tone": "info",
+        "fields": [
+          {
+            "label": "版本",
+            "value": "v1"
+          }
+        ]
+      },
+      {
+        "label": "新版到达",
+        "title": "报告有更正版本",
+        "body": "来源发布 v2，优先显示新的事实与版本入口。",
+        "sourceState": "来源：已更正",
+        "tone": "warning",
+        "fields": [
+          {
+            "label": "版本变化",
+            "value": "v1 → v2"
+          }
+        ]
+      },
+      {
+        "label": "更正摘要",
+        "title": "来源更正摘要已更新",
+        "body": "只展示来源提供的修改摘要，不自行判断临床影响。",
+        "sourceState": "来源：已更正",
+        "tone": "warning",
+        "fields": [
+          {
+            "label": "更正摘要",
+            "value": "报告内容有修订（来源示例）"
+          }
+        ]
+      },
+      {
+        "label": "新版本入口",
+        "title": "请在来源查看新版",
+        "body": "入口绑定当前版本，不会静默打开原版本。",
+        "sourceState": "来源：新版可查看",
+        "tone": "info",
+        "fields": [
+          {
+            "label": "入口策略",
+            "value": "严格匹配当前版本"
+          }
+        ]
+      },
+      {
+        "label": "待源复核",
+        "title": "来源复核状态待更新",
+        "body": "本地已经打开也不改变来源复核状态。",
+        "sourceState": "来源：复核状态未知",
+        "tone": "warning",
+        "fields": [
+          {
+            "label": "复核记录",
+            "value": "来源未提供"
+          }
+        ]
+      },
+      {
+        "label": "撤回无替代",
+        "title": "原报告已撤回",
+        "body": "来源未提供替代版本，不把历史报告当成当前有效报告。",
+        "sourceState": "来源：已撤回 / 无替代版本",
+        "tone": "neutral",
+        "fields": [
+          {
+            "label": "替代版本",
+            "value": "来源未提供"
+          }
+        ],
+        "withdrawn": true,
+        "actionLabel": "查看版本记录"
+      }
+    ]
+  },
+  {
+    "id": "S09",
+    "name": "标本退回 / 补采",
+    "source": "LIS 标本任务",
+    "scope": "clinician",
+    "guard": "标本接收、采集与结果各自独立；不在岛内下达补采指令。",
+    "actionLabel": "打开检验任务",
+    "figmaNode": "6:806",
+    "extension": false,
+    "stages": [
+      {
+        "label": "处理中",
+        "title": "标本任务正在处理",
+        "body": "仅呈现来源任务进展，不生成预计出报告时间。",
+        "sourceState": "来源：处理中",
+        "tone": "info",
+        "fields": [
+          {
+            "label": "标本对象",
+            "value": "DEMO-SPECIMEN-OLD"
+          }
+        ]
+      },
+      {
+        "label": "已退回",
+        "title": "来源退回了一份标本",
+        "body": "退回事实来自 LIS，相关岗位按原流程核对。",
+        "sourceState": "来源：已退回",
+        "tone": "warning",
+        "fields": [
+          {
+            "label": "旧标本",
+            "value": "DEMO-SPECIMEN-OLD"
+          }
+        ]
+      },
+      {
+        "label": "原因快览",
+        "title": "退回原因可查看",
+        "body": "容器不符合要求（来源记录）。这里不提供补采医嘱。",
+        "sourceState": "来源：已退回",
+        "tone": "warning",
+        "fields": [
+          {
+            "label": "来源退回原因",
+            "value": "容器不符合要求"
+          }
+        ]
+      },
+      {
+        "label": "任务入口",
+        "title": "原检验任务可打开",
+        "body": "保留原任务与退回标本关联，避免重复创建补采。",
+        "sourceState": "来源：待原流程跟进",
+        "tone": "info",
+        "fields": [
+          {
+            "label": "新采集状态",
+            "value": "来源未提供"
+          }
+        ]
+      },
+      {
+        "label": "新标本接收",
+        "title": "来源已接收新标本",
+        "body": "新标本有独立标识，并保留对旧标本的来源关联。",
+        "sourceState": "来源：新标本已接收",
+        "tone": "info",
+        "fields": [
+          {
+            "label": "旧标本",
+            "value": "DEMO-SPECIMEN-OLD"
+          },
+          {
+            "label": "新标本",
+            "value": "DEMO-SPECIMEN-NEW"
+          }
+        ]
+      },
+      {
+        "label": "新报告",
+        "title": "新标本报告已发布",
+        "body": "以新标本关联的报告为准，旧退回记录仍保留。",
+        "sourceState": "来源：报告已发布",
+        "tone": "success",
+        "fields": [
+          {
+            "label": "报告关联",
+            "value": "DEMO-SPECIMEN-NEW"
+          }
+        ],
+        "actionLabel": "查看源报告"
+      }
+    ]
+  },
+  {
+    "id": "S10",
+    "name": "血品准备与取送",
+    "source": "血库 / 转运",
+    "scope": "logistics",
+    "guard": "取送状态不代表输注许可；不提供用血或输注决策。",
+    "actionLabel": "打开用血申请",
+    "figmaNode": null,
+    "extension": true,
+    "stages": [
+      {
+        "label": "准备中",
+        "title": "血库准备状态有更新",
+        "body": "血库准备与取送分别读取，不合并成一个推测进度。",
+        "sourceState": "来源：准备中",
+        "tone": "info",
+        "fields": [
+          {
+            "label": "血库准备",
+            "value": "准备中"
+          },
+          {
+            "label": "取送",
+            "value": "未提供"
+          }
+        ]
+      },
+      {
+        "label": "可领取",
+        "title": "来源显示血品可领取",
+        "body": "可领取不等于取送已分派或已出发。",
+        "sourceState": "来源：可领取",
+        "tone": "info",
+        "fields": [
+          {
+            "label": "血库准备",
+            "value": "可领取"
+          },
+          {
+            "label": "取送",
+            "value": "待分派"
+          }
+        ]
+      },
+      {
+        "label": "已领取",
+        "title": "来源显示已领取",
+        "body": "领取记录不等于病区签收。",
+        "sourceState": "来源：已领取",
+        "tone": "info",
+        "fields": [
+          {
+            "label": "血库准备",
+            "value": "已发出"
+          },
+          {
+            "label": "取送",
+            "value": "运送中"
+          }
+        ]
+      },
+      {
+        "label": "源已签收",
+        "title": "来源显示病区已签收",
+        "body": "本组件不推断任何输注状态。",
+        "sourceState": "来源：已签收",
+        "tone": "success",
+        "fields": [
+          {
+            "label": "取送",
+            "value": "来源：已签收"
+          },
+          {
+            "label": "输注状态",
+            "value": "不在本组件范围"
+          }
+        ]
+      },
+      {
+        "label": "准备更新",
+        "title": "血库准备记录已更新",
+        "body": "下次更新时间来自来源，不将其当成承诺就绪时间。",
+        "sourceState": "来源：准备中",
+        "tone": "neutral",
+        "fields": [
+          {
+            "label": "下次来源更新",
+            "value": "来源未提供"
+          }
+        ]
+      },
+      {
+        "label": "取送未知",
+        "title": "取送状态尚未核实",
+        "body": "血库记录与取送记录的刷新时间分别显示。",
+        "sourceState": "来源：取送未知",
+        "tone": "warning",
+        "fields": [
+          {
+            "label": "血库准备",
+            "value": "可领取"
+          },
+          {
+            "label": "取送",
+            "value": "来源未提供"
+          }
+        ],
+        "unknownFieldTime": true
+      }
+    ]
+  },
+  {
+    "id": "S11",
+    "name": "药房准备与交付",
+    "source": "药房",
+    "scope": "logistics",
+    "guard": "准备、发出、交付相互独立；不代表给药或出院许可。",
+    "actionLabel": "打开药房申请",
+    "figmaNode": null,
+    "extension": true,
+    "stages": [
+      {
+        "label": "准备中",
+        "title": "药房正在准备",
+        "body": "查看来源任务，不提供药品剂量或给药建议。",
+        "sourceState": "来源：准备中",
+        "tone": "info",
+        "fields": [
+          {
+            "label": "准备",
+            "value": "进行中"
+          },
+          {
+            "label": "交付",
+            "value": "来源未提供"
+          }
+        ]
+      },
+      {
+        "label": "资料缺失",
+        "title": "来源提示资料需核对",
+        "body": "需要的资料内容以原药房申请为准。",
+        "sourceState": "来源：待补资料",
+        "tone": "warning",
+        "fields": [
+          {
+            "label": "资料",
+            "value": "来源标记有缺项"
+          }
+        ]
+      },
+      {
+        "label": "已备未发",
+        "title": "药品已准备，尚未发出",
+        "body": "准备完成不等于交付完成。",
+        "sourceState": "来源：已准备",
+        "tone": "info",
+        "fields": [
+          {
+            "label": "准备",
+            "value": "完成"
+          },
+          {
+            "label": "交付",
+            "value": "未发出"
+          }
+        ]
+      },
+      {
+        "label": "已发未达",
+        "title": "来源显示已发出",
+        "body": "未收到来源签收信息，不标记为已送达。",
+        "sourceState": "来源：已发出",
+        "tone": "info",
+        "fields": [
+          {
+            "label": "交付",
+            "value": "来源：运送中"
+          }
+        ]
+      },
+      {
+        "label": "已签收",
+        "title": "来源显示已签收",
+        "body": "签收记录不是给药记录。",
+        "sourceState": "来源：已签收",
+        "tone": "success",
+        "fields": [
+          {
+            "label": "交付",
+            "value": "已签收"
+          },
+          {
+            "label": "给药",
+            "value": "不在本组件范围"
+          }
+        ]
+      },
+      {
+        "label": "出院带药",
+        "title": "来源显示带药可领取",
+        "body": "不据此推断临床出院许可。",
+        "sourceState": "来源：可领取",
+        "tone": "info",
+        "fields": [
+          {
+            "label": "准备",
+            "value": "带药已备妥"
+          },
+          {
+            "label": "交付地点",
+            "value": "药房窗口（源记录）"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "S12",
+    "name": "检查前置资料",
+    "source": "检查预约",
+    "scope": "clinician",
+    "guard": "资料提交不代表检查安全；预约与前置资料分别以来源为准。",
+    "actionLabel": "打开检查申请",
+    "figmaNode": null,
+    "extension": true,
+    "stages": [
+      {
+        "label": "来源缺项",
+        "title": "检查前置资料有待核对项",
+        "body": "仅显示来源标记，不自动做风险评估。",
+        "sourceState": "来源：资料缺项",
+        "tone": "warning",
+        "fields": [
+          {
+            "label": "资料状态",
+            "value": "来源标记缺项"
+          },
+          {
+            "label": "预约状态",
+            "value": "来源：已预约"
+          }
+        ]
+      },
+      {
+        "label": "资料未知",
+        "title": "前置资料状态未知",
+        "body": "未提供不等于未完成。",
+        "sourceState": "来源：资料未知",
+        "tone": "neutral",
+        "fields": [
+          {
+            "label": "资料状态",
+            "value": "来源未提供"
+          },
+          {
+            "label": "预约状态",
+            "value": "来源：已预约"
+          }
+        ]
+      },
+      {
+        "label": "已提交",
+        "title": "来源显示资料已提交",
+        "body": "已提交不代表审查通过或检查安全。",
+        "sourceState": "来源：资料已提交",
+        "tone": "info",
+        "fields": [
+          {
+            "label": "资料状态",
+            "value": "已提交"
+          },
+          {
+            "label": "审查状态",
+            "value": "来源未提供"
+          }
+        ]
+      },
+      {
+        "label": "已预约",
+        "title": "来源预约信息已更新",
+        "body": "如需修改，请进入原预约流程。",
+        "sourceState": "来源：已预约",
+        "tone": "info",
+        "fields": [
+          {
+            "label": "预约",
+            "value": "2026-10-05 上午（模拟）"
+          }
+        ]
+      },
+      {
+        "label": "预约变更",
+        "title": "检查预约发生变更",
+        "body": "仅提醒来源已变更，不在岛内重约。",
+        "sourceState": "来源：预约已调整",
+        "tone": "warning",
+        "fields": [
+          {
+            "label": "预约",
+            "value": "以当前来源时间为准"
+          }
+        ]
+      },
+      {
+        "label": "资料更新",
+        "title": "前置文档有新的来源版本",
+        "body": "打开新文档核对，不能沿用旧版本已打开记录。",
+        "sourceState": "来源：文档更新",
+        "tone": "info",
+        "fields": [
+          {
+            "label": "资料",
+            "value": "新版本可查看"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "S13",
+    "name": "患者转运",
+    "source": "转运中心",
+    "scope": "logistics",
+    "guard": "转运位置不是实时定位；到达不等于检查或治疗完成。",
+    "actionLabel": "打开转运任务",
+    "figmaNode": null,
+    "extension": true,
+    "stages": [
+      {
+        "label": "待分派",
+        "title": "转运任务等待分派",
+        "body": "责任与路线以来源任务为准。",
+        "sourceState": "来源：待分派",
+        "tone": "info",
+        "fields": [
+          {
+            "label": "任务",
+            "value": "待分派"
+          }
+        ]
+      },
+      {
+        "label": "已分派",
+        "title": "来源显示已分派",
+        "body": "已分派不等于已接单。",
+        "sourceState": "来源：已分派",
+        "tone": "info",
+        "fields": [
+          {
+            "label": "接单",
+            "value": "来源未提供"
+          }
+        ]
+      },
+      {
+        "label": "已接单",
+        "title": "来源显示已接单",
+        "body": "接单不代表已经出发。",
+        "sourceState": "来源：已接单",
+        "tone": "info",
+        "fields": [
+          {
+            "label": "出发",
+            "value": "来源未提供"
+          }
+        ]
+      },
+      {
+        "label": "已出发",
+        "title": "来源显示已出发",
+        "body": "这是节点记录，不代表实时位置。",
+        "sourceState": "来源：已出发",
+        "tone": "info",
+        "fields": [
+          {
+            "label": "实时位置",
+            "value": "来源未提供"
+          }
+        ]
+      },
+      {
+        "label": "已到达",
+        "title": "来源显示已到达",
+        "body": "到达记录不能用于判断检查已经完成。",
+        "sourceState": "来源：已到达",
+        "tone": "success",
+        "fields": [
+          {
+            "label": "到达地点",
+            "value": "检查区（来源记录）"
+          }
+        ]
+      },
+      {
+        "label": "已取消",
+        "title": "来源已取消转运任务",
+        "body": "保留原取消记录；本地不提供派单或取消操作。",
+        "sourceState": "来源：已取消",
+        "tone": "neutral",
+        "fields": [
+          {
+            "label": "取消依据",
+            "value": "来源任务版本更新"
+          }
+        ],
+        "withdrawn": true
+      }
+    ]
+  },
+  {
+    "id": "S14",
+    "name": "会诊上下文",
+    "source": "会诊中心",
+    "scope": "clinician",
+    "guard": "条件场景：仅显示明确授权的来源会诊问题与当前官方联系入口。",
+    "actionLabel": "打开会诊申请",
+    "figmaNode": null,
+    "extension": true,
+    "stages": [
+      {
+        "label": "原问题",
+        "title": "会诊申请有新动态",
+        "body": "只保留来源会诊问题，不由 AI 重写临床判断。",
+        "sourceState": "来源：已申请",
+        "tone": "info",
+        "fields": [
+          {
+            "label": "来源问题",
+            "value": "原会诊问题待在来源核对"
+          }
+        ]
+      },
+      {
+        "label": "来源分派",
+        "title": "会诊来源分派有更新",
+        "body": "分派不代表接收或应答。",
+        "sourceState": "来源：已分派",
+        "tone": "info",
+        "fields": [
+          {
+            "label": "会诊团队",
+            "value": "来源团队 A（模拟）"
+          }
+        ]
+      },
+      {
+        "label": "回呼请求",
+        "title": "来源显示有回呼请求",
+        "body": "回呼记录以原会诊平台为准。",
+        "sourceState": "来源：请求回呼",
+        "tone": "warning",
+        "fields": [
+          {
+            "label": "回呼",
+            "value": "来源：待回呼"
+          }
+        ]
+      },
+      {
+        "label": "送达未知",
+        "title": "会诊消息送达状态未知",
+        "body": "不把本地打开映射为会诊已接收。",
+        "sourceState": "来源：送达未知",
+        "tone": "neutral",
+        "fields": [
+          {
+            "label": "送达",
+            "value": "来源未提供"
+          }
+        ]
+      },
+      {
+        "label": "联系入口",
+        "title": "来源官方联系入口可查看",
+        "body": "不暴露私人号码；当前通讯录有权限与有效期要求。",
+        "sourceState": "来源：联系入口可用",
+        "tone": "info",
+        "fields": [
+          {
+            "label": "联系方式",
+            "value": "请在来源官方目录查看"
+          }
+        ]
+      },
+      {
+        "label": "来源更新",
+        "title": "会诊记录已有来源更新",
+        "body": "后续评估与处置继续留在原临床系统。",
+        "sourceState": "来源：记录更新",
+        "tone": "success",
+        "fields": []
+      }
+    ]
+  },
+  {
+    "id": "S15",
+    "name": "设备位置记录",
+    "source": "设备管理",
+    "scope": "logistics",
+    "guard": "条件场景：记录位置不是实时位置；可用状态不是临床使用许可。",
+    "actionLabel": "打开设备记录",
+    "figmaNode": null,
+    "extension": true,
+    "stages": [
+      {
+        "label": "记录位置",
+        "title": "设备有一条位置记录",
+        "body": "位置与记录时间一起展示，不绘制实时位置动画。",
+        "sourceState": "来源：位置已记录",
+        "tone": "info",
+        "fields": [
+          {
+            "label": "记录位置",
+            "value": "病区设备间（模拟）"
+          }
+        ]
+      },
+      {
+        "label": "借用中",
+        "title": "来源显示借用中",
+        "body": "不在灵动岛进行预约或借用审批。",
+        "sourceState": "来源：借用中",
+        "tone": "info",
+        "fields": [
+          {
+            "label": "借用",
+            "value": "来源：进行中"
+          }
+        ]
+      },
+      {
+        "label": "维护中",
+        "title": "来源显示维护中",
+        "body": "维护状态与借用状态独立。",
+        "sourceState": "来源：维护中",
+        "tone": "warning",
+        "fields": [
+          {
+            "label": "维护",
+            "value": "来源：进行中"
+          },
+          {
+            "label": "借用",
+            "value": "来源未提供"
+          }
+        ]
+      },
+      {
+        "label": "位置未知",
+        "title": "设备当前记录位置未知",
+        "body": "未知不等于遗失，不从历史移动推断当前位置。",
+        "sourceState": "来源：位置未知",
+        "tone": "neutral",
+        "fields": [
+          {
+            "label": "记录位置",
+            "value": "来源未提供"
+          }
+        ],
+        "unknownTime": true
+      },
+      {
+        "label": "来源归还",
+        "title": "来源显示已归还",
+        "body": "归还记录不代表设备已可用于临床。",
+        "sourceState": "来源：已归还",
+        "tone": "info",
+        "fields": [
+          {
+            "label": "记录位置",
+            "value": "设备间（来源记录）"
+          }
+        ]
+      },
+      {
+        "label": "记录更新",
+        "title": "设备来源记录已更新",
+        "body": "设备能否使用仍由来源授权流程决定。",
+        "sourceState": "来源：记录更新",
+        "tone": "success",
+        "fields": [
+          {
+            "label": "临床可用性",
+            "value": "不在本组件判断范围"
+          }
+        ]
+      }
+    ]
+  }
+]

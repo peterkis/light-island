@@ -1,0 +1,87 @@
+{
+  "platform": "Windows / native WebView2 / continuous U-notch motion",
+  "transitions": [
+    {
+      "iteration": 0,
+      "expanded": {
+        "x": 166,
+        "y": 0,
+        "width": 372,
+        "height": 168
+      },
+      "regionChanges": 77,
+      "windowChanges": 0
+    },
+    {
+      "iteration": 1,
+      "expanded": {
+        "x": 166,
+        "y": 0,
+        "width": 372,
+        "height": 168
+      },
+      "regionChanges": 77,
+      "windowChanges": 0
+    },
+    {
+      "iteration": 2,
+      "expanded": {
+        "x": 166,
+        "y": 0,
+        "width": 372,
+        "height": 168
+      },
+      "regionChanges": 81,
+      "windowChanges": 0
+    },
+    {
+      "iteration": 3,
+      "expanded": {
+        "x": 166,
+        "y": 0,
+        "width": 372,
+        "height": 168
+      },
+      "regionChanges": 74,
+      "windowChanges": 0
+    }
+  ],
+  "errors": [],
+  "baseline": {
+    "at": 1791301977241.859,
+    "rect": [
+      608,
+      0,
+      1312,
+      522
+    ],
+    "cursor": [
+      40,
+      140
+    ],
+    "dpi": 96,
+    "foreground": 3278658,
+    "hitRoot": 3278658,
+    "hwnd": 38732648
+  },
+  "metrics": {
+    "available": 1920,
+    "canvasHeight": 522,
+    "canvasWidth": 704,
+    "height": 1032,
+    "scale": 1,
+    "topReserved": false,
+    "y": 0
+  },
+  "clinicalWriteAndSimulatorDenied": true,
+  "sourceOpenedExactObject": true,
+  "idleMutations": 0,
+  "frameCadence": {
+    "frames": 360,
+    "averageFps": 60.00000000000007,
+    "p95ms": 16.89999999999418,
+    "over25ms": 0,
+    "visible": true
+  },
+  "pass": true
+}

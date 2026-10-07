@@ -1,0 +1,59 @@
+﻿{
+    "capturedAt":  "2026-10-06T23:57:09.1020507+08:00",
+    "scope":  "Native application and all discovered WebView2 descendants; no studio; excludes Node demo and development tools",
+    "sampleSeconds":  11.3694055,
+    "privateWorkingSetMiB":  97.04,
+    "privateMiB":  157.26,
+    "cpuMachinePercent":  0,
+    "processes":  [
+                      {
+                          "pid":  13464,
+                          "name":  "samewave-island",
+                          "privateMiB":  6.89,
+                          "workingSetMiB":  25.33,
+                          "cpuDeltaSeconds":  0
+                      },
+                      {
+                          "pid":  35672,
+                          "name":  "msedgewebview2",
+                          "privateMiB":  34.64,
+                          "workingSetMiB":  112.86,
+                          "cpuDeltaSeconds":  0
+                      },
+                      {
+                          "pid":  17000,
+                          "name":  "msedgewebview2",
+                          "privateMiB":  2.43,
+                          "workingSetMiB":  9.49,
+                          "cpuDeltaSeconds":  0
+                      },
+                      {
+                          "pid":  40428,
+                          "name":  "msedgewebview2",
+                          "privateMiB":  66.84,
+                          "workingSetMiB":  81.49,
+                          "cpuDeltaSeconds":  0
+                      },
+                      {
+                          "pid":  39012,
+                          "name":  "msedgewebview2",
+                          "privateMiB":  11.15,
+                          "workingSetMiB":  33.71,
+                          "cpuDeltaSeconds":  0
+                      },
+                      {
+                          "pid":  29036,
+                          "name":  "msedgewebview2",
+                          "privateMiB":  7.35,
+                          "workingSetMiB":  19.22,
+                          "cpuDeltaSeconds":  0
+                      },
+                      {
+                          "pid":  10608,
+                          "name":  "msedgewebview2",
+                          "privateMiB":  27.96,
+                          "workingSetMiB":  65.57,
+                          "cpuDeltaSeconds":  0
+                      }
+                  ]
+}

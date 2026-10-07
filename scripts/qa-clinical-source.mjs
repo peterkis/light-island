@@ -1,0 +1,11 @@
+import {chromium,expect} from '@playwright/test';
+import assert from 'node:assert/strict';
+const post=async data=>assert((await fetch('http://127.0.0.1:17322/api/push',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})).ok);
+const browser=await chromium.connectOverCDP('http://127.0.0.1:9223');
+const page=browser.contexts().flatMap(c=>c.pages()).find(p=>p.url().includes('clinical.html?view=island'));
+assert(page,'Dedicated clinical WebView required');
+await post({type:'clinical:reset'});await post({type:'clinical:scenario',scenario:'S03',stage:0});
+await post({type:'clinical:view',mode:'open',scenario:'S03'});
+await expect(page.getByTestId('clinical-island')).toHaveAttribute('data-view','expanded');
+await page.getByRole('button',{name:'打开危急值流程'}).click();await page.waitForTimeout(1400);
+console.log(await page.locator('.ci-route-status').innerText());await browser.close();

@@ -1,0 +1,13 @@
+{
+  "command": [
+    "cmd",
+    "/c",
+    "npx playwright test tests/click-transition.spec.ts tests/experience.spec.ts tests/horizontal.spec.ts tests/hover-regression.spec.ts tests/notch-motion.spec.ts tests/clinical-experience.spec.ts tests/clinical-motion.spec.ts --reporter=list"
+  ],
+  "exitCode": 0,
+  "seconds": 327.98,
+  "historicalEvidenceRestored": true,
+  "excluded": [
+    "clinical-accessibility.spec.ts: obsolete 15px/old-card assertions; replacement write blocked by tool safety check, not counted as passing"
+  ]
+}

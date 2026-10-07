@@ -1,0 +1,664 @@
+{
+  "cases": [
+    {
+      "name": "compact transparent canvas",
+      "point": [
+        674,
+        70
+      ],
+      "target": 1182914
+    },
+    {
+      "name": "expanded transparent side",
+      "point": [
+        1246,
+        150
+      ],
+      "target": 1182914
+    },
+    {
+      "name": "collapsed former details",
+      "point": [
+        960,
+        200
+      ],
+      "target": 1182914
+    }
+  ],
+  "frames": [
+    {
+      "elapsed": 0.3844814000185579,
+      "rect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "centerPainted": false
+    },
+    {
+      "elapsed": 0.47284830000717193,
+      "rect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "centerPainted": false
+    },
+    {
+      "elapsed": 0.5566080000135116,
+      "rect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "centerPainted": false
+    },
+    {
+      "elapsed": 0.6371175000094809,
+      "rect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "centerPainted": false
+    },
+    {
+      "elapsed": 0.7258837000117637,
+      "rect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "centerPainted": false
+    },
+    {
+      "elapsed": 0.8060935999965295,
+      "rect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "centerPainted": false
+    },
+    {
+      "elapsed": 0.8922727000317536,
+      "rect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "centerPainted": false
+    },
+    {
+      "elapsed": 0.9728528999839909,
+      "rect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "centerPainted": false
+    },
+    {
+      "elapsed": 1.036766599980183,
+      "rect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "centerPainted": false
+    },
+    {
+      "elapsed": 1.1215288999956101,
+      "rect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "centerPainted": false
+    },
+    {
+      "elapsed": 1.2065791999921203,
+      "rect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "centerPainted": false
+    },
+    {
+      "elapsed": 1.2863421000074595,
+      "rect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "centerPainted": false
+    },
+    {
+      "elapsed": 1.3556766000110656,
+      "rect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "centerPainted": false
+    },
+    {
+      "elapsed": 1.4415782000287436,
+      "rect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "centerPainted": false
+    },
+    {
+      "elapsed": 1.5231541999964975,
+      "rect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "centerPainted": false
+    },
+    {
+      "elapsed": 1.6071155000245199,
+      "rect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "centerPainted": false
+    },
+    {
+      "elapsed": 1.690548199985642,
+      "rect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "centerPainted": false
+    },
+    {
+      "elapsed": 1.7723722999799065,
+      "rect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "centerPainted": false
+    },
+    {
+      "elapsed": 1.8533388000214472,
+      "rect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "centerPainted": false
+    },
+    {
+      "elapsed": 1.938708100002259,
+      "rect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "centerPainted": false
+    },
+    {
+      "elapsed": 2.004647900001146,
+      "rect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "centerPainted": false
+    },
+    {
+      "elapsed": 2.0905887000262737,
+      "rect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "centerPainted": false
+    },
+    {
+      "elapsed": 2.173988400027156,
+      "rect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "centerPainted": false
+    },
+    {
+      "elapsed": 2.253943799994886,
+      "rect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "centerPainted": false
+    },
+    {
+      "elapsed": 2.3211258000228554,
+      "rect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "centerPainted": false
+    },
+    {
+      "elapsed": 2.3877437000046484,
+      "rect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "centerPainted": false
+    },
+    {
+      "elapsed": 2.455214800022077,
+      "rect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "centerPainted": false
+    },
+    {
+      "elapsed": 2.537361900031101,
+      "rect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "centerPainted": false
+    },
+    {
+      "elapsed": 2.6221027999999933,
+      "rect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "centerPainted": false
+    },
+    {
+      "elapsed": 2.704956899979152,
+      "rect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "centerPainted": false
+    },
+    {
+      "elapsed": 2.788231500016991,
+      "rect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "centerPainted": false
+    },
+    {
+      "elapsed": 2.853501299978234,
+      "rect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "centerPainted": false
+    },
+    {
+      "elapsed": 2.9373823999776505,
+      "rect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "centerPainted": false
+    },
+    {
+      "elapsed": 3.0039872999768704,
+      "rect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "centerPainted": false
+    },
+    {
+      "elapsed": 3.0725481000263244,
+      "rect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "centerPainted": false
+    },
+    {
+      "elapsed": 3.15625950001413,
+      "rect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "centerPainted": false
+    },
+    {
+      "elapsed": 3.2215954000130296,
+      "rect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "centerPainted": false
+    },
+    {
+      "elapsed": 3.289221399987582,
+      "rect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "centerPainted": false
+    },
+    {
+      "elapsed": 3.373938200005796,
+      "rect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "centerPainted": false
+    },
+    {
+      "elapsed": 3.4565943999914452,
+      "rect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "centerPainted": false
+    },
+    {
+      "elapsed": 3.538813700026367,
+      "rect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "centerPainted": false
+    },
+    {
+      "elapsed": 3.623833600024227,
+      "rect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "centerPainted": false
+    },
+    {
+      "elapsed": 3.711936699983198,
+      "rect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "centerPainted": false
+    },
+    {
+      "elapsed": 3.787675699975807,
+      "rect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "centerPainted": false
+    },
+    {
+      "elapsed": 3.8560094999847934,
+      "rect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "centerPainted": false
+    },
+    {
+      "elapsed": 3.939946600003168,
+      "rect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "centerPainted": false
+    },
+    {
+      "elapsed": 4.021992699999828,
+      "rect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "centerPainted": false
+    },
+    {
+      "elapsed": 4.087690600019414,
+      "rect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "centerPainted": false
+    },
+    {
+      "elapsed": 4.155229300027713,
+      "rect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "centerPainted": false
+    },
+    {
+      "elapsed": 4.238835800031666,
+      "rect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "centerPainted": false
+    },
+    {
+      "elapsed": 4.322476200002711,
+      "rect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "centerPainted": false
+    },
+    {
+      "elapsed": 4.387098899984267,
+      "rect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "centerPainted": false
+    },
+    {
+      "elapsed": 4.470471800013911,
+      "rect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "centerPainted": false
+    },
+    {
+      "elapsed": 4.553391100023873,
+      "rect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "centerPainted": false
+    },
+    {
+      "elapsed": 4.636897100019269,
+      "rect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "centerPainted": false
+    },
+    {
+      "elapsed": 4.719824100029655,
+      "rect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "centerPainted": false
+    },
+    {
+      "elapsed": 4.786572900018655,
+      "rect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "centerPainted": false
+    },
+    {
+      "elapsed": 4.854434099979699,
+      "rect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "centerPainted": false
+    },
+    {
+      "elapsed": 4.94170770002529,
+      "rect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "centerPainted": false
+    },
+    {
+      "elapsed": 5.004459600022528,
+      "rect": [
+        669,
+        0,
+        1251,
+        483
+      ],
+      "centerPainted": false
+    }
+  ],
+  "errors": [
+    ""
+  ],
+  "baseline": [
+    669,
+    0,
+    1251,
+    483
+  ],
+  "importantPreservesFocus": false,
+  "routinePreservesFocus": false,
+  "receivedClicks": [
+    [
+      674,
+      70
+    ],
+    [
+      1246,
+      150
+    ],
+    [
+      960,
+      200
+    ]
+  ],
+  "blankFrames": 60,
+  "uniqueRects": [
+    [
+      669,
+      0,
+      1251,
+      483
+    ]
+  ]
+}

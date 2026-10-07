@@ -1,5 +1,6 @@
 /** Loopback-only synthetic message source. Never point this demo at clinical systems. */
 import http from 'node:http';
+import { createClinicalDemo } from './clinical-demo.mjs';
 import { readFile } from 'node:fs/promises';
 import { resolve, dirname, extname } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -7,7 +8,7 @@ import { randomUUID } from 'node:crypto';
 import { WebSocketServer, WebSocket } from 'ws';
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '../dist');
 const port = Number(process.env.ISLAND_DEMO_PORT || 17321);
-const origins = new Set(['http://127.0.0.1:17321', 'http://localhost:17321', 'http://127.0.0.1:1420', 'http://localhost:1420', 'http://tauri.localhost', 'tauri://localhost', 'https://tauri.localhost']);
+const origins = new Set(['http://127.0.0.1:17322', 'http://localhost:17322','http://127.0.0.1:17321', 'http://localhost:17321', 'http://127.0.0.1:1420', 'http://localhost:1420', 'http://tauri.localhost', 'tauri://localhost', 'https://tauri.localhost']);
 const notices = new Map(); const receipts = new Map(); const timers = new Set();
 let settings = { theme: 'ink', engine: 'gsap', focus: false, privacy: true, reduced: false, top: 0, shape: 'notch' };
 let sequence = 0; let epoch = 0;
@@ -21,6 +22,7 @@ const server = http.createServer(async (req, res) => {
   if (req.method === 'OPTIONS') { res.writeHead(204); res.end(); return; }
   const url = new URL(req.url || '/', `http://127.0.0.1:${port}`);
   if (url.pathname === '/api/health') return json(res, 200, { name: 'samewave-synthetic-demo', version: '0.1.0', clients: wss.clients.size, notices: notices.size });
+  if (url.pathname === '/api/clinical-state') return json(res, 200, clinical.snapshot());
   if (url.pathname === '/api/state') return json(res, 200, { settings, notices: [...notices.values()], receipts: [...receipts.values()] });
   if (url.pathname === '/api/push' && req.method === 'POST') {
     if (!req.headers['content-type']?.startsWith('application/json')) return json(res, 415, { error: 'JSON required' });
@@ -38,6 +40,7 @@ const server = http.createServer(async (req, res) => {
     res.writeHead(200, { 'Content-Type': types[extname(path)] || 'application/octet-stream', 'Cache-Control': 'no-cache', 'X-Content-Type-Options': 'nosniff' }); res.end(bytes);
   } catch { json(res, 404, { error: 'Build UI with npm run build, or use http://127.0.0.1:1420 in development.' }); }
 });
+const clinical = createClinicalDemo(broadcast);
 const wss = new WebSocketServer({ noServer: true, maxPayload: 32768 });
 server.on('upgrade', (req, socket, head) => {
   if ((req.headers.origin && !origins.has(req.headers.origin)) || req.url !== '/events') { socket.destroy(); return; }
@@ -82,6 +85,7 @@ function configure(patch) {
 }
 function handle(data, client) {
   if (!data || typeof data !== 'object') return;
+  if (clinical.handle(data, event => client?.send(JSON.stringify(event)))) return;
   if (data.type === 'sync') client?.send(JSON.stringify({ type: 'hello', settings, notices: [...notices.values()], receipts: [...receipts.values()] }));
   if (data.type === 'demo') scenario(data.scenario);
   if (data.type === 'configure') configure(data.settings);

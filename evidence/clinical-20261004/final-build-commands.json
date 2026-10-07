@@ -1,0 +1,30 @@
+[
+  {
+    "name": "typecheck",
+    "command": "npx.cmd tsc -b --pretty false",
+    "start": "2026-10-04T12:51:00.039354+08:00",
+    "end": "2026-10-04T12:51:02.698782+08:00",
+    "exit": 0
+  },
+  {
+    "name": "unit",
+    "command": "npm.cmd test",
+    "start": "2026-10-04T12:51:02.699210+08:00",
+    "end": "2026-10-04T12:51:04.181440+08:00",
+    "exit": 0
+  },
+  {
+    "name": "desktop-build",
+    "command": "npm.cmd run desktop:build",
+    "start": "2026-10-04T12:51:04.181753+08:00",
+    "end": "2026-10-04T12:52:11.218166+08:00",
+    "exit": 0
+  },
+  {
+    "name": "rust",
+    "command": "cargo test --manifest-path src-tauri/Cargo.toml --lib --release --locked",
+    "start": "2026-10-04T12:52:11.218515+08:00",
+    "end": "2026-10-04T12:52:22.783756+08:00",
+    "exit": 0
+  }
+]

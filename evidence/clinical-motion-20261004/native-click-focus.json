@@ -1,0 +1,554 @@
+{
+  "cases": [
+    {
+      "name": "compact transparent canvas",
+      "point": [
+        678,
+        70
+      ],
+      "target": 462534
+    },
+    {
+      "name": "expanded transparent side",
+      "point": [
+        1241,
+        150
+      ],
+      "target": 462534
+    },
+    {
+      "name": "collapsed former details",
+      "point": [
+        960,
+        200
+      ],
+      "target": 462534
+    }
+  ],
+  "frames": [
+    {
+      "elapsed": 0.7930131999892183,
+      "rect": [
+        673,
+        0,
+        1246,
+        484
+      ],
+      "centerPainted": true
+    },
+    {
+      "elapsed": 0.8769066999666393,
+      "rect": [
+        673,
+        0,
+        1246,
+        484
+      ],
+      "centerPainted": true
+    },
+    {
+      "elapsed": 0.9417144999606535,
+      "rect": [
+        673,
+        0,
+        1246,
+        484
+      ],
+      "centerPainted": true
+    },
+    {
+      "elapsed": 1.024853000009898,
+      "rect": [
+        673,
+        0,
+        1246,
+        484
+      ],
+      "centerPainted": true
+    },
+    {
+      "elapsed": 1.0997000999632291,
+      "rect": [
+        673,
+        0,
+        1246,
+        484
+      ],
+      "centerPainted": true
+    },
+    {
+      "elapsed": 1.1830039999913424,
+      "rect": [
+        673,
+        0,
+        1246,
+        484
+      ],
+      "centerPainted": true
+    },
+    {
+      "elapsed": 1.2682882999652065,
+      "rect": [
+        673,
+        0,
+        1246,
+        484
+      ],
+      "centerPainted": true
+    },
+    {
+      "elapsed": 1.3475946999969892,
+      "rect": [
+        673,
+        0,
+        1246,
+        484
+      ],
+      "centerPainted": true
+    },
+    {
+      "elapsed": 1.4108278999920003,
+      "rect": [
+        673,
+        0,
+        1246,
+        484
+      ],
+      "centerPainted": true
+    },
+    {
+      "elapsed": 1.4862190000130795,
+      "rect": [
+        673,
+        0,
+        1246,
+        484
+      ],
+      "centerPainted": true
+    },
+    {
+      "elapsed": 1.5641708999755792,
+      "rect": [
+        673,
+        0,
+        1246,
+        484
+      ],
+      "centerPainted": true
+    },
+    {
+      "elapsed": 1.6321370999794453,
+      "rect": [
+        673,
+        0,
+        1246,
+        484
+      ],
+      "centerPainted": true
+    },
+    {
+      "elapsed": 1.702299500000663,
+      "rect": [
+        673,
+        0,
+        1246,
+        484
+      ],
+      "centerPainted": true
+    },
+    {
+      "elapsed": 1.8053888999857008,
+      "rect": [
+        673,
+        0,
+        1246,
+        484
+      ],
+      "centerPainted": true
+    },
+    {
+      "elapsed": 1.9020937999594025,
+      "rect": [
+        673,
+        0,
+        1246,
+        484
+      ],
+      "centerPainted": true
+    },
+    {
+      "elapsed": 1.993192799971439,
+      "rect": [
+        673,
+        0,
+        1246,
+        484
+      ],
+      "centerPainted": true
+    },
+    {
+      "elapsed": 2.070091200002935,
+      "rect": [
+        673,
+        0,
+        1246,
+        484
+      ],
+      "centerPainted": true
+    },
+    {
+      "elapsed": 2.1501533999689855,
+      "rect": [
+        673,
+        0,
+        1246,
+        484
+      ],
+      "centerPainted": true
+    },
+    {
+      "elapsed": 2.2328365999856032,
+      "rect": [
+        673,
+        0,
+        1246,
+        484
+      ],
+      "centerPainted": true
+    },
+    {
+      "elapsed": 2.3203891000011936,
+      "rect": [
+        673,
+        0,
+        1246,
+        484
+      ],
+      "centerPainted": true
+    },
+    {
+      "elapsed": 2.4040332000004128,
+      "rect": [
+        673,
+        0,
+        1246,
+        484
+      ],
+      "centerPainted": true
+    },
+    {
+      "elapsed": 2.4884545999811962,
+      "rect": [
+        673,
+        0,
+        1246,
+        484
+      ],
+      "centerPainted": true
+    },
+    {
+      "elapsed": 2.5742162999813445,
+      "rect": [
+        673,
+        0,
+        1246,
+        484
+      ],
+      "centerPainted": true
+    },
+    {
+      "elapsed": 2.6600500000058673,
+      "rect": [
+        673,
+        0,
+        1246,
+        484
+      ],
+      "centerPainted": true
+    },
+    {
+      "elapsed": 2.762476700008847,
+      "rect": [
+        673,
+        0,
+        1246,
+        484
+      ],
+      "centerPainted": true
+    },
+    {
+      "elapsed": 2.8448080999660306,
+      "rect": [
+        673,
+        0,
+        1246,
+        484
+      ],
+      "centerPainted": true
+    },
+    {
+      "elapsed": 2.9300268999650143,
+      "rect": [
+        673,
+        0,
+        1246,
+        484
+      ],
+      "centerPainted": true
+    },
+    {
+      "elapsed": 3.0268733999691904,
+      "rect": [
+        673,
+        0,
+        1246,
+        484
+      ],
+      "centerPainted": true
+    },
+    {
+      "elapsed": 3.1101609999896027,
+      "rect": [
+        673,
+        0,
+        1246,
+        484
+      ],
+      "centerPainted": true
+    },
+    {
+      "elapsed": 3.192534199974034,
+      "rect": [
+        673,
+        0,
+        1246,
+        484
+      ],
+      "centerPainted": true
+    },
+    {
+      "elapsed": 3.2996457999688573,
+      "rect": [
+        673,
+        0,
+        1246,
+        484
+      ],
+      "centerPainted": true
+    },
+    {
+      "elapsed": 3.4000162999727763,
+      "rect": [
+        673,
+        0,
+        1246,
+        484
+      ],
+      "centerPainted": true
+    },
+    {
+      "elapsed": 3.4961622999981046,
+      "rect": [
+        673,
+        0,
+        1246,
+        484
+      ],
+      "centerPainted": true
+    },
+    {
+      "elapsed": 3.5803016999852844,
+      "rect": [
+        673,
+        0,
+        1246,
+        484
+      ],
+      "centerPainted": true
+    },
+    {
+      "elapsed": 3.658718199993018,
+      "rect": [
+        673,
+        0,
+        1246,
+        484
+      ],
+      "centerPainted": true
+    },
+    {
+      "elapsed": 3.741611199977342,
+      "rect": [
+        673,
+        0,
+        1246,
+        484
+      ],
+      "centerPainted": true
+    },
+    {
+      "elapsed": 3.842875099973753,
+      "rect": [
+        673,
+        0,
+        1246,
+        484
+      ],
+      "centerPainted": true
+    },
+    {
+      "elapsed": 3.9359430999611504,
+      "rect": [
+        673,
+        0,
+        1246,
+        484
+      ],
+      "centerPainted": true
+    },
+    {
+      "elapsed": 4.033407799957786,
+      "rect": [
+        673,
+        0,
+        1246,
+        484
+      ],
+      "centerPainted": true
+    },
+    {
+      "elapsed": 4.149934499990195,
+      "rect": [
+        673,
+        0,
+        1246,
+        484
+      ],
+      "centerPainted": true
+    },
+    {
+      "elapsed": 4.249259900010657,
+      "rect": [
+        673,
+        0,
+        1246,
+        484
+      ],
+      "centerPainted": true
+    },
+    {
+      "elapsed": 4.353858699963894,
+      "rect": [
+        673,
+        0,
+        1246,
+        484
+      ],
+      "centerPainted": true
+    },
+    {
+      "elapsed": 4.465629299986176,
+      "rect": [
+        673,
+        0,
+        1246,
+        484
+      ],
+      "centerPainted": true
+    },
+    {
+      "elapsed": 4.565080999978818,
+      "rect": [
+        673,
+        0,
+        1246,
+        484
+      ],
+      "centerPainted": true
+    },
+    {
+      "elapsed": 4.663743599958252,
+      "rect": [
+        673,
+        0,
+        1246,
+        484
+      ],
+      "centerPainted": true
+    },
+    {
+      "elapsed": 4.765743699972518,
+      "rect": [
+        673,
+        0,
+        1246,
+        484
+      ],
+      "centerPainted": true
+    },
+    {
+      "elapsed": 4.864238899957854,
+      "rect": [
+        673,
+        0,
+        1246,
+        484
+      ],
+      "centerPainted": true
+    },
+    {
+      "elapsed": 4.964893599972129,
+      "rect": [
+        673,
+        0,
+        1246,
+        484
+      ],
+      "centerPainted": true
+    },
+    {
+      "elapsed": 5.062679499969818,
+      "rect": [
+        673,
+        0,
+        1246,
+        484
+      ],
+      "centerPainted": true
+    }
+  ],
+  "errors": [],
+  "baseline": [
+    673,
+    0,
+    1246,
+    484
+  ],
+  "focusBeforePush": 462534,
+  "importantPreservesFocus": true,
+  "routinePreservesFocus": true,
+  "receivedClicks": [
+    [
+      678,
+      70
+    ],
+    [
+      1241,
+      150
+    ],
+    [
+      960,
+      200
+    ]
+  ],
+  "blankFrames": 0,
+  "uniqueRects": [
+    [
+      673,
+      0,
+      1246,
+      484
+    ]
+  ],
+  "pass": true
+}

@@ -1,0 +1,87 @@
+{
+  "platform": "Windows / native WebView2 / continuous U-notch motion",
+  "transitions": [
+    {
+      "iteration": 0,
+      "expanded": {
+        "x": 166,
+        "y": 0,
+        "width": 372,
+        "height": 168
+      },
+      "regionChanges": 18,
+      "windowChanges": 0
+    },
+    {
+      "iteration": 1,
+      "expanded": {
+        "x": 166,
+        "y": 0,
+        "width": 372,
+        "height": 168
+      },
+      "regionChanges": 37,
+      "windowChanges": 0
+    },
+    {
+      "iteration": 2,
+      "expanded": {
+        "x": 166,
+        "y": 0,
+        "width": 372,
+        "height": 168
+      },
+      "regionChanges": 47,
+      "windowChanges": 0
+    },
+    {
+      "iteration": 3,
+      "expanded": {
+        "x": 166,
+        "y": 0,
+        "width": 372,
+        "height": 168
+      },
+      "regionChanges": 51,
+      "windowChanges": 0
+    }
+  ],
+  "errors": [],
+  "baseline": {
+    "at": 1791300783241.454,
+    "rect": [
+      608,
+      0,
+      1312,
+      522
+    ],
+    "cursor": [
+      40,
+      140
+    ],
+    "dpi": 96,
+    "foreground": 3278658,
+    "hitRoot": 3278658,
+    "hwnd": 11800746
+  },
+  "metrics": {
+    "available": 1920,
+    "canvasHeight": 522,
+    "canvasWidth": 704,
+    "height": 1032,
+    "scale": 1,
+    "topReserved": false,
+    "y": 0
+  },
+  "clinicalWriteAndSimulatorDenied": true,
+  "sourceOpenedExactObject": "NOT_RUN: source WebView not enumerated over dedicated CDP",
+  "idleMutations": 0,
+  "frameCadence": {
+    "frames": 360,
+    "averageFps": 59.99999999999999,
+    "p95ms": 17,
+    "over25ms": 0,
+    "visible": true
+  },
+  "pass": true
+}

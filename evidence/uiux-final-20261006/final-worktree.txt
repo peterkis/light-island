@@ -1,0 +1,102 @@
+ M AGENTS.md
+ M README.md
+ M docs/Dynamic-Island-UI-Spec.md
+ M docs/prd/Clinical-Island-Free-Plan-Continuation-20261002.md
+ M docs/prd/Clinical-Island-Scenarios.md
+ M evidence/02-theme-cloud.png
+ M evidence/02-theme-dusk.png
+ M evidence/02-theme-ink.png
+ M evidence/03-critical-expanded.png
+ M evidence/06-frame-sample.png
+ M evidence/click-fix-20260930/browser-working-css.json
+ M evidence/click-fix-20260930/browser-working-gsap.json
+ M evidence/playwright-results.json
+ M package.json
+ M playwright.config.ts
+ M scripts/start-prototype.ps1
+ M scripts/stop-prototype.ps1
+ M server/demo-server.mjs
+ M src-tauri/capabilities/default.json
+ M src-tauri/gen/schemas/capabilities.json
+ M src-tauri/src/lib.rs
+ M src-tauri/tauri.conf.json
+ M src/lib/bridge.ts
+ M vite.config.ts
+?? .clinical-transfer.b64
+?? clinical.html
+?? docs/CLINICAL-IMPLEMENTATION.md
+?? docs/CLINICAL-MOTION-RESTORE.md
+?? docs/UIUX-V1-IMPLEMENTATION.md
+?? "docs/Windows \347\201\265\345\212\250\345\262\233 UI UX \350\256\276\350\256\241\350\247\204\350\214\203 v1.0.md"
+?? evidence/clinical-20261004/
+?? evidence/clinical-motion-20261004/
+?? evidence/uiux-final-20261006/
+?? evidence/uiux-v1-20261006/
+?? scripts/apply-clinical-patch.py
+?? scripts/capture-clinical-motion-preview.mjs
+?? scripts/capture-clinical-source.py
+?? scripts/clinical-motion-postflight.py
+?? scripts/fix-clinical-native-redraw.py
+?? scripts/fix-clinical-preview-height.py
+?? scripts/fix-clinical-rim-seam.py
+?? scripts/fix-clinical-source-window.py
+?? scripts/fix-clinical-witness.py
+?? scripts/generate-clinical-tokens.mjs
+?? scripts/instrument-clinical-capture.py
+?? scripts/measure-clinical-process.ps1
+?? scripts/measure-uiux-process.ps1
+?? scripts/note-clinical-readme.py
+?? scripts/qa-clinical-boundaries.mjs
+?? scripts/qa-clinical-browser.mjs
+?? scripts/qa-clinical-motion.mjs
+?? scripts/qa-clinical-native.mjs
+?? scripts/qa-clinical-source.mjs
+?? scripts/qa-clinical-windows.py
+?? scripts/qa-uiux-final-native.mjs
+?? scripts/qa-uiux-final-preview.mjs
+?? scripts/qa-uiux-luminance-cost.mjs
+?? scripts/qa-uiux-native-cost.mjs
+?? scripts/qa-uiux-paint-cadence.mjs
+?? scripts/qa-uiux-preview.mjs
+?? scripts/qa-uiux-shadow-windows.py
+?? scripts/refine-clinical-coexistence.py
+?? scripts/refine-clinical.py
+?? scripts/restore-clinical-motion.py
+?? scripts/run-clinical-native-final.py
+?? scripts/start-clinical-development.mjs
+?? scripts/summarize-clinical-motion.py
+?? scripts/summarize-clinical-validation.py
+?? scripts/uiux-baseline.py
+?? scripts/uiux-behavior-complete.py
+?? scripts/uiux-build-fixes.py
+?? scripts/uiux-click-interruption.py
+?? scripts/uiux-complete.py
+?? scripts/uiux-controller-patch.py
+?? scripts/uiux-document-authority.py
+?? scripts/uiux-final-commands.py
+?? scripts/uiux-final-e2e.py
+?? scripts/uiux-final-report.py
+?? scripts/uiux-finish-behavior.py
+?? scripts/uiux-input-connect.py
+?? scripts/uiux-model-patch.py
+?? scripts/uiux-native-patch.py
+?? scripts/uiux-native-performance.py
+?? scripts/uiux-normal-delivery.ps1
+?? scripts/uiux-preferences-patch.py
+?? scripts/uiux-prepare-qa.py
+?? scripts/uiux-resume-baseline.py
+?? scripts/uiux-shadow-witness-copy.py
+?? scripts/uiux-test-adapt.py
+?? scripts/uiux-transition-fixes.py
+?? scripts/validate-clinical-build.py
+?? scripts/verify-clinical-motion.py
+?? server/clinical-demo.mjs
+?? src-tauri/src/clinical_input.rs
+?? src-tauri/src/clinical_shadow.rs
+?? src-tauri/src/clinical_window.rs
+?? src/clinical/
+?? tests/clinical-accessibility.spec.ts
+?? tests/clinical-experience.spec.ts
+?? tests/clinical-model.test.ts
+?? tests/clinical-motion-geometry.test.ts
+?? tests/clinical-motion.spec.ts

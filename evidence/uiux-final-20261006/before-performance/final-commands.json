@@ -1,0 +1,46 @@
+[
+  {
+    "name": "typecheck",
+    "command": [
+      "cmd",
+      "/c",
+      "npx tsc -b --pretty false"
+    ],
+    "exitCode": 0,
+    "seconds": 2.46
+  },
+  {
+    "name": "unit",
+    "command": [
+      "cmd",
+      "/c",
+      "npm test"
+    ],
+    "exitCode": 0,
+    "seconds": 1.71
+  },
+  {
+    "name": "rust",
+    "command": [
+      "cargo",
+      "test",
+      "--manifest-path",
+      "src-tauri/Cargo.toml",
+      "--lib",
+      "--release",
+      "--locked"
+    ],
+    "exitCode": 0,
+    "seconds": 0.54
+  },
+  {
+    "name": "desktop",
+    "command": [
+      "cmd",
+      "/c",
+      "npm run desktop:build"
+    ],
+    "exitCode": 0,
+    "seconds": 97.18
+  }
+]

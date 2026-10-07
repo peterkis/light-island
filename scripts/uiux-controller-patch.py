@@ -1,0 +1,11 @@
+from pathlib import Path
+p=Path(__file__).resolve().parent.parent/'src/clinical/controller.ts';s=p.read_text(encoding='utf8')
+s=s.replace("const [pendingCount", "const [readable,setReadable]=useState(false);\n const sourcePreviews=useRef(new Map<string,number>());\n const [pendingCount",1)
+s=s.replace("setSelected(key);setView('compact');", "setSelected(key);const last=sourcePreviews.current.get(a.identity.source)??0;\n    if(current.settings.autoPreview&&Date.now()-last>=tokens.behavior.sourceThrottle){sourcePreviews.current.set(a.identity.source,Date.now());setReadable(false);setReason('preview');setView('expanded');}\n    else setView('compact');")
+s=s.replace("setQueue(emptyQueue());setTimer", "sourcePreviews.current.clear();setReadable(false);setQueue(emptyQueue());setTimer",1)
+s=s.replace("if(reason!=='preview'||view!=='expanded'||hovered||focusWithin)return;", "if(reason!=='preview'||view!=='expanded'||!readable||hovered||focusWithin)return;")
+s=s.replace("},[reason,view,hovered,focusWithin,selected]);", "},[reason,view,readable,hovered,focusWithin,selected]);")
+s=s.replace("preview.current.left=Math.max(0,preview.current.left-(performance.now()-preview.current.start));", "preview.current.left=Math.max(tokens.behavior.resumeDelay,preview.current.left-(performance.now()-preview.current.start));")
+s=s.replace("choose,expand,collapse,openSource,personal,configure,setHovered,setFocusWithin,setSource,", "choose,expand,collapse,openSource,personal,configure,setHovered,setFocusWithin,setSource,hovered,readable,setReadable,\n  promote:()=>setReason('explicit'),collapseDisplay:()=>{setView(selected||queue.items.length?'compact':'idle');setReason('explicit');},")
+p.write_text(s,encoding='utf8')
+print('Source throttling and readable-time preview pause/resume implemented')
