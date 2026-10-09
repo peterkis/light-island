@@ -1,0 +1,11 @@
+{
+  "unitTests": 191,
+  "unitPassed": 191,
+  "unitSuccess": true,
+  "codeHashCount": 141,
+  "codeDrift": 0,
+  "os": "Microsoft Windows 11 专业版",
+  "osVersion": "10.0.26200",
+  "osBuild": "26200",
+  "logicalCpuCount": 16
+}

@@ -1,0 +1,12 @@
+{
+  "startedAt": "2026-10-09T14:30:37.5247293+08:00",
+  "appPid": 14040,
+  "serverPid": 9456,
+  "arguments": [],
+  "qaCdp": false,
+  "normal9223Closed": true,
+  "exeSHA256": "38368DEB85E26FFC40555CB04D44AE514288C2A3474F65DD60DE369D92C7629F",
+  "secondInstancePid": 14712,
+  "secondInstanceOpenedStudio": true,
+  "notificationBusy": 2
+}

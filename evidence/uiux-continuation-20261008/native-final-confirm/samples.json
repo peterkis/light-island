@@ -1,0 +1,69 @@
+{
+  "scope": "Actual screen samples, not WebView screenshots or DWM present telemetry",
+  "pid": 19476,
+  "hwnd": 23071186,
+  "frames": 5,
+  "windowRectChanges": 0,
+  "rows": [
+    {
+      "ms": 202.57,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 329314,
+      "image": "frame-000.png"
+    },
+    {
+      "ms": 348.8,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 329314,
+      "image": "frame-001.png"
+    },
+    {
+      "ms": 501.53,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 329314,
+      "image": "frame-002.png"
+    },
+    {
+      "ms": 687.14,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 329314,
+      "image": "frame-003.png"
+    },
+    {
+      "ms": 940.27,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 329314,
+      "image": "frame-004.png"
+    }
+  ]
+}

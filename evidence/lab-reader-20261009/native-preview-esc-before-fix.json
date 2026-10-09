@@ -1,0 +1,8 @@
+{
+  "stage": "BEFORE_FOCUS_FIX",
+  "rootPid": 22732,
+  "exeSHA256": "F3287E12162366DEFB60E65EED14ABFB6A24A781D2962D857C23EC2224378FA2",
+  "observation": "Native studio preview explicit reveal removed its button; Escape left the reader and shield controls present instead of clearing.",
+  "scope": "Studio preview inside normal Release; island itself hidden by BUSY=2",
+  "plannedRepair": "Focus reader scroll region after explicit read/reveal only; no notification autofocus or global Escape"
+}

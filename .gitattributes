@@ -1,1 +1,10 @@
 "docs/Windows 灵动岛 UI UX 设计规范 v1.0.md" -text
+"docs/protype/灵动岛 · 检验报告阅读（阅后即焚）.html" -text
+"docs/protype/灵动岛「检验报告阅读」开发文档（Agent 可读版）.md" -text
+
+# Preserve captured evidence bytes; generated contexts retain their original formatting.
+evidence/lab-reader-20261009/** -text whitespace=cr-at-eol
+evidence/uiux-continuation-20261008/** -text whitespace=cr-at-eol
+evidence/lab-reader-20261009/**/error-context.md -whitespace
+evidence/uiux-continuation-20261008/**/error-context.md -whitespace
+evidence/lab-reader-20261009/preexisting.diff -whitespace

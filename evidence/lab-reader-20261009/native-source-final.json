@@ -1,0 +1,1837 @@
+{
+  "capturedAt": "2026-10-09T15:28:21.3654124+08:00",
+  "tag": "source-final",
+  "rootPid": 22732,
+  "scope": "Owned app and all discovered WebView2 descendants; studio/source included when open; no desktop image or report text",
+  "seconds": 11.7482299,
+  "windowChanges": 0,
+  "privateWorkingSetMiB": 270.2,
+  "privateCommitMiB": 400.29,
+  "cpuMachinePercent": 0.0,
+  "processes": [
+    {
+      "pid": 22732,
+      "name": "samewave-island",
+      "privateCommitMiB": 7.94,
+      "cpuDeltaSeconds": 0
+    },
+    {
+      "pid": 27600,
+      "name": "msedgewebview2",
+      "privateCommitMiB": 33.5,
+      "cpuDeltaSeconds": 0
+    },
+    {
+      "pid": 12904,
+      "name": "msedgewebview2",
+      "privateCommitMiB": 2.92,
+      "cpuDeltaSeconds": 0
+    },
+    {
+      "pid": 16440,
+      "name": "msedgewebview2",
+      "privateCommitMiB": 62.86,
+      "cpuDeltaSeconds": 0
+    },
+    {
+      "pid": 26560,
+      "name": "msedgewebview2",
+      "privateCommitMiB": 11.02,
+      "cpuDeltaSeconds": 0
+    },
+    {
+      "pid": 26800,
+      "name": "msedgewebview2",
+      "privateCommitMiB": 7.68,
+      "cpuDeltaSeconds": 0
+    },
+    {
+      "pid": 13932,
+      "name": "msedgewebview2",
+      "privateCommitMiB": 27.13,
+      "cpuDeltaSeconds": 0
+    },
+    {
+      "pid": 26972,
+      "name": "msedgewebview2",
+      "privateCommitMiB": 44.42,
+      "cpuDeltaSeconds": 0
+    },
+    {
+      "pid": 30220,
+      "name": "msedgewebview2",
+      "privateCommitMiB": 2.87,
+      "cpuDeltaSeconds": 0
+    },
+    {
+      "pid": 5764,
+      "name": "msedgewebview2",
+      "privateCommitMiB": 103.47,
+      "cpuDeltaSeconds": 0
+    },
+    {
+      "pid": 34636,
+      "name": "msedgewebview2",
+      "privateCommitMiB": 11.19,
+      "cpuDeltaSeconds": 0
+    },
+    {
+      "pid": 33384,
+      "name": "msedgewebview2",
+      "privateCommitMiB": 7.48,
+      "cpuDeltaSeconds": 0
+    },
+    {
+      "pid": 31456,
+      "name": "msedgewebview2",
+      "privateCommitMiB": 46.45,
+      "cpuDeltaSeconds": 0
+    },
+    {
+      "pid": 20688,
+      "name": "msedgewebview2",
+      "privateCommitMiB": 31.36,
+      "cpuDeltaSeconds": 0
+    }
+  ],
+  "samples": [
+    {
+      "ms": 75.79,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 150.16,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 190.39,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 220.6,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 256.3,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 290.17,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 315.1,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 348.31,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 372.79,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 405.0,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 438.28,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 469.13,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 491.13,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 522.29,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 553.83,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 586.58,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 604.83,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 622.72,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 663.14,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 688.37,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 705.76,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 736.92,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 769.09,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 789.19,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 813.95,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 839.53,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 871.55,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 903.5,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 938.45,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 956.26,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 989.3,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 1024.52,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 1054.53,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 1086.28,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 1106.12,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 1139.4,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 1171.68,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 1202.3,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 1234.3,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 1256.09,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 1272.61,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 1306.08,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 1333.04,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 1357.23,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 1381.0,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 1405.74,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 1436.94,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 1455.99,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 1480.29,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 1511.14,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 1533.1,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 1566.25,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 1591.45,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 1624.42,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 1654.81,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 1683.38,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 1713.38,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 1745.62,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 1774.23,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 1805.89,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 1837.23,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 1864.35,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 1903.72,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 1939.19,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 1956.77,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 1989.46,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 2013.53,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 2037.69,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 2073.13,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 2105.22,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 2123.6,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 2148.83,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 2179.91,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 2210.72,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 2240.83,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 2273.87,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 2303.75,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 2321.95,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 2362.26,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 2380.48,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 2412.58,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 2430.42,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 2457.13,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 2489.49,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 2521.22,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 2539.37,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 2562.17,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 2589.56,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 2614.06,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 2646.58,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 2689.4,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 2705.94,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 2737.56,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 2769.45,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 2789.82,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 2812.78,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 2839.17,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 2856.09,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 2881.03,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 2912.51,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 2946.44,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    },
+    {
+      "ms": 2989.5,
+      "window": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "region": [
+        281,
+        -2,
+        423,
+        34
+      ],
+      "captureAffinity": 0,
+      "dpi": 96
+    }
+  ],
+  "meaning": "Finite passive HWND/HRGN/display-affinity samples, not DWM frames or actual mouse-click delivery",
+  "islandVisible": false,
+  "notificationState": 2,
+  "sourceCaptureAffinity": 17
+}

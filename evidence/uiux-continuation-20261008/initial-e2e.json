@@ -1,0 +1,615 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "D:\\Projects\\island-protype\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/clinical-accessibility.spec.ts",
+      "tests/clinical-continuation.spec.ts"
+    ],
+    "configFile": "D:\\Projects\\island-protype\\playwright.config.ts",
+    "rootDir": "D:/Projects/island-protype/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/Projects/island-protype/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "D:/Projects/island-protype/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "/.*\\.spec\\.ts/"
+        ],
+        "timeout": 35000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "evidence/playwright-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "clinical-accessibility.spec.ts",
+      "file": "clinical-accessibility.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "actual computed font at 1 scale preserves source actions",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5986,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T08:21:36.373Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e28326ccfd8817f652f4-18b35f5c85e3e3848310",
+          "file": "clinical-accessibility.spec.ts",
+          "line": 3,
+          "column": 31
+        },
+        {
+          "title": "actual computed font at 2 scale preserves source actions",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5173,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T08:21:42.737Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e28326ccfd8817f652f4-d7c026613e4eb0739dc6",
+          "file": "clinical-accessibility.spec.ts",
+          "line": 3,
+          "column": 31
+        },
+        {
+          "title": "actual computed font at 2.25 scale preserves source actions",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5592,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T08:21:47.929Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e28326ccfd8817f652f4-1cbb269e46558d505312",
+          "file": "clinical-accessibility.spec.ts",
+          "line": 3,
+          "column": 31
+        },
+        {
+          "title": "keyboard traverses details and returns focus to compact trigger",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5909,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('clinical-island')\nExpected: \u001b[32m\"compact\"\u001b[39m\nReceived: \u001b[31m\"idle\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" getByTestId('clinical-island') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('clinical-island')\u001b[22m\n\u001b[2m    13 × locator resolved to <div data-view=\"idle\" data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-surface=\"idle\" data-native=\"false\" data-hidden=\"false\" data-enlarged=\"false\" data-target-width=\"124\" data-target-height=\"32\" class=\"ci-host ux-host \" data-velocity-x=\"0.0000\" data-velocity-y=\"0.0000\" data-target-surface=\"idle\" data-motion-phase=\"settled\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-current-width=\"124.0000\" data-current-height=\"32.0000\" data-layout-epoch=\"179144771417…>…</div>\u001b[22m\n\u001b[2m       - unexpected value \"idle\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('clinical-island')\nExpected: \u001b[32m\"compact\"\u001b[39m\nReceived: \u001b[31m\"idle\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" getByTestId('clinical-island') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('clinical-island')\u001b[22m\n\u001b[2m    13 × locator resolved to <div data-view=\"idle\" data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-surface=\"idle\" data-native=\"false\" data-hidden=\"false\" data-enlarged=\"false\" data-target-width=\"124\" data-target-height=\"32\" class=\"ci-host ux-host \" data-velocity-x=\"0.0000\" data-velocity-y=\"0.0000\" data-target-surface=\"idle\" data-motion-phase=\"settled\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-current-width=\"124.0000\" data-current-height=\"32.0000\" data-layout-epoch=\"179144771417…>…</div>\u001b[22m\n\u001b[2m       - unexpected value \"idle\"\u001b[22m\n\n    at settle (D:\\Projects\\island-protype\\tests\\clinical-accessibility.spec.ts:23:60)\n    at D:\\Projects\\island-protype\\tests\\clinical-accessibility.spec.ts:24:8",
+                    "location": {
+                      "file": "D:\\Projects\\island-protype\\tests\\clinical-accessibility.spec.ts",
+                      "column": 60,
+                      "line": 23
+                    },
+                    "snippet": "  21 |  await post(request,{type:'clinical:reset'});await post(request,{type:'clinical:configure',settings:{autoPreview:false}});await page.goto('/clinical.html');await post(request,{type:'clinical:scenario',scenario:'S04',stage:0});\n  22 |  const island=page.getByTestId('clinical-island'),trigger=island.getByRole('button',{name:'展开协作详情'});\n> 23 |  const settle=async(surface:string)=>{await expect(island).toHaveAttribute('data-surface',surface);await expect(island).toHaveAttribute('data-motion-phase','settled');await page.waitForTimeout(350);};\n     |                                                            ^\n  24 |  await settle('compact');await trigger.focus();await page.keyboard.press('Enter');await settle('rich');await expect(island.getByRole('button',{name:'收起协作详情'})).toBeFocused();\n  25 |  await page.keyboard.press('Tab');await expect(island.getByRole('button',{name:'活动与个人工具'})).toBeFocused();await page.keyboard.press('Tab');await expect(island.getByRole('button',{name:'详情',exact:true})).toBeFocused();\n  26 |  await page.keyboard.press('Enter');await settle('stack');await page.keyboard.press('Tab');await expect(island.getByRole('region',{name:'来源详情滚动区域'})).toBeFocused();"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\Projects\\island-protype\\tests\\clinical-accessibility.spec.ts",
+                        "column": 60,
+                        "line": 23
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('clinical-island')\nExpected: \u001b[32m\"compact\"\u001b[39m\nReceived: \u001b[31m\"idle\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" getByTestId('clinical-island') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('clinical-island')\u001b[22m\n\u001b[2m    13 × locator resolved to <div data-view=\"idle\" data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-surface=\"idle\" data-native=\"false\" data-hidden=\"false\" data-enlarged=\"false\" data-target-width=\"124\" data-target-height=\"32\" class=\"ci-host ux-host \" data-velocity-x=\"0.0000\" data-velocity-y=\"0.0000\" data-target-surface=\"idle\" data-motion-phase=\"settled\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-current-width=\"124.0000\" data-current-height=\"32.0000\" data-layout-epoch=\"179144771417…>…</div>\u001b[22m\n\u001b[2m       - unexpected value \"idle\"\u001b[22m\n\n\n  21 |  await post(request,{type:'clinical:reset'});await post(request,{type:'clinical:configure',settings:{autoPreview:false}});await page.goto('/clinical.html');await post(request,{type:'clinical:scenario',scenario:'S04',stage:0});\n  22 |  const island=page.getByTestId('clinical-island'),trigger=island.getByRole('button',{name:'展开协作详情'});\n> 23 |  const settle=async(surface:string)=>{await expect(island).toHaveAttribute('data-surface',surface);await expect(island).toHaveAttribute('data-motion-phase','settled');await page.waitForTimeout(350);};\n     |                                                            ^\n  24 |  await settle('compact');await trigger.focus();await page.keyboard.press('Enter');await settle('rich');await expect(island.getByRole('button',{name:'收起协作详情'})).toBeFocused();\n  25 |  await page.keyboard.press('Tab');await expect(island.getByRole('button',{name:'活动与个人工具'})).toBeFocused();await page.keyboard.press('Tab');await expect(island.getByRole('button',{name:'详情',exact:true})).toBeFocused();\n  26 |  await page.keyboard.press('Enter');await settle('stack');await page.keyboard.press('Tab');await expect(island.getByRole('region',{name:'来源详情滚动区域'})).toBeFocused();\n    at settle (D:\\Projects\\island-protype\\tests\\clinical-accessibility.spec.ts:23:60)\n    at D:\\Projects\\island-protype\\tests\\clinical-accessibility.spec.ts:24:8"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T08:21:53.540Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "D:\\Projects\\island-protype\\test-results\\clinical-accessibility-key-0c9e5-ns-focus-to-compact-trigger\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\Projects\\island-protype\\test-results\\clinical-accessibility-key-0c9e5-ns-focus-to-compact-trigger\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\Projects\\island-protype\\test-results\\clinical-accessibility-key-0c9e5-ns-focus-to-compact-trigger\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\Projects\\island-protype\\tests\\clinical-accessibility.spec.ts",
+                    "column": 60,
+                    "line": 23
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "e28326ccfd8817f652f4-f4450fb3b028d63e6a15",
+          "file": "clinical-accessibility.spec.ts",
+          "line": 20,
+          "column": 1
+        },
+        {
+          "title": "forced colors and reduced motion preserve focus and protected announcements",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5612,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('clinical-island')\nExpected: \u001b[32m\"rich\"\u001b[39m\nReceived: \u001b[31m\"idle\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" getByTestId('clinical-island') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('clinical-island')\u001b[22m\n\u001b[2m    13 × locator resolved to <div data-view=\"idle\" data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-surface=\"idle\" data-native=\"false\" data-hidden=\"false\" data-enlarged=\"false\" data-target-width=\"124\" data-target-height=\"32\" data-velocity-x=\"0.0000\" data-velocity-y=\"0.0000\" data-target-surface=\"idle\" data-motion-phase=\"settled\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-current-width=\"124.0000\" data-current-height=\"32.0000\" data-layout-epoch=\"1791447720640\" class=\"ci-host ux-host…>…</div>\u001b[22m\n\u001b[2m       - unexpected value \"idle\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('clinical-island')\nExpected: \u001b[32m\"rich\"\u001b[39m\nReceived: \u001b[31m\"idle\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" getByTestId('clinical-island') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('clinical-island')\u001b[22m\n\u001b[2m    13 × locator resolved to <div data-view=\"idle\" data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-surface=\"idle\" data-native=\"false\" data-hidden=\"false\" data-enlarged=\"false\" data-target-width=\"124\" data-target-height=\"32\" data-velocity-x=\"0.0000\" data-velocity-y=\"0.0000\" data-target-surface=\"idle\" data-motion-phase=\"settled\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-current-width=\"124.0000\" data-current-height=\"32.0000\" data-layout-epoch=\"1791447720640\" class=\"ci-host ux-host…>…</div>\u001b[22m\n\u001b[2m       - unexpected value \"idle\"\u001b[22m\n\n    at D:\\Projects\\island-protype\\tests\\clinical-accessibility.spec.ts:32:72",
+                    "location": {
+                      "file": "D:\\Projects\\island-protype\\tests\\clinical-accessibility.spec.ts",
+                      "column": 72,
+                      "line": 32
+                    },
+                    "snippet": "  30 | test('forced colors and reduced motion preserve focus and protected announcements',async({page,request})=>{\n  31 |  await post(request,{type:'clinical:reset'});await page.emulateMedia({reducedMotion:'reduce',forcedColors:'active'});await page.goto('/clinical.html');await post(request,{type:'clinical:scenario',scenario:'S03',stage:0});\n> 32 |  const island=page.getByTestId('clinical-island');await expect(island).toHaveAttribute('data-surface','rich');await expect(island).toHaveAttribute('data-motion-phase','settled');await island.getByRole('button',{name:'详情',exact:true}).focus();\n     |                                                                        ^\n  33 |  expect(await island.getByRole('button',{name:'详情',exact:true}).evaluate(e=>getComputedStyle(e).outlineStyle)).not.toBe('none');\n  34 |  await post(request,{type:'clinical:configure',settings:{role:'finance'}});await expect(island).toContainText('详情已保护');await expect(page.locator('.ci-sr')).toHaveText('新消息');\n  35 |  expect(await island.getByRole('button',{name:/打开危急/}).count()).toBe(0);expect(await island.locator('.ci-content').evaluate(e=>getComputedStyle(e).filter)).toBe('none');"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\Projects\\island-protype\\tests\\clinical-accessibility.spec.ts",
+                        "column": 72,
+                        "line": 32
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('clinical-island')\nExpected: \u001b[32m\"rich\"\u001b[39m\nReceived: \u001b[31m\"idle\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" getByTestId('clinical-island') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('clinical-island')\u001b[22m\n\u001b[2m    13 × locator resolved to <div data-view=\"idle\" data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-surface=\"idle\" data-native=\"false\" data-hidden=\"false\" data-enlarged=\"false\" data-target-width=\"124\" data-target-height=\"32\" data-velocity-x=\"0.0000\" data-velocity-y=\"0.0000\" data-target-surface=\"idle\" data-motion-phase=\"settled\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-current-width=\"124.0000\" data-current-height=\"32.0000\" data-layout-epoch=\"1791447720640\" class=\"ci-host ux-host…>…</div>\u001b[22m\n\u001b[2m       - unexpected value \"idle\"\u001b[22m\n\n\n  30 | test('forced colors and reduced motion preserve focus and protected announcements',async({page,request})=>{\n  31 |  await post(request,{type:'clinical:reset'});await page.emulateMedia({reducedMotion:'reduce',forcedColors:'active'});await page.goto('/clinical.html');await post(request,{type:'clinical:scenario',scenario:'S03',stage:0});\n> 32 |  const island=page.getByTestId('clinical-island');await expect(island).toHaveAttribute('data-surface','rich');await expect(island).toHaveAttribute('data-motion-phase','settled');await island.getByRole('button',{name:'详情',exact:true}).focus();\n     |                                                                        ^\n  33 |  expect(await island.getByRole('button',{name:'详情',exact:true}).evaluate(e=>getComputedStyle(e).outlineStyle)).not.toBe('none');\n  34 |  await post(request,{type:'clinical:configure',settings:{role:'finance'}});await expect(island).toContainText('详情已保护');await expect(page.locator('.ci-sr')).toHaveText('新消息');\n  35 |  expect(await island.getByRole('button',{name:/打开危急/}).count()).toBe(0);expect(await island.locator('.ci-content').evaluate(e=>getComputedStyle(e).filter)).toBe('none');\n    at D:\\Projects\\island-protype\\tests\\clinical-accessibility.spec.ts:32:72"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T08:22:00.065Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "D:\\Projects\\island-protype\\test-results\\clinical-accessibility-for-3abb5-and-protected-announcements\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\Projects\\island-protype\\test-results\\clinical-accessibility-for-3abb5-and-protected-announcements\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\Projects\\island-protype\\test-results\\clinical-accessibility-for-3abb5-and-protected-announcements\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\Projects\\island-protype\\tests\\clinical-accessibility.spec.ts",
+                    "column": 72,
+                    "line": 32
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "e28326ccfd8817f652f4-e7b7a74238295b56a436",
+          "file": "clinical-accessibility.spec.ts",
+          "line": 30,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "clinical-continuation.spec.ts",
+      "file": "clinical-continuation.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "swipe ignores only this preview and undo opens the exact intact source",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7487,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T08:22:06.462Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2a79285b5f8acf175da2-65b5284fe017fd44ade2",
+          "file": "clinical-continuation.spec.ts",
+          "line": 8,
+          "column": 1
+        },
+        {
+          "title": "short drag returns with no source navigation and undo is time/version bounded",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 12573,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T08:22:14.171Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2a79285b5f8acf175da2-c29f84d1b6ae982a8a38",
+          "file": "clinical-continuation.spec.ts",
+          "line": 16,
+          "column": 1
+        },
+        {
+          "title": "source mute is local, reversible and cannot suppress important events",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 11067,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T08:22:26.768Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2a79285b5f8acf175da2-ec4dd442c722ab8ae239",
+          "file": "clinical-continuation.spec.ts",
+          "line": 22,
+          "column": 1
+        },
+        {
+          "title": "finite neck appears during split, vanishes at rest and reduced motion skips it",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5535,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T08:22:37.867Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2a79285b5f8acf175da2-3f418fe7066355dc4cc3",
+          "file": "clinical-continuation.spec.ts",
+          "line": 29,
+          "column": 1
+        },
+        {
+          "title": "button press retains text size, spring releases and route failure is visible",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "timedOut",
+                  "duration": 37767,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 35000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 35000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 35000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "D:\\Projects\\island-protype\\tests\\clinical-continuation.spec.ts",
+                        "column": 126,
+                        "line": 41
+                      },
+                      "message": "Error: locator.click: Test timeout of 35000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByTestId('clinical-island').getByRole('button', { name: '打开危急值流程' })\u001b[22m\n\u001b[2m    - locator resolved to <button class=\"ci-primary ux-primary\">…</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is not stable\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <path class=\"ci-fill\" data-shell=\"fill\" d=\"M-10,0 L278.0476,0 C272.5248,0 268.0476,4.4772 268.0476,10 L268.0476,18.0395 C268.0476,26.0334 268.0476,30.326 265.1804,33.1932 C262.3132,36.0604 258.0206,36.0604 250.0267,36.0604 L18.0209,36.0604 C10.027,36.0604 5.7344,36.0604 2.8672,33.1932 C0,30.326 0,26.0334 0,18.0395 L0,10 C0,4.4772 -4.4772,0 -10,0 Z\"></path> from <svg class=\"ci-shell\" aria-hidden=\"true\" width=\"288.0476153404218\" height=\"36.060434855150554\" viewBox=\"-10 0 288.0476153404218 36.060434855150554\">…</svg> subtree intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <path class=\"ci-fill\" data-shell=\"fill\" d=\"M-10,0 L277.8322,0 C272.3094,0 267.8322,4.4772 267.8322,10 L267.8322,17.8935 C267.8322,25.8309 267.8322,30.0932 264.9853,32.9401 C262.1384,35.7871 257.8761,35.7871 249.9387,35.7871 L17.8935,35.7871 C9.9561,35.7871 5.6939,35.7871 2.8469,32.9401 C0,30.0932 0,25.8309 0,17.8935 L0,10 C0,4.4772 -4.4772,0 -10,0 Z\"></path> from <svg class=\"ci-shell\" aria-hidden=\"true\" width=\"287.8322354335182\" height=\"35.78706805023453\" viewBox=\"-10 0 287.8322354335182 35.78706805023453\">…</svg> subtree intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 100ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <path class=\"ci-fill\" data-shell=\"fill\" d=\"M-10,0 L277.9879,0 C272.4651,0 267.9879,4.4772 267.9879,10 L267.9879,17.9923 C267.9879,25.9735 267.9879,30.2594 265.1253,33.122 C262.2626,35.9847 257.9768,35.9847 249.9956,35.9847 L17.9923,35.9847 C10.0111,35.9847 5.7253,35.9847 2.8626,33.122 C0,30.2594 0,25.9735 0,17.9923 L0,10 C0,4.4772 -4.4772,0 -10,0 Z\"></path> from <svg class=\"ci-shell\" aria-hidden=\"true\" width=\"287.987907369033\" height=\"35.984651660695846\" viewBox=\"-10 0 287.987907369033 35.984651660695846\">…</svg> subtree intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 100ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is not stable\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 500ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m  - element was detached from the DOM, retrying\u001b[22m\n\n\n  39 |  expect(await button.evaluate(el=>getComputedStyle(el).transform)).toBe('none');expect(await button.evaluate(el=>Number((el as HTMLElement).style.getPropertyValue('--ux-press')))).toBeLessThan(.99);\n  40 |  await page.mouse.move(1,1000);await page.mouse.up();await expect.poll(()=>button.evaluate(el=>(el as HTMLElement).style.getPropertyValue('--ux-press'))).toBe('');\n> 41 |  await post(request,{type:'clinical:configure',settings:{routeFault:'failed'}});await e.getByRole('button',{name:'打开危急值流程'}).click();await settle(page,'stack');await expect(e.getByRole('status')).toContainText('未能打开来源');expect(await page.getByRole('dialog').count()).toBe(0);\n     |                                                                                                                              ^\n  42 | });\n  43 | test('compact overflow makes one 30 DIP/s traversal and reduced motion keeps it static',async({page,request})=>{\n  44 |  await post(request,{type:'clinical:configure',settings:{autoPreview:false,textScale:2.25}});await post(request,{type:'clinical:preferences',settings:{compactText:true}});await post(request,{type:'clinical:scenario',scenario:'S04',stage:0});const e=await settle(page,'compact');await e.hover();\n    at D:\\Projects\\island-protype\\tests\\clinical-continuation.spec.ts:41:126"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T08:22:43.434Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "D:\\Projects\\island-protype\\test-results\\clinical-continuation-butt-d5945-nd-route-failure-is-visible\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\Projects\\island-protype\\test-results\\clinical-continuation-butt-d5945-nd-route-failure-is-visible\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\Projects\\island-protype\\test-results\\clinical-continuation-butt-d5945-nd-route-failure-is-visible\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "2a79285b5f8acf175da2-4182181fd31a159a45dc",
+          "file": "clinical-continuation.spec.ts",
+          "line": 36,
+          "column": 1
+        },
+        {
+          "title": "compact overflow makes one 30 DIP/s traversal and reduced motion keeps it static",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6424,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T08:23:45.836Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2a79285b5f8acf175da2-a39316455cfa24b75c82",
+          "file": "clinical-continuation.spec.ts",
+          "line": 43,
+          "column": 1
+        },
+        {
+          "title": "permission revocation immediately removes undo and compact sensitive text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7207,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T08:23:53.783Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2a79285b5f8acf175da2-d644bb12b9ed059fa112",
+          "file": "clinical-continuation.spec.ts",
+          "line": 49,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-08T08:21:34.820Z",
+    "duration": 147807.99899999998,
+    "expected": 9,
+    "skipped": 0,
+    "unexpected": 3,
+    "flaky": 0
+  }
+}

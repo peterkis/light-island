@@ -1,5 +1,7 @@
 # Windows 灵动岛 UI/UX v1.0 对照实现
 
+2026-10-08 接续记录见 [UIUX-V1-CONTINUATION.md](UIUX-V1-CONTINUATION.md)，新证据目录为 `evidence/uiux-continuation-20261008/`。以下保留 2026-10-06 的历史交付与未完成项原貌；当前结果以接续记录及其 RESULTS.json 为准。
+
 本轮依据用户文件 `Windows 灵动岛 UI UX 设计规范 v1.0.md`（原文保持不变，SHA256 为 `a9f37ea76becf4b74c4388a2172e4d46dbc7a4600558cee3b71f445f3e67b1fa`）。当前临床模块使用该文件，不再使用历史 160×34 / 540ms 预烘焙缓动作为视觉验收标准。旧 `--legacy` 对照模块保留。
 
 ## 已落地的对应关系

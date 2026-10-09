@@ -1,0 +1,128 @@
+{
+  "capturedAt": "2026-10-09T15:59:17.4774143+08:00",
+  "status": "IMPLEMENTED_WITH_BOUNDED_VALIDATION",
+  "scope": "Synthetic read-only Windows lab reader, no watermark, local presentation clearing only",
+  "branch": "main",
+  "head": "9609ecf8dc2912ffd6595053f1bb442af449dbbc",
+  "exeSHA256": "BE01BD96C7A862B35AB3ADAB8CE3A09C7FE14765D6B8A95078DABCF807DF42F4",
+  "immutableInputsUnchanged": true,
+  "sourceHashDrift": 0,
+  "typeScript": {
+    "passed": 191,
+    "total": 191,
+    "evidence": "unit-final-focus.json",
+    "status": "PASS"
+  },
+  "rust": {
+    "passed": 7,
+    "total": 7,
+    "evidence": "rust-final.log",
+    "scope": "Rust code unchanged after these tests",
+    "status": "PASS"
+  },
+  "build": {
+    "status": "PASS",
+    "evidence": "release-final-focus.log"
+  },
+  "e2e": {
+    "fullBeforeButtonAndFocusRepairs": {
+      "passed": 70,
+      "failedCase": "Button spring negative frame delta; repaired, deterministic RED retained and related checks passed",
+      "evidence": "e2e-routing-final.json",
+      "failed": 1
+    },
+    "finalFull72": "NOT_RUN_AFTER_LAST_FOCUS_CHANGE",
+    "earlierFull71": {
+      "status": "PASS_BEFORE_NATIVE_ROUTING_REPAIR",
+      "evidence": "e2e-complete.json"
+    },
+    "finalLabScene": {
+      "passed": 12,
+      "evidence": "e2e-scene-final.json",
+      "failed": 0,
+      "skipped": 0
+    },
+    "affectedBeforeFinalFocus": {
+      "passed": 18,
+      "total": 18,
+      "evidence": "e2e-affected-delivery.json",
+      "includes": "7 clinical continuation and 11 lab scene"
+    },
+    "historicalFailuresRetained": true
+  },
+  "native": {
+    "crashRestartOwnedProfileCleanup": {
+      "status": "PASS",
+      "evidence": "profile-cleanup.json"
+    },
+    "normalLaunch": {
+      "capturedAt": "2026-10-09T15:56:48.3555575+08:00",
+      "rootPid": 30060,
+      "serverPid": 9456,
+      "commandLine": "\"D:\\Projects\\island-protype\\src-tauri\\target\\release\\samewave-island.exe\" --studio",
+      "exeSHA256": "BE01BD96C7A862B35AB3ADAB8CE3A09C7FE14765D6B8A95078DABCF807DF42F4",
+      "qaCdp": false,
+      "port9223Closed": true,
+      "syntheticHealth": "samewave-synthetic-demo",
+      "profileDirs": [
+        "session-30060-1791532286470888300"
+      ]
+    },
+    "normalExitCleanup": "NOT_RUN",
+    "islandReadingMorphClickThrough": "NOT_RUN_WINDOWS_NOTIFICATION_BUSY_2",
+    "dwmFrames": "NOT_RUN",
+    "finalExecutableFocusEvidence": "native-preview-focus-final.json",
+    "actualMemoryErasure": "NOT_PROVABLE",
+    "performance": {
+      "privateWorkingSetMiB": 270.2,
+      "scope": "Previous F328 app and all WebView2 descendants, studio/source open; hidden static island",
+      "cpuMachinePercent": 0,
+      "meaning": "Passive samples, not frames; short CPU sample, not perpetual zero usage",
+      "evidence": "native-source-final.json",
+      "samples": 102,
+      "totalObservationSeconds": 11.7482299,
+      "privateCommitMiB": 400.29
+    },
+    "sourceIsolation": {
+      "sourceRows": 8,
+      "affinity": 17,
+      "studioRows": 0,
+      "evidence": "native-source-isolation-final.json",
+      "unchangedSeam": "Rust capture and private routing, bridge, source component unchanged by final reader focus fix",
+      "capture": "One capture tool excluded source report, exposing underlying metadata only; not absolute prevention",
+      "status": "PASS_ON_PRIOR_F328_EXECUTABLE",
+      "sourceSeamHashEvidence": "source-seam-hashes.json"
+    },
+    "finalExecutableFocus": "PASS_STUDIO_PREVIEW_ESC_CLEARED_READER"
+  },
+  "deviceMatrix": {
+    "touch": "NOT_RUN",
+    "narrator": "NOT_RUN",
+    "dpi96": "PASS_PASSIVE_OBSERVATION",
+    "windows11": "OBSERVED_BUILD_26200",
+    "windows10": "NOT_RUN",
+    "gpuUsage": "NOT_RUN",
+    "refresh120HzAndDwm": "NOT_RUN",
+    "physicalMixedDpi": "NOT_RUN"
+  },
+  "sourceWrites": false,
+  "sourceReportDeleted": false,
+  "committed": false,
+  "pushed": false,
+  "published": false,
+  "historicalEvidence": {
+    "thisRunCopies": "regression-generated",
+    "untrackedOriginalsOverwritten": [
+      "evidence/uiux-continuation-20261008/accessibility-text-1.png",
+      "evidence/uiux-continuation-20261008/accessibility-text-2.png",
+      "evidence/uiux-continuation-20261008/accessibility-text-2.25.png"
+    ],
+    "futureOutputsRedirected": true,
+    "originalBytesRecovery": "UNAVAILABLE",
+    "trackedRewritesRestoredFromHead": true
+  },
+  "documents": [
+    "docs/LAB-READER-IMPLEMENTATION.md",
+    "evidence/lab-reader-20261009/DESIGN-REVIEW.md"
+  ]
+}

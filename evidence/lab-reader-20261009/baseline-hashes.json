@@ -1,0 +1,50 @@
+[
+  {
+    "path": "docs/UIUX-V1-IMPLEMENTATION.md",
+    "sha256": "7BFC8E873D28693F571862D5538AA3EDBF36348F866CB4F15BBDE1A7F314F75E"
+  },
+  {
+    "path": "src-tauri/src/clinical_window.rs",
+    "sha256": "AC6BA039DDEB1A5D8547CC528FFBE931425E8DDF12D7F31E8D4F2EA22B4326B8"
+  },
+  {
+    "path": "src/clinical/ClinicalIsland.tsx",
+    "sha256": "B57F93FCEDB7B62E4342F706E8B98D45F20619CFD0569F012555A37D2EE73276"
+  },
+  {
+    "path": "src/clinical/controller.ts",
+    "sha256": "F21879FFC0E1422401533CA0F82D4AB880F25550A375F5A0A32E9BD3FA90CEDB"
+  },
+  {
+    "path": "src/clinical/geometry.ts",
+    "sha256": "D25EF280CAED0B3E1E4B3FC6CB61D5C0DEA4F99BBDF4A73F4B33B57AC94A6581"
+  },
+  {
+    "path": "src/clinical/uiux.css",
+    "sha256": "7174450960F16B3668BEE086EE2C325DE1FC93C3B2B0501041DFFBEBB3660AFC"
+  },
+  {
+    "path": "src/clinical/useClinicalLayout.ts",
+    "sha256": "D0FD8B89831FAFBD8243EFE75FDC10BF89C6DB9A98FD710AE589D0BC738AC4E5"
+  },
+  {
+    "path": "src/clinical/useSurfaceInput.ts",
+    "sha256": "FA5494F975BA542BF360E89EACBF72B9A6EA34F9695A07B991570F7077124768"
+  },
+  {
+    "path": "tests/clinical-accessibility.spec.ts",
+    "sha256": "B994B9E29C7F4C771A4747A7474A9FDB2B1EEF83D2AEB8538A10BC1F3B5D9ABA"
+  },
+  {
+    "path": "docs/Windows 灵动岛 UI UX 设计规范 v1.0.md",
+    "sha256": "A9F37EA76BECF4B74C4388A2172E4D46DBC7A4600558CEE3B71F445F3E67B1FA"
+  },
+  {
+    "path": "docs/protype/灵动岛「检验报告阅读」开发文档（Agent 可读版）.md",
+    "sha256": "BECA7CA59CCE18F7898F97CAF497A9F63E8E30B55A91FD74E1CB2BB2D74C9AFF"
+  },
+  {
+    "path": "docs/protype/灵动岛 · 检验报告阅读（阅后即焚）.html",
+    "sha256": "625664A43EEA9CEB14763EF27E650A1F8D8766DED933E8D6704A451416146DAD"
+  }
+]

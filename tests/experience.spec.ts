@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import {evidencePath} from './evidence-path';
 async function control(request: any, value: object) { await request.post('http://127.0.0.1:17321/api/push', { data: value }); }
 test.beforeEach(async ({ page, request }) => {
   await control(request, { type: 'reset' });
@@ -10,7 +11,7 @@ test('quiet state, background interaction and studio screenshot', async ({ page 
   await expect(page.getByTestId('island')).toHaveAttribute('data-mode', 'compact');
   await page.getByTestId('background-action').click();
   await expect(page.getByTestId('background-count')).toContainText('1 次');
-  await page.screenshot({ path: 'evidence/01-studio-obsidian.png', fullPage: true });
+  await page.screenshot({ path: evidencePath('01-studio-obsidian.png'), fullPage: true });
 });
 test('three real themes share the interaction model', async ({ page }) => {
   for (const theme of ['cloud', 'dusk', 'ink']) {
@@ -19,7 +20,7 @@ test('three real themes share the interaction model', async ({ page }) => {
     await page.getByTestId('scenario-service').click();
     await expect(page.getByTestId('island')).toHaveAttribute('data-mode', 'peek');
     await page.waitForTimeout(550);
-    await page.screenshot({ path: `evidence/02-theme-${theme}.png`, fullPage: true });
+    await page.screenshot({ path: evidencePath(`02-theme-${theme}.png`), fullPage: true });
     await page.keyboard.press('Escape');
   }
 });
@@ -39,7 +40,7 @@ test('critical stays pending, server confirms only after roundtrip', async ({ pa
   await expect(page.getByTestId('island')).toHaveAttribute('data-mode', 'expanded');
   await page.getByLabel('切换脱敏详情').click();
   await expect(page.getByRole('heading', { name: '检验危急值已发布', exact: true })).toBeVisible();
-  await page.screenshot({ path: 'evidence/03-critical-expanded.png', fullPage: true });
+  await page.screenshot({ path: evidencePath('03-critical-expanded.png'), fullPage: true });
   await page.getByRole('button', { name: '确认收到', exact: true }).click();
   await expect(page.getByRole('button', { name: '等待服务端回执' })).toBeVisible();
   await expect(page.getByTestId('island')).toHaveAttribute('data-mode', 'success');
@@ -68,7 +69,7 @@ test('CSS engine, inbox, escape and reduced motion', async ({ page }) => {
   await page.getByRole('button', { name: '原生 CSS', exact: true }).click();
   await page.getByRole('button', { name: /打开消息中心，/ }).click();
   await expect(page.getByRole('heading', { name: '消息中心0' })).toBeVisible();
-  await page.waitForTimeout(500); await page.screenshot({ path: 'evidence/04-inbox-empty.png', fullPage: true });
+  await page.waitForTimeout(500); await page.screenshot({ path: evidencePath('04-inbox-empty.png'), fullPage: true });
   await page.keyboard.press('Escape');
   await expect(page.getByTestId('island')).toHaveAttribute('data-mode', 'compact');
   await page.getByRole('switch', { name: '减少动态' }).click();
@@ -79,12 +80,12 @@ test('narrow viewport stays within bounds', async ({ page }) => {
   await page.getByTestId('scenario-critical').click(); await page.waitForTimeout(550);
   const bounds = await page.getByTestId('island').boundingBox();
   expect(bounds!.x).toBeGreaterThanOrEqual(0); expect(bounds!.x + bounds!.width).toBeLessThanOrEqual(390);
-  await page.screenshot({ path: 'evidence/05-narrow-layout.png', fullPage: true });
+  await page.screenshot({ path: evidencePath('05-narrow-layout.png'), fullPage: true });
 });
 test('visible compositor cadence sample and browser runtime errors', async ({ page }) => {
   const errors: string[] = []; page.on('pageerror', e => errors.push(e.message));
   await page.getByRole('button', { name: '运行一轮动效采样' }).click();
   await page.waitForTimeout(7000);
-  await page.screenshot({ path: 'evidence/06-frame-sample.png', fullPage: true });
+  await page.screenshot({ path: evidencePath('06-frame-sample.png'), fullPage: true });
   expect(errors).toEqual([]);
 });

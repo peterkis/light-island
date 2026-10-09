@@ -1,0 +1,2726 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "D:\\Projects\\island-protype\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "--reporter=list,json"
+    ],
+    "configFile": "D:\\Projects\\island-protype\\playwright.config.ts",
+    "rootDir": "D:/Projects/island-protype/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/Projects/island-protype/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "D:/Projects/island-protype/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "/.*\\.spec\\.ts/"
+        ],
+        "timeout": 35000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list"
+      ],
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "click-transition.spec.ts",
+      "file": "click-transition.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "gsap: click open and close do not restart the outgoing content",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3943,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:33:33.911Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e549834517b212c2a4fc-15c514ca6eb12a03b02b",
+          "file": "click-transition.spec.ts",
+          "line": 12,
+          "column": 36
+        },
+        {
+          "title": "css: click open and close do not restart the outgoing content",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3376,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:33:38.123Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e549834517b212c2a4fc-a17fbd36854228b61e01",
+          "file": "click-transition.spec.ts",
+          "line": 12,
+          "column": 36
+        },
+        {
+          "title": "closing under a stationary center pointer does not replay the content exit",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3450,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:33:41.514Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e549834517b212c2a4fc-b16a8183ebc9e6d5d10a",
+          "file": "click-transition.spec.ts",
+          "line": 25,
+          "column": 1
+        },
+        {
+          "title": "rapid open-close-open settles on the newest click and removes CSS measuring elements",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3484,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:33:44.975Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e549834517b212c2a4fc-d1e7f67ea27d661ec539",
+          "file": "click-transition.spec.ts",
+          "line": 34,
+          "column": 1
+        },
+        {
+          "title": "explicit close suppresses unread peek until a genuine new entry",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4792,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:33:48.473Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e549834517b212c2a4fc-297240616e20b51195f5",
+          "file": "click-transition.spec.ts",
+          "line": 45,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "clinical-accessibility.spec.ts",
+      "file": "clinical-accessibility.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "actual computed font at 1 scale preserves source actions",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8751,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:33:53.330Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e28326ccfd8817f652f4-18b35f5c85e3e3848310",
+          "file": "clinical-accessibility.spec.ts",
+          "line": 3,
+          "column": 31
+        },
+        {
+          "title": "actual computed font at 2 scale preserves source actions",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6580,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:34:02.119Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e28326ccfd8817f652f4-d7c026613e4eb0739dc6",
+          "file": "clinical-accessibility.spec.ts",
+          "line": 3,
+          "column": 31
+        },
+        {
+          "title": "actual computed font at 2.25 scale preserves source actions",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5250,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:34:08.730Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e28326ccfd8817f652f4-1cbb269e46558d505312",
+          "file": "clinical-accessibility.spec.ts",
+          "line": 3,
+          "column": 31
+        },
+        {
+          "title": "keyboard traverses details and returns focus to compact trigger",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 9720,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:34:13.999Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e28326ccfd8817f652f4-f4450fb3b028d63e6a15",
+          "file": "clinical-accessibility.spec.ts",
+          "line": 20,
+          "column": 1
+        },
+        {
+          "title": "forced colors and reduced motion preserve focus and protected announcements",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 7770,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('clinical-island')\nExpected substring: \u001b[32m\"详情已保护\"\u001b[39m\nReceived string:    \u001b[31m\"1 项\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" getByTestId('clinical-island') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('clinical-island')\u001b[22m\n\u001b[2m    13 × locator resolved to <div data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-view=\"compact\" data-native=\"false\" data-hidden=\"false\" data-lab-state=\"idle\" data-enlarged=\"false\" data-surface=\"compact\" data-target-width=\"268\" data-target-height=\"36\" data-velocity-x=\"0.0000\" data-velocity-y=\"0.0000\" data-motion-phase=\"settled\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-target-surface=\"compact\" data-current-width=\"268.0000\" data-current-height=\"36.0000\" data-layout-epoch=\"179152…>…</div>\u001b[22m\n\u001b[2m       - unexpected value \"1 项\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('clinical-island')\nExpected substring: \u001b[32m\"详情已保护\"\u001b[39m\nReceived string:    \u001b[31m\"1 项\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" getByTestId('clinical-island') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('clinical-island')\u001b[22m\n\u001b[2m    13 × locator resolved to <div data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-view=\"compact\" data-native=\"false\" data-hidden=\"false\" data-lab-state=\"idle\" data-enlarged=\"false\" data-surface=\"compact\" data-target-width=\"268\" data-target-height=\"36\" data-velocity-x=\"0.0000\" data-velocity-y=\"0.0000\" data-motion-phase=\"settled\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-target-surface=\"compact\" data-current-width=\"268.0000\" data-current-height=\"36.0000\" data-layout-epoch=\"179152…>…</div>\u001b[22m\n\u001b[2m       - unexpected value \"1 项\"\u001b[22m\n\n    at D:\\Projects\\island-protype\\tests\\clinical-accessibility.spec.ts:34:97",
+                    "location": {
+                      "file": "D:\\Projects\\island-protype\\tests\\clinical-accessibility.spec.ts",
+                      "column": 97,
+                      "line": 34
+                    },
+                    "snippet": "  32 |  const island=page.getByTestId('clinical-island');await expect(island).toHaveAttribute('data-surface','rich');await expect(island).toHaveAttribute('data-motion-phase','settled');await island.getByRole('button',{name:'详情',exact:true}).focus();\n  33 |  expect(await island.getByRole('button',{name:'详情',exact:true}).evaluate(e=>getComputedStyle(e).outlineStyle)).not.toBe('none');\n> 34 |  await post(request,{type:'clinical:configure',settings:{role:'finance'}});await expect(island).toContainText('详情已保护');await expect(page.locator('.ci-sr')).toHaveText('新消息');\n     |                                                                                                 ^\n  35 |  expect(await island.getByRole('button',{name:/打开危急/}).count()).toBe(0);expect(await island.locator('.ci-content').evaluate(e=>getComputedStyle(e).filter)).toBe('none');\n  36 | });\n  37 |"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\Projects\\island-protype\\tests\\clinical-accessibility.spec.ts",
+                        "column": 97,
+                        "line": 34
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('clinical-island')\nExpected substring: \u001b[32m\"详情已保护\"\u001b[39m\nReceived string:    \u001b[31m\"1 项\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" getByTestId('clinical-island') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('clinical-island')\u001b[22m\n\u001b[2m    13 × locator resolved to <div data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-view=\"compact\" data-native=\"false\" data-hidden=\"false\" data-lab-state=\"idle\" data-enlarged=\"false\" data-surface=\"compact\" data-target-width=\"268\" data-target-height=\"36\" data-velocity-x=\"0.0000\" data-velocity-y=\"0.0000\" data-motion-phase=\"settled\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-target-surface=\"compact\" data-current-width=\"268.0000\" data-current-height=\"36.0000\" data-layout-epoch=\"179152…>…</div>\u001b[22m\n\u001b[2m       - unexpected value \"1 项\"\u001b[22m\n\n\n  32 |  const island=page.getByTestId('clinical-island');await expect(island).toHaveAttribute('data-surface','rich');await expect(island).toHaveAttribute('data-motion-phase','settled');await island.getByRole('button',{name:'详情',exact:true}).focus();\n  33 |  expect(await island.getByRole('button',{name:'详情',exact:true}).evaluate(e=>getComputedStyle(e).outlineStyle)).not.toBe('none');\n> 34 |  await post(request,{type:'clinical:configure',settings:{role:'finance'}});await expect(island).toContainText('详情已保护');await expect(page.locator('.ci-sr')).toHaveText('新消息');\n     |                                                                                                 ^\n  35 |  expect(await island.getByRole('button',{name:/打开危急/}).count()).toBe(0);expect(await island.locator('.ci-content').evaluate(e=>getComputedStyle(e).filter)).toBe('none');\n  36 | });\n  37 |\n    at D:\\Projects\\island-protype\\tests\\clinical-accessibility.spec.ts:34:97"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:34:23.743Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "D:\\Projects\\island-protype\\test-results\\clinical-accessibility-for-3abb5-and-protected-announcements\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\Projects\\island-protype\\test-results\\clinical-accessibility-for-3abb5-and-protected-announcements\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\Projects\\island-protype\\test-results\\clinical-accessibility-for-3abb5-and-protected-announcements\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\Projects\\island-protype\\tests\\clinical-accessibility.spec.ts",
+                    "column": 97,
+                    "line": 34
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "e28326ccfd8817f652f4-e7b7a74238295b56a436",
+          "file": "clinical-accessibility.spec.ts",
+          "line": 30,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "clinical-continuation.spec.ts",
+      "file": "clinical-continuation.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "swipe ignores only this preview and undo opens the exact intact source",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7849,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:34:33.337Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2a79285b5f8acf175da2-65b5284fe017fd44ade2",
+          "file": "clinical-continuation.spec.ts",
+          "line": 8,
+          "column": 1
+        },
+        {
+          "title": "short drag returns with no source navigation and undo is time/version bounded",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 13139,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:34:41.666Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2a79285b5f8acf175da2-c29f84d1b6ae982a8a38",
+          "file": "clinical-continuation.spec.ts",
+          "line": 16,
+          "column": 1
+        },
+        {
+          "title": "source mute is local, reversible and cannot suppress important events",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 13028,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:34:54.835Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2a79285b5f8acf175da2-ec4dd442c722ab8ae239",
+          "file": "clinical-continuation.spec.ts",
+          "line": 22,
+          "column": 1
+        },
+        {
+          "title": "finite neck appears during split, vanishes at rest and reduced motion skips it",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 6349,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected value: \u001b[32m\"true\"\u001b[39m\nReceived array: \u001b[31m[\"false\", \"false\", \"false\", \"false\", \"false\", \"false\", \"false\", \"false\", \"false\", \"false\", …]\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected value: \u001b[32m\"true\"\u001b[39m\nReceived array: \u001b[31m[\"false\", \"false\", \"false\", \"false\", \"false\", \"false\", \"false\", \"false\", \"false\", \"false\", …]\u001b[39m\n    at D:\\Projects\\island-protype\\tests\\clinical-continuation.spec.ts:33:23",
+                    "location": {
+                      "file": "D:\\Projects\\island-protype\\tests\\clinical-continuation.spec.ts",
+                      "column": 23,
+                      "line": 33
+                    },
+                    "snippet": "  31 |  const sample=e.evaluate(el=>new Promise<string[]>(resolve=>{const frames:string[]=[];const start=performance.now();const tick=()=>{frames.push(el.getAttribute('data-neck')??'');if(performance.now()-start<700)requestAnimationFrame(tick);else resolve(frames);};requestAnimationFrame(tick);}));\n  32 |  await post(request,{type:'clinical:scenario',scenario:'S02',stage:0});await post(request,{type:'clinical:view',mode:'compact'});\n> 33 |  expect(await sample).toContain('true');await settle(page,'compact');await expect(e).toHaveAttribute('data-neck','false');expect(await e.locator('[data-neck]').getAttribute('d')).toBe('');\n     |                       ^\n  34 |  await page.emulateMedia({reducedMotion:'reduce'});await settle(page,'compact');expect(await e.locator('[data-neck]').getAttribute('d')).toBe('');\n  35 | });\n  36 | test('button press retains text size, spring releases and route failure is visible',async({page,request})=>{"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\Projects\\island-protype\\tests\\clinical-continuation.spec.ts",
+                        "column": 23,
+                        "line": 33
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected value: \u001b[32m\"true\"\u001b[39m\nReceived array: \u001b[31m[\"false\", \"false\", \"false\", \"false\", \"false\", \"false\", \"false\", \"false\", \"false\", \"false\", …]\u001b[39m\n\n  31 |  const sample=e.evaluate(el=>new Promise<string[]>(resolve=>{const frames:string[]=[];const start=performance.now();const tick=()=>{frames.push(el.getAttribute('data-neck')??'');if(performance.now()-start<700)requestAnimationFrame(tick);else resolve(frames);};requestAnimationFrame(tick);}));\n  32 |  await post(request,{type:'clinical:scenario',scenario:'S02',stage:0});await post(request,{type:'clinical:view',mode:'compact'});\n> 33 |  expect(await sample).toContain('true');await settle(page,'compact');await expect(e).toHaveAttribute('data-neck','false');expect(await e.locator('[data-neck]').getAttribute('d')).toBe('');\n     |                       ^\n  34 |  await page.emulateMedia({reducedMotion:'reduce'});await settle(page,'compact');expect(await e.locator('[data-neck]').getAttribute('d')).toBe('');\n  35 | });\n  36 | test('button press retains text size, spring releases and route failure is visible',async({page,request})=>{\n    at D:\\Projects\\island-protype\\tests\\clinical-continuation.spec.ts:33:23"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:35:07.911Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "D:\\Projects\\island-protype\\test-results\\clinical-continuation-fini-502d7-and-reduced-motion-skips-it\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\Projects\\island-protype\\test-results\\clinical-continuation-fini-502d7-and-reduced-motion-skips-it\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\Projects\\island-protype\\test-results\\clinical-continuation-fini-502d7-and-reduced-motion-skips-it\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\Projects\\island-protype\\tests\\clinical-continuation.spec.ts",
+                    "column": 23,
+                    "line": 33
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "2a79285b5f8acf175da2-3f418fe7066355dc4cc3",
+          "file": "clinical-continuation.spec.ts",
+          "line": 29,
+          "column": 1
+        },
+        {
+          "title": "button press retains text size, spring releases and route failure is visible",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6097,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:35:15.837Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2a79285b5f8acf175da2-4182181fd31a159a45dc",
+          "file": "clinical-continuation.spec.ts",
+          "line": 36,
+          "column": 1
+        },
+        {
+          "title": "compact overflow makes one 30 DIP/s traversal and reduced motion keeps it static",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3273,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:35:22.332Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2a79285b5f8acf175da2-a39316455cfa24b75c82",
+          "file": "clinical-continuation.spec.ts",
+          "line": 43,
+          "column": 1
+        },
+        {
+          "title": "permission revocation immediately removes undo and compact sensitive text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5070,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:35:25.622Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2a79285b5f8acf175da2-d644bb12b9ed059fa112",
+          "file": "clinical-continuation.spec.ts",
+          "line": 50,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "clinical-experience.spec.ts",
+      "file": "clinical-experience.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "hover is a finite 5% Peek, not an auto-open; explicit reading survives pointer leave",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7348,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:35:30.731Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fcd25cd039499f026565-673da2f24f1023ba195b",
+          "file": "clinical-experience.spec.ts",
+          "line": 10,
+          "column": 1
+        },
+        {
+          "title": "all fourteen source scenarios and 84 states remain read-only behind the new information levels",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 22963,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:35:38.090Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fcd25cd039499f026565-14354a7d1e7107d0374c",
+          "file": "clinical-experience.spec.ts",
+          "line": 16,
+          "column": 1
+        },
+        {
+          "title": "source route is identity/version checked; opening still does not confirm reception",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3266,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:36:01.065Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fcd25cd039499f026565-f65f40d52b6466a72779",
+          "file": "clinical-experience.spec.ts",
+          "line": 26,
+          "column": 1
+        },
+        {
+          "title": "finance authorization and privacy delete sensitive data, including during transitions",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "timedOut",
+                  "duration": 35353,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 35000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 35000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 35000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "D:\\Projects\\island-protype\\tests\\clinical-experience.spec.ts",
+                        "column": 96,
+                        "line": 8
+                      },
+                      "message": "Error: locator.click: Test timeout of 35000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByTestId('clinical-island').getByRole('button', { name: '详情', exact: true })\u001b[22m\n\n\n   6 | async function settled(page:any,surface?:string){const e=island(page);if(surface)await expect(e).toHaveAttribute('data-surface',surface);await expect(e).toHaveAttribute('data-motion-phase','settled',{timeout:8000});await page.waitForTimeout(350);return e;}\n   7 | async function open(request:any,page:any,id='S03',stage=0){await post(request,{type:'clinical:scenario',scenario:id,stage});await post(request,{type:'clinical:view',mode:'open',scenario:id});await settled(page,'rich');}\n>  8 | async function details(page:any){await island(page).getByRole('button',{name:'详情',exact:true}).click();await settled(page,'stack');}\n     |                                                                                                ^\n   9 | test.beforeEach(async({page,request})=>{await post(request,{type:'clinical:reset'});await page.goto('/clinical.html');await expect(page.getByTestId('clinical-scenario-S03')).toBeVisible();await settled(page,'idle');});\n  10 | test('hover is a finite 5% Peek, not an auto-open; explicit reading survives pointer leave',async({page,request})=>{\n  11 |  const e=island(page);await e.hover();await expect(e).toHaveAttribute('data-peek','true');await settled(page,'idle');expect((await e.boundingBox())!.width).toBeCloseTo(130.2,1);\n    at details (D:\\Projects\\island-protype\\tests\\clinical-experience.spec.ts:8:96)\n    at D:\\Projects\\island-protype\\tests\\clinical-experience.spec.ts:32:109"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:36:04.341Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "D:\\Projects\\island-protype\\test-results\\clinical-experience-financ-37c74-ncluding-during-transitions\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\Projects\\island-protype\\test-results\\clinical-experience-financ-37c74-ncluding-during-transitions\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\Projects\\island-protype\\test-results\\clinical-experience-financ-37c74-ncluding-during-transitions\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "fcd25cd039499f026565-16115fad2f70822894be",
+          "file": "clinical-experience.spec.ts",
+          "line": 30,
+          "column": 1
+        },
+        {
+          "title": "mismatch, failed route, stale source and withdrawal are still distinct",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8708,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:36:40.497Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fcd25cd039499f026565-aa0edfc8c3fb13432ca3",
+          "file": "clinical-experience.spec.ts",
+          "line": 36,
+          "column": 1
+        },
+        {
+          "title": "important source interrupts ordinary activity without restarting the personal timer",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5402,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:36:49.442Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fcd25cd039499f026565-f6dc7516bc76c89a1b16",
+          "file": "clinical-experience.spec.ts",
+          "line": 42,
+          "column": 1
+        },
+        {
+          "title": "rapid open/close and privacy/lock leave no stale interaction layer",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 8548,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('clinical-island')\nExpected: \u001b[32m\"rich\"\u001b[39m\nReceived: \u001b[31m\"compact\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" getByTestId('clinical-island') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('clinical-island')\u001b[22m\n\u001b[2m    14 × locator resolved to <div data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-view=\"compact\" data-native=\"false\" data-hidden=\"false\" data-lab-state=\"idle\" data-enlarged=\"false\" data-surface=\"compact\" data-target-width=\"268\" data-target-height=\"36\" data-velocity-x=\"0.0000\" data-velocity-y=\"0.0000\" data-motion-phase=\"settled\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-target-surface=\"compact\" data-current-width=\"268.0000\" data-current-height=\"36.0000\" data-layout-epoch=\"179152…>…</div>\u001b[22m\n\u001b[2m       - unexpected value \"compact\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('clinical-island')\nExpected: \u001b[32m\"rich\"\u001b[39m\nReceived: \u001b[31m\"compact\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" getByTestId('clinical-island') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('clinical-island')\u001b[22m\n\u001b[2m    14 × locator resolved to <div data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-view=\"compact\" data-native=\"false\" data-hidden=\"false\" data-lab-state=\"idle\" data-enlarged=\"false\" data-surface=\"compact\" data-target-width=\"268\" data-target-height=\"36\" data-velocity-x=\"0.0000\" data-velocity-y=\"0.0000\" data-motion-phase=\"settled\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-target-surface=\"compact\" data-current-width=\"268.0000\" data-current-height=\"36.0000\" data-layout-epoch=\"179152…>…</div>\u001b[22m\n\u001b[2m       - unexpected value \"compact\"\u001b[22m\n\n    at settled (D:\\Projects\\island-protype\\tests\\clinical-experience.spec.ts:6:98)\n    at D:\\Projects\\island-protype\\tests\\clinical-experience.spec.ts:53:93",
+                    "location": {
+                      "file": "D:\\Projects\\island-protype\\tests\\clinical-experience.spec.ts",
+                      "column": 98,
+                      "line": 6
+                    },
+                    "snippet": "  4 | const post=async(request:any,data:object)=>expect((await request.post(base+'/api/push',{data})).ok()).toBeTruthy();\n  5 | const island=(page:any)=>page.getByTestId('clinical-island');\n> 6 | async function settled(page:any,surface?:string){const e=island(page);if(surface)await expect(e).toHaveAttribute('data-surface',surface);await expect(e).toHaveAttribute('data-motion-phase','settled',{timeout:8000});await page.waitForTimeout(350);return e;}\n    |                                                                                                  ^\n  7 | async function open(request:any,page:any,id='S03',stage=0){await post(request,{type:'clinical:scenario',scenario:id,stage});await post(request,{type:'clinical:view',mode:'open',scenario:id});await settled(page,'rich');}\n  8 | async function details(page:any){await island(page).getByRole('button',{name:'详情',exact:true}).click();await settled(page,'stack');}\n  9 | test.beforeEach(async({page,request})=>{await post(request,{type:'clinical:reset'});await page.goto('/clinical.html');await expect(page.getByTestId('clinical-scenario-S03')).toBeVisible();await settled(page,'idle');});"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\Projects\\island-protype\\tests\\clinical-experience.spec.ts",
+                        "column": 98,
+                        "line": 6
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('clinical-island')\nExpected: \u001b[32m\"rich\"\u001b[39m\nReceived: \u001b[31m\"compact\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" getByTestId('clinical-island') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('clinical-island')\u001b[22m\n\u001b[2m    14 × locator resolved to <div data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-view=\"compact\" data-native=\"false\" data-hidden=\"false\" data-lab-state=\"idle\" data-enlarged=\"false\" data-surface=\"compact\" data-target-width=\"268\" data-target-height=\"36\" data-velocity-x=\"0.0000\" data-velocity-y=\"0.0000\" data-motion-phase=\"settled\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-target-surface=\"compact\" data-current-width=\"268.0000\" data-current-height=\"36.0000\" data-layout-epoch=\"179152…>…</div>\u001b[22m\n\u001b[2m       - unexpected value \"compact\"\u001b[22m\n\n\n  4 | const post=async(request:any,data:object)=>expect((await request.post(base+'/api/push',{data})).ok()).toBeTruthy();\n  5 | const island=(page:any)=>page.getByTestId('clinical-island');\n> 6 | async function settled(page:any,surface?:string){const e=island(page);if(surface)await expect(e).toHaveAttribute('data-surface',surface);await expect(e).toHaveAttribute('data-motion-phase','settled',{timeout:8000});await page.waitForTimeout(350);return e;}\n    |                                                                                                  ^\n  7 | async function open(request:any,page:any,id='S03',stage=0){await post(request,{type:'clinical:scenario',scenario:id,stage});await post(request,{type:'clinical:view',mode:'open',scenario:id});await settled(page,'rich');}\n  8 | async function details(page:any){await island(page).getByRole('button',{name:'详情',exact:true}).click();await settled(page,'stack');}\n  9 | test.beforeEach(async({page,request})=>{await post(request,{type:'clinical:reset'});await page.goto('/clinical.html');await expect(page.getByTestId('clinical-scenario-S03')).toBeVisible();await settled(page,'idle');});\n    at settled (D:\\Projects\\island-protype\\tests\\clinical-experience.spec.ts:6:98)\n    at D:\\Projects\\island-protype\\tests\\clinical-experience.spec.ts:53:93"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:36:54.858Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "D:\\Projects\\island-protype\\test-results\\clinical-experience-rapid--ebe26--no-stale-interaction-layer\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\Projects\\island-protype\\test-results\\clinical-experience-rapid--ebe26--no-stale-interaction-layer\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\Projects\\island-protype\\test-results\\clinical-experience-rapid--ebe26--no-stale-interaction-layer\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\Projects\\island-protype\\tests\\clinical-experience.spec.ts",
+                    "column": 98,
+                    "line": 6
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "fcd25cd039499f026565-db08a9f974858bafdaa6",
+          "file": "clinical-experience.spec.ts",
+          "line": 49,
+          "column": 1
+        },
+        {
+          "title": "forced colors retain focus and settled idle does not continuously repaint",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2423,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:37:04.081Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fcd25cd039499f026565-bce5f29fa2a3f9c9c37b",
+          "file": "clinical-experience.spec.ts",
+          "line": 55,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "clinical-motion.spec.ts",
+      "file": "clinical-motion.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "new S0 is 124x32 with external ears, finite Peek and no auto-expansion",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3981,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:37:06.728Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c90474b715093b048d69-6f4755b927773d9d3147",
+          "file": "clinical-motion.spec.ts",
+          "line": 6,
+          "column": 1
+        },
+        {
+          "title": "shell and SVG stay synchronized through interruptible expansion and return",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4126,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:37:10.718Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c90474b715093b048d69-4be02820beb77a1f68eb",
+          "file": "clinical-motion.spec.ts",
+          "line": 12,
+          "column": 1
+        },
+        {
+          "title": "floating mode uses 8 DIP offset and a full continuous outline",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3135,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:37:14.858Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c90474b715093b048d69-5476e4ac42e01a70b230",
+          "file": "clinical-motion.spec.ts",
+          "line": 18,
+          "column": 1
+        },
+        {
+          "title": "second source gets a true separate Minimal shape and stack is available",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5825,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:37:18.013Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c90474b715093b048d69-70d1492327096aa299d1",
+          "file": "clinical-motion.spec.ts",
+          "line": 21,
+          "column": 1
+        },
+        {
+          "title": "reduce motion restores controls after same-size source/permission changes",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 7365,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('clinical-island')\nExpected: \u001b[32m\"rich\"\u001b[39m\nReceived: \u001b[31m\"compact\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" getByTestId('clinical-island') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('clinical-island')\u001b[22m\n\u001b[2m    14 × locator resolved to <div data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-view=\"compact\" data-native=\"false\" data-hidden=\"false\" data-lab-state=\"idle\" data-enlarged=\"false\" data-surface=\"compact\" data-target-width=\"268\" data-target-height=\"36\" data-velocity-x=\"0.0000\" data-velocity-y=\"0.0000\" data-motion-phase=\"settled\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-target-surface=\"compact\" data-current-width=\"268.0000\" data-current-height=\"36.0000\" data-layout-epoch=\"179152…>…</div>\u001b[22m\n\u001b[2m       - unexpected value \"compact\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('clinical-island')\nExpected: \u001b[32m\"rich\"\u001b[39m\nReceived: \u001b[31m\"compact\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" getByTestId('clinical-island') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('clinical-island')\u001b[22m\n\u001b[2m    14 × locator resolved to <div data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-view=\"compact\" data-native=\"false\" data-hidden=\"false\" data-lab-state=\"idle\" data-enlarged=\"false\" data-surface=\"compact\" data-target-width=\"268\" data-target-height=\"36\" data-velocity-x=\"0.0000\" data-velocity-y=\"0.0000\" data-motion-phase=\"settled\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-target-surface=\"compact\" data-current-width=\"268.0000\" data-current-height=\"36.0000\" data-layout-epoch=\"179152…>…</div>\u001b[22m\n\u001b[2m       - unexpected value \"compact\"\u001b[22m\n\n    at settled (D:\\Projects\\island-protype\\tests\\clinical-motion.spec.ts:4:120)\n    at D:\\Projects\\island-protype\\tests\\clinical-motion.spec.ts:28:80",
+                    "location": {
+                      "file": "D:\\Projects\\island-protype\\tests\\clinical-motion.spec.ts",
+                      "column": 120,
+                      "line": 4
+                    },
+                    "snippet": "  2 | const base='http://127.0.0.1:17322';\n  3 | const post=async(request:any,data:object)=>expect((await request.post(base+'/api/push',{data})).ok()).toBeTruthy();\n> 4 | const settled=async(page:any,surface?:string)=>{const e=page.getByTestId('clinical-island');if(surface)await expect(e).toHaveAttribute('data-surface',surface);await expect(e).toHaveAttribute('data-motion-phase','settled',{timeout:8000});await page.waitForTimeout(350);return e;};\n    |                                                                                                                        ^\n  5 | test.beforeEach(async({page,request})=>{await post(request,{type:'clinical:reset'});await page.goto('/clinical.html');await settled(page,'idle');});\n  6 | test('new S0 is 124x32 with external ears, finite Peek and no auto-expansion',async({page})=>{\n  7 |  const e=await settled(page);expect((await e.boundingBox())!.width).toBe(124);expect((await e.boundingBox())!.height).toBe(32);"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\Projects\\island-protype\\tests\\clinical-motion.spec.ts",
+                        "column": 120,
+                        "line": 4
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('clinical-island')\nExpected: \u001b[32m\"rich\"\u001b[39m\nReceived: \u001b[31m\"compact\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" getByTestId('clinical-island') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('clinical-island')\u001b[22m\n\u001b[2m    14 × locator resolved to <div data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-view=\"compact\" data-native=\"false\" data-hidden=\"false\" data-lab-state=\"idle\" data-enlarged=\"false\" data-surface=\"compact\" data-target-width=\"268\" data-target-height=\"36\" data-velocity-x=\"0.0000\" data-velocity-y=\"0.0000\" data-motion-phase=\"settled\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-target-surface=\"compact\" data-current-width=\"268.0000\" data-current-height=\"36.0000\" data-layout-epoch=\"179152…>…</div>\u001b[22m\n\u001b[2m       - unexpected value \"compact\"\u001b[22m\n\n\n  2 | const base='http://127.0.0.1:17322';\n  3 | const post=async(request:any,data:object)=>expect((await request.post(base+'/api/push',{data})).ok()).toBeTruthy();\n> 4 | const settled=async(page:any,surface?:string)=>{const e=page.getByTestId('clinical-island');if(surface)await expect(e).toHaveAttribute('data-surface',surface);await expect(e).toHaveAttribute('data-motion-phase','settled',{timeout:8000});await page.waitForTimeout(350);return e;};\n    |                                                                                                                        ^\n  5 | test.beforeEach(async({page,request})=>{await post(request,{type:'clinical:reset'});await page.goto('/clinical.html');await settled(page,'idle');});\n  6 | test('new S0 is 124x32 with external ears, finite Peek and no auto-expansion',async({page})=>{\n  7 |  const e=await settled(page);expect((await e.boundingBox())!.width).toBe(124);expect((await e.boundingBox())!.height).toBe(32);\n    at settled (D:\\Projects\\island-protype\\tests\\clinical-motion.spec.ts:4:120)\n    at D:\\Projects\\island-protype\\tests\\clinical-motion.spec.ts:28:80"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:37:23.853Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "D:\\Projects\\island-protype\\test-results\\clinical-motion-reduce-mot-10778-e-source-permission-changes\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\Projects\\island-protype\\test-results\\clinical-motion-reduce-mot-10778-e-source-permission-changes\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\Projects\\island-protype\\test-results\\clinical-motion-reduce-mot-10778-e-source-permission-changes\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\Projects\\island-protype\\tests\\clinical-motion.spec.ts",
+                    "column": 120,
+                    "line": 4
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "c90474b715093b048d69-bdd97c0b1c5ac54c93d4",
+          "file": "clinical-motion.spec.ts",
+          "line": 26,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "experience.spec.ts",
+      "file": "experience.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "quiet state, background interaction and studio screenshot",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2840,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:37:32.015Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "116f6b4a9defd92cdbb9-76884f4c426dffd07591",
+          "file": "experience.spec.ts",
+          "line": 9,
+          "column": 1
+        },
+        {
+          "title": "three real themes share the interaction model",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4953,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:37:35.146Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "116f6b4a9defd92cdbb9-63e13da982c4254ac0d9",
+          "file": "experience.spec.ts",
+          "line": 15,
+          "column": 1
+        },
+        {
+          "title": "routine message retracts without acknowledging",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8398,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:37:40.128Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "116f6b4a9defd92cdbb9-0dc986955e96186b9ec1",
+          "file": "experience.spec.ts",
+          "line": 26,
+          "column": 1
+        },
+        {
+          "title": "critical stays pending, server confirms only after roundtrip",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 9344,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:37:48.548Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "116f6b4a9defd92cdbb9-0ed0e7650e2d2c3f4c08",
+          "file": "experience.spec.ts",
+          "line": 34,
+          "column": 1
+        },
+        {
+          "title": "ordinary arrivals cannot replace pending critical",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1321,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:37:57.911Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "116f6b4a9defd92cdbb9-516c91a2f6475b26e3f7",
+          "file": "experience.spec.ts",
+          "line": 49,
+          "column": 1
+        },
+        {
+          "title": "focus suppresses routine but not critical",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1821,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:37:59.249Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "116f6b4a9defd92cdbb9-185d77995bc4d0c1492c",
+          "file": "experience.spec.ts",
+          "line": 55,
+          "column": 1
+        },
+        {
+          "title": "twelve routine updates aggregate into one item",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3490,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:38:01.087Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "116f6b4a9defd92cdbb9-623582c7c8bf8b4e4f57",
+          "file": "experience.spec.ts",
+          "line": 62,
+          "column": 1
+        },
+        {
+          "title": "CSS engine, inbox, escape and reduced motion",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2412,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:38:04.594Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "116f6b4a9defd92cdbb9-36e00feade654bd33696",
+          "file": "experience.spec.ts",
+          "line": 67,
+          "column": 1
+        },
+        {
+          "title": "narrow viewport stays within bounds",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1946,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:38:07.022Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "116f6b4a9defd92cdbb9-9003614c4dbed43b07b4",
+          "file": "experience.spec.ts",
+          "line": 77,
+          "column": 1
+        },
+        {
+          "title": "visible compositor cadence sample and browser runtime errors",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8528,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:38:08.983Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "116f6b4a9defd92cdbb9-d2fb63e99319ccd5768e",
+          "file": "experience.spec.ts",
+          "line": 84,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "horizontal.spec.ts",
+      "file": "horizontal.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "gsap: bounded shallow height and no center drift during live transitions",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4061,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:38:17.563Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f14eeca23ccd8c4e2eb0-da08969fd6ba6a2462de",
+          "file": "horizontal.spec.ts",
+          "line": 10,
+          "column": 39
+        },
+        {
+          "title": "css: bounded shallow height and no center drift during live transitions",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3876,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:38:21.647Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f14eeca23ccd8c4e2eb0-450c4c0a08b0eb0d5c86",
+          "file": "horizontal.spec.ts",
+          "line": 10,
+          "column": 39
+        },
+        {
+          "title": "message center, thread, confirmation and success remain a single horizontal row",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4679,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:38:25.539Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f14eeca23ccd8c4e2eb0-eb73530393f1787beffd",
+          "file": "horizontal.spec.ts",
+          "line": 30,
+          "column": 1
+        },
+        {
+          "title": "narrow preview keeps the acknowledgement and close controls within the pill",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3509,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:38:30.236Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f14eeca23ccd8c4e2eb0-bcd9694b7dd1e4f03914",
+          "file": "horizontal.spec.ts",
+          "line": 44,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "hover-regression.spec.ts",
+      "file": "hover-regression.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "gsap: center/edge stationary hover and rapid reversals keep one target",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8723,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:38:33.789Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3473dbf71ed4502bcb43-5871628b0aeab6b337a0",
+          "file": "hover-regression.spec.ts",
+          "line": 9,
+          "column": 37
+        },
+        {
+          "title": "css: center/edge stationary hover and rapid reversals keep one target",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8391,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:38:42.523Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3473dbf71ed4502bcb43-2d67bafb7671bcb4690c",
+          "file": "hover-regression.spec.ts",
+          "line": 9,
+          "column": 37
+        },
+        {
+          "title": "stable painted surface remains a hover target through inert and child replacement",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4025,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:38:50.925Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3473dbf71ed4502bcb43-e57fca45f5b3570544aa",
+          "file": "hover-regression.spec.ts",
+          "line": 28,
+          "column": 1
+        },
+        {
+          "title": "gsap: reduced hover changes business hover but no epoch or empty animation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8221,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:38:54.962Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3473dbf71ed4502bcb43-030ae6b123ec4e21196f",
+          "file": "hover-regression.spec.ts",
+          "line": 41,
+          "column": 37
+        },
+        {
+          "title": "css: reduced hover changes business hover but no epoch or empty animation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8157,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:39:03.194Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3473dbf71ed4502bcb43-65cfe49d182cc8ffea01",
+          "file": "hover-regression.spec.ts",
+          "line": 41,
+          "column": 37
+        },
+        {
+          "title": "ordinary auto-collapse pauses on hover and resumes after a real departure",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 15427,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:39:11.362Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3473dbf71ed4502bcb43-49e90fcba39ce9078e26",
+          "file": "hover-regression.spec.ts",
+          "line": 51,
+          "column": 1
+        },
+        {
+          "title": "StrictMode timers: quick leave cancels peek, mode changes cancel peek, unmount cancels both timers",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2322,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:39:26.801Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3473dbf71ed4502bcb43-687f05f4db254cc4cb50",
+          "file": "hover-regression.spec.ts",
+          "line": 57,
+          "column": 1
+        },
+        {
+          "title": "compact close cancels its pending 120ms preview without acknowledging a critical event",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2515,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:39:29.134Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3473dbf71ed4502bcb43-72600dcea4ac3b29adfa",
+          "file": "hover-regression.spec.ts",
+          "line": 85,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "lab-reader.spec.ts",
+      "file": "lab-reader.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "progressive same-body report and manual burn clear rows without source writes or undo",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8096,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:39:31.685Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "477c9b8aa6ae5da7b1cc-325e3be75a5bf9e9ad23",
+          "file": "lab-reader.spec.ts",
+          "line": 12,
+          "column": 1
+        },
+        {
+          "title": "outside summary closes, outside reader masks and explicit activation reveals",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7373,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:39:39.791Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "477c9b8aa6ae5da7b1cc-1e140e2b9da86808257a",
+          "file": "lab-reader.spec.ts",
+          "line": 16,
+          "column": 1
+        },
+        {
+          "title": "idle shield keeps counting while hovered; movement does not reveal",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 15257,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:39:47.181Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "477c9b8aa6ae5da7b1cc-fe224e9ac2da09704473",
+          "file": "lab-reader.spec.ts",
+          "line": 19,
+          "column": 1
+        },
+        {
+          "title": "current revision/permission invalidation removes sensitive rows and rejects old sessions",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8288,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:40:02.451Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "477c9b8aa6ae5da7b1cc-675729640b9aea736dc5",
+          "file": "lab-reader.spec.ts",
+          "line": 22,
+          "column": 1
+        },
+        {
+          "title": "important events queue during reading and personal timer deadline is unchanged",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5663,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:40:10.754Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "477c9b8aa6ae5da7b1cc-5fe3597f3236136ed0b7",
+          "file": "lab-reader.spec.ts",
+          "line": 25,
+          "column": 1
+        },
+        {
+          "title": "normal, qualitative and missing reports render without invalid ranges",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 9592,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:40:16.436Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "477c9b8aa6ae5da7b1cc-cc5f4e265b2c965086a3",
+          "file": "lab-reader.spec.ts",
+          "line": 28,
+          "column": 1
+        },
+        {
+          "title": "keyboard Escape burns and reduced motion bypasses the burn effect",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1371,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:40:26.040Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "477c9b8aa6ae5da7b1cc-da234269cea51f4de4d7",
+          "file": "lab-reader.spec.ts",
+          "line": 31,
+          "column": 1
+        },
+        {
+          "title": "complete report opens the matching read-only source and reader loses focus safely",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5503,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:40:27.424Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "477c9b8aa6ae5da7b1cc-030e58bfe167dfccbc3b",
+          "file": "lab-reader.spec.ts",
+          "line": 34,
+          "column": 1
+        },
+        {
+          "title": "elapsed deadline burns automatically and burn ignores replay and pointer actions",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5599,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:40:32.939Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "477c9b8aa6ae5da7b1cc-b3f78aba5fe741e6b70f",
+          "file": "lab-reader.spec.ts",
+          "line": 37,
+          "column": 1
+        },
+        {
+          "title": "large text and forced colors retain scroll and actionable footer",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1674,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:40:38.552Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "477c9b8aa6ae5da7b1cc-0579b5c24b5c64ec401b",
+          "file": "lab-reader.spec.ts",
+          "line": 40,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "notch-motion.spec.ts",
+      "file": "notch-motion.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "U-shaped idle and finite hover expansion return to a quiet state",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2375,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:40:40.254Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e4eeb52a24d651a095a0-2baf5a7e6d07066b1713",
+          "file": "notch-motion.spec.ts",
+          "line": 8,
+          "column": 1
+        },
+        {
+          "title": "content survives an exit, then swaps; text is never scaled",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2104,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:40:42.642Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e4eeb52a24d651a095a0-46f8662b00b3f0cea023",
+          "file": "notch-motion.spec.ts",
+          "line": 19,
+          "column": 1
+        },
+        {
+          "title": "rapid interrupts settle at the newest state, with no invisible interaction layer",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2967,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:40:44.757Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e4eeb52a24d651a095a0-e1308b968745ed506b07",
+          "file": "notch-motion.spec.ts",
+          "line": 29,
+          "column": 1
+        },
+        {
+          "title": "reduced-motion updates live, restores opacity and keeps the receipt path",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1832,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:40:47.735Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e4eeb52a24d651a095a0-c8f49d078984a57f93ba",
+          "file": "notch-motion.spec.ts",
+          "line": 37,
+          "column": 1
+        },
+        {
+          "title": "legacy capsule remains fixed-height across all modes",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4402,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:40:49.577Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e4eeb52a24d651a095a0-3e40d14871885dfdb3e3",
+          "file": "notch-motion.spec.ts",
+          "line": 44,
+          "column": 1
+        },
+        {
+          "title": "browser DPR 1.25: U silhouette, centering and actions remain bounded",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3400,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:40:53.990Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e4eeb52a24d651a095a0-074aba242514c4c19290",
+          "file": "notch-motion.spec.ts",
+          "line": 51,
+          "column": 37
+        },
+        {
+          "title": "browser DPR 1.5: U silhouette, centering and actions remain bounded",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3544,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:40:57.402Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e4eeb52a24d651a095a0-9aad5ea95d93c3c4db66",
+          "file": "notch-motion.spec.ts",
+          "line": 51,
+          "column": 37
+        },
+        {
+          "title": "browser DPR 2: U silhouette, centering and actions remain bounded",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3484,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T05:41:00.963Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e4eeb52a24d651a095a0-8b2bde9d8b6b95ee695d",
+          "file": "notch-motion.spec.ts",
+          "line": 51,
+          "column": 37
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-09T05:33:30.943Z",
+    "duration": 455397.908,
+    "expected": 65,
+    "skipped": 0,
+    "unexpected": 5,
+    "flaky": 0
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "stoppedOwnedPid": 14040,
+  "reason": "Native routing regression repair; deliberate crash-cleanup QA",
+  "oldProfiles": [
+    "session-14040-1791527437632807400",
+    "session-14712-1791527478751779300"
+  ]
+}

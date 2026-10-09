@@ -48,7 +48,13 @@
 @media(prefers-reduced-motion:reduce){.ux-host::before{transition:none}.ux-host .ci-content{filter:none!important}}
 
 /* Explicit button states; no additional event-capture helper. */
-.ux-host .ci-primary:active:not(:disabled),.ux-host .ci-secondary:active:not(:disabled),.ux-host .ci-icon-button:active:not(:disabled),.ux-host .ux-round:active:not(:disabled){transform:scale(.94);transition:transform 80ms}
+.ux-host .ci-primary,.ux-host .ci-secondary,.ux-host .ci-icon-button,.ux-host .ux-round{position:relative;isolation:isolate}
+.ux-host .ci-primary::before,.ux-host .ci-secondary::before,.ux-host .ci-icon-button::before,.ux-host .ux-round::before{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;transform:scale(var(--ux-press,1));background:var(--c-fill);pointer-events:none}
+.ux-host .ci-primary::before{background:var(--ux-accent)}
+.ux-host .ci-primary,.ux-host .ci-secondary,.ux-host .ci-icon-button,.ux-host .ux-round{background:transparent!important}
+.ux-host .ci-secondary:hover::before,.ux-host .ci-icon-button:hover::before,.ux-host .ux-round:hover::before{background:var(--c-fill-hover)}
+.ux-host .ux-close::before{inset:4px}
+.ux-host .ux-utility::before,.ux-host .ux-stack-header>.ci-icon-button:first-child::before{background:transparent}
 .ux-host .ux-compact-button{grid-template-columns:40px 124px minmax(0,1fr)}
 .ux-host .has-label{grid-template-columns:24px minmax(0,1fr) 40px}
 .ux-host .ux-quiet-actions{flex-wrap:wrap}.ux-quiet-actions button{min-width:90px}
@@ -65,3 +71,14 @@
 .ux-host .ux-rich .ux-utility{width:44px;height:44px;min-width:44px}
 
 .ux-host .ux-hero{font-family:'Segoe UI Variable Display','Segoe UI',var(--font);font-optical-sizing:auto}
+.ux-neck{fill:var(--c-island);pointer-events:fill}
+.ux-marquee-text{display:inline-block;min-width:100%;white-space:nowrap;transform:none}
+.ux-host .ux-compact-label{overflow:hidden;text-overflow:clip}
+.ux-host .ux-undo{color:var(--c-text);font-size:var(--ci-button-size);font-weight:600}
+.ux-host[data-enlarged=true] .ux-title-large,.ux-host[data-enlarged=true] .ux-main-copy>.ux-body{white-space:normal;overflow-wrap:anywhere}
+.ux-host[data-enlarged=true] .ux-rich-main{align-items:flex-start;overflow:auto}
+.ux-host .ux-stack .ci-preview-body{display:block;-webkit-line-clamp:unset;overflow:visible}
+.ux-host .ci-scroll{scrollbar-color:var(--c-separator) transparent}
+.ux-host ::selection{background:var(--ux-accent);color:#000}
+@media(forced-colors:active){.ux-neck{fill:Canvas}.ux-host .ux-minimal{background:Canvas;color:CanvasText;border:2px solid CanvasText}.ux-host .ux-body,.ux-host .ci-caption,.ux-host .ci-secondary,.ux-host .ci-icon-button,.ux-host .ux-round{color:CanvasText}.ux-host .ci-primary::before{background:Highlight}.ux-host .ci-secondary::before,.ux-host .ci-icon-button::before,.ux-host .ux-round::before{background:ButtonFace}.ux-host .ci-primary{color:HighlightText}}
+@media(pointer:coarse){.ux-host .ci-icon-button,.ux-host .ux-more-alert{width:44px;height:44px;min-width:44px}.ux-host .ux-alert-right{width:92px}.ux-host .ci-primary,.ux-host .ci-secondary{min-height:44px}.ux-alert{padding:12px 16px}.ux-host .ux-minimal{touch-action:manipulation}}

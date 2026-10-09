@@ -9,7 +9,7 @@ use crate::hover_diagnostics::record;
 static TOKENS:OnceLock<Value>=OnceLock::new();
 static EPOCH:Mutex<EpochGuard>=Mutex::new(EpochGuard{epoch:0,sequence:0,closed:false});
 #[derive(Clone,Deserialize)]
-pub struct Shape{width:f64,height:f64,radius:f64,ear:f64,#[serde(default)]polygons:Option<Vec<Vec<[f64;2]>>>,#[serde(default)]top:f64}
+pub struct Shape{width:f64,height:f64,radius:f64,ear:f64,#[serde(default)]polygons:Option<Vec<Vec<[f64;2]>>>,#[serde(default)]top:f64,#[serde(default)]shift:f64}
 fn number(path:&str)->f64{TOKENS.get_or_init(||serde_json::from_str(include_str!("../../src/clinical/tokens.json")).expect("generated UI tokens")).pointer(path).and_then(Value::as_f64).expect("numeric UI token")}
 fn ensure(window:&WebviewWindow)->Result<(),String>{
  if window.label()!="island"||!window.url().map_err(|e|e.to_string())?.path().ends_with("clinical.html"){return Err("Clinical island window required".into());}Ok(())
@@ -51,7 +51,7 @@ fn plan(window:&WebviewWindow)->Result<Plan,String>{
  }
  let pad=(number("/geometry/pixelBoundaryTolerance")+number("/material/rimWidth")*scale/2.0+1.0).ceil();
  let max_w=2.0*(number("/geometry/earRadius")+44.0)+number("/geometry/expanded/preferredMaxWidth")+(number("/geometry/expanded/preferredMaxWidth")-96.0)*number("/motion/budgets/expand");
- let max_h=480.0_f64.min(available_height*0.6)+38.0;
+ let max_h=480.0_f64.min(available_height*0.6).max(580.0_f64.min((available_height-16.0).max(120.0)))+38.0;
  let w=((max_w*scale+2.0*pad).ceil() as u32).min(size.width);
  let h=(max_h*scale+pad).ceil() as u32;
  Ok(Plan{scale,x:p.x+((size.width-w)/2) as i32,y:top,w,h,available:size.width as f64/scale,available_height})
@@ -86,13 +86,15 @@ fn contour(w:f64,h:f64,radius:f64,ear:f64)->Vec<[f64;2]>{
  curve(&mut p,[e,0.45*e],[0.55*e,0.0],[0.0,0.0]);p
 }
 fn validate(g:&Shape)->Result<(),String>{
+ if !g.shift.is_finite()||g.shift.abs()>128.0{return Err("Invalid bounded gesture offset".into());}
  let max=number("/geometry/expanded/preferredMaxWidth");let extra=(max-96.0)*number("/motion/budgets/expand");
- if [g.width,g.height,g.radius,g.ear].iter().any(|v|!v.is_finite())||!(96.0..=max+extra).contains(&g.width)||!(24.0..=510.0).contains(&g.height)||!(0.0..=64.0).contains(&g.radius)||!(0.0..=12.0).contains(&g.ear){return Err("Clinical geometry exceeds UI limits".into());}
+ if [g.width,g.height,g.radius,g.ear].iter().any(|v|!v.is_finite())||!(96.0..=max+extra).contains(&g.width)||!(24.0..=610.0).contains(&g.height)||!(0.0..=64.0).contains(&g.radius)||!(0.0..=12.0).contains(&g.ear){return Err("Clinical geometry exceeds UI limits".into());}
  if let Some(polys)=&g.polygons{if polys.is_empty()||polys.len()>3||polys.iter().any(|p|p.len()<4||p.len()>512||p.iter().any(|v|!v[0].is_finite()||!v[1].is_finite()||v[0]< -12.01||v[0]>g.width+72.0||v[1]< -0.01||v[1]>g.height+12.0)){return Err("Invalid bounded UI silhouette".into());}}Ok(())
 }
 #[cfg(target_os="windows")]
 unsafe fn add_outline(region:*mut std::ffi::c_void,g:&Shape,canvas:u32,scale:f64)->Result<(),String>{
- let offset=(canvas as f64-g.width*scale)/2.0;let outlines=g.polygons.clone().unwrap_or_else(||vec![contour(g.width,g.height,g.radius,g.ear)]);
+ let offset=(canvas as f64-g.width*scale)/2.0+g.shift*scale;let outlines=g.polygons.clone().unwrap_or_else(||vec![contour(g.width,g.height,g.radius,g.ear)]);
+ if outlines.iter().flatten().any(|pt|offset+pt[0]*scale<2.0||offset+pt[0]*scale>canvas as f64-2.0){return Err("Gesture silhouette exceeds retained canvas".into());}
  let fringe=number("/geometry/pixelBoundaryTolerance") as i32;
  for points in &outlines{for dy in -fringe..=fringe{for dx in -fringe..=fringe{
   let native:Vec<ffi::Point>=points.iter().map(|pt|ffi::Point{x:(offset+pt[0]*scale).round() as i32+dx,y:(pt[1]*scale).round() as i32+dy}).collect();
@@ -103,9 +105,9 @@ unsafe fn add_outline(region:*mut std::ffi::c_void,g:&Shape,canvas:u32,scale:f64
  Ok(())
 }
 #[tauri::command]
-pub fn clinical_layout(window:WebviewWindow,epoch:u64,body_width:f64,height:f64,radius:f64,ear:f64,visible:bool,sequence:Option<u64>,phase:Option<String>,previous:Option<Shape>,polygons:Option<Vec<Vec<[f64;2]>>>,expanded:Option<bool>,shadow_alpha:Option<f64>,top:Option<f64>)->Result<bool,String>{
+pub fn clinical_layout(window:WebviewWindow,epoch:u64,body_width:f64,height:f64,radius:f64,ear:f64,visible:bool,sequence:Option<u64>,phase:Option<String>,previous:Option<Shape>,polygons:Option<Vec<Vec<[f64;2]>>>,expanded:Option<bool>,shadow_alpha:Option<f64>,top:Option<f64>,shift:Option<f64>)->Result<bool,String>{
  ensure(&window)?;
- let target=Shape{width:body_width,height,radius,ear,polygons,top:top.unwrap_or(0.0)};validate(&target)?;
+ let target=Shape{width:body_width,height,radius,ear,polygons,top:top.unwrap_or(0.0),shift:shift.unwrap_or(0.0)};validate(&target)?;
  if let Some(g)=&previous{validate(g)?;}
  if !target.top.is_finite()||!(0.0..=12.0).contains(&target.top)||shadow_alpha.is_some_and(|a|!a.is_finite()||!(0.0..=1.0).contains(&a)){return Err("Invalid shadow geometry".into());}
  let stage=phase.as_deref().unwrap_or("commit");
@@ -151,6 +153,7 @@ pub async fn open_clinical_source(app:AppHandle,window:WebviewWindow,ticket:Stri
   if let Some(args)=app.config().app.windows.iter().find(|w|w.label=="island").and_then(|w|w.additional_browser_args.as_ref()) {
    builder=builder.additional_browser_args(args);
   }
+  if let Some(config)=app.config().app.windows.iter().find(|w|w.label=="island") {if let Some(path)=&config.data_directory{builder=builder.data_directory(path.clone());}builder=builder.incognito(config.incognito);}
   builder.build().map_err(|e|e.to_string())?;
  }Ok(())
 }
@@ -160,4 +163,8 @@ pub fn close_clinical_source(window:WebviewWindow)->Result<(),String>{if window.
  use super::*;
  #[test]fn accepted_u_contour_stays_inside_total_width(){for scale in [1.0,1.25,1.5,1.75,2.0]{for (w,h,r) in [(180.0,34.0,18.0),(280.0,40.0,20.0),(400.0,320.0,32.0),(560.0,480.0,32.0)]{let pts=contour(w,h,r,7.0);assert!(pts.iter().all(|p|p[0]>=-0.001&&p[0]<=w+0.001&&p[1]>=-0.001&&p[1]<=h+0.001));assert!((pts[0][0]*scale).abs()<0.001);}}}
  #[test]fn token_source_has_native_safety_contract(){assert_eq!(number("/validation/nativeGeometryMutationsPerNormalTransitionMax"),0.0);assert_eq!(number("/geometry/earRadius"),10.0);}
+ #[test]fn reader_overshoot_is_bounded_and_invalid_geometry_is_rejected(){
+  let shape=Shape{width:400.0,height:590.0,radius:44.0,ear:10.0,top:0.0,shift:0.0,polygons:None};
+  assert!(validate(&shape).is_ok());assert!(validate(&Shape{height:611.0,..shape.clone()}).is_err());assert!(validate(&Shape{height:f64::NAN,..shape}).is_err());
+ }
 }

@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import {evidencePath} from './evidence-path';
 async function post(request: any, data: object) { expect((await request.post('http://127.0.0.1:17321/api/push', { data })).ok()).toBeTruthy(); }
 test.beforeEach(async ({ page, request }) => {
   await post(request,{type:'reset'}); await post(request,{type:'configure',settings:{engine:'gsap',shape:'notch',theme:'ink',focus:false,privacy:true,reduced:false}});
@@ -58,7 +59,7 @@ for (const scale of [1.25, 1.5, 2]) test(`browser DPR ${scale}: U silhouette, ce
     await post(request,{type:'demo',scenario:'critical'});await expect(island).toHaveAttribute('data-mode','expanded');await expect(island).toHaveAttribute('data-motion-phase','settled');
     const b=(await island.boundingBox())!;expect(b.height).toBe(56);expect(b.y).toBe(0);expect(Math.abs(b.x+b.width/2-640)).toBeLessThan(.6);
     for(const name of ['确认收到','收起灵动岛']) { const button=(await page.getByRole('button',{name,exact:true}).boundingBox())!;expect(button.x).toBeGreaterThan(b.x);expect(button.x+button.width).toBeLessThan(b.x+b.width); }
-    await page.screenshot({path:`evidence/notch-browser-dpr-${scale}.png`,omitBackground:true,scale:'device'});
+    await page.screenshot({path:evidencePath(`notch-browser-dpr-${scale}.png`),omitBackground:true,scale:'device'});
     await page.getByRole('button',{name:'确认收到',exact:true}).click();await expect(island).toHaveAttribute('data-mode','success');
   } finally { await context.close(); }
 });

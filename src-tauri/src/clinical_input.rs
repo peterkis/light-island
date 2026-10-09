@@ -20,6 +20,7 @@ mod ffi{
   pub fn UnhookWindowsHookEx(h:*mut c_void)->i32;
   pub fn CallNextHookEx(h:*mut c_void,code:i32,w:usize,l:isize)->isize;
   pub fn WindowFromPoint(p:Point)->*mut c_void;
+  pub fn GetForegroundWindow()->*mut c_void;
   pub fn GetAncestor(h:*mut c_void,flag:u32)->*mut c_void;
   pub fn PostThreadMessageW(thread:u32,message:u32,w:usize,l:isize)->i32;
   pub fn GetMessageW(m:*mut Msg,h:*mut c_void,min:u32,max:u32)->i32;
@@ -69,7 +70,7 @@ pub fn start(app:AppHandle){
   while ffi::GetMessageW(&mut message,null,0,0)>0{
    if let Some(app)=APP.get(){match message.message{
     0x8001=>{if EXPANDED.load(Ordering::Relaxed){let _=app.emit_to("island","island://outside",());}},
-    0x8002=>{let _=app.emit_to("island","island://platform",status());},
+    0x8002=>{let _=app.emit_to("island","island://platform",status());if crate::reader_native::reading()&&ffi::GetForegroundWindow() as isize!=HWND.load(Ordering::Relaxed){let _=app.emit_to("island","island://lab-blur",());}},
     0x0312=>{if let Some(w)=app.get_webview_window("island"){let _=w.show();let _=w.set_focus();let _=w.emit("island://shortcut",());}},
     _=>{}
    }}

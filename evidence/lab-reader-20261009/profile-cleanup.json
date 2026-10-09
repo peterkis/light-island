@@ -1,0 +1,15 @@
+{
+  "timestamp": "2026-10-09T15:23:52.3803075+08:00",
+  "newOwnerPid": 22732,
+  "oldProfiles": [
+    "session-14040-1791527437632807400",
+    "session-14712-1791527478751779300"
+  ],
+  "currentProfiles": [
+    "session-22732-1791530579388683300"
+  ],
+  "oldOwnedProfilesRemoved": true,
+  "testedMode": "Deliberate termination of verified owned PID followed by next-launch cleanup",
+  "normalExitCleanup": "NOT_RUN",
+  "neverDiskClaim": false
+}

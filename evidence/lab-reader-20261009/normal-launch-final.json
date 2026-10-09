@@ -1,0 +1,13 @@
+{
+  "capturedAt": "2026-10-09T15:56:48.3555575+08:00",
+  "rootPid": 30060,
+  "serverPid": 9456,
+  "commandLine": "\"D:\\Projects\\island-protype\\src-tauri\\target\\release\\samewave-island.exe\" --studio",
+  "exeSHA256": "BE01BD96C7A862B35AB3ADAB8CE3A09C7FE14765D6B8A95078DABCF807DF42F4",
+  "qaCdp": false,
+  "port9223Closed": true,
+  "syntheticHealth": "samewave-synthetic-demo",
+  "profileDirs": [
+    "session-30060-1791532286470888300"
+  ]
+}

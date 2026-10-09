@@ -88,7 +88,7 @@ pub fn draw(window:&WebviewWindow,width:f64,height:f64,radius:f64,top:f64,alpha:
 /// Only an averaged luminance number is returned, never captured desktop pixels.
 #[tauri::command]
 pub fn clinical_background_luminance(window:WebviewWindow,body_height:f64)->Result<f64,String>{
- if window.label()!="island"||!body_height.is_finite()||!(24.0..=510.0).contains(&body_height){return Err("Invalid background sample".into());}
+ if window.label()!="island"||!body_height.is_finite()||!(24.0..=610.0).contains(&body_height){return Err("Invalid background sample".into());}
  unsafe{
   let hwnd=window.hwnd().map_err(|e|e.to_string())?;let mut r=Rect::default();GetWindowRect(hwnd.0 as _,&mut r);
   let scale=GetDpiForWindow(hwnd.0 as _) as f64/96.0;

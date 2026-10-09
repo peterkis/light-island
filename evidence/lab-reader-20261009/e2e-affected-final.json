@@ -1,0 +1,784 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "D:\\Projects\\island-protype\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/clinical-continuation.spec.ts",
+      "tests/lab-reader.spec.ts",
+      "--reporter=list,json"
+    ],
+    "configFile": "D:\\Projects\\island-protype\\playwright.config.ts",
+    "rootDir": "D:/Projects/island-protype/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/Projects/island-protype/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "D:/Projects/island-protype/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "/.*\\.spec\\.ts/"
+        ],
+        "timeout": 35000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list"
+      ],
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "clinical-continuation.spec.ts",
+      "file": "clinical-continuation.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "swipe ignores only this preview and undo opens the exact intact source",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 13587,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T07:06:02.871Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2a79285b5f8acf175da2-65b5284fe017fd44ade2",
+          "file": "clinical-continuation.spec.ts",
+          "line": 8,
+          "column": 1
+        },
+        {
+          "title": "short drag returns with no source navigation and undo is time/version bounded",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 15716,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T07:06:17.784Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2a79285b5f8acf175da2-c29f84d1b6ae982a8a38",
+          "file": "clinical-continuation.spec.ts",
+          "line": 16,
+          "column": 1
+        },
+        {
+          "title": "source mute is local, reversible and cannot suppress important events",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 13875,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T07:06:33.576Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2a79285b5f8acf175da2-ec4dd442c722ab8ae239",
+          "file": "clinical-continuation.spec.ts",
+          "line": 22,
+          "column": 1
+        },
+        {
+          "title": "finite neck appears during split, vanishes at rest and reduced motion skips it",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 6418,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected value: \u001b[32m\"true\"\u001b[39m\nReceived array: \u001b[31m[\"false\", \"false\", \"false\", \"false\", \"false\", \"false\", \"false\", \"false\", \"false\", \"false\", …]\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected value: \u001b[32m\"true\"\u001b[39m\nReceived array: \u001b[31m[\"false\", \"false\", \"false\", \"false\", \"false\", \"false\", \"false\", \"false\", \"false\", \"false\", …]\u001b[39m\n    at D:\\Projects\\island-protype\\tests\\clinical-continuation.spec.ts:33:23",
+                    "location": {
+                      "file": "D:\\Projects\\island-protype\\tests\\clinical-continuation.spec.ts",
+                      "column": 23,
+                      "line": 33
+                    },
+                    "snippet": "  31 |  const sample=e.evaluate(el=>new Promise<string[]>(resolve=>{const frames:string[]=[];const start=performance.now();const tick=()=>{frames.push(el.getAttribute('data-neck')??'');if(performance.now()-start<700)requestAnimationFrame(tick);else resolve(frames);};requestAnimationFrame(tick);}));\n  32 |  await post(request,{type:'clinical:scenario',scenario:'S02',stage:0});await post(request,{type:'clinical:view',mode:'compact'});\n> 33 |  expect(await sample).toContain('true');await settle(page,'compact');await expect(e).toHaveAttribute('data-neck','false');expect(await e.locator('[data-neck]').getAttribute('d')).toBe('');\n     |                       ^\n  34 |  await page.emulateMedia({reducedMotion:'reduce'});await settle(page,'compact');expect(await e.locator('[data-neck]').getAttribute('d')).toBe('');\n  35 | });\n  36 | test('button press retains text size, spring releases and route failure is visible',async({page,request})=>{"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\Projects\\island-protype\\tests\\clinical-continuation.spec.ts",
+                        "column": 23,
+                        "line": 33
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected value: \u001b[32m\"true\"\u001b[39m\nReceived array: \u001b[31m[\"false\", \"false\", \"false\", \"false\", \"false\", \"false\", \"false\", \"false\", \"false\", \"false\", …]\u001b[39m\n\n  31 |  const sample=e.evaluate(el=>new Promise<string[]>(resolve=>{const frames:string[]=[];const start=performance.now();const tick=()=>{frames.push(el.getAttribute('data-neck')??'');if(performance.now()-start<700)requestAnimationFrame(tick);else resolve(frames);};requestAnimationFrame(tick);}));\n  32 |  await post(request,{type:'clinical:scenario',scenario:'S02',stage:0});await post(request,{type:'clinical:view',mode:'compact'});\n> 33 |  expect(await sample).toContain('true');await settle(page,'compact');await expect(e).toHaveAttribute('data-neck','false');expect(await e.locator('[data-neck]').getAttribute('d')).toBe('');\n     |                       ^\n  34 |  await page.emulateMedia({reducedMotion:'reduce'});await settle(page,'compact');expect(await e.locator('[data-neck]').getAttribute('d')).toBe('');\n  35 | });\n  36 | test('button press retains text size, spring releases and route failure is visible',async({page,request})=>{\n    at D:\\Projects\\island-protype\\tests\\clinical-continuation.spec.ts:33:23"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T07:06:47.498Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "D:\\Projects\\island-protype\\test-results\\clinical-continuation-fini-502d7-and-reduced-motion-skips-it\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\Projects\\island-protype\\test-results\\clinical-continuation-fini-502d7-and-reduced-motion-skips-it\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\Projects\\island-protype\\test-results\\clinical-continuation-fini-502d7-and-reduced-motion-skips-it\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\Projects\\island-protype\\tests\\clinical-continuation.spec.ts",
+                    "column": 23,
+                    "line": 33
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "2a79285b5f8acf175da2-3f418fe7066355dc4cc3",
+          "file": "clinical-continuation.spec.ts",
+          "line": 29,
+          "column": 1
+        },
+        {
+          "title": "button press retains text size, spring releases and route failure is visible",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 9526,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T07:06:56.795Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2a79285b5f8acf175da2-4182181fd31a159a45dc",
+          "file": "clinical-continuation.spec.ts",
+          "line": 36,
+          "column": 1
+        },
+        {
+          "title": "compact overflow makes one 30 DIP/s traversal and reduced motion keeps it static",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7167,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T07:07:07.172Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2a79285b5f8acf175da2-a39316455cfa24b75c82",
+          "file": "clinical-continuation.spec.ts",
+          "line": 47,
+          "column": 1
+        },
+        {
+          "title": "permission revocation immediately removes undo and compact sensitive text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7962,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T07:07:14.404Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2a79285b5f8acf175da2-d644bb12b9ed059fa112",
+          "file": "clinical-continuation.spec.ts",
+          "line": 54,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "lab-reader.spec.ts",
+      "file": "lab-reader.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "progressive same-body report and manual burn clear rows without source writes or undo",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 18517,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T07:07:22.515Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "477c9b8aa6ae5da7b1cc-325e3be75a5bf9e9ad23",
+          "file": "lab-reader.spec.ts",
+          "line": 12,
+          "column": 1
+        },
+        {
+          "title": "outside summary closes, outside reader masks and explicit activation reveals",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 16771,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T07:07:41.125Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "477c9b8aa6ae5da7b1cc-1e140e2b9da86808257a",
+          "file": "lab-reader.spec.ts",
+          "line": 16,
+          "column": 1
+        },
+        {
+          "title": "idle shield keeps counting while hovered; movement does not reveal",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 22350,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T07:07:57.963Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "477c9b8aa6ae5da7b1cc-fe224e9ac2da09704473",
+          "file": "lab-reader.spec.ts",
+          "line": 19,
+          "column": 1
+        },
+        {
+          "title": "current revision/permission invalidation removes sensitive rows and rejects old sessions",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 13397,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T07:08:20.431Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "477c9b8aa6ae5da7b1cc-675729640b9aea736dc5",
+          "file": "lab-reader.spec.ts",
+          "line": 22,
+          "column": 1
+        },
+        {
+          "title": "important events queue during reading and personal timer deadline is unchanged",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8582,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T07:08:33.887Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "477c9b8aa6ae5da7b1cc-5fe3597f3236136ed0b7",
+          "file": "lab-reader.spec.ts",
+          "line": 25,
+          "column": 1
+        },
+        {
+          "title": "normal, qualitative and missing reports render without invalid ranges",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 16496,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T07:08:42.525Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "477c9b8aa6ae5da7b1cc-cc5f4e265b2c965086a3",
+          "file": "lab-reader.spec.ts",
+          "line": 28,
+          "column": 1
+        },
+        {
+          "title": "keyboard Escape burns and reduced motion bypasses the burn effect",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5358,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T07:08:59.080Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "477c9b8aa6ae5da7b1cc-da234269cea51f4de4d7",
+          "file": "lab-reader.spec.ts",
+          "line": 31,
+          "column": 1
+        },
+        {
+          "title": "complete report opens the matching read-only source and reader loses focus safely",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 11338,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T07:09:04.499Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "477c9b8aa6ae5da7b1cc-030e58bfe167dfccbc3b",
+          "file": "lab-reader.spec.ts",
+          "line": 34,
+          "column": 1
+        },
+        {
+          "title": "elapsed deadline burns automatically and burn ignores replay and pointer actions",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 15401,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('clinical-island')\nExpected: \u001b[32m\"burn\"\u001b[39m\nReceived: \u001b[31m\"idle\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" getByTestId('clinical-island') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('clinical-island')\u001b[22m\n\u001b[2m    - locator resolved to <div data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-native=\"false\" data-hidden=\"false\" data-view=\"expanded\" data-lab-state=\"done\" data-enlarged=\"false\" data-surface=\"lab-read\" data-target-width=\"210\" data-target-height=\"36\" class=\"ci-host ux-host \" data-native-fallback=\"false\" data-velocity-x=\"-1320.0344\" data-velocity-y=\"-2640.2041\" data-testid=\"clinical-island\" data-current-width=\"371.1415\" data-motion-phase=\"collapsing\" data-target-surface=\"lab-done\" data-current-hei…>…</div>\u001b[22m\n\u001b[2m    - unexpected value \"done\"\u001b[22m\n\u001b[2m    - locator resolved to <div data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-native=\"false\" data-hidden=\"false\" data-view=\"expanded\" data-lab-state=\"done\" data-enlarged=\"false\" data-surface=\"lab-read\" data-target-width=\"210\" data-target-height=\"36\" class=\"ci-host ux-host \" data-native-fallback=\"false\" data-velocity-x=\"-1472.9563\" data-velocity-y=\"-3381.1911\" data-testid=\"clinical-island\" data-current-width=\"305.2174\" data-motion-phase=\"collapsing\" data-target-surface=\"lab-done\" data-current-hei…>…</div>\u001b[22m\n\u001b[2m    - unexpected value \"done\"\u001b[22m\n\u001b[2m    - locator resolved to <div data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-native=\"false\" data-hidden=\"false\" data-view=\"expanded\" data-lab-state=\"done\" data-enlarged=\"false\" data-surface=\"lab-read\" data-target-width=\"210\" data-target-height=\"36\" class=\"ci-host ux-host \" data-velocity-x=\"-577.4721\" data-native-fallback=\"false\" data-velocity-y=\"-2049.5383\" data-testid=\"clinical-island\" data-current-width=\"224.7198\" data-motion-phase=\"collapsing\" data-target-surface=\"lab-done\" data-current-heig…>…</div>\u001b[22m\n\u001b[2m    - unexpected value \"done\"\u001b[22m\n\u001b[2m    - locator resolved to <div data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-native=\"false\" data-hidden=\"false\" data-view=\"expanded\" data-lab-state=\"done\" data-enlarged=\"false\" data-surface=\"lab-read\" data-target-width=\"210\" data-target-height=\"36\" class=\"ci-host ux-host \" data-velocity-x=\"34.7468\" data-velocity-y=\"-293.4897\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-current-width=\"204.8868\" data-current-height=\"37.5940\" data-motion-phase=\"collapsing\" data-target-surface=\"…>…</div>\u001b[22m\n\u001b[2m    - unexpected value \"done\"\u001b[22m\n\u001b[2m    - locator resolved to <div data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-native=\"false\" data-hidden=\"false\" data-view=\"expanded\" data-lab-state=\"done\" data-enlarged=\"false\" data-surface=\"lab-read\" data-target-width=\"210\" data-target-height=\"36\" class=\"ci-host ux-host \" data-velocity-x=\"16.4692\" data-velocity-y=\"41.1062\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-current-width=\"209.6020\" data-current-height=\"30.5311\" data-motion-phase=\"collapsing\" data-target-surface=\"la…>…</div>\u001b[22m\n\u001b[2m    - unexpected value \"done\"\u001b[22m\n\u001b[2m    - locator resolved to <div data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-native=\"false\" data-hidden=\"false\" data-view=\"expanded\" data-lab-state=\"done\" data-enlarged=\"false\" data-surface=\"lab-read\" data-target-width=\"210\" data-target-height=\"36\" class=\"ci-host ux-host \" data-velocity-x=\"0.0000\" data-velocity-y=\"-0.1308\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-current-width=\"210.0000\" data-current-height=\"36.0046\" data-motion-phase=\"collapsing\" data-target-surface=\"lab…>…</div>\u001b[22m\n\u001b[2m    - unexpected value \"done\"\u001b[22m\n\u001b[2m    - locator resolved to <div data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-native=\"false\" data-hidden=\"false\" data-view=\"expanded\" data-lab-state=\"done\" data-enlarged=\"false\" data-surface=\"lab-done\" data-target-width=\"210\" data-target-height=\"36\" class=\"ci-host ux-host \" data-velocity-x=\"0.0000\" data-velocity-y=\"0.0000\" data-motion-phase=\"settled\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-current-width=\"210.0000\" data-current-height=\"36.0000\" data-target-surface=\"lab-don…>…</div>\u001b[22m\n\u001b[2m    - unexpected value \"done\"\u001b[22m\n\u001b[2m    - locator resolved to <div data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-view=\"compact\" data-native=\"false\" data-hidden=\"false\" data-lab-state=\"idle\" data-enlarged=\"false\" data-surface=\"compact\" data-target-width=\"268\" data-target-height=\"36\" class=\"ci-host ux-host \" data-velocity-x=\"8.5741\" data-velocity-y=\"0.0000\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-motion-phase=\"expanding\" data-target-surface=\"compact\" data-current-width=\"269.6996\" data-current-height=\"36.0000…>…</div>\u001b[22m\n\u001b[2m    5 × unexpected value \"idle\"\u001b[22m\n\u001b[2m      - locator resolved to <div data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-view=\"compact\" data-native=\"false\" data-hidden=\"false\" data-lab-state=\"idle\" data-enlarged=\"false\" data-surface=\"compact\" data-target-width=\"268\" data-target-height=\"36\" class=\"ci-host ux-host \" data-velocity-x=\"0.0000\" data-velocity-y=\"0.0000\" data-motion-phase=\"settled\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-target-surface=\"compact\" data-current-width=\"268.0000\" data-current-height=\"36.0000\" …>…</div>\u001b[22m\n\u001b[2m    - unexpected value \"idle\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('clinical-island')\nExpected: \u001b[32m\"burn\"\u001b[39m\nReceived: \u001b[31m\"idle\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" getByTestId('clinical-island') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('clinical-island')\u001b[22m\n\u001b[2m    - locator resolved to <div data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-native=\"false\" data-hidden=\"false\" data-view=\"expanded\" data-lab-state=\"done\" data-enlarged=\"false\" data-surface=\"lab-read\" data-target-width=\"210\" data-target-height=\"36\" class=\"ci-host ux-host \" data-native-fallback=\"false\" data-velocity-x=\"-1320.0344\" data-velocity-y=\"-2640.2041\" data-testid=\"clinical-island\" data-current-width=\"371.1415\" data-motion-phase=\"collapsing\" data-target-surface=\"lab-done\" data-current-hei…>…</div>\u001b[22m\n\u001b[2m    - unexpected value \"done\"\u001b[22m\n\u001b[2m    - locator resolved to <div data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-native=\"false\" data-hidden=\"false\" data-view=\"expanded\" data-lab-state=\"done\" data-enlarged=\"false\" data-surface=\"lab-read\" data-target-width=\"210\" data-target-height=\"36\" class=\"ci-host ux-host \" data-native-fallback=\"false\" data-velocity-x=\"-1472.9563\" data-velocity-y=\"-3381.1911\" data-testid=\"clinical-island\" data-current-width=\"305.2174\" data-motion-phase=\"collapsing\" data-target-surface=\"lab-done\" data-current-hei…>…</div>\u001b[22m\n\u001b[2m    - unexpected value \"done\"\u001b[22m\n\u001b[2m    - locator resolved to <div data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-native=\"false\" data-hidden=\"false\" data-view=\"expanded\" data-lab-state=\"done\" data-enlarged=\"false\" data-surface=\"lab-read\" data-target-width=\"210\" data-target-height=\"36\" class=\"ci-host ux-host \" data-velocity-x=\"-577.4721\" data-native-fallback=\"false\" data-velocity-y=\"-2049.5383\" data-testid=\"clinical-island\" data-current-width=\"224.7198\" data-motion-phase=\"collapsing\" data-target-surface=\"lab-done\" data-current-heig…>…</div>\u001b[22m\n\u001b[2m    - unexpected value \"done\"\u001b[22m\n\u001b[2m    - locator resolved to <div data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-native=\"false\" data-hidden=\"false\" data-view=\"expanded\" data-lab-state=\"done\" data-enlarged=\"false\" data-surface=\"lab-read\" data-target-width=\"210\" data-target-height=\"36\" class=\"ci-host ux-host \" data-velocity-x=\"34.7468\" data-velocity-y=\"-293.4897\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-current-width=\"204.8868\" data-current-height=\"37.5940\" data-motion-phase=\"collapsing\" data-target-surface=\"…>…</div>\u001b[22m\n\u001b[2m    - unexpected value \"done\"\u001b[22m\n\u001b[2m    - locator resolved to <div data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-native=\"false\" data-hidden=\"false\" data-view=\"expanded\" data-lab-state=\"done\" data-enlarged=\"false\" data-surface=\"lab-read\" data-target-width=\"210\" data-target-height=\"36\" class=\"ci-host ux-host \" data-velocity-x=\"16.4692\" data-velocity-y=\"41.1062\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-current-width=\"209.6020\" data-current-height=\"30.5311\" data-motion-phase=\"collapsing\" data-target-surface=\"la…>…</div>\u001b[22m\n\u001b[2m    - unexpected value \"done\"\u001b[22m\n\u001b[2m    - locator resolved to <div data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-native=\"false\" data-hidden=\"false\" data-view=\"expanded\" data-lab-state=\"done\" data-enlarged=\"false\" data-surface=\"lab-read\" data-target-width=\"210\" data-target-height=\"36\" class=\"ci-host ux-host \" data-velocity-x=\"0.0000\" data-velocity-y=\"-0.1308\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-current-width=\"210.0000\" data-current-height=\"36.0046\" data-motion-phase=\"collapsing\" data-target-surface=\"lab…>…</div>\u001b[22m\n\u001b[2m    - unexpected value \"done\"\u001b[22m\n\u001b[2m    - locator resolved to <div data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-native=\"false\" data-hidden=\"false\" data-view=\"expanded\" data-lab-state=\"done\" data-enlarged=\"false\" data-surface=\"lab-done\" data-target-width=\"210\" data-target-height=\"36\" class=\"ci-host ux-host \" data-velocity-x=\"0.0000\" data-velocity-y=\"0.0000\" data-motion-phase=\"settled\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-current-width=\"210.0000\" data-current-height=\"36.0000\" data-target-surface=\"lab-don…>…</div>\u001b[22m\n\u001b[2m    - unexpected value \"done\"\u001b[22m\n\u001b[2m    - locator resolved to <div data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-view=\"compact\" data-native=\"false\" data-hidden=\"false\" data-lab-state=\"idle\" data-enlarged=\"false\" data-surface=\"compact\" data-target-width=\"268\" data-target-height=\"36\" class=\"ci-host ux-host \" data-velocity-x=\"8.5741\" data-velocity-y=\"0.0000\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-motion-phase=\"expanding\" data-target-surface=\"compact\" data-current-width=\"269.6996\" data-current-height=\"36.0000…>…</div>\u001b[22m\n\u001b[2m    5 × unexpected value \"idle\"\u001b[22m\n\u001b[2m      - locator resolved to <div data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-view=\"compact\" data-native=\"false\" data-hidden=\"false\" data-lab-state=\"idle\" data-enlarged=\"false\" data-surface=\"compact\" data-target-width=\"268\" data-target-height=\"36\" class=\"ci-host ux-host \" data-velocity-x=\"0.0000\" data-velocity-y=\"0.0000\" data-motion-phase=\"settled\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-target-surface=\"compact\" data-current-width=\"268.0000\" data-current-height=\"36.0000\" …>…</div>\u001b[22m\n\u001b[2m    - unexpected value \"idle\"\u001b[22m\n\n    at D:\\Projects\\island-protype\\tests\\lab-reader.spec.ts:38:147",
+                    "location": {
+                      "file": "D:\\Projects\\island-protype\\tests\\lab-reader.spec.ts",
+                      "column": 147,
+                      "line": 38
+                    },
+                    "snippet": "  36 | });\n  37 | test('elapsed deadline burns automatically and burn ignores replay and pointer actions',async({page,request})=>{\n> 38 |  await read(page,request);await page.mouse.move(1,1000);await page.clock.install();await page.clock.fastForward(60001);await expect(island(page)).toHaveAttribute('data-lab-state','burn');await expect(page.getByRole('button',{name:'重播：收到检验报告'})).toBeDisabled();await page.clock.runFor(1150);await expect(island(page)).toHaveAttribute('data-lab-state','done');await expect(island(page).locator('.lab-row')).toHaveCount(0);\n     |                                                                                                                                                   ^\n  39 | });\n  40 | test('a live reduced-motion change applies to automatic clearing',async({page,request})=>{\n  41 |  await read(page,request);await push(request,{type:'clinical:configure',settings:{reduced:true}});await page.mouse.move(1,1000);await page.clock.install();await page.clock.fastForward(60001);await page.clock.runFor(60);await expect(island(page)).toHaveAttribute('data-lab-state','done');await expect(island(page).locator('.lab-row')).toHaveCount(0);"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\Projects\\island-protype\\tests\\lab-reader.spec.ts",
+                        "column": 147,
+                        "line": 38
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('clinical-island')\nExpected: \u001b[32m\"burn\"\u001b[39m\nReceived: \u001b[31m\"idle\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" getByTestId('clinical-island') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('clinical-island')\u001b[22m\n\u001b[2m    - locator resolved to <div data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-native=\"false\" data-hidden=\"false\" data-view=\"expanded\" data-lab-state=\"done\" data-enlarged=\"false\" data-surface=\"lab-read\" data-target-width=\"210\" data-target-height=\"36\" class=\"ci-host ux-host \" data-native-fallback=\"false\" data-velocity-x=\"-1320.0344\" data-velocity-y=\"-2640.2041\" data-testid=\"clinical-island\" data-current-width=\"371.1415\" data-motion-phase=\"collapsing\" data-target-surface=\"lab-done\" data-current-hei…>…</div>\u001b[22m\n\u001b[2m    - unexpected value \"done\"\u001b[22m\n\u001b[2m    - locator resolved to <div data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-native=\"false\" data-hidden=\"false\" data-view=\"expanded\" data-lab-state=\"done\" data-enlarged=\"false\" data-surface=\"lab-read\" data-target-width=\"210\" data-target-height=\"36\" class=\"ci-host ux-host \" data-native-fallback=\"false\" data-velocity-x=\"-1472.9563\" data-velocity-y=\"-3381.1911\" data-testid=\"clinical-island\" data-current-width=\"305.2174\" data-motion-phase=\"collapsing\" data-target-surface=\"lab-done\" data-current-hei…>…</div>\u001b[22m\n\u001b[2m    - unexpected value \"done\"\u001b[22m\n\u001b[2m    - locator resolved to <div data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-native=\"false\" data-hidden=\"false\" data-view=\"expanded\" data-lab-state=\"done\" data-enlarged=\"false\" data-surface=\"lab-read\" data-target-width=\"210\" data-target-height=\"36\" class=\"ci-host ux-host \" data-velocity-x=\"-577.4721\" data-native-fallback=\"false\" data-velocity-y=\"-2049.5383\" data-testid=\"clinical-island\" data-current-width=\"224.7198\" data-motion-phase=\"collapsing\" data-target-surface=\"lab-done\" data-current-heig…>…</div>\u001b[22m\n\u001b[2m    - unexpected value \"done\"\u001b[22m\n\u001b[2m    - locator resolved to <div data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-native=\"false\" data-hidden=\"false\" data-view=\"expanded\" data-lab-state=\"done\" data-enlarged=\"false\" data-surface=\"lab-read\" data-target-width=\"210\" data-target-height=\"36\" class=\"ci-host ux-host \" data-velocity-x=\"34.7468\" data-velocity-y=\"-293.4897\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-current-width=\"204.8868\" data-current-height=\"37.5940\" data-motion-phase=\"collapsing\" data-target-surface=\"…>…</div>\u001b[22m\n\u001b[2m    - unexpected value \"done\"\u001b[22m\n\u001b[2m    - locator resolved to <div data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-native=\"false\" data-hidden=\"false\" data-view=\"expanded\" data-lab-state=\"done\" data-enlarged=\"false\" data-surface=\"lab-read\" data-target-width=\"210\" data-target-height=\"36\" class=\"ci-host ux-host \" data-velocity-x=\"16.4692\" data-velocity-y=\"41.1062\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-current-width=\"209.6020\" data-current-height=\"30.5311\" data-motion-phase=\"collapsing\" data-target-surface=\"la…>…</div>\u001b[22m\n\u001b[2m    - unexpected value \"done\"\u001b[22m\n\u001b[2m    - locator resolved to <div data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-native=\"false\" data-hidden=\"false\" data-view=\"expanded\" data-lab-state=\"done\" data-enlarged=\"false\" data-surface=\"lab-read\" data-target-width=\"210\" data-target-height=\"36\" class=\"ci-host ux-host \" data-velocity-x=\"0.0000\" data-velocity-y=\"-0.1308\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-current-width=\"210.0000\" data-current-height=\"36.0046\" data-motion-phase=\"collapsing\" data-target-surface=\"lab…>…</div>\u001b[22m\n\u001b[2m    - unexpected value \"done\"\u001b[22m\n\u001b[2m    - locator resolved to <div data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-native=\"false\" data-hidden=\"false\" data-view=\"expanded\" data-lab-state=\"done\" data-enlarged=\"false\" data-surface=\"lab-done\" data-target-width=\"210\" data-target-height=\"36\" class=\"ci-host ux-host \" data-velocity-x=\"0.0000\" data-velocity-y=\"0.0000\" data-motion-phase=\"settled\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-current-width=\"210.0000\" data-current-height=\"36.0000\" data-target-surface=\"lab-don…>…</div>\u001b[22m\n\u001b[2m    - unexpected value \"done\"\u001b[22m\n\u001b[2m    - locator resolved to <div data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-view=\"compact\" data-native=\"false\" data-hidden=\"false\" data-lab-state=\"idle\" data-enlarged=\"false\" data-surface=\"compact\" data-target-width=\"268\" data-target-height=\"36\" class=\"ci-host ux-host \" data-velocity-x=\"8.5741\" data-velocity-y=\"0.0000\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-motion-phase=\"expanding\" data-target-surface=\"compact\" data-current-width=\"269.6996\" data-current-height=\"36.0000…>…</div>\u001b[22m\n\u001b[2m    5 × unexpected value \"idle\"\u001b[22m\n\u001b[2m      - locator resolved to <div data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-view=\"compact\" data-native=\"false\" data-hidden=\"false\" data-lab-state=\"idle\" data-enlarged=\"false\" data-surface=\"compact\" data-target-width=\"268\" data-target-height=\"36\" class=\"ci-host ux-host \" data-velocity-x=\"0.0000\" data-velocity-y=\"0.0000\" data-motion-phase=\"settled\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-target-surface=\"compact\" data-current-width=\"268.0000\" data-current-height=\"36.0000\" …>…</div>\u001b[22m\n\u001b[2m    - unexpected value \"idle\"\u001b[22m\n\n\n  36 | });\n  37 | test('elapsed deadline burns automatically and burn ignores replay and pointer actions',async({page,request})=>{\n> 38 |  await read(page,request);await page.mouse.move(1,1000);await page.clock.install();await page.clock.fastForward(60001);await expect(island(page)).toHaveAttribute('data-lab-state','burn');await expect(page.getByRole('button',{name:'重播：收到检验报告'})).toBeDisabled();await page.clock.runFor(1150);await expect(island(page)).toHaveAttribute('data-lab-state','done');await expect(island(page).locator('.lab-row')).toHaveCount(0);\n     |                                                                                                                                                   ^\n  39 | });\n  40 | test('a live reduced-motion change applies to automatic clearing',async({page,request})=>{\n  41 |  await read(page,request);await push(request,{type:'clinical:configure',settings:{reduced:true}});await page.mouse.move(1,1000);await page.clock.install();await page.clock.fastForward(60001);await page.clock.runFor(60);await expect(island(page)).toHaveAttribute('data-lab-state','done');await expect(island(page).locator('.lab-row')).toHaveCount(0);\n    at D:\\Projects\\island-protype\\tests\\lab-reader.spec.ts:38:147"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T07:09:15.890Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "D:\\Projects\\island-protype\\test-results\\lab-reader-elapsed-deadlin-a336a--replay-and-pointer-actions\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\Projects\\island-protype\\test-results\\lab-reader-elapsed-deadlin-a336a--replay-and-pointer-actions\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\Projects\\island-protype\\test-results\\lab-reader-elapsed-deadlin-a336a--replay-and-pointer-actions\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\Projects\\island-protype\\tests\\lab-reader.spec.ts",
+                    "column": 147,
+                    "line": 38
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "477c9b8aa6ae5da7b1cc-b3f78aba5fe741e6b70f",
+          "file": "lab-reader.spec.ts",
+          "line": 37,
+          "column": 1
+        },
+        {
+          "title": "a live reduced-motion change applies to automatic clearing",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 11811,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T07:09:35.846Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "477c9b8aa6ae5da7b1cc-5ccf018032de3d0be31f",
+          "file": "lab-reader.spec.ts",
+          "line": 40,
+          "column": 1
+        },
+        {
+          "title": "large text and forced colors retain scroll and actionable footer",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8234,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T07:09:48.730Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "477c9b8aa6ae5da7b1cc-0579b5c24b5c64ec401b",
+          "file": "lab-reader.spec.ts",
+          "line": 43,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-09T07:05:54.920Z",
+    "duration": 244883.014,
+    "expected": 16,
+    "skipped": 0,
+    "unexpected": 2,
+    "flaky": 0
+  }
+}

@@ -1,0 +1,44 @@
+[
+  {
+    "pid": 15012,
+    "parentPid": 14040,
+    "version": "154.0.4258.62",
+    "ownedSessionProfile": true,
+    "qaArguments": false
+  },
+  {
+    "pid": 18312,
+    "parentPid": 15012,
+    "version": "154.0.4258.62",
+    "ownedSessionProfile": true,
+    "qaArguments": false
+  },
+  {
+    "pid": 29884,
+    "parentPid": 15012,
+    "version": "154.0.4258.62",
+    "ownedSessionProfile": true,
+    "qaArguments": false
+  },
+  {
+    "pid": 20236,
+    "parentPid": 15012,
+    "version": "154.0.4258.62",
+    "ownedSessionProfile": true,
+    "qaArguments": false
+  },
+  {
+    "pid": 26100,
+    "parentPid": 15012,
+    "version": "154.0.4258.62",
+    "ownedSessionProfile": true,
+    "qaArguments": false
+  },
+  {
+    "pid": 17628,
+    "parentPid": 15012,
+    "version": "154.0.4258.62",
+    "ownedSessionProfile": true,
+    "qaArguments": false
+  }
+]

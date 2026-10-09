@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-08",
+  "actionsNotExecuted": [
+    "PowerShell command to verify and start Release with --qa-cdp --hover-diagnostics, then reset the synthetic source",
+    "PowerShell command combining a passive sampler launch and synthetic compact-view fixture update"
+  ],
+  "reviewResult": "Rejected: blocked by policy",
+  "detailedReasonAvailable": false,
+  "noBypass": true,
+  "saferWork": "Normal Release through the authorized computer tool; observed clicks and source opening; passive finite screen/rectangle sampling without a QA endpoint",
+  "nativeCDPObservation": "NOT_RUN",
+  "nativeFullSwipeSequence": "NOT_RUN",
+  "qaPortNeverOpened": true
+}

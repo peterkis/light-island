@@ -1,0 +1,28 @@
+{
+  "branch": "main",
+  "head": "9609ecf8dc2912ffd6595053f1bb442af449dbbc",
+  "exeSHA256": "BE01BD96C7A862B35AB3ADAB8CE3A09C7FE14765D6B8A95078DABCF807DF42F4",
+  "codeManifest": "tested-code-final-focus-hashes.json",
+  "codeHashCount": 141,
+  "codeDrift": 0,
+  "inputs": [
+    {
+      "path": "docs/Windows 灵动岛 UI UX 设计规范 v1.0.md",
+      "sha256": "A9F37EA76BECF4B74C4388A2172E4D46DBC7A4600558CEE3B71F445F3E67B1FA",
+      "unchanged": true
+    },
+    {
+      "path": "docs/protype/灵动岛「检验报告阅读」开发文档（Agent 可读版）.md",
+      "sha256": "BECA7CA59CCE18F7898F97CAF497A9F63E8E30B55A91FD74E1CB2BB2D74C9AFF",
+      "unchanged": true
+    },
+    {
+      "path": "docs/protype/灵动岛 · 检验报告阅读（阅后即焚）.html",
+      "sha256": "625664A43EEA9CEB14763EF27E650A1F8D8766DED933E8D6704A451416146DAD",
+      "unchanged": true
+    }
+  ],
+  "committed": false,
+  "pushed": false,
+  "published": false
+}

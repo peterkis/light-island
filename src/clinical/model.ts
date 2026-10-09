@@ -9,6 +9,7 @@ export interface Activity {
  compact: string; title: string; body: string; sourceState:string; sourceAt:number|null; syncedAt:number|null;
  fields:SourceField[]; tone:Tone; priority:'routine'|'important'; scope:Role;
  patient:string; guard:string; actionLabel:string; routeKind:string; withdrawn:boolean;
+ labRef?:{id:string;abnormalCount:number};
 }
 export interface Settings { privacy:boolean; role:Role; locked:boolean; fullscreen:boolean; reduced:boolean; textScale:number; connectivity:'fresh'|'offline'|'stale'; routeFault:'none'|'failed'|'mismatch'; quiet:boolean; dock:'notch'|'floating'; compactText:boolean; backgroundDark:boolean; hideIdle:boolean; autoPreview:boolean }
 export const defaults:Settings={privacy:false,role:'clinician',locked:false,fullscreen:false,reduced:false,textScale:1,connectivity:'fresh',routeFault:'none',quiet:false,dock:'notch',compactText:false,backgroundDark:false,hideIdle:false,autoPreview:true};
@@ -29,8 +30,9 @@ export function parseActivity(input:unknown):Activity|null {
  if(!['info','warning','error','success','neutral'].includes(a.tone)||!['routine','important'].includes(a.priority)||!['clinician','finance','logistics'].includes(a.scope)||typeof a.withdrawn!=='boolean')return null;
  if(![a.sourceAt,a.syncedAt].every(v=>v===null||(typeof v==='number'&&Number.isFinite(v)&&v>=0)))return null;
  if(!Array.isArray(a.fields)||a.fields.length>8||!a.fields.every(f=>f&&text(f.label,80)&&text(f.value,400)&&(f.at===null||Number.isFinite(f.at))))return null;
+ if(a.labRef&&(a.scenario!=='S04'||!text(a.labRef.id,160)||!Number.isInteger(a.labRef.abnormalCount)||a.labRef.abnormalCount<0||a.labRef.abnormalCount>128))return null;
  // Copy only the known contract; ignore payload HTML, URLs, action callbacks or extraneous data.
- return {identity:{source:a.identity.source,campus:a.identity.campus,encounter:a.identity.encounter,object:a.identity.object},scenario:a.scenario,version:a.version,stage:a.stage,compact:a.compact,title:a.title,body:a.body,sourceState:a.sourceState,sourceAt:a.sourceAt,syncedAt:a.syncedAt,fields:a.fields.map(f=>({label:f.label,value:f.value,at:f.at})),tone:a.tone,priority:a.priority,scope:a.scope,patient:a.patient,guard:a.guard,actionLabel:a.actionLabel,routeKind:a.routeKind,withdrawn:a.withdrawn};
+ return {identity:{source:a.identity.source,campus:a.identity.campus,encounter:a.identity.encounter,object:a.identity.object},scenario:a.scenario,version:a.version,stage:a.stage,compact:a.compact,title:a.title,body:a.body,sourceState:a.sourceState,sourceAt:a.sourceAt,syncedAt:a.syncedAt,fields:a.fields.map(f=>({label:f.label,value:f.value,at:f.at})),tone:a.tone,priority:a.priority,scope:a.scope,patient:a.patient,guard:a.guard,actionLabel:a.actionLabel,routeKind:a.routeKind,withdrawn:a.withdrawn,...(a.labRef?{labRef:{id:a.labRef.id,abnormalCount:a.labRef.abnormalCount}}:{})};
 }
 export function ingest(q:Queue,input:unknown):Queue {
  const a=parseActivity(input);if(!a)return {...q,rejected:q.rejected+1};

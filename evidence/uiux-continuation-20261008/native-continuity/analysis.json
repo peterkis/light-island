@@ -1,0 +1,11 @@
+{
+  "frames": 78,
+  "windowRectChanges": 0,
+  "centerPixelProbe": [
+    352,
+    5
+  ],
+  "unpaintedCenterSamples": [],
+  "maximumCenterChannel": 0,
+  "meaning": "Actual screen center paint during observed normal close/open; not DWM telemetry"
+}
