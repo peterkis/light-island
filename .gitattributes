@@ -5,6 +5,8 @@
 # Preserve captured evidence bytes; generated contexts retain their original formatting.
 evidence/lab-reader-20261009/** -text whitespace=cr-at-eol
 evidence/uiux-continuation-20261008/** -text whitespace=cr-at-eol
+evidence/pr-review-20261011/** -text whitespace=cr-at-eol
+evidence/pr-review-20261011/**/error-context.md -whitespace
 evidence/lab-reader-20261009/**/error-context.md -whitespace
 evidence/uiux-continuation-20261008/**/error-context.md -whitespace
 evidence/lab-reader-20261009/preexisting.diff -whitespace

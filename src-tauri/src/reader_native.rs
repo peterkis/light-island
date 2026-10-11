@@ -18,8 +18,8 @@ pub fn clinical_capture(window:WebviewWindow,active:bool,epoch:u64)->Result<Valu
   let hwnd=window.hwnd().map_err(|e|e.to_string())?;let mode=if active{0x11}else{0};
   if SetWindowDisplayAffinity(hwnd.0 as _,mode)==0&&(!active||SetWindowDisplayAffinity(hwnd.0 as _,1)==0){return Err("Window capture protection unavailable".into());}
   let mut actual=0;if GetWindowDisplayAffinity(hwnd.0 as _,&mut actual)==0||active&&actual==0{return Err("Capture protection was not applied".into());}
-  // This command is reached only through explicit reader/source activation.
-  if active{let _=window.set_focus();}
+  // Capture leases can be requested by simulator broadcasts. Never activate here;
+  // ordinary user clicks and explicit source-window opening own focus changes.
   return Ok(json!({"mode":if actual==0x11{"exclude"}else if actual==1{"monitor"}else{"none"},"epoch":epoch}));
  }
  #[cfg(not(target_os="windows"))]Err("Windows capture protection required".into())

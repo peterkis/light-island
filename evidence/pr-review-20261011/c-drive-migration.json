@@ -1,0 +1,1271 @@
+[
+  {
+    "source": "C:\\Users\\zqpet\\AppData\\Local\\Temp\\light-island-e2e-89ccd4fc6b614715b11b8fe555cb2a4c",
+    "destination": "D:\\Projects\\island-protype\\evidence\\backups\\c-drive-migration-20261011\\light-island-e2e-89ccd4fc6b614715b11b8fe555cb2a4c",
+    "files": 0,
+    "bytes": null,
+    "verified": true,
+    "sourceRemoved": true,
+    "manifest": []
+  },
+  {
+    "source": "C:\\Users\\zqpet\\AppData\\Local\\Temp\\samewave-island-prototype",
+    "destination": "D:\\Projects\\island-protype\\evidence\\backups\\c-drive-migration-20261011\\samewave-island-prototype",
+    "files": 250,
+    "bytes": 28583630.0,
+    "verified": true,
+    "sourceRemoved": true,
+    "manifest": [
+      {
+        "path": "session-30060-1791532286470888300\\.samewave-owner",
+        "length": 35,
+        "sha256": "B9EBE083CF0254B5E407CF3EA8BFA9F6A1ECE69E7EC9C7239293110389EEE01F"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\.samewave-session.lock",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Last Version",
+        "length": 13,
+        "sha256": "099280939EBB903A46ED22C326C81D66ED9D265A3877288BB5AD4BEFCF56BF04"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Local State",
+        "length": 10610,
+        "sha256": "5F887412BDCA96166F3B8081213CFB722D0C903298B2571C403FF1D877B8451B"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Variations",
+        "length": 85,
+        "sha256": "B26DA4F8C7E283AA74386DA0229D66AF14A37986B8CA828E054FC932F68DD557"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\VariationsRuntimeSeedV2",
+        "length": 429,
+        "sha256": "E513EE9AC2AD0739AA9782809278A212845A8235BB62EF9A3E9CC124071576DD"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\VariationsSafeSeedV2",
+        "length": 1235,
+        "sha256": "5118E9BA5BF20365243A4767F9E64B3EF16618D90264260E6CF4AB1CE09583A4"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\VariationsSeedV2",
+        "length": 76,
+        "sha256": "76E16DB47634ED276479F9B0813C8BB3E72261A0F067F1D9E1371AFEB5AE3C25"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\AutoLaunchProtocolsComponent\\1.0.0.12\\manifest.json",
+        "length": 135,
+        "sha256": "BF066A2CF10074E847BEF7C066A9C84DEADA6586412E181CB417C6426A5D60A4"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\AutoLaunchProtocolsComponent\\1.0.0.12\\protocols.json",
+        "length": 3672,
+        "sha256": "2EDF732DA5FD827859E7A1A5B69A4A622CFC416F60A6AE04154D5AAD3A1BCCEC"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\CertificateRevocation\\6498.2025.9.4\\crl-set",
+        "length": 23123,
+        "sha256": "6DDCAF50AAFF98B960D067054CE2CE17872AC0719D02ABBB7FE56B9EABC818F2"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\CertificateRevocation\\6498.2025.9.4\\manifest.json",
+        "length": 113,
+        "sha256": "98821F71A1973AC61B45967CE0C121EB598AC6E95ABAA23C912D2F33E4237D8C"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\component_crx_cache\\00af3f07b5abb71f6d30337e1eef62fa280f06ef19485c0cf6b72171f92ccc0a",
+        "length": 1093663,
+        "sha256": "00AF3F07B5ABB71F6D30337E1EEF62FA280F06EF19485C0CF6B72171F92CCC0A"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\component_crx_cache\\720517793663c90e0dbd77cb42709bac49af733f83f73320ba89859d9b0310e0",
+        "length": 2393882,
+        "sha256": "720517793663C90E0DBD77CB42709BAC49AF733F83F73320BA89859D9B0310E0"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\component_crx_cache\\95fd9d48e4fc245a3f3a99a3a16ecd1355050ba3f4afc555f19a97c7f9b49677",
+        "length": 1355,
+        "sha256": "95FD9D48E4FC245A3F3A99A3A16ECD1355050BA3F4AFC555F19A97C7F9B49677"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\component_crx_cache\\a81d1959892ae4180554347df1b97834abba2e1a5e6b9aeba000ecea26eabecc",
+        "length": 975576,
+        "sha256": "A81D1959892AE4180554347DF1B97834ABBA2E1A5E6B9AEBA000ECEA26EABECC"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\component_crx_cache\\bec8ead1da3c9600fe66bbcc0e7a9bed9a184c1be821b4d23570c6b7af7f0410",
+        "length": 186331,
+        "sha256": "BEC8EAD1DA3C9600FE66BBCC0E7A9BED9A184C1BE821B4D23570C6B7AF7F0410"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\component_crx_cache\\cde4f808f038aaffece9680c0356ded00c81c4559e0a431acb45d1276425d9eb",
+        "length": 1922,
+        "sha256": "CDE4F808F038AAFFECE9680C0356DED00C81C4559E0A431ACB45D1276425D9EB"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\component_crx_cache\\ef7bf9efb7c82e6847b572d7781e11fc7fd642a55ab79e42a3d3ba2f80d520f6",
+        "length": 8417,
+        "sha256": "EF7BF9EFB7C82E6847B572D7781E11FC7FD642A55AB79E42A3D3BA2F80D520F6"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\component_crx_cache\\fa29a6d5775ff340900a65b39b02fc8b4b77d403c048d8debf22f2f5d09c61a0",
+        "length": 23359,
+        "sha256": "FA29A6D5775FF340900A65B39B02FC8B4B77D403C048D8DEBF22F2F5D09C61A0"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\component_crx_cache\\metadata.json",
+        "length": 908,
+        "sha256": "C7C549D1D6A67F0319B6C3679EA58296EB6421B334E4C0D9622C002F8A390C72"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Crashpad\\metadata",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Crashpad\\settings.dat",
+        "length": 288,
+        "sha256": "EFB0CF783C718E5AD8158D516A4F272C3ADFD5B3967E02652159594AEE0FA159"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Crashpad\\throttle_store.dat",
+        "length": 20,
+        "sha256": "41C91A9C93D76295746A149DCE7EBB3B9EE2CB551D84365FFF108E59A61CC304"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Crashpad\\watson_metadata",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\BookmarkMergedSurfaceOrdering",
+        "length": 6,
+        "sha256": "4489F9E3E454748B3521EB214E0A5694D562CFF3D9FF511CB456953C8F534C00"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\declarative_performance_observer.db",
+        "length": 32768,
+        "sha256": "EDA4C9567974174F08A1DBCD8BADF4D6199A7E9A8B78B8826548F49E20E7BADF"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\declarative_performance_observer.db-journal",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\ExtensionActivityEdge",
+        "length": 32768,
+        "sha256": "DC26AF192A29B7A5CF5EDF9AD5F25DCC30A45744FCAED301509950E70E8AB160"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\ExtensionActivityEdge-journal",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Favicons",
+        "length": 20480,
+        "sha256": "1FBC7EA9722B2154B0D69C9D0ED80B6C0C98C5D389CF31AC1A2B8DB030724840"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Favicons-journal",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\favorites_diagnostic.log",
+        "length": 2316,
+        "sha256": "98FC44BC90574082C70EA2C99A22F2C526C37460377E87DD851F7EC61606D7B5"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\History",
+        "length": 212992,
+        "sha256": "F738020C9C0D864209F15ADC856287982D39C93BFF8B334936F80CFE61F1821C"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\History-journal",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\LOCK",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\LOG",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\LOG.old",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Login Data",
+        "length": 43008,
+        "sha256": "3A8415FCEC60041B0F9F8F3F2EA48A84002A0A169E9C56F07F4415FF2F81CFE5"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Login Data For Account",
+        "length": 43008,
+        "sha256": "3A8415FCEC60041B0F9F8F3F2EA48A84002A0A169E9C56F07F4415FF2F81CFE5"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Login Data For Account-journal",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Login Data-journal",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Preferences",
+        "length": 7824,
+        "sha256": "1FD898C115FAD57651EC95E507FF3EA1C8BD7D37FA6D0E21A9331EDF3C2D3D68"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\README",
+        "length": 182,
+        "sha256": "A0C9ABAE18599F0A65FC654AD36251F6330794BEA66B718A09D8B297F3E38E87"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Secure Preferences",
+        "length": 9856,
+        "sha256": "A955230C94F7FB98D93746840ECCF7EE7FFFCA4491FFD58A76675885A264C43C"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\ServerCertificate",
+        "length": 20480,
+        "sha256": "180FFBC2A4F10B5563F5A7BFE62D23909F0AA77572A06E59A9BE4C6FCA7176F7"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\ServerCertificate-journal",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\settings_diagnostic.log",
+        "length": 21880,
+        "sha256": "CA5F71B35854E640D546E1C88573B2D754DD415B0C9EE676C84C7AE8BDB66E4E"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Vpn Tokens",
+        "length": 28672,
+        "sha256": "0750267321D06309DFD0BC3957B29483FE4F76CDB105E02E64DBE9EC240DDC03"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Vpn Tokens-journal",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Web Data",
+        "length": 223232,
+        "sha256": "95799AF3C36CD9C308351C17684B7798C9860C516786FF086A37B3F40B0D1B0D"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Web Data-journal",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\AutofillAiModelCache\\LOCK",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\AutofillAiModelCache\\LOG",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\AutofillAiModelCache\\LOG.old",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\AutofillStrikeDatabase\\LOCK",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\AutofillStrikeDatabase\\LOG",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\AutofillStrikeDatabase\\LOG.old",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\BudgetDatabase\\LOCK",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\BudgetDatabase\\LOG",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\BudgetDatabase\\LOG.old",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\ClientCertificates\\LOCK",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\ClientCertificates\\LOG",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\ClientCertificates\\LOG.old",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Code Cache\\js\\index",
+        "length": 24,
+        "sha256": "FBCFE23A2ECB82B7100C50811691DDE0A33AA3DA8D176BE9882A9DB485DC0F2D"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Code Cache\\js\\index-dir\\the-real-index",
+        "length": 48,
+        "sha256": "EA1CA2FFA4FA169443CD700A9CD5560929A6B0520892DC058CE5999F76C5D3E1"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Code Cache\\wasm\\index",
+        "length": 24,
+        "sha256": "FBCFE23A2ECB82B7100C50811691DDE0A33AA3DA8D176BE9882A9DB485DC0F2D"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Code Cache\\wasm\\index-dir\\the-real-index",
+        "length": 48,
+        "sha256": "96A14F921E6E3C4E1F310FA7ECD0F32B9A8F5D4F75B10F3F18865A3B8816AA1C"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\commerce_subscription_db\\LOCK",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\commerce_subscription_db\\LOG",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\commerce_subscription_db\\LOG.old",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\discounts_db\\LOCK",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\discounts_db\\LOG",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\discounts_db\\LOG.old",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\discount_infos_db\\LOCK",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\discount_infos_db\\LOG",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\discount_infos_db\\LOG.old",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\EdgeSessions\\SessionRestoreLog",
+        "length": 666,
+        "sha256": "70CF305AC31E18278C61C33C62C71B656A3B48F04339F292C1032AF9F030AB72"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Extension Rules\\000003.log",
+        "length": 38,
+        "sha256": "1C43A1BDA1E458863C46DFAE7FB43BFB3E27802169F37320399B1DD799A819AC"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Extension Rules\\CURRENT",
+        "length": 16,
+        "sha256": "0F1BAD70C7BD1E0A69562853EC529355462FCD0423263A3D39D6D0D70B780443"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Extension Rules\\LOCK",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Extension Rules\\LOG",
+        "length": 397,
+        "sha256": "E8359D3A7CA041B57C1224E70939C709DB3E844C8DE4CE63F642782DD0B305C3"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Extension Rules\\MANIFEST-000001",
+        "length": 41,
+        "sha256": "F9D31B278E215EB0D0E9CD709EDFA037E828F36214AB7906F612160FEAD4B2B4"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Extension Scripts\\000003.log",
+        "length": 38,
+        "sha256": "1C43A1BDA1E458863C46DFAE7FB43BFB3E27802169F37320399B1DD799A819AC"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Extension Scripts\\CURRENT",
+        "length": 16,
+        "sha256": "0F1BAD70C7BD1E0A69562853EC529355462FCD0423263A3D39D6D0D70B780443"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Extension Scripts\\LOCK",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Extension Scripts\\LOG",
+        "length": 401,
+        "sha256": "07265A7253FD3BAA2C95B0041FDDC68A8C9251C1B500E3CC35442C14AEBC1227"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Extension Scripts\\MANIFEST-000001",
+        "length": 41,
+        "sha256": "F9D31B278E215EB0D0E9CD709EDFA037E828F36214AB7906F612160FEAD4B2B4"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Extension State\\000003.log",
+        "length": 114,
+        "sha256": "E2610960C3757D1757F206C7B84378EFA22D86DCF161A98096A5F0E56E1A367E"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Extension State\\CURRENT",
+        "length": 16,
+        "sha256": "0F1BAD70C7BD1E0A69562853EC529355462FCD0423263A3D39D6D0D70B780443"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Extension State\\LOCK",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Extension State\\LOG",
+        "length": 438,
+        "sha256": "DED0EAE8C1B81B5E7ED75FBC26404F62B02E61CD6D51724274C4C9790E30146E"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Extension State\\LOG.old",
+        "length": 397,
+        "sha256": "BEDEA12432E7A3ACC5252DD4113C8AFAA49204F1B3D6C9AF51659B80CF0FFF0D"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Extension State\\MANIFEST-000001",
+        "length": 41,
+        "sha256": "F9D31B278E215EB0D0E9CD709EDFA037E828F36214AB7906F612160FEAD4B2B4"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Feature Engagement Tracker\\AvailabilityDB\\LOCK",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Feature Engagement Tracker\\AvailabilityDB\\LOG",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Feature Engagement Tracker\\AvailabilityDB\\LOG.old",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Feature Engagement Tracker\\EventDB\\LOCK",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Feature Engagement Tracker\\EventDB\\LOG",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Feature Engagement Tracker\\EventDB\\LOG.old",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Local Storage\\leveldb\\000003.log",
+        "length": 49,
+        "sha256": "AF47B5D07D2F1AA55711E00774A429289267A82E604602DF8FDD2C5047626159"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Local Storage\\leveldb\\CURRENT",
+        "length": 16,
+        "sha256": "0F1BAD70C7BD1E0A69562853EC529355462FCD0423263A3D39D6D0D70B780443"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Local Storage\\leveldb\\LOCK",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Local Storage\\leveldb\\LOG",
+        "length": 450,
+        "sha256": "B40FF6C7FB17546E082F5C622F8EE311191BE3325E18FBA2A279B8E06AA10567"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Local Storage\\leveldb\\LOG.old",
+        "length": 409,
+        "sha256": "1390B2E741A9BD23351A135FC0C01C267E564C8E6017D36301437DCF878A4AE4"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Local Storage\\leveldb\\MANIFEST-000001",
+        "length": 41,
+        "sha256": "F9D31B278E215EB0D0E9CD709EDFA037E828F36214AB7906F612160FEAD4B2B4"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Network\\Cookies",
+        "length": 20480,
+        "sha256": "8DA294027E6FF01D4253E19F529E9AF6F4DDF89AE08A4B50225A007DDFFB43E4"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Network\\Cookies-journal",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Network\\Device Bound Sessions",
+        "length": 20480,
+        "sha256": "6A22FF7CA6E53A73BC4578271E5F5BF34CDD7C1C9E8E13AEA5DB31AE5B2618D2"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Network\\Device Bound Sessions-journal",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Network\\Network Persistent State",
+        "length": 111,
+        "sha256": "88C9590388D22BB0BD8DA3F7D50389311957024EE5C2DFE562E2649AD427FD7D"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Network\\NetworkDataMigrated",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Network\\SCT Auditing Pending Reports",
+        "length": 2,
+        "sha256": "4F53CDA18C2BAA0C0354BB5F9A3ECBE5ED12AB4D8E11BA873C2F11161202B945"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Network\\Sdch Dictionaries",
+        "length": 40,
+        "sha256": "6028BD681DBF11A0A58DDE8A0CD884115C04CAA59D080BA51BDE1B086CE0079D"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Network\\Trust Tokens",
+        "length": 36864,
+        "sha256": "88BAFA2A265212152B2405502209D64438A416FF594A040E666F031EF442A812"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Network\\Trust Tokens-journal",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\optimization_guide_hint_cache_store\\LOCK",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\optimization_guide_hint_cache_store\\LOG",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\optimization_guide_hint_cache_store\\LOG.old",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\parcel_tracking_db\\LOCK",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\parcel_tracking_db\\LOG",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\parcel_tracking_db\\LOG.old",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\PersistentOriginTrials\\LOCK",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\PersistentOriginTrials\\LOG",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\PersistentOriginTrials\\LOG.old",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Shared Dictionary\\db",
+        "length": 45056,
+        "sha256": "0D6287FECEDBC44ED9F51DED9DE88629EC9F385ECFF5DA9A34E47E96FD5A9CBA"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Shared Dictionary\\db-journal",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Shared Dictionary\\cache\\index",
+        "length": 24,
+        "sha256": "FBCFE23A2ECB82B7100C50811691DDE0A33AA3DA8D176BE9882A9DB485DC0F2D"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Shared Dictionary\\cache\\index-dir\\the-real-index",
+        "length": 48,
+        "sha256": "45E0DC96EB0BA4D43F54B2FC4BBBD07081ECCBD2EC7B15241012B3AD716F6378"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\shared_proto_db\\000003.log",
+        "length": 183,
+        "sha256": "A92AC4A2EB38B5ED7497A1968E6D5E00BE18D838973CE26EB24032D961BA0229"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\shared_proto_db\\CURRENT",
+        "length": 16,
+        "sha256": "0F1BAD70C7BD1E0A69562853EC529355462FCD0423263A3D39D6D0D70B780443"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\shared_proto_db\\LOCK",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\shared_proto_db\\LOG",
+        "length": 438,
+        "sha256": "2FC3CCBFC80DA79DF9A08DAC811261EBAE10607EDE67768FC640120C93B95918"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\shared_proto_db\\LOG.old",
+        "length": 397,
+        "sha256": "0F21D48598D1A2415A80E7F5576D2B645239E220927FE2ED3927F7B68B006888"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\shared_proto_db\\MANIFEST-000001",
+        "length": 41,
+        "sha256": "F9D31B278E215EB0D0E9CD709EDFA037E828F36214AB7906F612160FEAD4B2B4"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\shared_proto_db\\metadata\\000003.log",
+        "length": 852,
+        "sha256": "3C494DACF2C7CEBDBDEE43A6A63E7A724F59ED3F5EE081009AA45B36833C78B3"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\shared_proto_db\\metadata\\CURRENT",
+        "length": 16,
+        "sha256": "0F1BAD70C7BD1E0A69562853EC529355462FCD0423263A3D39D6D0D70B780443"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\shared_proto_db\\metadata\\LOCK",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\shared_proto_db\\metadata\\LOG",
+        "length": 456,
+        "sha256": "31E620E5D097DA53FC38611B2DFCBE1B5F55504BD9DB5A06EA42C5DD04698670"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\shared_proto_db\\metadata\\LOG.old",
+        "length": 415,
+        "sha256": "D7E2F46A3EA5E2893F0EBFD2C166CA1E8F0E2B840B323191DB0595B657DD68AA"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\shared_proto_db\\metadata\\MANIFEST-000001",
+        "length": 41,
+        "sha256": "F9D31B278E215EB0D0E9CD709EDFA037E828F36214AB7906F612160FEAD4B2B4"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Site Characteristics Database\\000003.log",
+        "length": 40,
+        "sha256": "F096BC366A931FBA656BDCD77B24AF15A5F29FC53281A727C79F82C608ECFAB8"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Site Characteristics Database\\CURRENT",
+        "length": 16,
+        "sha256": "0F1BAD70C7BD1E0A69562853EC529355462FCD0423263A3D39D6D0D70B780443"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Site Characteristics Database\\LOCK",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Site Characteristics Database\\LOG",
+        "length": 466,
+        "sha256": "DE3981AA29D4F26A407C4A9B78CE219EE33321769B145E42053B135B108C7211"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Site Characteristics Database\\LOG.old",
+        "length": 425,
+        "sha256": "B75B9129199200477CE5722E3347F01465B96043823A72200A271D8A3BC59D40"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Site Characteristics Database\\MANIFEST-000001",
+        "length": 41,
+        "sha256": "F9D31B278E215EB0D0E9CD709EDFA037E828F36214AB7906F612160FEAD4B2B4"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Sync Data\\LevelDB\\000003.log",
+        "length": 65,
+        "sha256": "8FF00D859349A3EA206706CDD3FA2762AE7C8EFE2FDD33A95A72FEE45AAC6BC4"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Sync Data\\LevelDB\\CURRENT",
+        "length": 16,
+        "sha256": "0F1BAD70C7BD1E0A69562853EC529355462FCD0423263A3D39D6D0D70B780443"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Sync Data\\LevelDB\\LOCK",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Sync Data\\LevelDB\\LOG",
+        "length": 442,
+        "sha256": "9A3049ADE7C120182FF7E1DCA13DEDD68C3CB1E92B01AA17DBC8CA3B2FB47AB0"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Sync Data\\LevelDB\\LOG.old",
+        "length": 401,
+        "sha256": "06BF8D1B77CD9A996EC0D818336F95548DA97D3712ACDC54F82FA807EBDDECAC"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Default\\Sync Data\\LevelDB\\MANIFEST-000001",
+        "length": 41,
+        "sha256": "F9D31B278E215EB0D0E9CD709EDFA037E828F36214AB7906F612160FEAD4B2B4"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\extensions_crx_cache\\metadata.json",
+        "length": 13,
+        "sha256": "2771D13C637C267132AFFF9DB67537BEF95708534B79AE8D954254C4E64E4E0F"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\GPUPersistentCache\\DawnGraphiteCache\\H6POMLZSBZPTMTLBCTMXRDH27BAKUDTA\\cache.db",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\GPUPersistentCache\\DawnGraphiteCache\\H6POMLZSBZPTMTLBCTMXRDH27BAKUDTA\\cache.db-wal",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\GPUPersistentCache\\DawnGraphiteCache\\H6POMLZSBZPTMTLBCTMXRDH27BAKUDTA\\cache.journal",
+        "length": 0,
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\GrShaderCache\\data_0",
+        "length": 45056,
+        "sha256": "7C9B9E06F424ECE58EA286B33B2557166A5F3F58F55461C0BC1587747EB5FBE7"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\GrShaderCache\\data_1",
+        "length": 270336,
+        "sha256": "4F4E2CF0EBA775F8D0D9816293D4692B72199F563685B280CF2127E88446979B"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\GrShaderCache\\data_2",
+        "length": 8192,
+        "sha256": "EC1702806F4CC7C42A82FC2B38E89835FDE7C64BB32060E0823C9077CA92EFB7"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\GrShaderCache\\data_3",
+        "length": 4202496,
+        "sha256": "6D1AE41F7799DD5CBD86738B9704DB6BE9209390D5002D15C58FAAA7E15BCCCA"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\GrShaderCache\\f_000001",
+        "length": 16472,
+        "sha256": "7740206CA08802D544B492EF562638257720AF34CAF762EA5FBFEFC470295A11"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\GrShaderCache\\f_000002",
+        "length": 18372,
+        "sha256": "9BC447DE8D0E666772A72D19570A9C06217C468E1CC65D25F0F3750882A962C6"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\GrShaderCache\\f_000003",
+        "length": 18372,
+        "sha256": "3E7C0ECFE620E0DFF38108D7DB400133E8F3C16ED3C62EDF8E14443E1406F129"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\GrShaderCache\\index",
+        "length": 262512,
+        "sha256": "EB6DCDFA48112F926F48DD6A3B6DF4F4167EB755C6B8E8F6F6E50A85AD637DBE"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\hyphen-data\\120.0.6050.0\\hyph-af.hyb",
+        "length": 72640,
+        "sha256": "5487EE44A4CD706D0086522E90C59C76CDF2AC68CE506FD3EAE6054B9220C0CF"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\hyphen-data\\120.0.6050.0\\hyph-as.hyb",
+        "length": 703,
+        "sha256": "C2784E33158A807135850F7125A7EAABE472B3CFC7AFB82C74F02DA69EA250FE"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\hyphen-data\\120.0.6050.0\\hyph-be.hyb",
+        "length": 6098,
+        "sha256": "25B7CFA039F82AC92990E1789DE40988D490DB9B613852FB24036B38FF87893C"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\hyphen-data\\120.0.6050.0\\hyph-bg.hyb",
+        "length": 3467,
+        "sha256": "7593F0395081E3EEB2D8516D10746608AFD826CFFD4E7E37D53936993D200A13"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\hyphen-data\\120.0.6050.0\\hyph-bn.hyb",
+        "length": 703,
+        "sha256": "C2784E33158A807135850F7125A7EAABE472B3CFC7AFB82C74F02DA69EA250FE"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\hyphen-data\\120.0.6050.0\\hyph-cs.hyb",
+        "length": 64245,
+        "sha256": "97A4755FE9E653A08969F1933E3DB19C712078B227BD5AA6799093ABC5A0EDC3"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\hyphen-data\\120.0.6050.0\\hyph-cu.hyb",
+        "length": 52842,
+        "sha256": "2BAEE19D5024FF87DCF3A1B9D0DA1B3AC5A1E506ADEEAD3B96A4DE5395D0290E"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\hyphen-data\\120.0.6050.0\\hyph-cy.hyb",
+        "length": 35913,
+        "sha256": "4D0569FE2F4B41B3164CF610310E1D996FD2C553CC39DE6062E50F4E033CC207"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\hyphen-data\\120.0.6050.0\\hyph-da.hyb",
+        "length": 6967,
+        "sha256": "86FDFC8DB62CDAA11F615DAD3712DA1F4708294E029A4AAD0FC285D4EA16C4BD"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\hyphen-data\\120.0.6050.0\\hyph-de-1901.hyb",
+        "length": 121393,
+        "sha256": "8C5FA4B29519D17593E923BC6A9A284DF7A6D07FAC42F897110B8FB2E0BAEEF5"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\hyphen-data\\120.0.6050.0\\hyph-de-1996.hyb",
+        "length": 120412,
+        "sha256": "D673805547A0228D2F57A5AD551B8760CFCC521F38C49284ED3976E3515BCA49"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\hyphen-data\\120.0.6050.0\\hyph-de-ch-1901.hyb",
+        "length": 120218,
+        "sha256": "8223A912160354E05735522FDB339DC59B353AD5D1E4F4CFA94898DC348E748F"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\hyphen-data\\120.0.6050.0\\hyph-el.hyb",
+        "length": 4219,
+        "sha256": "76AE3454FB0045ADB83094832578AA4749CE4DC694C4EDCF85B419C1E2D9BCD3"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\hyphen-data\\120.0.6050.0\\hyph-en-gb.hyb",
+        "length": 46607,
+        "sha256": "AE4B78009D18E849D87458677151EE3AAD1608AD72EC050DFD2421D22E7D031F"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\hyphen-data\\120.0.6050.0\\hyph-en-us.hyb",
+        "length": 59802,
+        "sha256": "03727CD6F4AA71B203C4C74CA6987AC7D87F13037337AC6F4B6996C2A0DC5F8C"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\hyphen-data\\120.0.6050.0\\hyph-es.hyb",
+        "length": 14995,
+        "sha256": "137461792537A2E56A6475E81E2B9AD7A2BDABF1F4738FAE186DCA3022357349"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\hyphen-data\\120.0.6050.0\\hyph-et.hyb",
+        "length": 21421,
+        "sha256": "10079C66014DD2E6ABFEF5A018E6553FD5A036AFB96BD2A235440A188F88B15E"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\hyphen-data\\120.0.6050.0\\hyph-eu.hyb",
+        "length": 665,
+        "sha256": "E2778A4FC7B8F064A32B6A44BC29F10E264D9D6214B8EDB8EBD1F5F6D68E2EB2"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\hyphen-data\\120.0.6050.0\\hyph-fr.hyb",
+        "length": 8165,
+        "sha256": "00BD8B2D398D77575DA2BFBBC5EC641AAD7F2A87D4A31186EC169E85A27DE5B7"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\hyphen-data\\120.0.6050.0\\hyph-ga.hyb",
+        "length": 35824,
+        "sha256": "1E3043F395BFB2A4C43D0480BA2F168ED622881CC3482359CA6E99821E983BE8"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\hyphen-data\\120.0.6050.0\\hyph-gl.hyb",
+        "length": 9289,
+        "sha256": "89D98EFF14E2CF1C2314EFDF392339E62D7E786F100202A7377BF7B22095A0C5"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\hyphen-data\\120.0.6050.0\\hyph-gu.hyb",
+        "length": 655,
+        "sha256": "AF0EDB67C2219B803C3EB6C1DEE6F2D41A3FE00468A9DA8BE8EF5056D701ABF3"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\hyphen-data\\120.0.6050.0\\hyph-hi.hyb",
+        "length": 687,
+        "sha256": "F4DF224D459FD111698DD5A13613C5BBF0ED11F04278D60230D028010EAC0C42"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\hyphen-data\\120.0.6050.0\\hyph-hr.hyb",
+        "length": 3031,
+        "sha256": "D5F066A5657F1D7C39D053956DF204B7926F40D2FE4F69573AF09D909066E26C"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\hyphen-data\\120.0.6050.0\\hyph-hu.hyb",
+        "length": 317251,
+        "sha256": "8B3A16268CC932B226C17FF405B3CFB6EB38A9511A2043D653DC03729EFCEAC1"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\hyphen-data\\120.0.6050.0\\hyph-hy.hyb",
+        "length": 605,
+        "sha256": "9B34DFCA85CB27546829F104F137757EFB274934C1E9D4991F55AD564962A76A"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\hyphen-data\\120.0.6050.0\\hyph-it.hyb",
+        "length": 2512,
+        "sha256": "F9C027D7FD44B01CD5E1CDF802E20C63560673098AF18BEA0930BA9AF334E0F7"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\hyphen-data\\120.0.6050.0\\hyph-ka.hyb",
+        "length": 9996,
+        "sha256": "2472271C7955C67E9FDB86D0CD3C5D88F5E598DA4F44B6741284B2BBCB2E4D52"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\hyphen-data\\120.0.6050.0\\hyph-kn.hyb",
+        "length": 711,
+        "sha256": "2B999D0A152F804601AA8F38FF0D3A6E5949977BF1DAA76FA888ACAE21526287"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\hyphen-data\\120.0.6050.0\\hyph-la.hyb",
+        "length": 1839,
+        "sha256": "FD4B6F36135CD3B932E350EC2017DFD89D2E36AC226F54E4C8F2E4BC6DB0593D"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\hyphen-data\\120.0.6050.0\\hyph-lt.hyb",
+        "length": 7774,
+        "sha256": "6FE2DA26A96834FB9AECBE586D40F728DF0EF676A4F235450054E66841B9E2CA"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\hyphen-data\\120.0.6050.0\\hyph-lv.hyb",
+        "length": 38602,
+        "sha256": "65962CCB5055E4C693E5AC493D6AFFDC810EC168EB2942F5705B7F4E464F9993"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\hyphen-data\\120.0.6050.0\\hyph-ml.hyb",
+        "length": 776,
+        "sha256": "90572DB8F49B01EC6A102732CDF14FC3F07D363CBE0D261103E583043164E888"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\hyphen-data\\120.0.6050.0\\hyph-mn-cyrl.hyb",
+        "length": 5142,
+        "sha256": "0D2731F16AA2C90FAEC8E63260358CBCCEDE403FAF95E3AF8C66BC2DB0729CA0"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\hyphen-data\\120.0.6050.0\\hyph-mr.hyb",
+        "length": 687,
+        "sha256": "F4DF224D459FD111698DD5A13613C5BBF0ED11F04278D60230D028010EAC0C42"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\hyphen-data\\120.0.6050.0\\hyph-mul-ethi.hyb",
+        "length": 3740,
+        "sha256": "F2FAC1BD069FFE5CD1112D94CC31137ED38A1B161093ECD74C9C1688428B688B"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\hyphen-data\\120.0.6050.0\\hyph-nb.hyb",
+        "length": 145263,
+        "sha256": "C2771FBB1BFFF7DB5E267DC7A4505A9675C6B98CFE7A8F7AE5686D7A5A2B3DD0"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\hyphen-data\\120.0.6050.0\\hyph-nl.hyb",
+        "length": 77080,
+        "sha256": "5EBDE398944B461CF940F0520C5A49C0882B6F36F9AC5CDA0538C8C8B44FB7CA"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\hyphen-data\\120.0.6050.0\\hyph-nn.hyb",
+        "length": 145263,
+        "sha256": "5BCBB58EAF65F13F6D039244D942F37C127344E3A0A2E6C32D08236945132809"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\hyphen-data\\120.0.6050.0\\hyph-or.hyb",
+        "length": 647,
+        "sha256": "4E9CD302BAFFC4EA3E9652327EA24072EBF37B5C4FC0719292BDAC10AAAD665B"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\hyphen-data\\120.0.6050.0\\hyph-pa.hyb",
+        "length": 607,
+        "sha256": "470329D28FAA484F945D78FFEFB176DCB6F2032C753E25BC014106AD24B2C68A"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\hyphen-data\\120.0.6050.0\\hyph-pt.hyb",
+        "length": 1414,
+        "sha256": "F6FBF1BCB260CC86256FC494F388F7B27D10865FBF8F61517DEE25AF4D58D6E8"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\hyphen-data\\120.0.6050.0\\hyph-ru.hyb",
+        "length": 19886,
+        "sha256": "336CE2048FFD31B7BCAF435E53BADFAF0579E405042D49ADBC0823F6BE5F9614"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\hyphen-data\\120.0.6050.0\\hyph-sk.hyb",
+        "length": 64103,
+        "sha256": "138C5990961DA21993653F54A413DDACB8921D6D70B892B7CA154D6E8AD2028C"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\hyphen-data\\120.0.6050.0\\hyph-sl.hyb",
+        "length": 6631,
+        "sha256": "AD746C68562603AC3B15E89DA03C76E081C08E7D9C8D4C9F64763E53D696C77C"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\hyphen-data\\120.0.6050.0\\hyph-sq.hyb",
+        "length": 2013,
+        "sha256": "BC29C9401CE952414CBAEBC5C8EE1D27C1706C6F77807B5FF713E2124438B3CA"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\hyphen-data\\120.0.6050.0\\hyph-sv.hyb",
+        "length": 72119,
+        "sha256": "56642AA5A37625FF9D034761D16B034D4BA5BE74090CBD825956BBCE2775ECD1"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\hyphen-data\\120.0.6050.0\\hyph-ta.hyb",
+        "length": 554,
+        "sha256": "40FDA94856A86F065DE8BAA6184EA63DCDB011EE4CA498A7C1FEE44C99314C67"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\hyphen-data\\120.0.6050.0\\hyph-te.hyb",
+        "length": 703,
+        "sha256": "516FA9654FA3AEAAB480D40EAF6AD78FC039086BD8EDC144BE3D59525EDCAC29"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\hyphen-data\\120.0.6050.0\\hyph-tk.hyb",
+        "length": 2712,
+        "sha256": "77FDAED29BD842AAA976AB7EF81B617A15C0A2D1EBD1161C1BF26B79A108B5CD"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\hyphen-data\\120.0.6050.0\\hyph-uk.hyb",
+        "length": 19417,
+        "sha256": "1C626ABE40D43F6D56A01B5B40305D7C7D6481F616EAC00A3F3AAAACA8388786"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\hyphen-data\\120.0.6050.0\\hyph-und-ethi.hyb",
+        "length": 3484,
+        "sha256": "1DE83CB787DFAF53FB7E6E8DB3AAE5008AD24EBDD28BE02031306EA9E9F3E285"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\hyphen-data\\120.0.6050.0\\manifest.json",
+        "length": 82,
+        "sha256": "D571EF33B0E707571F10BB37B99A607D6F43AFE33F53D15B4395B16EF3FDA665"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\hyphen-data\\120.0.6050.0\\_metadata\\verified_contents.json",
+        "length": 7328,
+        "sha256": "65491B21947D60C87C6358DCF69DF9ACA2B99E8F3B611BD3D559699BBC25000B"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\OriginTrials\\0.0.1.7\\manifest.json",
+        "length": 43,
+        "sha256": "81BD82AC27612A58BE30A72DD8956B13F883E32FFB54A58076BD6A42B8AFAEEA"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\PKIMetadata\\46.0.0.0\\crs.pb",
+        "length": 239119,
+        "sha256": "C132E2BA94619CAF6143B3BBDD9C32944E80CBF3BFF87364175C42801AFE2584"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\PKIMetadata\\46.0.0.0\\ct_config.pb",
+        "length": 16452,
+        "sha256": "AAEEB46CD91A4A392223CF2885F449BF532F0878C087D50BB0CB3FC7FA873A60"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\PKIMetadata\\46.0.0.0\\kp_pinslist.pb",
+        "length": 10674,
+        "sha256": "B5B2A45A5B25BECB901916B13752E3477D4126A42D088F29863BD8672320ECF6"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\PKIMetadata\\46.0.0.0\\manifest.json",
+        "length": 102,
+        "sha256": "932322AE700A7D7606EFB182239DB5FD9550DD6CB5860E0A17BFB6FE3BCB5F35"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\ShaderCache\\data_0",
+        "length": 8192,
+        "sha256": "D6A5FE39CD672781B256E0E3102F7022635F1D4BB7CFCC90A80FFFE4D0F3877E"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\ShaderCache\\data_1",
+        "length": 270336,
+        "sha256": "C63831656EA24C7CE8506D6D4C1B9102C55D73A86ECAD3842640C1287D11E148"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\ShaderCache\\data_2",
+        "length": 8192,
+        "sha256": "EC1702806F4CC7C42A82FC2B38E89835FDE7C64BB32060E0823C9077CA92EFB7"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\ShaderCache\\data_3",
+        "length": 8192,
+        "sha256": "E09F42C398D688DCE168570291F1F92D079987DEDA3099A34ADB9E8C0522B30C"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\ShaderCache\\index",
+        "length": 262512,
+        "sha256": "EA868CA103F66C6630CAF52179A099E6212D55D5959DDA613CF9DCF903EE1491"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Speech Recognition\\1.15.0.1\\manifest.json",
+        "length": 76,
+        "sha256": "0D664BC422A696452111B9A48E7DA9043C03786C8D5401282CFF9D77BCC34B11"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Speech Recognition\\1.15.0.1\\Microsoft.CognitiveServices.Speech.core.dll",
+        "length": 2692424,
+        "sha256": "62A13D8459E0992C311DC3551BF3C2D1CE167EA7FA40F0EC62193F3BD760B36E"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Subresource Filter\\Indexed Rules\\38\\10.34.0.84\\LICENSE",
+        "length": 24621,
+        "sha256": "ED0F972D56566A96FB2F128A7B58091DFBF32DC365B975BC9318C9701677F44D"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Subresource Filter\\Indexed Rules\\38\\10.34.0.84\\Ruleset Data",
+        "length": 5061632,
+        "sha256": "394FBBDB24FA05CFCFBFBE34A385F436F910485B462BE7AD232805F21AF9AB8B"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Subresource Filter\\Unindexed Rules\\10.34.0.84\\adblock_snippet.js",
+        "length": 2323,
+        "sha256": "9AA899E0BF660EE8F894B97C28F05DB06CC486915953B7F3B2FF9902FA8DA690"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Subresource Filter\\Unindexed Rules\\10.34.0.84\\Filtering Rules",
+        "length": 2153681,
+        "sha256": "5E301C48E6D7290990971E9F0BCB2263C8ADBA06ED0A2C6DB5086949825D999B"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Subresource Filter\\Unindexed Rules\\10.34.0.84\\Filtering Rules-AA",
+        "length": 2395466,
+        "sha256": "95BEB1F39B4CD5B29F5EBACED4A33753FB0BB876F078ED3DE041F12BE16CEC5C"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Subresource Filter\\Unindexed Rules\\10.34.0.84\\Filtering Rules-CA",
+        "length": 11977,
+        "sha256": "65AA171487DCA70AAD69973D0459C6A4B0882FCC6223BDFB53CD9AB711C5B125"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Subresource Filter\\Unindexed Rules\\10.34.0.84\\LICENSE",
+        "length": 24621,
+        "sha256": "ED0F972D56566A96FB2F128A7B58091DFBF32DC365B975BC9318C9701677F44D"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Subresource Filter\\Unindexed Rules\\10.34.0.84\\manifest.json",
+        "length": 116,
+        "sha256": "181A1631374B5AC1FFF89559F7E23498AD9EE4796885D7B956D5E7D5F9C3F8C7"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Subresource Filter\\Unindexed Rules\\10.34.0.84\\Part-DE",
+        "length": 312807,
+        "sha256": "367AD4A5699A69499D13E8BF9ED5E8BAB3573E3731FF8127178E539735BA46A8"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Subresource Filter\\Unindexed Rules\\10.34.0.84\\Part-ES",
+        "length": 140844,
+        "sha256": "55E005C8AEA4180093FCB56F4DDEB9FC763892D8CF1FCC840F612A7531B7ED18"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Subresource Filter\\Unindexed Rules\\10.34.0.84\\Part-FR",
+        "length": 540971,
+        "sha256": "56E80041432156BE4F08BAC11E3494F2F06F65B61A60B7DCB61D15DEBB7B318C"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Subresource Filter\\Unindexed Rules\\10.34.0.84\\Part-IT",
+        "length": 221404,
+        "sha256": "E1552312FC16E0F279E72F7EB4189A47E0BEB36733220B0EF605F66DEFCC5FA7"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Subresource Filter\\Unindexed Rules\\10.34.0.84\\Part-NL",
+        "length": 81784,
+        "sha256": "935465FC40ADBB4AE89BA37542ED37609014666C67FDF5115927809D69144B41"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Subresource Filter\\Unindexed Rules\\10.34.0.84\\Part-RU",
+        "length": 1211986,
+        "sha256": "F8ABF856660805E271D9D2033ACCF4F8CC43B19B7662FC2B96F56739229A90FE"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\Subresource Filter\\Unindexed Rules\\10.34.0.84\\Part-ZH",
+        "length": 702705,
+        "sha256": "9645EDD48B978354345B657BACB3F30BE1F450300856A82BA4D5DBF1236C7C9E"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\TrustTokenKeyCommitments\\2026.8.3.1\\keys.json",
+        "length": 8756,
+        "sha256": "3D6C659801F1686FF3AC64BC3B24B1D0AE76FFDD5F0E9C399BA37D1354A15AB4"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\TrustTokenKeyCommitments\\2026.8.3.1\\LICENSE",
+        "length": 1558,
+        "sha256": "3DBD2C90050B652D63656481C3E5871C52261575292DB77D4EA63419F187A55B"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\TrustTokenKeyCommitments\\2026.8.3.1\\manifest.json",
+        "length": 78,
+        "sha256": "C7E506687CAFFCF3906916AD3FC190A19212D67A2535479241096BD0D4418B03"
+      },
+      {
+        "path": "session-30060-1791532286470888300\\webview\\EBWebView\\TrustTokenKeyCommitments\\2026.8.3.1\\_metadata\\verified_contents.json",
+        "length": 1862,
+        "sha256": "721A6439A0B19869AAACE755C9E795F83AED516E4B42D8A13F4FD978D0586D18"
+      }
+    ]
+  }
+]

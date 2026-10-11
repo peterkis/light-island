@@ -1,0 +1,9 @@
+{
+  "rootPid": 32128,
+  "serverPid": 15972,
+  "port": 9223,
+  "exe": "D:\\Projects\\island-protype\\src-tauri\\target\\release\\samewave-island.exe",
+  "sha256": "BE01BD96C7A862B35AB3ADAB8CE3A09C7FE14765D6B8A95078DABCF807DF42F4",
+  "temporaryQa": true,
+  "verified": true
+}

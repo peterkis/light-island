@@ -1,0 +1,81 @@
+{
+  "reviewedBaseHead": "7f9947a8e0b7e8d3d3deb045197f1599b9583f59",
+  "initialFindings": 3,
+  "fixedFindings": 3,
+  "unit": {
+    "passed": 197,
+    "failed": 0
+  },
+  "rust": {
+    "passed": 7,
+    "failed": 0
+  },
+  "build": {
+    "unitExit": 0,
+    "releaseExit": 0,
+    "rustExit": 0
+  },
+  "targetedBrowser": {
+    "startTime": "2026-10-11T00:00:17.839Z",
+    "duration": 164477.028,
+    "expected": 13,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "clockRepeat": {
+    "startTime": "2026-10-11T00:14:53.735Z",
+    "duration": 86167.79500000001,
+    "expected": 3,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "initialFull": {
+    "startTime": "2026-10-10T23:44:11.516Z",
+    "duration": 516946.627,
+    "expected": 71,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  },
+  "postFixFullBeforeClockHarnessRepair": {
+    "startTime": "2026-10-11T00:03:51.939Z",
+    "duration": 624428.142,
+    "expected": 72,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  },
+  "nativeForeground": {
+    "rootPid": 32456,
+    "exeSHA256": "D4CB8C07D9B12999A448E11BB707EF07420A90235B160F50FDE2DE1611FB5573",
+    "foregroundBefore": 64227176,
+    "foregroundAfter": 64227176,
+    "beforeTitle": "同频 Island · 原型试验台 · 仅模拟数据",
+    "afterTitle": "同频 Island · 原型试验台 · 仅模拟数据",
+    "pass": true,
+    "scope": "Passive Win32 foreground measurement around a clinical:view broadcast; no island click"
+  },
+  "exeSHA256": "d4cb8c07d9b12999a448e11bb707ef07420a90235b160f50fde2de1611fb5573",
+  "sourceHashManifest": "tested-source-fixed-hashes.json",
+  "inputs": [
+    {
+      "path": "docs/Windows 灵动岛 UI UX 设计规范 v1.0.md",
+      "sha256": "A9F37EA76BECF4B74C4388A2172E4D46DBC7A4600558CEE3B71F445F3E67B1FA",
+      "unchanged": true
+    },
+    {
+      "path": "docs/protype/灵动岛「检验报告阅读」开发文档（Agent 可读版）.md",
+      "sha256": "BECA7CA59CCE18F7898F97CAF497A9F63E8E30B55A91FD74E1CB2BB2D74C9AFF",
+      "unchanged": true
+    },
+    {
+      "path": "docs/protype/灵动岛 · 检验报告阅读（阅后即焚）.html",
+      "sha256": "625664A43EEA9CEB14763EF27E650A1F8D8766DED933E8D6704A451416146DAD",
+      "unchanged": true
+    }
+  ],
+  "finalGate": "Second Codex review and exact-head full browser rerun required before merge; final receipts in evidence/backups/pr1-final-verification-20261011",
+  "scope": "Synthetic software and bounded native foreground checks only; prior device/DWM acceptance limitations remain"
+}

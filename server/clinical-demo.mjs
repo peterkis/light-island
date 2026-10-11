@@ -10,7 +10,12 @@ export function createClinicalDemo(broadcast,clock=Date.now){
  let settings=defaultSettings(),timer=defaultTimer(),serial=0;
  const activities=new Map(),tickets=new Map(),labReports=new Map();
  const allowed=a=>!settings.privacy&&!settings.locked&&!settings.fullscreen&&settings.role!=='none'&&(a.scope===settings.role||(a.scope==='logistics'&&settings.role==='clinician'));
- const publicItem=a=>allowed(a)?a:{...a,patient:'患者信息已保护',title:a.compact,body:'身份或展示权限不允许查看详情。',sourceState:'详情已保护',fields:[],sourceAt:null,syncedAt:null};
+ const publicItem=a=>{
+  if(allowed(a))return a;
+  const masked={...a,patient:'患者信息已保护',title:a.compact,body:'身份或展示权限不允许查看详情。',sourceState:'详情已保护',fields:[],sourceAt:null,syncedAt:null};
+  delete masked.labRef;
+  return masked;
+ };
  const snapshot=()=>({type:'clinical:snapshot',activities:[...activities.values()].map(publicItem),settings:{...settings},timer:{...timer}});
  function publish(){broadcast(snapshot());}
  function scenario(id,stage=0,options={}){

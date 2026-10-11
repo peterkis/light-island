@@ -1,0 +1,10 @@
+{
+  "rootPid": 32456,
+  "exeSHA256": "D4CB8C07D9B12999A448E11BB707EF07420A90235B160F50FDE2DE1611FB5573",
+  "foregroundBefore": 64227176,
+  "foregroundAfter": 64227176,
+  "beforeTitle": "同频 Island · 原型试验台 · 仅模拟数据",
+  "afterTitle": "同频 Island · 原型试验台 · 仅模拟数据",
+  "pass": true,
+  "scope": "Passive Win32 foreground measurement around a clinical:view broadcast; no island click"
+}

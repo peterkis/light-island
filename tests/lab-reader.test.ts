@@ -16,6 +16,19 @@ describe('ephemeral lab report contract',()=>{
  it('keeps the reader inside short viewports and preserves scene-specific dimensions',()=>{expect(labGeometry('sum',1440,1080)).toEqual({width:372,height:200,radius:40});expect(labGeometry('read',1440,1080)).toEqual({width:400,height:580,radius:44});expect(labGeometry('done',1440,1080)).toEqual({width:210,height:36,radius:18});expect(labGeometry('read',400,300).height).toBe(284);expect(labGeometry('sum',1440,1080,2.25).height).toBeGreaterThan(200);});
 });
 describe('read-only lab source boundary',()=>{
+ it.each([{privacy:true},{locked:true},{fullscreen:true},{role:'none'},{role:'finance'},{role:'logistics'}])('omits report metadata from every unauthorized projection: %j',settings=>{
+  const events:any[]=[];const demo=createClinicalDemo((e:any)=>events.push(e));
+  const push=(e:any)=>demo.handle(e);
+  push({type:'clinical:scenario',scenario:'S04',labVariant:'baseline'});
+  const original=demo.snapshot().activities[0].labRef;
+  push({type:'clinical:configure',settings});
+  expect(demo.snapshot().activities[0]).not.toHaveProperty('labRef');
+  expect(events.at(-1).activities[0]).not.toHaveProperty('labRef');
+  push({type:'clinical:scenario',scenario:'S04',labVariant:'baseline'});
+  expect(events.at(-1).activity).not.toHaveProperty('labRef');
+  push({type:'clinical:configure',settings:{privacy:false,locked:false,fullscreen:false,role:'clinician'}});
+  expect(demo.snapshot().activities[0].labRef.abnormalCount).toBe(original.abnormalCount);
+ });
  it('replies privately, excludes report rows from snapshots and rejects expired revisions and revoked roles',()=>{
   const broadcast:any[]=[],reply:any[]=[];const demo=createClinicalDemo((e:any)=>broadcast.push(e));const push=(e:any)=>demo.handle(e,(r:any)=>reply.push(r));
   push({type:'clinical:scenario',scenario:'S04',stage:0,labVariant:'baseline'});const a=demo.snapshot().activities[0];expect(a.labRef.abnormalCount).toBe(3);expect(JSON.stringify(demo.snapshot())).not.toContain('白细胞');

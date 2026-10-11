@@ -41,7 +41,8 @@ export function summaryItems(items:LabItem[]){
 }
 function deviation(i:LabItem){return i.value!==null&&i.lo!==null&&i.hi!==null&&i.hi>i.lo?Math.max(i.lo-i.value,i.value-i.hi,0)/(i.hi-i.lo):0;}
 export const LAB=tokens.timing;
-/** One elapsed-time budget: intervals render it, never decrement it by an assumed tick. */
+/** One elapsed-time budget: all `now` arguments use monotonic performance.now()
+ * milliseconds. Intervals render it, never decrement it by an assumed tick. */
 export class ReadBudget{
  left=LAB.readMs;at=0;paused=false;
  constructor(now:number){this.at=now;}
