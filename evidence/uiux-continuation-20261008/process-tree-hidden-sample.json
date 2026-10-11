@@ -1,0 +1,351 @@
+{
+  "capturedAt": "2026-10-08T16:48:33.2458749+08:00",
+  "scope": "Verified native app and discovered WebView2 descendants; no studio; excludes demo server and QA tools",
+  "sampleSeconds": 17.027947,
+  "privateWorkingSetMiB": 127.87,
+  "privateCommitMiB": 187.87,
+  "cpuMachinePercent": 0.0,
+  "processes": [
+    {
+      "pid": 30120,
+      "name": "samewave-island",
+      "privateMiB": 9.5,
+      "workingSetMiB": 36.92,
+      "cpuDeltaSeconds": 0
+    },
+    {
+      "pid": 9624,
+      "name": "msedgewebview2",
+      "privateMiB": 33.35,
+      "workingSetMiB": 121.64,
+      "cpuDeltaSeconds": 0
+    },
+    {
+      "pid": 8896,
+      "name": "msedgewebview2",
+      "privateMiB": 2.85,
+      "workingSetMiB": 12.63,
+      "cpuDeltaSeconds": 0
+    },
+    {
+      "pid": 10640,
+      "name": "msedgewebview2",
+      "privateMiB": 75.57,
+      "workingSetMiB": 104.23,
+      "cpuDeltaSeconds": 0
+    },
+    {
+      "pid": 25680,
+      "name": "msedgewebview2",
+      "privateMiB": 10.89,
+      "workingSetMiB": 38.86,
+      "cpuDeltaSeconds": 0
+    },
+    {
+      "pid": 24052,
+      "name": "msedgewebview2",
+      "privateMiB": 7.4,
+      "workingSetMiB": 20.14,
+      "cpuDeltaSeconds": 0
+    },
+    {
+      "pid": 28636,
+      "name": "msedgewebview2",
+      "privateMiB": 48.31,
+      "workingSetMiB": 97.54,
+      "cpuDeltaSeconds": 0
+    }
+  ],
+  "gpu": {
+    "status": "SAMPLED",
+    "meaning": "Per-process GPU engine counters; not DWM frame telemetry or whole-machine GPU utilization",
+    "error": null,
+    "samples": [
+      {
+        "at": "2026-10-08T16:48:26.4785038+08:00",
+        "engines": [
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_0_engtype_3D",
+            "UtilizationPercentage": 0
+          },
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_10_engtype_LegacyOverlay",
+            "UtilizationPercentage": 0
+          },
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_11_engtype_",
+            "UtilizationPercentage": 0
+          },
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_12_engtype_",
+            "UtilizationPercentage": 0
+          },
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_1_engtype_VideoDecode",
+            "UtilizationPercentage": 0
+          },
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_2_engtype_Copy",
+            "UtilizationPercentage": 0
+          },
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_3_engtype_VideoProcessing",
+            "UtilizationPercentage": 0
+          },
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_4_engtype_VideoDecode",
+            "UtilizationPercentage": 0
+          },
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_5_engtype_",
+            "UtilizationPercentage": 0
+          },
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_6_engtype_",
+            "UtilizationPercentage": 0
+          },
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_7_engtype_",
+            "UtilizationPercentage": 0
+          },
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_8_engtype_",
+            "UtilizationPercentage": 0
+          },
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_9_engtype_",
+            "UtilizationPercentage": 0
+          }
+        ]
+      },
+      {
+        "at": "2026-10-08T16:48:27.9506378+08:00",
+        "engines": [
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_0_engtype_3D",
+            "UtilizationPercentage": 0
+          },
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_10_engtype_LegacyOverlay",
+            "UtilizationPercentage": 0
+          },
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_11_engtype_",
+            "UtilizationPercentage": 0
+          },
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_12_engtype_",
+            "UtilizationPercentage": 0
+          },
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_1_engtype_VideoDecode",
+            "UtilizationPercentage": 0
+          },
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_2_engtype_Copy",
+            "UtilizationPercentage": 0
+          },
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_3_engtype_VideoProcessing",
+            "UtilizationPercentage": 0
+          },
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_4_engtype_VideoDecode",
+            "UtilizationPercentage": 0
+          },
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_5_engtype_",
+            "UtilizationPercentage": 0
+          },
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_6_engtype_",
+            "UtilizationPercentage": 0
+          },
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_7_engtype_",
+            "UtilizationPercentage": 0
+          },
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_8_engtype_",
+            "UtilizationPercentage": 0
+          },
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_9_engtype_",
+            "UtilizationPercentage": 0
+          }
+        ]
+      },
+      {
+        "at": "2026-10-08T16:48:29.3864808+08:00",
+        "engines": [
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_0_engtype_3D",
+            "UtilizationPercentage": 0
+          },
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_10_engtype_LegacyOverlay",
+            "UtilizationPercentage": 0
+          },
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_11_engtype_",
+            "UtilizationPercentage": 0
+          },
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_12_engtype_",
+            "UtilizationPercentage": 0
+          },
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_1_engtype_VideoDecode",
+            "UtilizationPercentage": 0
+          },
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_2_engtype_Copy",
+            "UtilizationPercentage": 0
+          },
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_3_engtype_VideoProcessing",
+            "UtilizationPercentage": 0
+          },
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_4_engtype_VideoDecode",
+            "UtilizationPercentage": 0
+          },
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_5_engtype_",
+            "UtilizationPercentage": 0
+          },
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_6_engtype_",
+            "UtilizationPercentage": 0
+          },
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_7_engtype_",
+            "UtilizationPercentage": 0
+          },
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_8_engtype_",
+            "UtilizationPercentage": 0
+          },
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_9_engtype_",
+            "UtilizationPercentage": 0
+          }
+        ]
+      },
+      {
+        "at": "2026-10-08T16:48:30.8277081+08:00",
+        "engines": [
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_0_engtype_3D",
+            "UtilizationPercentage": 0
+          },
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_10_engtype_LegacyOverlay",
+            "UtilizationPercentage": 0
+          },
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_11_engtype_",
+            "UtilizationPercentage": 0
+          },
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_12_engtype_",
+            "UtilizationPercentage": 0
+          },
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_1_engtype_VideoDecode",
+            "UtilizationPercentage": 0
+          },
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_2_engtype_Copy",
+            "UtilizationPercentage": 0
+          },
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_3_engtype_VideoProcessing",
+            "UtilizationPercentage": 0
+          },
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_4_engtype_VideoDecode",
+            "UtilizationPercentage": 0
+          },
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_5_engtype_",
+            "UtilizationPercentage": 0
+          },
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_6_engtype_",
+            "UtilizationPercentage": 0
+          },
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_7_engtype_",
+            "UtilizationPercentage": 0
+          },
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_8_engtype_",
+            "UtilizationPercentage": 0
+          },
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_9_engtype_",
+            "UtilizationPercentage": 0
+          }
+        ]
+      },
+      {
+        "at": "2026-10-08T16:48:32.2686090+08:00",
+        "engines": [
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_0_engtype_3D",
+            "UtilizationPercentage": 0
+          },
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_10_engtype_LegacyOverlay",
+            "UtilizationPercentage": 0
+          },
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_11_engtype_",
+            "UtilizationPercentage": 0
+          },
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_12_engtype_",
+            "UtilizationPercentage": 0
+          },
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_1_engtype_VideoDecode",
+            "UtilizationPercentage": 0
+          },
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_2_engtype_Copy",
+            "UtilizationPercentage": 0
+          },
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_3_engtype_VideoProcessing",
+            "UtilizationPercentage": 0
+          },
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_4_engtype_VideoDecode",
+            "UtilizationPercentage": 0
+          },
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_5_engtype_",
+            "UtilizationPercentage": 0
+          },
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_6_engtype_",
+            "UtilizationPercentage": 0
+          },
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_7_engtype_",
+            "UtilizationPercentage": 0
+          },
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_8_engtype_",
+            "UtilizationPercentage": 0
+          },
+          {
+            "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_9_engtype_",
+            "UtilizationPercentage": 0
+          }
+        ]
+      }
+    ]
+  }
+}

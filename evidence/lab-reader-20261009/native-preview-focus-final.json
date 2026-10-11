@@ -1,0 +1,14 @@
+{
+  "capturedAt": "2026-10-09T15:56:55.7720899+08:00",
+  "rootPid": 30060,
+  "exeSHA256": "BE01BD96C7A862B35AB3ADAB8CE3A09C7FE14765D6B8A95078DABCF807DF42F4",
+  "scope": "Native studio preview in normal Release; actual island remains blocked by Windows BUSY",
+  "enteredSummaryAndReader": true,
+  "shieldRemovedResultRows": true,
+  "escapeEnteredBurnWithControlsDisabled": true,
+  "afterCompletionReportRows": 0,
+  "afterCompletionReaderControls": false,
+  "userFocusOnly": "Actual read/reveal with valid report; alert, sum and outgoing presentation do not autofocus",
+  "sourceDeletion": false,
+  "clinicalWrites": false
+}

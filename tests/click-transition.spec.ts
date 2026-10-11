@@ -1,6 +1,7 @@
 import { test, expect, type Page } from '@playwright/test';
 import { writeFile } from 'node:fs/promises';
-const dir='evidence/click-fix-20260930';
+import {evidencePath} from './evidence-path';
+const dir=evidencePath('click-fix-20260930',true);
 async function post(request:any,data:object){expect((await request.post('http://127.0.0.1:17321/api/push',{data})).ok()).toBeTruthy();}
 async function settled(page:Page,mode:string){const island=page.getByTestId('island');await expect(island).toHaveAttribute('data-mode',mode);await expect(island).toHaveAttribute('data-motion-phase','settled');return island;}
 async function mark(page:Page){return page.evaluate(()=>(window as any).__HOVER_TRACE__().at(-1)?.seq??0);}

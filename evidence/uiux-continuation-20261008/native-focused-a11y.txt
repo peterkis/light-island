@@ -1,0 +1,46 @@
+Window: "Samewave Island", App: samewave-island.exe.
+	0 窗口 Samewave Island Secondary Actions: Raise
+		1 窗格
+			2 窗格 同频 · 临床协作感知
+				3 窗格 (disabled)
+				4 区域 同频 · 临床协作感知 - Web 内容
+					5 区域
+						6 区域
+						7 区域
+							8 区域
+								9 文档 同频 · 临床协作感知 Value: http://tauri.localhost/clinical.html?view=island ID: RootWebArea
+									13 组 ID: root
+										14 组
+											55 标题
+												56 图形
+												57 文本 LIS
+												58 time
+													59 文本 16:44
+												60 按钮 收起协作详情
+													61 图形
+											62 图形
+											63 标题 检验危急值已发布
+											64 文本 源系统：待接收
+											65 页脚
+												66 按钮 活动与个人工具
+													67 图形
+												68 按钮 详情
+												69 按钮 打开危急值流程
+													70 图形
+										11 状态
+											52 文本 危急值 · 1 项动态
+								12 区域
+
+Document text: ```
+LIS
+16:44
+￼
+￼
+检验危急值已发布
+源系统：待接收
+￼
+详情
+打开危急值流程
+￼
+危急值 · 1 项动态
+```

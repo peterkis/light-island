@@ -1,0 +1,539 @@
+{
+  "at": "2026-10-08T17:16:01.846639+08:00",
+  "overall": "IMPLEMENTED; software verification passed; full device/native acceptance PARTIAL",
+  "branch": "main",
+  "head": "9609ecf8dc2912ffd6595053f1bb442af449dbbc",
+  "committed": false,
+  "pushed": false,
+  "published": false,
+  "specUnchanged": true,
+  "tests": {
+    "typescriptUnit": 181,
+    "rustUnit": 6,
+    "fullE2E": {
+      "startTime": "2026-10-08T08:31:16.575Z",
+      "duration": 370414.365,
+      "expected": 60,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "finalClinicalE2E": {
+      "startTime": "2026-10-08T09:08:03.692Z",
+      "duration": 249741.691,
+      "expected": 25,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "finalStrictModeMarquee": {
+      "startTime": "2026-10-08T09:03:53.628Z",
+      "duration": 14094.133000000002,
+      "expected": 1,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "frontAndReleaseBuild": "PASS",
+    "diffCheck": "PASS",
+    "scope": "Full 60-test run precedes the final CompactLabel completion-marker fix; final 25 clinical cases and explicit first-traversal assertion cover the delivered change. Rust/native geometry source unchanged."
+  },
+  "implemented": [
+    "S2 finite vector neck shared with native silhouette",
+    "Independent numerical button-fill press spring; text size unchanged",
+    "120ms failure shake and reason",
+    "Local swipe ignore and exact-version 4s undo",
+    "Session source mute; important source bypass",
+    "30 DIP/s finite compact marquee; reduced motion and StrictMode cleanup",
+    "Migrated typography/scroll/keyboard/forced-color accessibility tests"
+  ],
+  "native": {
+    "mode": "normal Release, no QA endpoint",
+    "measuredExeSHA256": "5a6ac4878b71d4023c7510cae68e56131f5a9ae6ee5e5af5ea4928616f4f5235",
+    "deliveredExeSHA256": "4b2f11c4f379d02c39b74ec6b037ff46ebee9e7e83a98d0f4d757f52498d7d00",
+    "screen": {
+      "frames": 78,
+      "windowRectChanges": 0,
+      "centerPixelProbe": [
+        352,
+        5
+      ],
+      "unpaintedCenterSamples": [],
+      "maximumCenterChannel": 0,
+      "meaning": "Actual screen center paint during observed normal close/open; not DWM telemetry"
+    },
+    "finalExeConfirmation": {
+      "scope": "Actual screen samples, not WebView screenshots or DWM present telemetry",
+      "pid": 19476,
+      "hwnd": 23071186,
+      "frames": 5,
+      "windowRectChanges": 0,
+      "rows": [
+        {
+          "ms": 202.57,
+          "rect": [
+            608,
+            0,
+            1312,
+            522
+          ],
+          "dpi": 96,
+          "foreground": 329314,
+          "image": "frame-000.png"
+        },
+        {
+          "ms": 348.8,
+          "rect": [
+            608,
+            0,
+            1312,
+            522
+          ],
+          "dpi": 96,
+          "foreground": 329314,
+          "image": "frame-001.png"
+        },
+        {
+          "ms": 501.53,
+          "rect": [
+            608,
+            0,
+            1312,
+            522
+          ],
+          "dpi": 96,
+          "foreground": 329314,
+          "image": "frame-002.png"
+        },
+        {
+          "ms": 687.14,
+          "rect": [
+            608,
+            0,
+            1312,
+            522
+          ],
+          "dpi": 96,
+          "foreground": 329314,
+          "image": "frame-003.png"
+        },
+        {
+          "ms": 940.27,
+          "rect": [
+            608,
+            0,
+            1312,
+            522
+          ],
+          "dpi": 96,
+          "foreground": 329314,
+          "image": "frame-004.png"
+        }
+      ]
+    },
+    "importantPushPreservedFocus": true,
+    "shadowClick": "Observed counter 0 to 1 on owned background at actual shadow location; see native-source-rich screenshot. Later witness instances have separate lifetimes.",
+    "sourceObject": "DEMO-S03",
+    "sourceVersion": 1,
+    "sourceStateAfterOpen": "源系统：待接收",
+    "S2AtRest": "Observed",
+    "dynamicNativeUIA": "PARTIAL: stale passive tree observed; focused tree refreshed"
+  },
+  "performance": {
+    "capturedAt": "2026-10-08T17:00:08.2646309+08:00",
+    "scope": "Verified native app and discovered WebView2 descendants; no studio; excludes demo server and QA tools",
+    "sampleSeconds": 11.0310078,
+    "privateWorkingSetMiB": 133.67,
+    "privateCommitMiB": 193.99,
+    "cpuMachinePercent": 0.0,
+    "processes": [
+      {
+        "pid": 30120,
+        "name": "samewave-island",
+        "privateMiB": 10.47,
+        "workingSetMiB": 38.34,
+        "cpuDeltaSeconds": 0
+      },
+      {
+        "pid": 9624,
+        "name": "msedgewebview2",
+        "privateMiB": 34.59,
+        "workingSetMiB": 123.77,
+        "cpuDeltaSeconds": 0
+      },
+      {
+        "pid": 8896,
+        "name": "msedgewebview2",
+        "privateMiB": 2.85,
+        "workingSetMiB": 12.65,
+        "cpuDeltaSeconds": 0
+      },
+      {
+        "pid": 10640,
+        "name": "msedgewebview2",
+        "privateMiB": 77.12,
+        "workingSetMiB": 107.03,
+        "cpuDeltaSeconds": 0
+      },
+      {
+        "pid": 25680,
+        "name": "msedgewebview2",
+        "privateMiB": 10.87,
+        "workingSetMiB": 38.95,
+        "cpuDeltaSeconds": 0
+      },
+      {
+        "pid": 24052,
+        "name": "msedgewebview2",
+        "privateMiB": 7.36,
+        "workingSetMiB": 20.23,
+        "cpuDeltaSeconds": 0
+      },
+      {
+        "pid": 28636,
+        "name": "msedgewebview2",
+        "privateMiB": 50.73,
+        "workingSetMiB": 101.78,
+        "cpuDeltaSeconds": 0
+      }
+    ],
+    "gpu": {
+      "status": "SAMPLED",
+      "meaning": "Per-process GPU engine counters; not DWM frame telemetry or whole-machine GPU utilization",
+      "error": null,
+      "samples": [
+        {
+          "at": "2026-10-08T17:00:00.4355864+08:00",
+          "engines": [
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_0_engtype_3D",
+              "UtilizationPercentage": 0
+            },
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_10_engtype_LegacyOverlay",
+              "UtilizationPercentage": 0
+            },
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_11_engtype_",
+              "UtilizationPercentage": 0
+            },
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_12_engtype_",
+              "UtilizationPercentage": 0
+            },
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_1_engtype_VideoDecode",
+              "UtilizationPercentage": 0
+            },
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_2_engtype_Copy",
+              "UtilizationPercentage": 0
+            },
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_3_engtype_VideoProcessing",
+              "UtilizationPercentage": 0
+            },
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_4_engtype_VideoDecode",
+              "UtilizationPercentage": 0
+            },
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_5_engtype_",
+              "UtilizationPercentage": 0
+            },
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_6_engtype_",
+              "UtilizationPercentage": 0
+            },
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_7_engtype_",
+              "UtilizationPercentage": 0
+            },
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_8_engtype_",
+              "UtilizationPercentage": 0
+            },
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_9_engtype_",
+              "UtilizationPercentage": 0
+            }
+          ]
+        },
+        {
+          "at": "2026-10-08T17:00:02.1618902+08:00",
+          "engines": [
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_0_engtype_3D",
+              "UtilizationPercentage": 0
+            },
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_10_engtype_LegacyOverlay",
+              "UtilizationPercentage": 0
+            },
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_11_engtype_",
+              "UtilizationPercentage": 0
+            },
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_12_engtype_",
+              "UtilizationPercentage": 0
+            },
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_1_engtype_VideoDecode",
+              "UtilizationPercentage": 0
+            },
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_2_engtype_Copy",
+              "UtilizationPercentage": 0
+            },
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_3_engtype_VideoProcessing",
+              "UtilizationPercentage": 0
+            },
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_4_engtype_VideoDecode",
+              "UtilizationPercentage": 0
+            },
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_5_engtype_",
+              "UtilizationPercentage": 0
+            },
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_6_engtype_",
+              "UtilizationPercentage": 0
+            },
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_7_engtype_",
+              "UtilizationPercentage": 0
+            },
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_8_engtype_",
+              "UtilizationPercentage": 0
+            },
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_9_engtype_",
+              "UtilizationPercentage": 0
+            }
+          ]
+        },
+        {
+          "at": "2026-10-08T17:00:03.9067156+08:00",
+          "engines": [
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_0_engtype_3D",
+              "UtilizationPercentage": 0
+            },
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_10_engtype_LegacyOverlay",
+              "UtilizationPercentage": 0
+            },
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_11_engtype_",
+              "UtilizationPercentage": 0
+            },
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_12_engtype_",
+              "UtilizationPercentage": 0
+            },
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_1_engtype_VideoDecode",
+              "UtilizationPercentage": 0
+            },
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_2_engtype_Copy",
+              "UtilizationPercentage": 0
+            },
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_3_engtype_VideoProcessing",
+              "UtilizationPercentage": 0
+            },
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_4_engtype_VideoDecode",
+              "UtilizationPercentage": 0
+            },
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_5_engtype_",
+              "UtilizationPercentage": 0
+            },
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_6_engtype_",
+              "UtilizationPercentage": 0
+            },
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_7_engtype_",
+              "UtilizationPercentage": 0
+            },
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_8_engtype_",
+              "UtilizationPercentage": 0
+            },
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_9_engtype_",
+              "UtilizationPercentage": 0
+            }
+          ]
+        },
+        {
+          "at": "2026-10-08T17:00:05.5384034+08:00",
+          "engines": [
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_0_engtype_3D",
+              "UtilizationPercentage": 0
+            },
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_10_engtype_LegacyOverlay",
+              "UtilizationPercentage": 0
+            },
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_11_engtype_",
+              "UtilizationPercentage": 0
+            },
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_12_engtype_",
+              "UtilizationPercentage": 0
+            },
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_1_engtype_VideoDecode",
+              "UtilizationPercentage": 0
+            },
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_2_engtype_Copy",
+              "UtilizationPercentage": 0
+            },
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_3_engtype_VideoProcessing",
+              "UtilizationPercentage": 0
+            },
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_4_engtype_VideoDecode",
+              "UtilizationPercentage": 0
+            },
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_5_engtype_",
+              "UtilizationPercentage": 0
+            },
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_6_engtype_",
+              "UtilizationPercentage": 0
+            },
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_7_engtype_",
+              "UtilizationPercentage": 0
+            },
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_8_engtype_",
+              "UtilizationPercentage": 0
+            },
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_9_engtype_",
+              "UtilizationPercentage": 0
+            }
+          ]
+        },
+        {
+          "at": "2026-10-08T17:00:07.2769858+08:00",
+          "engines": [
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_0_engtype_3D",
+              "UtilizationPercentage": 0
+            },
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_10_engtype_LegacyOverlay",
+              "UtilizationPercentage": 0
+            },
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_11_engtype_",
+              "UtilizationPercentage": 0
+            },
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_12_engtype_",
+              "UtilizationPercentage": 0
+            },
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_1_engtype_VideoDecode",
+              "UtilizationPercentage": 0
+            },
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_2_engtype_Copy",
+              "UtilizationPercentage": 0
+            },
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_3_engtype_VideoProcessing",
+              "UtilizationPercentage": 0
+            },
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_4_engtype_VideoDecode",
+              "UtilizationPercentage": 0
+            },
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_5_engtype_",
+              "UtilizationPercentage": 0
+            },
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_6_engtype_",
+              "UtilizationPercentage": 0
+            },
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_7_engtype_",
+              "UtilizationPercentage": 0
+            },
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_8_engtype_",
+              "UtilizationPercentage": 0
+            },
+            {
+              "Name": "pid_10640_luid_0x00000000_0x0000FC35_phys_0_eng_9_engtype_",
+              "UtilizationPercentage": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "sourceDeltaAfterFullSuite": [
+    "src/clinical/CompactLabel.tsx",
+    "tests/clinical-continuation.spec.ts",
+    "src-tauri/target/release/samewave-island.exe"
+  ],
+  "notRun": [
+    "Windows 10",
+    "Physical 125/150/200% DPI and mixed-DPI/hotplug",
+    "120Hz and DWM/ETW presented frames",
+    "Complete touch target matrix",
+    "Native full keyboard/Narrator speech walkthrough",
+    "Native full new swipe gesture sequence",
+    "Native CDP rAF/HRGN observation",
+    "Windows Focus Assist/external screen-sharing integration"
+  ],
+  "interpretations": [
+    "Drag displacement is bounded by retained canvas, at most 128 DIP; no HWND motion",
+    "Vector viscous bridge substitutes for full-surface goo filtering",
+    "Control fill compresses; text and focus hit target keep size",
+    "Each marquee traversal is finite; no infinite hover loop",
+    "Privacy/OS protection hides immediately"
+  ],
+  "approvalBlocks": {
+    "date": "2026-10-08",
+    "actionsNotExecuted": [
+      "PowerShell command to verify and start Release with --qa-cdp --hover-diagnostics, then reset the synthetic source",
+      "PowerShell command combining a passive sampler launch and synthetic compact-view fixture update"
+    ],
+    "reviewResult": "Rejected: blocked by policy",
+    "detailedReasonAvailable": false,
+    "noBypass": true,
+    "saferWork": "Normal Release through the authorized computer tool; observed clicks and source opening; passive finite screen/rectangle sampling without a QA endpoint",
+    "nativeCDPObservation": "NOT_RUN",
+    "nativeFullSwipeSequence": "NOT_RUN",
+    "qaPortNeverOpened": true
+  },
+  "normalLaunch": {
+    "capturedAt": "2026-10-08T17:16:01.6989808+08:00",
+    "pid": 19476,
+    "executable": "D:\\projects\\island-protype\\src-tauri\\target\\release\\samewave-island.exe",
+    "commandLine": "\"D:\\projects\\island-protype\\src-tauri\\target\\release\\samewave-island.exe\" ",
+    "sha256": "4B2F11C4F379D02C39B74EC6B037FF46EBEE9E7E83A98D0F4D757F52498D7D00",
+    "qaPortClosed": true,
+    "studioRequested": false,
+    "syntheticReviewScenario": "S03, read only"
+  }
+}

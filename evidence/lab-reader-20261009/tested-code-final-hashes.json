@@ -1,0 +1,566 @@
+[
+  {
+    "path": "scripts\\apply-clinical-patch.py",
+    "sha256": "89A84CBF4E651FD1D04F14C5A9757686170F24A8856767D34EF4DD6D33DF24FD"
+  },
+  {
+    "path": "scripts\\audit-hover-evidence.py",
+    "sha256": "CAD250B0C553E40524944D68465715AF86CCE83D0B6AE6BFBCA23A9F8EDFED2C"
+  },
+  {
+    "path": "scripts\\capture-click-surface.py",
+    "sha256": "8AC5591031FB2FA2DD5F68B4A3848A69D34EF9B518BB8C03E550580FF9CD4F09"
+  },
+  {
+    "path": "scripts\\capture-clinical-motion-preview.mjs",
+    "sha256": "17390693D4514B5E7AD7D43AF07CCA5EA1569F544A642ED79F0C47B73E6F58DF"
+  },
+  {
+    "path": "scripts\\capture-clinical-source.py",
+    "sha256": "B4A43EDAFAC09AEA589095972B9BE1486A19571F501C5EB3865252F30B9A2212"
+  },
+  {
+    "path": "scripts\\clinical-motion-postflight.py",
+    "sha256": "9A9FA8054A2A9C30AC8472EFF1074A6D89EFDD6A1EE032C3010F8911184F8466"
+  },
+  {
+    "path": "scripts\\fix-clinical-native-redraw.py",
+    "sha256": "526588E78DD3E5E2E645991F8EDA0437750AD401EBCDFAE6270741BADB4F78CA"
+  },
+  {
+    "path": "scripts\\fix-clinical-preview-height.py",
+    "sha256": "BB4E421C22707FF8CD1BAA7F095AE80D396C23765D6D923D877925695ABAF4DD"
+  },
+  {
+    "path": "scripts\\fix-clinical-rim-seam.py",
+    "sha256": "23D30E67C7F774559D2135C2CC30D33225B3D3CDE615A86F6AEA5A451317B7E4"
+  },
+  {
+    "path": "scripts\\fix-clinical-source-window.py",
+    "sha256": "9605C62DDF9D4434E693346BB7856ACE4D6533E13BFA135046DC781D8311EFD1"
+  },
+  {
+    "path": "scripts\\fix-clinical-witness.py",
+    "sha256": "41FE12C61BCFDD463C9A9BE6097B2AC2D5F0DE023CBAD1583952092A0874CEB1"
+  },
+  {
+    "path": "scripts\\generate-clinical-tokens.mjs",
+    "sha256": "A02AAA747C79263DBAB6DEE2CD5CE6A77FE53E49384D65E9BDA36A9C0F25576B"
+  },
+  {
+    "path": "scripts\\generate-lab-tokens.mjs",
+    "sha256": "7ED397B157DDEB0A1C943D7E40E19F46BBD369E37D40DFBA66A0726A64A3702F"
+  },
+  {
+    "path": "scripts\\hover-win32-probe.py",
+    "sha256": "BD34BF45B7F825830975AAD23F54BC88A6D36BAB3AA094627B8E6033D3167CC9"
+  },
+  {
+    "path": "scripts\\instrument-clinical-capture.py",
+    "sha256": "5657A34B70C5C96B51908040361FBC8C81AE36B517C923D808E25C706B7D6439"
+  },
+  {
+    "path": "scripts\\measure-clinical-process.ps1",
+    "sha256": "59EC6E38868121D8D3C623CBE52791A0B404038425B7CAF3CA3638BB14225E8A"
+  },
+  {
+    "path": "scripts\\measure-notch-process-tree.ps1",
+    "sha256": "E7B349A811564477AD5F6AE395AF6381EE97FE8DD76E0D764618008894838ABA"
+  },
+  {
+    "path": "scripts\\measure-process-tree.ps1",
+    "sha256": "E3F91A207648750E3D00BC46ADAE03A8B486B00A63C42ADCD410AAF8FD27A6B0"
+  },
+  {
+    "path": "scripts\\measure-uiux-continuation.ps1",
+    "sha256": "A7A6B87E26F0F06D7FC7A8F6F177F4CE57B403B923F9DE414EE43D883FEA13AC"
+  },
+  {
+    "path": "scripts\\measure-uiux-process.ps1",
+    "sha256": "B2692908AC825031DC2388F857ADCE0D22D3A416DC99DF31D89020C049CCCE86"
+  },
+  {
+    "path": "scripts\\note-clinical-readme.py",
+    "sha256": "1AF57ECAEF0D7632C5C237679C1701B6521F4AEF448AD1DFF6A47F4F7DF5AFB2"
+  },
+  {
+    "path": "scripts\\probe-horizontal-region.py",
+    "sha256": "6ED79F40012AC992F33E5939B239ADAEF5FD8F072AE9B702557EF840D2FB5A2D"
+  },
+  {
+    "path": "scripts\\qa-click-compat.mjs",
+    "sha256": "3928356EEBC2B452F591DCCCE33539705584B78653FBFEE7ED2F8A862835A0F7"
+  },
+  {
+    "path": "scripts\\qa-click-native.mjs",
+    "sha256": "029199CF272B22F46C878DB481C8AE96CD64B774A09DE542877D3DE456DB5C4A"
+  },
+  {
+    "path": "scripts\\qa-click-render.mjs",
+    "sha256": "01C764AF6F85C2E22012178EDF5E723F9589353F9D63E579ED627DA4EF04E367"
+  },
+  {
+    "path": "scripts\\qa-clinical-boundaries.mjs",
+    "sha256": "385459E3C0E843F1ABD9F6C1F9CF5EE4CE016A0E29034FC064ECB9625381FD1D"
+  },
+  {
+    "path": "scripts\\qa-clinical-browser.mjs",
+    "sha256": "CCA789AFDD80F5FF3C47063979B09D1BCD587FDC0B3821CA6A9F409F92AA049A"
+  },
+  {
+    "path": "scripts\\qa-clinical-motion.mjs",
+    "sha256": "A9F772EC66E25773DA3F8EF18DFD101326070ECB20BC411EEE9530D94824B12A"
+  },
+  {
+    "path": "scripts\\qa-clinical-native.mjs",
+    "sha256": "D109F37ACE7071735F8BCE4A21B73D5373361E08B0BE3184DFB644B7E83CE023"
+  },
+  {
+    "path": "scripts\\qa-clinical-source.mjs",
+    "sha256": "BFE36003C168E7E6DC11E67F2C9BA0896D40E60BCA02C43036D901B9370E5EBC"
+  },
+  {
+    "path": "scripts\\qa-clinical-windows.py",
+    "sha256": "53E7AB16C8811F3BDBA1FD0C2482615BFDB36DC89EF60536A9F305FE867B3A67"
+  },
+  {
+    "path": "scripts\\qa-horizontal-native.mjs",
+    "sha256": "F97A67C2FA2AFB83F23FFA5354CF2DC9F4100126595F6AEDA3A0416D799F072E"
+  },
+  {
+    "path": "scripts\\qa-horizontal-windows.py",
+    "sha256": "E4B059A2A82DC1939BEBA9D95B9C6D143A6E8D47E54532283F3AFD2D8D9B223B"
+  },
+  {
+    "path": "scripts\\qa-hover-epochs.mjs",
+    "sha256": "59022172C575D828764B23ACEE4A1966A22E4A5346B889F9515BE9ED972195BE"
+  },
+  {
+    "path": "scripts\\qa-hover-native.mjs",
+    "sha256": "1A84171CF6277193D721FE98111FAE1A0192CBCD5965916A9CB52772D7E5BA80"
+  },
+  {
+    "path": "scripts\\qa-native.mjs",
+    "sha256": "0529CCD08E9FB5546B7B1FB622089B23163A76881A1BB70643B4F8E9EB3A1D71"
+  },
+  {
+    "path": "scripts\\qa-notch-native.mjs",
+    "sha256": "D30B98193638C2C99238D1C39161A7BD4B038FA65B570EC71CF5CD875DC89CED"
+  },
+  {
+    "path": "scripts\\qa-notch-windows.py",
+    "sha256": "45A69BF03124E4550ADF6664C790F41568F75533C1508B560C111C6598B2BFEC"
+  },
+  {
+    "path": "scripts\\qa-uiux-continuation.mjs",
+    "sha256": "048BB5F29C9251B160746E1BE61E07229B0F5C8095F7BA9365F4CC8D2076CA06"
+  },
+  {
+    "path": "scripts\\qa-uiux-final-native.mjs",
+    "sha256": "D2811654C37AC2373CAB9FB66159A5467010DB64D1BF4DD635F3B9A62F455C10"
+  },
+  {
+    "path": "scripts\\qa-uiux-final-preview.mjs",
+    "sha256": "478A1028693F71B8DFFC97222264AB219BFAEE84D5265E8D9D7A8011248373BC"
+  },
+  {
+    "path": "scripts\\qa-uiux-luminance-cost.mjs",
+    "sha256": "0C9AA7287B6E76468D5704DEFB97214FC9D4575F53D6C14E4F3496537B6DCFE6"
+  },
+  {
+    "path": "scripts\\qa-uiux-native-cost.mjs",
+    "sha256": "0CECD092ED0B4BEF61B35E991F20182BA1CB6DA048D1CE81421D999EB418BCE9"
+  },
+  {
+    "path": "scripts\\qa-uiux-observe.py",
+    "sha256": "5F3E4E07350F560485947CA9ECD8EADD8B3F01977CE4AAD705DF92F0D354AB94"
+  },
+  {
+    "path": "scripts\\qa-uiux-paint-cadence.mjs",
+    "sha256": "4EC1BA954DFEFD649118023C738E5F71BDC318BC65089706AB52AAFC3D2DD9AD"
+  },
+  {
+    "path": "scripts\\qa-uiux-preview.mjs",
+    "sha256": "FA4078FF6A9077EB6250A2D63355B47BF700B79508DD83FFD7301CD0A6EC16CF"
+  },
+  {
+    "path": "scripts\\qa-uiux-shadow-windows.py",
+    "sha256": "91192C76564A9E52F51700BB87712855BEF9988B35ED86841BFD3908C95ED01D"
+  },
+  {
+    "path": "scripts\\qa-uiux-witness.py",
+    "sha256": "8A30FF6A0CAFE9037D15B3597334E116C08F62C8390D73E09D4F032B0CA6B7BF"
+  },
+  {
+    "path": "scripts\\qa-windows.py",
+    "sha256": "34F91D379589B8CC00E51C93A46D80BCC5D1F6F87F64F774D5A935506BF319B6"
+  },
+  {
+    "path": "scripts\\README.md",
+    "sha256": "DAA5A3DDAF75C6ABD6796592B3941F4E087E0749E7E6FD14FA4AC6A305050262"
+  },
+  {
+    "path": "scripts\\refine-clinical-coexistence.py",
+    "sha256": "AB8B4415422D698654243E9B71304C0AE9E49DE8170D281CE136D33BBC55C4AB"
+  },
+  {
+    "path": "scripts\\refine-clinical.py",
+    "sha256": "165904D09A578BD78CA2C92AD093EC44DBEBB0D397B6217D616AE79D0B16CC97"
+  },
+  {
+    "path": "scripts\\report-uiux-continuation.py",
+    "sha256": "A599DDB2ED83C3AAF952EAD8AFD8575213798ED481687E619917DB9D4404FE5B"
+  },
+  {
+    "path": "scripts\\restore-clinical-motion.py",
+    "sha256": "8BDCBBDDB8974B1D14A8EA3562A0578BF3A570A4C5D9EF9586A95F240C0E6591"
+  },
+  {
+    "path": "scripts\\run-clinical-native-final.py",
+    "sha256": "17A50DBE9D0D890A95B92A350AF02A896F79C162C99A3FA053BEBD64AF075FCE"
+  },
+  {
+    "path": "scripts\\start-clinical-development.mjs",
+    "sha256": "B1A178DB943A9D5143C5B07C6988AC8224B1A522FCB5EB9BB3F2CC48152EAA18"
+  },
+  {
+    "path": "scripts\\stop-prototype.ps1",
+    "sha256": "DB07ABAB2B70D2480140C737F13E937831A6C38A44986292D1F7AC0DB6432720"
+  },
+  {
+    "path": "scripts\\summarize-clinical-motion.py",
+    "sha256": "565DA06F194C9D5AAE52A6C23A260FE1E64854C8DAF25C3F3F1D359837A28574"
+  },
+  {
+    "path": "scripts\\summarize-clinical-validation.py",
+    "sha256": "2C03B4BE035F5198F4CCF011897C71F41784D2282E4235109596778CDE5C372C"
+  },
+  {
+    "path": "scripts\\uiux-baseline.py",
+    "sha256": "C5641C9600B73667DA648E451FF31A5CC9C2C916EC3B1B7427199A93B0D3B50B"
+  },
+  {
+    "path": "scripts\\uiux-behavior-complete.py",
+    "sha256": "B3773EDA1006D40EB033684CACCF366773F1A54540773F2B37120459ED1CF6C1"
+  },
+  {
+    "path": "scripts\\uiux-build-fixes.py",
+    "sha256": "41BA42D4D44FBF365ED8CF1C3367965DC5FA3470F743DD92BEE741A343F543DC"
+  },
+  {
+    "path": "scripts\\uiux-click-interruption.py",
+    "sha256": "2A5679532672C88940936EA9C1D96FE665D64AC03DA48E05616D297F79E6A7EC"
+  },
+  {
+    "path": "scripts\\uiux-complete.py",
+    "sha256": "35F29108DB6811FB6C9E910299D89EEB6E1D47D050FAC0538D097445619874FF"
+  },
+  {
+    "path": "scripts\\uiux-controller-patch.py",
+    "sha256": "0984FE9A1106C33C396EC300E3F22D926B432E084B7B549A42EEB54B9033F7E4"
+  },
+  {
+    "path": "scripts\\uiux-document-authority.py",
+    "sha256": "4678FF1F5440EE70238728A5B7837FFB672405117D2BF0537CCD98483563A557"
+  },
+  {
+    "path": "scripts\\uiux-final-commands.py",
+    "sha256": "1B73F10266C226D008A1537FC7F1FF8CEB938C65FDB4CBBC572790F0C4C2600E"
+  },
+  {
+    "path": "scripts\\uiux-final-e2e.py",
+    "sha256": "2567C75B1E6E553432373CCF878C19DA435B6570E9CCC83097617C6397AE8F81"
+  },
+  {
+    "path": "scripts\\uiux-final-report.py",
+    "sha256": "FF823A43D95E253C8E25D7C2E539CF5B2C95350761E87CB1C0B66C6B67D71E93"
+  },
+  {
+    "path": "scripts\\uiux-finish-behavior.py",
+    "sha256": "8A01DC3CDD7B44672A336660512B6E2146D09D3D9E5152025EDC2EC9C8547F18"
+  },
+  {
+    "path": "scripts\\uiux-input-connect.py",
+    "sha256": "EFAD8487E459B8B1C75984EEDA6888FC90B01BB0D6500B1EB1A9CF7A9F5B1241"
+  },
+  {
+    "path": "scripts\\uiux-model-patch.py",
+    "sha256": "0683B02AA5AAF01E3332B0DFB24E10DDCBE06774ADA67B03294653503269F5C7"
+  },
+  {
+    "path": "scripts\\uiux-native-patch.py",
+    "sha256": "661F78ED8395CFDE88A688951391EBBD9F77103D6F57C3703414986B9A5E7791"
+  },
+  {
+    "path": "scripts\\uiux-native-performance.py",
+    "sha256": "9C476524EA0AAD7F395491C4C656E5A4BA9840C563F353C3C44CD8E38F3F3588"
+  },
+  {
+    "path": "scripts\\uiux-normal-delivery.ps1",
+    "sha256": "64EDFA44F35EAC5D0A2AC68D6D523CF50497517B6DCC9970972080C9FF143570"
+  },
+  {
+    "path": "scripts\\uiux-postflight-format.py",
+    "sha256": "EFD65ADEFA3CD073E8DE8D6290A48A748E1948CFA61C2E087C4B7B2ABFEFD05E"
+  },
+  {
+    "path": "scripts\\uiux-preferences-patch.py",
+    "sha256": "3317299AF5C250D73EBEA23C38172EB489E00966E5310BE1F416B6337EFE5BB7"
+  },
+  {
+    "path": "scripts\\uiux-prepare-qa.py",
+    "sha256": "8B4D19B2A073AE7B0292739DC2BD652DA2EC473F974E875FFA024D001AA2472B"
+  },
+  {
+    "path": "scripts\\uiux-resume-baseline.py",
+    "sha256": "C23E3A46C2614D713BEFE95CBF823DFDBD81529FA1F0352932D1CBAF9233432A"
+  },
+  {
+    "path": "scripts\\uiux-shadow-witness-copy.py",
+    "sha256": "33AEF485C8B5FC3711151A4DB930C10799B997514603A836C7786CDF6A72ED43"
+  },
+  {
+    "path": "scripts\\uiux-test-adapt.py",
+    "sha256": "FE131C6A7D51EDFD816AAD94E24F717DD81CB71EEC5AA31F0CCE0BFEFEBAB28F"
+  },
+  {
+    "path": "scripts\\uiux-transition-fixes.py",
+    "sha256": "5FFB992559DDA0845F340AFA02460AD8D3963C70E3C0F817EC749FF4B7EAC72E"
+  },
+  {
+    "path": "scripts\\validate-clinical-build.py",
+    "sha256": "1B4FD159EB9E603493018379DE6DEF702FAACCEF27B6062CF2FD2D7FE4284D05"
+  },
+  {
+    "path": "scripts\\validate-uiux-continuation.py",
+    "sha256": "A6CCF68D8B53761D428096CAD5A131C68D55C6CC56FA5D141B6CEB36A837A850"
+  },
+  {
+    "path": "scripts\\verify-clinical-motion.py",
+    "sha256": "941209CD2B894A2651F95D22247F94FD47BAD3B661DAE15A34B54DB874EEA6E0"
+  },
+  {
+    "path": "server\\clinical-demo.mjs",
+    "sha256": "D73149C9E8C72EA0241E2B669EFE8A4FEB564592FF58039614FBE14C781B60AE"
+  },
+  {
+    "path": "server\\demo-server.mjs",
+    "sha256": "5BF884B2DBBD2C7BF529A14F107FD8586C9BE336808D535A0815943C8D6C36C0"
+  },
+  {
+    "path": "server\\lab-fixtures.mjs",
+    "sha256": "67300E337DA1C4A91EEB1E19A26F8CB5F8096F7278D77F077E641521806988CA"
+  },
+  {
+    "path": "src-tauri/src\\clinical_input.rs",
+    "sha256": "4DEC55DF23198DADBA60F99513AB152399F595BA886EF634CBF4DF17C85C7608"
+  },
+  {
+    "path": "src-tauri/src\\clinical_shadow.rs",
+    "sha256": "E94F16C98E6FC5900BF0510661736EE05E716186087C21E52F854EAACB25EA9C"
+  },
+  {
+    "path": "src-tauri/src\\clinical_window.rs",
+    "sha256": "C66C29749D21A8AA903214D967B9BE418EE5D98FCD6A578598EC8ECE2FF80AC5"
+  },
+  {
+    "path": "src-tauri/src\\hover_diagnostics.rs",
+    "sha256": "8C68568896C25CA7FF4DF45B5C90AC51FD92B7550EFD973918D2BD23A34E4353"
+  },
+  {
+    "path": "src-tauri/src\\lib.rs",
+    "sha256": "050E9130DEFC66C392335D8EB70FAD952069E5D1F5592BFB376197E46D96D7F6"
+  },
+  {
+    "path": "src-tauri/src\\main.rs",
+    "sha256": "34FB920E598648429F9539D3F6E6D75632EB92E8DCC379FA10AD8CAFB8633503"
+  },
+  {
+    "path": "src-tauri/src\\notch_geometry.rs",
+    "sha256": "A7B010B650D1CAB25BF4EBCAE1462102484A8E52D68FF65A974A07D00CC1A35D"
+  },
+  {
+    "path": "src-tauri/src\\notch_window.rs",
+    "sha256": "8CF0BA4C885A3AC2C7DBA090A22BA11A89130F66903DCFE4AADE7EEAFA6E725A"
+  },
+  {
+    "path": "src-tauri/src\\reader_native.rs",
+    "sha256": "6CCC5842A7DD5AEC83FA1865858844DA7FD0B8A771C37DBF88666BD5F6DAE597"
+  },
+  {
+    "path": "src-tauri/src\\reader_profile.rs",
+    "sha256": "E4A57499610964D115F2DAA5DE6F12B3A386F7E818B12EECC708D1576C3ACF78"
+  },
+  {
+    "path": "src\\clinical\\attention.ts",
+    "sha256": "8FCAB7D3BCEE81CD95539176AE11C7F20A1A98C60E8983DBC2D7FCDCF5C3D8AB"
+  },
+  {
+    "path": "src\\clinical\\catalogue.json",
+    "sha256": "7A2769EA73B6DA971CD3042E325C4691F099ED3CF58D9E691F8D92E5CA1EF3B7"
+  },
+  {
+    "path": "src\\clinical\\clinical.css",
+    "sha256": "50E56027F3BD3EFAA82199332AA2507BDEBA1BD9760C1E4CDFF459498A6EFFFE"
+  },
+  {
+    "path": "src\\clinical\\ClinicalIsland.tsx",
+    "sha256": "4121EF06504F881EC0AD25DF79B96B8E735CAA99F22A4102CBF73E3E1D51E897"
+  },
+  {
+    "path": "src\\clinical\\ClinicalStudio.tsx",
+    "sha256": "7ACB9D09E71660FD1C815A74A9F75034F8EBB87435D6902377B2F68BA20C94EB"
+  },
+  {
+    "path": "src\\clinical\\CompactLabel.tsx",
+    "sha256": "B92021F041A2EFA3749F67DC0311736F6DBE5387C766154BAE0A689B2D68B23D"
+  },
+  {
+    "path": "src\\clinical\\controller.ts",
+    "sha256": "58290EABC38A0772052297FDF60EE38D04FAFC90596167A93B754CBD8AEF397C"
+  },
+  {
+    "path": "src\\clinical\\geometry.ts",
+    "sha256": "FD49BD07C5F661C96AA5B974A39E299FB6F823F29C2762C9A894C918B4DD9230"
+  },
+  {
+    "path": "src\\clinical\\lab-reader\\geometry.ts",
+    "sha256": "2E8C46B453700E04A2BC8AF545A2331E07EF8FA3775D2AF329C6107D7A24C86C"
+  },
+  {
+    "path": "src\\clinical\\lab-reader\\LabScene.tsx",
+    "sha256": "76904D50BD257B47F6C0F31103EB64324C6F96708C66DD1A53195A631A79C5AF"
+  },
+  {
+    "path": "src\\clinical\\lab-reader\\model.ts",
+    "sha256": "DED9A2691DB269614BE6D92DEE2CC9690BF73D1A5ED377963A2C92638C8634A4"
+  },
+  {
+    "path": "src\\clinical\\lab-reader\\reader.css",
+    "sha256": "40938A641B301A21352D2352060D9DA896BA1CBB28214FCFC8D06872B1E08861"
+  },
+  {
+    "path": "src\\clinical\\lab-reader\\tokens.json",
+    "sha256": "0D96C6EC722563581076A5297D93E50D56F93A543A71280A60ECB6F27B55E728"
+  },
+  {
+    "path": "src\\clinical\\lab-reader\\useLabReader.ts",
+    "sha256": "51E1C7E6DE47673397CE1BB12F8F412AFC9514D5AFEDBDEF02435B7A87F50A39"
+  },
+  {
+    "path": "src\\clinical\\main.tsx",
+    "sha256": "974D830A5A15776ECC97AED8221724D77A220472B1902D7DE9F517D6BCF88634"
+  },
+  {
+    "path": "src\\clinical\\model.ts",
+    "sha256": "4BA093F652F6A003C28C6AB7FB5FE6E9BE349430F0007F60C9CD1C02370896E2"
+  },
+  {
+    "path": "src\\clinical\\presentation.ts",
+    "sha256": "AEAE6CDFB7676279ECE1569AD3AA8ACD5DD3CF9B77897B5F009096878A0B619B"
+  },
+  {
+    "path": "src\\clinical\\spring.ts",
+    "sha256": "B6C6E770B5A05FEFF2DF071BD1D549A2A08CD155AB46757E237A1B884094C975"
+  },
+  {
+    "path": "src\\clinical\\tokens.css",
+    "sha256": "21AAB769349152CA4FDDF2CAB2120716EF790DB4D27007655A5FE8D5D17046C2"
+  },
+  {
+    "path": "src\\clinical\\tokens.json",
+    "sha256": "3312F4B7C4DB40C027A536B41FFE777C2CDC6A8B59E9E9CD3D4CCE12344512EC"
+  },
+  {
+    "path": "src\\clinical\\uiux.css",
+    "sha256": "7174450960F16B3668BEE086EE2C325DE1FC93C3B2B0501041DFFBEBB3660AFC"
+  },
+  {
+    "path": "src\\clinical\\useButtonFeedback.ts",
+    "sha256": "014A8C382759BCDC95D4A9BFBF4DE7F4F656EA5B0261840B9E679F576C51DDDF"
+  },
+  {
+    "path": "src\\clinical\\useClinicalLayout.ts",
+    "sha256": "FD5E7B9FBE8DB28FF1C7EEEBBF9E805FC5CE7F46CD9FF4A0261D01A948B521BB"
+  },
+  {
+    "path": "src\\clinical\\usePlatform.ts",
+    "sha256": "62E9F987C1DFCE661DF5C7538CDAEEA82CCE05995A35E30CD74413521B18E0E9"
+  },
+  {
+    "path": "src\\clinical\\useSurfaceInput.ts",
+    "sha256": "35CE2280A5E70AC5E0E35C1713CE1E19DD19BABEF5E6319D1AB58312352B74EB"
+  },
+  {
+    "path": "src\\components\\Icons.tsx",
+    "sha256": "1FCF88A3E87896B1E29248F89A9EE25E2AFE19141370F282A04497EC775D4BF9"
+  },
+  {
+    "path": "src\\components\\Island.tsx",
+    "sha256": "B6FF1D36B7292A2D5ACFF806276F907A9E6CC212C8FB1CE5906761825BC0465A"
+  },
+  {
+    "path": "src\\components\\NotchSurface.tsx",
+    "sha256": "89DA8AF5386FF1FB4477ADD5480CB0CCF7C0DE223441CC075311554396B332E7"
+  },
+  {
+    "path": "src\\components\\Studio.tsx",
+    "sha256": "77454C104843370F854044C7614D528CEC4327B8A71704A44787B6319D98FA3E"
+  },
+  {
+    "path": "src\\hooks\\useIsland.ts",
+    "sha256": "CE66091D7D4E09D023C196AAB85094E2A4F646B4E526852C9E12939750F53203"
+  },
+  {
+    "path": "src\\hooks\\useIslandHover.ts",
+    "sha256": "F7D757533A164180C0CE8A7A6ED4078C991EA2982D45F2DC424679680A66ADBB"
+  },
+  {
+    "path": "src\\hooks\\useMorph.ts",
+    "sha256": "DE69A7B585AE9A5469083F7ED003D7CFF87A46DF337B36BD8E87284B1F4ADD12"
+  },
+  {
+    "path": "src\\island-horizontal.css",
+    "sha256": "4E72B892DB340E73E89D8C7EE0CBFCC866844892365AE4DDAD385644CE92E546"
+  },
+  {
+    "path": "src\\lib\\bridge.ts",
+    "sha256": "5143785B6C243E30C678685D35621D9D0F00C9A8AFF3B88834DF8BF6DB38C407"
+  },
+  {
+    "path": "src\\lib\\domain.ts",
+    "sha256": "58FBD04F2453DCEABE6C7BEA70E1D42019EBEA0342C70FE8168E732EBECF6862"
+  },
+  {
+    "path": "src\\lib\\geometry.ts",
+    "sha256": "2D3C36D5E2AB783760713569C2F1F918503A4316F4B48498CE4652C3E09FDD60"
+  },
+  {
+    "path": "src\\lib\\hoverDiagnostics.ts",
+    "sha256": "5F827F5EE9D50C96AE6A8D1E92469076632F51A052FBE02E10127430206D6F7E"
+  },
+  {
+    "path": "src\\lib\\performance.ts",
+    "sha256": "FAB26FCB70787CC48D5C14672A6B8428CC832D130C14B04A6C3610FEFE303072"
+  },
+  {
+    "path": "src\\main.tsx",
+    "sha256": "A8092F20BF11A8788DD497C1587BBF29B4E9AA44EAB3CF451BF095656504000E"
+  },
+  {
+    "path": "src\\notch-motion.css",
+    "sha256": "63BFCD376AE74C9C315FF74BDDB6DDD83D1AF5086B0BEF58A6EBCE64D2F02C95"
+  },
+  {
+    "path": "src\\styles.css",
+    "sha256": "7E5804DFFFCC0F2AEFADCFACDA681BD3A053B96A83E9FF1962F48C429B46E507"
+  },
+  {
+    "path": "src\\tailwind.css",
+    "sha256": "38FED5261EC219E1C78F7A5F1B119AD0DDCC9DB9694AD86643425A57C9412610"
+  },
+  {
+    "path": "src\\vite-env.d.ts",
+    "sha256": "50E5663246488D451ED1D15205BD8560FDFA287C1593ED932957ECA2DA7D4253"
+  }
+]

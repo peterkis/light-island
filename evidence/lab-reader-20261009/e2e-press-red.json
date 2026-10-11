@@ -1,0 +1,159 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "D:\\Projects\\island-protype\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/clinical-continuation.spec.ts",
+      "--grep",
+      "button press retains",
+      "--reporter=list,json"
+    ],
+    "configFile": "D:\\Projects\\island-protype\\playwright.config.ts",
+    "rootDir": "D:/Projects/island-protype/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/Projects/island-protype/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "D:/Projects/island-protype/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "/.*\\.spec\\.ts/"
+        ],
+        "timeout": 35000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list"
+      ],
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "clinical-continuation.spec.ts",
+      "file": "clinical-continuation.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "button press retains text size, spring releases and route failure is visible",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 11380,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate\n    at D:\\Projects\\island-protype\\tests\\clinical-continuation.spec.ts:42:234",
+                    "location": {
+                      "file": "D:\\Projects\\island-protype\\tests\\clinical-continuation.spec.ts",
+                      "column": 234,
+                      "line": 42
+                    },
+                    "snippet": "  40 |  await page.evaluate(()=>{const w=window as unknown as {__qaRaf:typeof requestAnimationFrame};w.__qaRaf=window.requestAnimationFrame;window.requestAnimationFrame=callback=>w.__qaRaf(time=>callback(time-50));});\n  41 |  await page.mouse.move(r.x+r.width/2,r.y+r.height/2);await page.mouse.down();\n> 42 |  expect(await button.evaluate(el=>getComputedStyle(el).transform)).toBe('none');await expect.poll(()=>button.evaluate(el=>{const value=(el as HTMLElement).style.getPropertyValue('--ux-press');return value!==''&&Number(value)<.99;})).toBe(true);\n     |                                                                                                                                                                                                                                          ^\n  43 |  const host=(await e.boundingBox())!;await page.mouse.move(host.x+190,host.y+50);await page.mouse.up();await expect.poll(()=>button.evaluate(el=>(el as HTMLElement).style.getPropertyValue('--ux-press'))).toBe('');\n  44 |  await page.evaluate(()=>{const w=window as unknown as {__qaRaf?:typeof requestAnimationFrame};window.requestAnimationFrame=w.__qaRaf!;delete w.__qaRaf;});expect(errors).toEqual([]);\n  45 |  await post(request,{type:'clinical:configure',settings:{routeFault:'failed'}});await e.getByRole('button',{name:'打开危急值流程'}).click();await settle(page,'stack');await expect(e.getByRole('status')).toContainText('未能打开来源');expect(await page.getByRole('dialog').count()).toBe(0);"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\Projects\\island-protype\\tests\\clinical-continuation.spec.ts",
+                        "column": 234,
+                        "line": 42
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate\n\n  40 |  await page.evaluate(()=>{const w=window as unknown as {__qaRaf:typeof requestAnimationFrame};w.__qaRaf=window.requestAnimationFrame;window.requestAnimationFrame=callback=>w.__qaRaf(time=>callback(time-50));});\n  41 |  await page.mouse.move(r.x+r.width/2,r.y+r.height/2);await page.mouse.down();\n> 42 |  expect(await button.evaluate(el=>getComputedStyle(el).transform)).toBe('none');await expect.poll(()=>button.evaluate(el=>{const value=(el as HTMLElement).style.getPropertyValue('--ux-press');return value!==''&&Number(value)<.99;})).toBe(true);\n     |                                                                                                                                                                                                                                          ^\n  43 |  const host=(await e.boundingBox())!;await page.mouse.move(host.x+190,host.y+50);await page.mouse.up();await expect.poll(()=>button.evaluate(el=>(el as HTMLElement).style.getPropertyValue('--ux-press'))).toBe('');\n  44 |  await page.evaluate(()=>{const w=window as unknown as {__qaRaf?:typeof requestAnimationFrame};window.requestAnimationFrame=w.__qaRaf!;delete w.__qaRaf;});expect(errors).toEqual([]);\n  45 |  await post(request,{type:'clinical:configure',settings:{routeFault:'failed'}});await e.getByRole('button',{name:'打开危急值流程'}).click();await settle(page,'stack');await expect(e.getByRole('status')).toContainText('未能打开来源');expect(await page.getByRole('dialog').count()).toBe(0);\n    at D:\\Projects\\island-protype\\tests\\clinical-continuation.spec.ts:42:234"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T07:04:20.211Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "D:\\Projects\\island-protype\\test-results\\clinical-continuation-butt-d5945-nd-route-failure-is-visible\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\Projects\\island-protype\\test-results\\clinical-continuation-butt-d5945-nd-route-failure-is-visible\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\Projects\\island-protype\\test-results\\clinical-continuation-butt-d5945-nd-route-failure-is-visible\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\Projects\\island-protype\\tests\\clinical-continuation.spec.ts",
+                    "column": 234,
+                    "line": 42
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "2a79285b5f8acf175da2-4182181fd31a159a45dc",
+          "file": "clinical-continuation.spec.ts",
+          "line": 36,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-09T07:04:12.209Z",
+    "duration": 23043.016000000003,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

@@ -1,0 +1,575 @@
+diff --git a/docs/UIUX-V1-IMPLEMENTATION.md b/docs/UIUX-V1-IMPLEMENTATION.md
+index b1e67ab..2a601d8 100644
+--- a/docs/UIUX-V1-IMPLEMENTATION.md
++++ b/docs/UIUX-V1-IMPLEMENTATION.md
+@@ -1,5 +1,7 @@
+ # Windows 灵动岛 UI/UX v1.0 对照实现
+ 
++2026-10-08 接续记录见 [UIUX-V1-CONTINUATION.md](UIUX-V1-CONTINUATION.md)，新证据目录为 `evidence/uiux-continuation-20261008/`。以下保留 2026-10-06 的历史交付与未完成项原貌；当前结果以接续记录及其 RESULTS.json 为准。
++
+ 本轮依据用户文件 `Windows 灵动岛 UI UX 设计规范 v1.0.md`（原文保持不变，SHA256 为 `a9f37ea76becf4b74c4388a2172e4d46dbc7a4600558cee3b71f445f3e67b1fa`）。当前临床模块使用该文件，不再使用历史 160×34 / 540ms 预烘焙缓动作为视觉验收标准。旧 `--legacy` 对照模块保留。
+ 
+ ## 已落地的对应关系
+diff --git a/src-tauri/src/clinical_window.rs b/src-tauri/src/clinical_window.rs
+index 3a2b406..a916fc9 100644
+--- a/src-tauri/src/clinical_window.rs
++++ b/src-tauri/src/clinical_window.rs
+@@ -9,7 +9,7 @@ use crate::hover_diagnostics::record;
+ static TOKENS:OnceLock<Value>=OnceLock::new();
+ static EPOCH:Mutex<EpochGuard>=Mutex::new(EpochGuard{epoch:0,sequence:0,closed:false});
+ #[derive(Clone,Deserialize)]
+-pub struct Shape{width:f64,height:f64,radius:f64,ear:f64,#[serde(default)]polygons:Option<Vec<Vec<[f64;2]>>>,#[serde(default)]top:f64}
++pub struct Shape{width:f64,height:f64,radius:f64,ear:f64,#[serde(default)]polygons:Option<Vec<Vec<[f64;2]>>>,#[serde(default)]top:f64,#[serde(default)]shift:f64}
+ fn number(path:&str)->f64{TOKENS.get_or_init(||serde_json::from_str(include_str!("../../src/clinical/tokens.json")).expect("generated UI tokens")).pointer(path).and_then(Value::as_f64).expect("numeric UI token")}
+ fn ensure(window:&WebviewWindow)->Result<(),String>{
+  if window.label()!="island"||!window.url().map_err(|e|e.to_string())?.path().ends_with("clinical.html"){return Err("Clinical island window required".into());}Ok(())
+@@ -86,13 +86,15 @@ fn contour(w:f64,h:f64,radius:f64,ear:f64)->Vec<[f64;2]>{
+  curve(&mut p,[e,0.45*e],[0.55*e,0.0],[0.0,0.0]);p
+ }
+ fn validate(g:&Shape)->Result<(),String>{
++ if !g.shift.is_finite()||g.shift.abs()>128.0{return Err("Invalid bounded gesture offset".into());}
+  let max=number("/geometry/expanded/preferredMaxWidth");let extra=(max-96.0)*number("/motion/budgets/expand");
+  if [g.width,g.height,g.radius,g.ear].iter().any(|v|!v.is_finite())||!(96.0..=max+extra).contains(&g.width)||!(24.0..=510.0).contains(&g.height)||!(0.0..=64.0).contains(&g.radius)||!(0.0..=12.0).contains(&g.ear){return Err("Clinical geometry exceeds UI limits".into());}
+  if let Some(polys)=&g.polygons{if polys.is_empty()||polys.len()>3||polys.iter().any(|p|p.len()<4||p.len()>512||p.iter().any(|v|!v[0].is_finite()||!v[1].is_finite()||v[0]< -12.01||v[0]>g.width+72.0||v[1]< -0.01||v[1]>g.height+12.0)){return Err("Invalid bounded UI silhouette".into());}}Ok(())
+ }
+ #[cfg(target_os="windows")]
+ unsafe fn add_outline(region:*mut std::ffi::c_void,g:&Shape,canvas:u32,scale:f64)->Result<(),String>{
+- let offset=(canvas as f64-g.width*scale)/2.0;let outlines=g.polygons.clone().unwrap_or_else(||vec![contour(g.width,g.height,g.radius,g.ear)]);
++ let offset=(canvas as f64-g.width*scale)/2.0+g.shift*scale;let outlines=g.polygons.clone().unwrap_or_else(||vec![contour(g.width,g.height,g.radius,g.ear)]);
++ if outlines.iter().flatten().any(|pt|offset+pt[0]*scale<2.0||offset+pt[0]*scale>canvas as f64-2.0){return Err("Gesture silhouette exceeds retained canvas".into());}
+  let fringe=number("/geometry/pixelBoundaryTolerance") as i32;
+  for points in &outlines{for dy in -fringe..=fringe{for dx in -fringe..=fringe{
+   let native:Vec<ffi::Point>=points.iter().map(|pt|ffi::Point{x:(offset+pt[0]*scale).round() as i32+dx,y:(pt[1]*scale).round() as i32+dy}).collect();
+@@ -103,9 +105,9 @@ unsafe fn add_outline(region:*mut std::ffi::c_void,g:&Shape,canvas:u32,scale:f64
+  Ok(())
+ }
+ #[tauri::command]
+-pub fn clinical_layout(window:WebviewWindow,epoch:u64,body_width:f64,height:f64,radius:f64,ear:f64,visible:bool,sequence:Option<u64>,phase:Option<String>,previous:Option<Shape>,polygons:Option<Vec<Vec<[f64;2]>>>,expanded:Option<bool>,shadow_alpha:Option<f64>,top:Option<f64>)->Result<bool,String>{
++pub fn clinical_layout(window:WebviewWindow,epoch:u64,body_width:f64,height:f64,radius:f64,ear:f64,visible:bool,sequence:Option<u64>,phase:Option<String>,previous:Option<Shape>,polygons:Option<Vec<Vec<[f64;2]>>>,expanded:Option<bool>,shadow_alpha:Option<f64>,top:Option<f64>,shift:Option<f64>)->Result<bool,String>{
+  ensure(&window)?;
+- let target=Shape{width:body_width,height,radius,ear,polygons,top:top.unwrap_or(0.0)};validate(&target)?;
++ let target=Shape{width:body_width,height,radius,ear,polygons,top:top.unwrap_or(0.0),shift:shift.unwrap_or(0.0)};validate(&target)?;
+  if let Some(g)=&previous{validate(g)?;}
+  if !target.top.is_finite()||!(0.0..=12.0).contains(&target.top)||shadow_alpha.is_some_and(|a|!a.is_finite()||!(0.0..=1.0).contains(&a)){return Err("Invalid shadow geometry".into());}
+  let stage=phase.as_deref().unwrap_or("commit");
+diff --git a/src/clinical/ClinicalIsland.tsx b/src/clinical/ClinicalIsland.tsx
+index 0e8632e..76f5ce0 100644
+--- a/src/clinical/ClinicalIsland.tsx
++++ b/src/clinical/ClinicalIsland.tsx
+@@ -9,6 +9,8 @@ import type {ClinicalController} from './controller';
+ import type {Surface} from './geometry';
+ import {openStudio,nativeIsland} from '../lib/bridge';
+ import {sortActivities} from './attention';
++import {CompactLabel} from './CompactLabel';
++import {useButtonFeedback} from './useButtonFeedback';
+ export const scenarioIcons:Record<string,LucideIcon>={S01:Timer,S02:HeartPulse,S03:FlaskConical,S04:FileHeart,S05:Wallet,S06:ClipboardList,S07:PhoneForwarded,S08:FileWarning,S09:TestTubeDiagonal,S10:Droplets,S11:Pill,S12:ScanLine,S13:Truck,S14:MessagesSquare,S15:Stethoscope};
+ export const timerText=(ms:number)=>{const s=Math.max(0,Math.ceil(ms/1000)),m=Math.floor(s/60);return `${String(m).padStart(2,'0')}:${String(s%60).padStart(2,'0')}`;};
+ const stamp=(n:number|null)=>n===null?'来源时间未提供':new Date(n).toLocaleTimeString('zh-CN',{hour:'2-digit',minute:'2-digit',hour12:false});
+@@ -18,28 +20,31 @@ export function ClinicalIsland({c}:{c:ClinicalController}){
+  const [panel,setPanel]=useState<'none'|'details'|'activities'|'settings'>('none');
+  const [systemReduced,setSystemReduced]=useState(matchMedia('(prefers-reduced-motion: reduce)').matches);
+  const mainRef=useRef<HTMLDivElement>(null),keyboardOpen=useRef(false),trigger=useRef<HTMLButtonElement>(null),close=useRef<HTMLButtonElement>(null);
+- const quietTimer=useRef(0),primary=c.selectedActivity,timerSelected=c.selected==='timer'||!primary;
++ const quietTimer=useRef(0),sourceButton=useRef<HTMLButtonElement>(null),primary=c.selectedActivity,timerSelected=c.selected==='timer'||!primary;
+  const platform=usePlatform(mainRef,primary?versionKey(primary):'idle',c.settings.locked||c.settings.fullscreen);
+  const platformPrivate=platform.status.notificationState===1||platform.status.notificationState===4;
+  const blocked=c.settings.privacy||c.settings.role==='none'||platformPrivate,visible=canView(primary,c.settings);
+- const hidden=c.settings.locked||c.settings.fullscreen||platformPrivate||(platform.suspended&&primary?.priority!=='important')||(c.settings.hideIdle&&c.view==='idle');
++ const hidden=c.settings.locked||c.settings.fullscreen||platformPrivate||(platform.suspended&&primary?.priority!=='important')||(c.settings.hideIdle&&c.view==='idle'&&!c.undo);
+  const reduced=c.settings.reduced||systemReduced||!platform.status.animationsEnabled,unavailable=blocked||(!timerSelected&&!visible);
+  const requestSurface:Surface=c.view!=='expanded'?c.view:panel!=='none'?'stack':c.reason==='preview'?'alert':'rich';
+  const collapse=()=>{setPanel('none');c.setHovered(false);c.collapse();};
+  const expand=()=>{setPanel('none');c.expand();};
+  const stack=()=>{c.promote();c.expand();setPanel('activities');};
+- const input=useSurfaceInput(mainRef,{expanded:c.view==='expanded',hidden,reduced,hover:c.setHovered,expand,collapse,stack,keyboardExpand:()=>{keyboardOpen.current=true;expand();}});
++ const cycle=(direction:number)=>{const ids=[...(c.timer.status!=='idle'?['timer']:[]),...sortActivities(c.queue.items).map(a=>identityKey(a.identity))];if(ids.length<2)return;const i=ids.indexOf(c.selected??'');c.choose(ids[(Math.max(0,i)+direction+ids.length)%ids.length]);setPanel('none');};
++ const input=useSurfaceInput(mainRef,{expanded:c.view==='expanded',surface:requestSurface,hidden,reduced,hover:c.setHovered,expand,collapse,stack,dismiss:()=>{setPanel('none');c.dismissPreview();},cycle,keyboardExpand:()=>{keyboardOpen.current=true;expand();}});
+  const ordered=sortActivities(c.queue.items);
+- const secondary=ordered.find(a=>identityKey(a.identity)!==c.selected);
++ const secondary=sortActivities(c.displayItems).find(a=>identityKey(a.identity)!==c.selected&&canView(a,c.settings));
+  const timerSecondary=!timerSelected&&c.timer.status!=='idle';
+  const showMinimal=c.view==='compact'&&!blocked&&Boolean(secondary||timerSecondary);
+  const key=`${requestSurface}:${timerSelected?'timer':visible&&primary?versionKey(primary):'protected'}:${blocked}:${c.settings.role}:${c.view==='expanded'?panel:'none'}:${c.stale}`;
+- const layout=useClinicalLayout(c.view,key,c.settings.textScale,reduced,hidden,{surface:requestSurface,dock:c.settings.dock,peek:input.peek,pressed:input.pressed,satellite:showMinimal,onSettled:()=>c.setReadable(true)});
++ const layout=useClinicalLayout(c.view,key,c.settings.textScale,reduced,hidden,{surface:requestSurface,dock:c.settings.dock,peek:input.peek,pressed:input.pressed,satellite:showMinimal,shift:input.gesture.shift,dragging:input.gesture.dragging,dragVelocity:input.gesture.velocity,dismissing:input.gesture.dismissing,onSettled:()=>c.setReadable(true)});
+  const {host,inner,svg,width,height,view,surface,error}=layout;
++ const failFeedback=useButtonFeedback(host,reduced,key);
++ useEffect(()=>{if(c.route==='requesting')failFeedback(null,'');if(['failed','mismatch','unauthorized'].includes(c.route))return failFeedback(sourceButton.current,`${key}:${c.route}`);},[c.route,key,reduced]);
+  useEffect(()=>{mainRef.current=host.current;},[host]);
+  useEffect(()=>{const media=matchMedia('(prefers-reduced-motion: reduce)');const f=()=>setSystemReduced(media.matches);media.addEventListener('change',f);return()=>{media.removeEventListener('change',f);clearTimeout(quietTimer.current);};},[]);
+  useEffect(()=>{setPanel('none');},[c.settings.privacy,c.settings.role,c.selected]);
+- useEffect(()=>{if(view==='expanded'&&keyboardOpen.current)close.current?.focus({preventScroll:true});if(view!=='expanded'&&keyboardOpen.current){trigger.current?.focus({preventScroll:true});keyboardOpen.current=false;}},[view]);
++ useEffect(()=>{if(view==='expanded'&&keyboardOpen.current)close.current?.focus({preventScroll:true});if(view!=='expanded'&&keyboardOpen.current){trigger.current?.focus({preventScroll:true});keyboardOpen.current=false;}},[view,surface]);
+  useEffect(()=>{if(['failed','mismatch','unauthorized'].includes(c.route))setPanel('details');},[c.route]);
+  useEffect(()=>{if(surface==='alert'&&['requested','opened'].includes(c.route))c.collapseDisplay();},[c.route]);
+  const Icon=timerSelected?Timer:scenarioIcons[primary?.scenario??'S03']??Pulse;
+@@ -48,28 +53,30 @@ export function ClinicalIsland({c}:{c:ClinicalController}){
+  const privacyMessage=c.settings.role==='none'?'请在工作空间登录':c.settings.privacy?'隐私保护已开启':'当前岗位没有查看权限';
+  const routeText=({failed:'未能打开来源，请重试',mismatch:'对象或版本不匹配，已阻止打开',unauthorized:'授权已变化，请重新登录',requesting:'正在校验对象与版本',requested:'已请求打开来源，不代表已接收',opened:'已打开模拟来源，未提交临床确认'} as Record<string,string>)[c.route];
+  const disabled=c.stale||c.route==='requesting';
+- const sourceAction=<button className="ci-primary ux-primary" disabled={disabled} onClick={()=>void c.openSource()}>{c.route==='requesting'?'正在校验':primary?.actionLabel}<ArrowUpRight size={16}/></button>;
++ const sourceAction=<button ref={sourceButton} className="ci-primary ux-primary" disabled={disabled} onClick={()=>void c.openSource()}>{c.route==='requesting'?'正在校验':primary?.actionLabel}<ArrowUpRight size={16}/></button>;
+  const quiet=(duration:number)=>{clearTimeout(quietTimer.current);c.configure({quiet:true});quietTimer.current=window.setTimeout(()=>c.configure({quiet:false}),duration);collapse();};
+  return <div className="ci-anchor" style={{'--ci-text-scale':c.settings.textScale,'--ux-accent':accent} as React.CSSProperties}>
+-  <div ref={host} className={`ci-host ux-host ${reduced?'ci-reduced':''}`} data-testid="clinical-island" data-view={view} data-surface={surface} data-native-fallback="false" data-native={String(nativeIsland)} data-hidden={String(hidden)} data-rim={String(c.settings.backgroundDark||platform.dark)} data-peek={String(input.peek)} style={hidden?{visibility:'hidden'}:undefined}
+-   onMouseEnter={input.enter} onMouseLeave={input.leave} onPointerDown={input.down} onPointerUp={input.up}
++  <div ref={host} className={`ci-host ux-host ${reduced?'ci-reduced':''}`} data-testid="clinical-island" data-view={view} data-surface={surface} data-native-fallback="false" data-native={String(nativeIsland)} data-enlarged={String(c.settings.textScale>1)} data-hidden={String(hidden)} data-rim={String(c.settings.backgroundDark||platform.dark)} data-peek={String(input.peek)} style={hidden?{visibility:'hidden'}:undefined}
++   onMouseEnter={input.enter} onMouseLeave={input.leave} onPointerDown={input.down} onPointerMove={input.move} onPointerUp={input.up} onWheel={input.wheel}
++   onClickCapture={e=>{if(input.consumeLong()){e.preventDefault();e.stopPropagation();}}}
+    onClick={e=>{if((e.target as Element).matches('[data-shell="fill"]')&&!input.consumeLong())expand();}}
+    onFocusCapture={()=>c.setFocusWithin(true)} onBlurCapture={e=>{if(!e.currentTarget.contains(e.relatedTarget as Node))c.setFocusWithin(false);}}
+    onContextMenu={e=>{e.preventDefault();c.expand();setPanel('settings');}}
+-   onKeyDown={e=>{if(e.nativeEvent.isComposing)return;if(e.key==='Escape'){e.preventDefault();if(panel!=='none')setPanel('none');else collapse();}if(e.key==='Enter'||e.key===' ')keyboardOpen.current=true;}}>
+-   <svg ref={svg} className="ci-shell" aria-hidden="true" width="144" height="32"><path className="ci-fill" data-shell="fill"/><path className="ci-rim" data-shell="rim"/></svg>
++   onKeyDown={e=>{if(e.nativeEvent.isComposing)return;if(e.key==='Escape'){e.preventDefault();if(panel!=='none')setPanel('none');else collapse();}if(e.key==='Enter'||e.key===' ')keyboardOpen.current=true;
++    if(['ArrowLeft','ArrowRight'].includes(e.key)&&(e.target as Element).matches('.ci-compact-button,.ux-minimal,.ux-activity-list button')){e.preventDefault();cycle(e.key==='ArrowRight'?1:-1);}}}>
++   <svg ref={svg} className="ci-shell" aria-hidden="true" width="144" height="32"><path className="ci-fill" data-shell="fill"/><path className="ci-rim" data-shell="rim"/><path className="ux-neck" data-neck="bridge"/></svg>
+    <div className="ci-clip"><div ref={inner} id="clinical-content" className={`ci-content ci-${view} ux-${surface}`} style={{width,height}}>
+-    {surface==='idle'?<button ref={trigger} className="ci-compact-button ux-idle-button" aria-label="打开协作动态" aria-expanded="false" aria-controls="clinical-content" onClick={()=>{if(!input.consumeLong())expand();}}><span className="ux-idle-mark" aria-hidden="true"/></button>:
++    {surface==='idle'?c.undo&&!blocked?<button ref={trigger} className="ci-compact-button ux-idle-button ux-undo" aria-label="撤销忽略本次快览" onClick={()=>c.undoPreview()}>撤销</button>:<button ref={trigger} className="ci-compact-button ux-idle-button" aria-label="打开协作动态" aria-expanded="false" aria-controls="clinical-content" onClick={()=>{if(!input.consumeLong())expand();}}><span className="ux-idle-mark" aria-hidden="true"/></button>:
+      surface==='compact'?<button ref={trigger} className={`ci-compact-button ux-compact-button ${c.settings.compactText?'has-label':''}`} aria-label="展开协作详情" aria-description={compactLabel} aria-expanded="false" aria-controls="clinical-content" onClick={()=>{if(!input.consumeLong())expand();}}>
+       <span className="ux-leading">{timerSelected?<Ring size={24} value={c.remaining/c.timer.duration}/>:<Icon size={16} strokeWidth={1.75}/>}</span>
+-      <span className="ux-center">{c.settings.compactText&&<span className="ux-compact-label">{compactLabel}</span>}</span>
++      <span className="ux-center">{c.settings.compactText&&<CompactLabel text={compactLabel} reduced={reduced} active={c.hovered||c.focusWithin}/>}</span>
+       <span className="ux-trailing">{blocked?'•••':timerSelected?timerText(c.remaining):`${Math.max(1,c.queue.items.length)} 项`}</span>
+      </button>:
+      surface==='alert'?<div className="ux-alert-body">
+       <button className="ux-alert-main" aria-label={unavailable?'打开受保护的协作详情':`打开来源 ${primary?.title??'协作动态'}`} onClick={()=>{if(!input.consumeLong()){if(unavailable)expand();else void c.openSource();}}}>
+        <span className="ux-identity ux-identity-44" data-stagger><Icon size={24} strokeWidth={1.75}/></span>
+        <span className="ux-alert-copy"><span className="ux-title" data-stagger>{unavailable?'新消息':excerpt(primary?.title??'协作动态',24)}</span><span className="ux-body" data-stagger>{unavailable?'点击查看授权入口':excerpt(primary?.body??'',60)}</span></span>
+-      </button><div className="ux-alert-right"><time className="ci-caption">{stamp(primary?.sourceAt??null)}</time><button className="ci-icon-button ux-close" aria-label="收起协作详情" onClick={collapse}><X size={12}/></button><button className="ux-more-alert" aria-label="展开完整摘要" onClick={expand}><ChevronDown size={12}/></button></div>
++      </button><div className="ux-alert-right"><time className="ci-caption">{stamp(primary?.sourceAt??null)}</time><button className="ci-icon-button ux-close" aria-label="忽略本次快览" onClick={()=>c.dismissPreview()}><X size={12}/></button><button className="ux-more-alert" aria-label="展开完整摘要" onClick={expand}><ChevronDown size={12}/></button></div>
+      </div>:
+      surface==='rich'?<>
+       <header className="ci-header ux-header" data-stagger><span className="ux-source-icon"><Icon size={20} strokeWidth={1.75}/></span><span className="ci-caption ux-source">{unavailable?'协作动态':timerSelected?'个人番茄钟':primary?.identity.source}</span><time className="ci-caption">{timerSelected?'个人工具':stamp(primary?.sourceAt??null)}</time><button ref={close} className="ci-icon-button ux-close" aria-label="收起协作详情" onClick={collapse}><X size={12}/></button></header>
+@@ -84,15 +91,16 @@ export function ClinicalIsland({c}:{c:ClinicalController}){
+      </>:
+      <>
+       <header className="ci-header ux-stack-header"><button className="ci-icon-button" aria-label="返回快览" onClick={()=>setPanel('none')}><ArrowLeft size={16}/></button><h2 className="ux-title">{panel==='settings'?'灵动岛设置':panel==='activities'?'活动托盘':unavailable?'详情已保护':'来源详情'}</h2><button ref={close} className="ci-icon-button ux-close" aria-label="收起协作详情" onClick={collapse}><X size={12}/></button></header>
+-      <div className="ci-scroll"><div className="ci-scroll-content">
++      <div className="ci-scroll" tabIndex={0} role="region" aria-label={panel==='settings'?'设置滚动区域':panel==='activities'?'活动滚动区域':'来源详情滚动区域'}><div className="ci-scroll-content">
+        {panel==='settings'?<div className="ux-settings">
+         <button onClick={()=>c.configure({dock:c.settings.dock==='notch'?'floating':'notch'})}><span>停靠模式</span><span>{c.settings.dock==='notch'?'A · 贴顶':'B · 悬浮'}</span></button>
+         <button onClick={()=>c.configure({compactText:!c.settings.compactText})}><span>紧凑中央区域</span><span>{c.settings.compactText?'单行文字':'留白 124'}</span></button>
+         <button onClick={()=>c.configure({reduced:!c.settings.reduced})}><span>减弱动效</span><span>{c.settings.reduced?'开启':'关闭'}</span></button>
+         <button onClick={()=>c.configure({backgroundDark:!c.settings.backgroundDark})}><span>深色背景描边</span><span>{c.settings.backgroundDark?'开启':'关闭'}</span></button>
+         <button onClick={()=>c.configure({hideIdle:!c.settings.hideIdle})}><span>完全隐藏静默岛</span><span>{c.settings.hideIdle?'开启':'关闭'}</span></button>
++        {primary&&!unavailable&&<button aria-pressed={c.mutedSources.includes(primary.identity.source)} onClick={()=>c.muteSource(primary.identity.source)}><span>{c.mutedSources.includes(primary.identity.source)?'取消静音此来源':'静音此来源'}</span><span>{primary.identity.source}</span></button>}
+         <div className="ux-quiet-actions"><button onClick={()=>quiet(1800000)}>勿扰 30 分钟</button><button onClick={()=>quiet(3600000)}>勿扰 1 小时</button><button onClick={()=>quiet(Math.max(1000,new Date(new Date().setHours(24,0,0,0)).getTime()-Date.now()))}>到明天</button></div>
+-        <p className="ci-caption">只影响岛内普通预览，不改变临床通知流程</p>
++        <p className="ci-caption">只影响当前会话的普通预览；重要来源仍会提醒，不改变临床通知流程</p>
+        </div>:unavailable?<div className="ci-protected"><EyeOff size={24}/><p>{privacyMessage}</p></div>:
+         panel==='activities'?<div className="ci-switcher ux-activity-list" aria-label="切换活动"><button onClick={()=>{c.choose('timer');setPanel('none');}}><Timer size={20}/><span>个人番茄钟<small>{c.timer.status==='idle'?'个人工具':timerText(c.remaining)}</small></span><ChevronRight size={16}/></button>{ordered.map(a=>{const I=scenarioIcons[a.scenario];return <button key={identityKey(a.identity)} onClick={()=>{c.choose(identityKey(a.identity));setPanel('none');}}><I size={20}/><span>{excerpt(a.compact,24)}<small>{a.identity.source} · {stamp(a.sourceAt)}</small></span><ChevronRight size={16}/></button>;})}</div>:
+         primary&&<>
+@@ -113,6 +121,6 @@ export function ClinicalIsland({c}:{c:ClinicalController}){
+    {c.queue.overflow>0&&view==='expanded'&&<span className="ux-overflow" role="status">超出容量 {c.queue.overflow} 项，请回工作空间查看</span>}
+    {error&&<span className="ci-native-error" role="alert">原生几何同步失败</span>}
+   </div>
+-  <span className="ci-sr" role="status" aria-live={primary?.priority==='important'?'assertive':'polite'}>{hidden?'协作浮层已隐藏':blocked?'新消息':c.stale?'来源状态暂未更新':primary?.compact??''}</span>
++  <span className="ci-sr" role="status" aria-live={primary?.priority==='important'?'assertive':'polite'} aria-atomic="true">{hidden?'协作浮层已隐藏':blocked||(!timerSelected&&!visible)?'新消息':c.stale?'来源状态暂未更新':c.undo?'本次快览已忽略，四秒内可撤销':primary?.compact??''}</span>
+  </div>;
+ }
+diff --git a/src/clinical/controller.ts b/src/clinical/controller.ts
+index 224f512..882f814 100644
+--- a/src/clinical/controller.ts
++++ b/src/clinical/controller.ts
+@@ -6,6 +6,8 @@ import {canView,defaults,emptyQueue,emptyTimer,identityKey,ingest,parseActivity,
+ import type {Activity,Settings,TimerState} from './model';
+ import tokens from './tokens.json';
+ import {previewDuration,mayInterrupt,previewAllowed} from './attention';
++import {previewMuted,undoActivity} from './presentation';
++import type {UndoPreview} from './presentation';
+ export type View='idle'|'compact'|'expanded';
+ export function useClinical(){
+  const [queue,setQueue]=useState(emptyQueue),[settings,setSettings]=useState(defaults),[connection,setConnection]=useState<Connection>('connecting');
+@@ -16,6 +18,9 @@ export function useClinical(){
+  const [route,setRoute]=useState<'idle'|'requesting'|'requested'|'opened'|'failed'|'mismatch'|'unauthorized'>('idle');
+  const [source,setSource]=useState<Activity|null>(null),[sourceError,setSourceError]=useState('');
+  const [readable,setReadable]=useState(false);
++ const [mutedSources,setMutedSources]=useState<string[]>([]),[dismissed,setDismissed]=useState<string[]>([]),[undo,setUndo]=useState<UndoPreview|null>(null);
++ const presentation=useRef({mutedSources,dismissed});presentation.current={mutedSources,dismissed};
++ const undoTimer=useRef(0);
+  const sourcePreviews=useRef(new Map<string,number>());
+  const [pendingCount,setPendingCount]=useState(0),[log,setLog]=useState<string[]>([]);
+  const sourceTicket=new URLSearchParams(location.search).get('source');
+@@ -23,7 +28,7 @@ export function useClinical(){
+  const request=useRef<{id:string;key:string;version:number;ticket?:string}|null>(null),routeTimer=useRef(0),alive=useRef(true);
+  const addLog=useCallback((text:string)=>setLog(l=>[text,...l].slice(0,30)),[]);
+  const receive=useCallback((e:Wire)=>{
+-  if(e.type==='clinical:reset'){request.current=null;clearTimeout(routeTimer.current);sourcePreviews.current.clear();setReadable(false);setQueue(emptyQueue());setTimer(emptyTimer());setSelected(null);setView('idle');setRoute('idle');setSource(null);setOpened({});setFollowed({});setPendingCount(0);setLog([]);}
++  if(e.type==='clinical:reset'){request.current=null;clearTimeout(routeTimer.current);clearTimeout(undoTimer.current);presentation.current={mutedSources:[],dismissed:[]};setMutedSources([]);setDismissed([]);setUndo(null);sourcePreviews.current.clear();setReadable(false);setQueue(emptyQueue());setTimer(emptyTimer());setSelected(null);setView('idle');setRoute('idle');setSource(null);setOpened({});setFollowed({});setPendingCount(0);setLog([]);}
+   if(e.type==='clinical:settings'||e.type==='clinical:snapshot'){
+    const next=safeSettings(e.settings,latest.current.settings);
+    const old=latest.current.settings;
+@@ -43,7 +48,7 @@ export function useClinical(){
+    const active=current.queue.items.find(x=>identityKey(x.identity)===current.selected);
+    if(mayInterrupt(a,active)){setSelected(key);setReadable(false);setReason('explicit');setView('expanded');}
+    else if(current.view==='expanded'){if(key!==current.selected)setPendingCount(v=>v+1);}
+-   else if(a.priority==='important'||(!current.settings.quiet&&current.followed[key]!==false)){setSelected(key);const last=sourcePreviews.current.get(a.identity.source);
++   else if(a.priority==='important'||(!current.settings.quiet&&current.followed[key]!==false&&!previewMuted(a,presentation.current.mutedSources))){setSelected(key);const last=sourcePreviews.current.get(a.identity.source);
+     if(current.settings.autoPreview&&previewAllowed(last,Date.now())){sourcePreviews.current.set(a.identity.source,Date.now());setReadable(false);setReason('preview');setView('expanded');}
+     else setView('compact');}
+    else setPendingCount(v=>v+1);
+@@ -84,7 +89,7 @@ export function useClinical(){
+   void connect(receive,s=>{if(!dead){setConnection(s);if(s==='online')void send({type:'clinical:sync'});}}).then(clean=>{
+    if(dead)clean();else{off=clean;void send({type:'clinical:sync'});if(sourceTicket)void send({type:'clinical:source-read',ticket:sourceTicket});}
+   });
+-  return()=>{alive.current=false;dead=true;off?.();clearTimeout(routeTimer.current);request.current=null;};
++  return()=>{alive.current=false;dead=true;off?.();clearTimeout(routeTimer.current);clearTimeout(undoTimer.current);request.current=null;};
+  },[receive,sourceTicket]);
+  useEffect(()=>{
+   if(timer.status!=='running'||timer.deadline===null)return;
+@@ -105,6 +110,10 @@ export function useClinical(){
+   return()=>{clearTimeout(timeout);preview.current.left=Math.max(tokens.behavior.resumeDelay,preview.current.left-(performance.now()-preview.current.start));};
+  },[reason,view,readable,hovered,focusWithin,selected]);
+  const selectedActivity=queue.items.find(a=>identityKey(a.identity)===selected);
++ const displayItems=queue.items.filter(a=>!dismissed.includes(versionKey(a)));
++ useEffect(()=>{
++  if(undo&&!undoActivity(undo,queue.items,settings,Date.now())){clearTimeout(undoTimer.current);setUndo(null);}
++ },[undo,queue.items,settings.privacy,settings.role,settings.locked,settings.fullscreen]);
+  const announcedDeadline=useRef<number|null>(null);
+  useEffect(()=>{if(timer.status!=='running'||timer.deadline===null||timer.deadline>now||announcedDeadline.current===timer.deadline)return;announcedDeadline.current=timer.deadline;if(selectedActivity?.priority!=='important'){setSelected('timer');setView('expanded');setReason('explicit');}else setPendingCount(v=>v+1);},[timer.status,timer.deadline,now,selectedActivity?.priority]);
+  useEffect(()=>{
+@@ -115,7 +124,23 @@ export function useClinical(){
+  },[selectedActivity?.syncedAt]);
+  const choose=(id:string)=>{request.current=null;clearTimeout(routeTimer.current);setSource(null);setRoute('idle');setSelected(id);setView('expanded');setReason('explicit');setPendingCount(0);};
+  const expand=(preview=false)=>{if(!selected)setSelected(timer.status!=='idle'?'timer':queue.items[0]?identityKey(queue.items[0].identity):'timer');setView('expanded');setReason(preview?'preview':'explicit');};
+- const collapse=()=>{request.current=null;clearTimeout(routeTimer.current);setSource(null);setRoute('idle');setView(queue.items.length||timer.status!=='idle'?'compact':'idle');setReason('explicit');};
++ const collapse=()=>{request.current=null;clearTimeout(routeTimer.current);setSource(null);setRoute('idle');setView(displayItems.length||timer.status!=='idle'?'compact':'idle');setReason('explicit');};
++ const dismissPreview=()=>{
++  const a=selectedActivity;if(!a||a.priority==='important'||reason!=='preview'){collapse();return;}
++  const key=versionKey(a),next=[...dismissed.filter(k=>k!==key),key].slice(-tokens.behavior.maxStoredActivities);
++  setDismissed(next);presentation.current.dismissed=next;
++  request.current=null;clearTimeout(routeTimer.current);setSource(null);setRoute('idle');setHovered(false);setFocusWithin(false);setReason('explicit');setView('idle');
++  const record={key,expires:Date.now()+4000};setUndo(record);clearTimeout(undoTimer.current);
++  undoTimer.current=window.setTimeout(()=>setUndo(current=>current===record?null:current),4000);
++ };
++ const undoPreview=()=>{
++  const a=undoActivity(undo,queue.items,settings,Date.now());clearTimeout(undoTimer.current);setUndo(null);
++  if(!a)return;setDismissed(keys=>keys.filter(k=>k!==versionKey(a)));choose(identityKey(a.identity));
++ };
++ const muteSource=(source:string)=>{
++  if(!queue.items.some(a=>a.identity.source===source))return;
++  setMutedSources(old=>{const next=old.includes(source)?old.filter(s=>s!==source):[...old,source].slice(-tokens.behavior.maxStoredActivities);presentation.current.mutedSources=next;return next;});
++ };
+  const openSource=async()=>{
+   const a=selectedActivity;if(!a||!canView(a,settings)){setRoute('unauthorized');return;}
+   if(connection!=='online'||settings.connectivity!=='fresh'){setRoute('failed');return;}
+@@ -128,7 +153,8 @@ export function useClinical(){
+  const personal=(command:'start'|'pause'|'resume'|'end',duration?:number)=>void send({type:'clinical:personal',command,duration});
+  const configure=(patch:Partial<Settings>)=>{setSettings(s=>safeSettings(patch,s));void send({type:Object.keys(patch).every(k=>['dock','compactText','backgroundDark','hideIdle','autoPreview','reduced','quiet'].includes(k))?'clinical:preferences':'clinical:configure',settings:patch});};
+  const stale=connection!=='online'||settings.connectivity!=='fresh'||Boolean(selectedActivity?.syncedAt&&Date.now()-selectedActivity.syncedAt>1800000);
+- return {queue,settings,connection,timer,remaining:timerRemaining(timer,now),selected,selectedActivity,view,reason,route,source,sourceError,pendingCount,opened,followed,log,stale,sourceTicket,
++ return {queue,settings,connection,timer,remaining:timerRemaining(timer,now),selected,selectedActivity,view,reason,route,source,sourceError,pendingCount,opened,followed,log,stale,sourceTicket,displayItems,mutedSources,undo,focusWithin,
++  dismissPreview,undoPreview,muteSource,
+   choose,expand,collapse,openSource,personal,configure,setHovered,setFocusWithin,setSource,hovered,readable,setReadable,
+   promote:()=>setReason('explicit'),collapseDisplay:()=>{setView(queue.items.length||timer.status!=='idle'?'compact':'idle');setReason('explicit');},
+   follow:(a:Activity)=>setFollowed(f=>({...f,[identityKey(a.identity)]:f[identityKey(a.identity)]===false})),
+diff --git a/src/clinical/geometry.ts b/src/clinical/geometry.ts
+index 8aae069..b12891d 100644
+--- a/src/clinical/geometry.ts
++++ b/src/clinical/geometry.ts
+@@ -3,7 +3,7 @@ export type Surface='idle'|'compact'|'alert'|'rich'|'stack';
+ export type Dock='notch'|'floating';
+ export type Point=[number,number];
+ /** Width is the BODY width from UI/UX §2.2; notch ears extend 10 DIP per side. */
+-export interface Shape {width:number;height:number;radius:number;ear:number;top?:number;satellite?:number}
++export interface Shape {width:number;height:number;radius:number;ear:number;top?:number;satellite?:number;neck?:boolean;shift?:number}
+ export const roundGrid=(x:number)=>Math.ceil(x/4)*4;
+ export function layoutWidth(view:'idle'|'compact'|'expanded'|Surface,available:number,scale=1):number {
+  const g=T.geometry,kind=view==='expanded'?'rich':view;
+@@ -52,9 +52,25 @@ export function contour(g:Shape):{path:string;points:Point[]} {
+  commands.push('Z');return {path:commands.join(' '),points};
+ }
+ export function satelliteGeometry(g:Shape){const p=Math.max(0,Math.min(1,g.satellite??0)),size=T.geometry.minimal*p;return {size,x:g.width+(g.ear?g.ear:0)+8*p-size*(1-p),y:0};}
++/** Analytic viscous bridge: the same finite vector boundary goes to SVG and HRGN.
++ * No full-surface blur/filter, and no bridge at either resting endpoint. */
++export function satelliteNeck(g:Shape):{path:string;points:Point[]} {
++ const p=Math.max(0,Math.min(1,g.satellite??0)),s=satelliteGeometry(g);
++ if(!g.neck||p<=.02||p>=.98)return {path:'',points:[]};
++ const left=g.width-14,right=s.x+s.size*.5,center=s.size*.5;
++ const half=Math.min(s.size*.4,8*Math.sin(Math.PI*p)),waist=half*.22,middle=(left+right)/2;
++ const points:Point[]=[],commands:string[]=[];
++ const start:Point=[left,Math.max(0,center-half)];points.push(start);commands.push(`M${start}`);
++ const curve=(a:Point,b:Point,end:Point)=>{const old=points[points.length-1];commands.push(`C${a} ${b} ${end}`);for(let i=1;i<=12;i++){const t=i/12,u=1-t;points.push([u*u*u*old[0]+3*u*u*t*a[0]+3*u*t*t*b[0]+t*t*t*end[0],u*u*u*old[1]+3*u*u*t*a[1]+3*u*t*t*b[1]+t*t*t*end[1]]);}};
++ curve([middle,center-waist],[middle,center-waist],[right,center-half]);
++ points.push([right,center+half]);commands.push(`L${right},${center+half}`);
++ curve([middle,center+waist],[middle,center+waist],[left,center+half]);commands.push('Z');
++ return {path:commands.join(' '),points};
++}
+ export function shapePolygons(g:Shape):Point[][] {
+  const polys=[contour(g).points.map(([x,y])=>[x,y+(g.top??0)] as Point)];
+  const s=satelliteGeometry(g);if(s.size>.1){const r=s.size/2;polys.push(Array.from({length:64},(_,i)=>{const a=2*Math.PI*i/64;return [s.x+r+r*Math.cos(a),(g.top??0)+s.y+r+r*Math.sin(a)] as Point;}));}
++ const bridge=satelliteNeck(g);if(bridge.points.length)polys.push(bridge.points.map(([x,y])=>[x,y+(g.top??0)] as Point));
+  return polys;
+ }
+-export function motionShape(g:Shape):Shape{return {width:g.width,height:g.height,radius:g.radius,ear:g.ear,top:g.top??0,satellite:g.satellite??0};}
++export function motionShape(g:Shape):Shape{return {width:g.width,height:g.height,radius:g.radius,ear:g.ear,top:g.top??0,satellite:g.satellite??0,neck:g.neck??false,shift:g.shift??0};}
+diff --git a/src/clinical/uiux.css b/src/clinical/uiux.css
+index d33e702..ebf97a2 100644
+--- a/src/clinical/uiux.css
++++ b/src/clinical/uiux.css
+@@ -48,7 +48,13 @@
+ @media(prefers-reduced-motion:reduce){.ux-host::before{transition:none}.ux-host .ci-content{filter:none!important}}
+ 
+ /* Explicit button states; no additional event-capture helper. */
+-.ux-host .ci-primary:active:not(:disabled),.ux-host .ci-secondary:active:not(:disabled),.ux-host .ci-icon-button:active:not(:disabled),.ux-host .ux-round:active:not(:disabled){transform:scale(.94);transition:transform 80ms}
++.ux-host .ci-primary,.ux-host .ci-secondary,.ux-host .ci-icon-button,.ux-host .ux-round{position:relative;isolation:isolate}
++.ux-host .ci-primary::before,.ux-host .ci-secondary::before,.ux-host .ci-icon-button::before,.ux-host .ux-round::before{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;transform:scale(var(--ux-press,1));background:var(--c-fill);pointer-events:none}
++.ux-host .ci-primary::before{background:var(--ux-accent)}
++.ux-host .ci-primary,.ux-host .ci-secondary,.ux-host .ci-icon-button,.ux-host .ux-round{background:transparent!important}
++.ux-host .ci-secondary:hover::before,.ux-host .ci-icon-button:hover::before,.ux-host .ux-round:hover::before{background:var(--c-fill-hover)}
++.ux-host .ux-close::before{inset:4px}
++.ux-host .ux-utility::before,.ux-host .ux-stack-header>.ci-icon-button:first-child::before{background:transparent}
+ .ux-host .ux-compact-button{grid-template-columns:40px 124px minmax(0,1fr)}
+ .ux-host .has-label{grid-template-columns:24px minmax(0,1fr) 40px}
+ .ux-host .ux-quiet-actions{flex-wrap:wrap}.ux-quiet-actions button{min-width:90px}
+@@ -65,3 +71,14 @@
+ .ux-host .ux-rich .ux-utility{width:44px;height:44px;min-width:44px}
+ 
+ .ux-host .ux-hero{font-family:'Segoe UI Variable Display','Segoe UI',var(--font);font-optical-sizing:auto}
++.ux-neck{fill:var(--c-island);pointer-events:fill}
++.ux-marquee-text{display:inline-block;min-width:100%;white-space:nowrap;transform:none}
++.ux-host .ux-compact-label{overflow:hidden;text-overflow:clip}
++.ux-host .ux-undo{color:var(--c-text);font-size:var(--ci-button-size);font-weight:600}
++.ux-host[data-enlarged=true] .ux-title-large,.ux-host[data-enlarged=true] .ux-main-copy>.ux-body{white-space:normal;overflow-wrap:anywhere}
++.ux-host[data-enlarged=true] .ux-rich-main{align-items:flex-start;overflow:auto}
++.ux-host .ux-stack .ci-preview-body{display:block;-webkit-line-clamp:unset;overflow:visible}
++.ux-host .ci-scroll{scrollbar-color:var(--c-separator) transparent}
++.ux-host ::selection{background:var(--ux-accent);color:#000}
++@media(forced-colors:active){.ux-neck{fill:Canvas}.ux-host .ux-minimal{background:Canvas;color:CanvasText;border:2px solid CanvasText}.ux-host .ux-body,.ux-host .ci-caption,.ux-host .ci-secondary,.ux-host .ci-icon-button,.ux-host .ux-round{color:CanvasText}.ux-host .ci-primary::before{background:Highlight}.ux-host .ci-secondary::before,.ux-host .ci-icon-button::before,.ux-host .ux-round::before{background:ButtonFace}.ux-host .ci-primary{color:HighlightText}}
++@media(pointer:coarse){.ux-host .ci-icon-button,.ux-host .ux-more-alert{width:44px;height:44px;min-width:44px}.ux-host .ux-alert-right{width:92px}.ux-host .ci-primary,.ux-host .ci-secondary{min-height:44px}.ux-alert{padding:12px 16px}.ux-host .ux-minimal{touch-action:manipulation}}
+diff --git a/src/clinical/useClinicalLayout.ts b/src/clinical/useClinicalLayout.ts
+index 1326fc8..5d5151d 100644
+--- a/src/clinical/useClinicalLayout.ts
++++ b/src/clinical/useClinicalLayout.ts
+@@ -2,15 +2,15 @@ import {useLayoutEffect,useRef,useState} from 'react';
+ import {invoke} from '@tauri-apps/api/core';
+ import gsap from 'gsap';
+ import {nativeIsland} from '../lib/bridge';
+-import {contour,layoutHeight,layoutWidth,radiusAt,motionShape,shapePolygons,satelliteGeometry} from './geometry';
++import {contour,layoutHeight,layoutWidth,radiusAt,motionShape,shapePolygons,satelliteGeometry,satelliteNeck} from './geometry';
+ import type {Shape,Surface,Dock} from './geometry';
+ import {springAt,retarget,stepSpring,finishSpring} from './spring';
+ import T from './tokens.json';
+ 
+ gsap.config({autoSleep:12});
+ let epochCounter=Date.now();
+-interface Options {surface?:Surface;dock?:Dock;peek?:boolean;pressed?:boolean;satellite?:boolean;onSettled?:()=>void}
+-interface Metrics {available:number;height:number;scale?:number;topReserved?:boolean}
++interface Options {surface?:Surface;dock?:Dock;peek?:boolean;pressed?:boolean;satellite?:boolean;shift?:number;dragging?:boolean;dragVelocity?:number;dismissing?:boolean;onSettled?:()=>void}
++interface Metrics {available:number;height:number;scale?:number;canvasWidth?:number;topReserved?:boolean}
+ /** One owner of the SVG viewport, shape and finite native handoff.
+  * Source data is never snapshotted: revoking authorization removes it immediately. */
+ export function useClinicalLayout(requestedView:'idle'|'compact'|'expanded',contentKey:string,textScale:number,reduced:boolean,hidden:boolean,options:Options={}){
+@@ -19,7 +19,8 @@ export function useClinicalLayout(requestedView:'idle'|'compact'|'expanded',cont
+  const [presented,setPresented]=useState<Surface>(requested),[metrics,setMetrics]=useState<Metrics>({available:1200,height:900});
+  const [ready,setReady]=useState(!nativeIsland),[error,setError]=useState('');
+  const painted=useRef<Shape|null>(null),committedKey=useRef(''),callback=useRef(options.onSettled);callback.current=options.onSettled;
+- const physics=useRef({w:springAt(124),h:springAt(32),top:springAt(0),ear:springAt(10),sat:springAt(0)});
++ const physics=useRef({w:springAt(124),h:springAt(32),top:springAt(0),ear:springAt(10),sat:springAt(0),shift:springAt(0)});
++ const satelliteStarted=useRef({target:false,at:0});
+  const dock:Dock=metrics.topReserved?'floating':options.dock??'notch';
+  const mainWidth=layoutWidth(requested,metrics.available,textScale);
+  const mainHeight=layoutHeight(requested,0,metrics.height,textScale);
+@@ -36,13 +37,16 @@ export function useClinicalLayout(requestedView:'idle'|'compact'|'expanded',cont
+  useLayoutEffect(()=>{
+   const e=host.current,body=inner.current,s=svg.current;if(!e||!body||!s||!ready)return;
+   const initial=painted.current===null,newContent=committedKey.current!==contentKey;
+-  const target:Shape={width:mainWidth*factor,height:mainHeight*factor,radius:radiusAt(mainHeight*factor),ear:dock==='notch'?T.geometry.earRadius:0,top:dock==='floating'?T.geometry.floatTop:0,satellite:options.satellite?1:0};
++  const shiftLimit=Math.max(0,Math.min(128,((metrics.canvasWidth??metrics.available)/(metrics.scale??1)-mainWidth*factor)/2-16));
++  const target:Shape={width:mainWidth*factor,height:mainHeight*factor,radius:radiusAt(mainHeight*factor),ear:dock==='notch'?T.geometry.earRadius:0,top:dock==='floating'?T.geometry.floatTop:0,satellite:options.satellite?1:0,shift:reduced?0:Math.max(-shiftLimit,Math.min(shiftLimit,options.shift??0))};
++  if(satelliteStarted.current.target!==Boolean(options.satellite)){satelliteStarted.current={target:Boolean(options.satellite),at:performance.now()};}
+   const epoch=++epochCounter;let dead=false,raf=0,swapTimer=0,delayTimer=0,finalFrame=0,watchdog=0,finalTimer=0;
+   let order=0,busy=false,finishing=false,finalizing=false,queued:Shape|null=null,scheduled=false,revealed=false;
+   let inFlight:Promise<void>=Promise.resolve(),fade:gsap.core.Timeline|undefined;
+   const p=physics.current;
+-  if(initial){p.w=springAt(target.width);p.h=springAt(target.height);p.top=springAt(target.top!);p.ear=springAt(target.ear);p.sat=springAt(target.satellite!);}
++  if(initial){p.w=springAt(target.width);p.h=springAt(target.height);p.top=springAt(target.top!);p.ear=springAt(target.ear);p.sat=springAt(target.satellite!);p.shift=springAt(target.shift!);}
+   retarget(p.w,target.width);retarget(p.h,target.height);retarget(p.top,target.top!);retarget(p.ear,target.ear);retarget(p.sat,target.satellite!);
++  retarget(p.shift,target.shift!);if(options.dragging){p.shift.x=target.shift!;p.shift.v=(options.dragVelocity??0)*1000;}
+   const closing=target.height<(painted.current?.height??target.height)||target.width<(painted.current?.width??target.width);
+   const micro=!newContent&&(requested==='idle'||requested==='compact');
+   const params=micro?(options.pressed?T.motion.spring.press:T.motion.spring.peek):requested==='idle'||requested==='compact'?(closing?T.motion.spring.collapse:T.motion.spring.morph):T.motion.spring.expand;
+@@ -51,10 +55,13 @@ export function useClinicalLayout(requestedView:'idle'|'compact'|'expanded',cont
+   const draw=(g:Shape)=>{
+    if(!valid())return;
+    const shape=motionShape(g),curve=contour(shape);painted.current=shape;
+-   e.style.width=`${shape.width}px`;e.style.height=`${shape.height}px`;e.style.transform=`translateY(${shape.top}px)`;
++   e.style.width=`${shape.width}px`;e.style.height=`${shape.height}px`;e.style.transform=`translate(${shape.shift}px,${shape.top}px)`;
++   e.style.opacity=options.dismissing?'0':'1';e.style.transition=options.dismissing?`opacity ${T.motion.content.base}ms linear`:'none';
+    s.style.left=`${-shape.ear}px`;s.setAttribute('width',String(shape.width+2*shape.ear));s.setAttribute('height',String(shape.height));
+    s.setAttribute('viewBox',`${-shape.ear} 0 ${shape.width+2*shape.ear} ${shape.height}`);
+    s.querySelectorAll('path[data-shell]').forEach(node=>node.setAttribute('d',node.getAttribute('data-shell')==='rim'&&shape.ear>0?curve.path.replace(/^M[^ ]+ L([^ ]+)/,'M$1').replace(/ Z$/,''):curve.path));
++   s.querySelector('[data-neck]')?.setAttribute('d',satelliteNeck(shape).path);
++   e.dataset.neck=String(Boolean(satelliteNeck(shape).path));
+    body.parentElement!.style.clipPath=`path("${curve.path}")`;
+    const secondary=e.querySelector<HTMLElement>('.ux-minimal'),sg=satelliteGeometry(shape);
+    if(secondary){secondary.style.left=`${sg.x}px`;secondary.style.width=`${sg.size}px`;secondary.style.height=`${sg.size}px`;secondary.style.opacity=String(Math.min(1,shape.satellite??0));secondary.style.pointerEvents=sg.size>12?'auto':'none';}
+@@ -64,7 +71,7 @@ export function useClinicalLayout(requestedView:'idle'|'compact'|'expanded',cont
+    e.dataset.velocityX=p.w.v.toFixed(4);e.dataset.velocityY=p.h.v.toFixed(4);
+   };
+   const native=(g:Shape,phase:'frame'|'commit'|'cancel',old?:Shape)=>!nativeIsland?Promise.resolve(true):invoke<boolean>('clinical_layout',{
+-   epoch,sequence:++order,phase,expanded:requestedView==='expanded',top:g.top??0,shadowAlpha:reduced?0:Math.max(0,Math.min(1,(g.height-37.8)/50.2)),bodyWidth:g.width,height:g.height,radius:g.radius,ear:g.ear,visible:!hidden,
++   epoch,sequence:++order,phase,expanded:requestedView==='expanded',top:g.top??0,shift:g.shift??0,shadowAlpha:reduced||g.shift||options.dismissing?0:Math.max(0,Math.min(1,(g.height-37.8)/50.2)),bodyWidth:g.width,height:g.height,radius:g.radius,ear:g.ear,visible:!hidden,
+    polygons:shapePolygons(g),previous:old?{...motionShape(old),polygons:shapePolygons(old)}:null});
+   const enqueue=(g:Shape)=>{
+    if(!valid()||finishing)return;
+@@ -86,7 +93,7 @@ export function useClinicalLayout(requestedView:'idle'|'compact'|'expanded',cont
+    finalFrame=requestAnimationFrame(()=>{
+     if(!valid())return;
+     fade=gsap.timeline();
+-    fade.fromTo(body,{opacity:0,filter:reduced?'none':`blur(${T.motion.content.enterBlur}px)`,y:reduced?0:T.motion.content.translateY,scale:reduced?1:T.motion.content.scale},
++    fade.fromTo(body,{opacity:0,filter:reduced?'none':`blur(${T.motion.content.enterBlur}px)`,y:reduced?0:T.motion.content.translateY,scale:1},
+      {opacity:1,filter:'blur(0px)',y:0,scale:1,duration:(reduced?T.motion.reduced.duration:T.motion.content.enter)/1000,ease:reduced?'none':'power2.out',clearProps:'filter,transform'});
+     if(!reduced){const children=body.querySelectorAll('[data-stagger]');fade.fromTo(children,{opacity:0,y:4},{opacity:1,y:0,stagger:T.motion.content.stagger/1000,duration:.2,ease:'power2.out',clearProps:'opacity,transform'},0);}
+    });
+@@ -95,7 +102,7 @@ export function useClinicalLayout(requestedView:'idle'|'compact'|'expanded',cont
+    if(!valid()||finishing)return;finishing=true;queued=null;cancelAnimationFrame(raf);clearTimeout(watchdog);clearTimeout(swapTimer);
+    await inFlight;if(!valid())return;
+    try{if(!await native(target,'frame',painted.current??target)||!valid())return;}catch(err){if(valid())setError(String(err));return;}
+-   draw(target);Object.values(p).forEach(finishSpring);
++   draw(target);Object.entries(p).forEach(([name,spring])=>{if(name!=='shift'||!options.dragging)finishSpring(spring);});
+    if(initial||hidden)reveal(true);else if(newContent&&!revealed)reveal();
+    const finalize=async()=>{
+     if(!valid()||finalizing)return;finalizing=true;clearTimeout(finalTimer);
+@@ -114,7 +121,7 @@ export function useClinicalLayout(requestedView:'idle'|'compact'|'expanded',cont
+    if(reduced){reveal();await settle();return;}
+    e.dataset.motionPhase=closing?'collapsing':'expanding';e.style.willChange='width,height';
+    if(newContent){
+-    body.inert=true;fade=gsap.timeline().to(body,{opacity:0,filter:`blur(${closing?T.motion.content.exitCollapseBlur:T.motion.content.exitBlur}px)`,scale:closing?1:T.motion.content.scale,duration:T.motion.content.exit/1000,ease:'power2.in'});
++    body.inert=true;fade=gsap.timeline().to(body,{opacity:0,filter:`blur(${closing?T.motion.content.exitCollapseBlur:T.motion.content.exitBlur}px)`,scale:1,duration:T.motion.content.exit/1000,ease:'power2.in'});
+     if(!closing)swapTimer=window.setTimeout(()=>reveal(),T.motion.content.delay);
+    }else{body.inert=false;body.style.opacity='1';body.style.filter='none';body.style.transform='none';}
+    let previousTime=performance.now(),started=previousTime;
+@@ -122,8 +129,9 @@ export function useClinicalLayout(requestedView:'idle'|'compact'|'expanded',cont
+     if(!valid())return;
+     const dt=Math.max(0,(now-previousTime)/1000);previousTime=now;
+     if(closing&&now-started<T.motion.collapse.delay){raf=requestAnimationFrame(tick);return;}
+-    const rest=[stepSpring(p.w,params,dt),stepSpring(p.h,heightParams,dt),stepSpring(p.top,T.motion.spring.morph,dt),stepSpring(p.ear,T.motion.spring.morph,dt),stepSpring(p.sat,T.motion.spring.morph,dt)].every(Boolean);
+-    enqueue({width:p.w.x,height:p.h.x,radius:radiusAt(p.h.x),ear:Math.max(0,p.ear.x),top:Math.max(0,p.top.x),satellite:Math.max(0,Math.min(1,p.sat.x))});
++    const shiftRest=options.dragging?true:stepSpring(p.shift,T.motion.spring.morph,dt);
++    const rest=[stepSpring(p.w,params,dt),stepSpring(p.h,heightParams,dt),stepSpring(p.top,T.motion.spring.morph,dt),stepSpring(p.ear,T.motion.spring.morph,dt),stepSpring(p.sat,T.motion.spring.morph,dt),shiftRest].every(Boolean);
++    enqueue({width:p.w.x,height:p.h.x,radius:radiusAt(p.h.x),ear:Math.max(0,p.ear.x),top:Math.max(0,p.top.x),satellite:Math.max(0,Math.min(1,p.sat.x)),neck:!reduced&&now-satelliteStarted.current.at<400,shift:Math.max(-shiftLimit,Math.min(shiftLimit,p.shift.x))});
+     if(rest&&(!newContent||now-started>=T.motion.content.delay)){void settle();return;}raf=requestAnimationFrame(tick);
+    };
+    raf=requestAnimationFrame(tick);
+@@ -133,6 +141,6 @@ export function useClinicalLayout(requestedView:'idle'|'compact'|'expanded',cont
+   return()=>{dead=true;queued=null;cancelAnimationFrame(raf);cancelAnimationFrame(finalFrame);clearTimeout(swapTimer);clearTimeout(delayTimer);clearTimeout(watchdog);clearTimeout(finalTimer);fade?.kill();
+    if(nativeIsland)void native(painted.current??target,'cancel').catch(()=>{});
+   };
+- },[requested,mainWidth,mainHeight,contentKey,factor,dock,reduced,hidden,ready,metrics.scale,options.satellite]);
++ },[requested,mainWidth,mainHeight,contentKey,factor,dock,reduced,hidden,ready,metrics.scale,options.satellite,options.shift,options.dragging,options.dismissing]);
+  return {host,inner,svg,width:contentWidth,height:contentHeight,view:presented==='idle'||presented==='compact'?presented:'expanded' as const,surface:presented,error,nativeFallback:false};
+ }
+diff --git a/src/clinical/useSurfaceInput.ts b/src/clinical/useSurfaceInput.ts
+index 01b64d6..c3de82d 100644
+--- a/src/clinical/useSurfaceInput.ts
++++ b/src/clinical/useSurfaceInput.ts
+@@ -4,24 +4,27 @@ import {invoke} from '@tauri-apps/api/core';
+ import {listen} from '@tauri-apps/api/event';
+ import {nativeIsland} from '../lib/bridge';
+ import T from './tokens.json';
+-interface InputActions {expanded:boolean;hidden:boolean;reduced:boolean;hover:(v:boolean)=>void;expand:()=>void;collapse:()=>void;stack:()=>void;keyboardExpand?:()=>void}
++import {swipeDecision} from './presentation';
++interface InputActions {expanded:boolean;surface:string;hidden:boolean;reduced:boolean;hover:(v:boolean)=>void;expand:()=>void;collapse:()=>void;stack:()=>void;dismiss:()=>void;cycle:(direction:number)=>void;keyboardExpand?:()=>void}
+ export function useSurfaceInput(host:RefObject<HTMLDivElement|null>,actions:InputActions){
+  const latest=useRef(actions);latest.current=actions;
+  const [peek,setPeek]=useState(false),[pressed,setPressed]=useState(false);
+- const enterTimer=useRef(0),leaveTimer=useRef(0),longTimer=useRef(0),alive=useRef(true),revision=useRef(0),longFired=useRef(false),origin=useRef<{x:number;y:number;pointer:number}|null>(null);
++ const [gesture,setGesture]=useState({shift:0,dragging:false,velocity:0,dismissing:false});
++ const enterTimer=useRef(0),leaveTimer=useRef(0),longTimer=useRef(0),dismissTimer=useRef(0),alive=useRef(true),revision=useRef(0),longFired=useRef(false),origin=useRef<{x:number;y:number;pointer:number;lastX:number;lastTime:number;velocity:number;surface:string;moved:boolean}|null>(null);
+  const cancel=()=>{clearTimeout(enterTimer.current);clearTimeout(leaveTimer.current);clearTimeout(longTimer.current);};
+  useEffect(()=>{
+   alive.current=true;let dead=false,offOutside:(()=>void)|undefined,offShortcut:(()=>void)|undefined;
+   const up=(event:PointerEvent)=>{setPressed(false);clearTimeout(longTimer.current);if(!nativeIsland&&latest.current.expanded&&!host.current?.contains(event.target as Node))latest.current.collapse();};
+-  const abort=()=>{revision.current++;cancel();origin.current=null;setPressed(false);};
++  const abort=()=>{revision.current++;cancel();clearTimeout(dismissTimer.current);origin.current=null;setPressed(false);setGesture({shift:0,dragging:false,velocity:0,dismissing:false});};
+   document.addEventListener('pointerup',up);document.addEventListener('pointercancel',abort);window.addEventListener('blur',abort);
+   if(nativeIsland){
+    void listen('island://outside',()=>{if(!dead&&latest.current.expanded)latest.current.collapse();}).then(off=>{if(dead)off();else offOutside=off;});
+    void listen('island://shortcut',()=>{if(!dead)(latest.current.keyboardExpand??latest.current.expand)();}).then(off=>{if(dead)off();else offShortcut=off;});
+   }
+-  return()=>{dead=true;alive.current=false;revision.current++;cancel();offOutside?.();offShortcut?.();document.removeEventListener('pointerup',up);document.removeEventListener('pointercancel',abort);window.removeEventListener('blur',abort);};
++  return()=>{dead=true;alive.current=false;revision.current++;cancel();clearTimeout(dismissTimer.current);offOutside?.();offShortcut?.();document.removeEventListener('pointerup',up);document.removeEventListener('pointercancel',abort);window.removeEventListener('blur',abort);};
+  },[]);
+- useEffect(()=>{if(actions.expanded||actions.hidden||actions.reduced){revision.current++;cancel();setPeek(false);setPressed(false);}},[actions.expanded,actions.hidden,actions.reduced]);
++ useEffect(()=>{if(actions.expanded||actions.hidden||actions.reduced){revision.current++;cancel();setPeek(false);setPressed(false);}if(actions.hidden){clearTimeout(dismissTimer.current);origin.current=null;setGesture({shift:0,dragging:false,velocity:0,dismissing:false});}},[actions.expanded,actions.hidden,actions.reduced]);
++ useEffect(()=>{clearTimeout(dismissTimer.current);origin.current=null;setGesture({shift:0,dragging:false,velocity:0,dismissing:false});},[actions.surface]);
+  const enter=()=>{revision.current++;clearTimeout(leaveTimer.current);clearTimeout(enterTimer.current);latest.current.hover(true);if(!latest.current.expanded&&!latest.current.reduced)enterTimer.current=window.setTimeout(()=>{if(alive.current&&!latest.current.expanded&&!latest.current.hidden)setPeek(true);},T.motion.hover.delay);};
+  const leave=()=>{const rev=++revision.current;clearTimeout(enterTimer.current);clearTimeout(longTimer.current);setPressed(false);clearTimeout(leaveTimer.current);
+   leaveTimer.current=window.setTimeout(()=>{void(async()=>{
+@@ -30,8 +33,30 @@ export function useSurfaceInput(host:RefObject<HTMLDivElement|null>,actions:Inpu
+    if(!alive.current||revision.current!==rev||inside)return;setPeek(false);latest.current.hover(false);
+   })();},T.motion.hover.leaveDelay);
+  };
+- return {peek,pressed,enter,leave,
+-  down:(e:React.PointerEvent)=>{if(e.button!==0)return;origin.current={x:e.clientX,y:e.clientY,pointer:e.pointerId};longFired.current=false;if(!latest.current.expanded){setPressed(true);longTimer.current=window.setTimeout(()=>{if(!alive.current||!origin.current)return;longFired.current=true;setPressed(false);latest.current.expand();},350);}},
+-  up:(e:React.PointerEvent)=>{setPressed(false);clearTimeout(longTimer.current);const start=origin.current;origin.current=null;if(!start||start.pointer!==e.pointerId)return;if(start.y-e.clientY>8&&latest.current.expanded){e.preventDefault();longFired.current=true;latest.current.collapse();}else if(Math.abs(start.x-e.clientX)>40){longFired.current=true;latest.current.stack();}},
++ return {peek,pressed,enter,leave,gesture,
++  down:(e:React.PointerEvent)=>{if(e.button!==0||gesture.dismissing)return;
++   const button=(e.target as Element).closest('button');if(button&&!button.matches('.ci-compact-button,.ux-alert-main,.ux-minimal'))return;
++   origin.current={x:e.clientX,y:e.clientY,pointer:e.pointerId,lastX:e.clientX,lastTime:performance.now(),velocity:0,surface:latest.current.surface,moved:false};longFired.current=false;
++   if(!latest.current.expanded){setPressed(true);longTimer.current=window.setTimeout(()=>{if(!alive.current||!origin.current)return;longFired.current=true;setPressed(false);latest.current.expand();},350);}},
++  move:(e:React.PointerEvent)=>{const start=origin.current;if(!start||start.pointer!==e.pointerId)return;
++   const dx=e.clientX-start.x,dy=e.clientY-start.y,now=performance.now();start.velocity=(e.clientX-start.lastX)/Math.max(1,now-start.lastTime);start.lastX=e.clientX;start.lastTime=now;
++   if(Math.hypot(dx,dy)>8){start.moved=true;clearTimeout(longTimer.current);setPressed(false);}
++   if(start.surface==='alert'&&start.moved&&Math.abs(dx)>Math.abs(dy)){
++    if(!e.currentTarget.hasPointerCapture(e.pointerId))e.currentTarget.setPointerCapture(e.pointerId);
++    setGesture({shift:dx,dragging:true,velocity:start.velocity,dismissing:false});
++   }},
++  up:(e:React.PointerEvent)=>{setPressed(false);clearTimeout(longTimer.current);const start=origin.current;origin.current=null;if(!start||start.pointer!==e.pointerId)return;
++   if(e.currentTarget.hasPointerCapture(e.pointerId))e.currentTarget.releasePointerCapture(e.pointerId);
++   const dx=e.clientX-start.x,dy=e.clientY-start.y,velocity=performance.now()-start.lastTime>100?0:start.velocity;
++   if(start.moved)longFired.current=true;
++   if(start.surface==='alert'&&Math.abs(dx)>Math.abs(dy)){
++    if(swipeDecision(dx,dy,velocity,host.current?.clientWidth??372)==='dismiss'){
++     e.preventDefault();if(latest.current.reduced){latest.current.dismiss();return;}
++     setGesture({shift:Math.sign(dx)*128,dragging:false,velocity,dismissing:true});clearTimeout(dismissTimer.current);
++     dismissTimer.current=window.setTimeout(()=>{if(alive.current&&latest.current.surface==='alert')latest.current.dismiss();setGesture({shift:0,dragging:false,velocity:0,dismissing:false});},T.motion.content.base);
++    }else setGesture({shift:0,dragging:false,velocity,dismissing:false});
++   }else if(-dy>8&&latest.current.expanded&&!((e.target as Element).closest('.ci-scroll'))){e.preventDefault();longFired.current=true;latest.current.collapse();}
++   else if(Math.abs(dx)>40){longFired.current=true;latest.current.cycle(dx<0?1:-1);}},
++  wheel:(e:React.WheelEvent)=>{if(Math.abs(e.deltaX)>=40&&Math.abs(e.deltaX)>Math.abs(e.deltaY)){e.preventDefault();latest.current.cycle(e.deltaX>0?1:-1);}},
+   consumeLong:()=>{const value=longFired.current;longFired.current=false;return value;}};
+ }
+diff --git a/tests/clinical-accessibility.spec.ts b/tests/clinical-accessibility.spec.ts
+index 3df378c..75af15c 100644
+--- a/tests/clinical-accessibility.spec.ts
++++ b/tests/clinical-accessibility.spec.ts
+@@ -5,10 +5,32 @@ for(const scale of [1,2,2.25])test(`actual computed font at ${scale} scale prese
+  await page.getByLabel('文本倍率').selectOption(String(scale));
+  await post(request,{type:'clinical:scenario',scenario:'S03',stage:0});await post(request,{type:'clinical:view',mode:'open',scenario:'S03'});
+  const island=page.getByTestId('clinical-island');await expect(island).toHaveAttribute('data-view','expanded');await expect(island).toHaveAttribute('data-motion-phase','settled');await page.waitForTimeout(200);
+- const heading=island.getByRole('heading',{level:2});expect(await heading.evaluate(e=>parseFloat(getComputedStyle(e).fontSize))).toBeCloseTo(15*scale,2);
++ const heading=island.getByRole('heading',{level:2});expect(await heading.evaluate(e=>parseFloat(getComputedStyle(e).fontSize))).toBeCloseTo(17*scale,2);
+  const r=(await island.boundingBox())!,button=island.getByRole('button',{name:'打开危急值流程'}),b=(await button.boundingBox())!;
+  expect(b.y).toBeGreaterThanOrEqual(r.y);expect(b.y+b.height).toBeLessThanOrEqual(r.y+r.height+1);
+- expect(await island.locator('.ci-scroll').evaluate(e=>e.clientHeight)).toBeGreaterThan(15);
++ await island.getByRole('button',{name:'详情',exact:true}).click();await expect(island).toHaveAttribute('data-surface','stack');await expect(island).toHaveAttribute('data-motion-phase','settled');await page.waitForTimeout(350);
++ expect(await island.getByRole('heading',{level:2}).evaluate(e=>parseFloat(getComputedStyle(e).fontSize))).toBeCloseTo(15*scale,2);
++ expect(await island.locator('.ci-preview-body').evaluate(e=>parseFloat(getComputedStyle(e).fontSize))).toBeCloseTo(13*scale,2);
++ const scroll=island.getByRole('region',{name:'来源详情滚动区域'});await scroll.focus();await page.keyboard.press('End');await expect.poll(()=>scroll.evaluate(e=>e.scrollTop)).toBeGreaterThan(0);
++ expect(await scroll.evaluate(e=>e.scrollHeight>e.clientHeight)).toBe(true);
+  await button.click();await expect(page.getByRole('dialog')).toBeVisible();await page.getByRole('button',{name:'返回灵动岛'}).click();
+- await page.screenshot({path:`evidence/clinical-20261004/verified-text-${scale}.png`,fullPage:true});
++ await page.screenshot({path:`evidence/uiux-continuation-20261008/accessibility-text-${scale}.png`,fullPage:true});
++});
++
++test('keyboard traverses details and returns focus to compact trigger',async({page,request})=>{
++ await post(request,{type:'clinical:reset'});await post(request,{type:'clinical:configure',settings:{autoPreview:false}});await page.goto('/clinical.html');await expect(page.getByText('模拟消息源已连接',{exact:true})).toBeVisible();await post(request,{type:'clinical:scenario',scenario:'S04',stage:0});
++ const island=page.getByTestId('clinical-island'),trigger=island.getByRole('button',{name:'展开协作详情'});
++ const settle=async(surface:string)=>{await expect(island).toHaveAttribute('data-surface',surface);await expect(island).toHaveAttribute('data-motion-phase','settled');await page.waitForTimeout(350);};
++ await settle('compact');await trigger.focus();await page.keyboard.press('Enter');await settle('rich');await expect(island.getByRole('button',{name:'收起协作详情'})).toBeFocused();
++ await page.keyboard.press('Tab');await expect(island.getByRole('button',{name:'活动与个人工具'})).toBeFocused();await page.keyboard.press('Tab');await expect(island.getByRole('button',{name:'详情',exact:true})).toBeFocused();
++ await page.keyboard.press('Enter');await settle('stack');await page.keyboard.press('Tab');await expect(island.getByRole('region',{name:'来源详情滚动区域'})).toBeFocused();
++ await page.keyboard.press('Escape');await settle('rich');await page.keyboard.press('Escape');await settle('compact');await expect(trigger).toBeFocused();
++});
++
++test('forced colors and reduced motion preserve focus and protected announcements',async({page,request})=>{
++ await post(request,{type:'clinical:reset'});await page.emulateMedia({reducedMotion:'reduce',forcedColors:'active'});await page.goto('/clinical.html');await expect(page.getByText('模拟消息源已连接',{exact:true})).toBeVisible();await post(request,{type:'clinical:scenario',scenario:'S03',stage:0});
++ const island=page.getByTestId('clinical-island');await expect(island).toHaveAttribute('data-surface','rich');await expect(island).toHaveAttribute('data-motion-phase','settled');await island.getByRole('button',{name:'详情',exact:true}).focus();
++ expect(await island.getByRole('button',{name:'详情',exact:true}).evaluate(e=>getComputedStyle(e).outlineStyle)).not.toBe('none');
++ await post(request,{type:'clinical:configure',settings:{role:'finance'}});await expect(island).toContainText('详情已保护');await expect(page.locator('.ci-sr')).toHaveText('新消息');
++ expect(await island.getByRole('button',{name:/打开危急/}).count()).toBe(0);expect(await island.locator('.ci-content').evaluate(e=>getComputedStyle(e).filter)).toBe('none');
+ });

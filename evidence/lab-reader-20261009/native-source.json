@@ -1,0 +1,17 @@
+{
+  "timestamp": "2026-10-09T14:37:43.6409364+08:00",
+  "pid": 14040,
+  "windows": [
+    "Samewave Island | captureAffinity=0",
+    "模拟来源边界 · 不连接真实临床系统 | captureAffinity=17"
+  ],
+  "ownedSessionDirs": [
+    "session-14040-1791527437632807400",
+    "session-14712-1791527478751779300"
+  ],
+  "normal9223Closed": true,
+  "accessibilityIdentityMatched": true,
+  "accessibilityFixtureRowCount": 8,
+  "actualToolCapture": "CAPTURED_SYNTHETIC_CONTENT_DESPITE_AFFINITY_17",
+  "captureConclusion": "API affinity applied; this capture tool still returned readable fixture content. No screenshot prevention claim."
+}

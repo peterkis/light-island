@@ -14,5 +14,6 @@ src-tauri/target/
 .clinical-transfer.b64
 .horizontal-patch-stage/
 evidence/backups/
+evidence/**/temp/
 playwright-report/
 test-results/

@@ -1,5 +1,5 @@
 import { invoke } from '@tauri-apps/api/core';
-import { listen } from '@tauri-apps/api/event';
+import { getCurrentWebviewWindow } from '@tauri-apps/api/webviewWindow';
 export const native = Boolean(window.__TAURI_INTERNALS__);
 export const nativeIsland = native && new URLSearchParams(location.search).get('view') === 'island';
 export type Wire = { type: string; [key: string]: unknown };
@@ -11,8 +11,10 @@ export async function send(event: Wire): Promise<boolean> { return sender ? send
 export async function connect(onMessage: (event: Wire) => void, onConnection: (state: Connection) => void): Promise<() => void> {
   let disposed = false; const generation = ++connectionGeneration;
   if (native) {
-    const offWire = await listen<Wire>('island://wire', e => { if (!disposed) onMessage(e.payload); });
-    const offState = await listen<Connection>('island://connection', e => { if (!disposed) onConnection(e.payload); });
+    // Global listen uses target Any and also receives emit_to replies for other windows.
+    const appWindow = getCurrentWebviewWindow();
+    const offWire = await appWindow.listen<Wire>('island://wire', e => { if (!disposed) onMessage(e.payload); });
+    const offState = await appWindow.listen<Connection>('island://connection', e => { if (!disposed) onConnection(e.payload); });
     if (generation === connectionGeneration) sender = async payload => { try { await invoke('send_wire', { payload }); return true; } catch { return false; } };
     try { await invoke('connect_stream'); } catch { onConnection('offline'); }
     return () => { disposed = true; offWire(); offState(); if (generation === connectionGeneration) sender = undefined; };

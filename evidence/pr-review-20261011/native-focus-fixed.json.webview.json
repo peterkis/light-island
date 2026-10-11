@@ -1,0 +1,15 @@
+{
+  "ownership": {
+    "rootPid": 32456,
+    "serverPid": 10468,
+    "port": 9223,
+    "exe": "D:\\Projects\\island-protype\\src-tauri\\target\\release\\samewave-island.exe",
+    "sha256": "D4CB8C07D9B12999A448E11BB707EF07420A90235B160F50FDE2DE1611FB5573",
+    "temporaryQa": true,
+    "verified": true
+  },
+  "islandFocusedBefore": true,
+  "islandFocusedAfter": true,
+  "summaryLoaded": true,
+  "meaning": "DOM focus diagnostics only; the PowerShell wrapper measures actual Win32 foreground ownership"
+}

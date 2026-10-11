@@ -1,0 +1,945 @@
+{
+  "scope": "Actual screen samples, not WebView screenshots or DWM present telemetry",
+  "pid": 30120,
+  "hwnd": 20514878,
+  "frames": 78,
+  "windowRectChanges": 0,
+  "rows": [
+    {
+      "ms": 279.67,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-000.png"
+    },
+    {
+      "ms": 479.81,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-001.png"
+    },
+    {
+      "ms": 690.83,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-002.png"
+    },
+    {
+      "ms": 891.04,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-003.png"
+    },
+    {
+      "ms": 1063.76,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-004.png"
+    },
+    {
+      "ms": 1246.12,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-005.png"
+    },
+    {
+      "ms": 1429.84,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-006.png"
+    },
+    {
+      "ms": 1613.26,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-007.png"
+    },
+    {
+      "ms": 1795.24,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-008.png"
+    },
+    {
+      "ms": 1976.02,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-009.png"
+    },
+    {
+      "ms": 2155.84,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-010.png"
+    },
+    {
+      "ms": 2335.29,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-011.png"
+    },
+    {
+      "ms": 2516.29,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-012.png"
+    },
+    {
+      "ms": 2695.17,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-013.png"
+    },
+    {
+      "ms": 2895.22,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-014.png"
+    },
+    {
+      "ms": 3090.05,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-015.png"
+    },
+    {
+      "ms": 3263.56,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-016.png"
+    },
+    {
+      "ms": 3460.24,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-017.png"
+    },
+    {
+      "ms": 3666.43,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-018.png"
+    },
+    {
+      "ms": 3859.92,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-019.png"
+    },
+    {
+      "ms": 4064.45,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-020.png"
+    },
+    {
+      "ms": 4256.98,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-021.png"
+    },
+    {
+      "ms": 4443.83,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-022.png"
+    },
+    {
+      "ms": 4616.73,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-023.png"
+    },
+    {
+      "ms": 4802.64,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-024.png"
+    },
+    {
+      "ms": 4971.06,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-025.png"
+    },
+    {
+      "ms": 5132.94,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-026.png"
+    },
+    {
+      "ms": 5328.83,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-027.png"
+    },
+    {
+      "ms": 5531.01,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-028.png"
+    },
+    {
+      "ms": 5733.56,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-029.png"
+    },
+    {
+      "ms": 5926.01,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-030.png"
+    },
+    {
+      "ms": 6127.41,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-031.png"
+    },
+    {
+      "ms": 6335.84,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-032.png"
+    },
+    {
+      "ms": 6532.34,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-033.png"
+    },
+    {
+      "ms": 6750.82,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-034.png"
+    },
+    {
+      "ms": 6982.78,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-035.png"
+    },
+    {
+      "ms": 7190.37,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-036.png"
+    },
+    {
+      "ms": 7379.92,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-037.png"
+    },
+    {
+      "ms": 7580.14,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-038.png"
+    },
+    {
+      "ms": 7766.99,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-039.png"
+    },
+    {
+      "ms": 7964.21,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-040.png"
+    },
+    {
+      "ms": 8161.32,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-041.png"
+    },
+    {
+      "ms": 8366.47,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-042.png"
+    },
+    {
+      "ms": 8557.22,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-043.png"
+    },
+    {
+      "ms": 8764.32,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-044.png"
+    },
+    {
+      "ms": 8977.71,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-045.png"
+    },
+    {
+      "ms": 9183.57,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-046.png"
+    },
+    {
+      "ms": 9391.2,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-047.png"
+    },
+    {
+      "ms": 9601.71,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-048.png"
+    },
+    {
+      "ms": 9792.28,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-049.png"
+    },
+    {
+      "ms": 9999.51,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-050.png"
+    },
+    {
+      "ms": 10177.59,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-051.png"
+    },
+    {
+      "ms": 10364.69,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-052.png"
+    },
+    {
+      "ms": 10549.41,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-053.png"
+    },
+    {
+      "ms": 10752.63,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-054.png"
+    },
+    {
+      "ms": 10951.44,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-055.png"
+    },
+    {
+      "ms": 11149.95,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-056.png"
+    },
+    {
+      "ms": 11332.8,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-057.png"
+    },
+    {
+      "ms": 11517.66,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-058.png"
+    },
+    {
+      "ms": 11691.58,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-059.png"
+    },
+    {
+      "ms": 11863.88,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-060.png"
+    },
+    {
+      "ms": 12053.54,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-061.png"
+    },
+    {
+      "ms": 12220.85,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-062.png"
+    },
+    {
+      "ms": 12396.83,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-063.png"
+    },
+    {
+      "ms": 12586.97,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-064.png"
+    },
+    {
+      "ms": 12801.73,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-065.png"
+    },
+    {
+      "ms": 12992.6,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-066.png"
+    },
+    {
+      "ms": 13174.64,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-067.png"
+    },
+    {
+      "ms": 13357.78,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-068.png"
+    },
+    {
+      "ms": 13556.11,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-069.png"
+    },
+    {
+      "ms": 13724.03,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-070.png"
+    },
+    {
+      "ms": 13912.91,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-071.png"
+    },
+    {
+      "ms": 14097.92,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-072.png"
+    },
+    {
+      "ms": 14260.16,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-073.png"
+    },
+    {
+      "ms": 14421.19,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-074.png"
+    },
+    {
+      "ms": 14582.16,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-075.png"
+    },
+    {
+      "ms": 14780.61,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-076.png"
+    },
+    {
+      "ms": 14947.88,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 20514878,
+      "image": "frame-077.png"
+    }
+  ]
+}

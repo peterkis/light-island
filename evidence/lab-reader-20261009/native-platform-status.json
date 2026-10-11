@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-10-09T14:34:56.9419582+08:00",
+  "pid": 14040,
+  "notificationState": 2,
+  "notificationQueryHResult": 0,
+  "windows": [
+    "Samewave Island | visible=False | foreground=False",
+    "同频 Island · 原型试验台 · 仅模拟数据 | visible=True | foreground=True",
+    "local.samewave.island.prototype-siw | visible=True | foreground=False",
+    "MSCTFIME UI | visible=False | foreground=False",
+    "Default IME | visible=False | foreground=False"
+  ]
+}

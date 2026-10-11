@@ -2,15 +2,18 @@ import {useLayoutEffect,useRef,useState} from 'react';
 import {invoke} from '@tauri-apps/api/core';
 import gsap from 'gsap';
 import {nativeIsland} from '../lib/bridge';
-import {contour,layoutHeight,layoutWidth,radiusAt,motionShape,shapePolygons,satelliteGeometry} from './geometry';
+import {contour,layoutHeight,layoutWidth,radiusAt,motionShape,shapePolygons,satelliteGeometry,satelliteNeck} from './geometry';
 import type {Shape,Surface,Dock} from './geometry';
 import {springAt,retarget,stepSpring,finishSpring} from './spring';
 import T from './tokens.json';
+import {labGeometry} from './lab-reader/geometry';
+import type {LabState} from './lab-reader/model';
+import labTokens from './lab-reader/tokens.json';
 
 gsap.config({autoSleep:12});
 let epochCounter=Date.now();
-interface Options {surface?:Surface;dock?:Dock;peek?:boolean;pressed?:boolean;satellite?:boolean;onSettled?:()=>void}
-interface Metrics {available:number;height:number;scale?:number;topReserved?:boolean}
+interface Options {surface?:Surface;labStage?:LabState;dock?:Dock;peek?:boolean;pressed?:boolean;satellite?:boolean;shift?:number;dragging?:boolean;dragVelocity?:number;dismissing?:boolean;onSettled?:()=>void}
+interface Metrics {available:number;height:number;scale?:number;canvasWidth?:number;topReserved?:boolean}
 /** One owner of the SVG viewport, shape and finite native handoff.
  * Source data is never snapshotted: revoking authorization removes it immediately. */
 export function useClinicalLayout(requestedView:'idle'|'compact'|'expanded',contentKey:string,textScale:number,reduced:boolean,hidden:boolean,options:Options={}){
@@ -19,12 +22,17 @@ export function useClinicalLayout(requestedView:'idle'|'compact'|'expanded',cont
  const [presented,setPresented]=useState<Surface>(requested),[metrics,setMetrics]=useState<Metrics>({available:1200,height:900});
  const [ready,setReady]=useState(!nativeIsland),[error,setError]=useState('');
  const painted=useRef<Shape|null>(null),committedKey=useRef(''),callback=useRef(options.onSettled);callback.current=options.onSettled;
- const physics=useRef({w:springAt(124),h:springAt(32),top:springAt(0),ear:springAt(10),sat:springAt(0)});
- const dock:Dock=metrics.topReserved?'floating':options.dock??'notch';
- const mainWidth=layoutWidth(requested,metrics.available,textScale);
- const mainHeight=layoutHeight(requested,0,metrics.height,textScale);
- const contentWidth=layoutWidth(presented,metrics.available,textScale),contentHeight=layoutHeight(presented,0,metrics.height,textScale);
- const factor=reduced?1:options.pressed?T.motion.press.factor:options.peek?T.motion.hover.factor:1;
+ const physics=useRef({w:springAt(124),h:springAt(32),r:springAt(16),top:springAt(0),ear:springAt(10),sat:springAt(0),shift:springAt(0)});
+ const satelliteStarted=useRef({target:false,at:0});
+ const radiusProfile=useRef(false);
+ const dock:Dock=metrics.topReserved||(options.labStage&&metrics.available<640)?'floating':options.dock??'notch';
+ const labTarget=options.labStage?labGeometry(options.labStage,metrics.available,metrics.height,textScale):null;
+ const mainWidth=labTarget?.width??layoutWidth(requested,metrics.available,textScale);
+ const mainHeight=labTarget?.height??layoutHeight(requested,0,metrics.height,textScale);
+ const presentedLab=presented==='lab-sum'?'sum':presented==='lab-read'?'read':presented==='lab-done'?'done':presented==='alert'&&options.labStage?'alert':null;
+ const contentTarget=presentedLab?labGeometry(presentedLab,metrics.available,metrics.height,textScale):null;
+ const contentWidth=contentTarget?.width??layoutWidth(presented,metrics.available,textScale),contentHeight=contentTarget?.height??layoutHeight(presented,0,metrics.height,textScale);
+ const factor=reduced?1:options.pressed?T.motion.press.factor:options.peek?(options.labStage?1.045:T.motion.hover.factor):1;
  useLayoutEffect(()=>{
   let dead=false;
   if(nativeIsland){const measure=()=>void invoke<Metrics>('clinical_metrics').then(m=>{if(!dead){setMetrics(m);setReady(true);}}).catch(e=>{if(!dead)setError(String(e));});
@@ -36,25 +44,33 @@ export function useClinicalLayout(requestedView:'idle'|'compact'|'expanded',cont
  useLayoutEffect(()=>{
   const e=host.current,body=inner.current,s=svg.current;if(!e||!body||!s||!ready)return;
   const initial=painted.current===null,newContent=committedKey.current!==contentKey;
-  const target:Shape={width:mainWidth*factor,height:mainHeight*factor,radius:radiusAt(mainHeight*factor),ear:dock==='notch'?T.geometry.earRadius:0,top:dock==='floating'?T.geometry.floatTop:0,satellite:options.satellite?1:0};
+  const shiftLimit=Math.max(0,Math.min(128,((metrics.canvasWidth??metrics.available)/(metrics.scale??1)-mainWidth*factor)/2-16));
+  const target:Shape={width:mainWidth*factor,height:mainHeight*factor,radius:labTarget?labTarget.radius*factor:radiusAt(mainHeight*factor),ear:dock==='notch'?T.geometry.earRadius:0,top:dock==='floating'?T.geometry.floatTop:0,satellite:options.satellite?1:0,shift:reduced?0:Math.max(-shiftLimit,Math.min(shiftLimit,options.shift??0))};
+  if(satelliteStarted.current.target!==Boolean(options.satellite)){satelliteStarted.current={target:Boolean(options.satellite),at:performance.now()};}
   const epoch=++epochCounter;let dead=false,raf=0,swapTimer=0,delayTimer=0,finalFrame=0,watchdog=0,finalTimer=0;
   let order=0,busy=false,finishing=false,finalizing=false,queued:Shape|null=null,scheduled=false,revealed=false;
   let inFlight:Promise<void>=Promise.resolve(),fade:gsap.core.Timeline|undefined;
   const p=physics.current;
-  if(initial){p.w=springAt(target.width);p.h=springAt(target.height);p.top=springAt(target.top!);p.ear=springAt(target.ear);p.sat=springAt(target.satellite!);}
-  retarget(p.w,target.width);retarget(p.h,target.height);retarget(p.top,target.top!);retarget(p.ear,target.ear);retarget(p.sat,target.satellite!);
+  if(labTarget&&!radiusProfile.current&&painted.current){p.r.x=painted.current.radius;p.r.v=(radiusAt(p.h.x+.1)-radiusAt(p.h.x))/.1*p.h.v;}
+  radiusProfile.current=Boolean(labTarget);
+  if(initial){p.w=springAt(target.width);p.h=springAt(target.height);p.r=springAt(target.radius);p.top=springAt(target.top!);p.ear=springAt(target.ear);p.sat=springAt(target.satellite!);p.shift=springAt(target.shift!);}
+  retarget(p.w,target.width);retarget(p.h,target.height);retarget(p.r,target.radius);retarget(p.top,target.top!);retarget(p.ear,target.ear);retarget(p.sat,target.satellite!);
+  retarget(p.shift,target.shift!);if(options.dragging){p.shift.x=target.shift!;p.shift.v=(options.dragVelocity??0)*1000;}
   const closing=target.height<(painted.current?.height??target.height)||target.width<(painted.current?.width??target.width);
   const micro=!newContent&&(requested==='idle'||requested==='compact');
-  const params=micro?(options.pressed?T.motion.spring.press:T.motion.spring.peek):requested==='idle'||requested==='compact'?(closing?T.motion.spring.collapse:T.motion.spring.morph):T.motion.spring.expand;
-  const heightParams=micro?params:closing?T.motion.spring.collapse:T.motion.spring.height;
+  const params=labTarget?(options.labStage==='done'?labTokens.spring.morph:options.labStage==='idle'?labTokens.spring.collapse:labTokens.spring.expand):micro?(options.pressed?T.motion.spring.press:T.motion.spring.peek):requested==='idle'||requested==='compact'?(closing?T.motion.spring.collapse:T.motion.spring.morph):T.motion.spring.expand;
+  const heightParams=labTarget?labTokens.spring.height:micro?params:closing?T.motion.spring.collapse:T.motion.spring.height;
   const valid=()=>!dead;
   const draw=(g:Shape)=>{
    if(!valid())return;
    const shape=motionShape(g),curve=contour(shape);painted.current=shape;
-   e.style.width=`${shape.width}px`;e.style.height=`${shape.height}px`;e.style.transform=`translateY(${shape.top}px)`;
+   e.style.width=`${shape.width}px`;e.style.height=`${shape.height}px`;e.style.transform=`translate(${shape.shift}px,${shape.top}px)`;
+   e.style.opacity=options.dismissing?'0':'1';e.style.transition=options.dismissing?`opacity ${T.motion.content.base}ms linear`:'none';
    s.style.left=`${-shape.ear}px`;s.setAttribute('width',String(shape.width+2*shape.ear));s.setAttribute('height',String(shape.height));
    s.setAttribute('viewBox',`${-shape.ear} 0 ${shape.width+2*shape.ear} ${shape.height}`);
    s.querySelectorAll('path[data-shell]').forEach(node=>node.setAttribute('d',node.getAttribute('data-shell')==='rim'&&shape.ear>0?curve.path.replace(/^M[^ ]+ L([^ ]+)/,'M$1').replace(/ Z$/,''):curve.path));
+   s.querySelector('[data-neck]')?.setAttribute('d',satelliteNeck(shape).path);
+   e.dataset.neck=String(Boolean(satelliteNeck(shape).path));
    body.parentElement!.style.clipPath=`path("${curve.path}")`;
    const secondary=e.querySelector<HTMLElement>('.ux-minimal'),sg=satelliteGeometry(shape);
    if(secondary){secondary.style.left=`${sg.x}px`;secondary.style.width=`${sg.size}px`;secondary.style.height=`${sg.size}px`;secondary.style.opacity=String(Math.min(1,shape.satellite??0));secondary.style.pointerEvents=sg.size>12?'auto':'none';}
@@ -64,7 +80,7 @@ export function useClinicalLayout(requestedView:'idle'|'compact'|'expanded',cont
    e.dataset.velocityX=p.w.v.toFixed(4);e.dataset.velocityY=p.h.v.toFixed(4);
   };
   const native=(g:Shape,phase:'frame'|'commit'|'cancel',old?:Shape)=>!nativeIsland?Promise.resolve(true):invoke<boolean>('clinical_layout',{
-   epoch,sequence:++order,phase,expanded:requestedView==='expanded',top:g.top??0,shadowAlpha:reduced?0:Math.max(0,Math.min(1,(g.height-37.8)/50.2)),bodyWidth:g.width,height:g.height,radius:g.radius,ear:g.ear,visible:!hidden,
+   epoch,sequence:++order,phase,expanded:requestedView==='expanded',top:g.top??0,shift:g.shift??0,shadowAlpha:reduced||g.shift||options.dismissing?0:Math.max(0,Math.min(1,(g.height-37.8)/50.2)),bodyWidth:g.width,height:g.height,radius:g.radius,ear:g.ear,visible:!hidden,
    polygons:shapePolygons(g),previous:old?{...motionShape(old),polygons:shapePolygons(old)}:null});
   const enqueue=(g:Shape)=>{
    if(!valid()||finishing)return;
@@ -86,16 +102,16 @@ export function useClinicalLayout(requestedView:'idle'|'compact'|'expanded',cont
    finalFrame=requestAnimationFrame(()=>{
     if(!valid())return;
     fade=gsap.timeline();
-    fade.fromTo(body,{opacity:0,filter:reduced?'none':`blur(${T.motion.content.enterBlur}px)`,y:reduced?0:T.motion.content.translateY,scale:reduced?1:T.motion.content.scale},
+    fade.fromTo(body,{opacity:0,filter:reduced?'none':`blur(${T.motion.content.enterBlur}px)`,y:reduced?0:T.motion.content.translateY,scale:1},
      {opacity:1,filter:'blur(0px)',y:0,scale:1,duration:(reduced?T.motion.reduced.duration:T.motion.content.enter)/1000,ease:reduced?'none':'power2.out',clearProps:'filter,transform'});
-    if(!reduced){const children=body.querySelectorAll('[data-stagger]');fade.fromTo(children,{opacity:0,y:4},{opacity:1,y:0,stagger:T.motion.content.stagger/1000,duration:.2,ease:'power2.out',clearProps:'opacity,transform'},0);}
+    if(!reduced){if(labTarget){body.querySelectorAll<HTMLElement>('[data-lab-i]').forEach(node=>fade!.fromTo(node,{opacity:0,y:8},{opacity:1,y:0,duration:.42,ease:'power2.out',clearProps:'opacity,transform'},Math.min(11,Number(node.dataset.labI))*.04));}else{const children=body.querySelectorAll('[data-stagger]');fade.fromTo(children,{opacity:0,y:4},{opacity:1,y:0,stagger:T.motion.content.stagger/1000,duration:.2,ease:'power2.out',clearProps:'opacity,transform'},0);}}
    });
   };
   const settle=async()=>{
    if(!valid()||finishing)return;finishing=true;queued=null;cancelAnimationFrame(raf);clearTimeout(watchdog);clearTimeout(swapTimer);
    await inFlight;if(!valid())return;
    try{if(!await native(target,'frame',painted.current??target)||!valid())return;}catch(err){if(valid())setError(String(err));return;}
-   draw(target);Object.values(p).forEach(finishSpring);
+   draw(target);Object.entries(p).forEach(([name,spring])=>{if(name!=='shift'||!options.dragging)finishSpring(spring);});
    if(initial||hidden)reveal(true);else if(newContent&&!revealed)reveal();
    const finalize=async()=>{
     if(!valid()||finalizing)return;finalizing=true;clearTimeout(finalTimer);
@@ -114,7 +130,7 @@ export function useClinicalLayout(requestedView:'idle'|'compact'|'expanded',cont
    if(reduced){reveal();await settle();return;}
    e.dataset.motionPhase=closing?'collapsing':'expanding';e.style.willChange='width,height';
    if(newContent){
-    body.inert=true;fade=gsap.timeline().to(body,{opacity:0,filter:`blur(${closing?T.motion.content.exitCollapseBlur:T.motion.content.exitBlur}px)`,scale:closing?1:T.motion.content.scale,duration:T.motion.content.exit/1000,ease:'power2.in'});
+    body.inert=true;fade=gsap.timeline().to(body,{opacity:0,filter:`blur(${closing?T.motion.content.exitCollapseBlur:T.motion.content.exitBlur}px)`,scale:1,duration:T.motion.content.exit/1000,ease:'power2.in'});
     if(!closing)swapTimer=window.setTimeout(()=>reveal(),T.motion.content.delay);
    }else{body.inert=false;body.style.opacity='1';body.style.filter='none';body.style.transform='none';}
    let previousTime=performance.now(),started=previousTime;
@@ -122,8 +138,9 @@ export function useClinicalLayout(requestedView:'idle'|'compact'|'expanded',cont
     if(!valid())return;
     const dt=Math.max(0,(now-previousTime)/1000);previousTime=now;
     if(closing&&now-started<T.motion.collapse.delay){raf=requestAnimationFrame(tick);return;}
-    const rest=[stepSpring(p.w,params,dt),stepSpring(p.h,heightParams,dt),stepSpring(p.top,T.motion.spring.morph,dt),stepSpring(p.ear,T.motion.spring.morph,dt),stepSpring(p.sat,T.motion.spring.morph,dt)].every(Boolean);
-    enqueue({width:p.w.x,height:p.h.x,radius:radiusAt(p.h.x),ear:Math.max(0,p.ear.x),top:Math.max(0,p.top.x),satellite:Math.max(0,Math.min(1,p.sat.x))});
+    const shiftRest=options.dragging?true:stepSpring(p.shift,T.motion.spring.morph,dt);
+    const rest=[stepSpring(p.w,params,dt),stepSpring(p.h,heightParams,dt),labTarget?stepSpring(p.r,params,dt):true,stepSpring(p.top,T.motion.spring.morph,dt),stepSpring(p.ear,T.motion.spring.morph,dt),stepSpring(p.sat,T.motion.spring.morph,dt),shiftRest].every(Boolean);
+    enqueue({width:p.w.x,height:p.h.x,radius:labTarget?p.r.x:radiusAt(p.h.x),ear:Math.max(0,p.ear.x),top:Math.max(0,p.top.x),satellite:Math.max(0,Math.min(1,p.sat.x)),neck:!reduced&&now-satelliteStarted.current.at<400,shift:Math.max(-shiftLimit,Math.min(shiftLimit,p.shift.x))});
     if(rest&&(!newContent||now-started>=T.motion.content.delay)){void settle();return;}raf=requestAnimationFrame(tick);
    };
    raf=requestAnimationFrame(tick);
@@ -133,6 +150,6 @@ export function useClinicalLayout(requestedView:'idle'|'compact'|'expanded',cont
   return()=>{dead=true;queued=null;cancelAnimationFrame(raf);cancelAnimationFrame(finalFrame);clearTimeout(swapTimer);clearTimeout(delayTimer);clearTimeout(watchdog);clearTimeout(finalTimer);fade?.kill();
    if(nativeIsland)void native(painted.current??target,'cancel').catch(()=>{});
   };
- },[requested,mainWidth,mainHeight,contentKey,factor,dock,reduced,hidden,ready,metrics.scale,options.satellite]);
+ },[requested,mainWidth,mainHeight,contentKey,factor,dock,reduced,hidden,ready,metrics.scale,options.satellite,options.shift,options.dragging,options.dismissing]);
  return {host,inner,svg,width:contentWidth,height:contentHeight,view:presented==='idle'||presented==='compact'?presented:'expanded' as const,surface:presented,error,nativeFallback:false};
 }

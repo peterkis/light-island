@@ -1,0 +1,16 @@
+{
+  "capturedAt": "2026-10-09T15:29:33.4900404+08:00",
+  "rootPid": 22732,
+  "exeSHA256": "F3287E12162366DEFB60E65EED14ABFB6A24A781D2962D857C23EC2224378FA2",
+  "identityMatched": "DEMO-S04",
+  "versionMatched": 1,
+  "sourceAccessibleRowCount": 8,
+  "studioReportRowCountWhileSourceOpen": 0,
+  "studioSourceDialogPresent": false,
+  "sourceInPrivateObserved": true,
+  "sourceCaptureAffinity": 17,
+  "actualToolCapture": "SOURCE_REPORT_EXCLUDED_BACKGROUND_STUDIO_METADATA_VISIBLE",
+  "captureScope": "One Windows11 WebView2 154 capture-client observation. Not absolute prevention; accessibility still readable by design.",
+  "islandReaderNative": "NOT_RUN_WINDOWS_NOTIFICATION_BUSY_2",
+  "seam": "Window-targeted native wire listeners"
+}

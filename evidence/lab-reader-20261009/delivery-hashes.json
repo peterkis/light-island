@@ -1,0 +1,27 @@
+{
+  "head": "9609ecf8dc2912ffd6595053f1bb442af449dbbc",
+  "branch": "main",
+  "exePath": "D:\\Projects\\island-protype\\src-tauri\\target\\release\\samewave-island.exe",
+  "exeSHA256": "38368DEB85E26FFC40555CB04D44AE514288C2A3474F65DD60DE369D92C7629F",
+  "inputs": [
+    {
+      "path": "docs/Windows 灵动岛 UI UX 设计规范 v1.0.md",
+      "expected": "A9F37EA76BECF4B74C4388A2172E4D46DBC7A4600558CEE3B71F445F3E67B1FA",
+      "actual": "A9F37EA76BECF4B74C4388A2172E4D46DBC7A4600558CEE3B71F445F3E67B1FA",
+      "unchanged": true
+    },
+    {
+      "path": "docs/protype/灵动岛「检验报告阅读」开发文档（Agent 可读版）.md",
+      "expected": "BECA7CA59CCE18F7898F97CAF497A9F63E8E30B55A91FD74E1CB2BB2D74C9AFF",
+      "actual": "BECA7CA59CCE18F7898F97CAF497A9F63E8E30B55A91FD74E1CB2BB2D74C9AFF",
+      "unchanged": true
+    },
+    {
+      "path": "docs/protype/灵动岛 · 检验报告阅读（阅后即焚）.html",
+      "expected": "625664A43EEA9CEB14763EF27E650A1F8D8766DED933E8D6704A451416146DAD",
+      "actual": "625664A43EEA9CEB14763EF27E650A1F8D8766DED933E8D6704A451416146DAD",
+      "unchanged": true
+    }
+  ],
+  "capturedAt": "2026-10-09T14:26:56.7273507+08:00"
+}

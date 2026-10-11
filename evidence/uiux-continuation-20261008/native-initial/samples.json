@@ -1,0 +1,105 @@
+{
+  "scope": "Actual screen samples, not WebView screenshots or DWM present telemetry",
+  "pid": 30120,
+  "hwnd": 20514878,
+  "frames": 8,
+  "windowRectChanges": 0,
+  "rows": [
+    {
+      "ms": 98.25,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 329314,
+      "image": "frame-000.png"
+    },
+    {
+      "ms": 236.91,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 329314,
+      "image": "frame-001.png"
+    },
+    {
+      "ms": 364.22,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 329314,
+      "image": "frame-002.png"
+    },
+    {
+      "ms": 500.59,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 329314,
+      "image": "frame-003.png"
+    },
+    {
+      "ms": 625.73,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 329314,
+      "image": "frame-004.png"
+    },
+    {
+      "ms": 753.38,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 329314,
+      "image": "frame-005.png"
+    },
+    {
+      "ms": 881.44,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 329314,
+      "image": "frame-006.png"
+    },
+    {
+      "ms": 1010.28,
+      "rect": [
+        608,
+        0,
+        1312,
+        522
+      ],
+      "dpi": 96,
+      "foreground": 329314,
+      "image": "frame-007.png"
+    }
+  ]
+}

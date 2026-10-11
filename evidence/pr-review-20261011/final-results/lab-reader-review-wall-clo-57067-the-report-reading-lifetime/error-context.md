@@ -1,0 +1,302 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: lab-reader-review.spec.ts >> wall-clock rollback cannot extend the report reading lifetime
+- Location: tests\lab-reader-review.spec.ts:3:1
+
+# Error details
+
+```
+Error: clock.pauseAt: Error: Cannot fast-forward to the past
+    at ClockController._innerFastForwardTo (eval at evaluate (:311:30), <anonymous>:201:13)
+    at ClockController.pauseAt (eval at evaluate (:311:30), <anonymous>:132:16)
+    at async <anonymous>:337:30
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - link "同频 临床协作感知" [ref=e5] [cursor=pointer]:
+      - /url: /clinical.html
+      - generic [ref=e9]: 同频
+      - text: 临床协作感知
+    - generic [ref=e11]: 原型验证 · 仅模拟数据
+    - link "旧版动效回归" [ref=e12] [cursor=pointer]:
+      - /url: /index.html
+  - main [ref=e16]:
+    - generic [ref=e17]:
+      - generic [ref=e18]:
+        - generic [ref=e19]: HOSPITAL COLLABORATION / CLINICAL ISLAND
+        - heading "关键变化，抵达当前工作。" [level=1] [ref=e20]
+        - paragraph [ref=e21]: 辅助感知与只读快览。判断、接收与处置，始终留在权威源系统。
+      - generic [ref=e22]: 模拟消息源已连接
+    - generic [ref=e24]:
+      - complementary [ref=e25]:
+        - generic [ref=e26]:
+          - text: 场景库
+          - generic [ref=e31]: 09 + 06
+        - button "01 个人番茄钟 个人工具 · 不改变临床优先级" [ref=e32] [cursor=pointer]:
+          - generic [ref=e33]: "01"
+          - generic [ref=e37]:
+            - text: 个人番茄钟
+            - generic [ref=e38]: 个人工具 · 不改变临床优先级
+        - button "02 病危医嘱 核心场景 · 来源流程镜像" [ref=e41] [cursor=pointer]:
+          - generic [ref=e42]: "02"
+          - generic [ref=e46]:
+            - text: 病危医嘱
+            - generic [ref=e47]: 核心场景 · 来源流程镜像
+        - button "03 危急值 核心场景 · 来源流程镜像" [ref=e50] [cursor=pointer]:
+          - generic [ref=e51]: "03"
+          - generic [ref=e54]:
+            - text: 危急值
+            - generic [ref=e55]: 核心场景 · 来源流程镜像
+        - button "04 关注报告 核心场景 · 来源流程镜像" [ref=e58] [cursor=pointer]:
+          - generic [ref=e59]: "04"
+          - generic [ref=e64]:
+            - text: 关注报告
+            - generic [ref=e65]: 核心场景 · 来源流程镜像
+        - button "05 费用协同 核心场景 · 来源流程镜像" [ref=e68] [cursor=pointer]:
+          - generic [ref=e69]: "05"
+          - generic [ref=e73]:
+            - text: 费用协同
+            - generic [ref=e74]: 核心场景 · 来源流程镜像
+        - button "06 交班未结项 核心场景 · 来源流程镜像" [ref=e77] [cursor=pointer]:
+          - generic [ref=e78]: "06"
+          - generic [ref=e82]:
+            - text: 交班未结项
+            - generic [ref=e83]: 核心场景 · 来源流程镜像
+        - button "07 出院后回报 核心场景 · 来源流程镜像" [ref=e86] [cursor=pointer]:
+          - generic [ref=e87]: "07"
+          - generic [ref=e91]:
+            - text: 出院后回报
+            - generic [ref=e92]: 核心场景 · 来源流程镜像
+        - button "08 报告更正 / 撤回 核心场景 · 来源流程镜像" [ref=e95] [cursor=pointer]:
+          - generic [ref=e96]: "08"
+          - generic [ref=e99]:
+            - text: 报告更正 / 撤回
+            - generic [ref=e100]: 核心场景 · 来源流程镜像
+        - button "09 标本退回 / 补采 核心场景 · 来源流程镜像" [ref=e103] [cursor=pointer]:
+          - generic [ref=e104]: "09"
+          - generic [ref=e108]:
+            - text: 标本退回 / 补采
+            - generic [ref=e109]: 核心场景 · 来源流程镜像
+        - button "展开 6 个研究扩展" [ref=e112] [cursor=pointer]
+        - paragraph [ref=e119]: 不连接真实临床系统。不向源系统提交接收、处置或派单。
+      - generic [ref=e120]:
+        - generic [ref=e121]:
+          - generic [ref=e122]: 工作站中的灵动岛
+          - generic [ref=e123]: 点击展开 · 120ms 悬停微扩
+        - generic [ref=e124]:
+          - generic [ref=e125]:
+            - text: 临床工作空间
+            - generic [ref=e129]: — □ ×
+          - generic [ref=e130]:
+            - complementary [ref=e131]
+            - generic [ref=e145]:
+              - generic [ref=e146]: 临床工作 / 当班工作台
+              - heading "专注当前任务" [level=2] [ref=e147]
+              - paragraph [ref=e148]: 上方的变化，不打断正在进行的业务。
+              - generic [ref=e149]:
+                - text: 当前任务
+                - generic [ref=e150]: 今日动态
+              - generic [ref=e151]:
+                - generic [ref=e152]: "01"
+                - text: 核对当前工作记录
+                - generic [ref=e153]: 演示工作项
+              - generic [ref=e155]:
+                - generic [ref=e156]: "02"
+                - text: 查看来源业务状态
+                - generic [ref=e157]: 演示工作项
+              - generic [ref=e159]:
+                - generic [ref=e160]: "03"
+                - text: 整理交班关注事项
+                - generic [ref=e161]: 演示工作项
+              - generic [ref=e163]:
+                - generic [ref=e164]: "04"
+                - text: 记录个人待办
+                - generic [ref=e165]: 演示工作项
+              - button "验证背景操作" [ref=e167] [cursor=pointer]
+          - generic:
+            - generic:
+              - region "检验报告阅读" [ref=e173]:
+                - generic [ref=e174]:
+                  - generic [ref=e175]:
+                    - generic [ref=e176]:
+                      - heading "血常规 + 肝功能 + CRP" [level=2] [ref=e177]
+                      - paragraph [ref=e178]: 张** 男 41 岁 静脉血 10:42 出具
+                      - paragraph [ref=e179]: 模拟报告 仅会话展示
+                    - generic "阅读剩余 60 秒" [ref=e180]:
+                      - generic [aria-hidden] [ref=e184]: "60"
+                  - region "检验项目滚动区域" [active] [ref=e185]:
+                    - generic [ref=e186]:
+                      - heading "异常 3 项" [level=3] [ref=e187]
+                      - article [ref=e188]:
+                        - generic [ref=e189]: 白细胞WBC
+                        - generic [ref=e190]: 参考 3.5–9.5
+                        - strong [ref=e191]:
+                          - text: 11.2×10⁹/L
+                          - emphasis [ref=e192]: ↑
+                      - article [ref=e196]:
+                        - generic [ref=e197]: 血红蛋白HGB
+                        - generic [ref=e198]: 参考 130–175
+                        - strong [ref=e199]:
+                          - text: 128g/L
+                          - emphasis [ref=e200]: ↓
+                      - article [ref=e204]:
+                        - generic [ref=e205]: C反应蛋白CRP
+                        - generic [ref=e206]: 参考 0–6
+                        - strong [ref=e207]:
+                          - text: 18.4mg/L
+                          - emphasis [ref=e208]: ↑
+                    - generic [ref=e212]:
+                      - heading "其余 5 项正常" [level=3] [ref=e213]
+                      - article [ref=e214]:
+                        - generic [ref=e215]: 红细胞RBC
+                        - generic [ref=e216]: 参考 4.3–5.8
+                        - strong [ref=e217]: 4.6×10¹²/L
+                      - article [ref=e221]:
+                        - generic [ref=e222]: 血小板PLT
+                        - generic [ref=e223]: 参考 125–350
+                        - strong [ref=e224]: 235×10⁹/L
+                      - article [ref=e228]:
+                        - generic [ref=e229]: 谷丙转氨酶ALT
+                        - generic [ref=e230]: 参考 9–50
+                        - strong [ref=e231]: 32U/L
+                      - article [ref=e235]:
+                        - generic [ref=e236]: 谷草转氨酶AST
+                        - generic [ref=e237]: 参考 15–40
+                        - strong [ref=e238]: 28U/L
+                      - article [ref=e242]:
+                        - generic [ref=e243]: 总胆红素TBIL
+                        - generic [ref=e244]: 参考 3.4–20.5
+                        - strong [ref=e245]: 14.2μmol/L
+                  - generic [ref=e249]:
+                    - button "完整报告" [ref=e250] [cursor=pointer]
+                    - button "阅后即焚" [ref=e254] [cursor=pointer]
+              - status: 检验报告 · 1 项动态
+          - generic: 来源事件 → 单一活动 → 授权快览 → 精确来源入口
+        - generic [ref=e257]:
+          - generic [ref=e258]:
+            - generic [ref=e259]:
+              - text: SOURCE STATE WALKTHROUGH
+              - heading "危急值" [level=2] [ref=e260]
+            - button "在灵动岛展开" [ref=e261] [cursor=pointer]
+          - generic [ref=e265]:
+            - button "1 新动态" [ref=e266] [cursor=pointer]:
+              - generic [ref=e267]: "1"
+              - text: 新动态
+            - button "2 摘要" [ref=e268] [cursor=pointer]:
+              - generic [ref=e269]: "2"
+              - text: 摘要
+            - button "3 入口就绪" [ref=e270] [cursor=pointer]:
+              - generic [ref=e271]: "3"
+              - text: 入口就绪
+            - button "4 源已接收" [ref=e272] [cursor=pointer]:
+              - generic [ref=e273]: "4"
+              - text: 源已接收
+            - button "5 源已闭环" [ref=e274] [cursor=pointer]:
+              - generic [ref=e275]: "5"
+              - text: 源已闭环
+            - button "6 同步过期" [ref=e276] [cursor=pointer]:
+              - generic [ref=e277]: "6"
+              - text: 同步过期
+          - generic [ref=e278]:
+            - generic [ref=e279]: "01"
+            - generic [ref=e280]:
+              - strong [ref=e281]: 检验危急值已发布
+              - paragraph [ref=e282]: 血清钾 · 来源标记危急。请进入原危急值流程核对。
+          - generic [ref=e283]:
+            - generic [ref=e284]: 这些按钮只驱动模拟源，不是临床操作按钮。
+            - button "下一来源状态" [ref=e285] [cursor=pointer]
+        - generic [ref=e288]:
+          - generic [ref=e289]:
+            - generic [ref=e290]:
+              - heading "检验报告阅读 · 阅后即焚" [level=2] [ref=e291]
+              - paragraph [ref=e292]: 模拟报告在岛内渐进展开，焚毁只清除本次快览
+            - button "重播：收到检验报告" [ref=e293] [cursor=pointer]
+          - generic [ref=e294]:
+            - button "全部正常夹具" [ref=e295] [cursor=pointer]
+            - button "定性与缺失值夹具" [ref=e296] [cursor=pointer]
+        - generic [ref=e297]:
+          - generic [ref=e298]:
+            - heading "当前会话 · 安全事件日志" [level=2] [ref=e299]
+            - generic [ref=e300]: 1 / 20 项
+          - paragraph [ref=e301]: S04 · 来源对象 v1 已同步
+          - generic [ref=e303]:
+            - generic [ref=e304]: 幂等去重 0
+            - generic [ref=e305]: 格式拒绝 0
+            - generic [ref=e306]: 容量提示 0
+      - complementary [ref=e307]:
+        - generic [ref=e308]: 验证控制台
+        - generic [ref=e310]:
+          - heading "当前演示权限" [level=3] [ref=e311]
+          - paragraph [ref=e312]: 仅模拟岗位，不是医院真实身份认证。
+          - generic [ref=e313]:
+            - text: 查看岗位
+            - combobox "演示岗位" [ref=e314]:
+              - option "临床岗位" [selected]
+              - option "费用协同岗位"
+              - option "取送 / 设备岗位"
+              - option "未登录"
+          - generic [ref=e315]:
+            - generic [ref=e321]: 隐私保护
+            - switch "隐私保护" [ref=e322] [cursor=pointer]
+          - generic [ref=e324]:
+            - generic [ref=e329]: 模拟锁屏隐藏
+            - switch "模拟锁屏隐藏" [ref=e330] [cursor=pointer]
+          - generic [ref=e332]:
+            - generic [ref=e337]: 模拟全屏避让
+            - switch "模拟全屏避让" [ref=e338] [cursor=pointer]
+        - generic [ref=e340]:
+          - heading "来源与跳转异常" [level=3] [ref=e341]
+          - generic [ref=e342]:
+            - text: 来源状态
+            - combobox "模拟来源状态" [ref=e343]:
+              - option "连接正常" [selected]
+              - option "同步过期"
+              - option "来源离线"
+          - generic [ref=e344]:
+            - text: 来源入口
+            - combobox "模拟入口结果" [ref=e345]:
+              - option "精确匹配对象" [selected]
+              - option "打开失败"
+              - option "对象 / 版本不匹配"
+          - button "重新读取来源" [ref=e346] [cursor=pointer]
+        - generic [ref=e351]:
+          - heading "可访问性与动效" [level=3] [ref=e352]
+          - generic [ref=e353]:
+            - generic [ref=e356]: 减少动态
+            - switch "减少动态" [checked] [ref=e357] [cursor=pointer]
+          - generic [ref=e359]:
+            - generic [ref=e363]: 安静接收普通动态
+            - switch "安静接收普通动态" [ref=e364] [cursor=pointer]
+          - generic [ref=e366]:
+            - text: 文本倍率
+            - combobox "文本倍率" [ref=e367]:
+              - option "100%" [selected]
+              - option "200%"
+              - option "225%"
+          - paragraph [ref=e368]: 数值弹簧保留速度，可中途反向。内容晚到早走，原生画布不移动；空闲停止动效循环。
+          - generic [ref=e369]:
+            - generic [ref=e370]:
+              - generic [ref=e371]: —
+              - text: rAF / 秒
+            - generic [ref=e372]:
+              - generic [ref=e373]: —
+              - text: P95 ms
+          - button "采样预览 6 秒" [ref=e374] [cursor=pointer]
+          - generic [ref=e377]: 不是原生呈现帧率保证
+        - generic [ref=e378]:
+          - button "重置本地模拟场景" [ref=e379] [cursor=pointer]
+          - button "添加另一来源对象" [ref=e383] [cursor=pointer]
+    - generic [ref=e384]:
+      - generic [ref=e385]: SAMEWAVE / 临床协作感知
+      - generic [ref=e386]: 原型 0.2 · 来源是事实，灵动岛是入口。
+```

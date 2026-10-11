@@ -1,0 +1,40 @@
+{
+  "at": "2026-10-08T16:39:37.579849+08:00",
+  "commands": [
+    {
+      "command": "npm.cmd run build",
+      "exitCode": 0,
+      "seconds": 9.64
+    },
+    {
+      "command": "npm.cmd test -- --reporter=json --outputFile=evidence/uiux-continuation-20261008/final-unit.json",
+      "exitCode": 0,
+      "seconds": 5.26
+    },
+    {
+      "command": "cargo test --manifest-path src-tauri/Cargo.toml",
+      "exitCode": 0,
+      "seconds": 15.91
+    },
+    {
+      "command": "npm.cmd run test:e2e",
+      "exitCode": 0,
+      "seconds": 371.53
+    },
+    {
+      "command": "npm.cmd run desktop:build",
+      "exitCode": 0,
+      "seconds": 129.83
+    }
+  ],
+  "historicalEvidenceRestored": [
+    "evidence/02-theme-cloud.png",
+    "evidence/02-theme-dusk.png",
+    "evidence/02-theme-ink.png",
+    "evidence/03-critical-expanded.png",
+    "evidence/04-inbox-empty.png",
+    "evidence/06-frame-sample.png",
+    "evidence/click-fix-20260930/browser-working-css.json",
+    "evidence/click-fix-20260930/browser-working-gsap.json"
+  ]
+}
