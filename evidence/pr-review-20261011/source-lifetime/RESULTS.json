@@ -1,0 +1,58 @@
+{
+  "reviewedHead": "57ac3036cb82fd096bc98ba8b015aedb48afbc76",
+  "reviewId": 5481326043,
+  "findingId": 4239709659,
+  "fixed": "Ticket-backed report invalidation on activity/snapshot changes and stale reply rejection; wait for online before source read",
+  "priorHeadFull": {
+    "startTime": "2026-10-11T00:21:06.439Z",
+    "duration": 499524.988,
+    "expected": 73,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "initialSourceConnectionFailure": {
+    "startTime": "2026-10-11T00:29:59.888Z",
+    "duration": 43059.739,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 4,
+    "flaky": 0
+  },
+  "sourceRetentionRed": {
+    "startTime": "2026-10-11T00:32:07.930Z",
+    "duration": 42802.424,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 4,
+    "flaky": 0
+  },
+  "relatedRunWithHmrInterference": {
+    "startTime": "2026-10-11T00:33:36.724Z",
+    "duration": 179040.779,
+    "expected": 16,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  },
+  "sequentialRecheck": {
+    "startTime": "2026-10-11T00:37:55.555Z",
+    "duration": 35164.224,
+    "expected": 3,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "unit": {
+    "passed": 197,
+    "failed": 0
+  },
+  "software": {
+    "unitExit": 0,
+    "releaseExit": 0
+  },
+  "exeSHA256": "e562db235a03836b69ebdfa40512251dbf93e15b87d5202e9481d36c7df3378b",
+  "sourceHashCount": 171,
+  "scope": "Browser/real loopback WebSocket regression. Previous native foreground evidence retains its D4CB build scope. No new device/DWM acceptance.",
+  "mergeGate": "Third Codex review and full 77-test run on exact next commit; final receipts under evidence/backups/pr1-source-final-verification-20261011"
+}

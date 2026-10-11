@@ -19,8 +19,16 @@ export function useClinical(){
  const [hovered,setHovered]=useState(false),[focusWithin,setFocusWithin]=useState(false);
  const [opened,setOpened]=useState<Record<string,boolean>>({}),[followed,setFollowed]=useState<Record<string,boolean>>({});
  const [route,setRoute]=useState<'idle'|'requesting'|'requested'|'opened'|'failed'|'mismatch'|'unauthorized'>('idle');
- const [source,setSource]=useState<Activity|null>(null),[sourceError,setSourceError]=useState('');
- const [sourceLabReport,setSourceLabReport]=useState<LabReport|null>(null);
+ const [source,setSourceValue]=useState<Activity|null>(null),[sourceError,setSourceError]=useState('');
+ const [sourceLabReport,setSourceLabReportValue]=useState<LabReport|null>(null);
+ const sourceState=useRef<{activity:Activity|null;report:LabReport|null}>({activity:null,report:null}),snapshotSeen=useRef(false);
+ const setSourceLabReport=useCallback((value:LabReport|null)=>{
+  if(sourceState.current.report!==value)disposeLabReport(sourceState.current.report);
+  sourceState.current.report=value;setSourceLabReportValue(value);
+ },[]);
+ const setSource=useCallback((value:Activity|null)=>{
+  sourceState.current.activity=value;if(!value)setSourceLabReport(null);setSourceValue(value);
+ },[setSourceLabReport]);
  const [readable,setReadable]=useState(false);
  const [mutedSources,setMutedSources]=useState<string[]>([]),[dismissed,setDismissed]=useState<string[]>([]),[undo,setUndo]=useState<UndoPreview|null>(null);
  const presentation=useRef({mutedSources,dismissed});presentation.current={mutedSources,dismissed};
@@ -30,8 +38,15 @@ export function useClinical(){
  const sourceTicket=new URLSearchParams(location.search).get('source');
  const latest=useRef({queue,settings,selected,view,connection,followed});latest.current={queue,settings,selected,view,connection,followed};
  const lab=useLabReader(()=>{setView(latest.current.queue.items.length||timer.status!=='idle'?'compact':'idle');setReason('explicit');});
- useEffect(()=>()=>disposeLabReport(sourceLabReport),[sourceLabReport]);
+ useEffect(()=>()=>{disposeLabReport(sourceState.current.report);sourceState.current={activity:null,report:null};},[]);
  const request=useRef<{id:string;key:string;version:number;ticket?:string}|null>(null),routeTimer=useRef(0),alive=useRef(true);
+ const invalidateSource=useCallback((items:Activity[],policy:Settings)=>{
+  const shown=sourceState.current.activity;if(!shown)return;
+  const current=items.find(a=>identityKey(a.identity)===identityKey(shown.identity));
+  if(current&&current.version===shown.version&&!current.withdrawn&&canView(current,policy))return;
+  setSource(null);setSourceError('来源对象、权限或版本已变化，请返回重新打开。');
+  request.current=null;clearTimeout(routeTimer.current);setRoute('failed');
+ },[setSource]);
  const addLog=useCallback((text:string)=>setLog(l=>[text,...l].slice(0,30)),[]);
  const receive=useCallback((e:Wire)=>{
   lab.receive(e);
@@ -45,13 +60,14 @@ export function useClinical(){
   }
   if(e.type==='clinical:snapshot'){
    let q=emptyQueue(); if(Array.isArray(e.activities))for(const a of e.activities)q=ingest(q,a);
+   snapshotSeen.current=true;invalidateSource(q.items,latest.current.settings);
    latest.current.queue=q;setQueue(q);if(e.timer)setTimer(e.timer as TimerState);
    // A snapshot refresh restores authorized source records, not responsibility or local opened state.
   }
   if(e.type==='clinical:activity'){
    const a=parseActivity(e.activity);if(!a){setQueue(q=>({...q,rejected:q.rejected+1}));return;}
    const current=latest.current,old=current.queue.items.find(x=>identityKey(x.identity)===identityKey(a.identity));
-   const nextQueue=ingest(current.queue,a);latest.current.queue=nextQueue;setQueue(nextQueue);if(old&&old.version>=a.version)return;
+   const nextQueue=ingest(current.queue,a);latest.current.queue=nextQueue;setQueue(nextQueue);invalidateSource(nextQueue.items,current.settings);if(old&&old.version>=a.version)return;
    const key=identityKey(a.identity);
    const active=current.queue.items.find(x=>identityKey(x.identity)===current.selected);
    if(!lab.protectedSession()&&mayInterrupt(a,active)){lab.close();if(a.labRef)lab.start(a,'sum');setSelected(key);setReadable(false);setReason('explicit');setView('expanded');}
@@ -86,18 +102,21 @@ export function useClinical(){
    if(sourceTicket!==e.ticket&&request.current?.ticket!==e.ticket)return;
    if(e.error){setSource(null);setSourceLabReport(null);setSourceError(String(e.error));setRoute('failed');return;}
    const a=parseActivity(e.activity);
-   if(a&&canView(a,latest.current.settings)){
+   const current=a&&latest.current.queue.items.find(item=>identityKey(item.identity)===identityKey(a.identity));
+   // A ticket also belongs to the current mirror revision. Reject delayed replies
+   // after invalidation, including objects removed by an authoritative snapshot.
+   if(a&&!a.withdrawn&&canView(a,latest.current.settings)&&(!snapshotSeen.current||current)&&(!current||(current.version===a.version&&!current.withdrawn&&canView(current,latest.current.settings)))){
     setSourceLabReport(a.labRef?parseLabReport(e.labReport,{identity:a.identity,version:a.version,id:a.labRef.id}):null);
     setSource(a);setSourceError('');setRoute('opened');setOpened(v=>({...v,[versionKey(a)]:true}));
     addLog('已打开模拟来源边界；未产生临床确认');
-   }
+   }else{setSource(null);setSourceError('来源对象、权限或版本已变化，请返回重新打开。');setRoute('failed');}
   }
   if(e.type==='view'&&(e.mode==='compact'||e.mode==='inbox')){setView(e.mode==='compact'?'compact':'expanded');setReason('explicit');}
- },[addLog,sourceTicket,lab.receive,lab.close,lab.start,lab.protectedSession]);
+ },[addLog,sourceTicket,lab.receive,lab.close,lab.start,lab.protectedSession,setSource,setSourceLabReport,invalidateSource]);
  useEffect(()=>{
   alive.current=true;let off:(()=>void)|undefined,dead=false;
-  void connect(receive,s=>{if(!dead){latest.current.connection=s;setConnection(s);if(s==='online')void send({type:'clinical:sync'});}}).then(clean=>{
-   if(dead)clean();else{off=clean;void send({type:'clinical:sync'});if(sourceTicket)void send({type:'clinical:source-read',ticket:sourceTicket});}
+  void connect(receive,s=>{if(!dead){latest.current.connection=s;setConnection(s);if(s==='online'){void send({type:'clinical:sync'});if(sourceTicket)void send({type:'clinical:source-read',ticket:sourceTicket});}}}).then(clean=>{
+   if(dead)clean();else{off=clean;void send({type:'clinical:sync'});}
   });
   return()=>{alive.current=false;dead=true;off?.();clearTimeout(routeTimer.current);clearTimeout(undoTimer.current);request.current=null;};
  },[receive,sourceTicket]);

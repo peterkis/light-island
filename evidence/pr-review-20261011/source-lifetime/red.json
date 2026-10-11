@@ -1,0 +1,380 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "D:\\Projects\\island-protype\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/lab-source-lifetime.spec.ts",
+      "--reporter=list,json",
+      "--output=evidence/pr-review-20261011/source-lifetime/red-results"
+    ],
+    "configFile": "D:\\Projects\\island-protype\\playwright.config.ts",
+    "rootDir": "D:/Projects/island-protype/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/Projects/island-protype/evidence/pr-review-20261011/source-lifetime/red-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "D:/Projects/island-protype/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "/.*\\.spec\\.ts/"
+        ],
+        "timeout": 35000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list"
+      ],
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "lab-source-lifetime.spec.ts",
+      "file": "lab-source-lifetime.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "ticket-backed report clears on activity-revision and rejects a late reply",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 8041,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('dialog', { name: '模拟来源边界' }).locator('.lab-row')\nExpected: \u001b[32m8\u001b[39m\nReceived: \u001b[31m0\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" getByRole('dialog', { name: '模拟来源边界' }).locator('.lab-row') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('dialog', { name: '模拟来源边界' }).locator('.lab-row')\u001b[22m\n\u001b[2m    14 × locator resolved to 0 elements\u001b[22m\n\u001b[2m       - unexpected value \"0\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('dialog', { name: '模拟来源边界' }).locator('.lab-row')\nExpected: \u001b[32m8\u001b[39m\nReceived: \u001b[31m0\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" getByRole('dialog', { name: '模拟来源边界' }).locator('.lab-row') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('dialog', { name: '模拟来源边界' }).locator('.lab-row')\u001b[22m\n\u001b[2m    14 × locator resolved to 0 elements\u001b[22m\n\u001b[2m       - unexpected value \"0\"\u001b[22m\n\n    at D:\\Projects\\island-protype\\tests\\lab-source-lifetime.spec.ts:33:44",
+                    "location": {
+                      "file": "D:\\Projects\\island-protype\\tests\\lab-source-lifetime.spec.ts",
+                      "column": 44,
+                      "line": 33
+                    },
+                    "snippet": "  31 |   await page.goto('/clinical.html?source='+ticket);\n  32 |   const source=page.getByRole('dialog',{name:'模拟来源边界'});\n> 33 |   await expect(source.locator('.lab-row')).toHaveCount(8);\n     |                                            ^\n  34 |   invalidate=true;\n  35 |   await push({type:'clinical:scenario',scenario:'S04',labVariant:'baseline'});\n  36 |   if(change.startsWith('snapshot')){"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\Projects\\island-protype\\tests\\lab-source-lifetime.spec.ts",
+                        "column": 44,
+                        "line": 33
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('dialog', { name: '模拟来源边界' }).locator('.lab-row')\nExpected: \u001b[32m8\u001b[39m\nReceived: \u001b[31m0\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" getByRole('dialog', { name: '模拟来源边界' }).locator('.lab-row') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('dialog', { name: '模拟来源边界' }).locator('.lab-row')\u001b[22m\n\u001b[2m    14 × locator resolved to 0 elements\u001b[22m\n\u001b[2m       - unexpected value \"0\"\u001b[22m\n\n\n  31 |   await page.goto('/clinical.html?source='+ticket);\n  32 |   const source=page.getByRole('dialog',{name:'模拟来源边界'});\n> 33 |   await expect(source.locator('.lab-row')).toHaveCount(8);\n     |                                            ^\n  34 |   invalidate=true;\n  35 |   await push({type:'clinical:scenario',scenario:'S04',labVariant:'baseline'});\n  36 |   if(change.startsWith('snapshot')){\n    at D:\\Projects\\island-protype\\tests\\lab-source-lifetime.spec.ts:33:44"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-11T00:30:04.779Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "D:\\Projects\\island-protype\\evidence\\pr-review-20261011\\source-lifetime\\red-results\\lab-source-lifetime-ticket-b2e1e-on-and-rejects-a-late-reply\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\Projects\\island-protype\\evidence\\pr-review-20261011\\source-lifetime\\red-results\\lab-source-lifetime-ticket-b2e1e-on-and-rejects-a-late-reply\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\Projects\\island-protype\\evidence\\pr-review-20261011\\source-lifetime\\red-results\\lab-source-lifetime-ticket-b2e1e-on-and-rejects-a-late-reply\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\Projects\\island-protype\\tests\\lab-source-lifetime.spec.ts",
+                    "column": 44,
+                    "line": 33
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "e57181d6dde7b0160244-beeb467ec806fcd2ccd7",
+          "file": "lab-source-lifetime.spec.ts",
+          "line": 5,
+          "column": 2
+        },
+        {
+          "title": "ticket-backed report clears on withdrawal and rejects a late reply",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 7614,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('dialog', { name: '模拟来源边界' }).locator('.lab-row')\nExpected: \u001b[32m8\u001b[39m\nReceived: \u001b[31m0\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" getByRole('dialog', { name: '模拟来源边界' }).locator('.lab-row') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('dialog', { name: '模拟来源边界' }).locator('.lab-row')\u001b[22m\n\u001b[2m    14 × locator resolved to 0 elements\u001b[22m\n\u001b[2m       - unexpected value \"0\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('dialog', { name: '模拟来源边界' }).locator('.lab-row')\nExpected: \u001b[32m8\u001b[39m\nReceived: \u001b[31m0\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" getByRole('dialog', { name: '模拟来源边界' }).locator('.lab-row') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('dialog', { name: '模拟来源边界' }).locator('.lab-row')\u001b[22m\n\u001b[2m    14 × locator resolved to 0 elements\u001b[22m\n\u001b[2m       - unexpected value \"0\"\u001b[22m\n\n    at D:\\Projects\\island-protype\\tests\\lab-source-lifetime.spec.ts:33:44",
+                    "location": {
+                      "file": "D:\\Projects\\island-protype\\tests\\lab-source-lifetime.spec.ts",
+                      "column": 44,
+                      "line": 33
+                    },
+                    "snippet": "  31 |   await page.goto('/clinical.html?source='+ticket);\n  32 |   const source=page.getByRole('dialog',{name:'模拟来源边界'});\n> 33 |   await expect(source.locator('.lab-row')).toHaveCount(8);\n     |                                            ^\n  34 |   invalidate=true;\n  35 |   await push({type:'clinical:scenario',scenario:'S04',labVariant:'baseline'});\n  36 |   if(change.startsWith('snapshot')){"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\Projects\\island-protype\\tests\\lab-source-lifetime.spec.ts",
+                        "column": 44,
+                        "line": 33
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('dialog', { name: '模拟来源边界' }).locator('.lab-row')\nExpected: \u001b[32m8\u001b[39m\nReceived: \u001b[31m0\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" getByRole('dialog', { name: '模拟来源边界' }).locator('.lab-row') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('dialog', { name: '模拟来源边界' }).locator('.lab-row')\u001b[22m\n\u001b[2m    14 × locator resolved to 0 elements\u001b[22m\n\u001b[2m       - unexpected value \"0\"\u001b[22m\n\n\n  31 |   await page.goto('/clinical.html?source='+ticket);\n  32 |   const source=page.getByRole('dialog',{name:'模拟来源边界'});\n> 33 |   await expect(source.locator('.lab-row')).toHaveCount(8);\n     |                                            ^\n  34 |   invalidate=true;\n  35 |   await push({type:'clinical:scenario',scenario:'S04',labVariant:'baseline'});\n  36 |   if(change.startsWith('snapshot')){\n    at D:\\Projects\\island-protype\\tests\\lab-source-lifetime.spec.ts:33:44"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-11T00:30:14.913Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "D:\\Projects\\island-protype\\evidence\\pr-review-20261011\\source-lifetime\\red-results\\lab-source-lifetime-ticket-c5e87-al-and-rejects-a-late-reply\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\Projects\\island-protype\\evidence\\pr-review-20261011\\source-lifetime\\red-results\\lab-source-lifetime-ticket-c5e87-al-and-rejects-a-late-reply\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\Projects\\island-protype\\evidence\\pr-review-20261011\\source-lifetime\\red-results\\lab-source-lifetime-ticket-c5e87-al-and-rejects-a-late-reply\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\Projects\\island-protype\\tests\\lab-source-lifetime.spec.ts",
+                    "column": 44,
+                    "line": 33
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "e57181d6dde7b0160244-c786f6d629923f7efe84",
+          "file": "lab-source-lifetime.spec.ts",
+          "line": 5,
+          "column": 2
+        },
+        {
+          "title": "ticket-backed report clears on snapshot-revision and rejects a late reply",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 7420,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('dialog', { name: '模拟来源边界' }).locator('.lab-row')\nExpected: \u001b[32m8\u001b[39m\nReceived: \u001b[31m0\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" getByRole('dialog', { name: '模拟来源边界' }).locator('.lab-row') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('dialog', { name: '模拟来源边界' }).locator('.lab-row')\u001b[22m\n\u001b[2m    14 × locator resolved to 0 elements\u001b[22m\n\u001b[2m       - unexpected value \"0\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('dialog', { name: '模拟来源边界' }).locator('.lab-row')\nExpected: \u001b[32m8\u001b[39m\nReceived: \u001b[31m0\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" getByRole('dialog', { name: '模拟来源边界' }).locator('.lab-row') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('dialog', { name: '模拟来源边界' }).locator('.lab-row')\u001b[22m\n\u001b[2m    14 × locator resolved to 0 elements\u001b[22m\n\u001b[2m       - unexpected value \"0\"\u001b[22m\n\n    at D:\\Projects\\island-protype\\tests\\lab-source-lifetime.spec.ts:33:44",
+                    "location": {
+                      "file": "D:\\Projects\\island-protype\\tests\\lab-source-lifetime.spec.ts",
+                      "column": 44,
+                      "line": 33
+                    },
+                    "snippet": "  31 |   await page.goto('/clinical.html?source='+ticket);\n  32 |   const source=page.getByRole('dialog',{name:'模拟来源边界'});\n> 33 |   await expect(source.locator('.lab-row')).toHaveCount(8);\n     |                                            ^\n  34 |   invalidate=true;\n  35 |   await push({type:'clinical:scenario',scenario:'S04',labVariant:'baseline'});\n  36 |   if(change.startsWith('snapshot')){"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\Projects\\island-protype\\tests\\lab-source-lifetime.spec.ts",
+                        "column": 44,
+                        "line": 33
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('dialog', { name: '模拟来源边界' }).locator('.lab-row')\nExpected: \u001b[32m8\u001b[39m\nReceived: \u001b[31m0\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" getByRole('dialog', { name: '模拟来源边界' }).locator('.lab-row') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('dialog', { name: '模拟来源边界' }).locator('.lab-row')\u001b[22m\n\u001b[2m    14 × locator resolved to 0 elements\u001b[22m\n\u001b[2m       - unexpected value \"0\"\u001b[22m\n\n\n  31 |   await page.goto('/clinical.html?source='+ticket);\n  32 |   const source=page.getByRole('dialog',{name:'模拟来源边界'});\n> 33 |   await expect(source.locator('.lab-row')).toHaveCount(8);\n     |                                            ^\n  34 |   invalidate=true;\n  35 |   await push({type:'clinical:scenario',scenario:'S04',labVariant:'baseline'});\n  36 |   if(change.startsWith('snapshot')){\n    at D:\\Projects\\island-protype\\tests\\lab-source-lifetime.spec.ts:33:44"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-11T00:30:24.430Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "D:\\Projects\\island-protype\\evidence\\pr-review-20261011\\source-lifetime\\red-results\\lab-source-lifetime-ticket-50149-on-and-rejects-a-late-reply\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\Projects\\island-protype\\evidence\\pr-review-20261011\\source-lifetime\\red-results\\lab-source-lifetime-ticket-50149-on-and-rejects-a-late-reply\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\Projects\\island-protype\\evidence\\pr-review-20261011\\source-lifetime\\red-results\\lab-source-lifetime-ticket-50149-on-and-rejects-a-late-reply\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\Projects\\island-protype\\tests\\lab-source-lifetime.spec.ts",
+                    "column": 44,
+                    "line": 33
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "e57181d6dde7b0160244-1792c37141f519543848",
+          "file": "lab-source-lifetime.spec.ts",
+          "line": 5,
+          "column": 2
+        },
+        {
+          "title": "ticket-backed report clears on snapshot-absent and rejects a late reply",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 7205,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('dialog', { name: '模拟来源边界' }).locator('.lab-row')\nExpected: \u001b[32m8\u001b[39m\nReceived: \u001b[31m0\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" getByRole('dialog', { name: '模拟来源边界' }).locator('.lab-row') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('dialog', { name: '模拟来源边界' }).locator('.lab-row')\u001b[22m\n\u001b[2m    14 × locator resolved to 0 elements\u001b[22m\n\u001b[2m       - unexpected value \"0\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('dialog', { name: '模拟来源边界' }).locator('.lab-row')\nExpected: \u001b[32m8\u001b[39m\nReceived: \u001b[31m0\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" getByRole('dialog', { name: '模拟来源边界' }).locator('.lab-row') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('dialog', { name: '模拟来源边界' }).locator('.lab-row')\u001b[22m\n\u001b[2m    14 × locator resolved to 0 elements\u001b[22m\n\u001b[2m       - unexpected value \"0\"\u001b[22m\n\n    at D:\\Projects\\island-protype\\tests\\lab-source-lifetime.spec.ts:33:44",
+                    "location": {
+                      "file": "D:\\Projects\\island-protype\\tests\\lab-source-lifetime.spec.ts",
+                      "column": 44,
+                      "line": 33
+                    },
+                    "snippet": "  31 |   await page.goto('/clinical.html?source='+ticket);\n  32 |   const source=page.getByRole('dialog',{name:'模拟来源边界'});\n> 33 |   await expect(source.locator('.lab-row')).toHaveCount(8);\n     |                                            ^\n  34 |   invalidate=true;\n  35 |   await push({type:'clinical:scenario',scenario:'S04',labVariant:'baseline'});\n  36 |   if(change.startsWith('snapshot')){"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\Projects\\island-protype\\tests\\lab-source-lifetime.spec.ts",
+                        "column": 44,
+                        "line": 33
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('dialog', { name: '模拟来源边界' }).locator('.lab-row')\nExpected: \u001b[32m8\u001b[39m\nReceived: \u001b[31m0\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" getByRole('dialog', { name: '模拟来源边界' }).locator('.lab-row') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('dialog', { name: '模拟来源边界' }).locator('.lab-row')\u001b[22m\n\u001b[2m    14 × locator resolved to 0 elements\u001b[22m\n\u001b[2m       - unexpected value \"0\"\u001b[22m\n\n\n  31 |   await page.goto('/clinical.html?source='+ticket);\n  32 |   const source=page.getByRole('dialog',{name:'模拟来源边界'});\n> 33 |   await expect(source.locator('.lab-row')).toHaveCount(8);\n     |                                            ^\n  34 |   invalidate=true;\n  35 |   await push({type:'clinical:scenario',scenario:'S04',labVariant:'baseline'});\n  36 |   if(change.startsWith('snapshot')){\n    at D:\\Projects\\island-protype\\tests\\lab-source-lifetime.spec.ts:33:44"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-11T00:30:33.537Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "D:\\Projects\\island-protype\\evidence\\pr-review-20261011\\source-lifetime\\red-results\\lab-source-lifetime-ticket-43de8-nt-and-rejects-a-late-reply\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\Projects\\island-protype\\evidence\\pr-review-20261011\\source-lifetime\\red-results\\lab-source-lifetime-ticket-43de8-nt-and-rejects-a-late-reply\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\Projects\\island-protype\\evidence\\pr-review-20261011\\source-lifetime\\red-results\\lab-source-lifetime-ticket-43de8-nt-and-rejects-a-late-reply\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\Projects\\island-protype\\tests\\lab-source-lifetime.spec.ts",
+                    "column": 44,
+                    "line": 33
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "e57181d6dde7b0160244-bf8855c9bbb87b21c0e7",
+          "file": "lab-source-lifetime.spec.ts",
+          "line": 5,
+          "column": 2
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-11T00:29:59.888Z",
+    "duration": 43059.739,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 4,
+    "flaky": 0
+  }
+}
