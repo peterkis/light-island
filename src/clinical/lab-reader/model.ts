@@ -23,7 +23,7 @@ export const abnormal=(i:LabItem)=>['H','L','A'].includes(i.flag);
  * JS string buffers/GC and OS memory copies cannot be guaranteed erased. */
 export function disposeLabReport(r:LabReport|null){
  if(!r)return;
- for(const i of r.items){i.name='';i.abbr='';i.unit='';i.text=undefined;i.value=null;i.lo=null;i.hi=null;i.flag='unknown';i.id='';}
+ for(const i of r.items){i.name='';i.abbr='';i.unit='';delete i.text;i.value=null;i.lo=null;i.hi=null;i.flag='unknown';i.id='';}
  r.items.length=0;r.id='';r.title='';r.source='';r.maskedName='';r.sex='';r.specimen='';r.reportedAt='';r.age=0;r.version=0;
  r.identity={source:'',campus:'',encounter:'',object:''};
 }

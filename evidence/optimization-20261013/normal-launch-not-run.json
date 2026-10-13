@@ -1,0 +1,7 @@
+{
+  "status": "NOT_RUN",
+  "action": "Supplementary normal launch and cleanup of owned application/server processes",
+  "reason": "Automatic approval review rejected the composed shell command with: blocked by policy",
+  "execution": "Command creation was rejected before the shell ran",
+  "fallback": "Read-only verification of unchanged opt-in QA argument handling and final absence of prototype listeners/processes; not a normal-launch runtime pass"
+}

@@ -73,7 +73,7 @@ export function Island({ c: live }: { c: IslandController }) {
       </button>}
       {mode === 'peek' && <div className="horizontal-face peek-rail" key={`peek-${n?.id}`}>
         <button className="rail-notice-button" onClick={open} aria-label="展开消息详情">
-          <span className={`source-tile ${n?.priority ?? 'routine'}`}><SourceIcon source={n?.source} size={21}/></span>
+          <span className={`source-tile ${n?.priority ?? 'routine'}`}><SourceIcon {...(n?{source:n.source}:{})} size={21}/></span>
           <span className="rail-copy">
             <strong>{n ? (settings.privacy && n.patient ? `${priorityNames[n.priority]}提醒 · 有新的患者相关消息` : n.title) : '此刻，没有需要打断你的事'}</strong>
             <span className="rail-meta">{n ? sourceNames[n.source] : '同频协作'}<i/>{n?.requiresAck ? '待确认 · 收起不代表已收到' : n ? `${n.context}${n.count > 1 ? ` · 已合并 ${n.count} 条更新` : ''}` : '消息将向左右舒展，不打断当前工作'}</span>
@@ -85,7 +85,7 @@ export function Island({ c: live }: { c: IslandController }) {
         <div className={`peek-timer ${c.hovered || n?.requiresAck ? 'paused' : ''}`}/>
       </div>}
       {mode === 'expanded' && <div className="horizontal-face detail-rail" key={`detail-${n?.id}`}>
-        <span className={`source-tile ${n?.priority ?? 'routine'}`}><SourceIcon source={n?.source} size={21}/></span>
+        <span className={`source-tile ${n?.priority ?? 'routine'}`}><SourceIcon {...(n?{source:n.source}:{})} size={21}/></span>
         <div className="rail-copy">
           <div className="rail-title-line"><h2 title={title}>{title}</h2>{n && <span className={`priority-badge ${n.priority}`}>{priorityNames[n.priority]}</span>}</div>
           <div className="rail-meta"><span className="rail-context" title={n ? contextLabel(n, masked) : ''}>{n ? `${sourceNames[n.source]} · ${contextLabel(n, masked)}` : '同频协作'}</span>

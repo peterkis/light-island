@@ -1,11 +1,12 @@
+import type {Page,APIRequestContext} from '@playwright/test';
 import {test,expect} from '@playwright/test';
 import catalogue from '../src/clinical/catalogue.json' with {type:'json'};
 const base='http://127.0.0.1:17322';
-const post=async(request:any,data:object)=>expect((await request.post(base+'/api/push',{data})).ok()).toBeTruthy();
-const island=(page:any)=>page.getByTestId('clinical-island');
-async function settled(page:any,surface?:string){const e=island(page);if(surface)await expect(e).toHaveAttribute('data-surface',surface);await expect(e).toHaveAttribute('data-motion-phase','settled',{timeout:8000});await page.waitForTimeout(350);return e;}
-async function open(request:any,page:any,id='S03',stage=0){await post(request,{type:'clinical:scenario',scenario:id,stage});await post(request,{type:'clinical:view',mode:'open',scenario:id});await settled(page,'rich');}
-async function details(page:any){await island(page).getByRole('button',{name:'详情',exact:true}).click();await settled(page,'stack');}
+const post=async(request:APIRequestContext,data:object)=>expect((await request.post(base+'/api/push',{data})).ok()).toBeTruthy();
+const island=(page:Page)=>page.getByTestId('clinical-island');
+async function settled(page:Page,surface?:string){const e=island(page);if(surface)await expect(e).toHaveAttribute('data-surface',surface);await expect(e).toHaveAttribute('data-motion-phase','settled',{timeout:8000});await page.waitForTimeout(350);return e;}
+async function open(request:APIRequestContext,page:Page,id='S03',stage=0){await post(request,{type:'clinical:scenario',scenario:id,stage});await post(request,{type:'clinical:view',mode:'open',scenario:id});await settled(page,'rich');}
+async function details(page:Page){await island(page).getByRole('button',{name:'详情',exact:true}).click();await settled(page,'stack');}
 test.beforeEach(async({page,request})=>{await post(request,{type:'clinical:reset'});await page.goto('/clinical.html');await expect(page.getByTestId('clinical-scenario-S03')).toBeVisible();await settled(page,'idle');});
 test('hover is a finite 5% Peek, not an auto-open; explicit reading survives pointer leave',async({page,request})=>{
  const e=island(page);await e.hover();await expect(e).toHaveAttribute('data-peek','true');await settled(page,'idle');expect((await e.boundingBox())!.width).toBeCloseTo(130.2,1);

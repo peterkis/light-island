@@ -3,7 +3,7 @@ import {createClinicalDemo} from '../server/clinical-demo.mjs';
 import catalogue from '../src/clinical/catalogue.json';
 import tokens from '../src/clinical/tokens.json';
 import {readFileSync} from 'node:fs';
-import {canView,defaults,emptyQueue,identityKey,ingest,parseActivity,routeMatches,timerAction,emptyTimer,timerRemaining,versionKey} from '../src/clinical/model';
+import {canView,defaults,emptyQueue,ingest,parseActivity,routeMatches,timerAction,emptyTimer,timerRemaining,versionKey} from '../src/clinical/model';
 import {layoutWidth,layoutHeight,contour} from '../src/clinical/geometry';
 const fixture=(id='S03',stage=0)=>{const demo=createClinicalDemo(()=>{},()=>1800000000000);demo.handle({type:'clinical:scenario',scenario:id,stage});return demo.inspect().activities[0];};
 describe('clinical source contracts and all documented scenarios',()=>{

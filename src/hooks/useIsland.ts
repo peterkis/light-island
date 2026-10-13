@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { connect, send } from '../lib/bridge';
+import { connect, sendLegacy as send } from '../lib/bridge';
 import type { Connection, Wire } from '../lib/bridge';
 import { chooseArrivalMode, defaultSettings, emptyModel, ingest, parseNotice, pending, sanitizeSettings, unread, updateStatus } from '../lib/domain';
 import type { Mode, Model, Notice, Settings } from '../lib/domain';
@@ -41,7 +41,7 @@ export function useIsland() {
     addLog(`${n.source} → ${n.priority === 'critical' ? '危急提醒' : n.priority === 'urgent' ? '紧急提醒' : '普通消息'} · ${n.title}`);
   }, [addLog]);
   useEffect(() => {
-    let cleanup: (() => void) | undefined; let dead = false;
+    let cleanup: (() => void) | undefined; let dead = false;const abort=new AbortController();
     const receive = (event: Wire) => {
       if (event.type === 'notice') applyNotice(event.notice);
       if (event.type === 'hello') {
@@ -65,9 +65,9 @@ export function useIsland() {
       if (event.type === 'reset') { seen.current.clear(); setModel(emptyModel()); setActiveId(null); setMode('compact'); setLogs([]); ackTimers.current.forEach(clearTimeout); ackTimers.current.clear(); }
       if (event.type === 'view' && ['compact', 'inbox', 'expanded', 'thread'].includes(event.mode as string)) setMode(event.mode as Mode);
     };
-    void connect(receive, s => { if (!dead) setConnection(s); }).then(off => { if (dead) off(); else cleanup = off; });
+    void connect(receive, s => { if (!dead) {setConnection(s);if(s==='online')void send({type:'sync'});} },abort.signal).then(off => { if (dead) off(); else cleanup = off; }).catch(()=>{if(!dead)setConnection('offline');});
     const timers = ackTimers.current;
-    return () => { dead = true; cleanup?.(); timers.forEach(clearTimeout); };
+    return () => { dead = true; abort.abort();cleanup?.(); timers.forEach(clearTimeout); };
   }, [applyNotice, addLog]);
   useEffect(() => { localStorage.setItem('samewave-preferences', JSON.stringify(settings)); }, [settings]);
   // Auto-collapse is visual only. Critical/urgent events never become acknowledged by a timer.

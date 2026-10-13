@@ -1,0 +1,47 @@
+﻿{
+    "verified":  true,
+    "rootPid":  25328,
+    "rootStartedTicks":  639274722641301600,
+    "serverPid":  27592,
+    "serverStartedTicks":  639274722635231107,
+    "port":  9223,
+    "executable":  "D:\\Projects\\island-protype\\evidence\\backups\\optimization-20261013\\baseline-executable\\samewave-island.exe",
+    "exeSHA256":  "e562db235a03836b69ebdfa40512251dbf93e15b87d5202e9481d36c7df3378b",
+    "arguments":  "--qa-cdp --hover-diagnostics",
+    "studio":  false,
+    "capturedAt":  "2026-10-13T15:11:04.1946127+08:00",
+    "qaEndpointReadyMs":  1516,
+    "browser":  "Edg/154.0.4258.62",
+    "processes":  [
+                      {
+                          "ProcessId":  25328,
+                          "ParentProcessId":  36300,
+                          "Name":  "samewave-island.exe"
+                      },
+                      {
+                          "ProcessId":  33020,
+                          "ParentProcessId":  25328,
+                          "Name":  "msedgewebview2.exe"
+                      },
+                      {
+                          "ProcessId":  23164,
+                          "ParentProcessId":  33020,
+                          "Name":  "msedgewebview2.exe"
+                      },
+                      {
+                          "ProcessId":  20808,
+                          "ParentProcessId":  33020,
+                          "Name":  "msedgewebview2.exe"
+                      },
+                      {
+                          "ProcessId":  4628,
+                          "ParentProcessId":  33020,
+                          "Name":  "msedgewebview2.exe"
+                      },
+                      {
+                          "ProcessId":  34892,
+                          "ParentProcessId":  33020,
+                          "Name":  "msedgewebview2.exe"
+                      }
+                  ]
+}

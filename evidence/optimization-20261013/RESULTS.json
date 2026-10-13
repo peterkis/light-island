@@ -1,0 +1,185 @@
+{
+  "status": "IMPLEMENTED_WITH_BOUNDED_NATIVE_VALIDATION",
+  "date": "2026-10-13",
+  "baselineCommit": "0aa4ea9e7eb43fbdfb07f89a0cc8e3e06d5d301b",
+  "commitOrPushPerformed": false,
+  "skills": [
+    "typescript-advanced-types",
+    "vercel-react-best-practices"
+  ],
+  "checks": {
+    "typecheck": "PASS: strict src plus checked tests/configuration and clinical JS producers",
+    "unit": {
+      "passed": 231,
+      "failed": 0
+    },
+    "rust": {
+      "passed": 8,
+      "failed": 0,
+      "command": "cargo test --manifest-path src-tauri/Cargo.toml --lib --release --locked"
+    },
+    "e2e": {
+      "startTime": "2026-10-13T06:50:42.302Z",
+      "duration": 437358.266,
+      "expected": 93,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "frontendBuild": "PASS",
+    "desktopReleaseBuild": "PASS",
+    "sourceBundleBoundary": "PASS"
+  },
+  "performance": {
+    "bundle": {
+      "baseline": {
+        "entry": "clinical-dEzooUjE.js",
+        "chunks": [
+          "clinical-dEzooUjE.js",
+          "index-CWPKPpE6.js",
+          "shield-check-CngvgE15.js"
+        ],
+        "bytes": 397062,
+        "gzipBytes": 131047
+      },
+      "optimized": {
+        "entry": "clinical-CKiDWuzL.js",
+        "source": "SourcePage-BSzwYnfD.js",
+        "chunks": [
+          "clinical-CKiDWuzL.js",
+          "client-DF7tKrzX.js",
+          "SourcePage-BSzwYnfD.js",
+          "arrow-up-right-DafloM8b.js",
+          "SourceView-Cp52QZ9C.js",
+          "shield-check-sAbObOH2.js"
+        ],
+        "bytes": 265234,
+        "gzipBytes": 84004,
+        "islandRuntimeAbsent": true,
+        "scope": "Clinical bootstrap plus selected source chunk and recursive static JS imports; excludes CSS, sourcemaps and unloaded dynamic imports"
+      },
+      "bytesReduction": 131828,
+      "percentReduction": 33.2,
+      "scope": "Clinical bootstrap plus selected source chunk and recursive static JS imports; excludes CSS, sourcemaps and unloaded dynamic imports"
+    },
+    "reactProfiler": {
+      "scope": "128 synthetic rows; 1500ms observation windows in React development Profiler; no production speedup or DWM claim",
+      "samples": {
+        "baseline": {
+          "runningCommits": 16,
+          "pausedCommits": 16,
+          "medianActualDurationMs": 35.45000000298023
+        },
+        "optimized": {
+          "runningCommits": 15,
+          "pausedCommits": 0,
+          "medianActualDurationMs": 0.29999998211860657
+        }
+      }
+    },
+    "native": {
+      "memory": {
+        "baselinePrivateWorkingSetMiB": 218.88,
+        "optimizedPrivateWorkingSetMiB": 217.67,
+        "baselinePrivateCommitMiB": 351.03,
+        "optimizedPrivateCommitMiB": 338.29,
+        "scope": "Owned native application and all discovered WebView2 descendants, no studio; excludes synthetic Node server and QA tools",
+        "interpretation": "One short sample per binary; inventory only, no statistically established memory improvement"
+      },
+      "notificationReady": {
+        "baselineMedianMs": 178.89999997615814,
+        "optimizedMedianMs": 181.2999999821186,
+        "differenceMs": 2.4000000059604645,
+        "scope": "Seven warm renderer observations, including loopback dispatch and next-rAF sampling; rich phase settled, content interactive and opacity >= .95; not cold startup or DWM presentation",
+        "interpretation": "Medians differ by less than one observed 60 Hz rAF interval; not a cold-start or DWM latency guarantee"
+      },
+      "qaEndpointReady": {
+        "baselineMs": 2170,
+        "optimizedMs": 1875,
+        "interpretation": "One QA-enabled process launch per binary; endpoint readiness, not normal startup or content visibility"
+      },
+      "sourceContentTiming": "NOT_RUN: secondary source WebView is not exposed through this owned CDP endpoint"
+    }
+  },
+  "native": {
+    "status": "PASS_WITH_LIMITED_SOURCE_OBSERVATION",
+    "os": "Windows 11 Pro 10.0.26300",
+    "webview": "154.0.4258.62",
+    "physicalDpi": 96,
+    "motionPath": "system-reduced-motion",
+    "svgSamples": 344,
+    "viewportMismatches": 0,
+    "windowChanges": 0,
+    "transitionRegionUpdates": 12,
+    "restRegionUpdates": 0,
+    "foregroundPreserved": true,
+    "clinicalWriteAndSimulatorDenied": true,
+    "physicalScreenSamples": 55,
+    "blankScreenSamples": 0,
+    "physicalClickThroughCases": 3,
+    "sourceObjectVisualCheck": "PASS: owned source window screenshot shows synthetic LIS / DEMO-S03 / v1; source DOM timing was unavailable over the owned CDP endpoint"
+  },
+  "integrity": {
+    "codeFiles": 205,
+    "priorManifestDrift": [],
+    "exeSHA256": "a056b570c02f77dd00dfde5a4f6e88b3005ded2d64679651b366c49806553836",
+    "immutableInputs": [
+      {
+        "path": "docs/Windows 灵动岛 UI UX 设计规范 v1.0.md",
+        "sha256": "a9f37ea76becf4b74c4388a2172e4d46dbc7a4600558cee3b71f445f3e67b1fa",
+        "unchanged": true
+      },
+      {
+        "path": "docs/protype/灵动岛「检验报告阅读」开发文档（Agent 可读版）.md",
+        "sha256": "beca7ca59cce18f7898f97caf497a9f63e8e30b55a91fd74e1cb2bb2d74c9aff",
+        "unchanged": true
+      },
+      {
+        "path": "docs/protype/灵动岛 · 检验报告阅读（阅后即焚）.html",
+        "sha256": "625664a43eea9ceb14763ef27e650a1f8d8766ded933e8d6704a451416146dad",
+        "unchanged": true
+      }
+    ]
+  },
+  "limits": [
+    "Native normal-animation spring path NOT_RUN because the system animation setting was disabled; browser normal-motion regressions passed.",
+    "DWM-presented frames, Windows 10, physical 125/150/200% and mixed-DPI monitors, Narrator, touch/device matrix, and clinical integration are not certified.",
+    "Secondary source WebView was not enumerated by the dedicated CDP endpoint: source cold content timing NOT_RUN.",
+    "Supplementary normal-launch/cleanup command was rejected by automatic approval review (blocked by policy); normal-launch runtime smoke NOT_RUN. Opt-in argument handling was verified read-only.",
+    "QA-owned processes were forcibly stopped after verification; this is not evidence of graceful-exit profile cleanup or guaranteed memory erasure."
+  ],
+  "preservedFailures": [
+    {
+      "run": "initial unit run",
+      "status": "222/224",
+      "reason": "Two added fixtures used a clock of 1000 and thus negative source timestamps; fixture corrected, runtime nonnegative validation retained.",
+      "evidence": "Original tool output; no standalone log was captured for that initial run."
+    },
+    {
+      "run": "targeted-initial",
+      "status": "15/17",
+      "reason": "The new profiler harness selected legacy transport from its non-clinical URL."
+    },
+    {
+      "run": "targeted-recheck",
+      "status": "9/13",
+      "reason": "Fulfilled harness HTML omitted the Vite React preamble; two reader tests pushed before their WebSocket was online."
+    },
+    {
+      "run": "native-reader-red",
+      "status": "test collection failed",
+      "reason": "A missing closing brace in the new test harness; not a product RED."
+    },
+    {
+      "run": "native-reader-before-mask",
+      "status": "RED 0/1",
+      "reason": "Display failure left hover pause until the existing 8-second automatic privacy mask; now masked immediately without changing the reading budget."
+    },
+    {
+      "run": "native-baseline/native-observation.json",
+      "status": "FAIL",
+      "reason": "The observer expected the secondary source WebView in the same CDP environment. Source-window inventory and screenshot were added; timing remains NOT_RUN."
+    }
+  ],
+  "evidenceRoot": "evidence/optimization-20261013"
+}

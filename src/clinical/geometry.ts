@@ -23,9 +23,9 @@ export function layoutHeight(view:'idle'|'compact'|'expanded'|Surface,natural:nu
 }
 /** §2.2 named radii take precedence over the conflicting generic r=h/2 formula. */
 export function radiusAt(height:number):number {
- const anchors=[[32,16],[36,18],[88,36],[168,40],[280,44]];
+ const anchors:readonly Point[]=[[36,18],[88,36],[168,40],[280,44]];
  if(height<=32)return Math.max(0,height/2);
- for(let i=1;i<anchors.length;i++)if(height<=anchors[i][0]){const [h0,r0]=anchors[i-1],[h1,r1]=anchors[i];return r0+(r1-r0)*(height-h0)/(h1-h0);}
+ let previous:Point=[32,16];for(const [h1,r1] of anchors){const [h0,r0]=previous;if(height<=h1)return r0+(r1-r0)*(height-h0)/(h1-h0);previous=[h1,r1];}
  return 44;
 }
 /** Shared continuous-cubic squircle approximation (C2 at straight joins), not the
@@ -61,7 +61,7 @@ export function satelliteNeck(g:Shape):{path:string;points:Point[]} {
  const half=Math.min(s.size*.4,8*Math.sin(Math.PI*p)),waist=half*.22,middle=(left+right)/2;
  const points:Point[]=[],commands:string[]=[];
  const start:Point=[left,Math.max(0,center-half)];points.push(start);commands.push(`M${start}`);
- const curve=(a:Point,b:Point,end:Point)=>{const old=points[points.length-1];commands.push(`C${a} ${b} ${end}`);for(let i=1;i<=12;i++){const t=i/12,u=1-t;points.push([u*u*u*old[0]+3*u*u*t*a[0]+3*u*t*t*b[0]+t*t*t*end[0],u*u*u*old[1]+3*u*u*t*a[1]+3*u*t*t*b[1]+t*t*t*end[1]]);}};
+ const curve=(a:Point,b:Point,end:Point)=>{const old=points.at(-1)??start;commands.push(`C${a} ${b} ${end}`);for(let i=1;i<=12;i++){const t=i/12,u=1-t;points.push([u*u*u*old[0]+3*u*u*t*a[0]+3*u*t*t*b[0]+t*t*t*end[0],u*u*u*old[1]+3*u*u*t*a[1]+3*u*t*t*b[1]+t*t*t*end[1]]);}};
  curve([middle,center-waist],[middle,center-waist],[right,center-half]);
  points.push([right,center+half]);commands.push(`L${right},${center+half}`);
  curve([middle,center+waist],[middle,center+waist],[left,center+half]);commands.push('Z');

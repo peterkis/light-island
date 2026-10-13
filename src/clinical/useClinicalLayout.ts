@@ -1,4 +1,4 @@
-import {useLayoutEffect,useRef,useState} from 'react';
+import {useCallback,useLayoutEffect,useRef,useState} from 'react';
 import {invoke} from '@tauri-apps/api/core';
 import gsap from 'gsap';
 import {nativeIsland} from '../lib/bridge';
@@ -9,18 +9,20 @@ import T from './tokens.json';
 import {labGeometry} from './lab-reader/geometry';
 import type {LabState} from './lab-reader/model';
 import labTokens from './lab-reader/tokens.json';
+import {parseMetrics} from './native-contract';
+import type {Metrics} from './native-contract';
 
 gsap.config({autoSleep:12});
 let epochCounter=Date.now();
 interface Options {surface?:Surface;labStage?:LabState;dock?:Dock;peek?:boolean;pressed?:boolean;satellite?:boolean;shift?:number;dragging?:boolean;dragVelocity?:number;dismissing?:boolean;onSettled?:()=>void}
-interface Metrics {available:number;height:number;scale?:number;canvasWidth?:number;topReserved?:boolean}
 /** One owner of the SVG viewport, shape and finite native handoff.
  * Source data is never snapshotted: revoking authorization removes it immediately. */
 export function useClinicalLayout(requestedView:'idle'|'compact'|'expanded',contentKey:string,textScale:number,reduced:boolean,hidden:boolean,options:Options={}){
  const requested:Surface=options.surface??(requestedView==='expanded'?'rich':requestedView);
  const host=useRef<HTMLDivElement>(null),inner=useRef<HTMLDivElement>(null),svg=useRef<SVGSVGElement>(null);
  const [presented,setPresented]=useState<Surface>(requested),[metrics,setMetrics]=useState<Metrics>({available:1200,height:900});
- const [ready,setReady]=useState(!nativeIsland),[error,setError]=useState('');
+ const [ready,setReady]=useState(!nativeIsland),[error,setError]=useState(''),[failed,setFailed]=useState(false),[retryRevision,setRetryRevision]=useState(0);
+ const retry=useCallback(()=>{setError('');setRetryRevision(n=>n+1);},[]);
  const painted=useRef<Shape|null>(null),committedKey=useRef(''),callback=useRef(options.onSettled);callback.current=options.onSettled;
  const physics=useRef({w:springAt(124),h:springAt(32),r:springAt(16),top:springAt(0),ear:springAt(10),sat:springAt(0),shift:springAt(0)});
  const satelliteStarted=useRef({target:false,at:0});
@@ -35,19 +37,29 @@ export function useClinicalLayout(requestedView:'idle'|'compact'|'expanded',cont
  const factor=reduced?1:options.pressed?T.motion.press.factor:options.peek?(options.labStage?1.045:T.motion.hover.factor):1;
  useLayoutEffect(()=>{
   let dead=false;
-  if(nativeIsland){const measure=()=>void invoke<Metrics>('clinical_metrics').then(m=>{if(!dead){setMetrics(m);setReady(true);}}).catch(e=>{if(!dead)setError(String(e));});
-   measure();window.addEventListener('resize',measure);return()=>{dead=true;window.removeEventListener('resize',measure);};}
+  if(nativeIsland){
+   let request=0,timeout=0;
+   const measure=()=>{
+    const id=++request;clearTimeout(timeout);setReady(false);
+    timeout=window.setTimeout(()=>{if(!dead&&request===id){request++;setError('Native display metrics timed out');setFailed(true);}},T.motion.handoff.watchdogTimeout);
+    void invoke<unknown>('clinical_metrics').then(value=>{
+     if(dead||request!==id)return;
+     const m=parseMetrics(value);if(!m)throw new Error('Invalid native display metrics');clearTimeout(timeout);setMetrics(m);setReady(true);
+    }).catch(error=>{if(!dead&&request===id){clearTimeout(timeout);setError(String(error));setFailed(true);}});
+   };
+   measure();window.addEventListener('resize',measure);return()=>{dead=true;request++;clearTimeout(timeout);window.removeEventListener('resize',measure);};
+  }
   const parent=host.current?.parentElement;if(!parent)return;
   const measure=()=>setMetrics({available:parent.clientWidth,height:window.innerHeight});
   const ro=new ResizeObserver(measure);ro.observe(parent);measure();return()=>{dead=true;ro.disconnect();};
- },[]);
+ },[retryRevision]);
  useLayoutEffect(()=>{
   const e=host.current,body=inner.current,s=svg.current;if(!e||!body||!s||!ready)return;
   const initial=painted.current===null,newContent=committedKey.current!==contentKey;
   const shiftLimit=Math.max(0,Math.min(128,((metrics.canvasWidth??metrics.available)/(metrics.scale??1)-mainWidth*factor)/2-16));
   const target:Shape={width:mainWidth*factor,height:mainHeight*factor,radius:labTarget?labTarget.radius*factor:radiusAt(mainHeight*factor),ear:dock==='notch'?T.geometry.earRadius:0,top:dock==='floating'?T.geometry.floatTop:0,satellite:options.satellite?1:0,shift:reduced?0:Math.max(-shiftLimit,Math.min(shiftLimit,options.shift??0))};
   if(satelliteStarted.current.target!==Boolean(options.satellite)){satelliteStarted.current={target:Boolean(options.satellite),at:performance.now()};}
-  const epoch=++epochCounter;let dead=false,raf=0,swapTimer=0,delayTimer=0,finalFrame=0,watchdog=0,finalTimer=0;
+  const epoch=++epochCounter;let dead=false,terminal=false,raf=0,swapTimer=0,finalFrame=0,watchdog=0,finalTimer=0;
   let order=0,busy=false,finishing=false,finalizing=false,queued:Shape|null=null,scheduled=false,revealed=false;
   let inFlight:Promise<void>=Promise.resolve(),fade:gsap.core.Timeline|undefined;
   const p=physics.current;
@@ -60,7 +72,13 @@ export function useClinicalLayout(requestedView:'idle'|'compact'|'expanded',cont
   const micro=!newContent&&(requested==='idle'||requested==='compact');
   const params=labTarget?(options.labStage==='done'?labTokens.spring.morph:options.labStage==='idle'?labTokens.spring.collapse:labTokens.spring.expand):micro?(options.pressed?T.motion.spring.press:T.motion.spring.peek):requested==='idle'||requested==='compact'?(closing?T.motion.spring.collapse:T.motion.spring.morph):T.motion.spring.expand;
   const heightParams=labTarget?labTokens.spring.height:micro?params:closing?T.motion.spring.collapse:T.motion.spring.height;
-  const valid=()=>!dead;
+  const valid=()=>!dead&&!terminal;
+  const clearWork=()=>{queued=null;cancelAnimationFrame(raf);cancelAnimationFrame(finalFrame);clearTimeout(swapTimer);clearTimeout(watchdog);clearTimeout(finalTimer);fade?.kill();e.style.willChange='auto';};
+  const fail=(message:string)=>{
+    if(!valid())return;terminal=true;clearWork();body.inert=true;body.style.visibility='hidden';
+    e.dataset.motionPhase='failed';setError(message);setFailed(true);
+    if(nativeIsland)void native(painted.current??target,'cancel').catch(()=>{});
+   };
   const draw=(g:Shape)=>{
    if(!valid())return;
    const shape=motionShape(g),curve=contour(shape);painted.current=shape;
@@ -89,13 +107,13 @@ export function useClinicalLayout(requestedView:'idle'|'compact'|'expanded',cont
    queueMicrotask(()=>{
     scheduled=false;if(!valid()||finishing||!queued)return;
     const next=queued;queued=null;busy=true;
-    inFlight=(async()=>{try{const applied=await native(next,'frame',painted.current??next);if(valid()&&!finishing&&applied)draw(next);}catch(err){if(valid())setError(String(err));}})()
+     inFlight=(async()=>{try{const applied=await native(next,'frame',painted.current??next);if(!valid())return;if(!applied){fail('Native region rejected the active transition');return;}if(!finishing)draw(next);}catch(err){fail(String(err));}})()
      .finally(()=>{busy=false;if(queued&&valid()&&!finishing)enqueue(queued);});
    });
   };
   const reveal=(immediate=false)=>{
    if(!valid())return;
-   revealed=true;committedKey.current=contentKey;setPresented(requested);body.inert=false;
+   revealed=true;committedKey.current=contentKey;setPresented(requested);body.inert=false;body.style.visibility='visible';
    fade?.kill();
    if(immediate){body.style.opacity='1';body.style.filter='none';body.style.transform='none';return;}
    // Presentation updates before the next paint; final text layout never tracks shell width.
@@ -108,15 +126,15 @@ export function useClinicalLayout(requestedView:'idle'|'compact'|'expanded',cont
    });
   };
   const settle=async()=>{
-   if(!valid()||finishing)return;finishing=true;queued=null;cancelAnimationFrame(raf);clearTimeout(watchdog);clearTimeout(swapTimer);
+    if(!valid()||finishing)return;finishing=true;queued=null;cancelAnimationFrame(raf);clearTimeout(swapTimer);
    await inFlight;if(!valid())return;
-   try{if(!await native(target,'frame',painted.current??target)||!valid())return;}catch(err){if(valid())setError(String(err));return;}
+    try{const applied=await native(target,'frame',painted.current??target);if(!valid())return;if(!applied){fail('Native final frame rejected');return;}}catch(err){fail(String(err));return;}
    draw(target);Object.entries(p).forEach(([name,spring])=>{if(name!=='shift'||!options.dragging)finishSpring(spring);});
    if(initial||hidden)reveal(true);else if(newContent&&!revealed)reveal();
    const finalize=async()=>{
     if(!valid()||finalizing)return;finalizing=true;clearTimeout(finalTimer);
-    try{if(!await native(target,'commit')||!valid())return;}catch(err){if(valid())setError(String(err));return;}
-    committedKey.current=contentKey;e.dataset.motionPhase='settled';e.style.willChange='auto';callback.current?.();
+     try{const applied=await native(target,'commit');if(!valid())return;if(!applied){fail('Native commit rejected');return;}}catch(err){fail(String(err));return;}
+     clearTimeout(watchdog);committedKey.current=contentKey;e.dataset.motionPhase='settled';e.style.willChange='auto';setError('');setFailed(false);callback.current?.();
    };
    if(nativeIsland){finalFrame=requestAnimationFrame(()=>{finalFrame=requestAnimationFrame(()=>void finalize());});finalTimer=window.setTimeout(()=>void finalize(),100);}
    else void finalize();
@@ -125,7 +143,7 @@ export function useClinicalLayout(requestedView:'idle'|'compact'|'expanded',cont
   e.dataset.targetWidth=String(target.width);e.dataset.targetHeight=String(target.height);
   e.dataset.targetSurface=requested;e.dataset.dock=dock;
   const run=async()=>{
-   try{if(!await native(painted.current??target,'frame',painted.current??target)||!valid())return;}catch(err){if(valid())setError(String(err));return;}
+    try{const applied=await native(painted.current??target,'frame',painted.current??target);if(!valid())return;if(!applied){fail('Native initial frame rejected');return;}}catch(err){fail(String(err));return;}
    if(initial||hidden){await settle();return;}
    if(reduced){reveal();await settle();return;}
    e.dataset.motionPhase=closing?'collapsing':'expanding';e.style.willChange='width,height';
@@ -144,12 +162,14 @@ export function useClinicalLayout(requestedView:'idle'|'compact'|'expanded',cont
     if(rest&&(!newContent||now-started>=T.motion.content.delay)){void settle();return;}raf=requestAnimationFrame(tick);
    };
    raf=requestAnimationFrame(tick);
-   watchdog=window.setTimeout(()=>{if(valid()){Object.values(p).forEach(finishSpring);void settle();}},T.motion.handoff.watchdogTimeout);
   };
+  watchdog=window.setTimeout(()=>fail('Native transition timed out'),T.motion.handoff.watchdogTimeout);
   void run();
-  return()=>{dead=true;queued=null;cancelAnimationFrame(raf);cancelAnimationFrame(finalFrame);clearTimeout(swapTimer);clearTimeout(delayTimer);clearTimeout(watchdog);clearTimeout(finalTimer);fade?.kill();
+  return()=>{dead=true;clearWork();if(e.dataset.motionPhase!=='settled'&&e.dataset.motionPhase!=='failed')e.dataset.motionPhase='cancelled';
    if(nativeIsland)void native(painted.current??target,'cancel').catch(()=>{});
   };
- },[requested,mainWidth,mainHeight,contentKey,factor,dock,reduced,hidden,ready,metrics.scale,options.satellite,options.shift,options.dragging,options.dismissing]);
- return {host,inner,svg,width:contentWidth,height:contentHeight,view:presented==='idle'||presented==='compact'?presented:'expanded' as const,surface:presented,error,nativeFallback:false};
+ },[retryRevision,requested,mainWidth,mainHeight,contentKey,factor,dock,reduced,hidden,ready,metrics.scale,metrics.canvasWidth,options.satellite,options.shift,options.dragging,options.dismissing]);
+ // On failure the consumer renders only a non-sensitive retry control in the retained clip.
+ useLayoutEffect(()=>{if(failed&&inner.current){if(host.current)host.current.dataset.motionPhase='failed';inner.current.inert=false;inner.current.style.visibility='visible';inner.current.style.opacity='1';inner.current.style.filter='none';inner.current.style.transform='none';}},[failed]);
+ return {host,inner,svg,failed,retry,width:contentWidth,height:contentHeight,view:presented==='idle'||presented==='compact'?presented:'expanded' as const,surface:presented,error,nativeFallback:false};
 }

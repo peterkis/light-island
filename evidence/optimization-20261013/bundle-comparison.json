@@ -1,0 +1,31 @@
+{
+  "baseline": {
+    "entry": "clinical-dEzooUjE.js",
+    "chunks": [
+      "clinical-dEzooUjE.js",
+      "index-CWPKPpE6.js",
+      "shield-check-CngvgE15.js"
+    ],
+    "bytes": 397062,
+    "gzipBytes": 131047
+  },
+  "optimized": {
+    "entry": "clinical-CKiDWuzL.js",
+    "source": "SourcePage-BSzwYnfD.js",
+    "chunks": [
+      "clinical-CKiDWuzL.js",
+      "client-DF7tKrzX.js",
+      "SourcePage-BSzwYnfD.js",
+      "arrow-up-right-DafloM8b.js",
+      "SourceView-Cp52QZ9C.js",
+      "shield-check-sAbObOH2.js"
+    ],
+    "bytes": 265234,
+    "gzipBytes": 84004,
+    "islandRuntimeAbsent": true,
+    "scope": "Clinical bootstrap plus selected source chunk and recursive static JS imports; excludes CSS, sourcemaps and unloaded dynamic imports"
+  },
+  "bytesReduction": 131828,
+  "percentReduction": 33.2,
+  "scope": "Clinical bootstrap plus selected source chunk and recursive static JS imports; excludes CSS, sourcemaps and unloaded dynamic imports"
+}

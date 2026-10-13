@@ -3,23 +3,24 @@ import type {RefObject} from 'react';
 import {invoke} from '@tauri-apps/api/core';
 import {listen} from '@tauri-apps/api/event';
 import {nativeIsland} from '../lib/bridge';
-interface Platform {notificationState:number;animationsEnabled:boolean;outsideClickAvailable:boolean;shortcutRegistered:boolean}
-export function usePlatform(host:RefObject<HTMLDivElement|null>,sourceKey:string,hidden:boolean){
+import {parsePlatform} from './native-contract';
+import type {Platform} from './native-contract';
+export function usePlatform(host:RefObject<HTMLDivElement|null>,sourceKey:string,samplingSuspended:boolean){
  const [status,setStatus]=useState<Platform>({notificationState:5,animationsEnabled:true,outsideClickAvailable:false,shortcutRegistered:false});
- const [dark,setDark]=useState(false);const live=useRef(hidden);live.current=hidden;
+ const samplingBusy=useRef(false);
+ const [dark,setDark]=useState(false);const live=useRef(samplingSuspended);live.current=samplingSuspended;
  useEffect(()=>{
   if(!nativeIsland)return;let dead=false,off:(()=>void)|undefined;
-  const update=(v:Platform)=>{if(!dead)setStatus(old=>JSON.stringify(old)===JSON.stringify(v)?old:v);};
-  void invoke<Platform>('clinical_platform_status').then(update).catch(()=>{});
-  void listen<Platform>('island://platform',event=>update(event.payload)).then(fn=>{if(dead)fn();else off=fn;});
+  const update=(value:unknown)=>{const v=parsePlatform(value);if(!dead&&v)setStatus(old=>JSON.stringify(old)===JSON.stringify(v)?old:v);};
+  void listen<unknown>('island://platform',event=>update(event.payload)).then(fn=>{if(dead)fn();else off=fn;}).catch(()=>{});
   return()=>{dead=true;off?.();};
  },[]);
- useEffect(()=>{if(!nativeIsland)return;let dead=false;void invoke<Platform>('clinical_platform_status').then(v=>{if(!dead)setStatus(old=>JSON.stringify(old)===JSON.stringify(v)?old:v);}).catch(()=>{});return()=>{dead=true;};},[sourceKey]);
+ useEffect(()=>{if(!nativeIsland)return;let dead=false;void invoke<unknown>('clinical_platform_status').then(value=>{const v=parsePlatform(value);if(!dead&&v)setStatus(old=>JSON.stringify(old)===JSON.stringify(v)?old:v);}).catch(()=>{});return()=>{dead=true;};},[sourceKey]);
  useEffect(()=>{
-  if(!nativeIsland)return;let dead=false,busy=false;
-  const sample=()=>{if(dead||busy||live.current||host.current?.dataset.motionPhase!=='settled'||[1,2,3,4,6].includes(status.notificationState))return;
-   busy=true;const height=Number(host.current?.dataset.currentHeight)||32;
-   void invoke<number>('clinical_background_luminance',{bodyHeight:height}).then(v=>{if(!dead)setDark(v<.15);}).catch(()=>{}).finally(()=>{busy=false;});
+  if(!nativeIsland)return;let dead=false;
+  const sample=()=>{if(dead||samplingBusy.current||live.current||host.current?.dataset.motionPhase!=='settled'||[1,2,3,4,6].includes(status.notificationState))return;
+   samplingBusy.current=true;const height=Number(host.current?.dataset.currentHeight)||32;
+   void invoke<number>('clinical_background_luminance',{bodyHeight:height}).then(v=>{if(!dead&&!live.current&&typeof v==='number'&&Number.isFinite(v)&&v>=0&&v<=1)setDark(v<.15);}).catch(()=>{}).finally(()=>{samplingBusy.current=false;});
   };
   sample();const timer=window.setInterval(sample,2000);return()=>{dead=true;clearInterval(timer);};
  },[status.notificationState]);

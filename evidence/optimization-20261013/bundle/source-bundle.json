@@ -1,0 +1,16 @@
+{
+  "entry": "clinical-dns5MtA8.js",
+  "source": "SourcePage-BSzwYnfD.js",
+  "chunks": [
+    "clinical-dns5MtA8.js",
+    "client-DF7tKrzX.js",
+    "SourcePage-BSzwYnfD.js",
+    "arrow-up-right-DafloM8b.js",
+    "SourceView-Cp52QZ9C.js",
+    "shield-check-sAbObOH2.js"
+  ],
+  "bytes": 265234,
+  "gzipBytes": 84002,
+  "islandRuntimeAbsent": true,
+  "scope": "Clinical bootstrap plus selected source chunk and recursive static JS imports; excludes CSS, sourcemaps and unloaded dynamic imports"
+}

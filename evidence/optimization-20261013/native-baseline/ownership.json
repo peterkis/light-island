@@ -1,0 +1,52 @@
+﻿{
+    "verified":  true,
+    "rootPid":  26244,
+    "rootStartedTicks":  639274689867187598,
+    "serverPid":  8200,
+    "serverStartedTicks":  639274689857304360,
+    "port":  9223,
+    "executable":  "D:\\Projects\\island-protype\\evidence\\backups\\optimization-20261013\\baseline-executable\\samewave-island.exe",
+    "exeSHA256":  "e562db235a03836b69ebdfa40512251dbf93e15b87d5202e9481d36c7df3378b",
+    "arguments":  "--qa-cdp --hover-diagnostics",
+    "studio":  false,
+    "capturedAt":  "2026-10-13T14:16:26.8051569+08:00",
+    "qaEndpointReadyMs":  2329,
+    "browser":  "Edg/154.0.4258.62",
+    "processes":  [
+                      {
+                          "ProcessId":  26244,
+                          "ParentProcessId":  28036,
+                          "Name":  "samewave-island.exe"
+                      },
+                      {
+                          "ProcessId":  20964,
+                          "ParentProcessId":  26244,
+                          "Name":  "msedgewebview2.exe"
+                      },
+                      {
+                          "ProcessId":  30856,
+                          "ParentProcessId":  20964,
+                          "Name":  "msedgewebview2.exe"
+                      },
+                      {
+                          "ProcessId":  24012,
+                          "ParentProcessId":  20964,
+                          "Name":  "msedgewebview2.exe"
+                      },
+                      {
+                          "ProcessId":  31100,
+                          "ParentProcessId":  20964,
+                          "Name":  "msedgewebview2.exe"
+                      },
+                      {
+                          "ProcessId":  36528,
+                          "ParentProcessId":  20964,
+                          "Name":  "msedgewebview2.exe"
+                      },
+                      {
+                          "ProcessId":  23352,
+                          "ParentProcessId":  20964,
+                          "Name":  "msedgewebview2.exe"
+                      }
+                  ]
+}

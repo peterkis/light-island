@@ -5,26 +5,30 @@ import {listen} from '@tauri-apps/api/event';
 import {nativeIsland} from '../lib/bridge';
 import T from './tokens.json';
 import {swipeDecision} from './presentation';
+interface Gesture {shift:number;dragging:boolean;velocity:number;dismissing:boolean}
 interface InputActions {expanded:boolean;surface:string;hidden:boolean;reduced:boolean;peekable?:boolean;gesturesDisabled?:boolean;hover:(v:boolean)=>void;expand:()=>void;collapse:()=>void;stack:()=>void;dismiss:()=>void;cycle:(direction:number)=>void;keyboardExpand?:()=>void}
 export function useSurfaceInput(host:RefObject<HTMLDivElement|null>,actions:InputActions){
  const latest=useRef(actions);latest.current=actions;
  const [peek,setPeek]=useState(false),[pressed,setPressed]=useState(false);
- const [gesture,setGesture]=useState({shift:0,dragging:false,velocity:0,dismissing:false});
+ const [gesture,setGesture]=useState<Gesture>({shift:0,dragging:false,velocity:0,dismissing:false});
  const enterTimer=useRef(0),leaveTimer=useRef(0),longTimer=useRef(0),dismissTimer=useRef(0),alive=useRef(true),revision=useRef(0),longFired=useRef(false),origin=useRef<{x:number;y:number;pointer:number;lastX:number;lastTime:number;velocity:number;surface:string;moved:boolean}|null>(null);
+ const gestureFrame=useRef(0),pendingGesture=useRef<Gesture|null>(null);
+ const cancelGestureFrame=()=>{cancelAnimationFrame(gestureFrame.current);gestureFrame.current=0;pendingGesture.current=null;};
+ const scheduleGesture=(value:Gesture)=>{pendingGesture.current=value;if(gestureFrame.current)return;gestureFrame.current=requestAnimationFrame(()=>{gestureFrame.current=0;const next=pendingGesture.current;pendingGesture.current=null;if(alive.current&&origin.current&&next)setGesture(next);});};
  const cancel=()=>{clearTimeout(enterTimer.current);clearTimeout(leaveTimer.current);clearTimeout(longTimer.current);};
  useEffect(()=>{
   alive.current=true;let dead=false,offOutside:(()=>void)|undefined,offShortcut:(()=>void)|undefined;
   const up=(event:PointerEvent)=>{setPressed(false);clearTimeout(longTimer.current);if(!nativeIsland&&latest.current.expanded&&!host.current?.contains(event.target as Node))latest.current.collapse();};
-  const abort=()=>{revision.current++;cancel();clearTimeout(dismissTimer.current);origin.current=null;setPressed(false);setGesture({shift:0,dragging:false,velocity:0,dismissing:false});};
+  const abort=()=>{revision.current++;cancelGestureFrame();cancel();clearTimeout(dismissTimer.current);origin.current=null;setPressed(false);setGesture({shift:0,dragging:false,velocity:0,dismissing:false});};
   document.addEventListener('pointerup',up);document.addEventListener('pointercancel',abort);window.addEventListener('blur',abort);
   if(nativeIsland){
-   void listen('island://outside',()=>{if(!dead&&latest.current.expanded)latest.current.collapse();}).then(off=>{if(dead)off();else offOutside=off;});
-   void listen('island://shortcut',()=>{if(!dead)(latest.current.keyboardExpand??latest.current.expand)();}).then(off=>{if(dead)off();else offShortcut=off;});
+   void listen('island://outside',()=>{if(!dead&&latest.current.expanded)latest.current.collapse();}).then(off=>{if(dead)off();else offOutside=off;}).catch(()=>{});
+   void listen('island://shortcut',()=>{if(!dead)(latest.current.keyboardExpand??latest.current.expand)();}).then(off=>{if(dead)off();else offShortcut=off;}).catch(()=>{});
   }
-  return()=>{dead=true;alive.current=false;revision.current++;cancel();clearTimeout(dismissTimer.current);offOutside?.();offShortcut?.();document.removeEventListener('pointerup',up);document.removeEventListener('pointercancel',abort);window.removeEventListener('blur',abort);};
+  return()=>{dead=true;alive.current=false;cancelGestureFrame();revision.current++;cancel();clearTimeout(dismissTimer.current);offOutside?.();offShortcut?.();document.removeEventListener('pointerup',up);document.removeEventListener('pointercancel',abort);window.removeEventListener('blur',abort);};
  },[]);
- useEffect(()=>{if(actions.expanded||actions.hidden||actions.reduced){revision.current++;cancel();setPeek(false);setPressed(false);}if(actions.hidden){clearTimeout(dismissTimer.current);origin.current=null;setGesture({shift:0,dragging:false,velocity:0,dismissing:false});}},[actions.expanded,actions.hidden,actions.reduced]);
- useEffect(()=>{clearTimeout(dismissTimer.current);origin.current=null;setGesture({shift:0,dragging:false,velocity:0,dismissing:false});},[actions.surface]);
+ useEffect(()=>{if(actions.expanded||actions.hidden||actions.reduced){revision.current++;cancel();setPeek(false);setPressed(false);}if(actions.hidden){cancelGestureFrame();clearTimeout(dismissTimer.current);origin.current=null;setGesture({shift:0,dragging:false,velocity:0,dismissing:false});}},[actions.expanded,actions.hidden,actions.reduced]);
+ useEffect(()=>{cancelGestureFrame();clearTimeout(dismissTimer.current);origin.current=null;setGesture({shift:0,dragging:false,velocity:0,dismissing:false});},[actions.surface]);
  const enter=()=>{revision.current++;clearTimeout(leaveTimer.current);clearTimeout(enterTimer.current);latest.current.hover(true);if((!latest.current.expanded||latest.current.peekable)&&!latest.current.reduced)enterTimer.current=window.setTimeout(()=>{if(alive.current&&(!latest.current.expanded||latest.current.peekable)&&!latest.current.hidden)setPeek(true);},T.motion.hover.delay);};
  const leave=()=>{const rev=++revision.current;clearTimeout(enterTimer.current);clearTimeout(longTimer.current);setPressed(false);clearTimeout(leaveTimer.current);
   leaveTimer.current=window.setTimeout(()=>{void(async()=>{
@@ -43,9 +47,9 @@ export function useSurfaceInput(host:RefObject<HTMLDivElement|null>,actions:Inpu
    if(Math.hypot(dx,dy)>8){start.moved=true;clearTimeout(longTimer.current);setPressed(false);}
    if(start.surface==='alert'&&start.moved&&Math.abs(dx)>Math.abs(dy)){
     if(!e.currentTarget.hasPointerCapture(e.pointerId))e.currentTarget.setPointerCapture(e.pointerId);
-    setGesture({shift:dx,dragging:true,velocity:start.velocity,dismissing:false});
+    scheduleGesture({shift:dx,dragging:true,velocity:start.velocity,dismissing:false});
    }},
-  up:(e:React.PointerEvent)=>{setPressed(false);clearTimeout(longTimer.current);const start=origin.current;origin.current=null;if(!start||start.pointer!==e.pointerId)return;
+  up:(e:React.PointerEvent)=>{cancelGestureFrame();setPressed(false);clearTimeout(longTimer.current);const start=origin.current;origin.current=null;if(!start||start.pointer!==e.pointerId)return;
    if(e.currentTarget.hasPointerCapture(e.pointerId))e.currentTarget.releasePointerCapture(e.pointerId);
    const dx=e.clientX-start.x,dy=e.clientY-start.y,velocity=performance.now()-start.lastTime>100?0:start.velocity;
    if(start.moved)longFired.current=true;

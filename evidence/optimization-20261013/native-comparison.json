@@ -1,0 +1,23 @@
+{
+  "memory": {
+    "baselinePrivateWorkingSetMiB": 218.88,
+    "optimizedPrivateWorkingSetMiB": 217.67,
+    "baselinePrivateCommitMiB": 351.03,
+    "optimizedPrivateCommitMiB": 338.29,
+    "scope": "Owned native application and all discovered WebView2 descendants, no studio; excludes synthetic Node server and QA tools",
+    "interpretation": "One short sample per binary; inventory only, no statistically established memory improvement"
+  },
+  "notificationReady": {
+    "baselineMedianMs": 178.89999997615814,
+    "optimizedMedianMs": 181.2999999821186,
+    "differenceMs": 2.4000000059604645,
+    "scope": "Seven warm renderer observations, including loopback dispatch and next-rAF sampling; rich phase settled, content interactive and opacity >= .95; not cold startup or DWM presentation",
+    "interpretation": "Medians differ by less than one observed 60 Hz rAF interval; not a cold-start or DWM latency guarantee"
+  },
+  "qaEndpointReady": {
+    "baselineMs": 2170,
+    "optimizedMs": 1875,
+    "interpretation": "One QA-enabled process launch per binary; endpoint readiness, not normal startup or content visibility"
+  },
+  "sourceContentTiming": "NOT_RUN: secondary source WebView is not exposed through this owned CDP endpoint"
+}

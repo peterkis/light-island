@@ -1,0 +1,771 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "D:\\Projects\\island-protype\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/reader-invalidation.spec.ts",
+      "tests/native-layout-failure.spec.ts",
+      "tests/optimization-performance.spec.ts",
+      "tests/lab-source-lifetime.spec.ts"
+    ],
+    "configFile": "D:\\Projects\\island-protype\\playwright.config.ts",
+    "rootDir": "D:/Projects/island-protype/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/Projects/island-protype/evidence/optimization-20261013/targeted-initial/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "D:/Projects/island-protype/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "/.*\\.spec\\.ts/"
+        ],
+        "timeout": 35000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "D:\\Projects\\island-protype\\evidence\\optimization-20261013\\targeted-initial\\playwright-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "lab-source-lifetime.spec.ts",
+      "file": "lab-source-lifetime.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "ticket-backed report clears on activity-revision and rejects a late reply",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 14516,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T05:54:35.053Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e57181d6dde7b0160244-beeb467ec806fcd2ccd7",
+          "file": "lab-source-lifetime.spec.ts",
+          "line": 5,
+          "column": 2
+        },
+        {
+          "title": "ticket-backed report clears on withdrawal and rejects a late reply",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1865,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T05:54:49.971Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e57181d6dde7b0160244-c786f6d629923f7efe84",
+          "file": "lab-source-lifetime.spec.ts",
+          "line": 5,
+          "column": 2
+        },
+        {
+          "title": "ticket-backed report clears on snapshot-revision and rejects a late reply",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1365,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T05:54:51.875Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e57181d6dde7b0160244-1792c37141f519543848",
+          "file": "lab-source-lifetime.spec.ts",
+          "line": 5,
+          "column": 2
+        },
+        {
+          "title": "ticket-backed report clears on snapshot-absent and rejects a late reply",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1381,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T05:54:53.252Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e57181d6dde7b0160244-bf8855c9bbb87b21c0e7",
+          "file": "lab-source-lifetime.spec.ts",
+          "line": 5,
+          "column": 2
+        }
+      ]
+    },
+    {
+      "title": "native-layout-failure.spec.ts",
+      "file": "native-layout-failure.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "native initial failure is finite, clears content, and retries with a new epoch",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1088,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T05:54:54.668Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "05fa7bcb23e2b9a419b6-385227e2266b5d75dbba",
+          "file": "native-layout-failure.spec.ts",
+          "line": 25,
+          "column": 77
+        },
+        {
+          "title": "native final failure is finite, clears content, and retries with a new epoch",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1113,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T05:54:55.767Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "05fa7bcb23e2b9a419b6-1b7c3c648f148df3d897",
+          "file": "native-layout-failure.spec.ts",
+          "line": 25,
+          "column": 77
+        },
+        {
+          "title": "native commit failure is finite, clears content, and retries with a new epoch",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1184,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T05:54:56.904Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "05fa7bcb23e2b9a419b6-f33263f22892134dbb5e",
+          "file": "native-layout-failure.spec.ts",
+          "line": 25,
+          "column": 77
+        },
+        {
+          "title": "native reject failure is finite, clears content, and retries with a new epoch",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1039,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T05:54:58.099Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "05fa7bcb23e2b9a419b6-1857255c1eacb8fd15bb",
+          "file": "native-layout-failure.spec.ts",
+          "line": 25,
+          "column": 77
+        },
+        {
+          "title": "native pending failure is finite, clears content, and retries with a new epoch",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4351,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T05:54:59.149Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "05fa7bcb23e2b9a419b6-ba4446a57d5f28cc4e10",
+          "file": "native-layout-failure.spec.ts",
+          "line": 25,
+          "column": 77
+        }
+      ]
+    },
+    {
+      "title": "optimization-performance.spec.ts",
+      "file": "optimization-performance.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "reader profiling baseline: running and paused budgets",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5775,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('.lab-row')\nExpected: \u001b[32m128\u001b[39m\nReceived: \u001b[31m0\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" locator('.lab-row') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.lab-row')\u001b[22m\n\u001b[2m    14 × locator resolved to 0 elements\u001b[22m\n\u001b[2m       - unexpected value \"0\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('.lab-row')\nExpected: \u001b[32m128\u001b[39m\nReceived: \u001b[31m0\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" locator('.lab-row') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.lab-row')\u001b[22m\n\u001b[2m    14 × locator resolved to 0 elements\u001b[22m\n\u001b[2m       - unexpected value \"0\"\u001b[22m\n\n    at D:\\Projects\\island-protype\\tests\\optimization-performance.spec.ts:18:41",
+                    "location": {
+                      "file": "D:\\Projects\\island-protype\\tests\\optimization-performance.spec.ts",
+                      "column": 41,
+                      "line": 18
+                    },
+                    "snippet": "  16 |  await expect.poll(()=>page.evaluate(()=>Boolean(window.__OPTIMIZATION_QA__))).toBe(true);\n  17 |  await page.waitForTimeout(250);await page.evaluate(a=>window.__OPTIMIZATION_QA__?.start(a),state.activities[0]);\n> 18 |  await expect(page.locator('.lab-row')).toHaveCount(128);await page.evaluate(()=>window.__OPTIMIZATION_QA__?.read());\n     |                                         ^\n  19 |  await expect(page.getByTestId('reader')).toHaveAttribute('data-stage','read');\n  20 |  await page.evaluate(()=>window.__OPTIMIZATION_QA__?.resetStats());await page.waitForTimeout(1500);\n  21 |  const running=await page.evaluate(()=>structuredClone(window.__OPTIMIZATION_QA__?.stats));"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\Projects\\island-protype\\tests\\optimization-performance.spec.ts",
+                        "column": 41,
+                        "line": 18
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('.lab-row')\nExpected: \u001b[32m128\u001b[39m\nReceived: \u001b[31m0\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" locator('.lab-row') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.lab-row')\u001b[22m\n\u001b[2m    14 × locator resolved to 0 elements\u001b[22m\n\u001b[2m       - unexpected value \"0\"\u001b[22m\n\n\n  16 |  await expect.poll(()=>page.evaluate(()=>Boolean(window.__OPTIMIZATION_QA__))).toBe(true);\n  17 |  await page.waitForTimeout(250);await page.evaluate(a=>window.__OPTIMIZATION_QA__?.start(a),state.activities[0]);\n> 18 |  await expect(page.locator('.lab-row')).toHaveCount(128);await page.evaluate(()=>window.__OPTIMIZATION_QA__?.read());\n     |                                         ^\n  19 |  await expect(page.getByTestId('reader')).toHaveAttribute('data-stage','read');\n  20 |  await page.evaluate(()=>window.__OPTIMIZATION_QA__?.resetStats());await page.waitForTimeout(1500);\n  21 |  const running=await page.evaluate(()=>structuredClone(window.__OPTIMIZATION_QA__?.stats));\n    at D:\\Projects\\island-protype\\tests\\optimization-performance.spec.ts:18:41"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T05:55:03.524Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "D:\\Projects\\island-protype\\evidence\\optimization-20261013\\targeted-initial\\test-results\\optimization-performance-r-06fc0--running-and-paused-budgets\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\Projects\\island-protype\\evidence\\optimization-20261013\\targeted-initial\\test-results\\optimization-performance-r-06fc0--running-and-paused-budgets\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\Projects\\island-protype\\evidence\\optimization-20261013\\targeted-initial\\test-results\\optimization-performance-r-06fc0--running-and-paused-budgets\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\Projects\\island-protype\\tests\\optimization-performance.spec.ts",
+                    "column": 41,
+                    "line": 18
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "caa2d5aab7389a4f1e3d-95e8ded090c433fe9b0c",
+          "file": "optimization-performance.spec.ts",
+          "line": 5,
+          "column": 36
+        },
+        {
+          "title": "reader profiling optimized: running and paused budgets",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5783,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('.lab-row')\nExpected: \u001b[32m128\u001b[39m\nReceived: \u001b[31m0\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" locator('.lab-row') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.lab-row')\u001b[22m\n\u001b[2m    14 × locator resolved to 0 elements\u001b[22m\n\u001b[2m       - unexpected value \"0\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('.lab-row')\nExpected: \u001b[32m128\u001b[39m\nReceived: \u001b[31m0\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" locator('.lab-row') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.lab-row')\u001b[22m\n\u001b[2m    14 × locator resolved to 0 elements\u001b[22m\n\u001b[2m       - unexpected value \"0\"\u001b[22m\n\n    at D:\\Projects\\island-protype\\tests\\optimization-performance.spec.ts:18:41",
+                    "location": {
+                      "file": "D:\\Projects\\island-protype\\tests\\optimization-performance.spec.ts",
+                      "column": 41,
+                      "line": 18
+                    },
+                    "snippet": "  16 |  await expect.poll(()=>page.evaluate(()=>Boolean(window.__OPTIMIZATION_QA__))).toBe(true);\n  17 |  await page.waitForTimeout(250);await page.evaluate(a=>window.__OPTIMIZATION_QA__?.start(a),state.activities[0]);\n> 18 |  await expect(page.locator('.lab-row')).toHaveCount(128);await page.evaluate(()=>window.__OPTIMIZATION_QA__?.read());\n     |                                         ^\n  19 |  await expect(page.getByTestId('reader')).toHaveAttribute('data-stage','read');\n  20 |  await page.evaluate(()=>window.__OPTIMIZATION_QA__?.resetStats());await page.waitForTimeout(1500);\n  21 |  const running=await page.evaluate(()=>structuredClone(window.__OPTIMIZATION_QA__?.stats));"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\Projects\\island-protype\\tests\\optimization-performance.spec.ts",
+                        "column": 41,
+                        "line": 18
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('.lab-row')\nExpected: \u001b[32m128\u001b[39m\nReceived: \u001b[31m0\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" locator('.lab-row') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.lab-row')\u001b[22m\n\u001b[2m    14 × locator resolved to 0 elements\u001b[22m\n\u001b[2m       - unexpected value \"0\"\u001b[22m\n\n\n  16 |  await expect.poll(()=>page.evaluate(()=>Boolean(window.__OPTIMIZATION_QA__))).toBe(true);\n  17 |  await page.waitForTimeout(250);await page.evaluate(a=>window.__OPTIMIZATION_QA__?.start(a),state.activities[0]);\n> 18 |  await expect(page.locator('.lab-row')).toHaveCount(128);await page.evaluate(()=>window.__OPTIMIZATION_QA__?.read());\n     |                                         ^\n  19 |  await expect(page.getByTestId('reader')).toHaveAttribute('data-stage','read');\n  20 |  await page.evaluate(()=>window.__OPTIMIZATION_QA__?.resetStats());await page.waitForTimeout(1500);\n  21 |  const running=await page.evaluate(()=>structuredClone(window.__OPTIMIZATION_QA__?.stats));\n    at D:\\Projects\\island-protype\\tests\\optimization-performance.spec.ts:18:41"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T05:55:09.855Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "D:\\Projects\\island-protype\\evidence\\optimization-20261013\\targeted-initial\\test-results\\optimization-performance-r-cbb58--running-and-paused-budgets\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\Projects\\island-protype\\evidence\\optimization-20261013\\targeted-initial\\test-results\\optimization-performance-r-cbb58--running-and-paused-budgets\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\Projects\\island-protype\\evidence\\optimization-20261013\\targeted-initial\\test-results\\optimization-performance-r-cbb58--running-and-paused-budgets\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\Projects\\island-protype\\tests\\optimization-performance.spec.ts",
+                    "column": 41,
+                    "line": 18
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "caa2d5aab7389a4f1e3d-5b9bd8baba81686b097c",
+          "file": "optimization-performance.spec.ts",
+          "line": 5,
+          "column": 36
+        },
+        {
+          "title": "pointer moves share one pending frame and cancellation drops unpainted input",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 754,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T05:55:16.373Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "caa2d5aab7389a4f1e3d-b51874120c2149da014e",
+          "file": "optimization-performance.spec.ts",
+          "line": 35,
+          "column": 1
+        },
+        {
+          "title": "platform samples stop while privacy or actual visibility suspends them",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 897,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T05:55:17.351Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "caa2d5aab7389a4f1e3d-dd2f9caec90b4ec0e214",
+          "file": "optimization-performance.spec.ts",
+          "line": 57,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "reader-invalidation.spec.ts",
+      "file": "reader-invalidation.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "island reader disposes sum on authoritative deletion and ignores a late report",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2066,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T05:55:18.290Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fd4f946e56d5f16062d7-667847d3a1c2885460c2",
+          "file": "reader-invalidation.spec.ts",
+          "line": 4,
+          "column": 53
+        },
+        {
+          "title": "island reader disposes read on authoritative deletion and ignores a late report",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1601,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T05:55:20.372Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fd4f946e56d5f16062d7-45fa09e74858847126fa",
+          "file": "reader-invalidation.spec.ts",
+          "line": 4,
+          "column": 53
+        },
+        {
+          "title": "island reader disposes paused on authoritative deletion and ignores a late report",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1858,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T05:55:21.988Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fd4f946e56d5f16062d7-148661bc8edcd62a2f83",
+          "file": "reader-invalidation.spec.ts",
+          "line": 4,
+          "column": 53
+        },
+        {
+          "title": "a malformed timer does not replace the last valid state or crash the island",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1382,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T05:55:23.860Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fd4f946e56d5f16062d7-93525e7d3d18fd9478dd",
+          "file": "reader-invalidation.spec.ts",
+          "line": 20,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-13T05:54:32.324Z",
+    "duration": 54794.528,
+    "expected": 15,
+    "skipped": 0,
+    "unexpected": 2,
+    "flaky": 0
+  }
+}

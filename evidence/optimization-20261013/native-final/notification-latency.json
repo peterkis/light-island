@@ -1,0 +1,44 @@
+{
+  "exeSHA256": "a056b570c02f77dd00dfde5a4f6e88b3005ded2d64679651b366c49806553836",
+  "rows": [
+    {
+      "ms": 163.90000000596046,
+      "frames": 10,
+      "timedOut": false
+    },
+    {
+      "ms": 181.2999999821186,
+      "frames": 11,
+      "timedOut": false
+    },
+    {
+      "ms": 181.2999999821186,
+      "frames": 11,
+      "timedOut": false
+    },
+    {
+      "ms": 178.5,
+      "frames": 11,
+      "timedOut": false
+    },
+    {
+      "ms": 192.2000000178814,
+      "frames": 12,
+      "timedOut": false
+    },
+    {
+      "ms": 182.19999998807907,
+      "frames": 11,
+      "timedOut": false
+    },
+    {
+      "ms": 180.09999999403954,
+      "frames": 11,
+      "timedOut": false
+    }
+  ],
+  "medianMs": 181.2999999821186,
+  "minMs": 163.90000000596046,
+  "maxMs": 192.2000000178814,
+  "scope": "Seven warm renderer observations, including loopback dispatch and next-rAF sampling; rich phase settled, content interactive and opacity >= .95; not cold startup or DWM presentation"
+}

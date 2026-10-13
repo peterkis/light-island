@@ -1,0 +1,22 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": true,
+    "types": [
+      "node",
+      "vite/client"
+    ],
+    "noUncheckedIndexedAccess": false,
+    "exactOptionalPropertyTypes": false
+  },
+  "include": [
+    "tests",
+    "vite.config.ts",
+    "vitest.config.ts",
+    "playwright.config.ts",
+    "server/clinical-demo.mjs",
+    "server/lab-fixtures.mjs",
+    "src/vite-env.d.ts"
+  ]
+}

@@ -1,0 +1,160 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "D:\\Projects\\island-protype\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/native-reader-failure.spec.ts"
+    ],
+    "configFile": "D:\\Projects\\island-protype\\playwright.config.ts",
+    "rootDir": "D:/Projects/island-protype/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/Projects/island-protype/evidence/optimization-20261013/native-reader-before-mask/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "D:/Projects/island-protype/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "/.*\\.spec\\.ts/"
+        ],
+        "timeout": 35000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "D:\\Projects\\island-protype\\evidence\\optimization-20261013\\native-reader-before-mask\\playwright-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "native-reader-failure.spec.ts",
+      "file": "native-reader-failure.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "a failed native handoff masks a hover-paused reader and preserves its bounded lifetime",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 10967,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m\n\nCall Log:\n- Timeout 1000ms exceeded while waiting on the predicate",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m\n\nCall Log:\n- Timeout 1000ms exceeded while waiting on the predicate\n    at D:\\Projects\\island-protype\\tests\\native-reader-failure.spec.ts:38:110",
+                    "location": {
+                      "file": "D:\\Projects\\island-protype\\tests\\native-reader-failure.spec.ts",
+                      "column": 110,
+                      "line": 38
+                    },
+                    "snippet": "  36 |  await page.evaluate(()=>{if(window.__READER_NATIVE_QA__)window.__READER_NATIVE_QA__.failLayout=true;});await page.emulateMedia({reducedMotion:'reduce'});\n  37 |  await expect(island).toHaveAttribute('data-motion-phase','failed');await expect(island.locator('.lab-row')).toHaveCount(0);\n> 38 |  await expect.poll(()=>page.evaluate(()=>window.__READER_NATIVE_QA__?.clocks.at(-1)?.paused),{timeout:1000}).toBe(false);\n     |                                                                                                              ^\n  39 |  await page.clock.pauseAt(await page.evaluate(()=>Date.now())+10000);await page.clock.runFor(62000);\n  40 |  await expect(island).toHaveAttribute('data-lab-state',/^(done|idle)$/);expect(await page.evaluate(()=>window.__CLINICAL_DEBUG__?.().lab.hasReport)).toBe(false);\n  41 |  expect(await page.evaluate(()=>window.__READER_NATIVE_QA__?.clocks.at(-1)?.remainingMs)).toBe(0);"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\Projects\\island-protype\\tests\\native-reader-failure.spec.ts",
+                        "column": 110,
+                        "line": 38
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m\n\nCall Log:\n- Timeout 1000ms exceeded while waiting on the predicate\n\n  36 |  await page.evaluate(()=>{if(window.__READER_NATIVE_QA__)window.__READER_NATIVE_QA__.failLayout=true;});await page.emulateMedia({reducedMotion:'reduce'});\n  37 |  await expect(island).toHaveAttribute('data-motion-phase','failed');await expect(island.locator('.lab-row')).toHaveCount(0);\n> 38 |  await expect.poll(()=>page.evaluate(()=>window.__READER_NATIVE_QA__?.clocks.at(-1)?.paused),{timeout:1000}).toBe(false);\n     |                                                                                                              ^\n  39 |  await page.clock.pauseAt(await page.evaluate(()=>Date.now())+10000);await page.clock.runFor(62000);\n  40 |  await expect(island).toHaveAttribute('data-lab-state',/^(done|idle)$/);expect(await page.evaluate(()=>window.__CLINICAL_DEBUG__?.().lab.hasReport)).toBe(false);\n  41 |  expect(await page.evaluate(()=>window.__READER_NATIVE_QA__?.clocks.at(-1)?.remainingMs)).toBe(0);\n    at D:\\Projects\\island-protype\\tests\\native-reader-failure.spec.ts:38:110"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T06:39:17.716Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "D:\\Projects\\island-protype\\evidence\\optimization-20261013\\native-reader-before-mask\\test-results\\native-reader-failure-a-fa-36c54-serves-its-bounded-lifetime\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\Projects\\island-protype\\evidence\\optimization-20261013\\native-reader-before-mask\\test-results\\native-reader-failure-a-fa-36c54-serves-its-bounded-lifetime\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\Projects\\island-protype\\evidence\\optimization-20261013\\native-reader-before-mask\\test-results\\native-reader-failure-a-fa-36c54-serves-its-bounded-lifetime\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\Projects\\island-protype\\tests\\native-reader-failure.spec.ts",
+                    "column": 110,
+                    "line": 38
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "3aee27d5397bbf59ae0d-af00a155e96cd67ac6be",
+          "file": "native-reader-failure.spec.ts",
+          "line": 4,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-13T06:39:13.079Z",
+    "duration": 18633.327,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

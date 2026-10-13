@@ -1,0 +1,690 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "D:\\Projects\\island-protype\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/reader-invalidation.spec.ts",
+      "tests/native-layout-failure.spec.ts",
+      "tests/optimization-performance.spec.ts"
+    ],
+    "configFile": "D:\\Projects\\island-protype\\playwright.config.ts",
+    "rootDir": "D:/Projects/island-protype/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/Projects/island-protype/evidence/optimization-20261013/targeted-recheck/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "D:/Projects/island-protype/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "/.*\\.spec\\.ts/"
+        ],
+        "timeout": 35000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "D:\\Projects\\island-protype\\evidence\\optimization-20261013\\targeted-recheck\\playwright-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "native-layout-failure.spec.ts",
+      "file": "native-layout-failure.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "native initial failure is finite, clears content, and retries with a new epoch",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1090,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T05:58:16.768Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "05fa7bcb23e2b9a419b6-385227e2266b5d75dbba",
+          "file": "native-layout-failure.spec.ts",
+          "line": 25,
+          "column": 77
+        },
+        {
+          "title": "native final failure is finite, clears content, and retries with a new epoch",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1148,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T05:58:18.084Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "05fa7bcb23e2b9a419b6-1b7c3c648f148df3d897",
+          "file": "native-layout-failure.spec.ts",
+          "line": 25,
+          "column": 77
+        },
+        {
+          "title": "native commit failure is finite, clears content, and retries with a new epoch",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1044,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T05:58:19.244Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "05fa7bcb23e2b9a419b6-f33263f22892134dbb5e",
+          "file": "native-layout-failure.spec.ts",
+          "line": 25,
+          "column": 77
+        },
+        {
+          "title": "native reject failure is finite, clears content, and retries with a new epoch",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1081,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T05:58:20.299Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "05fa7bcb23e2b9a419b6-1857255c1eacb8fd15bb",
+          "file": "native-layout-failure.spec.ts",
+          "line": 25,
+          "column": 77
+        },
+        {
+          "title": "native pending failure is finite, clears content, and retries with a new epoch",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4551,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T05:58:21.394Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "05fa7bcb23e2b9a419b6-ba4446a57d5f28cc4e10",
+          "file": "native-layout-failure.spec.ts",
+          "line": 25,
+          "column": 77
+        }
+      ]
+    },
+    {
+      "title": "optimization-performance.spec.ts",
+      "file": "optimization-performance.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "reader profiling baseline: running and paused budgets",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5825,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate\n    at D:\\Projects\\island-protype\\tests\\optimization-performance.spec.ts:17:80",
+                    "location": {
+                      "file": "D:\\Projects\\island-protype\\tests\\optimization-performance.spec.ts",
+                      "column": 80,
+                      "line": 17
+                    },
+                    "snippet": "  15 |  await page.route('**/clinical.html?qa-reader=1*',route=>route.fulfill({contentType:'text/html',body:'<!doctype html><html><body><div id=\"root\"></div><script type=\"module\" src=\"/tests/optimization-harness.tsx\"></script></body></html>'}));\n  16 |  await page.goto('/clinical.html?qa-reader=1&harness=reader'+(baseline?'&baseline=1':''));\n> 17 |  await expect.poll(()=>page.evaluate(()=>Boolean(window.__OPTIMIZATION_QA__))).toBe(true);\n     |                                                                                ^\n  18 |  await page.waitForTimeout(250);await page.evaluate(a=>window.__OPTIMIZATION_QA__?.start(a),state.activities[0]);\n  19 |  await expect(page.locator('.lab-row')).toHaveCount(128);await page.evaluate(()=>window.__OPTIMIZATION_QA__?.read());\n  20 |  await expect(page.getByTestId('reader')).toHaveAttribute('data-stage','read');"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\Projects\\island-protype\\tests\\optimization-performance.spec.ts",
+                        "column": 80,
+                        "line": 17
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate\n\n  15 |  await page.route('**/clinical.html?qa-reader=1*',route=>route.fulfill({contentType:'text/html',body:'<!doctype html><html><body><div id=\"root\"></div><script type=\"module\" src=\"/tests/optimization-harness.tsx\"></script></body></html>'}));\n  16 |  await page.goto('/clinical.html?qa-reader=1&harness=reader'+(baseline?'&baseline=1':''));\n> 17 |  await expect.poll(()=>page.evaluate(()=>Boolean(window.__OPTIMIZATION_QA__))).toBe(true);\n     |                                                                                ^\n  18 |  await page.waitForTimeout(250);await page.evaluate(a=>window.__OPTIMIZATION_QA__?.start(a),state.activities[0]);\n  19 |  await expect(page.locator('.lab-row')).toHaveCount(128);await page.evaluate(()=>window.__OPTIMIZATION_QA__?.read());\n  20 |  await expect(page.getByTestId('reader')).toHaveAttribute('data-stage','read');\n    at D:\\Projects\\island-protype\\tests\\optimization-performance.spec.ts:17:80"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T05:58:25.993Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "D:\\Projects\\island-protype\\evidence\\optimization-20261013\\targeted-recheck\\test-results\\optimization-performance-r-06fc0--running-and-paused-budgets\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\Projects\\island-protype\\evidence\\optimization-20261013\\targeted-recheck\\test-results\\optimization-performance-r-06fc0--running-and-paused-budgets\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\Projects\\island-protype\\evidence\\optimization-20261013\\targeted-recheck\\test-results\\optimization-performance-r-06fc0--running-and-paused-budgets\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\Projects\\island-protype\\tests\\optimization-performance.spec.ts",
+                    "column": 80,
+                    "line": 17
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "caa2d5aab7389a4f1e3d-95e8ded090c433fe9b0c",
+          "file": "optimization-performance.spec.ts",
+          "line": 5,
+          "column": 36
+        },
+        {
+          "title": "reader profiling optimized: running and paused budgets",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5810,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate\n    at D:\\Projects\\island-protype\\tests\\optimization-performance.spec.ts:17:80",
+                    "location": {
+                      "file": "D:\\Projects\\island-protype\\tests\\optimization-performance.spec.ts",
+                      "column": 80,
+                      "line": 17
+                    },
+                    "snippet": "  15 |  await page.route('**/clinical.html?qa-reader=1*',route=>route.fulfill({contentType:'text/html',body:'<!doctype html><html><body><div id=\"root\"></div><script type=\"module\" src=\"/tests/optimization-harness.tsx\"></script></body></html>'}));\n  16 |  await page.goto('/clinical.html?qa-reader=1&harness=reader'+(baseline?'&baseline=1':''));\n> 17 |  await expect.poll(()=>page.evaluate(()=>Boolean(window.__OPTIMIZATION_QA__))).toBe(true);\n     |                                                                                ^\n  18 |  await page.waitForTimeout(250);await page.evaluate(a=>window.__OPTIMIZATION_QA__?.start(a),state.activities[0]);\n  19 |  await expect(page.locator('.lab-row')).toHaveCount(128);await page.evaluate(()=>window.__OPTIMIZATION_QA__?.read());\n  20 |  await expect(page.getByTestId('reader')).toHaveAttribute('data-stage','read');"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\Projects\\island-protype\\tests\\optimization-performance.spec.ts",
+                        "column": 80,
+                        "line": 17
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate\n\n  15 |  await page.route('**/clinical.html?qa-reader=1*',route=>route.fulfill({contentType:'text/html',body:'<!doctype html><html><body><div id=\"root\"></div><script type=\"module\" src=\"/tests/optimization-harness.tsx\"></script></body></html>'}));\n  16 |  await page.goto('/clinical.html?qa-reader=1&harness=reader'+(baseline?'&baseline=1':''));\n> 17 |  await expect.poll(()=>page.evaluate(()=>Boolean(window.__OPTIMIZATION_QA__))).toBe(true);\n     |                                                                                ^\n  18 |  await page.waitForTimeout(250);await page.evaluate(a=>window.__OPTIMIZATION_QA__?.start(a),state.activities[0]);\n  19 |  await expect(page.locator('.lab-row')).toHaveCount(128);await page.evaluate(()=>window.__OPTIMIZATION_QA__?.read());\n  20 |  await expect(page.getByTestId('reader')).toHaveAttribute('data-stage','read');\n    at D:\\Projects\\island-protype\\tests\\optimization-performance.spec.ts:17:80"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T05:58:32.504Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "D:\\Projects\\island-protype\\evidence\\optimization-20261013\\targeted-recheck\\test-results\\optimization-performance-r-cbb58--running-and-paused-budgets\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\Projects\\island-protype\\evidence\\optimization-20261013\\targeted-recheck\\test-results\\optimization-performance-r-cbb58--running-and-paused-budgets\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\Projects\\island-protype\\evidence\\optimization-20261013\\targeted-recheck\\test-results\\optimization-performance-r-cbb58--running-and-paused-budgets\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\Projects\\island-protype\\tests\\optimization-performance.spec.ts",
+                    "column": 80,
+                    "line": 17
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "caa2d5aab7389a4f1e3d-5b9bd8baba81686b097c",
+          "file": "optimization-performance.spec.ts",
+          "line": 5,
+          "column": 36
+        },
+        {
+          "title": "pointer moves share one pending frame and cancellation drops unpainted input",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 843,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T05:58:39.186Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "caa2d5aab7389a4f1e3d-b51874120c2149da014e",
+          "file": "optimization-performance.spec.ts",
+          "line": 36,
+          "column": 1
+        },
+        {
+          "title": "platform samples stop while privacy or actual visibility suspends them",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1132,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T05:58:40.252Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "caa2d5aab7389a4f1e3d-dd2f9caec90b4ec0e214",
+          "file": "optimization-performance.spec.ts",
+          "line": 58,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "reader-invalidation.spec.ts",
+      "file": "reader-invalidation.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "island reader disposes sum on authoritative deletion and ignores a late report",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2318,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T05:58:41.436Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fd4f946e56d5f16062d7-667847d3a1c2885460c2",
+          "file": "reader-invalidation.spec.ts",
+          "line": 4,
+          "column": 53
+        },
+        {
+          "title": "island reader disposes read on authoritative deletion and ignores a late report",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "timedOut",
+                  "duration": 35175,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 35000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 35000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 35000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "D:\\Projects\\island-protype\\tests\\reader-invalidation.spec.ts",
+                        "column": 102,
+                        "line": 10
+                      },
+                      "message": "Error: locator.click: Test timeout of 35000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByTestId('clinical-island').getByRole('button', { name: '查看检验报告摘要' })\u001b[22m\n\n\n   8 |  await push({type:'clinical:reset'});await page.goto('/clinical.html');await expect(page.getByTestId('clinical-scenario-S04')).toBeVisible();\n   9 |  await push({type:'clinical:configure',settings:{reduced:true}});await push({type:'clinical:scenario',scenario:'S04',labVariant:'baseline'});\n> 10 |  const island=page.getByTestId('clinical-island');await island.getByRole('button',{name:'查看检验报告摘要'}).click();\n     |                                                                                                      ^\n  11 |  await expect.poll(()=>page.evaluate(()=>window.__CLINICAL_DEBUG__?.().lab.hasReport)).toBe(true);\n  12 |  if(phase!=='sum'){await island.getByRole('button',{name:'阅读报告',exact:true}).click();await expect(island).toHaveAttribute('data-lab-state','read');}\n  13 |  if(phase==='paused'){await page.mouse.move(1,1);await island.locator('.lab-body').hover();}\n    at D:\\Projects\\island-protype\\tests\\reader-invalidation.spec.ts:10:102"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T05:58:43.778Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "D:\\Projects\\island-protype\\evidence\\optimization-20261013\\targeted-recheck\\test-results\\reader-invalidation-island-e965e-n-and-ignores-a-late-report\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\Projects\\island-protype\\evidence\\optimization-20261013\\targeted-recheck\\test-results\\reader-invalidation-island-e965e-n-and-ignores-a-late-report\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\Projects\\island-protype\\evidence\\optimization-20261013\\targeted-recheck\\test-results\\reader-invalidation-island-e965e-n-and-ignores-a-late-report\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "fd4f946e56d5f16062d7-45fa09e74858847126fa",
+          "file": "reader-invalidation.spec.ts",
+          "line": 4,
+          "column": 53
+        },
+        {
+          "title": "island reader disposes paused on authoritative deletion and ignores a late report",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "timedOut",
+                  "duration": 35181,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 35000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 35000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 35000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "D:\\Projects\\island-protype\\tests\\reader-invalidation.spec.ts",
+                        "column": 102,
+                        "line": 10
+                      },
+                      "message": "Error: locator.click: Test timeout of 35000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByTestId('clinical-island').getByRole('button', { name: '查看检验报告摘要' })\u001b[22m\n\n\n   8 |  await push({type:'clinical:reset'});await page.goto('/clinical.html');await expect(page.getByTestId('clinical-scenario-S04')).toBeVisible();\n   9 |  await push({type:'clinical:configure',settings:{reduced:true}});await push({type:'clinical:scenario',scenario:'S04',labVariant:'baseline'});\n> 10 |  const island=page.getByTestId('clinical-island');await island.getByRole('button',{name:'查看检验报告摘要'}).click();\n     |                                                                                                      ^\n  11 |  await expect.poll(()=>page.evaluate(()=>window.__CLINICAL_DEBUG__?.().lab.hasReport)).toBe(true);\n  12 |  if(phase!=='sum'){await island.getByRole('button',{name:'阅读报告',exact:true}).click();await expect(island).toHaveAttribute('data-lab-state','read');}\n  13 |  if(phase==='paused'){await page.mouse.move(1,1);await island.locator('.lab-body').hover();}\n    at D:\\Projects\\island-protype\\tests\\reader-invalidation.spec.ts:10:102"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T05:59:19.526Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "D:\\Projects\\island-protype\\evidence\\optimization-20261013\\targeted-recheck\\test-results\\reader-invalidation-island-98e1f-n-and-ignores-a-late-report\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\Projects\\island-protype\\evidence\\optimization-20261013\\targeted-recheck\\test-results\\reader-invalidation-island-98e1f-n-and-ignores-a-late-report\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\Projects\\island-protype\\evidence\\optimization-20261013\\targeted-recheck\\test-results\\reader-invalidation-island-98e1f-n-and-ignores-a-late-report\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "fd4f946e56d5f16062d7-148661bc8edcd62a2f83",
+          "file": "reader-invalidation.spec.ts",
+          "line": 4,
+          "column": 53
+        },
+        {
+          "title": "a malformed timer does not replace the last valid state or crash the island",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1245,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T05:59:55.451Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fd4f946e56d5f16062d7-93525e7d3d18fd9478dd",
+          "file": "reader-invalidation.spec.ts",
+          "line": 20,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-13T05:58:14.511Z",
+    "duration": 103760.14300000001,
+    "expected": 9,
+    "skipped": 0,
+    "unexpected": 4,
+    "flaky": 0
+  }
+}

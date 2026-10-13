@@ -1,0 +1,3592 @@
+{
+  "ownership": {
+    "verified": true,
+    "rootPid": 25328,
+    "serverPid": 27592,
+    "port": 9223,
+    "processCount": 7
+  },
+  "exeSHA256": "e562db235a03836b69ebdfa40512251dbf93e15b87d5202e9481d36c7df3378b",
+  "errors": [],
+  "transitions": [
+    {
+      "mode": "compact",
+      "frames": 85,
+      "p95RafMs": 17,
+      "viewportMismatch": 0,
+      "rectangle": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "rows": [
+        {
+          "t": 14.799999994039354,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "preparing",
+          "hidden": false
+        },
+        {
+          "t": 31.799999994039354,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "preparing",
+          "hidden": false
+        },
+        {
+          "t": 48.199999994039445,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "preparing",
+          "hidden": false
+        },
+        {
+          "t": 64.89999999403972,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 81.59999999403954,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 98.29999999403935,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 114.99999999403963,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 131.69999999403944,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 148.29999999403935,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 164.99999999403963,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 181.89999999403972,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 198.39999999403972,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 215.49999999403963,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 231.89999999403972,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 248.59999999403954,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 264.79999999403935,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 281.9999999940396,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 298.3999999940397,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 314.8999999940397,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 331.59999999403954,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 348.3999999940397,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 364.9999999940392,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 381.6999999940399,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 398.3999999940397,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 414.8999999940397,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 431.6999999940399,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 448.29999999403935,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 464.8999999940397,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 481.4999999940392,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 498.09999999403954,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 514.8999999940397,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 531.5999999940395,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 548.1999999940399,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 565.1999999940399,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 581.5999999940395,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 598.4999999940392,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 614.8999999940397,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 631.8999999940397,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 648.2999999940394,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 664.7999999940394,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 681.4999999940392,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 698.2999999940394,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 714.9999999940392,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 731.8999999940397,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 748.5999999940395,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 764.8999999940397,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 781.6999999940399,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 798.2999999940394,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 814.7999999940394,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 831.5999999940395,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 848.0999999940395,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 864.9999999940392,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 881.5999999940395,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 898.2999999940394,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 914.9999999940392,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 931.8999999940397,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 948.8999999940397,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 964.8999999940397,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 981.5999999940395,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 998.0999999940395,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1014.7999999940394,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1031.4999999940392,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1048.2999999940394,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1065.0999999940395,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1081.5999999940395,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1098.2999999940394,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1115.69999999404,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1131.8999999940397,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1148.3999999940397,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1164.9999999940392,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1181.69999999404,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1198.19999999404,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1214.8999999940397,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1231.69999999404,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1248.2999999940394,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1264.9999999940392,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1281.69999999404,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1298.2999999940394,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1314.7999999940394,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1331.5999999940395,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1348.3999999940397,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1364.8999999940397,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1381.4999999940392,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1398.3999999940397,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1414.9999999940392,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "mode": "open",
+      "frames": 86,
+      "p95RafMs": 16.900000000000546,
+      "viewportMismatch": 0,
+      "rectangle": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "rows": [
+        {
+          "t": -0.4999999940391717,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 16.200000005960646,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "preparing",
+          "hidden": false
+        },
+        {
+          "t": 32.700000005960646,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "preparing",
+          "hidden": false
+        },
+        {
+          "t": 49.60000000596028,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "preparing",
+          "hidden": false
+        },
+        {
+          "t": 66.20000000596065,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 82.90000000596046,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 99.70000000596065,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 116.3000000059601,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 133.10000000596028,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 149.8000000059601,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 166.40000000596046,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 183.00000000596083,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 199.50000000596083,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 216.8000000059601,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 233.00000000596083,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 249.50000000596083,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 266.40000000596046,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 283.20000000596065,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 299.6000000059603,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 316.20000000596065,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 333.0000000059608,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 349.6000000059603,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 366.1000000059603,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 382.8000000059601,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 399.70000000596065,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 416.1000000059603,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 433.1000000059603,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 449.90000000596046,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 466.3000000059601,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 483.20000000596065,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 499.8000000059601,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 516.1000000059603,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 533.3000000059601,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 549.8000000059601,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 566.2000000059606,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 582.9000000059605,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 599.8000000059601,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 616.5000000059608,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 633.2000000059606,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 649.7000000059606,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 666.3000000059601,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 683.3000000059601,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 699.6000000059603,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 716.5000000059608,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 732.8000000059601,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 749.5000000059608,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 766.4000000059605,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 783.3000000059601,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 799.6000000059603,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 816.1000000059603,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 832.9000000059605,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 849.6000000059603,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 866.2000000059606,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 882.9000000059605,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 899.6000000059603,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 916.4000000059605,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 932.9000000059605,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 949.6000000059603,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 966.2000000059606,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 983.0000000059608,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 999.5000000059608,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1016.2000000059606,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1032.9000000059605,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1049.5000000059608,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1066.1000000059603,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1082.80000000596,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1099.7000000059606,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1116.4000000059605,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1132.9000000059605,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1149.80000000596,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1166.4000000059605,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1183.2000000059606,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1200.0000000059608,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1216.7000000059606,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1232.80000000596,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1249.6000000059603,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1266.2000000059606,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1283.1000000059603,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1299.7000000059606,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1316.30000000596,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1333.2000000059606,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1349.6000000059603,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1366.30000000596,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1382.9000000059605,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1399.7000000059606,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1416.4000000059605,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "mode": "compact",
+      "frames": 86,
+      "p95RafMs": 16.899999999999636,
+      "viewportMismatch": 0,
+      "rectangle": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "rows": [
+        {
+          "t": -7.999999994039172,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 8.700000005960646,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "preparing",
+          "hidden": false
+        },
+        {
+          "t": 25.400000005960464,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "preparing",
+          "hidden": false
+        },
+        {
+          "t": 41.900000005960464,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "preparing",
+          "hidden": false
+        },
+        {
+          "t": 58.700000005960646,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 75.40000000596046,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 92.00000000596083,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 108.70000000596065,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 125.3000000059601,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 142.10000000596028,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 158.70000000596065,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 175.3000000059601,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 192.00000000596083,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 208.70000000596065,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 225.40000000596046,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 242.10000000596028,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 258.6000000059603,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 275.40000000596046,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 291.90000000596046,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 308.70000000596065,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 325.3000000059601,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 342.0000000059608,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 358.6000000059603,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 375.20000000596065,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 392.0000000059608,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 408.6000000059603,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 425.20000000596065,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 442.1000000059603,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 458.6000000059603,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 475.6000000059603,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 492.1000000059603,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 508.70000000596065,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 525.3000000059601,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 542.1000000059603,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 558.7000000059606,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 575.5000000059608,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 592.0000000059608,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 608.7000000059606,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 625.3000000059601,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 642.0000000059608,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 658.6000000059603,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 675.2000000059606,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 691.8000000059601,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 708.6000000059603,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 725.4000000059605,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 742.0000000059608,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 758.7000000059606,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 775.2000000059606,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 792.2000000059606,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 808.8000000059601,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 825.4000000059605,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 842.0000000059608,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 858.7000000059606,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 875.3000000059601,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 892.0000000059608,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 908.7000000059606,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 925.4000000059605,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 942.0000000059608,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 958.5000000059608,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 975.2000000059606,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 991.9000000059605,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1008.5000000059608,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1025.4000000059605,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1041.9000000059605,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1058.7000000059606,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1075.30000000596,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1092.1000000059603,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1108.7000000059606,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1125.4000000059605,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1142.30000000596,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1158.6000000059603,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1175.30000000596,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1192.1000000059603,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1208.7000000059606,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1225.30000000596,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1241.9000000059605,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1258.6000000059603,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1275.30000000596,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1292.1000000059603,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1308.7000000059606,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1325.2000000059606,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1342.0000000059608,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1358.6000000059603,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1375.2000000059606,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1392.0000000059608,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1408.6000000059612,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "mode": "open",
+      "frames": 86,
+      "p95RafMs": 17.100000000000364,
+      "viewportMismatch": 0,
+      "rectangle": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "rows": [
+        {
+          "t": -14.500000005960828,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 2.299999994040263,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 18.99999999403917,
+          "width": 268,
+          "height": 36,
+          "svgWidth": 288,
+          "svgHeight": 36,
+          "ear": 10,
+          "phase": "preparing",
+          "hidden": false
+        },
+        {
+          "t": 35.79999999404026,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "preparing",
+          "hidden": false
+        },
+        {
+          "t": 52.39999999403881,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "preparing",
+          "hidden": false
+        },
+        {
+          "t": 69.09999999403954,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 85.59999999403954,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 102.29999999404026,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 118.99999999403917,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 136.09999999403954,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 152.79999999404026,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 169.3999999940388,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 185.59999999403954,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 202.3999999940388,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 218.99999999403917,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 235.8999999940388,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 252.3999999940388,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 269.1999999940399,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 285.6999999940399,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 302.29999999404026,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 318.8999999940388,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 335.9999999940392,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 353.59999999403954,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 368.9999999940392,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 386.09999999403954,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 402.3999999940388,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 418.8999999940388,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 435.6999999940399,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 452.29999999404026,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 469.09999999403954,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 485.6999999940399,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 502.4999999940392,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 518.9999999940392,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 535.6999999940399,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 552.4999999940392,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 569.0999999940395,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 585.5999999940395,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 602.2999999940403,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 618.9999999940392,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 635.7999999940403,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 652.2999999940403,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 668.8999999940388,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 685.5999999940395,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 702.5999999940395,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 719.0999999940395,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 735.4999999940392,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 752.3999999940388,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 768.9999999940392,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 785.6999999940399,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 802.7999999940403,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 818.9999999940392,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 835.6999999940399,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 852.2999999940403,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 868.9999999940392,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 885.7999999940403,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 902.1999999940399,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 918.8999999940388,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 935.7999999940403,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 952.2999999940403,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 968.9999999940392,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 985.7999999940403,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1002.3999999940388,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1019.0999999940395,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1035.8999999940388,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1052.19999999404,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1068.9999999940392,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1085.69999999404,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1102.19999999404,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1119.0999999940395,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1135.69999999404,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1152.2999999940403,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1168.9999999940392,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1185.8999999940388,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1202.19999999404,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1219.0999999940395,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1235.69999999404,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1252.3999999940388,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1268.8999999940388,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1285.7999999940403,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1302.4999999940392,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1319.19999999404,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1335.7999999940403,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1352.3999999940388,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1368.8999999940388,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1385.69999999404,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        },
+        {
+          "t": 1402.19999999404,
+          "width": 372,
+          "height": 168,
+          "svgWidth": 392,
+          "svgHeight": 168,
+          "ear": 10,
+          "phase": "settled",
+          "hidden": false
+        }
+      ]
+    }
+  ],
+  "scope": "Finite QA at this machine DPI; rAF and SVG samples are not DWM-presented frames",
+  "metrics": {
+    "available": 1920,
+    "canvasHeight": 622,
+    "canvasWidth": 704,
+    "height": 1032,
+    "scale": 1,
+    "topReserved": false,
+    "y": 0
+  },
+  "platform": {
+    "animationsEnabled": false,
+    "notificationState": 5,
+    "outsideClickAvailable": true,
+    "shortcutRegistered": true
+  },
+  "initialHidden": "false",
+  "motionPath": "system-reduced-motion",
+  "notificationToSettledMs": 103.58320000000003,
+  "notificationPreservesForeground": true,
+  "visibleImportant": true,
+  "windowChanges": 0,
+  "regionUpdates": 12,
+  "restRegionUpdates": 0,
+  "readonlyBoundary": true,
+  "sourceContentTiming": "NOT_RUN: source WebView is not enumerated by the owned CDP endpoint",
+  "sourceWindow": {
+    "pid": 25328,
+    "windows": [
+      {
+        "hwnd": 25364442,
+        "title": "Samewave Island",
+        "visible": true,
+        "foreground": false,
+        "rect": [
+          608,
+          0,
+          1312,
+          622
+        ]
+      },
+      {
+        "hwnd": 3411408,
+        "title": "模拟来源边界 · 不连接真实临床系统",
+        "visible": true,
+        "foreground": true,
+        "rect": [
+          572,
+          150,
+          1348,
+          889
+        ]
+      },
+      {
+        "hwnd": 19663920,
+        "title": "local.samewave.island.prototype-siw",
+        "visible": true,
+        "foreground": false,
+        "rect": [
+          0,
+          0,
+          16,
+          16
+        ]
+      },
+      {
+        "hwnd": 16058838,
+        "title": "MSCTFIME UI",
+        "visible": false,
+        "foreground": false,
+        "rect": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "hwnd": 47711872,
+        "title": "Default IME",
+        "visible": false,
+        "foreground": false,
+        "rect": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "capture": "D:\\Projects\\island-protype\\evidence\\optimization-20261013\\native-baseline-latency\\native-observation-source.png"
+  },
+  "status": "PASS_WITH_LIMITED_SOURCE_OBSERVATION"
+}

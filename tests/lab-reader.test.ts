@@ -27,11 +27,11 @@ describe('read-only lab source boundary',()=>{
   push({type:'clinical:scenario',scenario:'S04',labVariant:'baseline'});
   expect(events.at(-1).activity).not.toHaveProperty('labRef');
   push({type:'clinical:configure',settings:{privacy:false,locked:false,fullscreen:false,role:'clinician'}});
-  expect(demo.snapshot().activities[0].labRef.abnormalCount).toBe(original.abnormalCount);
+  expect(demo.snapshot().activities[0].labRef?.abnormalCount).toBe(original?.abnormalCount);expect(original).toBeDefined();
  });
  it('replies privately, excludes report rows from snapshots and rejects expired revisions and revoked roles',()=>{
   const broadcast:any[]=[],reply:any[]=[];const demo=createClinicalDemo((e:any)=>broadcast.push(e));const push=(e:any)=>demo.handle(e,(r:any)=>reply.push(r));
-  push({type:'clinical:scenario',scenario:'S04',stage:0,labVariant:'baseline'});const a=demo.snapshot().activities[0];expect(a.labRef.abnormalCount).toBe(3);expect(JSON.stringify(demo.snapshot())).not.toContain('白细胞');
+  push({type:'clinical:scenario',scenario:'S04',stage:0,labVariant:'baseline'});const a=demo.snapshot().activities[0];if(!a.labRef)throw new Error('Expected synthetic report reference');expect(a.labRef.abnormalCount).toBe(3);expect(JSON.stringify(demo.snapshot())).not.toContain('白细胞');
   const request={type:'clinical:lab-read',requestId:'one',identity:a.identity,version:a.version,reportId:a.labRef.id};const before=broadcast.length;push(request);expect(broadcast).toHaveLength(before);expect(reply.at(-1).report.items).toHaveLength(8);
   push({...request,version:0});expect(reply.at(-1)).toHaveProperty('error');push({type:'clinical:configure',settings:{role:'none'}});push(request);expect(reply.at(-1)).toHaveProperty('error');
   expect(()=>push({type:'clinical:lab-delete',identity:a.identity})).toThrow(/read-only/);

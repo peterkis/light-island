@@ -1,0 +1,88 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "D:\\Projects\\island-protype\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/native-reader-failure.spec.ts"
+    ],
+    "configFile": "D:\\Projects\\island-protype\\playwright.config.ts",
+    "rootDir": "D:/Projects/island-protype/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {},
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/Projects/island-protype/evidence/optimization-20261013/native-reader-red/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "",
+        "name": "",
+        "testDir": "D:/Projects/island-protype/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "/.*\\.spec\\.ts/"
+        ],
+        "timeout": 35000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "D:\\Projects\\island-protype\\evidence\\optimization-20261013\\native-reader-red\\playwright-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [],
+  "errors": [
+    {
+      "message": "SyntaxError: D:\\Projects\\island-protype\\tests\\native-reader-failure.spec.ts: Unexpected token, expected \",\" (26:3)\n\n  24 |    }\n  25 |    throw new Error('Unexpected native command '+command);\n> 26 |   };\n     |    ^\n  27 |   window.__TAURI_INTERNALS__=internals;Object.assign(window,{__TAURI_EVENT_PLUGIN_INTERNALS__:{unregisterListener:()=>{}}});\n  28 |  });\n  29 |  const push=async(data:object)=>expect((await request.post('http://127.0.0.1:17322/api/push',{data})).ok()).toBeTruthy();",
+      "stack": "SyntaxError: D:\\Projects\\island-protype\\tests\\native-reader-failure.spec.ts: Unexpected token, expected \",\" (26:3)\n\n  24 |    }\n  25 |    throw new Error('Unexpected native command '+command);\n> 26 |   };\n     |    ^\n  27 |   window.__TAURI_INTERNALS__=internals;Object.assign(window,{__TAURI_EVENT_PLUGIN_INTERNALS__:{unregisterListener:()=>{}}});\n  28 |  });\n  29 |  const push=async(data:object)=>expect((await request.post('http://127.0.0.1:17322/api/push',{data})).ok()).toBeTruthy();\n    at eval (<anonymous>:1:1)",
+      "location": {
+        "file": "D:\\Projects\\island-protype\\tests\\native-reader-failure.spec.ts",
+        "line": 26,
+        "column": 3
+      },
+      "snippet": "\u001b[90m   at \u001b[39mnative-reader-failure.spec.ts:26\n\n  24 |    }\n  25 |    throw new Error('Unexpected native command '+command);\n> 26 |   };\n     |   ^\n  27 |   window.__TAURI_INTERNALS__=internals;Object.assign(window,{__TAURI_EVENT_PLUGIN_INTERNALS__:{unregisterListener:()=>{}}});\n  28 |  });\n  29 |  const push=async(data:object)=>expect((await request.post('http://127.0.0.1:17322/api/push',{data})).ok()).toBeTruthy();"
+    },
+    {
+      "message": "Error: No tests found.\nMake sure that arguments are regular expressions matching test files.\nYou may need to escape symbols like \"$\" or \"*\" and quote the arguments.",
+      "stack": "Error: No tests found.\nMake sure that arguments are regular expressions matching test files.\nYou may need to escape symbols like \"$\" or \"*\" and quote the arguments."
+    }
+  ],
+  "stats": {
+    "startTime": "2026-10-13T06:36:09.663Z",
+    "duration": 13527.048999999999,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

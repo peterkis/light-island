@@ -1,0 +1,115 @@
+﻿{
+    "capturedAt":  "2026-10-13T15:05:08.1914068+08:00",
+    "exeSHA256":  "a056b570c02f77dd00dfde5a4f6e88b3005ded2d64679651b366c49806553836",
+    "scope":  "Owned native application and all discovered WebView2 descendants, no studio; excludes synthetic Node server and QA tools",
+    "sampleSeconds":  7.0064218,
+    "privateWorkingSetMiB":  217.67,
+    "privateCommitMiB":  338.29,
+    "cpuMachinePercent":  0,
+    "processes":  [
+                      {
+                          "pid":  2132,
+                          "name":  "samewave-island",
+                          "privateCommitMiB":  8.83,
+                          "workingSetMiB":  32.68,
+                          "cpuDeltaSeconds":  0,
+                          "newDuringSample":  false
+                      },
+                      {
+                          "pid":  13576,
+                          "name":  "msedgewebview2",
+                          "privateCommitMiB":  37.67,
+                          "workingSetMiB":  125.37,
+                          "cpuDeltaSeconds":  0,
+                          "newDuringSample":  false
+                      },
+                      {
+                          "pid":  15416,
+                          "name":  "msedgewebview2",
+                          "privateCommitMiB":  3.33,
+                          "workingSetMiB":  19.71,
+                          "cpuDeltaSeconds":  0,
+                          "newDuringSample":  false
+                      },
+                      {
+                          "pid":  23388,
+                          "name":  "msedgewebview2",
+                          "privateCommitMiB":  70.4,
+                          "workingSetMiB":  87.57,
+                          "cpuDeltaSeconds":  0,
+                          "newDuringSample":  false
+                      },
+                      {
+                          "pid":  11424,
+                          "name":  "msedgewebview2",
+                          "privateCommitMiB":  11.4,
+                          "workingSetMiB":  38.31,
+                          "cpuDeltaSeconds":  0,
+                          "newDuringSample":  false
+                      },
+                      {
+                          "pid":  21060,
+                          "name":  "msedgewebview2",
+                          "privateCommitMiB":  7.49,
+                          "workingSetMiB":  21.15,
+                          "cpuDeltaSeconds":  0,
+                          "newDuringSample":  false
+                      },
+                      {
+                          "pid":  18800,
+                          "name":  "msedgewebview2",
+                          "privateCommitMiB":  38.35,
+                          "workingSetMiB":  85.63,
+                          "cpuDeltaSeconds":  0,
+                          "newDuringSample":  false
+                      },
+                      {
+                          "pid":  10772,
+                          "name":  "msedgewebview2",
+                          "privateCommitMiB":  39.84,
+                          "workingSetMiB":  131.5,
+                          "cpuDeltaSeconds":  0,
+                          "newDuringSample":  false
+                      },
+                      {
+                          "pid":  23220,
+                          "name":  "msedgewebview2",
+                          "privateCommitMiB":  3.33,
+                          "workingSetMiB":  19.76,
+                          "cpuDeltaSeconds":  0,
+                          "newDuringSample":  false
+                      },
+                      {
+                          "pid":  33584,
+                          "name":  "msedgewebview2",
+                          "privateCommitMiB":  70.54,
+                          "workingSetMiB":  86.97,
+                          "cpuDeltaSeconds":  0,
+                          "newDuringSample":  false
+                      },
+                      {
+                          "pid":  36244,
+                          "name":  "msedgewebview2",
+                          "privateCommitMiB":  11.84,
+                          "workingSetMiB":  39.14,
+                          "cpuDeltaSeconds":  0,
+                          "newDuringSample":  false
+                      },
+                      {
+                          "pid":  34076,
+                          "name":  "msedgewebview2",
+                          "privateCommitMiB":  7.44,
+                          "workingSetMiB":  20.91,
+                          "cpuDeltaSeconds":  0,
+                          "newDuringSample":  false
+                      },
+                      {
+                          "pid":  19120,
+                          "name":  "msedgewebview2",
+                          "privateCommitMiB":  27.83,
+                          "workingSetMiB":  66.38,
+                          "cpuDeltaSeconds":  0,
+                          "newDuringSample":  false
+                      }
+                  ]
+}

@@ -33,8 +33,8 @@ export function parseNotice(raw: unknown): Notice | null {
     summary: m.summary as string, context: m.context as string, source: m.source as Source,
     priority: m.priority as Priority, createdAt: m.createdAt as number,
     requiresAck: m.priority !== 'routine' || m.requiresAck === true,
-    patient: m.patient as string | undefined, groupKey: m.groupKey as string | undefined,
-    threadId: m.threadId as string | undefined, status: 'unread', count: 1,
+    ...(typeof m.patient==='string'?{patient:m.patient}:{}), ...(typeof m.groupKey==='string'?{groupKey:m.groupKey}:{}),
+    ...(typeof m.threadId==='string'?{threadId:m.threadId}:{}), status: 'unread', count: 1,
   };
 }
 const rank = { critical: 0, urgent: 1, routine: 2 };

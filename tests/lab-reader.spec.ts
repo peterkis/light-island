@@ -1,15 +1,16 @@
+import type {Page,APIRequestContext} from '@playwright/test';
 import {test,expect} from '@playwright/test';
 import {evidencePath} from './evidence-path';
 const base='http://127.0.0.1:17322';
-const push=async(request:any,data:object)=>expect((await request.post(base+'/api/push',{data})).ok()).toBeTruthy();
-const island=(page:any)=>page.getByTestId('clinical-island');
-async function capture(page:any,name:string){const b=(await island(page).boundingBox())!;await page.screenshot({path:evidencePath('lab-reader/'+name+'.png'),clip:{x:Math.max(0,b.x-32),y:Math.max(0,b.y-8),width:b.width+64,height:b.height+48}});}
-async function settled(page:any,state:string){await expect(island(page)).toHaveAttribute('data-lab-state',state);await expect(island(page)).toHaveAttribute('data-motion-phase','settled',{timeout:8000});}
-async function report(page:any,request:any,variant='baseline'){
+const push=async(request:APIRequestContext,data:object)=>expect((await request.post(base+'/api/push',{data})).ok()).toBeTruthy();
+const island=(page:Page)=>page.getByTestId('clinical-island');
+async function capture(page:Page,name:string){const b=(await island(page).boundingBox())!;await page.screenshot({path:evidencePath('lab-reader/'+name+'.png'),clip:{x:Math.max(0,b.x-32),y:Math.max(0,b.y-8),width:b.width+64,height:b.height+48}});}
+async function settled(page:Page,state:string){await expect(island(page)).toHaveAttribute('data-lab-state',state);await expect(island(page)).toHaveAttribute('data-motion-phase','settled',{timeout:8000});}
+async function report(page:Page,request:APIRequestContext,variant='baseline'){
  await push(request,{type:'clinical:scenario',scenario:'S04',stage:0,labVariant:variant});await settled(page,'alert');await island(page).getByRole('button',{name:'查看检验报告摘要'}).click();await settled(page,'sum');await expect(island(page).getByRole('button',{name:'阅读报告',exact:true})).toBeEnabled();
 }
-async function read(page:any,request:any,variant='baseline'){await report(page,request,variant);await island(page).getByRole('button',{name:'阅读报告',exact:true}).click();await settled(page,'read');}
-async function freezeTime(page:any){await page.clock.pauseAt(await page.evaluate(()=>Date.now())+10000);}
+async function read(page:Page,request:APIRequestContext,variant='baseline'){await report(page,request,variant);await island(page).getByRole('button',{name:'阅读报告',exact:true}).click();await settled(page,'read');}
+async function freezeTime(page:Page){await page.clock.pauseAt(await page.evaluate(()=>Date.now())+10000);}
 test.beforeEach(async({page,request})=>{await page.clock.install();await push(request,{type:'clinical:reset'});await page.goto('/clinical.html');await expect(page.getByTestId('clinical-scenario-S04')).toBeVisible();await expect(island(page)).toHaveAttribute('data-motion-phase','settled');});
 test('progressive same-body report and manual burn clear rows without source writes or undo',async({page,request})=>{
  await report(page,request);expect((await island(page).boundingBox())!.height).toBeCloseTo(200,1);await expect(island(page)).toContainText('WBC');await capture(page,'summary');await island(page).getByRole('button',{name:'阅读报告',exact:true}).click();await settled(page,'read');expect((await island(page).boundingBox())!.height).toBeCloseTo(580,1);await expect(island(page).locator('.lab-row')).toHaveCount(8);expect(await island(page).locator('.wm,[style*="--wm"]').count()).toBe(0);await capture(page,'reader');

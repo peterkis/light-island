@@ -7,7 +7,7 @@
     "dev": "vite --host 127.0.0.1",
     "demo:server": "node server/demo-server.mjs",
     "dev:all": "concurrently -k -n WEB,DEMO \"npm:dev\" \"npm:demo:server\"",
-    "build": "npm run tokens:clinical && npm run tokens:lab && tsc -b && vite build",
+    "build": "npm run tokens:clinical && npm run tokens:lab && npm run typecheck && vite build",
     "preview": "vite preview --host 127.0.0.1",
     "test": "vitest run",
     "test:e2e": "playwright test",
@@ -17,7 +17,10 @@
     "tokens:clinical": "node scripts/generate-clinical-tokens.mjs",
     "tokens:lab": "node scripts/generate-lab-tokens.mjs",
     "clinical:server": "node scripts/start-clinical-development.mjs",
-    "dev:clinical": "concurrently -k -n WEB,CLINICAL \"npm:dev\" \"npm:clinical:server\""
+    "dev:clinical": "concurrently -k -n WEB,CLINICAL \"npm:dev\" \"npm:clinical:server\"",
+    "typecheck": "tsc --noEmit -p tsconfig.json && tsc --noEmit -p tsconfig.tools.json",
+    "bundle:check": "node scripts/check-source-bundle.mjs",
+    "profile:baseline": "node scripts/prepare-optimization-baseline.mjs"
   },
   "dependencies": {
     "@gsap/react": "2.1.2",
@@ -31,6 +34,7 @@
     "@playwright/test": "^1.55.0",
     "@tailwindcss/vite": "4.3.3",
     "@tauri-apps/cli": "^2.8.0",
+    "@types/node": "^24.19.2",
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.9",
     "@vitejs/plugin-react": "^5.0.0",

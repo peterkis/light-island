@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Activity, ArrowRight, ArrowUpRight, Bell, Check, ChevronDown, CircleHelp, Code2, Columns2, EyeOff, Focus, HeartPulse, Layers3, Maximize2, Monitor, Moon, Play, Radio, RotateCcw, Settings2, ShieldCheck, Sparkles, Sun, Wifi, X, Zap } from 'lucide-react';
-import { send } from '../lib/bridge';
+import { sendLegacy as send } from '../lib/bridge';
 import type { IslandController } from '../hooks/useIsland';
 import { measureFrames } from '../lib/performance';
 import type { FrameReport } from '../lib/performance';
@@ -27,11 +27,15 @@ export function Studio({ c }: { c: IslandController }) {
   const [help, setHelp] = useState(false);
   const [backdrop, setBackdrop] = useState<'workspace' | 'night'>('workspace');
   const theme = themes.find(x => x.id === c.settings.theme)!;
+  const sampleAbort=useRef<AbortController|null>(null),journeyTimer=useRef(0),alive=useRef(true);
+  useEffect(()=>{alive.current=true;return()=>{alive.current=false;sampleAbort.current?.abort();clearTimeout(journeyTimer.current);};},[]);
   const benchmark = async () => {
-    setMeasuring(true); const timer = setInterval(() => c.setMode(v => v === 'compact' ? 'inbox' : 'compact'), 620);
-    try { setMeasure(await measureFrames(6200)); } finally { clearInterval(timer); c.setMode('compact'); setMeasuring(false); }
+    sampleAbort.current?.abort();const abort=new AbortController();sampleAbort.current=abort;setMeasuring(true);
+    const result=await measureFrames(6200,{signal:abort.signal,intervalMs:620,onInterval:()=>c.setMode(v=>v==='compact'?'inbox':'compact')});
+    if(!alive.current||abort.signal.aborted)return;
+    setMeasure(result);if(!result.hidden&&!result.cancelled)c.setMode('compact');setMeasuring(false);
   };
-  const journey = async () => { if (demoRunning) return; setDemoRunning(true); await c.scenario('journey'); setTimeout(() => setDemoRunning(false), 12500); };
+  const journey = async () => { if (demoRunning) return; setDemoRunning(true); await c.scenario('journey'); if(alive.current)journeyTimer.current=window.setTimeout(() => setDemoRunning(false), 12500); };
   return <div className="studio">
     <header className="studio-header"><a className="brand" href="#" onClick={e => { e.preventDefault(); setTab('design'); }}><span className="brand-symbol"><WaveMark/></span><span>同频<span className="brand-divider"/>Island</span><span className="brand-sub">医院数字化协作空间</span></a><nav className="studio-nav" aria-label="试验台导航"><button onClick={() => setTab('design')} className={tab === 'design' ? 'active' : ''}>原型试验台</button><button onClick={() => setTab('events')} className={tab === 'events' ? 'active' : ''}>事件与回执 <span>{c.logs.length}</span></button><button onClick={() => setTab('contract')} className={tab === 'contract' ? 'active' : ''}>接入边界</button></nav><div className="header-right"><span className="prototype-badge">PROTOTYPE <b>01</b></span><button className="studio-icon" aria-label="使用帮助" onClick={() => setHelp(!help)}><CircleHelp size={19}/></button></div></header>
     <main className="studio-main">

@@ -4,40 +4,86 @@ export type Role = 'clinician'|'finance'|'logistics'|'none';
 export type Tone = 'info'|'warning'|'error'|'success'|'neutral';
 export interface Identity { source: string; campus: string; encounter: string; object: string }
 export interface SourceField {label:string; value:string; at:number|null}
-export interface Activity {
- identity: Identity; scenario: ScenarioId; version: number; stage: number;
+interface ActivityFields {
+ identity: Identity; version: number; stage: number;
  compact: string; title: string; body: string; sourceState:string; sourceAt:number|null; syncedAt:number|null;
  fields:SourceField[]; tone:Tone; priority:'routine'|'important'; scope:Role;
- patient:string; guard:string; actionLabel:string; routeKind:string; withdrawn:boolean;
- labRef?:{id:string;abnormalCount:number};
+ patient:string; guard:string; actionLabel:string; withdrawn:boolean;
 }
+export const allowedRoutes={S02:'orders',S03:'critical',S04:'reports',S05:'finance',S06:'handoff',S07:'followup',S08:'report-version',S09:'specimen',S10:'blood',S11:'pharmacy',S12:'examination',S13:'transport',S14:'consult',S15:'equipment'} as const satisfies Record<ScenarioId,string>;
+type ScenarioActivity = {[S in ScenarioId]: ActivityFields & {scenario:S;routeKind:typeof allowedRoutes[S]} & (S extends 'S04'?{labRef?:{id:string;abnormalCount:number}}:{labRef?:never})};
+export type Activity=ScenarioActivity[ScenarioId];
 export interface Settings { privacy:boolean; role:Role; locked:boolean; fullscreen:boolean; reduced:boolean; textScale:number; connectivity:'fresh'|'offline'|'stale'; routeFault:'none'|'failed'|'mismatch'; quiet:boolean; dock:'notch'|'floating'; compactText:boolean; backgroundDark:boolean; hideIdle:boolean; autoPreview:boolean }
 export const defaults:Settings={privacy:false,role:'clinician',locked:false,fullscreen:false,reduced:false,textScale:1,connectivity:'fresh',routeFault:'none',quiet:false,dock:'notch',compactText:false,backgroundDark:false,hideIdle:false,autoPreview:true};
-export interface TimerState {status:'idle'|'running'|'paused'; duration:number; remaining:number; deadline:number|null}
+export type TimerState={duration:number;remaining:number}&({status:'running';deadline:number}|{status:'idle'|'paused';deadline:null});
 export const emptyTimer=():TimerState=>({status:'idle',duration:25*60*1000,remaining:25*60*1000,deadline:null});
 export interface Queue {items:Activity[];duplicates:number;rejected:number;overflow:number}
 export const emptyQueue=():Queue=>({items:[],duplicates:0,rejected:0,overflow:0});
 export const identityKey=(i:Identity)=>JSON.stringify([i.source,i.campus,i.encounter,i.object]);
 export const versionKey=(a:Activity)=>`${identityKey(a.identity)}@${a.version}`;
-export const allowedRoutes:Record<ScenarioId,string>={S02:'orders',S03:'critical',S04:'reports',S05:'finance',S06:'handoff',S07:'followup',S08:'report-version',S09:'specimen',S10:'blood',S11:'pharmacy',S12:'examination',S13:'transport',S14:'consult',S15:'equipment'};
 function text(v:unknown,n:number):v is string {return typeof v==='string'&&v.length<=n&&v.length>0;}
+export function isRecord(value:unknown):value is Record<string,unknown>{return value!==null&&typeof value==='object'&&!Array.isArray(value);}
+export function isScenario(value:unknown):value is ScenarioId{return typeof value==='string'&&Object.hasOwn(allowedRoutes,value);}
+export function parseIdentity(value:unknown):Identity|null{
+ if(!isRecord(value))return null;
+ const {source,campus,encounter,object}=value;
+ return text(source,160)&&text(campus,160)&&text(encounter,160)&&text(object,160)?{source,campus,encounter,object}:null;
+}
+const finiteNonnegative=(value:unknown):value is number=>typeof value==='number'&&Number.isFinite(value)&&value>=0;
+export function parseTimerState(value:unknown):TimerState|null{
+ if(!isRecord(value))return null;
+ const {status,duration,remaining,deadline}=value;
+ if(!finiteNonnegative(duration)||!finiteNonnegative(remaining))return null;
+ if(status==='running'&&finiteNonnegative(deadline))return {status,duration,remaining,deadline};
+ if((status==='idle'||status==='paused')&&deadline===null)return {status,duration,remaining,deadline};
+ return null;
+}
 export function parseActivity(input:unknown):Activity|null {
- if(!input||typeof input!=='object')return null;
- const a=input as Activity;
- if(!a.identity||!Object.values(a.identity).every(v=>text(v,160))||!['source','campus','encounter','object'].every(k=>text(a.identity[k as keyof Identity],160)))return null;
- if(!(a.scenario in allowedRoutes)||a.routeKind!==allowedRoutes[a.scenario]||!Number.isSafeInteger(a.version)||a.version<1||!Number.isInteger(a.stage)||a.stage<0)return null;
- if(!text(a.title,180)||!text(a.compact,80)||!text(a.body,900)||!text(a.sourceState,160)||!text(a.guard,400)||!text(a.patient,120)||!text(a.actionLabel,80))return null;
- if(!['info','warning','error','success','neutral'].includes(a.tone)||!['routine','important'].includes(a.priority)||!['clinician','finance','logistics'].includes(a.scope)||typeof a.withdrawn!=='boolean')return null;
- if(![a.sourceAt,a.syncedAt].every(v=>v===null||(typeof v==='number'&&Number.isFinite(v)&&v>=0)))return null;
- if(!Array.isArray(a.fields)||a.fields.length>8||!a.fields.every(f=>f&&text(f.label,80)&&text(f.value,400)&&(f.at===null||Number.isFinite(f.at))))return null;
- if(a.labRef&&(a.scenario!=='S04'||!text(a.labRef.id,160)||!Number.isInteger(a.labRef.abnormalCount)||a.labRef.abnormalCount<0||a.labRef.abnormalCount>128))return null;
- // Copy only the known contract; ignore payload HTML, URLs, action callbacks or extraneous data.
- return {identity:{source:a.identity.source,campus:a.identity.campus,encounter:a.identity.encounter,object:a.identity.object},scenario:a.scenario,version:a.version,stage:a.stage,compact:a.compact,title:a.title,body:a.body,sourceState:a.sourceState,sourceAt:a.sourceAt,syncedAt:a.syncedAt,fields:a.fields.map(f=>({label:f.label,value:f.value,at:f.at})),tone:a.tone,priority:a.priority,scope:a.scope,patient:a.patient,guard:a.guard,actionLabel:a.actionLabel,routeKind:a.routeKind,withdrawn:a.withdrawn,...(a.labRef?{labRef:{id:a.labRef.id,abnormalCount:a.labRef.abnormalCount}}:{})};
+ if(!isRecord(input))return null;
+ const {scenario,version,stage,title,compact,body,sourceState,guard,patient,actionLabel,tone,priority,scope,withdrawn,sourceAt,syncedAt}=input;
+ const identity=parseIdentity(input.identity);
+ if(!identity||!isScenario(scenario)||input.routeKind!==allowedRoutes[scenario]||!finiteNonnegative(version)||!Number.isSafeInteger(version)||version<1||!finiteNonnegative(stage)||!Number.isInteger(stage))return null;
+ if(!text(title,180)||!text(compact,80)||!text(body,900)||!text(sourceState,160)||!text(guard,400)||!text(patient,120)||!text(actionLabel,80))return null;
+ if(tone!=='info'&&tone!=='warning'&&tone!=='error'&&tone!=='success'&&tone!=='neutral')return null;
+ if(priority!=='routine'&&priority!=='important')return null;
+ if(scope!=='clinician'&&scope!=='finance'&&scope!=='logistics')return null;
+ if(typeof withdrawn!=='boolean'||(sourceAt!==null&&!finiteNonnegative(sourceAt))||(syncedAt!==null&&!finiteNonnegative(syncedAt)))return null;
+ if(!Array.isArray(input.fields)||input.fields.length>8)return null;
+ const fields:SourceField[]=[];
+ for(const field of input.fields){
+  if(!isRecord(field)||!text(field.label,80)||!text(field.value,400)||(field.at!==null&&(typeof field.at!=='number'||!Number.isFinite(field.at))))return null;
+  fields.push({label:field.label,value:field.value,at:field.at});
+ }
+ let labRef:{id:string;abnormalCount:number}|undefined;
+ if(Object.hasOwn(input,'labRef')){
+  const ref=input.labRef;
+  if(scenario!=='S04'||!isRecord(ref)||!text(ref.id,160)||!finiteNonnegative(ref.abnormalCount)||!Number.isInteger(ref.abnormalCount)||ref.abnormalCount>128)return null;
+  labRef={id:ref.id,abnormalCount:ref.abnormalCount};
+ }
+ const base:ActivityFields={identity,version,stage,title,compact,body,sourceState,guard,patient,actionLabel,tone,priority,scope,withdrawn,sourceAt,syncedAt,fields};
+ // Preserve the scenario/route correlation without asserting unvalidated JSON.
+ switch(scenario){
+  case 'S02':return {...base,scenario,routeKind:allowedRoutes[scenario]};
+  case 'S03':return {...base,scenario,routeKind:allowedRoutes[scenario]};
+  case 'S04':return {...base,scenario,routeKind:allowedRoutes[scenario],...(labRef?{labRef}:{})};
+  case 'S05':return {...base,scenario,routeKind:allowedRoutes[scenario]};
+  case 'S06':return {...base,scenario,routeKind:allowedRoutes[scenario]};
+  case 'S07':return {...base,scenario,routeKind:allowedRoutes[scenario]};
+  case 'S08':return {...base,scenario,routeKind:allowedRoutes[scenario]};
+  case 'S09':return {...base,scenario,routeKind:allowedRoutes[scenario]};
+  case 'S10':return {...base,scenario,routeKind:allowedRoutes[scenario]};
+  case 'S11':return {...base,scenario,routeKind:allowedRoutes[scenario]};
+  case 'S12':return {...base,scenario,routeKind:allowedRoutes[scenario]};
+  case 'S13':return {...base,scenario,routeKind:allowedRoutes[scenario]};
+  case 'S14':return {...base,scenario,routeKind:allowedRoutes[scenario]};
+  case 'S15':return {...base,scenario,routeKind:allowedRoutes[scenario]};
+ }
 }
 export function ingest(q:Queue,input:unknown):Queue {
  const a=parseActivity(input);if(!a)return {...q,rejected:q.rejected+1};
  const i=q.items.findIndex(x=>identityKey(x.identity)===identityKey(a.identity));
- if(i>=0){if(q.items[i].version>=a.version)return {...q,duplicates:q.duplicates+1};return {...q,items:q.items.map((x,j)=>j===i?a:x)};}
+ const existing=q.items[i];
+ if(existing){if(existing.version>=a.version)return {...q,duplicates:q.duplicates+1};return {...q,items:q.items.map((x,j)=>j===i?a:x)};}
  if(q.items.length>=tokens.behavior.maxStoredActivities)return {...q,overflow:q.overflow+1};
  return {...q,items:[a,...q.items]};
 }

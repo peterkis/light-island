@@ -30,7 +30,7 @@ for (const engine of ['gsap', 'css']) test(`${engine}: bounded shallow height an
 test('message center, thread, confirmation and success remain a single horizontal row', async ({ page, request }) => {
   const island = page.getByTestId('island');
   for (const scenario of ['critical', 'unstable']) await post(request, { type: 'demo', scenario });
-  await expect.poll(() => page.evaluate(() => window.__ISLAND_DEBUG__?.snapshot().model.items.length)).toBe(2);
+  await expect.poll(() => page.evaluate(() => (window.__ISLAND_DEBUG__?.snapshot() as {model:{items:unknown[]}}).model.items.length)).toBe(2);
   await expect(island).toHaveAttribute('data-mode', 'expanded');
   await page.getByRole('button', { name: '查看协作脉络', exact: true }).click();
   await expect(island).toHaveAttribute('data-mode', 'thread');

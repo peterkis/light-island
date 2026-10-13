@@ -1,7 +1,7 @@
 import {useCallback,useEffect,useRef,useState} from 'react';
 import {invoke} from '@tauri-apps/api/core';
 import {listen} from '@tauri-apps/api/event';
-import {nativeIsland,send} from '../../lib/bridge';
+import {nativeIsland,sendClinical as send} from '../../lib/bridge';
 import {identityKey} from '../model';
 import type {Activity} from '../model';
 import type {Wire} from '../../lib/bridge';
@@ -14,7 +14,7 @@ export function useLabReader(onExit:()=>void){
  const [snapshot,setSnapshot]=useState(initial),state=useRef(snapshot),report=useRef<LabReport|null>(null),activity=useRef<Activity|null>(null),budget=useRef<ReadBudget|null>(null);
  const timers=useRef({alert:0,privacy:0,transition:0,request:0,clock:0}),request=useRef<string|null>(null),mouse=useRef(false),alive=useRef(true),exit=useRef(onExit);exit.current=onExit;
  const reduction=useRef(false),setReduced=useCallback((value:boolean)=>{reduction.current=value;},[]);
- const update=useCallback((patch:Partial<Snapshot>)=>{state.current={...state.current,...patch};if(alive.current)setSnapshot(state.current);},[]);
+ const update=useCallback((patch:Partial<Snapshot>)=>{const next={...state.current,...patch};if((Object.keys(next) as Array<keyof Snapshot>).every(key=>Object.is(next[key],state.current[key])))return;state.current=next;if(alive.current)setSnapshot(next);},[]);
  const clear=useCallback(()=>{Object.values(timers.current).forEach(clearTimeout);clearInterval(timers.current.clock);timers.current={alert:0,privacy:0,transition:0,request:0,clock:0};request.current=null;budget.current=null;mouse.current=false;},[]);
  const nativeClock=useCallback(()=>{
   const b=budget.current;if(nativeIsland)void invoke('clinical_reader_clock',{session:state.current.session,remainingMs:b?.remaining(performance.now())??0,paused:b?.paused??true}).catch(()=>{});
@@ -37,23 +37,29 @@ export function useLabReader(onExit:()=>void){
    timers.current.transition=window.setTimeout(()=>{if(state.current.session===session)close();},LAB.doneMs);
   },reduced?50:LAB.burnMs);
  },[clear,close,nativeClock,release,update]);
+ // A paused budget has no display clock. Expiration remains owned by this session.
+ const syncDisplayClock=useCallback(()=>{
+  clearInterval(timers.current.clock);timers.current.clock=0;
+  if(state.current.stage!=='read'||!budget.current||budget.current.paused)return;
+  timers.current.clock=window.setInterval(()=>{const b=budget.current;if(state.current.stage!=='read'||!b||b.paused)return;const left=b.remaining(performance.now());if(left<=0)burn(reduction.current);else update({remaining:left});},100);
+ },[burn,update]);
  const mask=useCallback(()=>{
   if(state.current.stage!=='read')return;
-  clearTimeout(timers.current.privacy);budget.current?.pause(false,performance.now());update({privacy:true,remaining:budget.current?.remaining(performance.now())??0});nativeClock();
- },[nativeClock,update]);
+  clearTimeout(timers.current.privacy);budget.current?.pause(false,performance.now());update({privacy:true,remaining:budget.current?.remaining(performance.now())??0});nativeClock();syncDisplayClock();
+ },[nativeClock,update,syncDisplayClock]);
  const armPrivacy=useCallback(()=>{clearTimeout(timers.current.privacy);if(state.current.stage==='read'&&!state.current.privacy)timers.current.privacy=window.setTimeout(mask,LAB.privacyMs);},[mask]);
  const hover=useCallback((inside:boolean,pointerType='mouse')=>{
   if(pointerType!=='mouse')return;mouse.current=inside;
-  if(state.current.stage==='read'&&!state.current.privacy){budget.current?.pause(inside&&!document.hidden,performance.now());update({remaining:budget.current?.remaining(performance.now())??0});nativeClock();}
+  if(state.current.stage==='read'&&!state.current.privacy){budget.current?.pause(inside&&!document.hidden,performance.now());update({remaining:budget.current?.remaining(performance.now())??0});nativeClock();syncDisplayClock();}
   if(state.current.stage==='alert'){clearTimeout(timers.current.alert);if(!inside)timers.current.alert=window.setTimeout(close,LAB.alertLeaveMs);}
- },[close,nativeClock,update]);
+ },[close,nativeClock,update,syncDisplayClock]);
  const touch=useCallback(()=>{if(state.current.stage==='read'&&!state.current.privacy)armPrivacy();},[armPrivacy]);
- const reveal=useCallback(()=>{if(state.current.stage!=='read'||!state.current.privacy)return;update({privacy:false});budget.current?.pause(mouse.current&&!document.hidden,performance.now());nativeClock();armPrivacy();},[armPrivacy,nativeClock,update]);
+ const reveal=useCallback(()=>{if(state.current.stage!=='read'||!state.current.privacy)return;update({privacy:false});budget.current?.pause(mouse.current&&!document.hidden,performance.now());nativeClock();syncDisplayClock();armPrivacy();},[armPrivacy,nativeClock,update,syncDisplayClock]);
  const read=useCallback((reduced:boolean)=>{
   if(state.current.stage!=='sum'||!report.current)return;
   reduction.current=reduced;clearTimeout(timers.current.request);budget.current=new ReadBudget(performance.now());budget.current.pause(mouse.current,performance.now());update({stage:'read',privacy:false,remaining:LAB.readMs});armPrivacy();nativeClock();
-  timers.current.clock=window.setInterval(()=>{const b=budget.current;if(state.current.stage!=='read'||!b)return;const left=b.remaining(performance.now());if(left<=0)burn(reduction.current);else update({remaining:left});},100);
- },[armPrivacy,burn,nativeClock,update]);
+  syncDisplayClock();
+ },[armPrivacy,nativeClock,update,syncDisplayClock]);
  const load=useCallback(async()=>{
   const a=activity.current;if(!a?.labRef||!['alert','sum'].includes(state.current.stage))return;
   clearTimeout(timers.current.alert);clearTimeout(timers.current.request);const session=state.current.session,id=crypto.randomUUID();request.current=id;
@@ -79,9 +85,9 @@ export function useLabReader(onExit:()=>void){
   alive.current=true;let dead=false,off:(()=>void)|undefined,offBlur:(()=>void)|undefined;
   const blur=()=>mask();const visibility=()=>{if(document.hidden)mask();if(state.current.stage==='read'&&budget.current&&budget.current.remaining(performance.now())<=0)burn(true,true);};
   window.addEventListener('blur',blur);document.addEventListener('visibilitychange',visibility);
-  if(nativeIsland)void listen<{session:number}>('island://lab-expired',e=>{if(!dead&&e.payload.session===state.current.session)burn(true,true);}).then(clean=>{if(dead)clean();else off=clean;});
-  if(nativeIsland)void listen('island://lab-blur',()=>{if(!dead)mask();}).then(clean=>{if(dead)clean();else offBlur=clean;});
+  if(nativeIsland)void listen<{session:number}>('island://lab-expired',e=>{if(!dead&&e.payload.session===state.current.session)burn(true,true);}).then(clean=>{if(dead)clean();else off=clean;}).catch(()=>{if(!dead)close();});
+  if(nativeIsland)void listen('island://lab-blur',()=>{if(!dead)mask();}).then(clean=>{if(dead)clean();else offBlur=clean;}).catch(()=>{if(!dead)close();});
   return()=>{alive.current=false;dead=true;off?.();offBlur?.();window.removeEventListener('blur',blur);document.removeEventListener('visibilitychange',visibility);clear();disposeLabReport(report.current);report.current=null;activity.current=null;release();};
- },[burn,clear,mask,release]);
+ },[burn,clear,mask,release,close]);
  return {...snapshot,report:report.current,activity:activity.current,start,load,read,burn,mask,reveal,touch,hover,close,receive,invalidate,protectedSession,currentActivity,setReduced};
 }

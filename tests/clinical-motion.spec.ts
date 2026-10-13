@@ -1,7 +1,8 @@
+import type {Page,APIRequestContext} from '@playwright/test';
 import {test,expect} from '@playwright/test';
 const base='http://127.0.0.1:17322';
-const post=async(request:any,data:object)=>expect((await request.post(base+'/api/push',{data})).ok()).toBeTruthy();
-const settled=async(page:any,surface?:string)=>{const e=page.getByTestId('clinical-island');if(surface)await expect(e).toHaveAttribute('data-surface',surface);await expect(e).toHaveAttribute('data-motion-phase','settled',{timeout:8000});await page.waitForTimeout(350);return e;};
+const post=async(request:APIRequestContext,data:object)=>expect((await request.post(base+'/api/push',{data})).ok()).toBeTruthy();
+const settled=async(page:Page,surface?:string)=>{const e=page.getByTestId('clinical-island');if(surface)await expect(e).toHaveAttribute('data-surface',surface);await expect(e).toHaveAttribute('data-motion-phase','settled',{timeout:8000});await page.waitForTimeout(350);return e;};
 test.beforeEach(async({page,request})=>{await post(request,{type:'clinical:reset'});await page.goto('/clinical.html');await settled(page,'idle');});
 test('new S0 is 124x32 with external ears, finite Peek and no auto-expansion',async({page})=>{
  const e=await settled(page);expect((await e.boundingBox())!.width).toBe(124);expect((await e.boundingBox())!.height).toBe(32);

@@ -20,9 +20,7 @@ fn connect_stream(app: AppHandle, state: tauri::State<'_, Arc<Transport>>) -> Re
     if state.running.swap(true, Ordering::SeqCst) {
         let online = state.online.load(Ordering::SeqCst);
         let _ = app.emit("island://connection", if online { "online" } else { "connecting" });
-        if let Ok(writer) = state.writer.lock() {
-            if let Some(tx) = writer.as_ref() { let _ = tx.try_send("{\"type\":\"sync\"}".into()); }
-        }
+        // Each newly-online window requests its own protocol snapshot.
         return Ok(());
     }
     let transport = state.inner().clone();
@@ -98,15 +96,23 @@ fn connect_stream(app: AppHandle, state: tauri::State<'_, Arc<Transport>>) -> Re
     Ok(())
 }
 
+fn wire_allowed(clinical: bool, label: &str, kind: &str) -> bool {
+    if clinical {
+        let readonly = ["clinical:sync", "clinical:refresh", "clinical:open", "clinical:source-read", "clinical:lab-read", "clinical:personal", "clinical:preferences"];
+        let simulator = ["clinical:scenario", "clinical:configure", "clinical:reset", "clinical:view"];
+        readonly.contains(&kind) || (label == "studio" && simulator.contains(&kind))
+    } else {
+        ["sync", "ack", "demo", "configure", "reset", "view"].contains(&kind)
+    }
+}
+
 #[tauri::command]
 fn send_wire(window: tauri::WebviewWindow, payload: Value, state: tauri::State<'_, Arc<Transport>>) -> Result<(), String> {
     let kind = payload.get("type").and_then(Value::as_str).ok_or("Missing event type")?;
     let clinical = window.url().map_err(|e|e.to_string())?.path().ends_with("clinical.html");
-    if clinical {
-        let readonly = ["clinical:sync", "clinical:refresh", "clinical:open", "clinical:source-read", "clinical:lab-read", "clinical:personal", "clinical:preferences"];
-        let simulator = ["clinical:scenario", "clinical:configure", "clinical:reset", "clinical:view"];
-        if !readonly.contains(&kind) && !(window.label()=="studio" && simulator.contains(&kind)) { return Err("Clinical surface is read-only; simulator commands require the studio".into()); }
-    } else if !["ack", "demo", "configure", "reset", "view"].contains(&kind) { return Err("Unsupported event type".into()); }
+    if !wire_allowed(clinical, window.label(), kind) {
+        return Err(if clinical { "Clinical surface is read-only; simulator commands require the studio" } else { "Unsupported event type" }.into());
+    }
     if !state.online.load(Ordering::SeqCst) { return Err("Message channel is offline".into()); }
     let encoded = serde_json::to_string(&payload).map_err(|e| e.to_string())?;
     if encoded.len() > 32768 { return Err("Payload exceeds prototype limit".into()); }
@@ -120,6 +126,22 @@ fn send_wire(window: tauri::WebviewWindow, payload: Value, state: tauri::State<'
     }
     let tx = state.writer.lock().map_err(|_| "Writer state unavailable")?.clone().ok_or("No connected writer")?;
     tx.try_send(encoded).map_err(|e| e.to_string())
+}
+
+#[cfg(test)]
+mod protocol_tests {
+    use super::wire_allowed;
+    #[test]
+    fn per_window_sync_preserves_the_clinical_readonly_boundary() {
+        assert!(wire_allowed(false, "island", "sync"));
+        assert!(wire_allowed(true, "island", "clinical:sync"));
+        assert!(wire_allowed(true, "clinical-source", "clinical:source-read"));
+        assert!(wire_allowed(true, "studio", "clinical:configure"));
+        for kind in ["sync", "ack", "clinical:ack", "clinical:complete", "clinical:dispatch", "clinical:configure", "clinical:scenario"] {
+            assert!(!wire_allowed(true, "island", kind), "{kind}");
+            assert!(!wire_allowed(true, "clinical-source", kind), "{kind}");
+        }
+    }
 }
 
 #[cfg(target_os = "windows")]

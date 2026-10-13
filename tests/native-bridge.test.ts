@@ -17,7 +17,10 @@ it('uses the installed Tauri window target so source replies do not enter studio
  const studio:any[]=[],source:any[]=[],states:string[]=[];
  const offStudio=await connect(e=>studio.push(e),s=>states.push(s));
  metadata.currentWindow.label=metadata.currentWebview.label='clinical-source';
- const offSource=await connect(e=>source.push(e),()=>{});
+ // Each real WebView has a separate module realm and sender generation.
+ vi.resetModules();
+ const sourceBridge=await import('../src/lib/bridge');
+ const offSource=await sourceBridge.connect(e=>source.push(e),()=>{});
  const deliver=(event:string,payload:unknown,target?:string)=>{
   for(const listener of harness.listeners.values()){
    if(listener.event===event&&(!target||listener.target.kind==='Any'||listener.target.label===target))harness.callbacks.get(listener.handler)?.({event,payload,id:0});
