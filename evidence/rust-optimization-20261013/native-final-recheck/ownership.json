@@ -1,0 +1,52 @@
+﻿{
+    "verified":  true,
+    "rootPid":  28036,
+    "rootStartedTicks":  639274779977998010,
+    "serverPid":  3076,
+    "serverStartedTicks":  639274779971365060,
+    "port":  9223,
+    "executable":  "D:\\Projects\\island-protype\\src-tauri\\target\\release\\samewave-island.exe",
+    "exeSHA256":  "86e15e48cfeed0d567fddb368918295f4b7a3ee089d550e9127c7736f3891820",
+    "arguments":  "--qa-cdp --hover-diagnostics",
+    "studio":  false,
+    "capturedAt":  "2026-10-13T16:46:37.8977031+08:00",
+    "qaEndpointReadyMs":  3437,
+    "browser":  "Edg/154.0.4258.62",
+    "processes":  [
+                      {
+                          "ProcessId":  28036,
+                          "ParentProcessId":  36016,
+                          "Name":  "samewave-island.exe"
+                      },
+                      {
+                          "ProcessId":  35700,
+                          "ParentProcessId":  28036,
+                          "Name":  "msedgewebview2.exe"
+                      },
+                      {
+                          "ProcessId":  30208,
+                          "ParentProcessId":  35700,
+                          "Name":  "msedgewebview2.exe"
+                      },
+                      {
+                          "ProcessId":  23720,
+                          "ParentProcessId":  35700,
+                          "Name":  "msedgewebview2.exe"
+                      },
+                      {
+                          "ProcessId":  23352,
+                          "ParentProcessId":  35700,
+                          "Name":  "msedgewebview2.exe"
+                      },
+                      {
+                          "ProcessId":  26700,
+                          "ParentProcessId":  35700,
+                          "Name":  "msedgewebview2.exe"
+                      },
+                      {
+                          "ProcessId":  26088,
+                          "ParentProcessId":  35700,
+                          "Name":  "msedgewebview2.exe"
+                      }
+                  ]
+}

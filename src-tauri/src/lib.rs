@@ -153,6 +153,13 @@ mod notch_window;
 mod clinical_window;
 mod clinical_input;
 mod clinical_shadow;
+#[cfg(target_os = "windows")]
+mod shadow_raster;
+#[cfg(target_os = "windows")]
+mod clinical_region;
+#[cfg(all(test, target_os = "windows"))]
+#[path = "../../scripts/rust-performance-reference.rs"]
+mod performance_reference;
 mod reader_native;
 mod reader_profile;
 use reader_native::{clinical_capture,clinical_reader_clock};

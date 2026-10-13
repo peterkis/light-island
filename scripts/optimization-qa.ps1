@@ -33,8 +33,13 @@ function Verify-Owned($Owner){
 if($Action -eq 'Start'){
  if(Test-Path -LiteralPath $manifestPath){throw 'Choose a fresh output directory; prior ownership evidence is immutable'}
  $exe=[IO.Path]::GetFullPath((Join-Path $taskRoot $Executable))
- $allowed=@((Join-Path $taskRoot 'src-tauri\target\release\samewave-island.exe'),(Join-Path $taskRoot 'evidence\backups\optimization-20261013\baseline-executable\samewave-island.exe'))
+ $rustBaseline=Join-Path $taskRoot 'evidence\backups\rust-optimization-20261013\baseline-executable\samewave-island.exe'
+ $allowed=@((Join-Path $taskRoot 'src-tauri\target\release\samewave-island.exe'),(Join-Path $taskRoot 'evidence\backups\optimization-20261013\baseline-executable\samewave-island.exe'),$rustBaseline)
  if($exe -notin $allowed -or -not(Test-Path -LiteralPath $exe)){throw 'Only the current build or verified baseline executable is permitted'}
+ if($exe -eq $rustBaseline){
+  $baselineOwner=Get-Content -LiteralPath (Join-Path $taskRoot 'evidence\rust-optimization-20261013\native-baseline\ownership.json') -Raw | ConvertFrom-Json
+  if((Get-FileHash -LiteralPath $exe -Algorithm SHA256).Hash.ToLowerInvariant() -ne $baselineOwner.exeSHA256){throw 'Rust baseline executable hash changed'}
+ }
  if(Get-Process -Name samewave-island -ErrorAction SilentlyContinue){throw 'An island process already exists; no process was stopped'}
  if(Get-NetTCPConnection -LocalPort 17322,9223 -State Listen -ErrorAction SilentlyContinue){throw 'A QA port is occupied; no existing process was stopped'}
  New-Item -ItemType Directory -Force -Path $out,(Join-Path $out 'temp') | Out-Null

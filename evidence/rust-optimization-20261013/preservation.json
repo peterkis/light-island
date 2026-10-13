@@ -1,0 +1,12 @@
+{
+  "preservedFiles": 212,
+  "drift": [],
+  "rustEdits": [
+    "src-tauri/src/lib.rs",
+    "src-tauri/src/clinical_window.rs",
+    "src-tauri/src/clinical_shadow.rs",
+    "src-tauri/src/notch_window.rs",
+    "src-tauri/src/reader_native.rs"
+  ],
+  "backupRoot": "evidence/backups/rust-optimization-20261013"
+}

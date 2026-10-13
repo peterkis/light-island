@@ -1,0 +1,396 @@
+{
+  "date": "2026-10-13",
+  "status": "IMPLEMENTED_WITH_BOUNDED_SYNTHETIC_NATIVE_VALIDATION",
+  "scope": "Rust clinical region dilation, shadow rasterization and opt-in finite timings; existing React/TypeScript work preserved",
+  "baseline": {
+    "exeSHA256": "a056b570c02f77dd00dfde5a4f6e88b3005ded2d64679651b366c49806553836",
+    "sourceManifest": "source-before.json",
+    "kind": "Initial working tree including prior uncommitted TS/React optimization",
+    "snapshot": "evidence/backups/rust-optimization-20261013/baseline-src"
+  },
+  "final": {
+    "validatedFiles": 222,
+    "gitHead": "7ac2cf2cc8775e902491cfc14bcd985db53744d8",
+    "rustChangesCommitted": false,
+    "pushed": false,
+    "unexpectedCodeDrift": [],
+    "exeSHA256": "40cd4d13c79c2e050e3d2be0d3bd5939e3f1ec30d80c2d4fefdc9374e622bd0c"
+  },
+  "validation": {
+    "clippy": {
+      "status": "PASS",
+      "arguments": "--all-targets --all-features --locked -- -D warnings -D clippy::perf",
+      "log": "clippy-final.log"
+    },
+    "rust": {
+      "log": "rust-final.log",
+      "passed": 13,
+      "failed": 0,
+      "profile": "release",
+      "locked": true
+    },
+    "unit": {
+      "passed": 231,
+      "files": 12,
+      "failed": 0,
+      "success": true
+    },
+    "e2e": {
+      "startTime": "2026-10-13T09:12:09.802Z",
+      "duration": 480793.207,
+      "expected": 93,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "build": {
+      "desktop": "PASS",
+      "profile": "release",
+      "frontend": "PASS",
+      "typecheck": "PASS",
+      "log": "desktop-final.log"
+    }
+  },
+  "microbench": {
+    "method": "Nine alternating rounds of both frozen reference and production kernels in one standalone process, Release flags matching app; timings are median of round averages; allocator counted in one warm iteration after timings",
+    "regionAllocationDecreasePercent": 96,
+    "raw": "microbench-final.jsonl",
+    "scaleScope": "Synthetic coordinate inputs, not physical DPI acceptance",
+    "summary": [
+      {
+        "case": "shadow-scale-1",
+        "rounds": 9,
+        "iterationsPerRound": 24,
+        "baselineMedianMs": 4.457420833333333,
+        "optimizedMedianMs": 2.4713125,
+        "medianDecreasePercent": 44.55734397974912,
+        "pairedMinimumDecreasePercent": 38.16772973338094,
+        "baselineAllocations": 2,
+        "optimizedAllocations": 0,
+        "baselineAllocatedBytes": 8208,
+        "optimizedAllocatedBytes": 0
+      },
+      {
+        "case": "shadow-scale-1.5",
+        "rounds": 9,
+        "iterationsPerRound": 24,
+        "baselineMedianMs": 6.59415,
+        "optimizedMedianMs": 3.6247375,
+        "medianDecreasePercent": 45.03101233669236,
+        "pairedMinimumDecreasePercent": 35.3171798545531,
+        "baselineAllocations": 2,
+        "optimizedAllocations": 0,
+        "baselineAllocatedBytes": 8208,
+        "optimizedAllocatedBytes": 0
+      },
+      {
+        "case": "shadow-scale-2",
+        "rounds": 9,
+        "iterationsPerRound": 24,
+        "baselineMedianMs": 10.584929166666665,
+        "optimizedMedianMs": 6.248604166666667,
+        "medianDecreasePercent": 40.96697230299525,
+        "pairedMinimumDecreasePercent": 37.31460964744292,
+        "baselineAllocations": 2,
+        "optimizedAllocations": 0,
+        "baselineAllocatedBytes": 8208,
+        "optimizedAllocatedBytes": 0
+      },
+      {
+        "case": "region-handoff-scale-1",
+        "rounds": 9,
+        "iterationsPerRound": 128,
+        "baselineMedianMs": 1.19918671875,
+        "optimizedMedianMs": 0.71146484375,
+        "medianDecreasePercent": 40.67105375453025,
+        "pairedMinimumDecreasePercent": 1.5605361908010873,
+        "baselineAllocations": 50,
+        "optimizedAllocations": 2,
+        "baselineAllocatedBytes": 51200,
+        "optimizedAllocatedBytes": 2048
+      },
+      {
+        "case": "region-handoff-scale-1.5",
+        "rounds": 9,
+        "iterationsPerRound": 128,
+        "baselineMedianMs": 1.45179296875,
+        "optimizedMedianMs": 0.9230015625,
+        "medianDecreasePercent": 36.42333429299438,
+        "pairedMinimumDecreasePercent": 29.47343801915727,
+        "baselineAllocations": 50,
+        "optimizedAllocations": 2,
+        "baselineAllocatedBytes": 51200,
+        "optimizedAllocatedBytes": 2048
+      },
+      {
+        "case": "region-handoff-scale-2",
+        "rounds": 9,
+        "iterationsPerRound": 128,
+        "baselineMedianMs": 1.9104859375,
+        "optimizedMedianMs": 1.3248203125,
+        "medianDecreasePercent": 30.655322476038904,
+        "pairedMinimumDecreasePercent": 24.110961483566694,
+        "baselineAllocations": 50,
+        "optimizedAllocations": 2,
+        "baselineAllocatedBytes": 51200,
+        "optimizedAllocatedBytes": 2048
+      }
+    ]
+  },
+  "native": {
+    "screen": {
+      "clicks": 3,
+      "routinePreservesFocus": true,
+      "blankFrames": 0,
+      "frames": 55,
+      "passed": true,
+      "rectangles": 1,
+      "importantPreservesFocus": true
+    },
+    "regionUpdates": 12,
+    "readonlyBoundary": true,
+    "windowChanges": 0,
+    "status": "PASS_WITH_LIMITED_SOURCE_OBSERVATION",
+    "motionPath": "system-reduced-motion",
+    "sourceContentTiming": "NOT_RUN: source WebView is not enumerated by the owned CDP endpoint",
+    "sourceCapture": "NOT_RUN: owned source window is not visible and foreground",
+    "memory": {
+      "capturedAt": "2026-10-13T17:08:33.6571815+08:00",
+      "exeSHA256": "40cd4d13c79c2e050e3d2be0d3bd5939e3f1ec30d80c2d4fefdc9374e622bd0c",
+      "scope": "Owned native application and all discovered WebView2 descendants, no studio; excludes synthetic Node server and QA tools",
+      "sampleSeconds": 10.9652435,
+      "privateWorkingSetMiB": 117.5,
+      "privateCommitMiB": 181.84,
+      "cpuMachinePercent": 0,
+      "processes": [
+        {
+          "pid": 30944,
+          "name": "samewave-island",
+          "privateCommitMiB": 10.1,
+          "workingSetMiB": 30.7,
+          "cpuDeltaSeconds": 0,
+          "newDuringSample": false
+        },
+        {
+          "pid": 22688,
+          "name": "msedgewebview2",
+          "privateCommitMiB": 38.79,
+          "workingSetMiB": 126.6,
+          "cpuDeltaSeconds": 0,
+          "newDuringSample": false
+        },
+        {
+          "pid": 21376,
+          "name": "msedgewebview2",
+          "privateCommitMiB": 3.34,
+          "workingSetMiB": 19.72,
+          "cpuDeltaSeconds": 0,
+          "newDuringSample": false
+        },
+        {
+          "pid": 11124,
+          "name": "msedgewebview2",
+          "privateCommitMiB": 69.66,
+          "workingSetMiB": 86.4,
+          "cpuDeltaSeconds": 0,
+          "newDuringSample": false
+        },
+        {
+          "pid": 8000,
+          "name": "msedgewebview2",
+          "privateCommitMiB": 11.67,
+          "workingSetMiB": 38.59,
+          "cpuDeltaSeconds": 0,
+          "newDuringSample": false
+        },
+        {
+          "pid": 24504,
+          "name": "msedgewebview2",
+          "privateCommitMiB": 7.5,
+          "workingSetMiB": 21.18,
+          "cpuDeltaSeconds": 0,
+          "newDuringSample": false
+        },
+        {
+          "pid": 34256,
+          "name": "msedgewebview2",
+          "privateCommitMiB": 40.78,
+          "workingSetMiB": 90.09,
+          "cpuDeltaSeconds": 0,
+          "newDuringSample": false
+        }
+      ]
+    },
+    "viewportMismatches": 0.0,
+    "baselineCostSummary": {
+      "metrics-control": {
+        "n": 72,
+        "medianMs": 1.300000011920929,
+        "p95Ms": 2.199999988079071
+      },
+      "region-only": {
+        "n": 72,
+        "medianMs": 2.199999988079071,
+        "p95Ms": 3.0999999940395355
+      },
+      "region-handoff": {
+        "n": 72,
+        "medianMs": 2.5,
+        "p95Ms": 3.699999988079071
+      },
+      "cached-shadow": {
+        "n": 72,
+        "medianMs": 2.5999999940395355,
+        "p95Ms": 3.5
+      },
+      "changing-shadow": {
+        "n": 72,
+        "medianMs": 6.9000000059604645,
+        "p95Ms": 9.599999994039536
+      },
+      "luminance": {
+        "n": 72,
+        "medianMs": 16.799999982118607,
+        "p95Ms": 17.900000005960464
+      }
+    },
+    "restRegionUpdates": 0,
+    "phaseTimings": [
+      {
+        "kind": "region-only",
+        "n": 72,
+        "nativeMedianMs": 0.1999,
+        "regionMedianMs": 0.1642,
+        "shadowMedianMs": 0.0055
+      },
+      {
+        "kind": "region-handoff",
+        "n": 72,
+        "nativeMedianMs": 0.35169999999999996,
+        "regionMedianMs": 0.31270000000000003,
+        "shadowMedianMs": 0.0065
+      },
+      {
+        "kind": "cached-shadow",
+        "n": 72,
+        "nativeMedianMs": 0.4374,
+        "regionMedianMs": 0.303,
+        "shadowMedianMs": 0.0965
+      },
+      {
+        "kind": "changing-shadow",
+        "n": 72,
+        "nativeMedianMs": 2.8642,
+        "regionMedianMs": 1.2241000000000002,
+        "shadowMedianMs": 1.4472
+      }
+    ],
+    "notificationPreservesForeground": true,
+    "dpi": 96,
+    "normalMotion": "NOT_RUN: system animations disabled",
+    "rafP95Ms": [
+      17,
+      17,
+      17.09999999999127,
+      17.09999999999127
+    ],
+    "finalCostSummary": {
+      "metrics-control": {
+        "n": 72,
+        "medianMs": 1.2999999821186066,
+        "p95Ms": 2.2000000178813934
+      },
+      "region-only": {
+        "n": 72,
+        "medianMs": 1.7000000178813934,
+        "p95Ms": 3.0999999940395355
+      },
+      "region-handoff": {
+        "n": 72,
+        "medianMs": 2.199999988079071,
+        "p95Ms": 3.5999999940395355
+      },
+      "cached-shadow": {
+        "n": 72,
+        "medianMs": 2.300000011920929,
+        "p95Ms": 3.100000023841858
+      },
+      "changing-shadow": {
+        "n": 72,
+        "medianMs": 5.300000011920929,
+        "p95Ms": 7.300000011920929
+      },
+      "luminance": {
+        "n": 72,
+        "medianMs": 16.599999994039536,
+        "p95Ms": 17.80000001192093
+      }
+    }
+  },
+  "preservation": {
+    "preservedFiles": 211,
+    "unexpectedDrift": [],
+    "changes": [
+      "src-tauri/src/lib.rs",
+      "src-tauri/src/clinical_window.rs",
+      "src-tauri/src/clinical_shadow.rs",
+      "src-tauri/src/notch_window.rs",
+      "src-tauri/src/reader_native.rs",
+      "scripts/optimization-qa.ps1"
+    ]
+  },
+  "immutableInputs": [
+    {
+      "path": "docs/Windows 灵动岛 UI UX 设计规范 v1.0.md",
+      "sha256": "a9f37ea76becf4b74c4388a2172e4d46dbc7a4600558cee3b71f445f3e67b1fa",
+      "unchanged": true
+    },
+    {
+      "path": "docs/protype/灵动岛「检验报告阅读」开发文档（Agent 可读版）.md",
+      "sha256": "beca7ca59cce18f7898f97caf497a9f63e8e30b55a91fd74e1cb2bb2d74c9aff",
+      "unchanged": true
+    },
+    {
+      "path": "docs/protype/灵动岛 · 检验报告阅读（阅后即焚）.html",
+      "sha256": "625664a43eea9ceb14763ef27e650a1f8d8766ded933e8d6704a451416146dad",
+      "unchanged": true
+    }
+  ],
+  "cleanup": {
+    "scope": "Owned QA termination, not graceful-exit or profile-erasure acceptance",
+    "listeners": [],
+    "allOwnedSessionsStopped": true,
+    "islandProcesses": []
+  },
+  "limits": [
+    "No production or clinical readiness claim; no real patient data or clinical writes",
+    "No statistically established whole-application memory, user interaction or cold-start improvement",
+    "Native normal spring motion NOT_RUN; browser normal motion tested separately",
+    "DWM presentation, Windows 10, physical 125/150/200 percent and mixed-DPI, Narrator and touch matrix NOT_RUN",
+    "Source WebView not enumerated by owned CDP endpoint; source content timing and foreground capture NOT_RUN",
+    "Native absolute timings varied between process launches; all slower candidates retained"
+  ],
+  "preservedFindings": [
+    {
+      "run": "clippy-baseline",
+      "status": "FAIL: five existing warnings under -D warnings",
+      "evidence": "clippy-baseline.log"
+    },
+    {
+      "run": "mirror floating-point boundary",
+      "status": "RED: extra shadow pixel at width immediately above integer, fixed with full-loop fallback",
+      "finalEvidence": "differential-final.log",
+      "evidence": "differential-boundary-red.log"
+    },
+    {
+      "run": "native-final and native-final-recheck",
+      "status": "Slower preliminary whole-command samples, including unchanged metrics control",
+      "interpretation": "Do not claim guaranteed whole-application speedup or discard these measurements",
+      "evidence": [
+        "native-final/rust-native-cost.json",
+        "native-final-recheck/rust-native-cost.json"
+      ]
+    }
+  ],
+  "report": "docs/RUST-PERFORMANCE-OPTIMIZATION.md"
+}

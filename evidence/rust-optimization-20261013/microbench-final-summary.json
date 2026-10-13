@@ -1,0 +1,80 @@
+[
+  {
+    "case": "shadow-scale-1",
+    "rounds": 9,
+    "iterationsPerRound": 24,
+    "baselineMedianMs": 4.457420833333333,
+    "optimizedMedianMs": 2.4713125,
+    "medianDecreasePercent": 44.55734397974912,
+    "pairedMinimumDecreasePercent": 38.16772973338094,
+    "baselineAllocations": 2,
+    "optimizedAllocations": 0,
+    "baselineAllocatedBytes": 8208,
+    "optimizedAllocatedBytes": 0
+  },
+  {
+    "case": "shadow-scale-1.5",
+    "rounds": 9,
+    "iterationsPerRound": 24,
+    "baselineMedianMs": 6.59415,
+    "optimizedMedianMs": 3.6247375,
+    "medianDecreasePercent": 45.03101233669236,
+    "pairedMinimumDecreasePercent": 35.3171798545531,
+    "baselineAllocations": 2,
+    "optimizedAllocations": 0,
+    "baselineAllocatedBytes": 8208,
+    "optimizedAllocatedBytes": 0
+  },
+  {
+    "case": "shadow-scale-2",
+    "rounds": 9,
+    "iterationsPerRound": 24,
+    "baselineMedianMs": 10.584929166666665,
+    "optimizedMedianMs": 6.248604166666667,
+    "medianDecreasePercent": 40.96697230299525,
+    "pairedMinimumDecreasePercent": 37.31460964744292,
+    "baselineAllocations": 2,
+    "optimizedAllocations": 0,
+    "baselineAllocatedBytes": 8208,
+    "optimizedAllocatedBytes": 0
+  },
+  {
+    "case": "region-handoff-scale-1",
+    "rounds": 9,
+    "iterationsPerRound": 128,
+    "baselineMedianMs": 1.19918671875,
+    "optimizedMedianMs": 0.71146484375,
+    "medianDecreasePercent": 40.67105375453025,
+    "pairedMinimumDecreasePercent": 1.5605361908010873,
+    "baselineAllocations": 50,
+    "optimizedAllocations": 2,
+    "baselineAllocatedBytes": 51200,
+    "optimizedAllocatedBytes": 2048
+  },
+  {
+    "case": "region-handoff-scale-1.5",
+    "rounds": 9,
+    "iterationsPerRound": 128,
+    "baselineMedianMs": 1.45179296875,
+    "optimizedMedianMs": 0.9230015625,
+    "medianDecreasePercent": 36.42333429299438,
+    "pairedMinimumDecreasePercent": 29.47343801915727,
+    "baselineAllocations": 50,
+    "optimizedAllocations": 2,
+    "baselineAllocatedBytes": 51200,
+    "optimizedAllocatedBytes": 2048
+  },
+  {
+    "case": "region-handoff-scale-2",
+    "rounds": 9,
+    "iterationsPerRound": 128,
+    "baselineMedianMs": 1.9104859375,
+    "optimizedMedianMs": 1.3248203125,
+    "medianDecreasePercent": 30.655322476038904,
+    "pairedMinimumDecreasePercent": 24.110961483566694,
+    "baselineAllocations": 50,
+    "optimizedAllocations": 2,
+    "baselineAllocatedBytes": 51200,
+    "optimizedAllocatedBytes": 2048
+  }
+]

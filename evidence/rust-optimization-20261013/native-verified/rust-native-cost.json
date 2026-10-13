@@ -1,0 +1,6248 @@
+{
+  "exeSHA256": "49f1cea223170307a34f35379d2de5cb236d3e89cc9b6cecc29f7a5c6c3c3ebf",
+  "ownership": {
+    "verified": true,
+    "rootPid": 32368,
+    "serverPid": 32692,
+    "port": 9223,
+    "processCount": 7
+  },
+  "rows": [
+    {
+      "round": 0,
+      "kind": "metrics-control",
+      "ms": 2,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 0,
+      "kind": "metrics-control",
+      "ms": 1.5999999940395355,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 0,
+      "kind": "metrics-control",
+      "ms": 1.4000000059604645,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 0,
+      "kind": "metrics-control",
+      "ms": 1.300000011920929,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 0,
+      "kind": "metrics-control",
+      "ms": 1.199999988079071,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 0,
+      "kind": "metrics-control",
+      "ms": 1.2999999821186066,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 0,
+      "kind": "metrics-control",
+      "ms": 1.4000000059604645,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 0,
+      "kind": "metrics-control",
+      "ms": 1.300000011920929,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 0,
+      "kind": "metrics-control",
+      "ms": 1.7999999821186066,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 0,
+      "kind": "metrics-control",
+      "ms": 2.2000000178813934,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 0,
+      "kind": "metrics-control",
+      "ms": 1.5,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 0,
+      "kind": "metrics-control",
+      "ms": 1.4000000059604645,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 0,
+      "kind": "metrics-control",
+      "ms": 1.5999999940395355,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 0,
+      "kind": "metrics-control",
+      "ms": 1.699999988079071,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 0,
+      "kind": "metrics-control",
+      "ms": 1.5999999940395355,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 0,
+      "kind": "metrics-control",
+      "ms": 1.5999999940395355,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 0,
+      "kind": "metrics-control",
+      "ms": 1.699999988079071,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 0,
+      "kind": "metrics-control",
+      "ms": 1.800000011920929,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 0,
+      "kind": "metrics-control",
+      "ms": 2.5999999940395355,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 0,
+      "kind": "metrics-control",
+      "ms": 1.800000011920929,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 0,
+      "kind": "metrics-control",
+      "ms": 1.5999999940395355,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 0,
+      "kind": "metrics-control",
+      "ms": 1.300000011920929,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 0,
+      "kind": "metrics-control",
+      "ms": 1.5,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 0,
+      "kind": "metrics-control",
+      "ms": 1.2999999821186066,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 0,
+      "kind": "region-only",
+      "ms": 2.0999999940395355,
+      "sequence": 4,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.2228,
+        "phase": "frame",
+        "prepareMs": 0.0375,
+        "regionMs": 0.1846,
+        "sequence": 4,
+        "shadowMs": 0.0007
+      }
+    },
+    {
+      "round": 0,
+      "kind": "region-only",
+      "ms": 1.699999988079071,
+      "sequence": 5,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.204,
+        "phase": "frame",
+        "prepareMs": 0.0299,
+        "regionMs": 0.1725,
+        "sequence": 5,
+        "shadowMs": 0.0015999999999999999
+      }
+    },
+    {
+      "round": 0,
+      "kind": "region-only",
+      "ms": 2.0999999940395355,
+      "sequence": 6,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.2141,
+        "phase": "frame",
+        "prepareMs": 0.0322,
+        "regionMs": 0.1812,
+        "sequence": 6,
+        "shadowMs": 0.0007
+      }
+    },
+    {
+      "round": 0,
+      "kind": "region-only",
+      "ms": 1.9000000059604645,
+      "sequence": 7,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.232,
+        "phase": "frame",
+        "prepareMs": 0.047599999999999996,
+        "regionMs": 0.1837,
+        "sequence": 7,
+        "shadowMs": 0.0007
+      }
+    },
+    {
+      "round": 0,
+      "kind": "region-only",
+      "ms": 2.199999988079071,
+      "sequence": 8,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.2855,
+        "phase": "frame",
+        "prepareMs": 0.0399,
+        "regionMs": 0.24459999999999998,
+        "sequence": 8,
+        "shadowMs": 0.001
+      }
+    },
+    {
+      "round": 0,
+      "kind": "region-only",
+      "ms": 1.800000011920929,
+      "sequence": 9,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.2145,
+        "phase": "frame",
+        "prepareMs": 0.0434,
+        "regionMs": 0.1706,
+        "sequence": 9,
+        "shadowMs": 0.0005
+      }
+    },
+    {
+      "round": 0,
+      "kind": "region-only",
+      "ms": 3.800000011920929,
+      "sequence": 10,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.8238,
+        "phase": "frame",
+        "prepareMs": 0.0347,
+        "regionMs": 0.7874,
+        "sequence": 10,
+        "shadowMs": 0.0017000000000000001
+      }
+    },
+    {
+      "round": 0,
+      "kind": "region-only",
+      "ms": 3.399999976158142,
+      "sequence": 11,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.3527,
+        "phase": "frame",
+        "prepareMs": 0.0607,
+        "regionMs": 0.2913,
+        "sequence": 11,
+        "shadowMs": 0.0007
+      }
+    },
+    {
+      "round": 0,
+      "kind": "region-only",
+      "ms": 2.300000011920929,
+      "sequence": 12,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.2293,
+        "phase": "frame",
+        "prepareMs": 0.0373,
+        "regionMs": 0.1915,
+        "sequence": 12,
+        "shadowMs": 0.0005
+      }
+    },
+    {
+      "round": 0,
+      "kind": "region-only",
+      "ms": 1.9000000059604645,
+      "sequence": 13,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.2392,
+        "phase": "frame",
+        "prepareMs": 0.0317,
+        "regionMs": 0.207,
+        "sequence": 13,
+        "shadowMs": 0.0005
+      }
+    },
+    {
+      "round": 0,
+      "kind": "region-only",
+      "ms": 2,
+      "sequence": 14,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.2103,
+        "phase": "frame",
+        "prepareMs": 0.0293,
+        "regionMs": 0.1806,
+        "sequence": 14,
+        "shadowMs": 0.00039999999999999996
+      }
+    },
+    {
+      "round": 0,
+      "kind": "region-only",
+      "ms": 2,
+      "sequence": 15,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.2034,
+        "phase": "frame",
+        "prepareMs": 0.0294,
+        "regionMs": 0.1735,
+        "sequence": 15,
+        "shadowMs": 0.0005
+      }
+    },
+    {
+      "round": 0,
+      "kind": "region-only",
+      "ms": 2.699999988079071,
+      "sequence": 16,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.5799,
+        "phase": "frame",
+        "prepareMs": 0.0356,
+        "regionMs": 0.5432,
+        "sequence": 16,
+        "shadowMs": 0.0011
+      }
+    },
+    {
+      "round": 0,
+      "kind": "region-only",
+      "ms": 3.2000000178813934,
+      "sequence": 17,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.4,
+        "phase": "frame",
+        "prepareMs": 0.0524,
+        "regionMs": 0.3462,
+        "sequence": 17,
+        "shadowMs": 0.0014
+      }
+    },
+    {
+      "round": 0,
+      "kind": "region-only",
+      "ms": 2.5,
+      "sequence": 18,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.3393,
+        "phase": "frame",
+        "prepareMs": 0.0467,
+        "regionMs": 0.2918,
+        "sequence": 18,
+        "shadowMs": 0.0007999999999999999
+      }
+    },
+    {
+      "round": 0,
+      "kind": "region-only",
+      "ms": 2.2999999821186066,
+      "sequence": 19,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.3054,
+        "phase": "frame",
+        "prepareMs": 0.0438,
+        "regionMs": 0.261,
+        "sequence": 19,
+        "shadowMs": 0.0006
+      }
+    },
+    {
+      "round": 0,
+      "kind": "region-only",
+      "ms": 1.9000000059604645,
+      "sequence": 20,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.20929999999999999,
+        "phase": "frame",
+        "prepareMs": 0.0331,
+        "regionMs": 0.1756,
+        "sequence": 20,
+        "shadowMs": 0.0006
+      }
+    },
+    {
+      "round": 0,
+      "kind": "region-only",
+      "ms": 2.199999988079071,
+      "sequence": 21,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.2963,
+        "phase": "frame",
+        "prepareMs": 0.0446,
+        "regionMs": 0.2509,
+        "sequence": 21,
+        "shadowMs": 0.0007999999999999999
+      }
+    },
+    {
+      "round": 0,
+      "kind": "region-only",
+      "ms": 2,
+      "sequence": 22,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.2027,
+        "phase": "frame",
+        "prepareMs": 0.0326,
+        "regionMs": 0.1695,
+        "sequence": 22,
+        "shadowMs": 0.0006
+      }
+    },
+    {
+      "round": 0,
+      "kind": "region-only",
+      "ms": 2,
+      "sequence": 23,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.2738,
+        "phase": "frame",
+        "prepareMs": 0.0282,
+        "regionMs": 0.24439999999999998,
+        "sequence": 23,
+        "shadowMs": 0.0012
+      }
+    },
+    {
+      "round": 0,
+      "kind": "region-only",
+      "ms": 2.600000023841858,
+      "sequence": 24,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.3643,
+        "phase": "frame",
+        "prepareMs": 0.0601,
+        "regionMs": 0.3033,
+        "sequence": 24,
+        "shadowMs": 0.0009
+      }
+    },
+    {
+      "round": 0,
+      "kind": "region-only",
+      "ms": 2.399999976158142,
+      "sequence": 25,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.313,
+        "phase": "frame",
+        "prepareMs": 0.0472,
+        "regionMs": 0.26489999999999997,
+        "sequence": 25,
+        "shadowMs": 0.0009
+      }
+    },
+    {
+      "round": 0,
+      "kind": "region-only",
+      "ms": 2.5,
+      "sequence": 26,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.5247999999999999,
+        "phase": "frame",
+        "prepareMs": 0.0331,
+        "regionMs": 0.49050000000000005,
+        "sequence": 26,
+        "shadowMs": 0.0012
+      }
+    },
+    {
+      "round": 0,
+      "kind": "region-only",
+      "ms": 2,
+      "sequence": 27,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.205,
+        "phase": "frame",
+        "prepareMs": 0.030199999999999998,
+        "regionMs": 0.1743,
+        "sequence": 27,
+        "shadowMs": 0.0005
+      }
+    },
+    {
+      "round": 0,
+      "kind": "region-handoff",
+      "ms": 3.4000000059604645,
+      "sequence": 31,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.5331,
+        "phase": "frame",
+        "prepareMs": 0.06380000000000001,
+        "regionMs": 0.4684,
+        "sequence": 31,
+        "shadowMs": 0.0009
+      }
+    },
+    {
+      "round": 0,
+      "kind": "region-handoff",
+      "ms": 2.399999976158142,
+      "sequence": 32,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.3922,
+        "phase": "frame",
+        "prepareMs": 0.0384,
+        "regionMs": 0.3533,
+        "sequence": 32,
+        "shadowMs": 0.0005
+      }
+    },
+    {
+      "round": 0,
+      "kind": "region-handoff",
+      "ms": 2.800000011920929,
+      "sequence": 33,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.5287,
+        "phase": "frame",
+        "prepareMs": 0.054400000000000004,
+        "regionMs": 0.4736,
+        "sequence": 33,
+        "shadowMs": 0.0007
+      }
+    },
+    {
+      "round": 0,
+      "kind": "region-handoff",
+      "ms": 2.800000011920929,
+      "sequence": 34,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.7105,
+        "phase": "frame",
+        "prepareMs": 0.0329,
+        "regionMs": 0.6767,
+        "sequence": 34,
+        "shadowMs": 0.0009
+      }
+    },
+    {
+      "round": 0,
+      "kind": "region-handoff",
+      "ms": 2.899999976158142,
+      "sequence": 35,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.39740000000000003,
+        "phase": "frame",
+        "prepareMs": 0.0409,
+        "regionMs": 0.35579999999999995,
+        "sequence": 35,
+        "shadowMs": 0.0007
+      }
+    },
+    {
+      "round": 0,
+      "kind": "region-handoff",
+      "ms": 4.600000023841858,
+      "sequence": 36,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 1.4392,
+        "phase": "frame",
+        "prepareMs": 0.046400000000000004,
+        "regionMs": 1.3912,
+        "sequence": 36,
+        "shadowMs": 0.0015999999999999999
+      }
+    },
+    {
+      "round": 0,
+      "kind": "region-handoff",
+      "ms": 2.899999976158142,
+      "sequence": 37,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.7141,
+        "phase": "frame",
+        "prepareMs": 0.0365,
+        "regionMs": 0.6764,
+        "sequence": 37,
+        "shadowMs": 0.0012
+      }
+    },
+    {
+      "round": 0,
+      "kind": "region-handoff",
+      "ms": 2.4000000059604645,
+      "sequence": 38,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.33740000000000003,
+        "phase": "frame",
+        "prepareMs": 0.0347,
+        "regionMs": 0.30210000000000004,
+        "sequence": 38,
+        "shadowMs": 0.0006
+      }
+    },
+    {
+      "round": 0,
+      "kind": "region-handoff",
+      "ms": 2.2000000178813934,
+      "sequence": 39,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.3235,
+        "phase": "frame",
+        "prepareMs": 0.032,
+        "regionMs": 0.2908,
+        "sequence": 39,
+        "shadowMs": 0.0007
+      }
+    },
+    {
+      "round": 0,
+      "kind": "region-handoff",
+      "ms": 3,
+      "sequence": 40,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.5564,
+        "phase": "frame",
+        "prepareMs": 0.0487,
+        "regionMs": 0.507,
+        "sequence": 40,
+        "shadowMs": 0.0007
+      }
+    },
+    {
+      "round": 0,
+      "kind": "region-handoff",
+      "ms": 3.0999999940395355,
+      "sequence": 41,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.356,
+        "phase": "frame",
+        "prepareMs": 0.0418,
+        "regionMs": 0.3137,
+        "sequence": 41,
+        "shadowMs": 0.0005
+      }
+    },
+    {
+      "round": 0,
+      "kind": "region-handoff",
+      "ms": 3.199999988079071,
+      "sequence": 42,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.39780000000000004,
+        "phase": "frame",
+        "prepareMs": 0.0424,
+        "regionMs": 0.3546,
+        "sequence": 42,
+        "shadowMs": 0.0007999999999999999
+      }
+    },
+    {
+      "round": 0,
+      "kind": "region-handoff",
+      "ms": 2.600000023841858,
+      "sequence": 43,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.3622,
+        "phase": "frame",
+        "prepareMs": 0.0424,
+        "regionMs": 0.3191,
+        "sequence": 43,
+        "shadowMs": 0.0007
+      }
+    },
+    {
+      "round": 0,
+      "kind": "region-handoff",
+      "ms": 2.699999988079071,
+      "sequence": 44,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.3938,
+        "phase": "frame",
+        "prepareMs": 0.036199999999999996,
+        "regionMs": 0.3568,
+        "sequence": 44,
+        "shadowMs": 0.0007999999999999999
+      }
+    },
+    {
+      "round": 0,
+      "kind": "region-handoff",
+      "ms": 2.800000011920929,
+      "sequence": 45,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.6219,
+        "phase": "frame",
+        "prepareMs": 0.2763,
+        "regionMs": 0.3448,
+        "sequence": 45,
+        "shadowMs": 0.0007999999999999999
+      }
+    },
+    {
+      "round": 0,
+      "kind": "region-handoff",
+      "ms": 2.7999999821186066,
+      "sequence": 46,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.3713,
+        "phase": "frame",
+        "prepareMs": 0.0399,
+        "regionMs": 0.3306,
+        "sequence": 46,
+        "shadowMs": 0.0007999999999999999
+      }
+    },
+    {
+      "round": 0,
+      "kind": "region-handoff",
+      "ms": 3.5999999940395355,
+      "sequence": 47,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.8622000000000001,
+        "phase": "frame",
+        "prepareMs": 0.041,
+        "regionMs": 0.8193,
+        "sequence": 47,
+        "shadowMs": 0.0019
+      }
+    },
+    {
+      "round": 0,
+      "kind": "region-handoff",
+      "ms": 3.300000011920929,
+      "sequence": 48,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.5773,
+        "phase": "frame",
+        "prepareMs": 0.0577,
+        "regionMs": 0.5184,
+        "sequence": 48,
+        "shadowMs": 0.0012
+      }
+    },
+    {
+      "round": 0,
+      "kind": "region-handoff",
+      "ms": 2.699999988079071,
+      "sequence": 49,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.40900000000000003,
+        "phase": "frame",
+        "prepareMs": 0.0407,
+        "regionMs": 0.36689999999999995,
+        "sequence": 49,
+        "shadowMs": 0.0014
+      }
+    },
+    {
+      "round": 0,
+      "kind": "region-handoff",
+      "ms": 3.300000011920929,
+      "sequence": 50,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.8022,
+        "phase": "frame",
+        "prepareMs": 0.0409,
+        "regionMs": 0.7601,
+        "sequence": 50,
+        "shadowMs": 0.0012
+      }
+    },
+    {
+      "round": 0,
+      "kind": "region-handoff",
+      "ms": 2.5,
+      "sequence": 51,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.3535,
+        "phase": "frame",
+        "prepareMs": 0.0359,
+        "regionMs": 0.317,
+        "sequence": 51,
+        "shadowMs": 0.0006
+      }
+    },
+    {
+      "round": 0,
+      "kind": "region-handoff",
+      "ms": 2.5999999940395355,
+      "sequence": 52,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.3893,
+        "phase": "frame",
+        "prepareMs": 0.036699999999999997,
+        "regionMs": 0.3519,
+        "sequence": 52,
+        "shadowMs": 0.0007
+      }
+    },
+    {
+      "round": 0,
+      "kind": "region-handoff",
+      "ms": 3.199999988079071,
+      "sequence": 53,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.5427000000000001,
+        "phase": "frame",
+        "prepareMs": 0.054799999999999995,
+        "regionMs": 0.48710000000000003,
+        "sequence": 53,
+        "shadowMs": 0.0007999999999999999
+      }
+    },
+    {
+      "round": 0,
+      "kind": "region-handoff",
+      "ms": 3.0999999940395355,
+      "sequence": 54,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.5601999999999999,
+        "phase": "frame",
+        "prepareMs": 0.0566,
+        "regionMs": 0.5024,
+        "sequence": 54,
+        "shadowMs": 0.0012
+      }
+    },
+    {
+      "round": 0,
+      "kind": "cached-shadow",
+      "ms": 2.800000011920929,
+      "sequence": 58,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.579,
+        "phase": "frame",
+        "prepareMs": 0.0449,
+        "regionMs": 0.4395,
+        "sequence": 58,
+        "shadowMs": 0.09459999999999999
+      }
+    },
+    {
+      "round": 0,
+      "kind": "cached-shadow",
+      "ms": 2.9000000059604645,
+      "sequence": 59,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.8105,
+        "phase": "frame",
+        "prepareMs": 0.0327,
+        "regionMs": 0.6652,
+        "sequence": 59,
+        "shadowMs": 0.1126
+      }
+    },
+    {
+      "round": 0,
+      "kind": "cached-shadow",
+      "ms": 3,
+      "sequence": 60,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.5594,
+        "phase": "frame",
+        "prepareMs": 0.0423,
+        "regionMs": 0.4239,
+        "sequence": 60,
+        "shadowMs": 0.0932
+      }
+    },
+    {
+      "round": 0,
+      "kind": "cached-shadow",
+      "ms": 3.9000000059604645,
+      "sequence": 61,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.5922,
+        "phase": "frame",
+        "prepareMs": 0.051199999999999996,
+        "regionMs": 0.3612,
+        "sequence": 61,
+        "shadowMs": 0.17980000000000002
+      }
+    },
+    {
+      "round": 0,
+      "kind": "cached-shadow",
+      "ms": 3.0999999940395355,
+      "sequence": 62,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.6972,
+        "phase": "frame",
+        "prepareMs": 0.0501,
+        "regionMs": 0.5067999999999999,
+        "sequence": 62,
+        "shadowMs": 0.1403
+      }
+    },
+    {
+      "round": 0,
+      "kind": "cached-shadow",
+      "ms": 2.4000000059604645,
+      "sequence": 63,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.4652,
+        "phase": "frame",
+        "prepareMs": 0.0326,
+        "regionMs": 0.35960000000000003,
+        "sequence": 63,
+        "shadowMs": 0.073
+      }
+    },
+    {
+      "round": 0,
+      "kind": "cached-shadow",
+      "ms": 2.7000000178813934,
+      "sequence": 64,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.6196,
+        "phase": "frame",
+        "prepareMs": 0.045200000000000004,
+        "regionMs": 0.4708,
+        "sequence": 64,
+        "shadowMs": 0.1036
+      }
+    },
+    {
+      "round": 0,
+      "kind": "cached-shadow",
+      "ms": 3,
+      "sequence": 65,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.4262,
+        "phase": "frame",
+        "prepareMs": 0.036199999999999996,
+        "regionMs": 0.3085,
+        "sequence": 65,
+        "shadowMs": 0.0815
+      }
+    },
+    {
+      "round": 0,
+      "kind": "cached-shadow",
+      "ms": 3.7999999821186066,
+      "sequence": 66,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.941,
+        "phase": "frame",
+        "prepareMs": 0.0481,
+        "regionMs": 0.5199,
+        "sequence": 66,
+        "shadowMs": 0.373
+      }
+    },
+    {
+      "round": 0,
+      "kind": "cached-shadow",
+      "ms": 3.0999999940395355,
+      "sequence": 67,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.7060000000000001,
+        "phase": "frame",
+        "prepareMs": 0.0564,
+        "regionMs": 0.5117999999999999,
+        "sequence": 67,
+        "shadowMs": 0.13779999999999998
+      }
+    },
+    {
+      "round": 0,
+      "kind": "cached-shadow",
+      "ms": 2.600000023841858,
+      "sequence": 68,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.4283,
+        "phase": "frame",
+        "prepareMs": 0.039400000000000004,
+        "regionMs": 0.30679999999999996,
+        "sequence": 68,
+        "shadowMs": 0.0821
+      }
+    },
+    {
+      "round": 0,
+      "kind": "cached-shadow",
+      "ms": 2.699999988079071,
+      "sequence": 69,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.6159,
+        "phase": "frame",
+        "prepareMs": 0.0467,
+        "regionMs": 0.4621,
+        "sequence": 69,
+        "shadowMs": 0.1071
+      }
+    },
+    {
+      "round": 0,
+      "kind": "cached-shadow",
+      "ms": 2.5,
+      "sequence": 70,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.509,
+        "phase": "frame",
+        "prepareMs": 0.032499999999999994,
+        "regionMs": 0.3682,
+        "sequence": 70,
+        "shadowMs": 0.10830000000000001
+      }
+    },
+    {
+      "round": 0,
+      "kind": "cached-shadow",
+      "ms": 3,
+      "sequence": 71,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.6185999999999999,
+        "phase": "frame",
+        "prepareMs": 0.0482,
+        "regionMs": 0.4548,
+        "sequence": 71,
+        "shadowMs": 0.11560000000000001
+      }
+    },
+    {
+      "round": 0,
+      "kind": "cached-shadow",
+      "ms": 3.300000011920929,
+      "sequence": 72,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.5142,
+        "phase": "frame",
+        "prepareMs": 0.0418,
+        "regionMs": 0.34900000000000003,
+        "sequence": 72,
+        "shadowMs": 0.1234
+      }
+    },
+    {
+      "round": 0,
+      "kind": "cached-shadow",
+      "ms": 3.0999999940395355,
+      "sequence": 73,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.6932,
+        "phase": "frame",
+        "prepareMs": 0.053399999999999996,
+        "regionMs": 0.49260000000000004,
+        "sequence": 73,
+        "shadowMs": 0.1472
+      }
+    },
+    {
+      "round": 0,
+      "kind": "cached-shadow",
+      "ms": 3,
+      "sequence": 74,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.8269,
+        "phase": "frame",
+        "prepareMs": 0.0356,
+        "regionMs": 0.6825,
+        "sequence": 74,
+        "shadowMs": 0.10880000000000001
+      }
+    },
+    {
+      "round": 0,
+      "kind": "cached-shadow",
+      "ms": 2.699999988079071,
+      "sequence": 75,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.5977,
+        "phase": "frame",
+        "prepareMs": 0.0426,
+        "regionMs": 0.4596,
+        "sequence": 75,
+        "shadowMs": 0.0955
+      }
+    },
+    {
+      "round": 0,
+      "kind": "cached-shadow",
+      "ms": 2.800000011920929,
+      "sequence": 76,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.5901,
+        "phase": "frame",
+        "prepareMs": 0.0406,
+        "regionMs": 0.45849999999999996,
+        "sequence": 76,
+        "shadowMs": 0.091
+      }
+    },
+    {
+      "round": 0,
+      "kind": "cached-shadow",
+      "ms": 3.199999988079071,
+      "sequence": 77,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.7081999999999999,
+        "phase": "frame",
+        "prepareMs": 0.0352,
+        "regionMs": 0.5590999999999999,
+        "sequence": 77,
+        "shadowMs": 0.1139
+      }
+    },
+    {
+      "round": 0,
+      "kind": "cached-shadow",
+      "ms": 3.2000000178813934,
+      "sequence": 78,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.5404,
+        "phase": "frame",
+        "prepareMs": 0.0432,
+        "regionMs": 0.363,
+        "sequence": 78,
+        "shadowMs": 0.1342
+      }
+    },
+    {
+      "round": 0,
+      "kind": "cached-shadow",
+      "ms": 2.399999976158142,
+      "sequence": 79,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.4653,
+        "phase": "frame",
+        "prepareMs": 0.0332,
+        "regionMs": 0.32130000000000003,
+        "sequence": 79,
+        "shadowMs": 0.1108
+      }
+    },
+    {
+      "round": 0,
+      "kind": "cached-shadow",
+      "ms": 3.2000000178813934,
+      "sequence": 80,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.8991,
+        "phase": "frame",
+        "prepareMs": 0.0346,
+        "regionMs": 0.7295999999999999,
+        "sequence": 80,
+        "shadowMs": 0.1349
+      }
+    },
+    {
+      "round": 0,
+      "kind": "cached-shadow",
+      "ms": 2.800000011920929,
+      "sequence": 81,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.7763,
+        "phase": "frame",
+        "prepareMs": 0.032499999999999994,
+        "regionMs": 0.6388,
+        "sequence": 81,
+        "shadowMs": 0.10500000000000001
+      }
+    },
+    {
+      "round": 0,
+      "kind": "changing-shadow",
+      "ms": 5.600000023841858,
+      "sequence": 85,
+      "native": {
+        "bodyWidth": 375,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 171,
+        "nativeMs": 3.0938,
+        "phase": "frame",
+        "prepareMs": 0.037700000000000004,
+        "regionMs": 1.2949000000000002,
+        "sequence": 85,
+        "shadowMs": 1.7612
+      }
+    },
+    {
+      "round": 0,
+      "kind": "changing-shadow",
+      "ms": 9.399999976158142,
+      "sequence": 86,
+      "native": {
+        "bodyWidth": 376,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 172,
+        "nativeMs": 5.523700000000001,
+        "phase": "frame",
+        "prepareMs": 0.17789999999999997,
+        "regionMs": 2.5816,
+        "sequence": 86,
+        "shadowMs": 2.7642
+      }
+    },
+    {
+      "round": 0,
+      "kind": "changing-shadow",
+      "ms": 7.300000011920929,
+      "sequence": 87,
+      "native": {
+        "bodyWidth": 377,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 168,
+        "nativeMs": 4.508500000000001,
+        "phase": "frame",
+        "prepareMs": 0.0528,
+        "regionMs": 2.0019,
+        "sequence": 87,
+        "shadowMs": 2.4537999999999998
+      }
+    },
+    {
+      "round": 0,
+      "kind": "changing-shadow",
+      "ms": 7.9000000059604645,
+      "sequence": 88,
+      "native": {
+        "bodyWidth": 378,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 169,
+        "nativeMs": 4.4549,
+        "phase": "frame",
+        "prepareMs": 0.0547,
+        "regionMs": 2.6866,
+        "sequence": 88,
+        "shadowMs": 1.7136
+      }
+    },
+    {
+      "round": 0,
+      "kind": "changing-shadow",
+      "ms": 5.699999988079071,
+      "sequence": 89,
+      "native": {
+        "bodyWidth": 379,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 170,
+        "nativeMs": 3.1356,
+        "phase": "frame",
+        "prepareMs": 0.0395,
+        "regionMs": 1.4231,
+        "sequence": 89,
+        "shadowMs": 1.673
+      }
+    },
+    {
+      "round": 0,
+      "kind": "changing-shadow",
+      "ms": 8.599999994039536,
+      "sequence": 90,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 171,
+        "nativeMs": 5.591900000000001,
+        "phase": "frame",
+        "prepareMs": 0.0389,
+        "regionMs": 2.1303,
+        "sequence": 90,
+        "shadowMs": 3.4227
+      }
+    },
+    {
+      "round": 0,
+      "kind": "changing-shadow",
+      "ms": 7.5,
+      "sequence": 91,
+      "native": {
+        "bodyWidth": 373,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 172,
+        "nativeMs": 4.4707,
+        "phase": "frame",
+        "prepareMs": 0.058699999999999995,
+        "regionMs": 1.881,
+        "sequence": 91,
+        "shadowMs": 2.5309999999999997
+      }
+    },
+    {
+      "round": 0,
+      "kind": "changing-shadow",
+      "ms": 9.5,
+      "sequence": 92,
+      "native": {
+        "bodyWidth": 374,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 168,
+        "nativeMs": 5.8453,
+        "phase": "frame",
+        "prepareMs": 0.0564,
+        "regionMs": 2.7826999999999997,
+        "sequence": 92,
+        "shadowMs": 3.0062
+      }
+    },
+    {
+      "round": 0,
+      "kind": "changing-shadow",
+      "ms": 6.200000017881393,
+      "sequence": 93,
+      "native": {
+        "bodyWidth": 375,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 169,
+        "nativeMs": 3.3032999999999997,
+        "phase": "frame",
+        "prepareMs": 0.049,
+        "regionMs": 1.5616,
+        "sequence": 93,
+        "shadowMs": 1.6927
+      }
+    },
+    {
+      "round": 0,
+      "kind": "changing-shadow",
+      "ms": 7.5999999940395355,
+      "sequence": 94,
+      "native": {
+        "bodyWidth": 376,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 170,
+        "nativeMs": 4.4479999999999995,
+        "phase": "frame",
+        "prepareMs": 0.054400000000000004,
+        "regionMs": 1.7512999999999999,
+        "sequence": 94,
+        "shadowMs": 2.6423
+      }
+    },
+    {
+      "round": 0,
+      "kind": "changing-shadow",
+      "ms": 7.800000011920929,
+      "sequence": 95,
+      "native": {
+        "bodyWidth": 377,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 171,
+        "nativeMs": 4.4656,
+        "phase": "frame",
+        "prepareMs": 0.058499999999999996,
+        "regionMs": 1.797,
+        "sequence": 95,
+        "shadowMs": 2.6101
+      }
+    },
+    {
+      "round": 0,
+      "kind": "changing-shadow",
+      "ms": 8.199999988079071,
+      "sequence": 96,
+      "native": {
+        "bodyWidth": 378,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 172,
+        "nativeMs": 5.1906,
+        "phase": "frame",
+        "prepareMs": 0.0698,
+        "regionMs": 1.89,
+        "sequence": 96,
+        "shadowMs": 3.2308
+      }
+    },
+    {
+      "round": 0,
+      "kind": "changing-shadow",
+      "ms": 6.200000017881393,
+      "sequence": 97,
+      "native": {
+        "bodyWidth": 379,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 168,
+        "nativeMs": 3.1746,
+        "phase": "frame",
+        "prepareMs": 0.044700000000000004,
+        "regionMs": 1.4134,
+        "sequence": 97,
+        "shadowMs": 1.7165
+      }
+    },
+    {
+      "round": 0,
+      "kind": "changing-shadow",
+      "ms": 5.5,
+      "sequence": 98,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 169,
+        "nativeMs": 2.9648,
+        "phase": "frame",
+        "prepareMs": 0.0387,
+        "regionMs": 1.3223,
+        "sequence": 98,
+        "shadowMs": 1.6038000000000001
+      }
+    },
+    {
+      "round": 0,
+      "kind": "changing-shadow",
+      "ms": 7.5999999940395355,
+      "sequence": 99,
+      "native": {
+        "bodyWidth": 373,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 170,
+        "nativeMs": 3.4808999999999997,
+        "phase": "frame",
+        "prepareMs": 0.0421,
+        "regionMs": 1.4236,
+        "sequence": 99,
+        "shadowMs": 2.0152
+      }
+    },
+    {
+      "round": 0,
+      "kind": "changing-shadow",
+      "ms": 6.199999988079071,
+      "sequence": 100,
+      "native": {
+        "bodyWidth": 374,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 171,
+        "nativeMs": 3.3195,
+        "phase": "frame",
+        "prepareMs": 0.045399999999999996,
+        "regionMs": 1.4574,
+        "sequence": 100,
+        "shadowMs": 1.8167
+      }
+    },
+    {
+      "round": 0,
+      "kind": "changing-shadow",
+      "ms": 5.5,
+      "sequence": 101,
+      "native": {
+        "bodyWidth": 375,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 172,
+        "nativeMs": 3.0818,
+        "phase": "frame",
+        "prepareMs": 0.041,
+        "regionMs": 1.343,
+        "sequence": 101,
+        "shadowMs": 1.6978
+      }
+    },
+    {
+      "round": 0,
+      "kind": "changing-shadow",
+      "ms": 7.5,
+      "sequence": 102,
+      "native": {
+        "bodyWidth": 376,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 168,
+        "nativeMs": 3.9347999999999996,
+        "phase": "frame",
+        "prepareMs": 0.14109999999999998,
+        "regionMs": 2.0031,
+        "sequence": 102,
+        "shadowMs": 1.7906
+      }
+    },
+    {
+      "round": 0,
+      "kind": "changing-shadow",
+      "ms": 5.800000011920929,
+      "sequence": 103,
+      "native": {
+        "bodyWidth": 377,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 169,
+        "nativeMs": 3.1817,
+        "phase": "frame",
+        "prepareMs": 0.045399999999999996,
+        "regionMs": 1.4008,
+        "sequence": 103,
+        "shadowMs": 1.7355
+      }
+    },
+    {
+      "round": 0,
+      "kind": "changing-shadow",
+      "ms": 6.4000000059604645,
+      "sequence": 104,
+      "native": {
+        "bodyWidth": 378,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 170,
+        "nativeMs": 3.4649,
+        "phase": "frame",
+        "prepareMs": 0.0391,
+        "regionMs": 1.3301999999999998,
+        "sequence": 104,
+        "shadowMs": 2.0956
+      }
+    },
+    {
+      "round": 0,
+      "kind": "changing-shadow",
+      "ms": 6.5,
+      "sequence": 105,
+      "native": {
+        "bodyWidth": 379,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 171,
+        "nativeMs": 3.3535,
+        "phase": "frame",
+        "prepareMs": 0.046,
+        "regionMs": 1.4945,
+        "sequence": 105,
+        "shadowMs": 1.813
+      }
+    },
+    {
+      "round": 0,
+      "kind": "changing-shadow",
+      "ms": 5.5999999940395355,
+      "sequence": 106,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 172,
+        "nativeMs": 3.049,
+        "phase": "frame",
+        "prepareMs": 0.0396,
+        "regionMs": 1.3228,
+        "sequence": 106,
+        "shadowMs": 1.6865999999999999
+      }
+    },
+    {
+      "round": 0,
+      "kind": "changing-shadow",
+      "ms": 7,
+      "sequence": 107,
+      "native": {
+        "bodyWidth": 373,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 168,
+        "nativeMs": 4.099,
+        "phase": "frame",
+        "prepareMs": 0.037,
+        "regionMs": 2.2367,
+        "sequence": 107,
+        "shadowMs": 1.8253
+      }
+    },
+    {
+      "round": 0,
+      "kind": "changing-shadow",
+      "ms": 5.700000017881393,
+      "sequence": 108,
+      "native": {
+        "bodyWidth": 374,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 169,
+        "nativeMs": 3.1355,
+        "phase": "frame",
+        "prepareMs": 0.0435,
+        "regionMs": 1.3878,
+        "sequence": 108,
+        "shadowMs": 1.7042
+      }
+    },
+    {
+      "round": 0,
+      "kind": "luminance",
+      "ms": 15.699999988079071,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 0,
+      "kind": "luminance",
+      "ms": 17.5,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 0,
+      "kind": "luminance",
+      "ms": 16.700000017881393,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 0,
+      "kind": "luminance",
+      "ms": 15.899999976158142,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 0,
+      "kind": "luminance",
+      "ms": 16.700000017881393,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 0,
+      "kind": "luminance",
+      "ms": 17.099999994039536,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 0,
+      "kind": "luminance",
+      "ms": 16,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 0,
+      "kind": "luminance",
+      "ms": 16.599999994039536,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 0,
+      "kind": "luminance",
+      "ms": 17.900000005960464,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 0,
+      "kind": "luminance",
+      "ms": 17,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 0,
+      "kind": "luminance",
+      "ms": 15.400000005960464,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 0,
+      "kind": "luminance",
+      "ms": 17,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 0,
+      "kind": "luminance",
+      "ms": 18,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 0,
+      "kind": "luminance",
+      "ms": 15.699999988079071,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 0,
+      "kind": "luminance",
+      "ms": 16.5,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 0,
+      "kind": "luminance",
+      "ms": 33,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 0,
+      "kind": "luminance",
+      "ms": 16.400000005960464,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 0,
+      "kind": "luminance",
+      "ms": 16.900000005960464,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 0,
+      "kind": "luminance",
+      "ms": 16.299999982118607,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 0,
+      "kind": "luminance",
+      "ms": 17.100000023841858,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 0,
+      "kind": "luminance",
+      "ms": 16.5,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 0,
+      "kind": "luminance",
+      "ms": 18.099999994039536,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 0,
+      "kind": "luminance",
+      "ms": 15.199999988079071,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 0,
+      "kind": "luminance",
+      "ms": 16.30000001192093,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 1,
+      "kind": "region-only",
+      "ms": 1.5,
+      "sequence": 112,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.1651,
+        "phase": "frame",
+        "prepareMs": 0.025,
+        "regionMs": 0.1351,
+        "sequence": 112,
+        "shadowMs": 0.005
+      }
+    },
+    {
+      "round": 1,
+      "kind": "region-only",
+      "ms": 1.7999999821186066,
+      "sequence": 113,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.18100000000000002,
+        "phase": "frame",
+        "prepareMs": 0.0253,
+        "regionMs": 0.1504,
+        "sequence": 113,
+        "shadowMs": 0.0053
+      }
+    },
+    {
+      "round": 1,
+      "kind": "region-only",
+      "ms": 1.9000000059604645,
+      "sequence": 114,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.2349,
+        "phase": "frame",
+        "prepareMs": 0.027399999999999997,
+        "regionMs": 0.20129999999999998,
+        "sequence": 114,
+        "shadowMs": 0.0062
+      }
+    },
+    {
+      "round": 1,
+      "kind": "region-only",
+      "ms": 2.9000000059604645,
+      "sequence": 115,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.7356,
+        "phase": "frame",
+        "prepareMs": 0.3622,
+        "regionMs": 0.36450000000000005,
+        "sequence": 115,
+        "shadowMs": 0.0089
+      }
+    },
+    {
+      "round": 1,
+      "kind": "region-only",
+      "ms": 2.199999988079071,
+      "sequence": 116,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.2112,
+        "phase": "frame",
+        "prepareMs": 0.0333,
+        "regionMs": 0.1692,
+        "sequence": 116,
+        "shadowMs": 0.0087
+      }
+    },
+    {
+      "round": 1,
+      "kind": "region-only",
+      "ms": 2,
+      "sequence": 117,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.292,
+        "phase": "frame",
+        "prepareMs": 0.038,
+        "regionMs": 0.2453,
+        "sequence": 117,
+        "shadowMs": 0.0087
+      }
+    },
+    {
+      "round": 1,
+      "kind": "region-only",
+      "ms": 1.5999999940395355,
+      "sequence": 118,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.2002,
+        "phase": "frame",
+        "prepareMs": 0.0242,
+        "regionMs": 0.171,
+        "sequence": 118,
+        "shadowMs": 0.005
+      }
+    },
+    {
+      "round": 1,
+      "kind": "region-only",
+      "ms": 1.800000011920929,
+      "sequence": 119,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.2574,
+        "phase": "frame",
+        "prepareMs": 0.0329,
+        "regionMs": 0.2173,
+        "sequence": 119,
+        "shadowMs": 0.0072
+      }
+    },
+    {
+      "round": 1,
+      "kind": "region-only",
+      "ms": 1.4000000059604645,
+      "sequence": 120,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.1727,
+        "phase": "frame",
+        "prepareMs": 0.0252,
+        "regionMs": 0.14229999999999998,
+        "sequence": 120,
+        "shadowMs": 0.0052
+      }
+    },
+    {
+      "round": 1,
+      "kind": "region-only",
+      "ms": 1.699999988079071,
+      "sequence": 121,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.1929,
+        "phase": "frame",
+        "prepareMs": 0.0248,
+        "regionMs": 0.1626,
+        "sequence": 121,
+        "shadowMs": 0.0055
+      }
+    },
+    {
+      "round": 1,
+      "kind": "region-only",
+      "ms": 1.5999999940395355,
+      "sequence": 122,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.1885,
+        "phase": "frame",
+        "prepareMs": 0.0253,
+        "regionMs": 0.1575,
+        "sequence": 122,
+        "shadowMs": 0.005699999999999999
+      }
+    },
+    {
+      "round": 1,
+      "kind": "region-only",
+      "ms": 1.9000000059604645,
+      "sequence": 123,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.2288,
+        "phase": "frame",
+        "prepareMs": 0.031099999999999996,
+        "regionMs": 0.1889,
+        "sequence": 123,
+        "shadowMs": 0.0088
+      }
+    },
+    {
+      "round": 1,
+      "kind": "region-only",
+      "ms": 2.4000000059604645,
+      "sequence": 124,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.2543,
+        "phase": "frame",
+        "prepareMs": 0.037200000000000004,
+        "regionMs": 0.2086,
+        "sequence": 124,
+        "shadowMs": 0.0085
+      }
+    },
+    {
+      "round": 1,
+      "kind": "region-only",
+      "ms": 1.699999988079071,
+      "sequence": 125,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.2342,
+        "phase": "frame",
+        "prepareMs": 0.028900000000000002,
+        "regionMs": 0.199,
+        "sequence": 125,
+        "shadowMs": 0.0063
+      }
+    },
+    {
+      "round": 1,
+      "kind": "region-only",
+      "ms": 1.899999976158142,
+      "sequence": 126,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.2054,
+        "phase": "frame",
+        "prepareMs": 0.0309,
+        "regionMs": 0.16679999999999998,
+        "sequence": 126,
+        "shadowMs": 0.007700000000000001
+      }
+    },
+    {
+      "round": 1,
+      "kind": "region-only",
+      "ms": 2.100000023841858,
+      "sequence": 127,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.3585,
+        "phase": "frame",
+        "prepareMs": 0.052500000000000005,
+        "regionMs": 0.2953,
+        "sequence": 127,
+        "shadowMs": 0.0107
+      }
+    },
+    {
+      "round": 1,
+      "kind": "region-only",
+      "ms": 1.7999999821186066,
+      "sequence": 128,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.20149999999999998,
+        "phase": "frame",
+        "prepareMs": 0.0306,
+        "regionMs": 0.16449999999999998,
+        "sequence": 128,
+        "shadowMs": 0.0063999999999999994
+      }
+    },
+    {
+      "round": 1,
+      "kind": "region-only",
+      "ms": 1.5999999940395355,
+      "sequence": 129,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.202,
+        "phase": "frame",
+        "prepareMs": 0.0261,
+        "regionMs": 0.16990000000000002,
+        "sequence": 129,
+        "shadowMs": 0.006
+      }
+    },
+    {
+      "round": 1,
+      "kind": "region-only",
+      "ms": 1.7000000178813934,
+      "sequence": 130,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.2056,
+        "phase": "frame",
+        "prepareMs": 0.0245,
+        "regionMs": 0.175,
+        "sequence": 130,
+        "shadowMs": 0.0061
+      }
+    },
+    {
+      "round": 1,
+      "kind": "region-only",
+      "ms": 1.5,
+      "sequence": 131,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.1864,
+        "phase": "frame",
+        "prepareMs": 0.0258,
+        "regionMs": 0.15430000000000002,
+        "sequence": 131,
+        "shadowMs": 0.0063
+      }
+    },
+    {
+      "round": 1,
+      "kind": "region-only",
+      "ms": 2.5,
+      "sequence": 132,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.3791,
+        "phase": "frame",
+        "prepareMs": 0.0444,
+        "regionMs": 0.24939999999999998,
+        "sequence": 132,
+        "shadowMs": 0.0853
+      }
+    },
+    {
+      "round": 1,
+      "kind": "region-only",
+      "ms": 2.0999999940395355,
+      "sequence": 133,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.34049999999999997,
+        "phase": "frame",
+        "prepareMs": 0.033800000000000004,
+        "regionMs": 0.2989,
+        "sequence": 133,
+        "shadowMs": 0.0078
+      }
+    },
+    {
+      "round": 1,
+      "kind": "region-only",
+      "ms": 1.800000011920929,
+      "sequence": 134,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.2223,
+        "phase": "frame",
+        "prepareMs": 0.0294,
+        "regionMs": 0.1867,
+        "sequence": 134,
+        "shadowMs": 0.0062
+      }
+    },
+    {
+      "round": 1,
+      "kind": "region-only",
+      "ms": 1.699999988079071,
+      "sequence": 135,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.2112,
+        "phase": "frame",
+        "prepareMs": 0.027100000000000003,
+        "regionMs": 0.1786,
+        "sequence": 135,
+        "shadowMs": 0.0055
+      }
+    },
+    {
+      "round": 1,
+      "kind": "region-handoff",
+      "ms": 2.0999999940395355,
+      "sequence": 139,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.3261,
+        "phase": "frame",
+        "prepareMs": 0.026699999999999998,
+        "regionMs": 0.29359999999999997,
+        "sequence": 139,
+        "shadowMs": 0.0058000000000000005
+      }
+    },
+    {
+      "round": 1,
+      "kind": "region-handoff",
+      "ms": 2.5,
+      "sequence": 140,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.3589,
+        "phase": "frame",
+        "prepareMs": 0.037200000000000004,
+        "regionMs": 0.31339999999999996,
+        "sequence": 140,
+        "shadowMs": 0.0083
+      }
+    },
+    {
+      "round": 1,
+      "kind": "region-handoff",
+      "ms": 2.5999999940395355,
+      "sequence": 141,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.4983,
+        "phase": "frame",
+        "prepareMs": 0.0431,
+        "regionMs": 0.4446,
+        "sequence": 141,
+        "shadowMs": 0.0106
+      }
+    },
+    {
+      "round": 1,
+      "kind": "region-handoff",
+      "ms": 2,
+      "sequence": 142,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.3133,
+        "phase": "frame",
+        "prepareMs": 0.0279,
+        "regionMs": 0.2792,
+        "sequence": 142,
+        "shadowMs": 0.0062
+      }
+    },
+    {
+      "round": 1,
+      "kind": "region-handoff",
+      "ms": 2.300000011920929,
+      "sequence": 143,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.49050000000000005,
+        "phase": "frame",
+        "prepareMs": 0.0378,
+        "regionMs": 0.4431,
+        "sequence": 143,
+        "shadowMs": 0.0096
+      }
+    },
+    {
+      "round": 1,
+      "kind": "region-handoff",
+      "ms": 2,
+      "sequence": 144,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.30860000000000004,
+        "phase": "frame",
+        "prepareMs": 0.0277,
+        "regionMs": 0.27559999999999996,
+        "sequence": 144,
+        "shadowMs": 0.0053
+      }
+    },
+    {
+      "round": 1,
+      "kind": "region-handoff",
+      "ms": 2,
+      "sequence": 145,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.3122,
+        "phase": "frame",
+        "prepareMs": 0.0279,
+        "regionMs": 0.2779,
+        "sequence": 145,
+        "shadowMs": 0.0063999999999999994
+      }
+    },
+    {
+      "round": 1,
+      "kind": "region-handoff",
+      "ms": 2.300000011920929,
+      "sequence": 146,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.47409999999999997,
+        "phase": "frame",
+        "prepareMs": 0.0389,
+        "regionMs": 0.42569999999999997,
+        "sequence": 146,
+        "shadowMs": 0.0095
+      }
+    },
+    {
+      "round": 1,
+      "kind": "region-handoff",
+      "ms": 2.899999976158142,
+      "sequence": 147,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.4763,
+        "phase": "frame",
+        "prepareMs": 0.0375,
+        "regionMs": 0.4283,
+        "sequence": 147,
+        "shadowMs": 0.010499999999999999
+      }
+    },
+    {
+      "round": 1,
+      "kind": "region-handoff",
+      "ms": 2.9000000059604645,
+      "sequence": 148,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.382,
+        "phase": "frame",
+        "prepareMs": 0.041699999999999994,
+        "regionMs": 0.32939999999999997,
+        "sequence": 148,
+        "shadowMs": 0.0109
+      }
+    },
+    {
+      "round": 1,
+      "kind": "region-handoff",
+      "ms": 2.4000000059604645,
+      "sequence": 149,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.3699,
+        "phase": "frame",
+        "prepareMs": 0.0349,
+        "regionMs": 0.32699999999999996,
+        "sequence": 149,
+        "shadowMs": 0.008
+      }
+    },
+    {
+      "round": 1,
+      "kind": "region-handoff",
+      "ms": 2.5999999940395355,
+      "sequence": 150,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.5275,
+        "phase": "frame",
+        "prepareMs": 0.0428,
+        "regionMs": 0.4743,
+        "sequence": 150,
+        "shadowMs": 0.0104
+      }
+    },
+    {
+      "round": 1,
+      "kind": "region-handoff",
+      "ms": 2,
+      "sequence": 151,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.3674,
+        "phase": "frame",
+        "prepareMs": 0.0317,
+        "regionMs": 0.3293,
+        "sequence": 151,
+        "shadowMs": 0.0063999999999999994
+      }
+    },
+    {
+      "round": 1,
+      "kind": "region-handoff",
+      "ms": 2.5,
+      "sequence": 152,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.4769,
+        "phase": "frame",
+        "prepareMs": 0.0429,
+        "regionMs": 0.4238,
+        "sequence": 152,
+        "shadowMs": 0.0102
+      }
+    },
+    {
+      "round": 1,
+      "kind": "region-handoff",
+      "ms": 2.0999999940395355,
+      "sequence": 153,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.312,
+        "phase": "frame",
+        "prepareMs": 0.0281,
+        "regionMs": 0.2773,
+        "sequence": 153,
+        "shadowMs": 0.0066
+      }
+    },
+    {
+      "round": 1,
+      "kind": "region-handoff",
+      "ms": 3.300000011920929,
+      "sequence": 154,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.4015,
+        "phase": "frame",
+        "prepareMs": 0.0392,
+        "regionMs": 0.3519,
+        "sequence": 154,
+        "shadowMs": 0.0104
+      }
+    },
+    {
+      "round": 1,
+      "kind": "region-handoff",
+      "ms": 3,
+      "sequence": 155,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.5568,
+        "phase": "frame",
+        "prepareMs": 0.049499999999999995,
+        "regionMs": 0.4944,
+        "sequence": 155,
+        "shadowMs": 0.0129
+      }
+    },
+    {
+      "round": 1,
+      "kind": "region-handoff",
+      "ms": 2.199999988079071,
+      "sequence": 156,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.33359999999999995,
+        "phase": "frame",
+        "prepareMs": 0.0324,
+        "regionMs": 0.2935,
+        "sequence": 156,
+        "shadowMs": 0.007700000000000001
+      }
+    },
+    {
+      "round": 1,
+      "kind": "region-handoff",
+      "ms": 2.2000000178813934,
+      "sequence": 157,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.322,
+        "phase": "frame",
+        "prepareMs": 0.0288,
+        "regionMs": 0.2869,
+        "sequence": 157,
+        "shadowMs": 0.0063
+      }
+    },
+    {
+      "round": 1,
+      "kind": "region-handoff",
+      "ms": 2,
+      "sequence": 158,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.3525,
+        "phase": "frame",
+        "prepareMs": 0.0283,
+        "regionMs": 0.3178,
+        "sequence": 158,
+        "shadowMs": 0.0063999999999999994
+      }
+    },
+    {
+      "round": 1,
+      "kind": "region-handoff",
+      "ms": 2.0999999940395355,
+      "sequence": 159,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.3317,
+        "phase": "frame",
+        "prepareMs": 0.0291,
+        "regionMs": 0.296,
+        "sequence": 159,
+        "shadowMs": 0.0066
+      }
+    },
+    {
+      "round": 1,
+      "kind": "region-handoff",
+      "ms": 2.199999988079071,
+      "sequence": 160,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.35550000000000004,
+        "phase": "frame",
+        "prepareMs": 0.0322,
+        "regionMs": 0.3167,
+        "sequence": 160,
+        "shadowMs": 0.0066
+      }
+    },
+    {
+      "round": 1,
+      "kind": "region-handoff",
+      "ms": 2.9000000059604645,
+      "sequence": 161,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.36519999999999997,
+        "phase": "frame",
+        "prepareMs": 0.0371,
+        "regionMs": 0.3203,
+        "sequence": 161,
+        "shadowMs": 0.0078
+      }
+    },
+    {
+      "round": 1,
+      "kind": "region-handoff",
+      "ms": 2.4000000059604645,
+      "sequence": 162,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.3619,
+        "phase": "frame",
+        "prepareMs": 0.032100000000000004,
+        "regionMs": 0.322,
+        "sequence": 162,
+        "shadowMs": 0.0078
+      }
+    },
+    {
+      "round": 1,
+      "kind": "cached-shadow",
+      "ms": 4.600000023841858,
+      "sequence": 166,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.7722,
+        "phase": "frame",
+        "prepareMs": 0.043000000000000003,
+        "regionMs": 0.4021,
+        "sequence": 166,
+        "shadowMs": 0.3271
+      }
+    },
+    {
+      "round": 1,
+      "kind": "cached-shadow",
+      "ms": 2.9000000059604645,
+      "sequence": 167,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.5078,
+        "phase": "frame",
+        "prepareMs": 0.0412,
+        "regionMs": 0.3442,
+        "sequence": 167,
+        "shadowMs": 0.1224
+      }
+    },
+    {
+      "round": 1,
+      "kind": "cached-shadow",
+      "ms": 2.399999976158142,
+      "sequence": 168,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.4756,
+        "phase": "frame",
+        "prepareMs": 0.0339,
+        "regionMs": 0.3372,
+        "sequence": 168,
+        "shadowMs": 0.10450000000000001
+      }
+    },
+    {
+      "round": 1,
+      "kind": "cached-shadow",
+      "ms": 2.800000011920929,
+      "sequence": 169,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.6424,
+        "phase": "frame",
+        "prepareMs": 0.0436,
+        "regionMs": 0.4809,
+        "sequence": 169,
+        "shadowMs": 0.1179
+      }
+    },
+    {
+      "round": 1,
+      "kind": "cached-shadow",
+      "ms": 2.300000011920929,
+      "sequence": 170,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.45649999999999996,
+        "phase": "frame",
+        "prepareMs": 0.032799999999999996,
+        "regionMs": 0.3037,
+        "sequence": 170,
+        "shadowMs": 0.12000000000000001
+      }
+    },
+    {
+      "round": 1,
+      "kind": "cached-shadow",
+      "ms": 2.5999999940395355,
+      "sequence": 171,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.5730999999999999,
+        "phase": "frame",
+        "prepareMs": 0.0396,
+        "regionMs": 0.4419,
+        "sequence": 171,
+        "shadowMs": 0.0916
+      }
+    },
+    {
+      "round": 1,
+      "kind": "cached-shadow",
+      "ms": 4.0999999940395355,
+      "sequence": 172,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.5328,
+        "phase": "frame",
+        "prepareMs": 0.0423,
+        "regionMs": 0.3568,
+        "sequence": 172,
+        "shadowMs": 0.13369999999999999
+      }
+    },
+    {
+      "round": 1,
+      "kind": "cached-shadow",
+      "ms": 2.9000000059604645,
+      "sequence": 173,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.5019,
+        "phase": "frame",
+        "prepareMs": 0.0415,
+        "regionMs": 0.31579999999999997,
+        "sequence": 173,
+        "shadowMs": 0.14459999999999998
+      }
+    },
+    {
+      "round": 1,
+      "kind": "cached-shadow",
+      "ms": 2.5,
+      "sequence": 174,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.4816,
+        "phase": "frame",
+        "prepareMs": 0.034499999999999996,
+        "regionMs": 0.3391,
+        "sequence": 174,
+        "shadowMs": 0.108
+      }
+    },
+    {
+      "round": 1,
+      "kind": "cached-shadow",
+      "ms": 2.0999999940395355,
+      "sequence": 175,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.40030000000000004,
+        "phase": "frame",
+        "prepareMs": 0.0285,
+        "regionMs": 0.2765,
+        "sequence": 175,
+        "shadowMs": 0.0953
+      }
+    },
+    {
+      "round": 1,
+      "kind": "cached-shadow",
+      "ms": 2.4000000059604645,
+      "sequence": 176,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.438,
+        "phase": "frame",
+        "prepareMs": 0.0322,
+        "regionMs": 0.3141,
+        "sequence": 176,
+        "shadowMs": 0.0917
+      }
+    },
+    {
+      "round": 1,
+      "kind": "cached-shadow",
+      "ms": 3.0999999940395355,
+      "sequence": 177,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.6367999999999999,
+        "phase": "frame",
+        "prepareMs": 0.0343,
+        "regionMs": 0.482,
+        "sequence": 177,
+        "shadowMs": 0.1205
+      }
+    },
+    {
+      "round": 1,
+      "kind": "cached-shadow",
+      "ms": 4.0999999940395355,
+      "sequence": 178,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.7786,
+        "phase": "frame",
+        "prepareMs": 0.06219999999999999,
+        "regionMs": 0.5425,
+        "sequence": 178,
+        "shadowMs": 0.1739
+      }
+    },
+    {
+      "round": 1,
+      "kind": "cached-shadow",
+      "ms": 2.7000000178813934,
+      "sequence": 179,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.4678,
+        "phase": "frame",
+        "prepareMs": 0.0407,
+        "regionMs": 0.3196,
+        "sequence": 179,
+        "shadowMs": 0.1075
+      }
+    },
+    {
+      "round": 1,
+      "kind": "cached-shadow",
+      "ms": 2.4000000059604645,
+      "sequence": 180,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.4307,
+        "phase": "frame",
+        "prepareMs": 0.034,
+        "regionMs": 0.30679999999999996,
+        "sequence": 180,
+        "shadowMs": 0.08990000000000001
+      }
+    },
+    {
+      "round": 1,
+      "kind": "cached-shadow",
+      "ms": 2.2999999821186066,
+      "sequence": 181,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.4455,
+        "phase": "frame",
+        "prepareMs": 0.0315,
+        "regionMs": 0.32449999999999996,
+        "sequence": 181,
+        "shadowMs": 0.0895
+      }
+    },
+    {
+      "round": 1,
+      "kind": "cached-shadow",
+      "ms": 2.800000011920929,
+      "sequence": 182,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.49799999999999994,
+        "phase": "frame",
+        "prepareMs": 0.035800000000000005,
+        "regionMs": 0.3256,
+        "sequence": 182,
+        "shadowMs": 0.13660000000000003
+      }
+    },
+    {
+      "round": 1,
+      "kind": "cached-shadow",
+      "ms": 3.199999988079071,
+      "sequence": 183,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.4864,
+        "phase": "frame",
+        "prepareMs": 0.0373,
+        "regionMs": 0.3411,
+        "sequence": 183,
+        "shadowMs": 0.108
+      }
+    },
+    {
+      "round": 1,
+      "kind": "cached-shadow",
+      "ms": 3.5,
+      "sequence": 184,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.5289,
+        "phase": "frame",
+        "prepareMs": 0.046400000000000004,
+        "regionMs": 0.3433,
+        "sequence": 184,
+        "shadowMs": 0.1392
+      }
+    },
+    {
+      "round": 1,
+      "kind": "cached-shadow",
+      "ms": 2.800000011920929,
+      "sequence": 185,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.5518,
+        "phase": "frame",
+        "prepareMs": 0.039,
+        "regionMs": 0.3827,
+        "sequence": 185,
+        "shadowMs": 0.1301
+      }
+    },
+    {
+      "round": 1,
+      "kind": "cached-shadow",
+      "ms": 2.9000000059604645,
+      "sequence": 186,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.646,
+        "phase": "frame",
+        "prepareMs": 0.050899999999999994,
+        "regionMs": 0.45990000000000003,
+        "sequence": 186,
+        "shadowMs": 0.13520000000000001
+      }
+    },
+    {
+      "round": 1,
+      "kind": "cached-shadow",
+      "ms": 2.5999999940395355,
+      "sequence": 187,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.6027,
+        "phase": "frame",
+        "prepareMs": 0.040299999999999996,
+        "regionMs": 0.46799999999999997,
+        "sequence": 187,
+        "shadowMs": 0.0944
+      }
+    },
+    {
+      "round": 1,
+      "kind": "cached-shadow",
+      "ms": 3,
+      "sequence": 188,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.6478,
+        "phase": "frame",
+        "prepareMs": 0.0463,
+        "regionMs": 0.49510000000000004,
+        "sequence": 188,
+        "shadowMs": 0.1064
+      }
+    },
+    {
+      "round": 1,
+      "kind": "cached-shadow",
+      "ms": 3.800000011920929,
+      "sequence": 189,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.8773,
+        "phase": "frame",
+        "prepareMs": 0.0558,
+        "regionMs": 0.6283000000000001,
+        "sequence": 189,
+        "shadowMs": 0.1932
+      }
+    },
+    {
+      "round": 1,
+      "kind": "changing-shadow",
+      "ms": 7.5999999940395355,
+      "sequence": 193,
+      "native": {
+        "bodyWidth": 375,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 171,
+        "nativeMs": 4.3762,
+        "phase": "frame",
+        "prepareMs": 0.0757,
+        "regionMs": 1.734,
+        "sequence": 193,
+        "shadowMs": 2.5665
+      }
+    },
+    {
+      "round": 1,
+      "kind": "changing-shadow",
+      "ms": 5.5999999940395355,
+      "sequence": 194,
+      "native": {
+        "bodyWidth": 376,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 172,
+        "nativeMs": 2.8966,
+        "phase": "frame",
+        "prepareMs": 0.0385,
+        "regionMs": 1.2698,
+        "sequence": 194,
+        "shadowMs": 1.5883
+      }
+    },
+    {
+      "round": 1,
+      "kind": "changing-shadow",
+      "ms": 6.800000011920929,
+      "sequence": 195,
+      "native": {
+        "bodyWidth": 377,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 168,
+        "nativeMs": 3.8209,
+        "phase": "frame",
+        "prepareMs": 0.1314,
+        "regionMs": 2.0076,
+        "sequence": 195,
+        "shadowMs": 1.6819000000000002
+      }
+    },
+    {
+      "round": 1,
+      "kind": "changing-shadow",
+      "ms": 5.399999976158142,
+      "sequence": 196,
+      "native": {
+        "bodyWidth": 378,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 169,
+        "nativeMs": 2.977,
+        "phase": "frame",
+        "prepareMs": 0.0384,
+        "regionMs": 1.3239,
+        "sequence": 196,
+        "shadowMs": 1.6147
+      }
+    },
+    {
+      "round": 1,
+      "kind": "changing-shadow",
+      "ms": 6.800000011920929,
+      "sequence": 197,
+      "native": {
+        "bodyWidth": 379,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 170,
+        "nativeMs": 3.1681,
+        "phase": "frame",
+        "prepareMs": 0.0348,
+        "regionMs": 1.2822,
+        "sequence": 197,
+        "shadowMs": 1.8511
+      }
+    },
+    {
+      "round": 1,
+      "kind": "changing-shadow",
+      "ms": 6.199999988079071,
+      "sequence": 198,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 171,
+        "nativeMs": 3.2839,
+        "phase": "frame",
+        "prepareMs": 0.1056,
+        "regionMs": 1.4874,
+        "sequence": 198,
+        "shadowMs": 1.6908999999999998
+      }
+    },
+    {
+      "round": 1,
+      "kind": "changing-shadow",
+      "ms": 5.4000000059604645,
+      "sequence": 199,
+      "native": {
+        "bodyWidth": 373,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 172,
+        "nativeMs": 2.9097,
+        "phase": "frame",
+        "prepareMs": 0.0382,
+        "regionMs": 1.2904,
+        "sequence": 199,
+        "shadowMs": 1.5811
+      }
+    },
+    {
+      "round": 1,
+      "kind": "changing-shadow",
+      "ms": 7.4000000059604645,
+      "sequence": 200,
+      "native": {
+        "bodyWidth": 374,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 168,
+        "nativeMs": 3.9343,
+        "phase": "frame",
+        "prepareMs": 0.0375,
+        "regionMs": 1.2322,
+        "sequence": 200,
+        "shadowMs": 2.6646
+      }
+    },
+    {
+      "round": 1,
+      "kind": "changing-shadow",
+      "ms": 7.5,
+      "sequence": 201,
+      "native": {
+        "bodyWidth": 375,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 169,
+        "nativeMs": 4.5811,
+        "phase": "frame",
+        "prepareMs": 0.0832,
+        "regionMs": 1.9329,
+        "sequence": 201,
+        "shadowMs": 2.565
+      }
+    },
+    {
+      "round": 1,
+      "kind": "changing-shadow",
+      "ms": 8.099999994039536,
+      "sequence": 202,
+      "native": {
+        "bodyWidth": 376,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 170,
+        "nativeMs": 4.5506,
+        "phase": "frame",
+        "prepareMs": 0.0392,
+        "regionMs": 1.5842,
+        "sequence": 202,
+        "shadowMs": 2.9272
+      }
+    },
+    {
+      "round": 1,
+      "kind": "changing-shadow",
+      "ms": 5.9000000059604645,
+      "sequence": 203,
+      "native": {
+        "bodyWidth": 377,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 171,
+        "nativeMs": 3.197,
+        "phase": "frame",
+        "prepareMs": 0.043699999999999996,
+        "regionMs": 1.4343,
+        "sequence": 203,
+        "shadowMs": 1.719
+      }
+    },
+    {
+      "round": 1,
+      "kind": "changing-shadow",
+      "ms": 5.300000011920929,
+      "sequence": 204,
+      "native": {
+        "bodyWidth": 378,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 172,
+        "nativeMs": 2.9673,
+        "phase": "frame",
+        "prepareMs": 0.0396,
+        "regionMs": 1.2859,
+        "sequence": 204,
+        "shadowMs": 1.6418
+      }
+    },
+    {
+      "round": 1,
+      "kind": "changing-shadow",
+      "ms": 8.400000005960464,
+      "sequence": 205,
+      "native": {
+        "bodyWidth": 379,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 168,
+        "nativeMs": 5.782,
+        "phase": "frame",
+        "prepareMs": 0.07830000000000001,
+        "regionMs": 2.769,
+        "sequence": 205,
+        "shadowMs": 2.9347000000000003
+      }
+    },
+    {
+      "round": 1,
+      "kind": "changing-shadow",
+      "ms": 5.5999999940395355,
+      "sequence": 206,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 169,
+        "nativeMs": 3.0069,
+        "phase": "frame",
+        "prepareMs": 0.044199999999999996,
+        "regionMs": 1.3408,
+        "sequence": 206,
+        "shadowMs": 1.6219
+      }
+    },
+    {
+      "round": 1,
+      "kind": "changing-shadow",
+      "ms": 7.0999999940395355,
+      "sequence": 207,
+      "native": {
+        "bodyWidth": 373,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 170,
+        "nativeMs": 4.2726999999999995,
+        "phase": "frame",
+        "prepareMs": 0.039,
+        "regionMs": 2.0871,
+        "sequence": 207,
+        "shadowMs": 2.1466
+      }
+    },
+    {
+      "round": 1,
+      "kind": "changing-shadow",
+      "ms": 5.800000011920929,
+      "sequence": 208,
+      "native": {
+        "bodyWidth": 374,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 171,
+        "nativeMs": 3.1881,
+        "phase": "frame",
+        "prepareMs": 0.0414,
+        "regionMs": 1.4411999999999998,
+        "sequence": 208,
+        "shadowMs": 1.7055
+      }
+    },
+    {
+      "round": 1,
+      "kind": "changing-shadow",
+      "ms": 5.4000000059604645,
+      "sequence": 209,
+      "native": {
+        "bodyWidth": 375,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 172,
+        "nativeMs": 2.9207,
+        "phase": "frame",
+        "prepareMs": 0.0389,
+        "regionMs": 1.2692,
+        "sequence": 209,
+        "shadowMs": 1.6126
+      }
+    },
+    {
+      "round": 1,
+      "kind": "changing-shadow",
+      "ms": 6.699999988079071,
+      "sequence": 210,
+      "native": {
+        "bodyWidth": 376,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 168,
+        "nativeMs": 3.5100000000000002,
+        "phase": "frame",
+        "prepareMs": 0.039,
+        "regionMs": 1.3484,
+        "sequence": 210,
+        "shadowMs": 2.1226000000000003
+      }
+    },
+    {
+      "round": 1,
+      "kind": "changing-shadow",
+      "ms": 5.699999988079071,
+      "sequence": 211,
+      "native": {
+        "bodyWidth": 377,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 169,
+        "nativeMs": 3.1303,
+        "phase": "frame",
+        "prepareMs": 0.0427,
+        "regionMs": 1.3831,
+        "sequence": 211,
+        "shadowMs": 1.7045000000000001
+      }
+    },
+    {
+      "round": 1,
+      "kind": "changing-shadow",
+      "ms": 5.199999988079071,
+      "sequence": 212,
+      "native": {
+        "bodyWidth": 378,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 170,
+        "nativeMs": 2.9707000000000003,
+        "phase": "frame",
+        "prepareMs": 0.0407,
+        "regionMs": 1.3092,
+        "sequence": 212,
+        "shadowMs": 1.6208
+      }
+    },
+    {
+      "round": 1,
+      "kind": "changing-shadow",
+      "ms": 8.5,
+      "sequence": 213,
+      "native": {
+        "bodyWidth": 379,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 171,
+        "nativeMs": 4.7948,
+        "phase": "frame",
+        "prepareMs": 0.0639,
+        "regionMs": 2.9466,
+        "sequence": 213,
+        "shadowMs": 1.7843
+      }
+    },
+    {
+      "round": 1,
+      "kind": "changing-shadow",
+      "ms": 5.5999999940395355,
+      "sequence": 214,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 172,
+        "nativeMs": 2.9625,
+        "phase": "frame",
+        "prepareMs": 0.0396,
+        "regionMs": 1.3179,
+        "sequence": 214,
+        "shadowMs": 1.605
+      }
+    },
+    {
+      "round": 1,
+      "kind": "changing-shadow",
+      "ms": 7.5,
+      "sequence": 215,
+      "native": {
+        "bodyWidth": 373,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 168,
+        "nativeMs": 4.3008999999999995,
+        "phase": "frame",
+        "prepareMs": 0.0385,
+        "regionMs": 1.28,
+        "sequence": 215,
+        "shadowMs": 2.9824
+      }
+    },
+    {
+      "round": 1,
+      "kind": "changing-shadow",
+      "ms": 6,
+      "sequence": 216,
+      "native": {
+        "bodyWidth": 374,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 169,
+        "nativeMs": 3.1985,
+        "phase": "frame",
+        "prepareMs": 0.0429,
+        "regionMs": 1.3594,
+        "sequence": 216,
+        "shadowMs": 1.7962
+      }
+    },
+    {
+      "round": 1,
+      "kind": "luminance",
+      "ms": 16.5,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 1,
+      "kind": "luminance",
+      "ms": 16.600000023841858,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 1,
+      "kind": "luminance",
+      "ms": 17.5,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 1,
+      "kind": "luminance",
+      "ms": 15.5,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 1,
+      "kind": "luminance",
+      "ms": 16.599999994039536,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 1,
+      "kind": "luminance",
+      "ms": 16.599999994039536,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 1,
+      "kind": "luminance",
+      "ms": 17,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 1,
+      "kind": "luminance",
+      "ms": 16.400000005960464,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 1,
+      "kind": "luminance",
+      "ms": 16.900000005960464,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 1,
+      "kind": "luminance",
+      "ms": 17.799999982118607,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 1,
+      "kind": "luminance",
+      "ms": 15.800000011920929,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 1,
+      "kind": "luminance",
+      "ms": 15.800000011920929,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 1,
+      "kind": "luminance",
+      "ms": 16.899999976158142,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 1,
+      "kind": "luminance",
+      "ms": 17.400000005960464,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 1,
+      "kind": "luminance",
+      "ms": 16.400000005960464,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 1,
+      "kind": "luminance",
+      "ms": 16.80000001192093,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 1,
+      "kind": "luminance",
+      "ms": 16.19999998807907,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 1,
+      "kind": "luminance",
+      "ms": 16.80000001192093,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 1,
+      "kind": "luminance",
+      "ms": 16.900000005960464,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 1,
+      "kind": "luminance",
+      "ms": 16.299999982118607,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 1,
+      "kind": "luminance",
+      "ms": 16.400000005960464,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 1,
+      "kind": "luminance",
+      "ms": 17.30000001192093,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 1,
+      "kind": "luminance",
+      "ms": 17.799999982118607,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 1,
+      "kind": "luminance",
+      "ms": 15.400000005960464,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 1,
+      "kind": "metrics-control",
+      "ms": 1.2000000178813934,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 1,
+      "kind": "metrics-control",
+      "ms": 1.2999999821186066,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 1,
+      "kind": "metrics-control",
+      "ms": 1.2000000178813934,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 1,
+      "kind": "metrics-control",
+      "ms": 1.899999976158142,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 1,
+      "kind": "metrics-control",
+      "ms": 1.5,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 1,
+      "kind": "metrics-control",
+      "ms": 1.600000023841858,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 1,
+      "kind": "metrics-control",
+      "ms": 1.199999988079071,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 1,
+      "kind": "metrics-control",
+      "ms": 1.0999999940395355,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 1,
+      "kind": "metrics-control",
+      "ms": 1.0999999940395355,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 1,
+      "kind": "metrics-control",
+      "ms": 1,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 1,
+      "kind": "metrics-control",
+      "ms": 1.199999988079071,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 1,
+      "kind": "metrics-control",
+      "ms": 1.0999999940395355,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 1,
+      "kind": "metrics-control",
+      "ms": 1.100000023841858,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 1,
+      "kind": "metrics-control",
+      "ms": 1.0999999940395355,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 1,
+      "kind": "metrics-control",
+      "ms": 1.0999999940395355,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 1,
+      "kind": "metrics-control",
+      "ms": 2.0999999940395355,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 1,
+      "kind": "metrics-control",
+      "ms": 1.9000000059604645,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 1,
+      "kind": "metrics-control",
+      "ms": 2,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 1,
+      "kind": "metrics-control",
+      "ms": 1.300000011920929,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 1,
+      "kind": "metrics-control",
+      "ms": 1.199999988079071,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 1,
+      "kind": "metrics-control",
+      "ms": 1.0999999940395355,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 1,
+      "kind": "metrics-control",
+      "ms": 1.100000023841858,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 1,
+      "kind": "metrics-control",
+      "ms": 1.0999999940395355,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 1,
+      "kind": "metrics-control",
+      "ms": 1.0999999940395355,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 2,
+      "kind": "region-handoff",
+      "ms": 3.2999999821186066,
+      "sequence": 220,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.4002,
+        "phase": "frame",
+        "prepareMs": 0.054,
+        "regionMs": 0.3331,
+        "sequence": 220,
+        "shadowMs": 0.0131
+      }
+    },
+    {
+      "round": 2,
+      "kind": "region-handoff",
+      "ms": 2.4000000059604645,
+      "sequence": 221,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.36200000000000004,
+        "phase": "frame",
+        "prepareMs": 0.0431,
+        "regionMs": 0.30929999999999996,
+        "sequence": 221,
+        "shadowMs": 0.0096
+      }
+    },
+    {
+      "round": 2,
+      "kind": "region-handoff",
+      "ms": 2,
+      "sequence": 222,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.34850000000000003,
+        "phase": "frame",
+        "prepareMs": 0.037200000000000004,
+        "regionMs": 0.3028,
+        "sequence": 222,
+        "shadowMs": 0.0085
+      }
+    },
+    {
+      "round": 2,
+      "kind": "region-handoff",
+      "ms": 1.9000000059604645,
+      "sequence": 223,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.22460000000000002,
+        "phase": "frame",
+        "prepareMs": 0.028900000000000002,
+        "regionMs": 0.1897,
+        "sequence": 223,
+        "shadowMs": 0.006
+      }
+    },
+    {
+      "round": 2,
+      "kind": "region-handoff",
+      "ms": 2,
+      "sequence": 224,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.34450000000000003,
+        "phase": "frame",
+        "prepareMs": 0.0348,
+        "regionMs": 0.3019,
+        "sequence": 224,
+        "shadowMs": 0.0078
+      }
+    },
+    {
+      "round": 2,
+      "kind": "region-handoff",
+      "ms": 2,
+      "sequence": 225,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.3396,
+        "phase": "frame",
+        "prepareMs": 0.0356,
+        "regionMs": 0.2961,
+        "sequence": 225,
+        "shadowMs": 0.0079
+      }
+    },
+    {
+      "round": 2,
+      "kind": "region-handoff",
+      "ms": 2.800000011920929,
+      "sequence": 226,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.29329999999999995,
+        "phase": "frame",
+        "prepareMs": 0.0722,
+        "regionMs": 0.21259999999999998,
+        "sequence": 226,
+        "shadowMs": 0.0085
+      }
+    },
+    {
+      "round": 2,
+      "kind": "region-handoff",
+      "ms": 2.0999999940395355,
+      "sequence": 227,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.2427,
+        "phase": "frame",
+        "prepareMs": 0.0401,
+        "regionMs": 0.19540000000000002,
+        "sequence": 227,
+        "shadowMs": 0.0072
+      }
+    },
+    {
+      "round": 2,
+      "kind": "region-handoff",
+      "ms": 2,
+      "sequence": 228,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.22269999999999998,
+        "phase": "frame",
+        "prepareMs": 0.0259,
+        "regionMs": 0.1908,
+        "sequence": 228,
+        "shadowMs": 0.006
+      }
+    },
+    {
+      "round": 2,
+      "kind": "region-handoff",
+      "ms": 2.0999999940395355,
+      "sequence": 229,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.3689,
+        "phase": "frame",
+        "prepareMs": 0.0399,
+        "regionMs": 0.31980000000000003,
+        "sequence": 229,
+        "shadowMs": 0.0092
+      }
+    },
+    {
+      "round": 2,
+      "kind": "region-handoff",
+      "ms": 2,
+      "sequence": 230,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.24879999999999997,
+        "phase": "frame",
+        "prepareMs": 0.027,
+        "regionMs": 0.216,
+        "sequence": 230,
+        "shadowMs": 0.0058000000000000005
+      }
+    },
+    {
+      "round": 2,
+      "kind": "region-handoff",
+      "ms": 1.7000000178813934,
+      "sequence": 231,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.2146,
+        "phase": "frame",
+        "prepareMs": 0.0246,
+        "regionMs": 0.1842,
+        "sequence": 231,
+        "shadowMs": 0.0058000000000000005
+      }
+    },
+    {
+      "round": 2,
+      "kind": "region-handoff",
+      "ms": 2,
+      "sequence": 232,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.2223,
+        "phase": "frame",
+        "prepareMs": 0.0262,
+        "regionMs": 0.1905,
+        "sequence": 232,
+        "shadowMs": 0.0056
+      }
+    },
+    {
+      "round": 2,
+      "kind": "region-handoff",
+      "ms": 2.199999988079071,
+      "sequence": 233,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.22599999999999998,
+        "phase": "frame",
+        "prepareMs": 0.0263,
+        "regionMs": 0.194,
+        "sequence": 233,
+        "shadowMs": 0.005699999999999999
+      }
+    },
+    {
+      "round": 2,
+      "kind": "region-handoff",
+      "ms": 3.199999988079071,
+      "sequence": 234,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.2567,
+        "phase": "frame",
+        "prepareMs": 0.0396,
+        "regionMs": 0.2089,
+        "sequence": 234,
+        "shadowMs": 0.008199999999999999
+      }
+    },
+    {
+      "round": 2,
+      "kind": "region-handoff",
+      "ms": 2.100000023841858,
+      "sequence": 235,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.2341,
+        "phase": "frame",
+        "prepareMs": 0.031099999999999996,
+        "regionMs": 0.1964,
+        "sequence": 235,
+        "shadowMs": 0.0066
+      }
+    },
+    {
+      "round": 2,
+      "kind": "region-handoff",
+      "ms": 2.2999999821186066,
+      "sequence": 236,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.3998,
+        "phase": "frame",
+        "prepareMs": 0.041999999999999996,
+        "regionMs": 0.3481,
+        "sequence": 236,
+        "shadowMs": 0.0097
+      }
+    },
+    {
+      "round": 2,
+      "kind": "region-handoff",
+      "ms": 1.7000000178813934,
+      "sequence": 237,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.2439,
+        "phase": "frame",
+        "prepareMs": 0.0259,
+        "regionMs": 0.2121,
+        "sequence": 237,
+        "shadowMs": 0.0059
+      }
+    },
+    {
+      "round": 2,
+      "kind": "region-handoff",
+      "ms": 2.399999976158142,
+      "sequence": 238,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.3626,
+        "phase": "frame",
+        "prepareMs": 0.0391,
+        "regionMs": 0.3135,
+        "sequence": 238,
+        "shadowMs": 0.01
+      }
+    },
+    {
+      "round": 2,
+      "kind": "region-handoff",
+      "ms": 1.9000000059604645,
+      "sequence": 239,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.2309,
+        "phase": "frame",
+        "prepareMs": 0.0285,
+        "regionMs": 0.1965,
+        "sequence": 239,
+        "shadowMs": 0.0059
+      }
+    },
+    {
+      "round": 2,
+      "kind": "region-handoff",
+      "ms": 2.2000000178813934,
+      "sequence": 240,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.416,
+        "phase": "frame",
+        "prepareMs": 0.0369,
+        "regionMs": 0.3703,
+        "sequence": 240,
+        "shadowMs": 0.0088
+      }
+    },
+    {
+      "round": 2,
+      "kind": "region-handoff",
+      "ms": 2.899999976158142,
+      "sequence": 241,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.39849999999999997,
+        "phase": "frame",
+        "prepareMs": 0.0466,
+        "regionMs": 0.33990000000000004,
+        "sequence": 241,
+        "shadowMs": 0.012
+      }
+    },
+    {
+      "round": 2,
+      "kind": "region-handoff",
+      "ms": 2.800000011920929,
+      "sequence": 242,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.26870000000000005,
+        "phase": "frame",
+        "prepareMs": 0.041699999999999994,
+        "regionMs": 0.2186,
+        "sequence": 242,
+        "shadowMs": 0.0084
+      }
+    },
+    {
+      "round": 2,
+      "kind": "region-handoff",
+      "ms": 2.5,
+      "sequence": 243,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.3995,
+        "phase": "frame",
+        "prepareMs": 0.045200000000000004,
+        "regionMs": 0.3443,
+        "sequence": 243,
+        "shadowMs": 0.01
+      }
+    },
+    {
+      "round": 2,
+      "kind": "cached-shadow",
+      "ms": 2.7999999821186066,
+      "sequence": 247,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.35209999999999997,
+        "phase": "frame",
+        "prepareMs": 0.037700000000000004,
+        "regionMs": 0.2134,
+        "sequence": 247,
+        "shadowMs": 0.101
+      }
+    },
+    {
+      "round": 2,
+      "kind": "cached-shadow",
+      "ms": 2.100000023841858,
+      "sequence": 248,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.32830000000000004,
+        "phase": "frame",
+        "prepareMs": 0.0306,
+        "regionMs": 0.20670000000000002,
+        "sequence": 248,
+        "shadowMs": 0.091
+      }
+    },
+    {
+      "round": 2,
+      "kind": "cached-shadow",
+      "ms": 2.399999976158142,
+      "sequence": 249,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.524,
+        "phase": "frame",
+        "prepareMs": 0.0409,
+        "regionMs": 0.37570000000000003,
+        "sequence": 249,
+        "shadowMs": 0.1074
+      }
+    },
+    {
+      "round": 2,
+      "kind": "cached-shadow",
+      "ms": 2.4000000059604645,
+      "sequence": 250,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.4671,
+        "phase": "frame",
+        "prepareMs": 0.040299999999999996,
+        "regionMs": 0.33530000000000004,
+        "sequence": 250,
+        "shadowMs": 0.0915
+      }
+    },
+    {
+      "round": 2,
+      "kind": "cached-shadow",
+      "ms": 2.5,
+      "sequence": 251,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.5349,
+        "phase": "frame",
+        "prepareMs": 0.0429,
+        "regionMs": 0.3741,
+        "sequence": 251,
+        "shadowMs": 0.1179
+      }
+    },
+    {
+      "round": 2,
+      "kind": "cached-shadow",
+      "ms": 2.5,
+      "sequence": 252,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.5766,
+        "phase": "frame",
+        "prepareMs": 0.030800000000000004,
+        "regionMs": 0.32380000000000003,
+        "sequence": 252,
+        "shadowMs": 0.222
+      }
+    },
+    {
+      "round": 2,
+      "kind": "cached-shadow",
+      "ms": 3.2000000178813934,
+      "sequence": 253,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.4442,
+        "phase": "frame",
+        "prepareMs": 0.0414,
+        "regionMs": 0.24810000000000001,
+        "sequence": 253,
+        "shadowMs": 0.1547
+      }
+    },
+    {
+      "round": 2,
+      "kind": "cached-shadow",
+      "ms": 2.2999999821186066,
+      "sequence": 254,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.3539,
+        "phase": "frame",
+        "prepareMs": 0.0332,
+        "regionMs": 0.21139999999999998,
+        "sequence": 254,
+        "shadowMs": 0.1093
+      }
+    },
+    {
+      "round": 2,
+      "kind": "cached-shadow",
+      "ms": 2.5,
+      "sequence": 255,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.4983,
+        "phase": "frame",
+        "prepareMs": 0.0414,
+        "regionMs": 0.3376,
+        "sequence": 255,
+        "shadowMs": 0.1193
+      }
+    },
+    {
+      "round": 2,
+      "kind": "cached-shadow",
+      "ms": 2.2000000178813934,
+      "sequence": 256,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.4531,
+        "phase": "frame",
+        "prepareMs": 0.0385,
+        "regionMs": 0.32830000000000004,
+        "sequence": 256,
+        "shadowMs": 0.0863
+      }
+    },
+    {
+      "round": 2,
+      "kind": "cached-shadow",
+      "ms": 2.0999999940395355,
+      "sequence": 257,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.3044,
+        "phase": "frame",
+        "prepareMs": 0.0307,
+        "regionMs": 0.2044,
+        "sequence": 257,
+        "shadowMs": 0.0693
+      }
+    },
+    {
+      "round": 2,
+      "kind": "cached-shadow",
+      "ms": 1.9000000059604645,
+      "sequence": 258,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.3069,
+        "phase": "frame",
+        "prepareMs": 0.0279,
+        "regionMs": 0.21589999999999998,
+        "sequence": 258,
+        "shadowMs": 0.0631
+      }
+    },
+    {
+      "round": 2,
+      "kind": "cached-shadow",
+      "ms": 2.2999999821186066,
+      "sequence": 259,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.30729999999999996,
+        "phase": "frame",
+        "prepareMs": 0.031,
+        "regionMs": 0.2033,
+        "sequence": 259,
+        "shadowMs": 0.073
+      }
+    },
+    {
+      "round": 2,
+      "kind": "cached-shadow",
+      "ms": 3.4000000059604645,
+      "sequence": 260,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.6235999999999999,
+        "phase": "frame",
+        "prepareMs": 0.039799999999999995,
+        "regionMs": 0.2799,
+        "sequence": 260,
+        "shadowMs": 0.3039
+      }
+    },
+    {
+      "round": 2,
+      "kind": "cached-shadow",
+      "ms": 2.300000011920929,
+      "sequence": 261,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.3742,
+        "phase": "frame",
+        "prepareMs": 0.036699999999999997,
+        "regionMs": 0.22469999999999998,
+        "sequence": 261,
+        "shadowMs": 0.1128
+      }
+    },
+    {
+      "round": 2,
+      "kind": "cached-shadow",
+      "ms": 2.399999976158142,
+      "sequence": 262,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.494,
+        "phase": "frame",
+        "prepareMs": 0.0412,
+        "regionMs": 0.3301,
+        "sequence": 262,
+        "shadowMs": 0.1227
+      }
+    },
+    {
+      "round": 2,
+      "kind": "cached-shadow",
+      "ms": 2,
+      "sequence": 263,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.3971,
+        "phase": "frame",
+        "prepareMs": 0.030199999999999998,
+        "regionMs": 0.212,
+        "sequence": 263,
+        "shadowMs": 0.1549
+      }
+    },
+    {
+      "round": 2,
+      "kind": "cached-shadow",
+      "ms": 2.2000000178813934,
+      "sequence": 264,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.3084,
+        "phase": "frame",
+        "prepareMs": 0.030800000000000004,
+        "regionMs": 0.2085,
+        "sequence": 264,
+        "shadowMs": 0.0691
+      }
+    },
+    {
+      "round": 2,
+      "kind": "cached-shadow",
+      "ms": 2.199999988079071,
+      "sequence": 265,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.4546,
+        "phase": "frame",
+        "prepareMs": 0.0395,
+        "regionMs": 0.3223,
+        "sequence": 265,
+        "shadowMs": 0.09280000000000001
+      }
+    },
+    {
+      "round": 2,
+      "kind": "cached-shadow",
+      "ms": 2,
+      "sequence": 266,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.30219999999999997,
+        "phase": "frame",
+        "prepareMs": 0.0297,
+        "regionMs": 0.207,
+        "sequence": 266,
+        "shadowMs": 0.0655
+      }
+    },
+    {
+      "round": 2,
+      "kind": "cached-shadow",
+      "ms": 2.9000000059604645,
+      "sequence": 267,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.41409999999999997,
+        "phase": "frame",
+        "prepareMs": 0.0424,
+        "regionMs": 0.24420000000000003,
+        "sequence": 267,
+        "shadowMs": 0.1275
+      }
+    },
+    {
+      "round": 2,
+      "kind": "cached-shadow",
+      "ms": 2.9000000059604645,
+      "sequence": 268,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.442,
+        "phase": "frame",
+        "prepareMs": 0.0388,
+        "regionMs": 0.2258,
+        "sequence": 268,
+        "shadowMs": 0.1774
+      }
+    },
+    {
+      "round": 2,
+      "kind": "cached-shadow",
+      "ms": 2.4000000059604645,
+      "sequence": 269,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.3785,
+        "phase": "frame",
+        "prepareMs": 0.037,
+        "regionMs": 0.224,
+        "sequence": 269,
+        "shadowMs": 0.1175
+      }
+    },
+    {
+      "round": 2,
+      "kind": "cached-shadow",
+      "ms": 2.199999988079071,
+      "sequence": 270,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.3472,
+        "phase": "frame",
+        "prepareMs": 0.030199999999999998,
+        "regionMs": 0.2146,
+        "sequence": 270,
+        "shadowMs": 0.10239999999999999
+      }
+    },
+    {
+      "round": 2,
+      "kind": "changing-shadow",
+      "ms": 5.5,
+      "sequence": 274,
+      "native": {
+        "bodyWidth": 375,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 171,
+        "nativeMs": 2.8876,
+        "phase": "frame",
+        "prepareMs": 0.04,
+        "regionMs": 1.3195,
+        "sequence": 274,
+        "shadowMs": 1.5280999999999998
+      }
+    },
+    {
+      "round": 2,
+      "kind": "changing-shadow",
+      "ms": 7.199999988079071,
+      "sequence": 275,
+      "native": {
+        "bodyWidth": 376,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 172,
+        "nativeMs": 4.1735,
+        "phase": "frame",
+        "prepareMs": 0.06470000000000001,
+        "regionMs": 1.5604,
+        "sequence": 275,
+        "shadowMs": 2.5484
+      }
+    },
+    {
+      "round": 2,
+      "kind": "changing-shadow",
+      "ms": 5,
+      "sequence": 276,
+      "native": {
+        "bodyWidth": 377,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 168,
+        "nativeMs": 2.7474000000000003,
+        "phase": "frame",
+        "prepareMs": 0.039400000000000004,
+        "regionMs": 1.1571,
+        "sequence": 276,
+        "shadowMs": 1.5509
+      }
+    },
+    {
+      "round": 2,
+      "kind": "changing-shadow",
+      "ms": 4.9000000059604645,
+      "sequence": 277,
+      "native": {
+        "bodyWidth": 378,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 169,
+        "nativeMs": 2.6281,
+        "phase": "frame",
+        "prepareMs": 0.0352,
+        "regionMs": 1.0991,
+        "sequence": 277,
+        "shadowMs": 1.4938
+      }
+    },
+    {
+      "round": 2,
+      "kind": "changing-shadow",
+      "ms": 6.5999999940395355,
+      "sequence": 278,
+      "native": {
+        "bodyWidth": 379,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 170,
+        "nativeMs": 3.3554,
+        "phase": "frame",
+        "prepareMs": 0.0356,
+        "regionMs": 1.0603,
+        "sequence": 278,
+        "shadowMs": 2.2594999999999996
+      }
+    },
+    {
+      "round": 2,
+      "kind": "changing-shadow",
+      "ms": 5.5999999940395355,
+      "sequence": 279,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 171,
+        "nativeMs": 2.8404,
+        "phase": "frame",
+        "prepareMs": 0.050800000000000005,
+        "regionMs": 1.2019000000000002,
+        "sequence": 279,
+        "shadowMs": 1.5877000000000001
+      }
+    },
+    {
+      "round": 2,
+      "kind": "changing-shadow",
+      "ms": 4.800000011920929,
+      "sequence": 280,
+      "native": {
+        "bodyWidth": 373,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 172,
+        "nativeMs": 2.6897,
+        "phase": "frame",
+        "prepareMs": 0.0352,
+        "regionMs": 1.1744999999999999,
+        "sequence": 280,
+        "shadowMs": 1.48
+      }
+    },
+    {
+      "round": 2,
+      "kind": "changing-shadow",
+      "ms": 6.9000000059604645,
+      "sequence": 281,
+      "native": {
+        "bodyWidth": 374,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 168,
+        "nativeMs": 3.8033,
+        "phase": "frame",
+        "prepareMs": 0.043699999999999996,
+        "regionMs": 1.8515000000000001,
+        "sequence": 281,
+        "shadowMs": 1.9081000000000001
+      }
+    },
+    {
+      "round": 2,
+      "kind": "changing-shadow",
+      "ms": 6.5,
+      "sequence": 282,
+      "native": {
+        "bodyWidth": 375,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 169,
+        "nativeMs": 3.9977,
+        "phase": "frame",
+        "prepareMs": 0.052500000000000005,
+        "regionMs": 1.5025,
+        "sequence": 282,
+        "shadowMs": 2.4427
+      }
+    },
+    {
+      "round": 2,
+      "kind": "changing-shadow",
+      "ms": 5.4000000059604645,
+      "sequence": 283,
+      "native": {
+        "bodyWidth": 376,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 170,
+        "nativeMs": 2.6693,
+        "phase": "frame",
+        "prepareMs": 0.0334,
+        "regionMs": 1.0534,
+        "sequence": 283,
+        "shadowMs": 1.5825
+      }
+    },
+    {
+      "round": 2,
+      "kind": "changing-shadow",
+      "ms": 8.299999982118607,
+      "sequence": 284,
+      "native": {
+        "bodyWidth": 377,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 171,
+        "nativeMs": 4.8736999999999995,
+        "phase": "frame",
+        "prepareMs": 0.0709,
+        "regionMs": 2.1631,
+        "sequence": 284,
+        "shadowMs": 2.6397
+      }
+    },
+    {
+      "round": 2,
+      "kind": "changing-shadow",
+      "ms": 7,
+      "sequence": 285,
+      "native": {
+        "bodyWidth": 378,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 172,
+        "nativeMs": 3.1075,
+        "phase": "frame",
+        "prepareMs": 0.0451,
+        "regionMs": 1.3366,
+        "sequence": 285,
+        "shadowMs": 1.7258
+      }
+    },
+    {
+      "round": 2,
+      "kind": "changing-shadow",
+      "ms": 9,
+      "sequence": 286,
+      "native": {
+        "bodyWidth": 379,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 168,
+        "nativeMs": 4.6527,
+        "phase": "frame",
+        "prepareMs": 0.0839,
+        "regionMs": 2.5558,
+        "sequence": 286,
+        "shadowMs": 2.013
+      }
+    },
+    {
+      "round": 2,
+      "kind": "changing-shadow",
+      "ms": 8.700000017881393,
+      "sequence": 287,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 169,
+        "nativeMs": 4.9462,
+        "phase": "frame",
+        "prepareMs": 0.0533,
+        "regionMs": 2.4277,
+        "sequence": 287,
+        "shadowMs": 2.4652
+      }
+    },
+    {
+      "round": 2,
+      "kind": "changing-shadow",
+      "ms": 8.5,
+      "sequence": 288,
+      "native": {
+        "bodyWidth": 373,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 170,
+        "nativeMs": 4.9366,
+        "phase": "frame",
+        "prepareMs": 0.0547,
+        "regionMs": 2.4135,
+        "sequence": 288,
+        "shadowMs": 2.4684
+      }
+    },
+    {
+      "round": 2,
+      "kind": "changing-shadow",
+      "ms": 5.5999999940395355,
+      "sequence": 289,
+      "native": {
+        "bodyWidth": 374,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 171,
+        "nativeMs": 2.8801,
+        "phase": "frame",
+        "prepareMs": 0.0415,
+        "regionMs": 1.2558999999999998,
+        "sequence": 289,
+        "shadowMs": 1.5827
+      }
+    },
+    {
+      "round": 2,
+      "kind": "changing-shadow",
+      "ms": 7.5999999940395355,
+      "sequence": 290,
+      "native": {
+        "bodyWidth": 375,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 172,
+        "nativeMs": 3.9894,
+        "phase": "frame",
+        "prepareMs": 0.035500000000000004,
+        "regionMs": 1.9393,
+        "sequence": 290,
+        "shadowMs": 2.0146
+      }
+    },
+    {
+      "round": 2,
+      "kind": "changing-shadow",
+      "ms": 7.300000011920929,
+      "sequence": 291,
+      "native": {
+        "bodyWidth": 376,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 168,
+        "nativeMs": 4.1884,
+        "phase": "frame",
+        "prepareMs": 0.0574,
+        "regionMs": 1.5788,
+        "sequence": 291,
+        "shadowMs": 2.5522
+      }
+    },
+    {
+      "round": 2,
+      "kind": "changing-shadow",
+      "ms": 5.299999982118607,
+      "sequence": 292,
+      "native": {
+        "bodyWidth": 377,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 169,
+        "nativeMs": 2.7786,
+        "phase": "frame",
+        "prepareMs": 0.0375,
+        "regionMs": 1.1789,
+        "sequence": 292,
+        "shadowMs": 1.5621999999999998
+      }
+    },
+    {
+      "round": 2,
+      "kind": "changing-shadow",
+      "ms": 8.699999988079071,
+      "sequence": 293,
+      "native": {
+        "bodyWidth": 378,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 170,
+        "nativeMs": 4.5392,
+        "phase": "frame",
+        "prepareMs": 0.058,
+        "regionMs": 1.9406,
+        "sequence": 293,
+        "shadowMs": 2.5406
+      }
+    },
+    {
+      "round": 2,
+      "kind": "changing-shadow",
+      "ms": 5.700000017881393,
+      "sequence": 294,
+      "native": {
+        "bodyWidth": 379,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 171,
+        "nativeMs": 2.9795999999999996,
+        "phase": "frame",
+        "prepareMs": 0.0375,
+        "regionMs": 1.1805999999999999,
+        "sequence": 294,
+        "shadowMs": 1.7615
+      }
+    },
+    {
+      "round": 2,
+      "kind": "changing-shadow",
+      "ms": 8,
+      "sequence": 295,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 172,
+        "nativeMs": 4.9174,
+        "phase": "frame",
+        "prepareMs": 0.053399999999999996,
+        "regionMs": 2.1574,
+        "sequence": 295,
+        "shadowMs": 2.7066
+      }
+    },
+    {
+      "round": 2,
+      "kind": "changing-shadow",
+      "ms": 6.5999999940395355,
+      "sequence": 296,
+      "native": {
+        "bodyWidth": 373,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 168,
+        "nativeMs": 3.8922000000000003,
+        "phase": "frame",
+        "prepareMs": 0.0412,
+        "regionMs": 1.3493,
+        "sequence": 296,
+        "shadowMs": 2.5017
+      }
+    },
+    {
+      "round": 2,
+      "kind": "changing-shadow",
+      "ms": 7.9000000059604645,
+      "sequence": 297,
+      "native": {
+        "bodyWidth": 374,
+        "epoch": 1791881678057,
+        "equalRegion": false,
+        "height": 169,
+        "nativeMs": 3.7779,
+        "phase": "frame",
+        "prepareMs": 0.0688,
+        "regionMs": 1.7335,
+        "sequence": 297,
+        "shadowMs": 1.9756
+      }
+    },
+    {
+      "round": 2,
+      "kind": "luminance",
+      "ms": 16,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 2,
+      "kind": "luminance",
+      "ms": 17,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 2,
+      "kind": "luminance",
+      "ms": 17.599999994039536,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 2,
+      "kind": "luminance",
+      "ms": 16.19999998807907,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 2,
+      "kind": "luminance",
+      "ms": 16.5,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 2,
+      "kind": "luminance",
+      "ms": 15.900000005960464,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 2,
+      "kind": "luminance",
+      "ms": 18.099999994039536,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 2,
+      "kind": "luminance",
+      "ms": 16.30000001192093,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 2,
+      "kind": "luminance",
+      "ms": 15.5,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 2,
+      "kind": "luminance",
+      "ms": 16.69999998807907,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 2,
+      "kind": "luminance",
+      "ms": 16.30000001192093,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 2,
+      "kind": "luminance",
+      "ms": 17.19999998807907,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 2,
+      "kind": "luminance",
+      "ms": 16.200000017881393,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 2,
+      "kind": "luminance",
+      "ms": 16.299999982118607,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 2,
+      "kind": "luminance",
+      "ms": 16.80000001192093,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 2,
+      "kind": "luminance",
+      "ms": 17.69999998807907,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 2,
+      "kind": "luminance",
+      "ms": 16.700000017881393,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 2,
+      "kind": "luminance",
+      "ms": 16.099999994039536,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 2,
+      "kind": "luminance",
+      "ms": 17.099999994039536,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 2,
+      "kind": "luminance",
+      "ms": 15.900000005960464,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 2,
+      "kind": "luminance",
+      "ms": 16.5,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 2,
+      "kind": "luminance",
+      "ms": 16.80000001192093,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 2,
+      "kind": "luminance",
+      "ms": 16.599999994039536,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 2,
+      "kind": "luminance",
+      "ms": 17.599999994039536,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 2,
+      "kind": "metrics-control",
+      "ms": 1.699999988079071,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 2,
+      "kind": "metrics-control",
+      "ms": 1.0999999940395355,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 2,
+      "kind": "metrics-control",
+      "ms": 1.2000000178813934,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 2,
+      "kind": "metrics-control",
+      "ms": 1.199999988079071,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 2,
+      "kind": "metrics-control",
+      "ms": 1.0999999940395355,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 2,
+      "kind": "metrics-control",
+      "ms": 1.5999999940395355,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 2,
+      "kind": "metrics-control",
+      "ms": 1.9000000059604645,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 2,
+      "kind": "metrics-control",
+      "ms": 1.4000000059604645,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 2,
+      "kind": "metrics-control",
+      "ms": 1.199999988079071,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 2,
+      "kind": "metrics-control",
+      "ms": 1.0999999940395355,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 2,
+      "kind": "metrics-control",
+      "ms": 1.2999999821186066,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 2,
+      "kind": "metrics-control",
+      "ms": 1.2000000178813934,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 2,
+      "kind": "metrics-control",
+      "ms": 1.199999988079071,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 2,
+      "kind": "metrics-control",
+      "ms": 1.7000000178813934,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 2,
+      "kind": "metrics-control",
+      "ms": 1.2999999821186066,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 2,
+      "kind": "metrics-control",
+      "ms": 1.2000000178813934,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 2,
+      "kind": "metrics-control",
+      "ms": 1.2999999821186066,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 2,
+      "kind": "metrics-control",
+      "ms": 1.100000023841858,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 2,
+      "kind": "metrics-control",
+      "ms": 3,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 2,
+      "kind": "metrics-control",
+      "ms": 1.5999999940395355,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 2,
+      "kind": "metrics-control",
+      "ms": 1.5,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 2,
+      "kind": "metrics-control",
+      "ms": 1.699999988079071,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 2,
+      "kind": "metrics-control",
+      "ms": 1.5,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 2,
+      "kind": "metrics-control",
+      "ms": 1.300000011920929,
+      "sequence": null,
+      "native": null
+    },
+    {
+      "round": 2,
+      "kind": "region-only",
+      "ms": 2,
+      "sequence": 301,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.1676,
+        "phase": "frame",
+        "prepareMs": 0.0334,
+        "regionMs": 0.12669999999999998,
+        "sequence": 301,
+        "shadowMs": 0.007500000000000001
+      }
+    },
+    {
+      "round": 2,
+      "kind": "region-only",
+      "ms": 1.4000000059604645,
+      "sequence": 302,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.1536,
+        "phase": "frame",
+        "prepareMs": 0.025599999999999998,
+        "regionMs": 0.12210000000000001,
+        "sequence": 302,
+        "shadowMs": 0.0059
+      }
+    },
+    {
+      "round": 2,
+      "kind": "region-only",
+      "ms": 1.800000011920929,
+      "sequence": 303,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.1778,
+        "phase": "frame",
+        "prepareMs": 0.027100000000000003,
+        "regionMs": 0.14479999999999998,
+        "sequence": 303,
+        "shadowMs": 0.0059
+      }
+    },
+    {
+      "round": 2,
+      "kind": "region-only",
+      "ms": 1.699999988079071,
+      "sequence": 304,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.1565,
+        "phase": "frame",
+        "prepareMs": 0.0277,
+        "regionMs": 0.1225,
+        "sequence": 304,
+        "shadowMs": 0.0063
+      }
+    },
+    {
+      "round": 2,
+      "kind": "region-only",
+      "ms": 1.9000000059604645,
+      "sequence": 305,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.1696,
+        "phase": "frame",
+        "prepareMs": 0.0324,
+        "regionMs": 0.12940000000000002,
+        "sequence": 305,
+        "shadowMs": 0.0078
+      }
+    },
+    {
+      "round": 2,
+      "kind": "region-only",
+      "ms": 1.800000011920929,
+      "sequence": 306,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.1719,
+        "phase": "frame",
+        "prepareMs": 0.0312,
+        "regionMs": 0.1336,
+        "sequence": 306,
+        "shadowMs": 0.0070999999999999995
+      }
+    },
+    {
+      "round": 2,
+      "kind": "region-only",
+      "ms": 2.399999976158142,
+      "sequence": 307,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.5628,
+        "phase": "frame",
+        "prepareMs": 0.06889999999999999,
+        "regionMs": 0.48660000000000003,
+        "sequence": 307,
+        "shadowMs": 0.0073
+      }
+    },
+    {
+      "round": 2,
+      "kind": "region-only",
+      "ms": 3.600000023841858,
+      "sequence": 308,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.6274,
+        "phase": "frame",
+        "prepareMs": 0.0384,
+        "regionMs": 0.5797000000000001,
+        "sequence": 308,
+        "shadowMs": 0.009300000000000001
+      }
+    },
+    {
+      "round": 2,
+      "kind": "region-only",
+      "ms": 2.0999999940395355,
+      "sequence": 309,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.2288,
+        "phase": "frame",
+        "prepareMs": 0.0436,
+        "regionMs": 0.17550000000000002,
+        "sequence": 309,
+        "shadowMs": 0.0097
+      }
+    },
+    {
+      "round": 2,
+      "kind": "region-only",
+      "ms": 1.5999999940395355,
+      "sequence": 310,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.1459,
+        "phase": "frame",
+        "prepareMs": 0.0276,
+        "regionMs": 0.11220000000000001,
+        "sequence": 310,
+        "shadowMs": 0.0061
+      }
+    },
+    {
+      "round": 2,
+      "kind": "region-only",
+      "ms": 1.5999999940395355,
+      "sequence": 311,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.1519,
+        "phase": "frame",
+        "prepareMs": 0.0253,
+        "regionMs": 0.1215,
+        "sequence": 311,
+        "shadowMs": 0.0051
+      }
+    },
+    {
+      "round": 2,
+      "kind": "region-only",
+      "ms": 1.5,
+      "sequence": 312,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.1614,
+        "phase": "frame",
+        "prepareMs": 0.024300000000000002,
+        "regionMs": 0.1316,
+        "sequence": 312,
+        "shadowMs": 0.0055
+      }
+    },
+    {
+      "round": 2,
+      "kind": "region-only",
+      "ms": 1.5,
+      "sequence": 313,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.1306,
+        "phase": "frame",
+        "prepareMs": 0.0229,
+        "regionMs": 0.1027,
+        "sequence": 313,
+        "shadowMs": 0.005
+      }
+    },
+    {
+      "round": 2,
+      "kind": "region-only",
+      "ms": 1.5,
+      "sequence": 314,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.1415,
+        "phase": "frame",
+        "prepareMs": 0.0259,
+        "regionMs": 0.1101,
+        "sequence": 314,
+        "shadowMs": 0.0055
+      }
+    },
+    {
+      "round": 2,
+      "kind": "region-only",
+      "ms": 1.5999999940395355,
+      "sequence": 315,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.15760000000000002,
+        "phase": "frame",
+        "prepareMs": 0.0239,
+        "regionMs": 0.1288,
+        "sequence": 315,
+        "shadowMs": 0.0049
+      }
+    },
+    {
+      "round": 2,
+      "kind": "region-only",
+      "ms": 1.5,
+      "sequence": 316,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.16190000000000002,
+        "phase": "frame",
+        "prepareMs": 0.025400000000000002,
+        "regionMs": 0.13090000000000002,
+        "sequence": 316,
+        "shadowMs": 0.0056
+      }
+    },
+    {
+      "round": 2,
+      "kind": "region-only",
+      "ms": 2.2999999821186066,
+      "sequence": 317,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.1965,
+        "phase": "frame",
+        "prepareMs": 0.040299999999999996,
+        "regionMs": 0.147,
+        "sequence": 317,
+        "shadowMs": 0.0092
+      }
+    },
+    {
+      "round": 2,
+      "kind": "region-only",
+      "ms": 1.9000000059604645,
+      "sequence": 318,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.1663,
+        "phase": "frame",
+        "prepareMs": 0.0322,
+        "regionMs": 0.1265,
+        "sequence": 318,
+        "shadowMs": 0.0076
+      }
+    },
+    {
+      "round": 2,
+      "kind": "region-only",
+      "ms": 1.800000011920929,
+      "sequence": 319,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.1528,
+        "phase": "frame",
+        "prepareMs": 0.0286,
+        "regionMs": 0.1183,
+        "sequence": 319,
+        "shadowMs": 0.0059
+      }
+    },
+    {
+      "round": 2,
+      "kind": "region-only",
+      "ms": 1.699999988079071,
+      "sequence": 320,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.1513,
+        "phase": "frame",
+        "prepareMs": 0.027800000000000002,
+        "regionMs": 0.1176,
+        "sequence": 320,
+        "shadowMs": 0.0059
+      }
+    },
+    {
+      "round": 2,
+      "kind": "region-only",
+      "ms": 1.5999999940395355,
+      "sequence": 321,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.1512,
+        "phase": "frame",
+        "prepareMs": 0.0285,
+        "regionMs": 0.1158,
+        "sequence": 321,
+        "shadowMs": 0.0069
+      }
+    },
+    {
+      "round": 2,
+      "kind": "region-only",
+      "ms": 1.7000000178813934,
+      "sequence": 322,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.2926,
+        "phase": "frame",
+        "prepareMs": 0.027299999999999998,
+        "regionMs": 0.25989999999999996,
+        "sequence": 322,
+        "shadowMs": 0.0054
+      }
+    },
+    {
+      "round": 2,
+      "kind": "region-only",
+      "ms": 2.199999988079071,
+      "sequence": 323,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.1573,
+        "phase": "frame",
+        "prepareMs": 0.0313,
+        "regionMs": 0.1198,
+        "sequence": 323,
+        "shadowMs": 0.0062
+      }
+    },
+    {
+      "round": 2,
+      "kind": "region-only",
+      "ms": 2,
+      "sequence": 324,
+      "native": {
+        "bodyWidth": 372,
+        "epoch": 1791881678057,
+        "equalRegion": true,
+        "height": 168,
+        "nativeMs": 0.1817,
+        "phase": "frame",
+        "prepareMs": 0.033,
+        "regionMs": 0.14129999999999998,
+        "sequence": 324,
+        "shadowMs": 0.0074
+      }
+    }
+  ],
+  "errors": [],
+  "scope": "Sequential Rust command round trips including IPC, with opt-in diagnostics; warm Release, no DWM frame claim",
+  "metrics": {
+    "available": 1920,
+    "canvasHeight": 622,
+    "canvasWidth": 704,
+    "height": 1032,
+    "scale": 1,
+    "topReserved": false,
+    "y": 0
+  },
+  "summary": {
+    "metrics-control": {
+      "n": 72,
+      "medianMs": 1.300000011920929,
+      "p95Ms": 2.0999999940395355
+    },
+    "region-only": {
+      "n": 72,
+      "medianMs": 1.9000000059604645,
+      "p95Ms": 3.2000000178813934
+    },
+    "region-handoff": {
+      "n": 72,
+      "medianMs": 2.5,
+      "p95Ms": 3.300000011920929
+    },
+    "cached-shadow": {
+      "n": 72,
+      "medianMs": 2.7999999821186066,
+      "p95Ms": 3.9000000059604645
+    },
+    "changing-shadow": {
+      "n": 72,
+      "medianMs": 6.5999999940395355,
+      "p95Ms": 8.700000017881393
+    },
+    "luminance": {
+      "n": 72,
+      "medianMs": 16.599999994039536,
+      "p95Ms": 18
+    }
+  },
+  "status": "PASS"
+}

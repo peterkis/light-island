@@ -1,0 +1,63 @@
+ M package-lock.json
+ M package.json
+ M playwright.config.ts
+ M server/clinical-demo.mjs
+ M server/lab-fixtures.mjs
+ M src-tauri/src/lib.rs
+ M src/clinical/ClinicalIsland.tsx
+ M src/clinical/ClinicalStudio.tsx
+ M src/clinical/controller.ts
+ M src/clinical/geometry.ts
+ M src/clinical/lab-reader/LabScene.tsx
+ M src/clinical/lab-reader/model.ts
+ M src/clinical/lab-reader/useLabReader.ts
+ M src/clinical/main.tsx
+ M src/clinical/model.ts
+ M src/clinical/uiux.css
+ M src/clinical/useClinicalLayout.ts
+ M src/clinical/usePlatform.ts
+ M src/clinical/useSurfaceInput.ts
+ M src/components/Island.tsx
+ M src/components/Studio.tsx
+ M src/hooks/useIsland.ts
+ M src/lib/bridge.ts
+ M src/lib/domain.ts
+ M src/lib/performance.ts
+ M src/vite-env.d.ts
+ M tests/clinical-continuation.spec.ts
+ M tests/clinical-experience.spec.ts
+ M tests/clinical-model.test.ts
+ M tests/clinical-motion.spec.ts
+ M tests/horizontal.spec.ts
+ M tests/lab-reader.spec.ts
+ M tests/lab-reader.test.ts
+ M tests/native-bridge.test.ts
+ M tsconfig.json
+?? docs/TYPESCRIPT-REACT-OPTIMIZATION.md
+?? evidence/optimization-20261013/
+?? evidence/rust-optimization-20261013/
+?? scripts/check-source-bundle.mjs
+?? scripts/inspect-optimization-window.py
+?? scripts/optimization-qa.ps1
+?? scripts/prepare-optimization-baseline.mjs
+?? scripts/qa-optimization-native-latency.mjs
+?? scripts/qa-optimization-native.mjs
+?? src/clinical/ClinicalApp.tsx
+?? src/clinical/SourcePage.tsx
+?? src/clinical/SourceView.tsx
+?? src/clinical/lab-reader/ReportRows.tsx
+?? src/clinical/native-contract.ts
+?? src/clinical/useSourceWindow.ts
+?? src/lib/protocol.ts
+?? tests/bridge-lifecycle.test.ts
+?? tests/native-contract.test.ts
+?? tests/native-layout-failure.spec.ts
+?? tests/native-reader-failure.spec.ts
+?? tests/optimization-harness.html
+?? tests/optimization-harness.tsx
+?? tests/optimization-performance.spec.ts
+?? tests/performance.test.ts
+?? tests/protocol.test.ts
+?? tests/protocol.types.ts
+?? tests/reader-invalidation.spec.ts
+?? tsconfig.tools.json

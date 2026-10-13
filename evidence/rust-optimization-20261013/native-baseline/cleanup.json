@@ -1,0 +1,8 @@
+﻿{
+    "stoppedOwnedRoot":  22512,
+    "stoppedOwnedServer":  24072,
+    "remainingListeners":  [
+
+                           ],
+    "termination":  "QA-owned processes stopped; not a normal-exit profile-cleanup acceptance"
+}

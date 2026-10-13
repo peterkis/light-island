@@ -4,6 +4,7 @@ use serde_json::{json, Value};
 use serde::Deserialize;
 use crate::notch_geometry::EpochGuard;
 use std::sync::{Mutex,OnceLock};
+use std::borrow::Cow;
 use tauri::{AppHandle,Manager,WebviewWindow};
 use crate::hover_diagnostics::record;
 static TOKENS:OnceLock<Value>=OnceLock::new();
@@ -33,9 +34,7 @@ mod ffi{
   pub fn GetMonitorInfoW(h:*mut c_void,info:*mut MonitorInfo)->i32;
  }
  #[link(name="gdi32")]extern "system"{
-  pub fn CreatePolygonRgn(points:*const Point,n:i32,mode:i32)->*mut c_void;
   pub fn CreateRectRgn(x:i32,y:i32,r:i32,b:i32)->*mut c_void;
-  pub fn CombineRgn(dest:*mut c_void,a:*mut c_void,b:*mut c_void,mode:i32)->i32;
   pub fn EqualRgn(a:*mut c_void,b:*mut c_void)->i32;
   pub fn DeleteObject(h:*mut c_void)->i32;
  }
@@ -93,19 +92,18 @@ fn validate(g:&Shape)->Result<(),String>{
 }
 #[cfg(target_os="windows")]
 unsafe fn add_outline(region:*mut std::ffi::c_void,g:&Shape,canvas:u32,scale:f64)->Result<(),String>{
- let offset=(canvas as f64-g.width*scale)/2.0+g.shift*scale;let outlines=g.polygons.clone().unwrap_or_else(||vec![contour(g.width,g.height,g.radius,g.ear)]);
+ let offset=(canvas as f64-g.width*scale)/2.0+g.shift*scale;
+ let outlines:Cow<'_,[Vec<[f64;2]>]>=match g.polygons.as_deref(){Some(polygons)=>Cow::Borrowed(polygons),None=>Cow::Owned(vec![contour(g.width,g.height,g.radius,g.ear)])};
  if outlines.iter().flatten().any(|pt|offset+pt[0]*scale<2.0||offset+pt[0]*scale>canvas as f64-2.0){return Err("Gesture silhouette exceeds retained canvas".into());}
  let fringe=number("/geometry/pixelBoundaryTolerance") as i32;
- for points in &outlines{for dy in -fringe..=fringe{for dx in -fringe..=fringe{
-  let native:Vec<ffi::Point>=points.iter().map(|pt|ffi::Point{x:(offset+pt[0]*scale).round() as i32+dx,y:(pt[1]*scale).round() as i32+dy}).collect();
-  let part=ffi::CreatePolygonRgn(native.as_ptr(),native.len() as i32,2);
-  if part.is_null(){return Err("Cannot allocate outline".into());}
-  let ok=ffi::CombineRgn(region,region,part,2);ffi::DeleteObject(part);if ok==0{return Err("Cannot combine outline".into());}
- }}}
+ for points in outlines.iter(){crate::clinical_region::add_dilated(region,points,offset,scale,fringe).map_err(str::to_owned)?;}
  Ok(())
 }
 #[tauri::command]
+// Retain the established Tauri argument contract used by both the UI and native QA.
+#[expect(clippy::too_many_arguments)]
 pub fn clinical_layout(window:WebviewWindow,epoch:u64,body_width:f64,height:f64,radius:f64,ear:f64,visible:bool,sequence:Option<u64>,phase:Option<String>,previous:Option<Shape>,polygons:Option<Vec<Vec<[f64;2]>>>,expanded:Option<bool>,shadow_alpha:Option<f64>,top:Option<f64>,shift:Option<f64>)->Result<bool,String>{
+ let sampled=crate::hover_diagnostics::enabled().then(std::time::Instant::now);
  ensure(&window)?;
  let target=Shape{width:body_width,height,radius,ear,polygons,top:top.unwrap_or(0.0),shift:shift.unwrap_or(0.0)};validate(&target)?;
  if let Some(g)=&previous{validate(g)?;}
@@ -125,6 +123,7 @@ pub fn clinical_layout(window:WebviewWindow,epoch:u64,body_width:f64,height:f64,
   if !visible{crate::clinical_shadow::hide();ffi::ShowWindow(hwnd.0 as _,0);record(&window,"clinical-hidden",json!({"epoch":epoch}));return Ok(true);}
   let mut client=ffi::Rect::default();if ffi::GetClientRect(hwnd.0 as _,&mut client)==0{return Err("Clinical client rectangle unavailable".into());}
   let scale=ffi::GetDpiForWindow(hwnd.0 as _) as f64/96.0;if scale<=0.0{return Err("Clinical DPI unavailable".into());}
+  let prepared=sampled.map(|clock|clock.elapsed());
   let region=ffi::CreateRectRgn(0,0,0,0);if region.is_null(){return Err("Cannot allocate clinical region".into());}
   let combined=(||{
    add_outline(region,&target,(client.right-client.left) as u32,scale)?;
@@ -137,8 +136,13 @@ pub fn clinical_layout(window:WebviewWindow,epoch:u64,body_width:f64,height:f64,
   if !old.is_null(){ffi::DeleteObject(old);}
   if equal{ffi::DeleteObject(region);}else if ffi::SetWindowRgn(hwnd.0 as _,region,0)==0{ffi::DeleteObject(region);return Err("Cannot install clinical outline".into());}
   if ffi::IsWindowVisible(hwnd.0 as _)==0{ffi::ShowWindow(hwnd.0 as _,4);}
+  let region_ready=sampled.map(|clock|clock.elapsed());
   if let Err(error)=crate::clinical_shadow::draw(&window,body_width,height,radius,target.top,shadow_alpha.unwrap_or(0.0)){record(&window,"clinical-shadow-error",json!({"reason":error}));}
-  record(&window,"clinical-layout",json!({"epoch":epoch,"sequence":sequence,"phase":stage,"bodyWidth":body_width,"height":height,"equalRegion":equal}));
+  // Reuse the bounded, opt-in diagnostics stream; normal frames allocate no detail JSON.
+  if let (Some(clock),Some(prepared),Some(region_ready))=(sampled,prepared,region_ready){
+   let completed=clock.elapsed();
+   record(&window,"clinical-layout",json!({"epoch":epoch,"sequence":sequence,"phase":stage,"bodyWidth":body_width,"height":height,"equalRegion":equal,"nativeMs":completed.as_secs_f64()*1000.0,"prepareMs":prepared.as_secs_f64()*1000.0,"regionMs":(region_ready-prepared).as_secs_f64()*1000.0,"shadowMs":(completed-region_ready).as_secs_f64()*1000.0}));
+  }
  }
  Ok(true)
 }

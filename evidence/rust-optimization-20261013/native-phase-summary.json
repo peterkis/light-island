@@ -1,0 +1,30 @@
+[
+  {
+    "kind": "region-only",
+    "n": 72,
+    "nativeMedianMs": 0.1999,
+    "regionMedianMs": 0.1642,
+    "shadowMedianMs": 0.0055
+  },
+  {
+    "kind": "region-handoff",
+    "n": 72,
+    "nativeMedianMs": 0.35169999999999996,
+    "regionMedianMs": 0.31270000000000003,
+    "shadowMedianMs": 0.0065
+  },
+  {
+    "kind": "cached-shadow",
+    "n": 72,
+    "nativeMedianMs": 0.4374,
+    "regionMedianMs": 0.303,
+    "shadowMedianMs": 0.0965
+  },
+  {
+    "kind": "changing-shadow",
+    "n": 72,
+    "nativeMedianMs": 2.8642,
+    "regionMedianMs": 1.2241000000000002,
+    "shadowMedianMs": 1.4472
+  }
+]

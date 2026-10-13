@@ -1,0 +1,12 @@
+{
+  "preservedFiles": 211,
+  "unexpectedDrift": [],
+  "changes": [
+    "src-tauri/src/lib.rs",
+    "src-tauri/src/clinical_window.rs",
+    "src-tauri/src/clinical_shadow.rs",
+    "src-tauri/src/notch_window.rs",
+    "src-tauri/src/reader_native.rs",
+    "scripts/optimization-qa.ps1"
+  ]
+}

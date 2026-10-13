@@ -178,10 +178,10 @@ pub fn island_pointer_inside(window:WebviewWindow) -> Result<PointerStatus,Strin
         let scale=ffi::GetDpiForWindow(hwnd.0 as _) as f64/96.0;
         if scale<=0.0 { return Err("Window DPI unavailable".into()); }
         let mut result=PointerStatus { inside:false, x:x as f64/scale, y:y as f64/scale };
-        if ffi::GetAncestor(ffi::WindowFromPoint(p),2)!=hwnd.0 as _ {return Ok(result);}
+        if !std::ptr::eq(ffi::GetAncestor(ffi::WindowFromPoint(p),2),hwnd.0) {return Ok(result);}
         let region=ffi::CreateRectRgn(0,0,0,0);if region.is_null(){return Err("Cannot inspect hit region".into());}
         let inside=ffi::GetWindowRgn(hwnd.0 as _,region)>0&&ffi::PtInRegion(region,x,y)!=0;ffi::DeleteObject(region);
-        result.inside=inside;record(&window,"pointer-check",json!({"inside":inside}));return Ok(result);
+        result.inside=inside;record(&window,"pointer-check",json!({"inside":inside}));Ok(result)
     }
     #[cfg(not(target_os = "windows"))] Ok(PointerStatus { inside:false,x:0.0,y:0.0 })
 }

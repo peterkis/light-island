@@ -1,0 +1,20 @@
+{
+  "os": "Microsoft Windows NT 10.0.26300.0",
+  "logicalProcessors": 16,
+  "processor": [
+    {
+      "Name": "12th Gen Intel(R) Core(TM) i7-1260P",
+      "NumberOfLogicalProcessors": 16
+    }
+  ],
+  "rustc": "rustc 1.94.0 (4a4ef493e 2026-03-02)",
+  "node": "v24.18.0",
+  "profile": {
+    "optLevel": "s",
+    "lto": "thin",
+    "panic": "abort",
+    "strip": true,
+    "codegenUnits": 8
+  },
+  "physicalNativeDpi": 96
+}

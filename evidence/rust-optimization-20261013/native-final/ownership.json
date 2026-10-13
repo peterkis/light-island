@@ -1,0 +1,52 @@
+﻿{
+    "verified":  true,
+    "rootPid":  23120,
+    "rootStartedTicks":  639274775948847330,
+    "serverPid":  10180,
+    "serverStartedTicks":  639274775935074580,
+    "port":  9223,
+    "executable":  "D:\\Projects\\island-protype\\src-tauri\\target\\release\\samewave-island.exe",
+    "exeSHA256":  "86e15e48cfeed0d567fddb368918295f4b7a3ee089d550e9127c7736f3891820",
+    "arguments":  "--qa-cdp --hover-diagnostics",
+    "studio":  false,
+    "capturedAt":  "2026-10-13T16:39:55.2235582+08:00",
+    "qaEndpointReadyMs":  4614,
+    "browser":  "Edg/154.0.4258.62",
+    "processes":  [
+                      {
+                          "ProcessId":  23120,
+                          "ParentProcessId":  30160,
+                          "Name":  "samewave-island.exe"
+                      },
+                      {
+                          "ProcessId":  12800,
+                          "ParentProcessId":  23120,
+                          "Name":  "msedgewebview2.exe"
+                      },
+                      {
+                          "ProcessId":  27196,
+                          "ParentProcessId":  12800,
+                          "Name":  "msedgewebview2.exe"
+                      },
+                      {
+                          "ProcessId":  36712,
+                          "ParentProcessId":  12800,
+                          "Name":  "msedgewebview2.exe"
+                      },
+                      {
+                          "ProcessId":  15400,
+                          "ParentProcessId":  12800,
+                          "Name":  "msedgewebview2.exe"
+                      },
+                      {
+                          "ProcessId":  14548,
+                          "ParentProcessId":  12800,
+                          "Name":  "msedgewebview2.exe"
+                      },
+                      {
+                          "ProcessId":  35752,
+                          "ParentProcessId":  12800,
+                          "Name":  "msedgewebview2.exe"
+                      }
+                  ]
+}

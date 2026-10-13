@@ -1,0 +1,67 @@
+﻿{
+    "capturedAt":  "2026-10-13T17:08:33.6571815+08:00",
+    "exeSHA256":  "40cd4d13c79c2e050e3d2be0d3bd5939e3f1ec30d80c2d4fefdc9374e622bd0c",
+    "scope":  "Owned native application and all discovered WebView2 descendants, no studio; excludes synthetic Node server and QA tools",
+    "sampleSeconds":  10.9652435,
+    "privateWorkingSetMiB":  117.5,
+    "privateCommitMiB":  181.84,
+    "cpuMachinePercent":  0,
+    "processes":  [
+                      {
+                          "pid":  30944,
+                          "name":  "samewave-island",
+                          "privateCommitMiB":  10.1,
+                          "workingSetMiB":  30.7,
+                          "cpuDeltaSeconds":  0,
+                          "newDuringSample":  false
+                      },
+                      {
+                          "pid":  22688,
+                          "name":  "msedgewebview2",
+                          "privateCommitMiB":  38.79,
+                          "workingSetMiB":  126.6,
+                          "cpuDeltaSeconds":  0,
+                          "newDuringSample":  false
+                      },
+                      {
+                          "pid":  21376,
+                          "name":  "msedgewebview2",
+                          "privateCommitMiB":  3.34,
+                          "workingSetMiB":  19.72,
+                          "cpuDeltaSeconds":  0,
+                          "newDuringSample":  false
+                      },
+                      {
+                          "pid":  11124,
+                          "name":  "msedgewebview2",
+                          "privateCommitMiB":  69.66,
+                          "workingSetMiB":  86.4,
+                          "cpuDeltaSeconds":  0,
+                          "newDuringSample":  false
+                      },
+                      {
+                          "pid":  8000,
+                          "name":  "msedgewebview2",
+                          "privateCommitMiB":  11.67,
+                          "workingSetMiB":  38.59,
+                          "cpuDeltaSeconds":  0,
+                          "newDuringSample":  false
+                      },
+                      {
+                          "pid":  24504,
+                          "name":  "msedgewebview2",
+                          "privateCommitMiB":  7.5,
+                          "workingSetMiB":  21.18,
+                          "cpuDeltaSeconds":  0,
+                          "newDuringSample":  false
+                      },
+                      {
+                          "pid":  34256,
+                          "name":  "msedgewebview2",
+                          "privateCommitMiB":  40.78,
+                          "workingSetMiB":  90.09,
+                          "cpuDeltaSeconds":  0,
+                          "newDuringSample":  false
+                      }
+                  ]
+}
