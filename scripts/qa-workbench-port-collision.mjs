@@ -23,6 +23,8 @@ try{
  browser=await chromium.connectOverCDP('http://127.0.0.1:9224');page=browser.contexts().flatMap(c=>c.pages()).find(p=>p.url().includes('tauri.localhost/workbench.html?app=workbench'));assert(page);
  await expect(page.getByRole('alert')).toContainText('17326');await expect(page.getByTestId('clinical-island')).toHaveAttribute('data-connection','offline');
  report.status=await page.evaluate(()=>window.__TAURI_INTERNALS__.invoke('workbench_status'));assert.equal(report.status.listening,false);
+ report.launchError=await page.evaluate(async()=>{try{await window.__TAURI_INTERNALS__.invoke('launch_island');return null;}catch(error){return String(error);}});assert.match(report.launchError??'',/未监听/);
+ ps("if(Get-Process -Name samewave-island -ErrorAction SilentlyContinue){throw 'An offline workbench launched an island'}");report.islandLaunchRefused=true;
  await page.waitForTimeout(1800);assert.equal(contacts,0);report.pass=true;
 }finally{
  report.contactsToUnrelatedV2=contacts;await writeFile(out+'/port-collision.json',JSON.stringify(report,null,2));

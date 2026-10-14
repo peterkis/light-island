@@ -9,8 +9,9 @@ export const AnimatedDigits=memo(function AnimatedDigits({value,reduced}:{value:
   const el=root.current;if(!el)return;
   const old=Array.from(previous.current),next=Array.from(value);previous.current=value;
   const active:Animation[]=[];const rolls=Array.from(el.querySelectorAll<HTMLElement>('[data-digit]'));
-  for(const [i,roll] of rolls.entries()){
+  for(const roll of rolls){
    roll.removeAttribute('data-previous');
+   const i=Number(roll.dataset.digit);
    const before=old[i],after=next[i];
    if(reduced||!before||!after||before===after||!/\d/.test(before)||!/\d/.test(after))continue;
    roll.dataset.previous=before;roll.dataset.digitMoving='true';

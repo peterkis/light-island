@@ -1,12 +1,10 @@
 /** Loopback-only synthetic message source. Never point this demo at clinical systems. */
 import http from 'node:http';
 import { createClinicalDemo } from './clinical-demo.mjs';
-import { readFile } from 'node:fs/promises';
-import { resolve, dirname, extname } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { extname } from 'node:path';
+import { readFrontend } from './static-frontend.mjs';
 import { randomUUID } from 'node:crypto';
 import { WebSocketServer, WebSocket } from 'ws';
-const root = resolve(dirname(fileURLToPath(import.meta.url)), '../dist');
 const port = Number(process.env.ISLAND_DEMO_PORT || 17321);
 const origins = new Set([`http://127.0.0.1:${process.env.ISLAND_TEST_WEB_PORT??1420}`,`http://localhost:${process.env.ISLAND_TEST_WEB_PORT??1420}`,'http://127.0.0.1:17322', 'http://localhost:17322','http://127.0.0.1:17321', 'http://localhost:17321', 'http://127.0.0.1:1420', 'http://localhost:1420', 'http://tauri.localhost', 'tauri://localhost', 'https://tauri.localhost']);
 const notices = new Map(); const receipts = new Map(); const timers = new Set();
@@ -33,12 +31,10 @@ const server = http.createServer(async (req, res) => {
   }
   if (req.method !== 'GET') return json(res, 405, { error: 'Method not allowed' });
   try {
-    const path = resolve(root, '.' + decodeURIComponent(url.pathname === '/' ? '/index.html' : url.pathname));
-    if (!path.startsWith(root + '/'.replace('/', process.platform === 'win32' ? '\\' : '/')) && path !== resolve(root, 'index.html')) return json(res, 403, { error: 'Invalid path' });
-    const bytes = await readFile(path);
+    const {path,bytes} = await readFrontend(url.pathname);
     const types = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.svg': 'image/svg+xml', '.png': 'image/png', '.json': 'application/json' };
     res.writeHead(200, { 'Content-Type': types[extname(path)] || 'application/octet-stream', 'Cache-Control': 'no-cache', 'X-Content-Type-Options': 'nosniff' }); res.end(bytes);
-  } catch { json(res, 404, { error: 'Build UI with npm run build, or use http://127.0.0.1:1420 in development.' }); }
+  } catch (error) { json(res, error instanceof RangeError ? 403 : 404, { error: error instanceof RangeError ? 'Invalid path' : 'Build UI with npm run build, or use http://127.0.0.1:1420 in development.' }); }
 });
 const sourceSessionId=randomUUID(), peers=new Map();
 const clinical=createClinicalDemo(event=>broadcastClinical(event,'preview'));

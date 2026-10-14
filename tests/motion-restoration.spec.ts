@@ -39,6 +39,17 @@ test('only changed timer digit slots roll, with stable tabular widths',async({pa
  const samples=await island(page).locator('.ux-hero').evaluate(e=>new Promise<any[]>(resolve=>{const data:any[]=[];const start=performance.now();function tick(now:number){data.push({w:e.getBoundingClientRect().width,moving:e.querySelectorAll('[data-digit-moving=true]').length,colonMoving:!!e.querySelector('.ux-digit-colon [data-digit-moving]')});if(now-start<1400)requestAnimationFrame(tick);else resolve(data);}requestAnimationFrame(tick);}));
  expect(samples.some(s=>s.moving>0)).toBe(true);expect(samples.every(s=>s.moving<4&&!s.colonMoving)).toBe(true);expect(Math.max(...samples.map(s=>s.w))-Math.min(...samples.map(s=>s.w))).toBeLessThan(.1);
 });
+test('punctuated timer rolls retain the previous glyph at each character position',async({page,request})=>{
+ await full(page);
+ await page.evaluate(()=>{
+  const records:Array<{index:string|undefined;before:string|undefined;after:string|null}>=[],original=HTMLElement.prototype.animate;
+  Object.defineProperty(window,'__DIGIT_ROLL_RECORDS__',{value:records,configurable:true});
+  HTMLElement.prototype.animate=function(frames,options){if(this.matches('.ux-hero [data-digit]'))records.push({index:this.dataset.digit,before:this.dataset.previous,after:this.textContent});return original.call(this,frames,options);};
+ });
+ await post(request,{type:'clinical:personal',command:'start',duration:20000});await post(request,{type:'clinical:view',mode:'timer'});
+ await expect.poll(()=>page.evaluate(()=>Object.getOwnPropertyDescriptor(window,'__DIGIT_ROLL_RECORDS__')?.value)).toEqual(expect.arrayContaining([{index:'3',before:'2',after:'1'},{index:'4',before:'0',after:'9'}]));
+ await expect(island(page).locator('.ux-hero [data-digit]')).toHaveCount(5);
+});
 test('S2 neck and independent press are restored even when the OS asks for reduced motion',async({page,request})=>{
  await full(page);await post(request,{type:'clinical:scenario',scenario:'S02',stage:0});await settle(page,'compact');
  const capture=page.evaluate(()=>new Promise<boolean>(resolve=>{const start=performance.now();let seen=false;function tick(){seen ||= document.querySelector('[data-testid=clinical-island]')?.getAttribute('data-neck')==='true';if(performance.now()-start<900)requestAnimationFrame(tick);else resolve(seen);}requestAnimationFrame(tick);}));

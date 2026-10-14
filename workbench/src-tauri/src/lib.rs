@@ -62,6 +62,7 @@ fn launch_island(
     if window.label() != "workbench" {
         return Err("Explicit workbench action required".into());
     }
+    state.require_listener()?;
     let mut command = std::process::Command::new(island_executable()?);
     if state.legacy_mode {
         command.arg("--legacy");

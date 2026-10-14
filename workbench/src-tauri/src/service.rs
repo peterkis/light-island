@@ -98,6 +98,14 @@ impl Service {
             .unwrap_or((false, "服务状态不可用".into()));
         json!({"listening":listening,"error":error,"port":self.port,"sourceSessionId":self.session,"clients":self.clients(),"sourceSettings":self.controls(),"messages":self.logs.lock().map(|g|g.iter().cloned().collect::<Vec<_>>()).unwrap_or_default()})
     }
+    pub fn require_listener(&self) -> Result<(), String> {
+        let listening = self.status.lock().map(|status| status.0).unwrap_or(false);
+        if listening && !*self.stop.borrow() {
+            Ok(())
+        } else {
+            Err(format!("模拟消息源未监听（端口 {}），无法启动灵动岛。", self.port))
+        }
+    }
     fn controls(&self) -> Value {
         json!({"preview":self.preview.lock().ok().map(|e|e.settings.clone()),"desktop":self.desktop.lock().ok().map(|e|e.settings.clone())})
     }
@@ -399,6 +407,9 @@ impl Service {
         Ok(())
     }
     pub fn shutdown(&self) {
+        if let Ok(mut status) = self.status.lock() {
+            *status = (false, String::new());
+        }
         self.stop.send_replace(true);
         let peers = self
             .peers
@@ -444,15 +455,13 @@ impl Service {
                 let _ = stop.changed().await;
             }
         };
-        if let Err(error) = axum::serve(listener, router)
+        let outcome = axum::serve(listener, router)
             .with_graceful_shutdown(stopped)
-            .await
-        {
-            if let Ok(mut status) = self.status.lock() {
-                *status = (false, error.to_string());
-            }
-            self.emit("workbench://status", self.status());
+            .await;
+        if let Ok(mut status) = self.status.lock() {
+            *status = (false, outcome.err().map(|error| error.to_string()).unwrap_or_default());
         }
+        self.emit("workbench://status", self.status());
     }
 }
 fn allowed_origin(headers: &HeaderMap) -> bool {
@@ -737,6 +746,16 @@ async fn legacy_session(state: Arc<Service>, mut socket: WebSocket) {
 #[cfg(test)]
 mod tests {
     use super::*;
+    #[test]
+    fn island_launch_requires_a_live_owned_listener() {
+        let state = Service::new(17323, false, false).unwrap();
+        assert!(state.require_listener().is_err());
+        *state.status.lock().unwrap() = (true, String::new());
+        assert!(state.require_listener().is_ok());
+        state.shutdown();
+        assert!(state.require_listener().is_err());
+        assert_eq!(state.status()["listening"], false);
+    }
     #[test]
     fn experiments_cannot_write_source_authorization() {
         assert!(
