@@ -1,0 +1,1 @@
+{"workbench-local":{"identifier":"workbench-local","description":"Only the synthetic workbench. No island geometry, capture or remote shell permissions.","local":true,"windows":["workbench"],"permissions":["core:default"]}}

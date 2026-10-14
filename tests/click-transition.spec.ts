@@ -2,7 +2,7 @@ import { test, expect, type Page } from '@playwright/test';
 import { writeFile } from 'node:fs/promises';
 import {evidencePath} from './evidence-path';
 const dir=evidencePath('click-fix-20260930',true);
-async function post(request:any,data:object){expect((await request.post('http://127.0.0.1:17321/api/push',{data})).ok()).toBeTruthy();}
+async function post(request:any,data:object){expect((await request.post(((process.env.ISLAND_TEST_LEGACY_URL??'http://127.0.0.1:17321')+'/api/push'),{data})).ok()).toBeTruthy();}
 async function settled(page:Page,mode:string){const island=page.getByTestId('island');await expect(island).toHaveAttribute('data-mode',mode);await expect(island).toHaveAttribute('data-motion-phase','settled');return island;}
 async function mark(page:Page){return page.evaluate(()=>(window as any).__HOVER_TRACE__().at(-1)?.seq??0);}
 async function trace(page:Page,since:number){return page.evaluate(s=>(window as any).__HOVER_TRACE__().filter((r:any)=>r.seq>s),since);}
@@ -47,6 +47,6 @@ test('explicit close suppresses unread peek until a genuine new entry',async({pa
  await post(request,{type:'demo',scenario:'critical'});const island=await settled(page,'expanded');
  await page.locator('.rail-close').click();await settled(page,'compact');await page.waitForTimeout(900);
  await expect(island).toHaveAttribute('data-mode','compact');
- expect((await(await request.get('http://127.0.0.1:17321/api/state')).json()).receipts).toHaveLength(0);
+ expect((await(await request.get(((process.env.ISLAND_TEST_LEGACY_URL??'http://127.0.0.1:17321')+'/api/state'))).json()).receipts).toHaveLength(0);
  await page.mouse.move(1,1);await page.waitForTimeout(160);await island.hover();await settled(page,'peek');
 });

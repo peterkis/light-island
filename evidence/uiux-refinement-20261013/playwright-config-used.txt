@@ -1,0 +1,5 @@
+// Reuse only the receipt-verified synthetic source left running by the prior QA.
+// Chrome still gets its own isolated Playwright profile; web/demo servers are owned.
+import {defineConfig} from '@playwright/test';
+import base from '../playwright.config';
+export default defineConfig({...base,testDir:'../tests',webServer:(Array.isArray(base.webServer)?base.webServer:[]).map(server=>server.url==='http://127.0.0.1:17322/api/clinical-state'?{...server,reuseExistingServer:true}:server)});

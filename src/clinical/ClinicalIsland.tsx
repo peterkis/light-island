@@ -8,11 +8,14 @@ import {canView,identityKey,versionKey} from './model';
 import type {ClinicalIslandController} from './controller';
 import type {Surface} from './geometry';
 import type {ScenarioId} from './model';
-import {openStudio,nativeIsland} from '../lib/bridge';
+import {nativeIsland} from '../lib/bridge';
 import {sortActivities} from './attention';
 import {CompactLabel} from './CompactLabel';
 import {useButtonFeedback} from './useButtonFeedback';
 import {LabScene} from './lab-reader/LabScene';
+import {useMotionPreference,resolveMotion} from './motionPreference';
+import {MotionPreferenceSelect} from './MotionPreferenceSelect';
+import {AnimatedDigits,CountBadge} from './AnimatedDigits';
 export const scenarioIcons:Record<'S01'|ScenarioId,LucideIcon>={S01:Timer,S02:HeartPulse,S03:FlaskConical,S04:FileHeart,S05:Wallet,S06:ClipboardList,S07:PhoneForwarded,S08:FileWarning,S09:TestTubeDiagonal,S10:Droplets,S11:Pill,S12:ScanLine,S13:Truck,S14:MessagesSquare,S15:Stethoscope};
 export const timerText=(ms:number)=>{const s=Math.max(0,Math.ceil(ms/1000)),m=Math.floor(s/60);return `${String(m).padStart(2,'0')}:${String(s%60).padStart(2,'0')}`;};
 const stamp=(n:number|null)=>n===null?'来源时间未提供':new Date(n).toLocaleTimeString('zh-CN',{hour:'2-digit',minute:'2-digit',hour12:false});
@@ -20,14 +23,15 @@ const excerpt=(s:string,n:number)=>{const a=Array.from(s.replace(/[。！!；;]+
 function Ring({value=0,size=44}:{value?:number;size?:number}){return <svg width={size} height={size} viewBox="0 0 44 44" className="ux-ring" aria-hidden="true"><circle cx="22" cy="22" r="18"/><circle cx="22" cy="22" r="18" strokeDasharray={2*Math.PI*18} strokeDashoffset={2*Math.PI*18*(1-Math.min(1,Math.max(0,value)))}/></svg>;}
 export function ClinicalIsland({c}:{c:ClinicalIslandController}){
  const [panel,setPanel]=useState<'none'|'details'|'activities'|'settings'>('none');
- const [systemReduced,setSystemReduced]=useState(()=>matchMedia('(prefers-reduced-motion: reduce)').matches);
+ const motion=useMotionPreference();
  const mainRef=useRef<HTMLDivElement>(null),keyboardOpen=useRef(false),trigger=useRef<HTMLButtonElement>(null),close=useRef<HTMLButtonElement>(null);
  const quietTimer=useRef(0),sourceButton=useRef<HTMLButtonElement>(null),primary=c.selectedActivity,timerSelected=c.selected==='timer'||!primary;
  const platform=usePlatform(mainRef,primary?versionKey(primary):'idle',c.settings.privacy||c.settings.role==='none'||c.settings.locked||c.settings.fullscreen||(c.settings.hideIdle&&c.view==='idle'&&!c.undo));
  const platformPrivate=platform.status.notificationState===1||platform.status.notificationState===4;
- const blocked=c.settings.privacy||c.settings.role==='none'||platformPrivate,visible=canView(primary,c.settings);
- const hidden=c.settings.locked||c.settings.fullscreen||platformPrivate||(platform.suspended&&primary?.priority!=='important')||(c.settings.hideIdle&&c.view==='idle'&&!c.undo);
- const reduced=c.settings.reduced||systemReduced||!platform.status.animationsEnabled,unavailable=blocked||(!timerSelected&&!visible);
+ const blocked=(!timerSelected&&(c.settings.privacy||c.settings.role==='none'))||platformPrivate,visible=canView(primary,c.settings)&&c.connection==='online';
+ const hidden=(!timerSelected&&(c.settings.locked||c.settings.fullscreen))||platformPrivate||(platform.suspended&&primary?.priority!=='important')||(c.settings.hideIdle&&c.view==='idle'&&!c.undo);
+ const effectiveMotion=resolveMotion(motion.preference,c.settings.reduced,motion.mediaReduced,platform.status.animationsEnabled);
+ const reduced=effectiveMotion.reduced,unavailable=blocked||(!timerSelected&&!visible);
  const labActive=c.lab.stage!=='idle';
  useEffect(()=>c.lab.setReduced(reduced),[reduced,c.lab.setReduced]);
  const requestSurface:Surface=labActive?(c.lab.stage==='alert'?'alert':c.lab.stage==='sum'?'lab-sum':c.lab.stage==='done'?'lab-done':'lab-read'):c.view!=='expanded'?c.view:panel!=='none'?'stack':c.reason==='preview'?'alert':'rich';
@@ -51,7 +55,7 @@ export function ClinicalIsland({c}:{c:ClinicalIslandController}){
  const failFeedback=useButtonFeedback(host,reduced,key);
  useEffect(()=>{if(c.route==='requesting')failFeedback(null,'');if(['failed','mismatch','unauthorized'].includes(c.route))return failFeedback(sourceButton.current,`${key}:${c.route}`);},[c.route,key,reduced]);
  useEffect(()=>{mainRef.current=host.current;},[host]);
- useEffect(()=>{const media=matchMedia('(prefers-reduced-motion: reduce)');const f=()=>setSystemReduced(media.matches);media.addEventListener('change',f);return()=>{media.removeEventListener('change',f);clearTimeout(quietTimer.current);};},[]);
+ useEffect(()=>()=>clearTimeout(quietTimer.current),[]);
  useEffect(()=>{setPanel('none');},[c.settings.privacy,c.settings.role,c.selected]);
  useEffect(()=>{if(view==='expanded'&&keyboardOpen.current)close.current?.focus({preventScroll:true});if(view!=='expanded'&&keyboardOpen.current){trigger.current?.focus({preventScroll:true});keyboardOpen.current=false;}},[view,surface]);
  useEffect(()=>{if(['failed','mismatch','unauthorized'].includes(c.route))setPanel('details');},[c.route]);
@@ -64,8 +68,8 @@ export function ClinicalIsland({c}:{c:ClinicalIslandController}){
  const disabled=c.stale||c.route==='requesting';
  const sourceAction=<button ref={sourceButton} className="ci-primary ux-primary" disabled={disabled} onClick={()=>void c.openSource()}>{c.route==='requesting'?'正在校验':primary?.actionLabel}<ArrowUpRight size={16}/></button>;
  const quiet=(duration:number)=>{clearTimeout(quietTimer.current);c.configurePreferences({quiet:true});quietTimer.current=window.setTimeout(()=>c.configurePreferences({quiet:false}),duration);collapse();};
- return <div className="ci-anchor" style={{'--ci-text-scale':c.settings.textScale,'--ux-accent':accent} as React.CSSProperties}>
-  <div ref={host} className={`ci-host ux-host ${reduced?'ci-reduced':''}`} data-testid="clinical-island" data-view={view} data-surface={surface} data-lab-state={c.lab.stage} data-native-fallback="false" data-native={String(nativeIsland)} data-enlarged={String(c.settings.textScale>1)} data-hidden={String(hidden)} data-rim={String(c.settings.backgroundDark||platform.dark)} data-peek={String(input.peek)} style={hidden?{visibility:'hidden'}:undefined}
+ return <div className="ci-anchor" data-motion={reduced?'reduced':'full'} data-motion-preference={motion.preference} data-motion-reason={effectiveMotion.reason} style={{'--ci-text-scale':c.settings.textScale,'--ux-accent':accent} as React.CSSProperties}>
+  <div ref={host} className={`ci-host ux-host ${reduced?'ci-reduced':''}`} data-testid="clinical-island" data-connection={c.connection} data-timer-deadline={c.timer.deadline??0} data-timer-status={c.timer.status} data-view={view} data-surface={surface} data-lab-state={c.lab.stage} data-native-fallback="false" data-native={String(nativeIsland)} data-enlarged={String(c.settings.textScale>1)} data-hidden={String(hidden)} data-rim={String(c.settings.backgroundDark||platform.dark)} data-peek={String(input.peek)} style={hidden?{visibility:'hidden'}:undefined}
    onMouseEnter={input.enter} onMouseLeave={input.leave} onPointerDown={input.down} onPointerMove={input.move} onPointerUp={input.up} onWheel={input.wheel}
    onClickCapture={e=>{if(input.consumeLong()){e.preventDefault();e.stopPropagation();}}}
    onClick={e=>{if((e.target as Element).matches('[data-shell="fill"]')&&!input.consumeLong())expand();}}
@@ -76,11 +80,11 @@ export function ClinicalIsland({c}:{c:ClinicalIslandController}){
    <svg ref={svg} className="ci-shell" aria-hidden="true" width="144" height="32"><path className="ci-fill" data-shell="fill"/><path className="ci-rim" data-shell="rim"/><path className="ux-neck" data-neck="bridge"/></svg>
    <div className="ci-clip"><div ref={inner} id="clinical-content" className={`ci-content ci-${view} ux-${surface} ${labActive||surface.startsWith('lab-')?'lab-content':''}`} style={{width,height}}>
     {failed?null:(labActive||surface.startsWith('lab-'))&&!unavailable&&(!labActive||(c.lab.activity?.version===primary?.version&&!primary?.withdrawn&&!c.stale))?<LabScene lab={c.lab} stage={labStage} reduced={reduced} openSource={()=>void c.openSource()} sourceDisabled={disabled} {...(routeText?{routeText}:{})}/>:
-     surface==='idle'?c.undo&&!blocked?<button ref={trigger} className="ci-compact-button ux-idle-button ux-undo" aria-label="撤销忽略本次快览" onClick={()=>c.undoPreview()}>撤销</button>:<button ref={trigger} className="ci-compact-button ux-idle-button" aria-label="打开协作动态" aria-expanded="false" aria-controls="clinical-content" onClick={()=>{if(!input.consumeLong())expand();}}><span className="ux-idle-mark" aria-hidden="true"/></button>:
+     surface==='idle'?c.undo&&!blocked?<button ref={trigger} className="ci-compact-button ux-idle-button ux-undo" aria-label="撤销忽略本次快览" onClick={()=>c.undoPreview()}>撤销</button>:<button ref={trigger} className="ci-compact-button ux-idle-button" aria-label="打开协作动态" aria-expanded="false" aria-controls="clinical-content" onClick={()=>{if(!input.consumeLong())expand();}}/>:
      surface==='compact'?<button ref={trigger} className={`ci-compact-button ux-compact-button ${c.settings.compactText?'has-label':''}`} aria-label="展开协作详情" aria-description={compactLabel} aria-expanded="false" aria-controls="clinical-content" onClick={()=>{if(!input.consumeLong())expand();}}>
       <span className="ux-leading">{timerSelected?<Ring size={24} value={c.remaining/c.timer.duration}/>:<Icon size={16} strokeWidth={1.75}/>}</span>
       <span className="ux-center">{c.settings.compactText&&<CompactLabel text={compactLabel} reduced={reduced} active={c.hovered||c.focusWithin}/>}</span>
-      <span className="ux-trailing">{blocked?'•••':timerSelected?timerText(c.remaining):`${Math.max(1,c.queue.items.length)} 项`}</span>
+      <span className="ux-trailing">{blocked?'•••':timerSelected?<AnimatedDigits value={timerText(c.remaining)} reduced={reduced}/>:<CountBadge count={Math.max(1,c.queue.items.length)} reduced={reduced}/>}</span>
      </button>:
      surface==='alert'?<div className="ux-alert-body">
       <button className="ux-alert-main" aria-label={unavailable?'打开受保护的协作详情':`打开来源 ${primary?.title??'协作动态'}`} onClick={()=>{if(!input.consumeLong()){if(unavailable)expand();else void c.openSource();}}}>
@@ -91,21 +95,21 @@ export function ClinicalIsland({c}:{c:ClinicalIslandController}){
      surface==='rich'?<>
       <header className="ci-header ux-header" data-stagger><span className="ux-source-icon"><Icon size={20} strokeWidth={1.75}/></span><span className="ci-caption ux-source">{unavailable?'协作动态':timerSelected?'个人番茄钟':primary?.identity.source}</span><time className="ci-caption">{timerSelected?'个人工具':stamp(primary?.sourceAt??null)}</time><button ref={close} className="ci-icon-button ux-close" aria-label="收起协作详情" onClick={collapse}><X size={12}/></button></header>
       <div className="ux-rich-main" data-stagger>
-       {timerSelected&&!unavailable?<><Ring size={52} value={c.remaining/c.timer.duration}/><div className="ux-main-copy"><strong className={`ux-hero ${c.timer.status==='running'&&c.remaining===0?'ux-timer-finished':''}`} aria-live="off">{timerText(c.remaining)}</strong><span className="ci-caption">{c.timer.status==='paused'?'已暂停':c.timer.status==='idle'?'准备开始':c.remaining===0?'本轮计时结束':'专注进行中'}</span></div></>:
+       {timerSelected&&!unavailable?<><Ring size={52} value={c.remaining/c.timer.duration}/><div className="ux-main-copy"><strong className={`ux-hero ${c.timer.status==='running'&&c.remaining===0?'ux-timer-finished':''}`} aria-live="off"><AnimatedDigits value={timerText(c.remaining)} reduced={reduced}/></strong><span className="ci-caption">{c.timer.status==='paused'?'已暂停':c.timer.status==='idle'?'准备开始':c.remaining===0?'本轮计时结束':'专注进行中'}</span></div></>:
         <><span className="ux-identity ux-identity-52"><Icon size={28} strokeWidth={1.75}/></span><div className="ux-main-copy"><h2 className="ux-title-large">{unavailable?'详情已保护':excerpt(primary?.title??'协作动态',24)}</h2><p className="ux-body">{unavailable?privacyMessage:c.stale?'状态暂未更新':primary?.sourceState}</p></div></>}
       </div>
       <footer className="ci-footer ux-footer" data-stagger><button className="ci-icon-button ux-utility" aria-label="活动与个人工具" onClick={stack}><MoreHorizontal size={20}/></button>
        {!timerSelected&&!unavailable&&<button className="ci-secondary" onClick={()=>setPanel('details')}>详情</button>}
-       {unavailable?<button className="ci-secondary" onClick={()=>void openStudio()}>打开工作空间</button>:timerSelected?<div className="ux-timer-controls"><button className="ux-round" aria-label={c.timer.status==='running'&&c.remaining>0?'暂停计时':c.timer.status==='paused'?'继续专注':'开始 25 分钟'} onClick={()=>c.personal(c.timer.status==='paused'?'resume':c.timer.status==='running'&&c.remaining>0?'pause':'start')}>{c.timer.status==='running'&&c.remaining>0?<Pause size={20}/>:<Play size={20}/>}</button><button className="ux-round" aria-label="结束本次" disabled={c.timer.status==='idle'} onClick={()=>c.personal('end')}><Square size={18}/></button></div>:sourceAction}
+       {unavailable?<button className="ci-secondary" onClick={()=>setPanel('settings')}>查看连接状态</button>:timerSelected?<div className="ux-timer-controls"><button className="ux-round" aria-label={c.timer.status==='running'&&c.remaining>0?'暂停计时':c.timer.status==='paused'?'继续专注':'开始 25 分钟'} onClick={()=>c.personal(c.timer.status==='paused'?'resume':c.timer.status==='running'&&c.remaining>0?'pause':'start')}>{c.timer.status==='running'&&c.remaining>0?<Pause size={20}/>:<Play size={20}/>}</button><button className="ux-round" aria-label="结束本次" disabled={c.timer.status==='idle'} onClick={()=>c.personal('end')}><Square size={18}/></button></div>:sourceAction}
       </footer>
      </>:
      <>
       <header className="ci-header ux-stack-header"><button className="ci-icon-button" aria-label="返回快览" onClick={()=>setPanel('none')}><ArrowLeft size={16}/></button><h2 className="ux-title">{panel==='settings'?'灵动岛设置':panel==='activities'?'活动托盘':unavailable?'详情已保护':'来源详情'}</h2><button ref={close} className="ci-icon-button ux-close" aria-label="收起协作详情" onClick={collapse}><X size={12}/></button></header>
       <div className="ci-scroll" tabIndex={0} role="region" aria-label={panel==='settings'?'设置滚动区域':panel==='activities'?'活动滚动区域':'来源详情滚动区域'}><div className="ci-scroll-content">
-       {panel==='settings'?<div className="ux-settings">
+       {panel==='settings'?<div className="ux-settings"><div role="status">消息源：{c.connection==='online'?'已连接':c.connection==='incompatible'?'协议不兼容':c.connection==='connecting'?'等待连接':'离线'}</div>
         <button onClick={()=>c.configurePreferences({dock:c.settings.dock==='notch'?'floating':'notch'})}><span>停靠模式</span><span>{c.settings.dock==='notch'?'A · 贴顶':'B · 悬浮'}</span></button>
         <button onClick={()=>c.configurePreferences({compactText:!c.settings.compactText})}><span>紧凑中央区域</span><span>{c.settings.compactText?'单行文字':'留白 124'}</span></button>
-        <button onClick={()=>c.configurePreferences({reduced:!c.settings.reduced})}><span>减弱动效</span><span>{c.settings.reduced?'开启':'关闭'}</span></button>
+        <MotionPreferenceSelect applicationReduced={c.settings.reduced} windowsAnimationsEnabled={platform.status.animationsEnabled} label="灵动岛动效模式" onEnable={()=>c.configurePreferences({reduced:false})}/><button onClick={()=>c.configurePreferences({reduced:!c.settings.reduced})}><span>减弱动效</span><span>{c.settings.reduced?'开启':'关闭'}</span></button>
         <button onClick={()=>c.configurePreferences({backgroundDark:!c.settings.backgroundDark})}><span>深色背景描边</span><span>{c.settings.backgroundDark?'开启':'关闭'}</span></button>
         <button onClick={()=>c.configurePreferences({hideIdle:!c.settings.hideIdle})}><span>完全隐藏静默岛</span><span>{c.settings.hideIdle?'开启':'关闭'}</span></button>
         {primary&&!unavailable&&<button aria-pressed={c.mutedSources.includes(primary.identity.source)} onClick={()=>c.muteSource(primary.identity.source)}><span>{c.mutedSources.includes(primary.identity.source)?'取消静音此来源':'静音此来源'}</span><span>{primary.identity.source}</span></button>}

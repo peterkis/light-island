@@ -1,0 +1,37 @@
+{
+  "windows": [
+    {
+      "hwnd": 1711250,
+      "pid": 36564,
+      "title": "Samewave Island",
+      "class": "Tauri Window",
+      "path": "D:\\Projects\\island-protype\\src-tauri\\target\\release\\samewave-island.exe",
+      "visible": true,
+      "rect": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "style": "0x14080000",
+      "exStyle": "0x8000098"
+    }
+  ],
+  "pass": true,
+  "idle": {
+    "box": {
+      "width": 124,
+      "height": 32
+    },
+    "rim": "rgba(0, 0, 0, 0)",
+    "fill": "rgb(0, 0, 0)"
+  },
+  "hover": {
+    "width": 124,
+    "height": 32,
+    "background": "rgba(0, 0, 0, 0)",
+    "cursor": "pointer",
+    "markOpacity": "0"
+  },
+  "violations": []
+}

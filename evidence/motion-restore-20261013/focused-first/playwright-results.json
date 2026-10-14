@@ -1,0 +1,364 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "D:\\Projects\\island-protype\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/motion-restoration.spec.ts"
+    ],
+    "configFile": "D:\\Projects\\island-protype\\playwright.config.ts",
+    "rootDir": "D:/Projects/island-protype/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/Projects/island-protype/evidence/motion-restore-20261013/focused-first/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "D:/Projects/island-protype/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "/.*\\.spec\\.ts/"
+        ],
+        "timeout": 35000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "D:\\Projects\\island-protype\\evidence\\motion-restore-20261013\\focused-first\\playwright-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "motion-restoration.spec.ts",
+      "file": "motion-restoration.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "system reduce explains missing motion; explicit full restores shell, blur, scale and stagger",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 16183,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T11:48:09.902Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "069590174ca8ef2b4d1c-aabcdb4b379af29fe97b",
+          "file": "motion-restoration.spec.ts",
+          "line": 12,
+          "column": 1
+        },
+        {
+          "title": "full is a local user choice; reduced always wins and returns without spatial animation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4261,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T11:48:26.533Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "069590174ca8ef2b4d1c-761f81880af501a5cf43",
+          "file": "motion-restoration.spec.ts",
+          "line": 23,
+          "column": 1
+        },
+        {
+          "title": "rapid reversals and privacy keep synchronized viewport and never expose old patient details",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5342,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T11:48:30.829Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "069590174ca8ef2b4d1c-e35bf6bade5280108994",
+          "file": "motion-restoration.spec.ts",
+          "line": 31,
+          "column": 1
+        },
+        {
+          "title": "only changed timer digit slots roll, with stable tabular widths",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5268,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T11:48:36.187Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "069590174ca8ef2b4d1c-85b0e60f600e2abd8883",
+          "file": "motion-restoration.spec.ts",
+          "line": 37,
+          "column": 1
+        },
+        {
+          "title": "S2 neck and independent press are restored even when the OS asks for reduced motion",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8160,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T11:48:41.473Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "069590174ca8ef2b4d1c-e16d7fc001e0d2d87b16",
+          "file": "motion-restoration.spec.ts",
+          "line": 42,
+          "column": 1
+        },
+        {
+          "title": "full-motion CSS no longer cancels report burn; reduced path still clears immediately",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 6990,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('clinical-island')\nExpected: \u001b[32m\"alert\"\u001b[39m\nReceived: \u001b[31m\"idle\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" getByTestId('clinical-island') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('clinical-island')\u001b[22m\n\u001b[2m    - locator resolved to <div data-view=\"idle\" data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-surface=\"idle\" data-native=\"false\" data-hidden=\"false\" data-lab-state=\"idle\" data-enlarged=\"false\" data-target-width=\"268\" data-target-height=\"36\" class=\"ci-host ux-host \" data-velocity-x=\"0.0000\" data-velocity-y=\"0.0000\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-motion-phase=\"expanding\" data-target-surface=\"compact\" data-current-width=\"124.0000\" data-current-height=\"32.0000\" data…>…</div>\u001b[22m\n\u001b[2m    - unexpected value \"idle\"\u001b[22m\n\u001b[2m    - locator resolved to <div data-view=\"idle\" data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-surface=\"idle\" data-native=\"false\" data-hidden=\"false\" data-lab-state=\"idle\" data-enlarged=\"false\" data-target-width=\"268\" data-target-height=\"36\" class=\"ci-host ux-host \" data-velocity-y=\"19.2797\" data-velocity-x=\"994.5304\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-motion-phase=\"expanding\" data-target-surface=\"compact\" data-current-width=\"145.4398\" data-current-height=\"32.4058\" d…>…</div>\u001b[22m\n\u001b[2m    - unexpected value \"idle\"\u001b[22m\n\u001b[2m    - locator resolved to <div data-view=\"idle\" data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-surface=\"idle\" data-native=\"false\" data-hidden=\"false\" data-lab-state=\"idle\" data-enlarged=\"false\" data-target-width=\"268\" data-target-height=\"36\" class=\"ci-host ux-host \" data-velocity-y=\"24.6004\" data-velocity-x=\"1080.5338\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-motion-phase=\"expanding\" data-target-surface=\"compact\" data-current-width=\"201.9254\" data-current-height=\"33.5939\" …>…</div>\u001b[22m\n\u001b[2m    - unexpected value \"idle\"\u001b[22m\n\u001b[2m    - locator resolved to <div data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-view=\"compact\" data-native=\"false\" data-hidden=\"false\" data-lab-state=\"idle\" data-enlarged=\"false\" data-surface=\"compact\" data-target-width=\"268\" data-target-height=\"36\" class=\"ci-host ux-host \" data-velocity-y=\"9.0525\" data-velocity-x=\"164.8966\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-motion-phase=\"expanding\" data-target-surface=\"compact\" data-current-width=\"268.8182\" data-current-height=\"35.57…>…</div>\u001b[22m\n\u001b[2m    - unexpected value \"idle\"\u001b[22m\n\u001b[2m    - locator resolved to <div data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-view=\"compact\" data-native=\"false\" data-hidden=\"false\" data-lab-state=\"idle\" data-enlarged=\"false\" data-surface=\"compact\" data-target-width=\"268\" data-target-height=\"36\" class=\"ci-host ux-host \" data-velocity-y=\"1.4218\" data-velocity-x=\"-33.0806\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-motion-phase=\"expanding\" data-target-surface=\"compact\" data-current-width=\"271.3185\" data-current-height=\"36.01…>…</div>\u001b[22m\n\u001b[2m    9 × unexpected value \"idle\"\u001b[22m\n\u001b[2m      - locator resolved to <div data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-view=\"compact\" data-native=\"false\" data-hidden=\"false\" data-lab-state=\"idle\" data-enlarged=\"false\" data-surface=\"compact\" data-target-width=\"268\" data-target-height=\"36\" class=\"ci-host ux-host \" data-velocity-x=\"0.0000\" data-velocity-y=\"0.0000\" data-motion-phase=\"settled\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-target-surface=\"compact\" data-current-width=\"268.0000\" data-current-height=\"36.0000\" …>…</div>\u001b[22m\n\u001b[2m    - unexpected value \"idle\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('clinical-island')\nExpected: \u001b[32m\"alert\"\u001b[39m\nReceived: \u001b[31m\"idle\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" getByTestId('clinical-island') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('clinical-island')\u001b[22m\n\u001b[2m    - locator resolved to <div data-view=\"idle\" data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-surface=\"idle\" data-native=\"false\" data-hidden=\"false\" data-lab-state=\"idle\" data-enlarged=\"false\" data-target-width=\"268\" data-target-height=\"36\" class=\"ci-host ux-host \" data-velocity-x=\"0.0000\" data-velocity-y=\"0.0000\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-motion-phase=\"expanding\" data-target-surface=\"compact\" data-current-width=\"124.0000\" data-current-height=\"32.0000\" data…>…</div>\u001b[22m\n\u001b[2m    - unexpected value \"idle\"\u001b[22m\n\u001b[2m    - locator resolved to <div data-view=\"idle\" data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-surface=\"idle\" data-native=\"false\" data-hidden=\"false\" data-lab-state=\"idle\" data-enlarged=\"false\" data-target-width=\"268\" data-target-height=\"36\" class=\"ci-host ux-host \" data-velocity-y=\"19.2797\" data-velocity-x=\"994.5304\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-motion-phase=\"expanding\" data-target-surface=\"compact\" data-current-width=\"145.4398\" data-current-height=\"32.4058\" d…>…</div>\u001b[22m\n\u001b[2m    - unexpected value \"idle\"\u001b[22m\n\u001b[2m    - locator resolved to <div data-view=\"idle\" data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-surface=\"idle\" data-native=\"false\" data-hidden=\"false\" data-lab-state=\"idle\" data-enlarged=\"false\" data-target-width=\"268\" data-target-height=\"36\" class=\"ci-host ux-host \" data-velocity-y=\"24.6004\" data-velocity-x=\"1080.5338\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-motion-phase=\"expanding\" data-target-surface=\"compact\" data-current-width=\"201.9254\" data-current-height=\"33.5939\" …>…</div>\u001b[22m\n\u001b[2m    - unexpected value \"idle\"\u001b[22m\n\u001b[2m    - locator resolved to <div data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-view=\"compact\" data-native=\"false\" data-hidden=\"false\" data-lab-state=\"idle\" data-enlarged=\"false\" data-surface=\"compact\" data-target-width=\"268\" data-target-height=\"36\" class=\"ci-host ux-host \" data-velocity-y=\"9.0525\" data-velocity-x=\"164.8966\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-motion-phase=\"expanding\" data-target-surface=\"compact\" data-current-width=\"268.8182\" data-current-height=\"35.57…>…</div>\u001b[22m\n\u001b[2m    - unexpected value \"idle\"\u001b[22m\n\u001b[2m    - locator resolved to <div data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-view=\"compact\" data-native=\"false\" data-hidden=\"false\" data-lab-state=\"idle\" data-enlarged=\"false\" data-surface=\"compact\" data-target-width=\"268\" data-target-height=\"36\" class=\"ci-host ux-host \" data-velocity-y=\"1.4218\" data-velocity-x=\"-33.0806\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-motion-phase=\"expanding\" data-target-surface=\"compact\" data-current-width=\"271.3185\" data-current-height=\"36.01…>…</div>\u001b[22m\n\u001b[2m    9 × unexpected value \"idle\"\u001b[22m\n\u001b[2m      - locator resolved to <div data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-view=\"compact\" data-native=\"false\" data-hidden=\"false\" data-lab-state=\"idle\" data-enlarged=\"false\" data-surface=\"compact\" data-target-width=\"268\" data-target-height=\"36\" class=\"ci-host ux-host \" data-velocity-x=\"0.0000\" data-velocity-y=\"0.0000\" data-motion-phase=\"settled\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-target-surface=\"compact\" data-current-width=\"268.0000\" data-current-height=\"36.0000\" …>…</div>\u001b[22m\n\u001b[2m    - unexpected value \"idle\"\u001b[22m\n\n    at D:\\Projects\\island-protype\\tests\\motion-restoration.spec.ts:52:138",
+                    "location": {
+                      "file": "D:\\Projects\\island-protype\\tests\\motion-restoration.spec.ts",
+                      "column": 138,
+                      "line": 52
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 50 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 51 |\u001b[39m test(\u001b[32m'full-motion CSS no longer cancels report burn; reduced path still clears immediately'\u001b[39m\u001b[33m,\u001b[39m\u001b[36masync\u001b[39m({page\u001b[33m,\u001b[39mrequest})\u001b[33m=>\u001b[39m{\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 52 |\u001b[39m  \u001b[36mawait\u001b[39m full(page)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m post(request\u001b[33m,\u001b[39m{type\u001b[33m:\u001b[39m\u001b[32m'clinical:scenario'\u001b[39m\u001b[33m,\u001b[39mscenario\u001b[33m:\u001b[39m\u001b[32m'S04'\u001b[39m\u001b[33m,\u001b[39mstage\u001b[33m:\u001b[39m\u001b[35m0\u001b[39m\u001b[33m,\u001b[39mlabVariant\u001b[33m:\u001b[39m\u001b[32m'baseline'\u001b[39m})\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(island(page))\u001b[33m.\u001b[39mtoHaveAttribute(\u001b[32m'data-lab-state'\u001b[39m\u001b[33m,\u001b[39m\u001b[32m'alert'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m settle(page)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                                                                          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 53 |\u001b[39m  \u001b[36mawait\u001b[39m island(page)\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m{name\u001b[33m:\u001b[39m\u001b[32m'查看检验报告摘要'\u001b[39m})\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(island(page))\u001b[33m.\u001b[39mtoHaveAttribute(\u001b[32m'data-lab-state'\u001b[39m\u001b[33m,\u001b[39m\u001b[32m'sum'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m settle(page)\u001b[33m;\u001b[39m\n \u001b[90m 54 |\u001b[39m  \u001b[36mawait\u001b[39m island(page)\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m{name\u001b[33m:\u001b[39m\u001b[32m'阅读报告'\u001b[39m\u001b[33m,\u001b[39mexact\u001b[33m:\u001b[39m\u001b[36mtrue\u001b[39m})\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(island(page))\u001b[33m.\u001b[39mtoHaveAttribute(\u001b[32m'data-lab-state'\u001b[39m\u001b[33m,\u001b[39m\u001b[32m'read'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m settle(page)\u001b[33m;\u001b[39m\n \u001b[90m 55 |\u001b[39m  \u001b[36mawait\u001b[39m island(page)\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m{name\u001b[33m:\u001b[39m\u001b[32m'阅后即焚'\u001b[39m\u001b[33m,\u001b[39mexact\u001b[33m:\u001b[39m\u001b[36mtrue\u001b[39m})\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(island(page))\u001b[33m.\u001b[39mtoHaveAttribute(\u001b[32m'data-lab-state'\u001b[39m\u001b[33m,\u001b[39m\u001b[32m'burn'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\Projects\\island-protype\\tests\\motion-restoration.spec.ts",
+                        "column": 138,
+                        "line": 52
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('clinical-island')\nExpected: \u001b[32m\"alert\"\u001b[39m\nReceived: \u001b[31m\"idle\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" getByTestId('clinical-island') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('clinical-island')\u001b[22m\n\u001b[2m    - locator resolved to <div data-view=\"idle\" data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-surface=\"idle\" data-native=\"false\" data-hidden=\"false\" data-lab-state=\"idle\" data-enlarged=\"false\" data-target-width=\"268\" data-target-height=\"36\" class=\"ci-host ux-host \" data-velocity-x=\"0.0000\" data-velocity-y=\"0.0000\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-motion-phase=\"expanding\" data-target-surface=\"compact\" data-current-width=\"124.0000\" data-current-height=\"32.0000\" data…>…</div>\u001b[22m\n\u001b[2m    - unexpected value \"idle\"\u001b[22m\n\u001b[2m    - locator resolved to <div data-view=\"idle\" data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-surface=\"idle\" data-native=\"false\" data-hidden=\"false\" data-lab-state=\"idle\" data-enlarged=\"false\" data-target-width=\"268\" data-target-height=\"36\" class=\"ci-host ux-host \" data-velocity-y=\"19.2797\" data-velocity-x=\"994.5304\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-motion-phase=\"expanding\" data-target-surface=\"compact\" data-current-width=\"145.4398\" data-current-height=\"32.4058\" d…>…</div>\u001b[22m\n\u001b[2m    - unexpected value \"idle\"\u001b[22m\n\u001b[2m    - locator resolved to <div data-view=\"idle\" data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-surface=\"idle\" data-native=\"false\" data-hidden=\"false\" data-lab-state=\"idle\" data-enlarged=\"false\" data-target-width=\"268\" data-target-height=\"36\" class=\"ci-host ux-host \" data-velocity-y=\"24.6004\" data-velocity-x=\"1080.5338\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-motion-phase=\"expanding\" data-target-surface=\"compact\" data-current-width=\"201.9254\" data-current-height=\"33.5939\" …>…</div>\u001b[22m\n\u001b[2m    - unexpected value \"idle\"\u001b[22m\n\u001b[2m    - locator resolved to <div data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-view=\"compact\" data-native=\"false\" data-hidden=\"false\" data-lab-state=\"idle\" data-enlarged=\"false\" data-surface=\"compact\" data-target-width=\"268\" data-target-height=\"36\" class=\"ci-host ux-host \" data-velocity-y=\"9.0525\" data-velocity-x=\"164.8966\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-motion-phase=\"expanding\" data-target-surface=\"compact\" data-current-width=\"268.8182\" data-current-height=\"35.57…>…</div>\u001b[22m\n\u001b[2m    - unexpected value \"idle\"\u001b[22m\n\u001b[2m    - locator resolved to <div data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-view=\"compact\" data-native=\"false\" data-hidden=\"false\" data-lab-state=\"idle\" data-enlarged=\"false\" data-surface=\"compact\" data-target-width=\"268\" data-target-height=\"36\" class=\"ci-host ux-host \" data-velocity-y=\"1.4218\" data-velocity-x=\"-33.0806\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-motion-phase=\"expanding\" data-target-surface=\"compact\" data-current-width=\"271.3185\" data-current-height=\"36.01…>…</div>\u001b[22m\n\u001b[2m    9 × unexpected value \"idle\"\u001b[22m\n\u001b[2m      - locator resolved to <div data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-view=\"compact\" data-native=\"false\" data-hidden=\"false\" data-lab-state=\"idle\" data-enlarged=\"false\" data-surface=\"compact\" data-target-width=\"268\" data-target-height=\"36\" class=\"ci-host ux-host \" data-velocity-x=\"0.0000\" data-velocity-y=\"0.0000\" data-motion-phase=\"settled\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-target-surface=\"compact\" data-current-width=\"268.0000\" data-current-height=\"36.0000\" …>…</div>\u001b[22m\n\u001b[2m    - unexpected value \"idle\"\u001b[22m\n\n\n  50 | });\n  51 | test('full-motion CSS no longer cancels report burn; reduced path still clears immediately',async({page,request})=>{\n> 52 |  await full(page);await post(request,{type:'clinical:scenario',scenario:'S04',stage:0,labVariant:'baseline'});await expect(island(page)).toHaveAttribute('data-lab-state','alert');await settle(page);\n     |                                                                                                                                          ^\n  53 |  await island(page).getByRole('button',{name:'查看检验报告摘要'}).click();await expect(island(page)).toHaveAttribute('data-lab-state','sum');await settle(page);\n  54 |  await island(page).getByRole('button',{name:'阅读报告',exact:true}).click();await expect(island(page)).toHaveAttribute('data-lab-state','read');await settle(page);\n  55 |  await island(page).getByRole('button',{name:'阅后即焚',exact:true}).click();await expect(island(page)).toHaveAttribute('data-lab-state','burn');\n    at D:\\Projects\\island-protype\\tests\\motion-restoration.spec.ts:52:138"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T11:48:49.652Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "D:\\Projects\\island-protype\\evidence\\motion-restore-20261013\\focused-first\\test-results\\motion-restoration-full-mo-62ef3-th-still-clears-immediately\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\Projects\\island-protype\\evidence\\motion-restore-20261013\\focused-first\\test-results\\motion-restoration-full-mo-62ef3-th-still-clears-immediately\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\Projects\\island-protype\\evidence\\motion-restore-20261013\\focused-first\\test-results\\motion-restoration-full-mo-62ef3-th-still-clears-immediately\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\Projects\\island-protype\\tests\\motion-restoration.spec.ts",
+                    "column": 138,
+                    "line": 52
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "069590174ca8ef2b4d1c-b4e0cc523e1c38c74b31",
+          "file": "motion-restoration.spec.ts",
+          "line": 51,
+          "column": 1
+        },
+        {
+          "title": "full idle still stops animation and DOM work after a hover leaves",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5078,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T11:48:57.458Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "069590174ca8ef2b4d1c-b13d82266f8471238931",
+          "file": "motion-restoration.spec.ts",
+          "line": 59,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-13T11:48:03.961Z",
+    "duration": 60291.683,
+    "expected": 6,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

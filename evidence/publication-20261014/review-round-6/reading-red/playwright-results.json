@@ -1,0 +1,233 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "D:\\Projects\\island-protype\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/app-split.spec.ts"
+    ],
+    "configFile": "D:\\Projects\\island-protype\\playwright.config.ts",
+    "rootDir": "D:/Projects/island-protype/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/Projects/island-protype/evidence/publication-20261014/review-round-6/reading-red/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "D:/Projects/island-protype/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "/.*\\.spec\\.ts/"
+        ],
+        "timeout": 35000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "D:\\Projects\\island-protype\\evidence\\publication-20261014\\review-round-6\\reading-red\\playwright-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "app-split.spec.ts",
+      "file": "app-split.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "preview tools, source reset and desktop tools stay independently owned",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 10782,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T04:04:32.802Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ff9c6b2dd801a95bee93-76e1a956eccd8f2e007a",
+          "file": "app-split.spec.ts",
+          "line": 3,
+          "column": 1
+        },
+        {
+          "title": "workbench motion selection remains local while the desktop experiment target is selected",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1580,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T04:04:43.913Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ff9c6b2dd801a95bee93-58b987b0923033c39138",
+          "file": "app-split.spec.ts",
+          "line": 27,
+          "column": 1
+        },
+        {
+          "title": "desktop report replay preserves the active preview reading session",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 6494,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('clinical-island')\nExpected: \u001b[32m\"alert\"\u001b[39m\nReceived: \u001b[31m\"idle\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" getByTestId('clinical-island') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('clinical-island')\u001b[22m\n\u001b[2m    - locator resolved to <div data-view=\"idle\" data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-surface=\"idle\" data-native=\"false\" data-hidden=\"false\" data-lab-state=\"idle\" data-enlarged=\"false\" data-timer-deadline=\"0\" data-target-width=\"372\" data-target-height=\"88\" class=\"ci-host ux-host \" data-connection=\"online\" data-timer-status=\"idle\" data-velocity-x=\"0.0000\" data-velocity-y=\"0.0000\" data-target-surface=\"alert\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-motion-phase=\"exp…>…</div>\u001b[22m\n\u001b[2m    - unexpected value \"idle\"\u001b[22m\n\u001b[2m    - locator resolved to <div data-view=\"idle\" data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-surface=\"idle\" data-native=\"false\" data-hidden=\"false\" data-lab-state=\"idle\" data-enlarged=\"false\" data-timer-deadline=\"0\" data-target-width=\"372\" data-target-height=\"88\" class=\"ci-host ux-host \" data-connection=\"online\" data-timer-status=\"idle\" data-velocity-y=\"253.0847\" data-target-surface=\"alert\" data-velocity-x=\"1029.7254\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-motion-phase…>…</div>\u001b[22m\n\u001b[2m    - unexpected value \"idle\"\u001b[22m\n\u001b[2m    - locator resolved to <div data-view=\"idle\" data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-surface=\"idle\" data-native=\"false\" data-hidden=\"false\" data-lab-state=\"idle\" data-enlarged=\"false\" data-timer-deadline=\"0\" data-target-width=\"372\" data-target-height=\"88\" class=\"ci-host ux-host \" data-connection=\"online\" data-timer-status=\"idle\" data-velocity-y=\"346.4451\" data-target-surface=\"alert\" data-velocity-x=\"1460.5414\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-motion-phase…>…</div>\u001b[22m\n\u001b[2m    - unexpected value \"idle\"\u001b[22m\n\u001b[2m    - locator resolved to <div data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-native=\"false\" data-hidden=\"false\" data-view=\"expanded\" data-surface=\"alert\" data-lab-state=\"idle\" data-enlarged=\"false\" data-timer-deadline=\"0\" data-target-width=\"372\" data-target-height=\"88\" class=\"ci-host ux-host \" data-connection=\"online\" data-timer-status=\"idle\" data-velocity-x=\"632.6085\" data-velocity-y=\"132.7817\" data-target-surface=\"alert\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-motion-p…>…</div>\u001b[22m\n\u001b[2m    - unexpected value \"idle\"\u001b[22m\n\u001b[2m    - locator resolved to <div data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-native=\"false\" data-hidden=\"false\" data-view=\"expanded\" data-surface=\"alert\" data-lab-state=\"idle\" data-enlarged=\"false\" data-timer-deadline=\"0\" data-target-width=\"372\" data-target-height=\"88\" class=\"ci-host ux-host \" data-connection=\"online\" data-timer-status=\"idle\" data-velocity-y=\"21.7595\" data-velocity-x=\"132.6504\" data-target-surface=\"alert\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-motion-ph…>…</div>\u001b[22m\n\u001b[2m    - unexpected value \"idle\"\u001b[22m\n\u001b[2m    - locator resolved to <div data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-native=\"false\" data-hidden=\"false\" data-view=\"expanded\" data-surface=\"alert\" data-lab-state=\"idle\" data-enlarged=\"false\" data-timer-deadline=\"0\" data-target-width=\"372\" data-target-height=\"88\" class=\"ci-host ux-host \" data-connection=\"online\" data-timer-status=\"idle\" data-velocity-x=\"0.1820\" data-velocity-y=\"0.0000\" data-target-surface=\"alert\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-motion-phase…>…</div>\u001b[22m\n\u001b[2m    8 × unexpected value \"idle\"\u001b[22m\n\u001b[2m      - locator resolved to <div data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-native=\"false\" data-hidden=\"false\" data-view=\"expanded\" data-surface=\"alert\" data-lab-state=\"idle\" data-enlarged=\"false\" data-timer-deadline=\"0\" data-target-width=\"372\" data-target-height=\"88\" class=\"ci-host ux-host \" data-connection=\"online\" data-timer-status=\"idle\" data-velocity-x=\"0.0000\" data-velocity-y=\"0.0000\" data-motion-phase=\"settled\" data-target-surface=\"alert\" data-native-fallback=\"false\" data-testid=\"clinic…>…</div>\u001b[22m\n\u001b[2m    - unexpected value \"idle\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('clinical-island')\nExpected: \u001b[32m\"alert\"\u001b[39m\nReceived: \u001b[31m\"idle\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" getByTestId('clinical-island') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('clinical-island')\u001b[22m\n\u001b[2m    - locator resolved to <div data-view=\"idle\" data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-surface=\"idle\" data-native=\"false\" data-hidden=\"false\" data-lab-state=\"idle\" data-enlarged=\"false\" data-timer-deadline=\"0\" data-target-width=\"372\" data-target-height=\"88\" class=\"ci-host ux-host \" data-connection=\"online\" data-timer-status=\"idle\" data-velocity-x=\"0.0000\" data-velocity-y=\"0.0000\" data-target-surface=\"alert\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-motion-phase=\"exp…>…</div>\u001b[22m\n\u001b[2m    - unexpected value \"idle\"\u001b[22m\n\u001b[2m    - locator resolved to <div data-view=\"idle\" data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-surface=\"idle\" data-native=\"false\" data-hidden=\"false\" data-lab-state=\"idle\" data-enlarged=\"false\" data-timer-deadline=\"0\" data-target-width=\"372\" data-target-height=\"88\" class=\"ci-host ux-host \" data-connection=\"online\" data-timer-status=\"idle\" data-velocity-y=\"253.0847\" data-target-surface=\"alert\" data-velocity-x=\"1029.7254\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-motion-phase…>…</div>\u001b[22m\n\u001b[2m    - unexpected value \"idle\"\u001b[22m\n\u001b[2m    - locator resolved to <div data-view=\"idle\" data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-surface=\"idle\" data-native=\"false\" data-hidden=\"false\" data-lab-state=\"idle\" data-enlarged=\"false\" data-timer-deadline=\"0\" data-target-width=\"372\" data-target-height=\"88\" class=\"ci-host ux-host \" data-connection=\"online\" data-timer-status=\"idle\" data-velocity-y=\"346.4451\" data-target-surface=\"alert\" data-velocity-x=\"1460.5414\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-motion-phase…>…</div>\u001b[22m\n\u001b[2m    - unexpected value \"idle\"\u001b[22m\n\u001b[2m    - locator resolved to <div data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-native=\"false\" data-hidden=\"false\" data-view=\"expanded\" data-surface=\"alert\" data-lab-state=\"idle\" data-enlarged=\"false\" data-timer-deadline=\"0\" data-target-width=\"372\" data-target-height=\"88\" class=\"ci-host ux-host \" data-connection=\"online\" data-timer-status=\"idle\" data-velocity-x=\"632.6085\" data-velocity-y=\"132.7817\" data-target-surface=\"alert\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-motion-p…>…</div>\u001b[22m\n\u001b[2m    - unexpected value \"idle\"\u001b[22m\n\u001b[2m    - locator resolved to <div data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-native=\"false\" data-hidden=\"false\" data-view=\"expanded\" data-surface=\"alert\" data-lab-state=\"idle\" data-enlarged=\"false\" data-timer-deadline=\"0\" data-target-width=\"372\" data-target-height=\"88\" class=\"ci-host ux-host \" data-connection=\"online\" data-timer-status=\"idle\" data-velocity-y=\"21.7595\" data-velocity-x=\"132.6504\" data-target-surface=\"alert\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-motion-ph…>…</div>\u001b[22m\n\u001b[2m    - unexpected value \"idle\"\u001b[22m\n\u001b[2m    - locator resolved to <div data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-native=\"false\" data-hidden=\"false\" data-view=\"expanded\" data-surface=\"alert\" data-lab-state=\"idle\" data-enlarged=\"false\" data-timer-deadline=\"0\" data-target-width=\"372\" data-target-height=\"88\" class=\"ci-host ux-host \" data-connection=\"online\" data-timer-status=\"idle\" data-velocity-x=\"0.1820\" data-velocity-y=\"0.0000\" data-target-surface=\"alert\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-motion-phase…>…</div>\u001b[22m\n\u001b[2m    8 × unexpected value \"idle\"\u001b[22m\n\u001b[2m      - locator resolved to <div data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-native=\"false\" data-hidden=\"false\" data-view=\"expanded\" data-surface=\"alert\" data-lab-state=\"idle\" data-enlarged=\"false\" data-timer-deadline=\"0\" data-target-width=\"372\" data-target-height=\"88\" class=\"ci-host ux-host \" data-connection=\"online\" data-timer-status=\"idle\" data-velocity-x=\"0.0000\" data-velocity-y=\"0.0000\" data-motion-phase=\"settled\" data-target-surface=\"alert\" data-native-fallback=\"false\" data-testid=\"clinic…>…</div>\u001b[22m\n\u001b[2m    - unexpected value \"idle\"\u001b[22m\n\n    at D:\\Projects\\island-protype\\tests\\app-split.spec.ts:46:130",
+                    "location": {
+                      "file": "D:\\Projects\\island-protype\\tests\\app-split.spec.ts",
+                      "column": 130,
+                      "line": 46
+                    },
+                    "snippet": "  44 |  const desktop=await context.newPage();await desktop.goto('/clinical.html?view=island');\n  45 |  const target=page.getByRole('combobox',{name:'实验目标'});await expect(target.locator('option',{hasText:'桌面灵动岛'})).toHaveCount(1);await page.bringToFront();\n> 46 |  const preview=page.getByTestId('clinical-island');await page.getByTestId('clinical-scenario-S04').click();await expect(preview).toHaveAttribute('data-lab-state','alert');\n     |                                                                                                                                  ^\n  47 |  await preview.getByRole('button',{name:'查看检验报告摘要'}).click();await expect(preview).toHaveAttribute('data-lab-state','sum');await preview.getByRole('button',{name:'阅读报告',exact:true}).click();await expect(preview).toHaveAttribute('data-lab-state','read');\n  48 |  const session=await page.evaluate(()=>window.__CLINICAL_DEBUG__?.().lab.session);await target.selectOption({label:'桌面灵动岛'});\n  49 |  for(const name of ['重播：收到检验报告','全部正常夹具','定性与缺失值夹具']){"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\Projects\\island-protype\\tests\\app-split.spec.ts",
+                        "column": 130,
+                        "line": 46
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('clinical-island')\nExpected: \u001b[32m\"alert\"\u001b[39m\nReceived: \u001b[31m\"idle\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" getByTestId('clinical-island') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('clinical-island')\u001b[22m\n\u001b[2m    - locator resolved to <div data-view=\"idle\" data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-surface=\"idle\" data-native=\"false\" data-hidden=\"false\" data-lab-state=\"idle\" data-enlarged=\"false\" data-timer-deadline=\"0\" data-target-width=\"372\" data-target-height=\"88\" class=\"ci-host ux-host \" data-connection=\"online\" data-timer-status=\"idle\" data-velocity-x=\"0.0000\" data-velocity-y=\"0.0000\" data-target-surface=\"alert\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-motion-phase=\"exp…>…</div>\u001b[22m\n\u001b[2m    - unexpected value \"idle\"\u001b[22m\n\u001b[2m    - locator resolved to <div data-view=\"idle\" data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-surface=\"idle\" data-native=\"false\" data-hidden=\"false\" data-lab-state=\"idle\" data-enlarged=\"false\" data-timer-deadline=\"0\" data-target-width=\"372\" data-target-height=\"88\" class=\"ci-host ux-host \" data-connection=\"online\" data-timer-status=\"idle\" data-velocity-y=\"253.0847\" data-target-surface=\"alert\" data-velocity-x=\"1029.7254\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-motion-phase…>…</div>\u001b[22m\n\u001b[2m    - unexpected value \"idle\"\u001b[22m\n\u001b[2m    - locator resolved to <div data-view=\"idle\" data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-surface=\"idle\" data-native=\"false\" data-hidden=\"false\" data-lab-state=\"idle\" data-enlarged=\"false\" data-timer-deadline=\"0\" data-target-width=\"372\" data-target-height=\"88\" class=\"ci-host ux-host \" data-connection=\"online\" data-timer-status=\"idle\" data-velocity-y=\"346.4451\" data-target-surface=\"alert\" data-velocity-x=\"1460.5414\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-motion-phase…>…</div>\u001b[22m\n\u001b[2m    - unexpected value \"idle\"\u001b[22m\n\u001b[2m    - locator resolved to <div data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-native=\"false\" data-hidden=\"false\" data-view=\"expanded\" data-surface=\"alert\" data-lab-state=\"idle\" data-enlarged=\"false\" data-timer-deadline=\"0\" data-target-width=\"372\" data-target-height=\"88\" class=\"ci-host ux-host \" data-connection=\"online\" data-timer-status=\"idle\" data-velocity-x=\"632.6085\" data-velocity-y=\"132.7817\" data-target-surface=\"alert\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-motion-p…>…</div>\u001b[22m\n\u001b[2m    - unexpected value \"idle\"\u001b[22m\n\u001b[2m    - locator resolved to <div data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-native=\"false\" data-hidden=\"false\" data-view=\"expanded\" data-surface=\"alert\" data-lab-state=\"idle\" data-enlarged=\"false\" data-timer-deadline=\"0\" data-target-width=\"372\" data-target-height=\"88\" class=\"ci-host ux-host \" data-connection=\"online\" data-timer-status=\"idle\" data-velocity-y=\"21.7595\" data-velocity-x=\"132.6504\" data-target-surface=\"alert\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-motion-ph…>…</div>\u001b[22m\n\u001b[2m    - unexpected value \"idle\"\u001b[22m\n\u001b[2m    - locator resolved to <div data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-native=\"false\" data-hidden=\"false\" data-view=\"expanded\" data-surface=\"alert\" data-lab-state=\"idle\" data-enlarged=\"false\" data-timer-deadline=\"0\" data-target-width=\"372\" data-target-height=\"88\" class=\"ci-host ux-host \" data-connection=\"online\" data-timer-status=\"idle\" data-velocity-x=\"0.1820\" data-velocity-y=\"0.0000\" data-target-surface=\"alert\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-motion-phase…>…</div>\u001b[22m\n\u001b[2m    8 × unexpected value \"idle\"\u001b[22m\n\u001b[2m      - locator resolved to <div data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-native=\"false\" data-hidden=\"false\" data-view=\"expanded\" data-surface=\"alert\" data-lab-state=\"idle\" data-enlarged=\"false\" data-timer-deadline=\"0\" data-target-width=\"372\" data-target-height=\"88\" class=\"ci-host ux-host \" data-connection=\"online\" data-timer-status=\"idle\" data-velocity-x=\"0.0000\" data-velocity-y=\"0.0000\" data-motion-phase=\"settled\" data-target-surface=\"alert\" data-native-fallback=\"false\" data-testid=\"clinic…>…</div>\u001b[22m\n\u001b[2m    - unexpected value \"idle\"\u001b[22m\n\n\n  44 |  const desktop=await context.newPage();await desktop.goto('/clinical.html?view=island');\n  45 |  const target=page.getByRole('combobox',{name:'实验目标'});await expect(target.locator('option',{hasText:'桌面灵动岛'})).toHaveCount(1);await page.bringToFront();\n> 46 |  const preview=page.getByTestId('clinical-island');await page.getByTestId('clinical-scenario-S04').click();await expect(preview).toHaveAttribute('data-lab-state','alert');\n     |                                                                                                                                  ^\n  47 |  await preview.getByRole('button',{name:'查看检验报告摘要'}).click();await expect(preview).toHaveAttribute('data-lab-state','sum');await preview.getByRole('button',{name:'阅读报告',exact:true}).click();await expect(preview).toHaveAttribute('data-lab-state','read');\n  48 |  const session=await page.evaluate(()=>window.__CLINICAL_DEBUG__?.().lab.session);await target.selectOption({label:'桌面灵动岛'});\n  49 |  for(const name of ['重播：收到检验报告','全部正常夹具','定性与缺失值夹具']){\n    at D:\\Projects\\island-protype\\tests\\app-split.spec.ts:46:130"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T04:04:45.502Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "D:\\Projects\\island-protype\\evidence\\publication-20261014\\review-round-6\\reading-red\\test-results\\app-split-desktop-report-r-34c7e-ive-preview-reading-session\\test-failed-2.png"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "D:\\Projects\\island-protype\\evidence\\publication-20261014\\review-round-6\\reading-red\\test-results\\app-split-desktop-report-r-34c7e-ive-preview-reading-session\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\Projects\\island-protype\\evidence\\publication-20261014\\review-round-6\\reading-red\\test-results\\app-split-desktop-report-r-34c7e-ive-preview-reading-session\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\Projects\\island-protype\\evidence\\publication-20261014\\review-round-6\\reading-red\\test-results\\app-split-desktop-report-r-34c7e-ive-preview-reading-session\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\Projects\\island-protype\\tests\\app-split.spec.ts",
+                    "column": 130,
+                    "line": 46
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "ff9c6b2dd801a95bee93-5c6ba9c4623f0afd8874",
+          "file": "app-split.spec.ts",
+          "line": 41,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-14T04:04:28.043Z",
+    "duration": 25467.077999999998,
+    "expected": 2,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

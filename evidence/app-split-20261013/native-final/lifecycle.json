@@ -1,0 +1,21 @@
+{
+  "pass": true,
+  "cases": [
+    {
+      "name": "graceful workbench exit preserves island timer",
+      "pass": true
+    },
+    {
+      "name": "restart replaces source session without replacing deadline",
+      "pass": true
+    },
+    {
+      "name": "abrupt workbench termination preserves island timer",
+      "pass": true
+    },
+    {
+      "name": "island exit leaves independent workbench running",
+      "pass": true
+    }
+  ]
+}

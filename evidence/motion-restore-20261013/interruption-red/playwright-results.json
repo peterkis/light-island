@@ -1,0 +1,160 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "D:\\Projects\\island-protype\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/motion-interruption-cleanup.spec.ts"
+    ],
+    "configFile": "D:\\Projects\\island-protype\\playwright.config.ts",
+    "rootDir": "D:/Projects/island-protype/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/Projects/island-protype/evidence/motion-restore-20261013/interruption-red/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "D:/Projects/island-protype/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "/.*\\.spec\\.ts/"
+        ],
+        "timeout": 35000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "D:\\Projects\\island-protype\\evidence\\motion-restore-20261013\\interruption-red\\playwright-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "motion-interruption-cleanup.spec.ts",
+      "file": "motion-interruption-cleanup.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "switching to reduced during stagger clears every child transform and opacity",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 2500,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0.3415\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0.3415\u001b[39m\n    at D:\\Projects\\island-protype\\tests\\motion-interruption-cleanup.spec.ts:12:96",
+                    "location": {
+                      "file": "D:\\Projects\\island-protype\\tests\\motion-interruption-cleanup.spec.ts",
+                      "column": 96,
+                      "line": 12
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 10 |\u001b[39m  \u001b[36mawait\u001b[39m expect(island)\u001b[33m.\u001b[39mtoHaveAttribute(\u001b[32m'data-motion-phase'\u001b[39m\u001b[33m,\u001b[39m\u001b[32m'settled'\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForTimeout(\u001b[35m400\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 11 |\u001b[39m  \u001b[36mconst\u001b[39m children\u001b[33m=\u001b[39m\u001b[36mawait\u001b[39m island\u001b[33m.\u001b[39mlocator(\u001b[32m'[data-stagger]'\u001b[39m)\u001b[33m.\u001b[39mevaluateAll(elements\u001b[33m=>\u001b[39melements\u001b[33m.\u001b[39mmap(e\u001b[33m=>\u001b[39m({opacity\u001b[33m:\u001b[39m\u001b[33mNumber\u001b[39m(getComputedStyle(e)\u001b[33m.\u001b[39mopacity)\u001b[33m,\u001b[39mtransform\u001b[33m:\u001b[39mgetComputedStyle(e)\u001b[33m.\u001b[39mtransform})))\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 12 |\u001b[39m  expect(children\u001b[33m.\u001b[39mlength)\u001b[33m.\u001b[39mtoBeGreaterThan(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\u001b[36mfor\u001b[39m(\u001b[36mconst\u001b[39m child \u001b[36mof\u001b[39m children){expect(child\u001b[33m.\u001b[39mopacity)\u001b[33m.\u001b[39mtoBe(\u001b[35m1\u001b[39m)\u001b[33m;\u001b[39mexpect(child\u001b[33m.\u001b[39mtransform)\u001b[33m.\u001b[39mtoBe(\u001b[32m'none'\u001b[39m)\u001b[33m;\u001b[39m}\n \u001b[90m    |\u001b[39m                                                                                                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 13 |\u001b[39m  \u001b[36mawait\u001b[39m post({type\u001b[33m:\u001b[39m\u001b[32m'clinical:configure'\u001b[39m\u001b[33m,\u001b[39msettings\u001b[33m:\u001b[39m{reduced\u001b[33m:\u001b[39m\u001b[36mfalse\u001b[39m}})\u001b[33m;\u001b[39m\u001b[36mawait\u001b[39m expect(island)\u001b[33m.\u001b[39mtoHaveAttribute(\u001b[32m'data-motion-phase'\u001b[39m\u001b[33m,\u001b[39m\u001b[32m'settled'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 14 |\u001b[39m  \u001b[36mfor\u001b[39m(\u001b[36mconst\u001b[39m opacity \u001b[36mof\u001b[39m \u001b[36mawait\u001b[39m island\u001b[33m.\u001b[39mlocator(\u001b[32m'[data-stagger]'\u001b[39m)\u001b[33m.\u001b[39mevaluateAll(es\u001b[33m=>\u001b[39mes\u001b[33m.\u001b[39mmap(e\u001b[33m=>\u001b[39m\u001b[33mNumber\u001b[39m(getComputedStyle(e)\u001b[33m.\u001b[39mopacity))))expect(opacity)\u001b[33m.\u001b[39mtoBe(\u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 15 |\u001b[39m })\u001b[33m;\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\Projects\\island-protype\\tests\\motion-interruption-cleanup.spec.ts",
+                        "column": 96,
+                        "line": 12
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0.3415\u001b[39m\n\n  10 |  await expect(island).toHaveAttribute('data-motion-phase','settled');await page.waitForTimeout(400);\n  11 |  const children=await island.locator('[data-stagger]').evaluateAll(elements=>elements.map(e=>({opacity:Number(getComputedStyle(e).opacity),transform:getComputedStyle(e).transform})));\n> 12 |  expect(children.length).toBeGreaterThan(0);for(const child of children){expect(child.opacity).toBe(1);expect(child.transform).toBe('none');}\n     |                                                                                                ^\n  13 |  await post({type:'clinical:configure',settings:{reduced:false}});await expect(island).toHaveAttribute('data-motion-phase','settled');\n  14 |  for(const opacity of await island.locator('[data-stagger]').evaluateAll(es=>es.map(e=>Number(getComputedStyle(e).opacity))))expect(opacity).toBe(1);\n  15 | });\n    at D:\\Projects\\island-protype\\tests\\motion-interruption-cleanup.spec.ts:12:96"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T12:09:41.129Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "D:\\Projects\\island-protype\\evidence\\motion-restore-20261013\\interruption-red\\test-results\\motion-interruption-cleanu-9f25a-child-transform-and-opacity\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\Projects\\island-protype\\evidence\\motion-restore-20261013\\interruption-red\\test-results\\motion-interruption-cleanu-9f25a-child-transform-and-opacity\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\Projects\\island-protype\\evidence\\motion-restore-20261013\\interruption-red\\test-results\\motion-interruption-cleanu-9f25a-child-transform-and-opacity\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\Projects\\island-protype\\tests\\motion-interruption-cleanup.spec.ts",
+                    "column": 96,
+                    "line": 12
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "d00970863cebdfbd837e-37873611dff5158496d1",
+          "file": "motion-interruption-cleanup.spec.ts",
+          "line": 2,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-13T12:09:37.184Z",
+    "duration": 9137.934,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

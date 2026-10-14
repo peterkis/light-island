@@ -1,0 +1,264 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "D:\\Projects\\island-protype\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "--config",
+      "scripts/uiux-refinement.playwright.config.ts",
+      "tests/uiux-visual-restoration.spec.ts"
+    ],
+    "configFile": "D:\\Projects\\island-protype\\scripts\\uiux-refinement.playwright.config.ts",
+    "rootDir": "D:/Projects/island-protype/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/Projects/island-protype/evidence/uiux-refinement-20261013/visual-matrix/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "D:/Projects/island-protype/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "/.*\\.spec\\.ts/"
+        ],
+        "timeout": 35000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "D:\\Projects\\island-protype\\evidence\\uiux-refinement-20261013\\visual-matrix\\playwright-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "uiux-visual-restoration.spec.ts",
+      "file": "uiux-visual-restoration.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "S0 pointer hover retains the pure black body with no highlight, mark or peek",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3226,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T14:14:23.563Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3edb1c2cf8b0fdf62e67-2f2e7b8194ab1b54871a",
+          "file": "uiux-visual-restoration.spec.ts",
+          "line": 4,
+          "column": 1
+        },
+        {
+          "title": "island-only document keeps its entire canvas transparent",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 896,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T14:14:27.273Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3edb1c2cf8b0fdf62e67-39b36ff7b21650616147",
+          "file": "uiux-visual-restoration.spec.ts",
+          "line": 30,
+          "column": 1
+        },
+        {
+          "title": "active Compact keeps its finite Peek and blank center without painting a hover card",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4000,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T14:14:28.186Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3edb1c2cf8b0fdf62e67-32ee56607b440b866d2a",
+          "file": "uiux-visual-restoration.spec.ts",
+          "line": 38,
+          "column": 1
+        },
+        {
+          "title": "v1 visual matrix preserves geometry, hierarchy, controls and neutral backgrounds",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 9642,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m36\u001b[39m\nReceived: \u001b[31m0\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m36\u001b[39m\nReceived: \u001b[31m0\u001b[39m\n    at D:\\Projects\\island-protype\\tests\\uiux-visual-restoration.spec.ts:94:21",
+                    "location": {
+                      "file": "D:\\Projects\\island-protype\\tests\\uiux-visual-restoration.spec.ts",
+                      "column": 21,
+                      "line": 94
+                    },
+                    "snippet": "  92 |  await post({type:'clinical:scenario',scenario:'S09',stage:0});await settle('compact');\n  93 |  const mini=(await island.locator('.ux-minimal').boundingBox())!;\n> 94 |  expect(mini.width).toBe(36);expect(mini.height).toBe(36);\n     |                     ^\n  95 |  await capture('s1-s2',268,36);\n  96 |  await post({type:'clinical:reset'});await settle('idle');\n  97 |  await post({type:'clinical:scenario',scenario:'S02',stage:0});await settle('alert');"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\Projects\\island-protype\\tests\\uiux-visual-restoration.spec.ts",
+                        "column": 21,
+                        "line": 94
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m36\u001b[39m\nReceived: \u001b[31m0\u001b[39m\n\n  92 |  await post({type:'clinical:scenario',scenario:'S09',stage:0});await settle('compact');\n  93 |  const mini=(await island.locator('.ux-minimal').boundingBox())!;\n> 94 |  expect(mini.width).toBe(36);expect(mini.height).toBe(36);\n     |                     ^\n  95 |  await capture('s1-s2',268,36);\n  96 |  await post({type:'clinical:reset'});await settle('idle');\n  97 |  await post({type:'clinical:scenario',scenario:'S02',stage:0});await settle('alert');\n    at D:\\Projects\\island-protype\\tests\\uiux-visual-restoration.spec.ts:94:21"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T14:14:32.200Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "D:\\Projects\\island-protype\\evidence\\uiux-refinement-20261013\\visual-matrix\\test-results\\uiux-visual-restoration-v1-abada-ols-and-neutral-backgrounds\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\Projects\\island-protype\\evidence\\uiux-refinement-20261013\\visual-matrix\\test-results\\uiux-visual-restoration-v1-abada-ols-and-neutral-backgrounds\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\Projects\\island-protype\\evidence\\uiux-refinement-20261013\\visual-matrix\\test-results\\uiux-visual-restoration-v1-abada-ols-and-neutral-backgrounds\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\Projects\\island-protype\\tests\\uiux-visual-restoration.spec.ts",
+                    "column": 21,
+                    "line": 94
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "3edb1c2cf8b0fdf62e67-0b7723e5a429714c296c",
+          "file": "uiux-visual-restoration.spec.ts",
+          "line": 63,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-13T14:14:19.625Z",
+    "duration": 24023.969,
+    "expected": 3,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

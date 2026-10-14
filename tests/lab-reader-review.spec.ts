@@ -1,9 +1,9 @@
 import {test,expect} from '@playwright/test';
 
 test('wall-clock rollback cannot extend the report reading lifetime',async({page,request})=>{
- const push=async(data:object)=>expect((await request.post('http://127.0.0.1:17322/api/push',{data})).ok()).toBeTruthy();
+ const push=async(data:object)=>expect((await request.post(((process.env.ISLAND_TEST_SOURCE_URL??'http://127.0.0.1:17322')+'/api/push'),{data})).ok()).toBeTruthy();
  await push({type:'clinical:reset'});
- await page.goto('/clinical.html');
+ await page.goto('/workbench.html');
  const island=page.getByTestId('clinical-island');
  await expect(page.getByTestId('clinical-scenario-S04')).toBeVisible();
  await push({type:'clinical:configure',settings:{reduced:true}});

@@ -1,0 +1,29 @@
+from pathlib import Path
+root=Path(__file__).resolve().parents[1]
+def edit(path,old,new):
+ p=root/path;s=p.read_text(encoding='utf8');assert s.count(old)==1,(path,old[:100],s.count(old));p.write_text(s.replace(old,new),encoding='utf8')
+edit('src/clinical/MotionPreferenceSelect.tsx',"applicationReduced,onEnable,label='工作台动效模式'","applicationReduced,onEnable,windowsAnimationsEnabled=true,label='工作台动效模式'")
+edit('src/clinical/MotionPreferenceSelect.tsx','onEnable:()=>void;label?:string','onEnable:()=>void;windowsAnimationsEnabled?:boolean;label?:string')
+edit('src/clinical/MotionPreferenceSelect.tsx','motion.mediaReduced,true','motion.mediaReduced,windowsAnimationsEnabled')
+edit('src/clinical/ClinicalIsland.tsx',"import {LabScene} from './lab-reader/LabScene';","import {LabScene} from './lab-reader/LabScene';\nimport {useMotionPreference,resolveMotion} from './motionPreference';\nimport {MotionPreferenceSelect} from './MotionPreferenceSelect';\nimport {AnimatedDigits,CountBadge} from './AnimatedDigits';")
+edit('src/clinical/ClinicalIsland.tsx'," const [systemReduced,setSystemReduced]=useState(()=>matchMedia('(prefers-reduced-motion: reduce)').matches);"," const motion=useMotionPreference();")
+edit('src/clinical/ClinicalIsland.tsx'," const reduced=c.settings.reduced||systemReduced||!platform.status.animationsEnabled,unavailable=blocked||(!timerSelected&&!visible);"," const effectiveMotion=resolveMotion(motion.preference,c.settings.reduced,motion.mediaReduced,platform.status.animationsEnabled);\n const reduced=effectiveMotion.reduced,unavailable=blocked||(!timerSelected&&!visible);")
+edit('src/clinical/ClinicalIsland.tsx'," useEffect(()=>{const media=matchMedia('(prefers-reduced-motion: reduce)');const f=()=>setSystemReduced(media.matches);media.addEventListener('change',f);return()=>{media.removeEventListener('change',f);clearTimeout(quietTimer.current);};},[]);"," useEffect(()=>()=>clearTimeout(quietTimer.current),[]);")
+edit('src/clinical/ClinicalIsland.tsx','return <div className="ci-anchor" style=', 'return <div className="ci-anchor" data-motion={reduced?\'reduced\':\'full\'} data-motion-preference={motion.preference} data-motion-reason={effectiveMotion.reason} style=')
+edit('src/clinical/ClinicalIsland.tsx',"{blocked?'•••':timerSelected?timerText(c.remaining):`${Math.max(1,c.queue.items.length)} 项`}","{blocked?'•••':timerSelected?<AnimatedDigits value={timerText(c.remaining)} reduced={reduced}/>:<CountBadge count={Math.max(1,c.queue.items.length)} reduced={reduced}/>}")
+edit('src/clinical/ClinicalIsland.tsx',"aria-live=\"off\">{timerText(c.remaining)}</strong>","aria-live=\"off\"><AnimatedDigits value={timerText(c.remaining)} reduced={reduced}/></strong>")
+edit('src/clinical/ClinicalIsland.tsx',"<button onClick={()=>c.configurePreferences({reduced:!c.settings.reduced})}","<MotionPreferenceSelect applicationReduced={c.settings.reduced} windowsAnimationsEnabled={platform.status.animationsEnabled} label=\"灵动岛动效模式\" onEnable={()=>c.configurePreferences({reduced:false})}/><button onClick={()=>c.configurePreferences({reduced:!c.settings.reduced})}")
+edit('src/clinical/ClinicalStudio.tsx',"import type {FrameReport} from '../lib/performance';","import type {FrameReport} from '../lib/performance';\nimport {MotionPreferenceSelect} from './MotionPreferenceSelect';")
+edit('src/clinical/ClinicalStudio.tsx','<section><h3>可访问性与动效</h3>','<section><h3>可访问性与动效</h3><MotionPreferenceSelect applicationReduced={settings.reduced} onEnable={()=>configure({reduced:false})}/>')
+# Restore the requested content transform in the general clinical surface. The separate
+# lab reader specification remains unscaled; its timing/privacy contract is unchanged.
+edit('src/clinical/useClinicalLayout.ts',"y:reduced?0:T.motion.content.translateY,scale:1}","y:reduced?0:T.motion.content.translateY,scale:reduced||labTarget?1:T.motion.content.scale}")
+edit('src/clinical/useClinicalLayout.ts',"scale:1,duration:T.motion.content.exit/1000", "scale:closing||labTarget?1:T.motion.content.scale,duration:T.motion.content.exit/1000")
+# Reveal state is diagnostic, without logging payloads or permanent polling.
+edit('src/clinical/useClinicalLayout.ts',"e.dataset.targetSurface=requested;e.dataset.dock=dock;","e.dataset.targetSurface=requested;e.dataset.dock=dock;e.dataset.effectiveReduced=String(reduced);")
+# JS/WAAPI and CSS must share the same resolved app preference. Avoid a second,
+# unconditional media-query veto after an explicit full-motion opt-in.
+edit('src/clinical/clinical.css','@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}}','@media(prefers-reduced-motion:reduce){.cs-toggle>span,.cs-source-page *{transition:none!important;animation:none!important;scroll-behavior:auto!important}}\n.ci-anchor[data-motion=reduced] *,.ci-anchor[data-motion=reduced] *::before,.ci-anchor[data-motion=reduced] *::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}')
+edit('src/clinical/uiux.css','@media(prefers-reduced-motion:reduce){.ux-host::before{transition:none}.ux-host .ci-content{filter:none!important}}','.ci-anchor[data-motion=reduced] .ux-host::before{transition:none}.ci-anchor[data-motion=reduced] .ux-host .ci-content{filter:none!important}')
+edit('src/clinical/lab-reader/reader.css','@media(prefers-reduced-motion:reduce){.lab-dot.animated,.lab-burning,.lab-done svg{animation:none}.lab-countdown .fg{transition:none}}','@media(prefers-reduced-motion:reduce){.ci-anchor:not([data-motion=full]) .lab-dot.animated,.ci-anchor:not([data-motion=full]) .lab-burning,.ci-anchor:not([data-motion=full]) .lab-done svg,.cs-source-page .lab-dot.animated{animation:none}.ci-anchor:not([data-motion=full]) .lab-countdown .fg{transition:none}}')
+print('Motion preference and content choreography restored; no Windows settings, source protocols or native geometry changed')

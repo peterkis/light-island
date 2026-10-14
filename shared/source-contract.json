@@ -1,0 +1,6100 @@
+[
+  {
+    "name": "S02-0",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S02",
+        "stage": 0
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "HIS",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S02"
+          },
+          "version": 1,
+          "stage": 0,
+          "compact": "病危医嘱 · 1 项动态",
+          "title": "病危医嘱有新增",
+          "body": "源系统发布一项新医嘱。请在原医嘱单核对。",
+          "sourceState": "源系统：已发布",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "变更类型",
+              "value": "新增",
+              "at": 1799999940000
+            },
+            {
+              "label": "执行状态",
+              "value": "来源未提供",
+              "at": 1799999880000
+            }
+          ],
+          "tone": "warning",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "医嘱事实以源系统为准；此处不接收、不执行、不撤销医嘱。",
+          "actionLabel": "打开医嘱单",
+          "withdrawn": false,
+          "scenario": "S02",
+          "routeKind": "orders"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S02-1",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S02",
+        "stage": 1
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "HIS",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S02"
+          },
+          "version": 1,
+          "stage": 1,
+          "compact": "病危医嘱 · 1 项动态",
+          "title": "病危医嘱内容已变更",
+          "body": "此快览只显示来源给出的变更摘要，不生成护理或处置建议。",
+          "sourceState": "源系统：已变更",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "变更类型",
+              "value": "源摘要已更新",
+              "at": 1799999940000
+            },
+            {
+              "label": "来源操作者",
+              "value": "医师 A（模拟）",
+              "at": 1799999880000
+            }
+          ],
+          "tone": "warning",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "医嘱事实以源系统为准；此处不接收、不执行、不撤销医嘱。",
+          "actionLabel": "打开医嘱单",
+          "withdrawn": false,
+          "scenario": "S02",
+          "routeKind": "orders"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S02-2",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S02",
+        "stage": 2
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "HIS",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S02"
+          },
+          "version": 1,
+          "stage": 2,
+          "compact": "病危医嘱 · 1 项动态",
+          "title": "医嘱仍待源系统核对",
+          "body": "打开医嘱单不会在本组件形成临床接收回执。",
+          "sourceState": "源系统：接收状态未知",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "接收状态",
+              "value": "来源未提供",
+              "at": 1799999940000
+            }
+          ],
+          "tone": "info",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "医嘱事实以源系统为准；此处不接收、不执行、不撤销医嘱。",
+          "actionLabel": "打开医嘱单",
+          "withdrawn": false,
+          "scenario": "S02",
+          "routeKind": "orders"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S02-3",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S02",
+        "stage": 3
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "HIS",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S02"
+          },
+          "version": 1,
+          "stage": 3,
+          "compact": "病危医嘱 · 1 项动态",
+          "title": "来源显示已查看",
+          "body": "这是来源的只读镜像；本地打开与该状态没有自动映射。",
+          "sourceState": "源系统：已查看",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "来源状态",
+              "value": "已查看，不代表执行完成",
+              "at": 1799999940000
+            }
+          ],
+          "tone": "neutral",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "医嘱事实以源系统为准；此处不接收、不执行、不撤销医嘱。",
+          "actionLabel": "打开医嘱单",
+          "withdrawn": false,
+          "scenario": "S02",
+          "routeKind": "orders"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S02-4",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S02",
+        "stage": 4
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "HIS",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S02"
+          },
+          "version": 1,
+          "stage": 4,
+          "compact": "病危医嘱 · 1 项动态",
+          "title": "原医嘱已撤回",
+          "body": "新的来源版本撤回了该医嘱。旧版本不会覆盖这一状态。",
+          "sourceState": "源系统：已撤回",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "变更类型",
+              "value": "撤回",
+              "at": 1799999940000
+            },
+            {
+              "label": "执行状态",
+              "value": "以当前源医嘱为准",
+              "at": 1799999880000
+            }
+          ],
+          "tone": "neutral",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "医嘱事实以源系统为准；此处不接收、不执行、不撤销医嘱。",
+          "actionLabel": "查看当前医嘱",
+          "withdrawn": true,
+          "scenario": "S02",
+          "routeKind": "orders"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S02-5",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S02",
+        "stage": 5
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "HIS",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S02"
+          },
+          "version": 1,
+          "stage": 5,
+          "compact": "病危医嘱 · 1 项动态",
+          "title": "医嘱入口暂不可用",
+          "body": "可重试打开；本地未将该医嘱标记为已收到或已执行。",
+          "sourceState": "源系统：状态待核实",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [],
+          "tone": "warning",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "医嘱事实以源系统为准；此处不接收、不执行、不撤销医嘱。",
+          "actionLabel": "打开医嘱单",
+          "withdrawn": false,
+          "scenario": "S02",
+          "routeKind": "orders"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "failed"
+      }
+    }
+  },
+  {
+    "name": "S03-0",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S03",
+        "stage": 0
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "LIS",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S03"
+          },
+          "version": 1,
+          "stage": 0,
+          "compact": "危急值 · 1 项动态",
+          "title": "检验危急值已发布",
+          "body": "血清钾 · 来源标记危急。请进入原危急值流程核对。",
+          "sourceState": "源系统：待接收",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "项目",
+              "value": "血清钾",
+              "at": 1799999940000
+            },
+            {
+              "label": "分级依据",
+              "value": "来源标记危急",
+              "at": 1799999880000
+            },
+            {
+              "label": "当前责任人",
+              "value": "来源未提供",
+              "at": 1799999820000
+            }
+          ],
+          "tone": "error",
+          "priority": "important",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "辅助快览；接收、复核、升级与处置在原危急值流程完成。",
+          "actionLabel": "打开危急值流程",
+          "withdrawn": false,
+          "scenario": "S03",
+          "routeKind": "critical"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S03-1",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S03",
+        "stage": 1
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "LIS",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S03"
+          },
+          "version": 1,
+          "stage": 1,
+          "compact": "危急值 · 1 项动态",
+          "title": "危急值动态待核对",
+          "body": "此处不设“确认收到”按钮，不判断阈值，也不替代电话或原系统通知。",
+          "sourceState": "源系统：待接收",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "接收岗位",
+              "value": "当班岗位（源分派）",
+              "at": 1799999940000
+            },
+            {
+              "label": "处置状态",
+              "value": "来源未提供",
+              "at": 1799999880000
+            }
+          ],
+          "tone": "error",
+          "priority": "important",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "辅助快览；接收、复核、升级与处置在原危急值流程完成。",
+          "actionLabel": "打开危急值流程",
+          "withdrawn": false,
+          "scenario": "S03",
+          "routeKind": "critical"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S03-2",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S03",
+        "stage": 2
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "LIS",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S03"
+          },
+          "version": 1,
+          "stage": 2,
+          "compact": "危急值 · 1 项动态",
+          "title": "原流程入口已关联",
+          "body": "将按当前院区、就诊与检验对象打开来源边界。",
+          "sourceState": "源系统：待接收",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "业务对象",
+              "value": "DEMO-LAB-006",
+              "at": 1799999940000
+            },
+            {
+              "label": "入口校验",
+              "value": "精确对象与版本",
+              "at": 1799999880000
+            }
+          ],
+          "tone": "error",
+          "priority": "important",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "辅助快览；接收、复核、升级与处置在原危急值流程完成。",
+          "actionLabel": "打开危急值流程",
+          "withdrawn": false,
+          "scenario": "S03",
+          "routeKind": "critical"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S03-3",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S03",
+        "stage": 3
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "LIS",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S03"
+          },
+          "version": 1,
+          "stage": 3,
+          "compact": "危急值 · 1 项动态",
+          "title": "来源显示已接收",
+          "body": "原系统已回传接收状态。这里只做镜像，不代表处置结束。",
+          "sourceState": "源系统：已接收",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "源接收人",
+              "value": "岗位 A（模拟）",
+              "at": 1799999940000
+            },
+            {
+              "label": "处置状态",
+              "value": "来源：进行中",
+              "at": 1799999880000
+            }
+          ],
+          "tone": "warning",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "辅助快览；接收、复核、升级与处置在原危急值流程完成。",
+          "actionLabel": "打开危急值流程",
+          "withdrawn": false,
+          "scenario": "S03",
+          "routeKind": "critical"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S03-4",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S03",
+        "stage": 4
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "LIS",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S03"
+          },
+          "version": 1,
+          "stage": 4,
+          "compact": "危急值 · 1 项动态",
+          "title": "来源显示流程已闭环",
+          "body": "闭环状态来自原危急值流程，不由本地打开或计时推导。",
+          "sourceState": "源系统：已闭环",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "闭环依据",
+              "value": "源流程状态更新",
+              "at": 1799999940000
+            }
+          ],
+          "tone": "success",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "辅助快览；接收、复核、升级与处置在原危急值流程完成。",
+          "actionLabel": "打开危急值流程",
+          "withdrawn": false,
+          "scenario": "S03",
+          "routeKind": "critical"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S03-5",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S03",
+        "stage": 5
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "LIS",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S03"
+          },
+          "version": 1,
+          "stage": 5,
+          "compact": "危急值 · 1 项动态",
+          "title": "当前源状态尚未核实",
+          "body": "上次记录保留参考，但不能视为当前接收或闭环状态。",
+          "sourceState": "上次记录：已接收（非当前）",
+          "sourceAt": null,
+          "syncedAt": 1799996400000,
+          "fields": [
+            {
+              "label": "同步状态",
+              "value": "等待重新读取来源",
+              "at": 1799999940000
+            }
+          ],
+          "tone": "warning",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "辅助快览；接收、复核、升级与处置在原危急值流程完成。",
+          "actionLabel": "打开危急值流程",
+          "withdrawn": false,
+          "scenario": "S03",
+          "routeKind": "critical"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S04-0",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S04",
+        "stage": 0
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "PACS / LIS",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S04"
+          },
+          "version": 1,
+          "stage": 0,
+          "compact": "关注报告 · 1 项动态",
+          "title": "关注的报告仍在等待",
+          "body": "有新进展时显示轻量提示，不重复打断当前工作。",
+          "sourceState": "源系统：等待报告",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "报告状态",
+              "value": "待发布",
+              "at": 1799999940000
+            }
+          ],
+          "tone": "info",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "个人关注不转移业务责任；本地打开不代表已临床确认。",
+          "actionLabel": "查看源报告",
+          "withdrawn": false,
+          "scenario": "S04",
+          "routeKind": "reports"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S04-1",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S04",
+        "stage": 1
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "PACS / LIS",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S04"
+          },
+          "version": 1,
+          "stage": 1,
+          "compact": "关注报告 · 1 项动态",
+          "title": "已有 3 / 5 项结果回报",
+          "body": "总数由来源明确提供；另 2 项待回报。",
+          "sourceState": "源系统：部分回报",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "已回报",
+              "value": "3 项",
+              "at": 1799999940000
+            },
+            {
+              "label": "待回报",
+              "value": "2 项",
+              "at": 1799999880000
+            }
+          ],
+          "tone": "info",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "个人关注不转移业务责任；本地打开不代表已临床确认。",
+          "actionLabel": "查看已回报项目",
+          "withdrawn": false,
+          "scenario": "S04",
+          "routeKind": "reports"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S04-2",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S04",
+        "stage": 2
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "PACS / LIS",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S04"
+          },
+          "version": 1,
+          "stage": 2,
+          "compact": "关注报告 · 1 项动态",
+          "title": "影像已可查看",
+          "body": "影像已归档，报告尚未发布。两者不是同一状态。",
+          "sourceState": "源系统：影像可用，报告待出",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "影像",
+              "value": "来源：可查看",
+              "at": 1799999940000
+            },
+            {
+              "label": "报告",
+              "value": "来源：未发布",
+              "at": 1799999880000
+            }
+          ],
+          "tone": "info",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "个人关注不转移业务责任；本地打开不代表已临床确认。",
+          "actionLabel": "查看影像",
+          "withdrawn": false,
+          "scenario": "S04",
+          "routeKind": "reports"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S04-3",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S04",
+        "stage": 3
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "PACS / LIS",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S04"
+          },
+          "version": 1,
+          "stage": 3,
+          "compact": "关注报告 · 1 项动态",
+          "title": "正式报告已发布",
+          "body": "当前来源版本可查看；不在此解释报告结论。",
+          "sourceState": "源系统：正式报告",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "报告类型",
+              "value": "正式",
+              "at": 1799999940000
+            },
+            {
+              "label": "项目",
+              "value": "胸部影像（模拟）",
+              "at": 1799999880000
+            }
+          ],
+          "tone": "success",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "个人关注不转移业务责任；本地打开不代表已临床确认。",
+          "actionLabel": "查看源报告",
+          "withdrawn": false,
+          "scenario": "S04",
+          "routeKind": "reports"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S04-4",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S04",
+        "stage": 4
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "PACS / LIS",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S04"
+          },
+          "version": 1,
+          "stage": 4,
+          "compact": "关注报告 · 1 项动态",
+          "title": "关注的报告有新版本",
+          "body": "新版本需要单独打开，旧版本的本地查看记录不会继承。",
+          "sourceState": "源系统：版本更新",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "报告类型",
+              "value": "更正版本",
+              "at": 1799999940000
+            }
+          ],
+          "tone": "warning",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "个人关注不转移业务责任；本地打开不代表已临床确认。",
+          "actionLabel": "查看源报告",
+          "withdrawn": false,
+          "scenario": "S04",
+          "routeKind": "reports"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S04-5",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S04",
+        "stage": 5
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "PACS / LIS",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S04"
+          },
+          "version": 1,
+          "stage": 5,
+          "compact": "关注报告 · 1 项动态",
+          "title": "报告保持可查看",
+          "body": "下方个人关注开关只影响自己的展示。源系统状态不随本地打开改变。",
+          "sourceState": "源系统：正式报告",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "临床确认",
+              "value": "来源未提供",
+              "at": 1799999940000
+            }
+          ],
+          "tone": "neutral",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "个人关注不转移业务责任；本地打开不代表已临床确认。",
+          "actionLabel": "查看源报告",
+          "withdrawn": false,
+          "scenario": "S04",
+          "routeKind": "reports"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S05-0",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S05",
+        "stage": 0
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "费用中心",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S05"
+          },
+          "version": 1,
+          "stage": 0,
+          "compact": "费用协同 · 1 项动态",
+          "title": "费用协同 · 1 项动态",
+          "body": "身份或展示权限不允许查看详情。",
+          "sourceState": "详情已保护",
+          "sourceAt": null,
+          "syncedAt": null,
+          "fields": [],
+          "tone": "info",
+          "priority": "routine",
+          "scope": "finance",
+          "patient": "患者信息已保护",
+          "guard": "仅授权费用协同岗位可见；费用提醒不阻断临床工作，不代表催缴或到账。",
+          "actionLabel": "打开费用中心",
+          "withdrawn": false,
+          "scenario": "S05",
+          "routeKind": "finance"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S05-1",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S05",
+        "stage": 1
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "费用中心",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S05"
+          },
+          "version": 1,
+          "stage": 1,
+          "compact": "费用协同 · 1 项动态",
+          "title": "费用协同 · 1 项动态",
+          "body": "身份或展示权限不允许查看详情。",
+          "sourceState": "详情已保护",
+          "sourceAt": null,
+          "syncedAt": null,
+          "fields": [],
+          "tone": "info",
+          "priority": "routine",
+          "scope": "finance",
+          "patient": "患者信息已保护",
+          "guard": "仅授权费用协同岗位可见；费用提醒不阻断临床工作，不代表催缴或到账。",
+          "actionLabel": "打开费用中心",
+          "withdrawn": false,
+          "scenario": "S05",
+          "routeKind": "finance"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S05-2",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S05",
+        "stage": 2
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "费用中心",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S05"
+          },
+          "version": 1,
+          "stage": 2,
+          "compact": "费用协同 · 1 项动态",
+          "title": "费用协同 · 1 项动态",
+          "body": "身份或展示权限不允许查看详情。",
+          "sourceState": "详情已保护",
+          "sourceAt": null,
+          "syncedAt": null,
+          "fields": [],
+          "tone": "neutral",
+          "priority": "routine",
+          "scope": "finance",
+          "patient": "患者信息已保护",
+          "guard": "仅授权费用协同岗位可见；费用提醒不阻断临床工作，不代表催缴或到账。",
+          "actionLabel": "打开费用中心",
+          "withdrawn": false,
+          "scenario": "S05",
+          "routeKind": "finance"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S05-3",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S05",
+        "stage": 3
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "费用中心",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S05"
+          },
+          "version": 1,
+          "stage": 3,
+          "compact": "费用协同 · 1 项动态",
+          "title": "费用协同 · 1 项动态",
+          "body": "身份或展示权限不允许查看详情。",
+          "sourceState": "详情已保护",
+          "sourceAt": null,
+          "syncedAt": null,
+          "fields": [],
+          "tone": "info",
+          "priority": "routine",
+          "scope": "finance",
+          "patient": "患者信息已保护",
+          "guard": "仅授权费用协同岗位可见；费用提醒不阻断临床工作，不代表催缴或到账。",
+          "actionLabel": "打开费用中心",
+          "withdrawn": false,
+          "scenario": "S05",
+          "routeKind": "finance"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S05-4",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S05",
+        "stage": 4
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "费用中心",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S05"
+          },
+          "version": 1,
+          "stage": 4,
+          "compact": "费用协同 · 1 项动态",
+          "title": "费用协同 · 1 项动态",
+          "body": "身份或展示权限不允许查看详情。",
+          "sourceState": "详情已保护",
+          "sourceAt": null,
+          "syncedAt": null,
+          "fields": [],
+          "tone": "success",
+          "priority": "routine",
+          "scope": "finance",
+          "patient": "患者信息已保护",
+          "guard": "仅授权费用协同岗位可见；费用提醒不阻断临床工作，不代表催缴或到账。",
+          "actionLabel": "打开费用中心",
+          "withdrawn": false,
+          "scenario": "S05",
+          "routeKind": "finance"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S05-5",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S05",
+        "stage": 5
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "费用中心",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S05"
+          },
+          "version": 1,
+          "stage": 5,
+          "compact": "费用协同 · 1 项动态",
+          "title": "费用协同 · 1 项动态",
+          "body": "身份或展示权限不允许查看详情。",
+          "sourceState": "详情已保护",
+          "sourceAt": null,
+          "syncedAt": null,
+          "fields": [],
+          "tone": "neutral",
+          "priority": "routine",
+          "scope": "finance",
+          "patient": "患者信息已保护",
+          "guard": "仅授权费用协同岗位可见；费用提醒不阻断临床工作，不代表催缴或到账。",
+          "actionLabel": "打开费用中心",
+          "withdrawn": false,
+          "scenario": "S05",
+          "routeKind": "finance"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S06-0",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S06",
+        "stage": 0
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "护理交班",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S06"
+          },
+          "version": 1,
+          "stage": 0,
+          "compact": "交班未结项 · 1 项动态",
+          "title": "本次交班有 3 项未结",
+          "body": "先查看来源中的交班对象，再按原流程交接。",
+          "sourceState": "源系统：待交接",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "未结 1",
+              "value": "报告待回报",
+              "at": 1799999940000
+            },
+            {
+              "label": "未结 2",
+              "value": "检查资料待补齐",
+              "at": 1799999880000
+            },
+            {
+              "label": "未结 3",
+              "value": "源护理记录待核对",
+              "at": 1799999820000
+            }
+          ],
+          "tone": "warning",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "交接不等于事项办结；不支持在灵动岛“一键全部接收”。",
+          "actionLabel": "打开交班单",
+          "withdrawn": false,
+          "scenario": "S06",
+          "routeKind": "handoff"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S06-1",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S06",
+        "stage": 1
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "护理交班",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S06"
+          },
+          "version": 1,
+          "stage": 1,
+          "compact": "交班未结项 · 1 项动态",
+          "title": "交班事项快览",
+          "body": "最多展示三项关键事项，全部内容以原交班单为准。",
+          "sourceState": "源系统：待交接",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "未结事项",
+              "value": "3 项（来源统计）",
+              "at": 1799999940000
+            }
+          ],
+          "tone": "info",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "交接不等于事项办结；不支持在灵动岛“一键全部接收”。",
+          "actionLabel": "打开交班单",
+          "withdrawn": false,
+          "scenario": "S06",
+          "routeKind": "handoff"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S06-2",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S06",
+        "stage": 2
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "护理交班",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S06"
+          },
+          "version": 1,
+          "stage": 2,
+          "compact": "交班未结项 · 1 项动态",
+          "title": "交班单可打开",
+          "body": "保持当前交班对象与版本，不根据下班时间自动转移责任。",
+          "sourceState": "源系统：待交接",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "原交班对象",
+              "value": "DEMO-HANDOFF-01",
+              "at": 1799999940000
+            }
+          ],
+          "tone": "info",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "交接不等于事项办结；不支持在灵动岛“一键全部接收”。",
+          "actionLabel": "打开交班单",
+          "withdrawn": false,
+          "scenario": "S06",
+          "routeKind": "handoff"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S06-3",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S06",
+        "stage": 3
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "护理交班",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S06"
+          },
+          "version": 1,
+          "stage": 3,
+          "compact": "交班未结项 · 1 项动态",
+          "title": "来源显示等待接收",
+          "body": "这里不代替当班人员完成交接确认。",
+          "sourceState": "源系统：等待接收",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "接收岗",
+              "value": "由原流程分派",
+              "at": 1799999940000
+            }
+          ],
+          "tone": "warning",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "交接不等于事项办结；不支持在灵动岛“一键全部接收”。",
+          "actionLabel": "打开交班单",
+          "withdrawn": false,
+          "scenario": "S06",
+          "routeKind": "handoff"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S06-4",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S06",
+        "stage": 4
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "护理交班",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S06"
+          },
+          "version": 1,
+          "stage": 4,
+          "compact": "交班未结项 · 1 项动态",
+          "title": "来源显示已交接",
+          "body": "交接记录更新，不自动关闭其关联事项。",
+          "sourceState": "源系统：已交接",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "交接状态",
+              "value": "已交接",
+              "at": 1799999940000
+            },
+            {
+              "label": "关联事项",
+              "value": "2 项仍未结",
+              "at": 1799999880000
+            }
+          ],
+          "tone": "success",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "交接不等于事项办结；不支持在灵动岛“一键全部接收”。",
+          "actionLabel": "打开交班单",
+          "withdrawn": false,
+          "scenario": "S06",
+          "routeKind": "handoff"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S06-5",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S06",
+        "stage": 5
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "护理交班",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S06"
+          },
+          "version": 1,
+          "stage": 5,
+          "compact": "交班未结项 · 1 项动态",
+          "title": "已交接，仍有 2 项未结",
+          "body": "关注剩余事项的来源进展，不把“交接完成”显示为“任务全结”。",
+          "sourceState": "源系统：已交接 / 2 项未结",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "事项 1",
+              "value": "报告仍待回报",
+              "at": 1799999940000
+            },
+            {
+              "label": "事项 2",
+              "value": "资料待核对",
+              "at": 1799999880000
+            }
+          ],
+          "tone": "warning",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "交接不等于事项办结；不支持在灵动岛“一键全部接收”。",
+          "actionLabel": "打开交班单",
+          "withdrawn": false,
+          "scenario": "S06",
+          "routeKind": "handoff"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S07-0",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S07",
+        "stage": 0
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "随访中心",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-OLD",
+            "object": "DEMO-S07"
+          },
+          "version": 1,
+          "stage": 0,
+          "compact": "出院后回报 · 1 项动态",
+          "title": "出院后仍有结果待回报",
+          "body": "持续关联原就诊 DEMO-VISIT-OLD，而非姓名匹配。",
+          "sourceState": "来源：待回报",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "关联就诊",
+              "value": "DEMO-VISIT-OLD",
+              "at": 1799999940000
+            }
+          ],
+          "tone": "info",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "关联原始就诊；不自动联系患者、不附着到新一次入院。",
+          "actionLabel": "打开随访中心",
+          "withdrawn": false,
+          "scenario": "S07",
+          "routeKind": "followup"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S07-1",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S07",
+        "stage": 1
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "随访中心",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-OLD",
+            "object": "DEMO-S07"
+          },
+          "version": 1,
+          "stage": 1,
+          "compact": "出院后回报 · 1 项动态",
+          "title": "原就诊的新报告已到达",
+          "body": "来源负责分派随访责任，这里不推定责任人。",
+          "sourceState": "来源：报告已发布",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "来源责任人",
+              "value": "来源未提供",
+              "at": 1799999940000
+            }
+          ],
+          "tone": "warning",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "关联原始就诊；不自动联系患者、不附着到新一次入院。",
+          "actionLabel": "打开随访中心",
+          "withdrawn": false,
+          "scenario": "S07",
+          "routeKind": "followup"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S07-2",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S07",
+        "stage": 2
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "随访中心",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-OLD",
+            "object": "DEMO-S07"
+          },
+          "version": 1,
+          "stage": 2,
+          "compact": "出院后回报 · 1 项动态",
+          "title": "来源已提供随访归属",
+          "body": "仅镜像来源分派；个人关注不替代该归属。",
+          "sourceState": "来源：已分派",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "来源责任岗",
+              "value": "随访岗 A（模拟）",
+              "at": 1799999940000
+            }
+          ],
+          "tone": "info",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "关联原始就诊；不自动联系患者、不附着到新一次入院。",
+          "actionLabel": "打开随访中心",
+          "withdrawn": false,
+          "scenario": "S07",
+          "routeKind": "followup"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S07-3",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S07",
+        "stage": 3
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "随访中心",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-OLD",
+            "object": "DEMO-S07"
+          },
+          "version": 1,
+          "stage": 3,
+          "compact": "出院后回报 · 1 项动态",
+          "title": "随访中心可打开",
+          "body": "按原始就诊与报告对象进入随访来源边界。",
+          "sourceState": "来源：待随访",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "关联就诊",
+              "value": "DEMO-VISIT-OLD",
+              "at": 1799999940000
+            }
+          ],
+          "tone": "info",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "关联原始就诊；不自动联系患者、不附着到新一次入院。",
+          "actionLabel": "打开随访中心",
+          "withdrawn": false,
+          "scenario": "S07",
+          "routeKind": "followup"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S07-4",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S07",
+        "stage": 4
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "随访中心",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-OLD",
+            "object": "DEMO-S07"
+          },
+          "version": 1,
+          "stage": 4,
+          "compact": "出院后回报 · 1 项动态",
+          "title": "来源显示随访处理中",
+          "body": "本地打开不能产生“已联系患者”的结论。",
+          "sourceState": "来源：处理中",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "患者联系状态",
+              "value": "以源随访记录为准",
+              "at": 1799999940000
+            }
+          ],
+          "tone": "info",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "关联原始就诊；不自动联系患者、不附着到新一次入院。",
+          "actionLabel": "打开随访中心",
+          "withdrawn": false,
+          "scenario": "S07",
+          "routeKind": "followup"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S07-5",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S07",
+        "stage": 5
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "随访中心",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-OLD",
+            "object": "DEMO-S07"
+          },
+          "version": 1,
+          "stage": 5,
+          "compact": "出院后回报 · 1 项动态",
+          "title": "来源显示随访已闭环",
+          "body": "闭环依据为来源事件，不是岛内查看次数。",
+          "sourceState": "来源：已闭环",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "依据",
+              "value": "来源随访状态更新",
+              "at": 1799999940000
+            }
+          ],
+          "tone": "success",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "关联原始就诊；不自动联系患者、不附着到新一次入院。",
+          "actionLabel": "打开随访中心",
+          "withdrawn": false,
+          "scenario": "S07",
+          "routeKind": "followup"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S08-0",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S08",
+        "stage": 0
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "报告中心",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S08"
+          },
+          "version": 1,
+          "stage": 0,
+          "compact": "报告更正 / 撤回 · 1 项动态",
+          "title": "报告 v1 已发布",
+          "body": "此版本的本地打开记录不适用于后续更正。",
+          "sourceState": "来源：正式报告 v1",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "版本",
+              "value": "v1",
+              "at": 1799999940000
+            }
+          ],
+          "tone": "info",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "版本按源对象追踪；旧报告已打开不代表新版已核对。",
+          "actionLabel": "打开新版报告",
+          "withdrawn": false,
+          "scenario": "S08",
+          "routeKind": "report-version"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S08-1",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S08",
+        "stage": 1
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "报告中心",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S08"
+          },
+          "version": 1,
+          "stage": 1,
+          "compact": "报告更正 / 撤回 · 1 项动态",
+          "title": "报告有更正版本",
+          "body": "来源发布 v2，优先显示新的事实与版本入口。",
+          "sourceState": "来源：已更正",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "版本变化",
+              "value": "v1 → v2",
+              "at": 1799999940000
+            }
+          ],
+          "tone": "warning",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "版本按源对象追踪；旧报告已打开不代表新版已核对。",
+          "actionLabel": "打开新版报告",
+          "withdrawn": false,
+          "scenario": "S08",
+          "routeKind": "report-version"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S08-2",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S08",
+        "stage": 2
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "报告中心",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S08"
+          },
+          "version": 1,
+          "stage": 2,
+          "compact": "报告更正 / 撤回 · 1 项动态",
+          "title": "来源更正摘要已更新",
+          "body": "只展示来源提供的修改摘要，不自行判断临床影响。",
+          "sourceState": "来源：已更正",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "更正摘要",
+              "value": "报告内容有修订（来源示例）",
+              "at": 1799999940000
+            }
+          ],
+          "tone": "warning",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "版本按源对象追踪；旧报告已打开不代表新版已核对。",
+          "actionLabel": "打开新版报告",
+          "withdrawn": false,
+          "scenario": "S08",
+          "routeKind": "report-version"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S08-3",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S08",
+        "stage": 3
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "报告中心",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S08"
+          },
+          "version": 1,
+          "stage": 3,
+          "compact": "报告更正 / 撤回 · 1 项动态",
+          "title": "请在来源查看新版",
+          "body": "入口绑定当前版本，不会静默打开原版本。",
+          "sourceState": "来源：新版可查看",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "入口策略",
+              "value": "严格匹配当前版本",
+              "at": 1799999940000
+            }
+          ],
+          "tone": "info",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "版本按源对象追踪；旧报告已打开不代表新版已核对。",
+          "actionLabel": "打开新版报告",
+          "withdrawn": false,
+          "scenario": "S08",
+          "routeKind": "report-version"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S08-4",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S08",
+        "stage": 4
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "报告中心",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S08"
+          },
+          "version": 1,
+          "stage": 4,
+          "compact": "报告更正 / 撤回 · 1 项动态",
+          "title": "来源复核状态待更新",
+          "body": "本地已经打开也不改变来源复核状态。",
+          "sourceState": "来源：复核状态未知",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "复核记录",
+              "value": "来源未提供",
+              "at": 1799999940000
+            }
+          ],
+          "tone": "warning",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "版本按源对象追踪；旧报告已打开不代表新版已核对。",
+          "actionLabel": "打开新版报告",
+          "withdrawn": false,
+          "scenario": "S08",
+          "routeKind": "report-version"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S08-5",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S08",
+        "stage": 5
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "报告中心",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S08"
+          },
+          "version": 1,
+          "stage": 5,
+          "compact": "报告更正 / 撤回 · 1 项动态",
+          "title": "原报告已撤回",
+          "body": "来源未提供替代版本，不把历史报告当成当前有效报告。",
+          "sourceState": "来源：已撤回 / 无替代版本",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "替代版本",
+              "value": "来源未提供",
+              "at": 1799999940000
+            }
+          ],
+          "tone": "neutral",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "版本按源对象追踪；旧报告已打开不代表新版已核对。",
+          "actionLabel": "查看版本记录",
+          "withdrawn": true,
+          "scenario": "S08",
+          "routeKind": "report-version"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S09-0",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S09",
+        "stage": 0
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "LIS 标本任务",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S09"
+          },
+          "version": 1,
+          "stage": 0,
+          "compact": "标本退回 / 补采 · 1 项动态",
+          "title": "标本任务正在处理",
+          "body": "仅呈现来源任务进展，不生成预计出报告时间。",
+          "sourceState": "来源：处理中",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "标本对象",
+              "value": "DEMO-SPECIMEN-OLD",
+              "at": 1799999940000
+            }
+          ],
+          "tone": "info",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "标本接收、采集与结果各自独立；不在岛内下达补采指令。",
+          "actionLabel": "打开检验任务",
+          "withdrawn": false,
+          "scenario": "S09",
+          "routeKind": "specimen"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S09-1",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S09",
+        "stage": 1
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "LIS 标本任务",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S09"
+          },
+          "version": 1,
+          "stage": 1,
+          "compact": "标本退回 / 补采 · 1 项动态",
+          "title": "来源退回了一份标本",
+          "body": "退回事实来自 LIS，相关岗位按原流程核对。",
+          "sourceState": "来源：已退回",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "旧标本",
+              "value": "DEMO-SPECIMEN-OLD",
+              "at": 1799999940000
+            }
+          ],
+          "tone": "warning",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "标本接收、采集与结果各自独立；不在岛内下达补采指令。",
+          "actionLabel": "打开检验任务",
+          "withdrawn": false,
+          "scenario": "S09",
+          "routeKind": "specimen"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S09-2",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S09",
+        "stage": 2
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "LIS 标本任务",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S09"
+          },
+          "version": 1,
+          "stage": 2,
+          "compact": "标本退回 / 补采 · 1 项动态",
+          "title": "退回原因可查看",
+          "body": "容器不符合要求（来源记录）。这里不提供补采医嘱。",
+          "sourceState": "来源：已退回",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "来源退回原因",
+              "value": "容器不符合要求",
+              "at": 1799999940000
+            }
+          ],
+          "tone": "warning",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "标本接收、采集与结果各自独立；不在岛内下达补采指令。",
+          "actionLabel": "打开检验任务",
+          "withdrawn": false,
+          "scenario": "S09",
+          "routeKind": "specimen"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S09-3",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S09",
+        "stage": 3
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "LIS 标本任务",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S09"
+          },
+          "version": 1,
+          "stage": 3,
+          "compact": "标本退回 / 补采 · 1 项动态",
+          "title": "原检验任务可打开",
+          "body": "保留原任务与退回标本关联，避免重复创建补采。",
+          "sourceState": "来源：待原流程跟进",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "新采集状态",
+              "value": "来源未提供",
+              "at": 1799999940000
+            }
+          ],
+          "tone": "info",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "标本接收、采集与结果各自独立；不在岛内下达补采指令。",
+          "actionLabel": "打开检验任务",
+          "withdrawn": false,
+          "scenario": "S09",
+          "routeKind": "specimen"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S09-4",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S09",
+        "stage": 4
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "LIS 标本任务",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S09"
+          },
+          "version": 1,
+          "stage": 4,
+          "compact": "标本退回 / 补采 · 1 项动态",
+          "title": "来源已接收新标本",
+          "body": "新标本有独立标识，并保留对旧标本的来源关联。",
+          "sourceState": "来源：新标本已接收",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "旧标本",
+              "value": "DEMO-SPECIMEN-OLD",
+              "at": 1799999940000
+            },
+            {
+              "label": "新标本",
+              "value": "DEMO-SPECIMEN-NEW",
+              "at": 1799999880000
+            }
+          ],
+          "tone": "info",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "标本接收、采集与结果各自独立；不在岛内下达补采指令。",
+          "actionLabel": "打开检验任务",
+          "withdrawn": false,
+          "scenario": "S09",
+          "routeKind": "specimen"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S09-5",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S09",
+        "stage": 5
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "LIS 标本任务",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S09"
+          },
+          "version": 1,
+          "stage": 5,
+          "compact": "标本退回 / 补采 · 1 项动态",
+          "title": "新标本报告已发布",
+          "body": "以新标本关联的报告为准，旧退回记录仍保留。",
+          "sourceState": "来源：报告已发布",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "报告关联",
+              "value": "DEMO-SPECIMEN-NEW",
+              "at": 1799999940000
+            }
+          ],
+          "tone": "success",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "标本接收、采集与结果各自独立；不在岛内下达补采指令。",
+          "actionLabel": "查看源报告",
+          "withdrawn": false,
+          "scenario": "S09",
+          "routeKind": "specimen"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S10-0",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S10",
+        "stage": 0
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "血库 / 转运",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S10"
+          },
+          "version": 1,
+          "stage": 0,
+          "compact": "血品准备与取送 · 1 项动态",
+          "title": "血库准备状态有更新",
+          "body": "血库准备与取送分别读取，不合并成一个推测进度。",
+          "sourceState": "来源：准备中",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "血库准备",
+              "value": "准备中",
+              "at": 1799999940000
+            },
+            {
+              "label": "取送",
+              "value": "未提供",
+              "at": 1799999880000
+            }
+          ],
+          "tone": "info",
+          "priority": "routine",
+          "scope": "logistics",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "取送状态不代表输注许可；不提供用血或输注决策。",
+          "actionLabel": "打开用血申请",
+          "withdrawn": false,
+          "scenario": "S10",
+          "routeKind": "blood"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S10-1",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S10",
+        "stage": 1
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "血库 / 转运",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S10"
+          },
+          "version": 1,
+          "stage": 1,
+          "compact": "血品准备与取送 · 1 项动态",
+          "title": "来源显示血品可领取",
+          "body": "可领取不等于取送已分派或已出发。",
+          "sourceState": "来源：可领取",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "血库准备",
+              "value": "可领取",
+              "at": 1799999940000
+            },
+            {
+              "label": "取送",
+              "value": "待分派",
+              "at": 1799999880000
+            }
+          ],
+          "tone": "info",
+          "priority": "routine",
+          "scope": "logistics",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "取送状态不代表输注许可；不提供用血或输注决策。",
+          "actionLabel": "打开用血申请",
+          "withdrawn": false,
+          "scenario": "S10",
+          "routeKind": "blood"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S10-2",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S10",
+        "stage": 2
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "血库 / 转运",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S10"
+          },
+          "version": 1,
+          "stage": 2,
+          "compact": "血品准备与取送 · 1 项动态",
+          "title": "来源显示已领取",
+          "body": "领取记录不等于病区签收。",
+          "sourceState": "来源：已领取",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "血库准备",
+              "value": "已发出",
+              "at": 1799999940000
+            },
+            {
+              "label": "取送",
+              "value": "运送中",
+              "at": 1799999880000
+            }
+          ],
+          "tone": "info",
+          "priority": "routine",
+          "scope": "logistics",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "取送状态不代表输注许可；不提供用血或输注决策。",
+          "actionLabel": "打开用血申请",
+          "withdrawn": false,
+          "scenario": "S10",
+          "routeKind": "blood"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S10-3",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S10",
+        "stage": 3
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "血库 / 转运",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S10"
+          },
+          "version": 1,
+          "stage": 3,
+          "compact": "血品准备与取送 · 1 项动态",
+          "title": "来源显示病区已签收",
+          "body": "本组件不推断任何输注状态。",
+          "sourceState": "来源：已签收",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "取送",
+              "value": "来源：已签收",
+              "at": 1799999940000
+            },
+            {
+              "label": "输注状态",
+              "value": "不在本组件范围",
+              "at": 1799999880000
+            }
+          ],
+          "tone": "success",
+          "priority": "routine",
+          "scope": "logistics",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "取送状态不代表输注许可；不提供用血或输注决策。",
+          "actionLabel": "打开用血申请",
+          "withdrawn": false,
+          "scenario": "S10",
+          "routeKind": "blood"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S10-4",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S10",
+        "stage": 4
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "血库 / 转运",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S10"
+          },
+          "version": 1,
+          "stage": 4,
+          "compact": "血品准备与取送 · 1 项动态",
+          "title": "血库准备记录已更新",
+          "body": "下次更新时间来自来源，不将其当成承诺就绪时间。",
+          "sourceState": "来源：准备中",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "下次来源更新",
+              "value": "来源未提供",
+              "at": 1799999940000
+            }
+          ],
+          "tone": "neutral",
+          "priority": "routine",
+          "scope": "logistics",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "取送状态不代表输注许可；不提供用血或输注决策。",
+          "actionLabel": "打开用血申请",
+          "withdrawn": false,
+          "scenario": "S10",
+          "routeKind": "blood"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S10-5",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S10",
+        "stage": 5
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "血库 / 转运",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S10"
+          },
+          "version": 1,
+          "stage": 5,
+          "compact": "血品准备与取送 · 1 项动态",
+          "title": "取送状态尚未核实",
+          "body": "血库记录与取送记录的刷新时间分别显示。",
+          "sourceState": "来源：取送未知",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "血库准备",
+              "value": "可领取",
+              "at": 1799999940000
+            },
+            {
+              "label": "取送",
+              "value": "来源未提供",
+              "at": null
+            }
+          ],
+          "tone": "warning",
+          "priority": "routine",
+          "scope": "logistics",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "取送状态不代表输注许可；不提供用血或输注决策。",
+          "actionLabel": "打开用血申请",
+          "withdrawn": false,
+          "scenario": "S10",
+          "routeKind": "blood"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S11-0",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S11",
+        "stage": 0
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "药房",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S11"
+          },
+          "version": 1,
+          "stage": 0,
+          "compact": "药房准备与交付 · 1 项动态",
+          "title": "药房正在准备",
+          "body": "查看来源任务，不提供药品剂量或给药建议。",
+          "sourceState": "来源：准备中",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "准备",
+              "value": "进行中",
+              "at": 1799999940000
+            },
+            {
+              "label": "交付",
+              "value": "来源未提供",
+              "at": 1799999880000
+            }
+          ],
+          "tone": "info",
+          "priority": "routine",
+          "scope": "logistics",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "准备、发出、交付相互独立；不代表给药或出院许可。",
+          "actionLabel": "打开药房申请",
+          "withdrawn": false,
+          "scenario": "S11",
+          "routeKind": "pharmacy"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S11-1",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S11",
+        "stage": 1
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "药房",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S11"
+          },
+          "version": 1,
+          "stage": 1,
+          "compact": "药房准备与交付 · 1 项动态",
+          "title": "来源提示资料需核对",
+          "body": "需要的资料内容以原药房申请为准。",
+          "sourceState": "来源：待补资料",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "资料",
+              "value": "来源标记有缺项",
+              "at": 1799999940000
+            }
+          ],
+          "tone": "warning",
+          "priority": "routine",
+          "scope": "logistics",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "准备、发出、交付相互独立；不代表给药或出院许可。",
+          "actionLabel": "打开药房申请",
+          "withdrawn": false,
+          "scenario": "S11",
+          "routeKind": "pharmacy"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S11-2",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S11",
+        "stage": 2
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "药房",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S11"
+          },
+          "version": 1,
+          "stage": 2,
+          "compact": "药房准备与交付 · 1 项动态",
+          "title": "药品已准备，尚未发出",
+          "body": "准备完成不等于交付完成。",
+          "sourceState": "来源：已准备",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "准备",
+              "value": "完成",
+              "at": 1799999940000
+            },
+            {
+              "label": "交付",
+              "value": "未发出",
+              "at": 1799999880000
+            }
+          ],
+          "tone": "info",
+          "priority": "routine",
+          "scope": "logistics",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "准备、发出、交付相互独立；不代表给药或出院许可。",
+          "actionLabel": "打开药房申请",
+          "withdrawn": false,
+          "scenario": "S11",
+          "routeKind": "pharmacy"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S11-3",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S11",
+        "stage": 3
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "药房",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S11"
+          },
+          "version": 1,
+          "stage": 3,
+          "compact": "药房准备与交付 · 1 项动态",
+          "title": "来源显示已发出",
+          "body": "未收到来源签收信息，不标记为已送达。",
+          "sourceState": "来源：已发出",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "交付",
+              "value": "来源：运送中",
+              "at": 1799999940000
+            }
+          ],
+          "tone": "info",
+          "priority": "routine",
+          "scope": "logistics",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "准备、发出、交付相互独立；不代表给药或出院许可。",
+          "actionLabel": "打开药房申请",
+          "withdrawn": false,
+          "scenario": "S11",
+          "routeKind": "pharmacy"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S11-4",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S11",
+        "stage": 4
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "药房",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S11"
+          },
+          "version": 1,
+          "stage": 4,
+          "compact": "药房准备与交付 · 1 项动态",
+          "title": "来源显示已签收",
+          "body": "签收记录不是给药记录。",
+          "sourceState": "来源：已签收",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "交付",
+              "value": "已签收",
+              "at": 1799999940000
+            },
+            {
+              "label": "给药",
+              "value": "不在本组件范围",
+              "at": 1799999880000
+            }
+          ],
+          "tone": "success",
+          "priority": "routine",
+          "scope": "logistics",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "准备、发出、交付相互独立；不代表给药或出院许可。",
+          "actionLabel": "打开药房申请",
+          "withdrawn": false,
+          "scenario": "S11",
+          "routeKind": "pharmacy"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S11-5",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S11",
+        "stage": 5
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "药房",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S11"
+          },
+          "version": 1,
+          "stage": 5,
+          "compact": "药房准备与交付 · 1 项动态",
+          "title": "来源显示带药可领取",
+          "body": "不据此推断临床出院许可。",
+          "sourceState": "来源：可领取",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "准备",
+              "value": "带药已备妥",
+              "at": 1799999940000
+            },
+            {
+              "label": "交付地点",
+              "value": "药房窗口（源记录）",
+              "at": 1799999880000
+            }
+          ],
+          "tone": "info",
+          "priority": "routine",
+          "scope": "logistics",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "准备、发出、交付相互独立；不代表给药或出院许可。",
+          "actionLabel": "打开药房申请",
+          "withdrawn": false,
+          "scenario": "S11",
+          "routeKind": "pharmacy"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S12-0",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S12",
+        "stage": 0
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "检查预约",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S12"
+          },
+          "version": 1,
+          "stage": 0,
+          "compact": "检查前置资料 · 1 项动态",
+          "title": "检查前置资料有待核对项",
+          "body": "仅显示来源标记，不自动做风险评估。",
+          "sourceState": "来源：资料缺项",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "资料状态",
+              "value": "来源标记缺项",
+              "at": 1799999940000
+            },
+            {
+              "label": "预约状态",
+              "value": "来源：已预约",
+              "at": 1799999880000
+            }
+          ],
+          "tone": "warning",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "资料提交不代表检查安全；预约与前置资料分别以来源为准。",
+          "actionLabel": "打开检查申请",
+          "withdrawn": false,
+          "scenario": "S12",
+          "routeKind": "examination"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S12-1",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S12",
+        "stage": 1
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "检查预约",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S12"
+          },
+          "version": 1,
+          "stage": 1,
+          "compact": "检查前置资料 · 1 项动态",
+          "title": "前置资料状态未知",
+          "body": "未提供不等于未完成。",
+          "sourceState": "来源：资料未知",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "资料状态",
+              "value": "来源未提供",
+              "at": 1799999940000
+            },
+            {
+              "label": "预约状态",
+              "value": "来源：已预约",
+              "at": 1799999880000
+            }
+          ],
+          "tone": "neutral",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "资料提交不代表检查安全；预约与前置资料分别以来源为准。",
+          "actionLabel": "打开检查申请",
+          "withdrawn": false,
+          "scenario": "S12",
+          "routeKind": "examination"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S12-2",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S12",
+        "stage": 2
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "检查预约",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S12"
+          },
+          "version": 1,
+          "stage": 2,
+          "compact": "检查前置资料 · 1 项动态",
+          "title": "来源显示资料已提交",
+          "body": "已提交不代表审查通过或检查安全。",
+          "sourceState": "来源：资料已提交",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "资料状态",
+              "value": "已提交",
+              "at": 1799999940000
+            },
+            {
+              "label": "审查状态",
+              "value": "来源未提供",
+              "at": 1799999880000
+            }
+          ],
+          "tone": "info",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "资料提交不代表检查安全；预约与前置资料分别以来源为准。",
+          "actionLabel": "打开检查申请",
+          "withdrawn": false,
+          "scenario": "S12",
+          "routeKind": "examination"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S12-3",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S12",
+        "stage": 3
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "检查预约",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S12"
+          },
+          "version": 1,
+          "stage": 3,
+          "compact": "检查前置资料 · 1 项动态",
+          "title": "来源预约信息已更新",
+          "body": "如需修改，请进入原预约流程。",
+          "sourceState": "来源：已预约",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "预约",
+              "value": "2026-10-05 上午（模拟）",
+              "at": 1799999940000
+            }
+          ],
+          "tone": "info",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "资料提交不代表检查安全；预约与前置资料分别以来源为准。",
+          "actionLabel": "打开检查申请",
+          "withdrawn": false,
+          "scenario": "S12",
+          "routeKind": "examination"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S12-4",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S12",
+        "stage": 4
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "检查预约",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S12"
+          },
+          "version": 1,
+          "stage": 4,
+          "compact": "检查前置资料 · 1 项动态",
+          "title": "检查预约发生变更",
+          "body": "仅提醒来源已变更，不在岛内重约。",
+          "sourceState": "来源：预约已调整",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "预约",
+              "value": "以当前来源时间为准",
+              "at": 1799999940000
+            }
+          ],
+          "tone": "warning",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "资料提交不代表检查安全；预约与前置资料分别以来源为准。",
+          "actionLabel": "打开检查申请",
+          "withdrawn": false,
+          "scenario": "S12",
+          "routeKind": "examination"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S12-5",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S12",
+        "stage": 5
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "检查预约",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S12"
+          },
+          "version": 1,
+          "stage": 5,
+          "compact": "检查前置资料 · 1 项动态",
+          "title": "前置文档有新的来源版本",
+          "body": "打开新文档核对，不能沿用旧版本已打开记录。",
+          "sourceState": "来源：文档更新",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "资料",
+              "value": "新版本可查看",
+              "at": 1799999940000
+            }
+          ],
+          "tone": "info",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "资料提交不代表检查安全；预约与前置资料分别以来源为准。",
+          "actionLabel": "打开检查申请",
+          "withdrawn": false,
+          "scenario": "S12",
+          "routeKind": "examination"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S13-0",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S13",
+        "stage": 0
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "转运中心",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S13"
+          },
+          "version": 1,
+          "stage": 0,
+          "compact": "患者转运 · 1 项动态",
+          "title": "转运任务等待分派",
+          "body": "责任与路线以来源任务为准。",
+          "sourceState": "来源：待分派",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "任务",
+              "value": "待分派",
+              "at": 1799999940000
+            }
+          ],
+          "tone": "info",
+          "priority": "routine",
+          "scope": "logistics",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "转运位置不是实时定位；到达不等于检查或治疗完成。",
+          "actionLabel": "打开转运任务",
+          "withdrawn": false,
+          "scenario": "S13",
+          "routeKind": "transport"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S13-1",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S13",
+        "stage": 1
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "转运中心",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S13"
+          },
+          "version": 1,
+          "stage": 1,
+          "compact": "患者转运 · 1 项动态",
+          "title": "来源显示已分派",
+          "body": "已分派不等于已接单。",
+          "sourceState": "来源：已分派",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "接单",
+              "value": "来源未提供",
+              "at": 1799999940000
+            }
+          ],
+          "tone": "info",
+          "priority": "routine",
+          "scope": "logistics",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "转运位置不是实时定位；到达不等于检查或治疗完成。",
+          "actionLabel": "打开转运任务",
+          "withdrawn": false,
+          "scenario": "S13",
+          "routeKind": "transport"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S13-2",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S13",
+        "stage": 2
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "转运中心",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S13"
+          },
+          "version": 1,
+          "stage": 2,
+          "compact": "患者转运 · 1 项动态",
+          "title": "来源显示已接单",
+          "body": "接单不代表已经出发。",
+          "sourceState": "来源：已接单",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "出发",
+              "value": "来源未提供",
+              "at": 1799999940000
+            }
+          ],
+          "tone": "info",
+          "priority": "routine",
+          "scope": "logistics",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "转运位置不是实时定位；到达不等于检查或治疗完成。",
+          "actionLabel": "打开转运任务",
+          "withdrawn": false,
+          "scenario": "S13",
+          "routeKind": "transport"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S13-3",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S13",
+        "stage": 3
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "转运中心",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S13"
+          },
+          "version": 1,
+          "stage": 3,
+          "compact": "患者转运 · 1 项动态",
+          "title": "来源显示已出发",
+          "body": "这是节点记录，不代表实时位置。",
+          "sourceState": "来源：已出发",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "实时位置",
+              "value": "来源未提供",
+              "at": 1799999940000
+            }
+          ],
+          "tone": "info",
+          "priority": "routine",
+          "scope": "logistics",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "转运位置不是实时定位；到达不等于检查或治疗完成。",
+          "actionLabel": "打开转运任务",
+          "withdrawn": false,
+          "scenario": "S13",
+          "routeKind": "transport"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S13-4",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S13",
+        "stage": 4
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "转运中心",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S13"
+          },
+          "version": 1,
+          "stage": 4,
+          "compact": "患者转运 · 1 项动态",
+          "title": "来源显示已到达",
+          "body": "到达记录不能用于判断检查已经完成。",
+          "sourceState": "来源：已到达",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "到达地点",
+              "value": "检查区（来源记录）",
+              "at": 1799999940000
+            }
+          ],
+          "tone": "success",
+          "priority": "routine",
+          "scope": "logistics",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "转运位置不是实时定位；到达不等于检查或治疗完成。",
+          "actionLabel": "打开转运任务",
+          "withdrawn": false,
+          "scenario": "S13",
+          "routeKind": "transport"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S13-5",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S13",
+        "stage": 5
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "转运中心",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S13"
+          },
+          "version": 1,
+          "stage": 5,
+          "compact": "患者转运 · 1 项动态",
+          "title": "来源已取消转运任务",
+          "body": "保留原取消记录；本地不提供派单或取消操作。",
+          "sourceState": "来源：已取消",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "取消依据",
+              "value": "来源任务版本更新",
+              "at": 1799999940000
+            }
+          ],
+          "tone": "neutral",
+          "priority": "routine",
+          "scope": "logistics",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "转运位置不是实时定位；到达不等于检查或治疗完成。",
+          "actionLabel": "打开转运任务",
+          "withdrawn": true,
+          "scenario": "S13",
+          "routeKind": "transport"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S14-0",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S14",
+        "stage": 0
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "会诊中心",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S14"
+          },
+          "version": 1,
+          "stage": 0,
+          "compact": "会诊上下文 · 1 项动态",
+          "title": "会诊申请有新动态",
+          "body": "只保留来源会诊问题，不由 AI 重写临床判断。",
+          "sourceState": "来源：已申请",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "来源问题",
+              "value": "原会诊问题待在来源核对",
+              "at": 1799999940000
+            }
+          ],
+          "tone": "info",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "条件场景：仅显示明确授权的来源会诊问题与当前官方联系入口。",
+          "actionLabel": "打开会诊申请",
+          "withdrawn": false,
+          "scenario": "S14",
+          "routeKind": "consult"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S14-1",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S14",
+        "stage": 1
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "会诊中心",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S14"
+          },
+          "version": 1,
+          "stage": 1,
+          "compact": "会诊上下文 · 1 项动态",
+          "title": "会诊来源分派有更新",
+          "body": "分派不代表接收或应答。",
+          "sourceState": "来源：已分派",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "会诊团队",
+              "value": "来源团队 A（模拟）",
+              "at": 1799999940000
+            }
+          ],
+          "tone": "info",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "条件场景：仅显示明确授权的来源会诊问题与当前官方联系入口。",
+          "actionLabel": "打开会诊申请",
+          "withdrawn": false,
+          "scenario": "S14",
+          "routeKind": "consult"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S14-2",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S14",
+        "stage": 2
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "会诊中心",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S14"
+          },
+          "version": 1,
+          "stage": 2,
+          "compact": "会诊上下文 · 1 项动态",
+          "title": "来源显示有回呼请求",
+          "body": "回呼记录以原会诊平台为准。",
+          "sourceState": "来源：请求回呼",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "回呼",
+              "value": "来源：待回呼",
+              "at": 1799999940000
+            }
+          ],
+          "tone": "warning",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "条件场景：仅显示明确授权的来源会诊问题与当前官方联系入口。",
+          "actionLabel": "打开会诊申请",
+          "withdrawn": false,
+          "scenario": "S14",
+          "routeKind": "consult"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S14-3",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S14",
+        "stage": 3
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "会诊中心",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S14"
+          },
+          "version": 1,
+          "stage": 3,
+          "compact": "会诊上下文 · 1 项动态",
+          "title": "会诊消息送达状态未知",
+          "body": "不把本地打开映射为会诊已接收。",
+          "sourceState": "来源：送达未知",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "送达",
+              "value": "来源未提供",
+              "at": 1799999940000
+            }
+          ],
+          "tone": "neutral",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "条件场景：仅显示明确授权的来源会诊问题与当前官方联系入口。",
+          "actionLabel": "打开会诊申请",
+          "withdrawn": false,
+          "scenario": "S14",
+          "routeKind": "consult"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S14-4",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S14",
+        "stage": 4
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "会诊中心",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S14"
+          },
+          "version": 1,
+          "stage": 4,
+          "compact": "会诊上下文 · 1 项动态",
+          "title": "来源官方联系入口可查看",
+          "body": "不暴露私人号码；当前通讯录有权限与有效期要求。",
+          "sourceState": "来源：联系入口可用",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "联系方式",
+              "value": "请在来源官方目录查看",
+              "at": 1799999940000
+            }
+          ],
+          "tone": "info",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "条件场景：仅显示明确授权的来源会诊问题与当前官方联系入口。",
+          "actionLabel": "打开会诊申请",
+          "withdrawn": false,
+          "scenario": "S14",
+          "routeKind": "consult"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S14-5",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S14",
+        "stage": 5
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "会诊中心",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S14"
+          },
+          "version": 1,
+          "stage": 5,
+          "compact": "会诊上下文 · 1 项动态",
+          "title": "会诊记录已有来源更新",
+          "body": "后续评估与处置继续留在原临床系统。",
+          "sourceState": "来源：记录更新",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [],
+          "tone": "success",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "条件场景：仅显示明确授权的来源会诊问题与当前官方联系入口。",
+          "actionLabel": "打开会诊申请",
+          "withdrawn": false,
+          "scenario": "S14",
+          "routeKind": "consult"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S15-0",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S15",
+        "stage": 0
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "设备管理",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-ASSET",
+            "object": "DEMO-S15"
+          },
+          "version": 1,
+          "stage": 0,
+          "compact": "设备位置记录 · 1 项动态",
+          "title": "设备有一条位置记录",
+          "body": "位置与记录时间一起展示，不绘制实时位置动画。",
+          "sourceState": "来源：位置已记录",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "记录位置",
+              "value": "病区设备间（模拟）",
+              "at": 1799999940000
+            }
+          ],
+          "tone": "info",
+          "priority": "routine",
+          "scope": "logistics",
+          "patient": "设备 DEMO-ECG-01",
+          "guard": "条件场景：记录位置不是实时位置；可用状态不是临床使用许可。",
+          "actionLabel": "打开设备记录",
+          "withdrawn": false,
+          "scenario": "S15",
+          "routeKind": "equipment"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S15-1",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S15",
+        "stage": 1
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "设备管理",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-ASSET",
+            "object": "DEMO-S15"
+          },
+          "version": 1,
+          "stage": 1,
+          "compact": "设备位置记录 · 1 项动态",
+          "title": "来源显示借用中",
+          "body": "不在灵动岛进行预约或借用审批。",
+          "sourceState": "来源：借用中",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "借用",
+              "value": "来源：进行中",
+              "at": 1799999940000
+            }
+          ],
+          "tone": "info",
+          "priority": "routine",
+          "scope": "logistics",
+          "patient": "设备 DEMO-ECG-01",
+          "guard": "条件场景：记录位置不是实时位置；可用状态不是临床使用许可。",
+          "actionLabel": "打开设备记录",
+          "withdrawn": false,
+          "scenario": "S15",
+          "routeKind": "equipment"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S15-2",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S15",
+        "stage": 2
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "设备管理",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-ASSET",
+            "object": "DEMO-S15"
+          },
+          "version": 1,
+          "stage": 2,
+          "compact": "设备位置记录 · 1 项动态",
+          "title": "来源显示维护中",
+          "body": "维护状态与借用状态独立。",
+          "sourceState": "来源：维护中",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "维护",
+              "value": "来源：进行中",
+              "at": 1799999940000
+            },
+            {
+              "label": "借用",
+              "value": "来源未提供",
+              "at": 1799999880000
+            }
+          ],
+          "tone": "warning",
+          "priority": "routine",
+          "scope": "logistics",
+          "patient": "设备 DEMO-ECG-01",
+          "guard": "条件场景：记录位置不是实时位置；可用状态不是临床使用许可。",
+          "actionLabel": "打开设备记录",
+          "withdrawn": false,
+          "scenario": "S15",
+          "routeKind": "equipment"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S15-3",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S15",
+        "stage": 3
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "设备管理",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-ASSET",
+            "object": "DEMO-S15"
+          },
+          "version": 1,
+          "stage": 3,
+          "compact": "设备位置记录 · 1 项动态",
+          "title": "设备当前记录位置未知",
+          "body": "未知不等于遗失，不从历史移动推断当前位置。",
+          "sourceState": "来源：位置未知",
+          "sourceAt": null,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "记录位置",
+              "value": "来源未提供",
+              "at": 1799999940000
+            }
+          ],
+          "tone": "neutral",
+          "priority": "routine",
+          "scope": "logistics",
+          "patient": "设备 DEMO-ECG-01",
+          "guard": "条件场景：记录位置不是实时位置；可用状态不是临床使用许可。",
+          "actionLabel": "打开设备记录",
+          "withdrawn": false,
+          "scenario": "S15",
+          "routeKind": "equipment"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S15-4",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S15",
+        "stage": 4
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "设备管理",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-ASSET",
+            "object": "DEMO-S15"
+          },
+          "version": 1,
+          "stage": 4,
+          "compact": "设备位置记录 · 1 项动态",
+          "title": "来源显示已归还",
+          "body": "归还记录不代表设备已可用于临床。",
+          "sourceState": "来源：已归还",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "记录位置",
+              "value": "设备间（来源记录）",
+              "at": 1799999940000
+            }
+          ],
+          "tone": "info",
+          "priority": "routine",
+          "scope": "logistics",
+          "patient": "设备 DEMO-ECG-01",
+          "guard": "条件场景：记录位置不是实时位置；可用状态不是临床使用许可。",
+          "actionLabel": "打开设备记录",
+          "withdrawn": false,
+          "scenario": "S15",
+          "routeKind": "equipment"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "S15-5",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S15",
+        "stage": 5
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "设备管理",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-ASSET",
+            "object": "DEMO-S15"
+          },
+          "version": 1,
+          "stage": 5,
+          "compact": "设备位置记录 · 1 项动态",
+          "title": "设备来源记录已更新",
+          "body": "设备能否使用仍由来源授权流程决定。",
+          "sourceState": "来源：记录更新",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "临床可用性",
+              "value": "不在本组件判断范围",
+              "at": 1799999940000
+            }
+          ],
+          "tone": "success",
+          "priority": "routine",
+          "scope": "logistics",
+          "patient": "设备 DEMO-ECG-01",
+          "guard": "条件场景：记录位置不是实时位置；可用状态不是临床使用许可。",
+          "actionLabel": "打开设备记录",
+          "withdrawn": false,
+          "scenario": "S15",
+          "routeKind": "equipment"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "report-baseline",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S04",
+        "labVariant": "baseline"
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "PACS / LIS",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S04"
+          },
+          "version": 1,
+          "stage": 0,
+          "compact": "检验报告 · 1 项动态",
+          "title": "检验报告已出",
+          "body": "血常规 肝功能 CRP　3 项异常",
+          "sourceState": "只读报告已发布",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [],
+          "tone": "info",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "模拟检验报告",
+          "guard": "个人关注不转移业务责任；本地打开不代表已临床确认。",
+          "actionLabel": "查看源报告",
+          "withdrawn": false,
+          "scenario": "S04",
+          "routeKind": "reports",
+          "labRef": {
+            "id": "LAB-DEMO-S04",
+            "abnormalCount": 3
+          }
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "report-normal",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S04",
+        "labVariant": "normal"
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "PACS / LIS",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S04"
+          },
+          "version": 1,
+          "stage": 0,
+          "compact": "检验报告 · 1 项动态",
+          "title": "检验报告已出",
+          "body": "血常规 肝功能 CRP　全部正常",
+          "sourceState": "只读报告已发布",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [],
+          "tone": "info",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "模拟检验报告",
+          "guard": "个人关注不转移业务责任；本地打开不代表已临床确认。",
+          "actionLabel": "查看源报告",
+          "withdrawn": false,
+          "scenario": "S04",
+          "routeKind": "reports",
+          "labRef": {
+            "id": "LAB-DEMO-S04",
+            "abnormalCount": 0
+          }
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "report-extended",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S04",
+        "labVariant": "extended"
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "PACS / LIS",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S04"
+          },
+          "version": 1,
+          "stage": 0,
+          "compact": "检验报告 · 1 项动态",
+          "title": "检验报告已出",
+          "body": "血常规 肝功能 CRP　5 项异常",
+          "sourceState": "只读报告已发布",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [],
+          "tone": "info",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "模拟检验报告",
+          "guard": "个人关注不转移业务责任；本地打开不代表已临床确认。",
+          "actionLabel": "查看源报告",
+          "withdrawn": false,
+          "scenario": "S04",
+          "routeKind": "reports",
+          "labRef": {
+            "id": "LAB-DEMO-S04",
+            "abnormalCount": 5
+          }
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "authorization-{\"privacy\":true}",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S04",
+        "labVariant": "baseline"
+      },
+      {
+        "type": "clinical:configure",
+        "settings": {
+          "privacy": true
+        }
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "PACS / LIS",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S04"
+          },
+          "version": 1,
+          "stage": 0,
+          "compact": "检验报告 · 1 项动态",
+          "title": "检验报告 · 1 项动态",
+          "body": "身份或展示权限不允许查看详情。",
+          "sourceState": "详情已保护",
+          "sourceAt": null,
+          "syncedAt": null,
+          "fields": [],
+          "tone": "info",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "患者信息已保护",
+          "guard": "个人关注不转移业务责任；本地打开不代表已临床确认。",
+          "actionLabel": "查看源报告",
+          "withdrawn": false,
+          "scenario": "S04",
+          "routeKind": "reports"
+        }
+      ],
+      "settings": {
+        "privacy": true,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "authorization-{\"role\":\"none\"}",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S04",
+        "labVariant": "baseline"
+      },
+      {
+        "type": "clinical:configure",
+        "settings": {
+          "role": "none"
+        }
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "PACS / LIS",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S04"
+          },
+          "version": 1,
+          "stage": 0,
+          "compact": "检验报告 · 1 项动态",
+          "title": "检验报告 · 1 项动态",
+          "body": "身份或展示权限不允许查看详情。",
+          "sourceState": "详情已保护",
+          "sourceAt": null,
+          "syncedAt": null,
+          "fields": [],
+          "tone": "info",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "患者信息已保护",
+          "guard": "个人关注不转移业务责任；本地打开不代表已临床确认。",
+          "actionLabel": "查看源报告",
+          "withdrawn": false,
+          "scenario": "S04",
+          "routeKind": "reports"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "none",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "authorization-{\"role\":\"finance\"}",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S04",
+        "labVariant": "baseline"
+      },
+      {
+        "type": "clinical:configure",
+        "settings": {
+          "role": "finance"
+        }
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "PACS / LIS",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S04"
+          },
+          "version": 1,
+          "stage": 0,
+          "compact": "检验报告 · 1 项动态",
+          "title": "检验报告 · 1 项动态",
+          "body": "身份或展示权限不允许查看详情。",
+          "sourceState": "详情已保护",
+          "sourceAt": null,
+          "syncedAt": null,
+          "fields": [],
+          "tone": "info",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "患者信息已保护",
+          "guard": "个人关注不转移业务责任；本地打开不代表已临床确认。",
+          "actionLabel": "查看源报告",
+          "withdrawn": false,
+          "scenario": "S04",
+          "routeKind": "reports"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "finance",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "authorization-{\"locked\":true}",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S04",
+        "labVariant": "baseline"
+      },
+      {
+        "type": "clinical:configure",
+        "settings": {
+          "locked": true
+        }
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "PACS / LIS",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S04"
+          },
+          "version": 1,
+          "stage": 0,
+          "compact": "检验报告 · 1 项动态",
+          "title": "检验报告 · 1 项动态",
+          "body": "身份或展示权限不允许查看详情。",
+          "sourceState": "详情已保护",
+          "sourceAt": null,
+          "syncedAt": null,
+          "fields": [],
+          "tone": "info",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "患者信息已保护",
+          "guard": "个人关注不转移业务责任；本地打开不代表已临床确认。",
+          "actionLabel": "查看源报告",
+          "withdrawn": false,
+          "scenario": "S04",
+          "routeKind": "reports"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": true,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "authorization-{\"fullscreen\":true}",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S04",
+        "labVariant": "baseline"
+      },
+      {
+        "type": "clinical:configure",
+        "settings": {
+          "fullscreen": true
+        }
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "PACS / LIS",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S04"
+          },
+          "version": 1,
+          "stage": 0,
+          "compact": "检验报告 · 1 项动态",
+          "title": "检验报告 · 1 项动态",
+          "body": "身份或展示权限不允许查看详情。",
+          "sourceState": "详情已保护",
+          "sourceAt": null,
+          "syncedAt": null,
+          "fields": [],
+          "tone": "info",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "患者信息已保护",
+          "guard": "个人关注不转移业务责任；本地打开不代表已临床确认。",
+          "actionLabel": "查看源报告",
+          "withdrawn": false,
+          "scenario": "S04",
+          "routeKind": "reports"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": true,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "bounded-separate-objects",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S02",
+        "separate": true
+      },
+      {
+        "type": "clinical:scenario",
+        "scenario": "S02",
+        "separate": true
+      },
+      {
+        "type": "clinical:scenario",
+        "scenario": "S02",
+        "separate": true
+      },
+      {
+        "type": "clinical:scenario",
+        "scenario": "S02",
+        "separate": true
+      },
+      {
+        "type": "clinical:scenario",
+        "scenario": "S02",
+        "separate": true
+      },
+      {
+        "type": "clinical:scenario",
+        "scenario": "S02",
+        "separate": true
+      },
+      {
+        "type": "clinical:scenario",
+        "scenario": "S02",
+        "separate": true
+      },
+      {
+        "type": "clinical:scenario",
+        "scenario": "S02",
+        "separate": true
+      },
+      {
+        "type": "clinical:scenario",
+        "scenario": "S02",
+        "separate": true
+      },
+      {
+        "type": "clinical:scenario",
+        "scenario": "S02",
+        "separate": true
+      },
+      {
+        "type": "clinical:scenario",
+        "scenario": "S02",
+        "separate": true
+      },
+      {
+        "type": "clinical:scenario",
+        "scenario": "S02",
+        "separate": true
+      },
+      {
+        "type": "clinical:scenario",
+        "scenario": "S02",
+        "separate": true
+      },
+      {
+        "type": "clinical:scenario",
+        "scenario": "S02",
+        "separate": true
+      },
+      {
+        "type": "clinical:scenario",
+        "scenario": "S02",
+        "separate": true
+      },
+      {
+        "type": "clinical:scenario",
+        "scenario": "S02",
+        "separate": true
+      },
+      {
+        "type": "clinical:scenario",
+        "scenario": "S02",
+        "separate": true
+      },
+      {
+        "type": "clinical:scenario",
+        "scenario": "S02",
+        "separate": true
+      },
+      {
+        "type": "clinical:scenario",
+        "scenario": "S02",
+        "separate": true
+      },
+      {
+        "type": "clinical:scenario",
+        "scenario": "S02",
+        "separate": true
+      },
+      {
+        "type": "clinical:scenario",
+        "scenario": "S02",
+        "separate": true
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "HIS",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S02-1"
+          },
+          "version": 1,
+          "stage": 0,
+          "compact": "病危医嘱 · 1 项动态",
+          "title": "病危医嘱有新增",
+          "body": "源系统发布一项新医嘱。请在原医嘱单核对。",
+          "sourceState": "源系统：已发布",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "变更类型",
+              "value": "新增",
+              "at": 1799999940000
+            },
+            {
+              "label": "执行状态",
+              "value": "来源未提供",
+              "at": 1799999880000
+            }
+          ],
+          "tone": "warning",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "医嘱事实以源系统为准；此处不接收、不执行、不撤销医嘱。",
+          "actionLabel": "打开医嘱单",
+          "withdrawn": false,
+          "scenario": "S02",
+          "routeKind": "orders"
+        },
+        {
+          "identity": {
+            "source": "HIS",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S02-2"
+          },
+          "version": 1,
+          "stage": 0,
+          "compact": "病危医嘱 · 1 项动态",
+          "title": "病危医嘱有新增",
+          "body": "源系统发布一项新医嘱。请在原医嘱单核对。",
+          "sourceState": "源系统：已发布",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "变更类型",
+              "value": "新增",
+              "at": 1799999940000
+            },
+            {
+              "label": "执行状态",
+              "value": "来源未提供",
+              "at": 1799999880000
+            }
+          ],
+          "tone": "warning",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "医嘱事实以源系统为准；此处不接收、不执行、不撤销医嘱。",
+          "actionLabel": "打开医嘱单",
+          "withdrawn": false,
+          "scenario": "S02",
+          "routeKind": "orders"
+        },
+        {
+          "identity": {
+            "source": "HIS",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S02-3"
+          },
+          "version": 1,
+          "stage": 0,
+          "compact": "病危医嘱 · 1 项动态",
+          "title": "病危医嘱有新增",
+          "body": "源系统发布一项新医嘱。请在原医嘱单核对。",
+          "sourceState": "源系统：已发布",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "变更类型",
+              "value": "新增",
+              "at": 1799999940000
+            },
+            {
+              "label": "执行状态",
+              "value": "来源未提供",
+              "at": 1799999880000
+            }
+          ],
+          "tone": "warning",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "医嘱事实以源系统为准；此处不接收、不执行、不撤销医嘱。",
+          "actionLabel": "打开医嘱单",
+          "withdrawn": false,
+          "scenario": "S02",
+          "routeKind": "orders"
+        },
+        {
+          "identity": {
+            "source": "HIS",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S02-4"
+          },
+          "version": 1,
+          "stage": 0,
+          "compact": "病危医嘱 · 1 项动态",
+          "title": "病危医嘱有新增",
+          "body": "源系统发布一项新医嘱。请在原医嘱单核对。",
+          "sourceState": "源系统：已发布",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "变更类型",
+              "value": "新增",
+              "at": 1799999940000
+            },
+            {
+              "label": "执行状态",
+              "value": "来源未提供",
+              "at": 1799999880000
+            }
+          ],
+          "tone": "warning",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "医嘱事实以源系统为准；此处不接收、不执行、不撤销医嘱。",
+          "actionLabel": "打开医嘱单",
+          "withdrawn": false,
+          "scenario": "S02",
+          "routeKind": "orders"
+        },
+        {
+          "identity": {
+            "source": "HIS",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S02-5"
+          },
+          "version": 1,
+          "stage": 0,
+          "compact": "病危医嘱 · 1 项动态",
+          "title": "病危医嘱有新增",
+          "body": "源系统发布一项新医嘱。请在原医嘱单核对。",
+          "sourceState": "源系统：已发布",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "变更类型",
+              "value": "新增",
+              "at": 1799999940000
+            },
+            {
+              "label": "执行状态",
+              "value": "来源未提供",
+              "at": 1799999880000
+            }
+          ],
+          "tone": "warning",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "医嘱事实以源系统为准；此处不接收、不执行、不撤销医嘱。",
+          "actionLabel": "打开医嘱单",
+          "withdrawn": false,
+          "scenario": "S02",
+          "routeKind": "orders"
+        },
+        {
+          "identity": {
+            "source": "HIS",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S02-6"
+          },
+          "version": 1,
+          "stage": 0,
+          "compact": "病危医嘱 · 1 项动态",
+          "title": "病危医嘱有新增",
+          "body": "源系统发布一项新医嘱。请在原医嘱单核对。",
+          "sourceState": "源系统：已发布",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "变更类型",
+              "value": "新增",
+              "at": 1799999940000
+            },
+            {
+              "label": "执行状态",
+              "value": "来源未提供",
+              "at": 1799999880000
+            }
+          ],
+          "tone": "warning",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "医嘱事实以源系统为准；此处不接收、不执行、不撤销医嘱。",
+          "actionLabel": "打开医嘱单",
+          "withdrawn": false,
+          "scenario": "S02",
+          "routeKind": "orders"
+        },
+        {
+          "identity": {
+            "source": "HIS",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S02-7"
+          },
+          "version": 1,
+          "stage": 0,
+          "compact": "病危医嘱 · 1 项动态",
+          "title": "病危医嘱有新增",
+          "body": "源系统发布一项新医嘱。请在原医嘱单核对。",
+          "sourceState": "源系统：已发布",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "变更类型",
+              "value": "新增",
+              "at": 1799999940000
+            },
+            {
+              "label": "执行状态",
+              "value": "来源未提供",
+              "at": 1799999880000
+            }
+          ],
+          "tone": "warning",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "医嘱事实以源系统为准；此处不接收、不执行、不撤销医嘱。",
+          "actionLabel": "打开医嘱单",
+          "withdrawn": false,
+          "scenario": "S02",
+          "routeKind": "orders"
+        },
+        {
+          "identity": {
+            "source": "HIS",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S02-8"
+          },
+          "version": 1,
+          "stage": 0,
+          "compact": "病危医嘱 · 1 项动态",
+          "title": "病危医嘱有新增",
+          "body": "源系统发布一项新医嘱。请在原医嘱单核对。",
+          "sourceState": "源系统：已发布",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "变更类型",
+              "value": "新增",
+              "at": 1799999940000
+            },
+            {
+              "label": "执行状态",
+              "value": "来源未提供",
+              "at": 1799999880000
+            }
+          ],
+          "tone": "warning",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "医嘱事实以源系统为准；此处不接收、不执行、不撤销医嘱。",
+          "actionLabel": "打开医嘱单",
+          "withdrawn": false,
+          "scenario": "S02",
+          "routeKind": "orders"
+        },
+        {
+          "identity": {
+            "source": "HIS",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S02-9"
+          },
+          "version": 1,
+          "stage": 0,
+          "compact": "病危医嘱 · 1 项动态",
+          "title": "病危医嘱有新增",
+          "body": "源系统发布一项新医嘱。请在原医嘱单核对。",
+          "sourceState": "源系统：已发布",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "变更类型",
+              "value": "新增",
+              "at": 1799999940000
+            },
+            {
+              "label": "执行状态",
+              "value": "来源未提供",
+              "at": 1799999880000
+            }
+          ],
+          "tone": "warning",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "医嘱事实以源系统为准；此处不接收、不执行、不撤销医嘱。",
+          "actionLabel": "打开医嘱单",
+          "withdrawn": false,
+          "scenario": "S02",
+          "routeKind": "orders"
+        },
+        {
+          "identity": {
+            "source": "HIS",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S02-10"
+          },
+          "version": 1,
+          "stage": 0,
+          "compact": "病危医嘱 · 1 项动态",
+          "title": "病危医嘱有新增",
+          "body": "源系统发布一项新医嘱。请在原医嘱单核对。",
+          "sourceState": "源系统：已发布",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "变更类型",
+              "value": "新增",
+              "at": 1799999940000
+            },
+            {
+              "label": "执行状态",
+              "value": "来源未提供",
+              "at": 1799999880000
+            }
+          ],
+          "tone": "warning",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "医嘱事实以源系统为准；此处不接收、不执行、不撤销医嘱。",
+          "actionLabel": "打开医嘱单",
+          "withdrawn": false,
+          "scenario": "S02",
+          "routeKind": "orders"
+        },
+        {
+          "identity": {
+            "source": "HIS",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S02-11"
+          },
+          "version": 1,
+          "stage": 0,
+          "compact": "病危医嘱 · 1 项动态",
+          "title": "病危医嘱有新增",
+          "body": "源系统发布一项新医嘱。请在原医嘱单核对。",
+          "sourceState": "源系统：已发布",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "变更类型",
+              "value": "新增",
+              "at": 1799999940000
+            },
+            {
+              "label": "执行状态",
+              "value": "来源未提供",
+              "at": 1799999880000
+            }
+          ],
+          "tone": "warning",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "医嘱事实以源系统为准；此处不接收、不执行、不撤销医嘱。",
+          "actionLabel": "打开医嘱单",
+          "withdrawn": false,
+          "scenario": "S02",
+          "routeKind": "orders"
+        },
+        {
+          "identity": {
+            "source": "HIS",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S02-12"
+          },
+          "version": 1,
+          "stage": 0,
+          "compact": "病危医嘱 · 1 项动态",
+          "title": "病危医嘱有新增",
+          "body": "源系统发布一项新医嘱。请在原医嘱单核对。",
+          "sourceState": "源系统：已发布",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "变更类型",
+              "value": "新增",
+              "at": 1799999940000
+            },
+            {
+              "label": "执行状态",
+              "value": "来源未提供",
+              "at": 1799999880000
+            }
+          ],
+          "tone": "warning",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "医嘱事实以源系统为准；此处不接收、不执行、不撤销医嘱。",
+          "actionLabel": "打开医嘱单",
+          "withdrawn": false,
+          "scenario": "S02",
+          "routeKind": "orders"
+        },
+        {
+          "identity": {
+            "source": "HIS",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S02-13"
+          },
+          "version": 1,
+          "stage": 0,
+          "compact": "病危医嘱 · 1 项动态",
+          "title": "病危医嘱有新增",
+          "body": "源系统发布一项新医嘱。请在原医嘱单核对。",
+          "sourceState": "源系统：已发布",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "变更类型",
+              "value": "新增",
+              "at": 1799999940000
+            },
+            {
+              "label": "执行状态",
+              "value": "来源未提供",
+              "at": 1799999880000
+            }
+          ],
+          "tone": "warning",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "医嘱事实以源系统为准；此处不接收、不执行、不撤销医嘱。",
+          "actionLabel": "打开医嘱单",
+          "withdrawn": false,
+          "scenario": "S02",
+          "routeKind": "orders"
+        },
+        {
+          "identity": {
+            "source": "HIS",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S02-14"
+          },
+          "version": 1,
+          "stage": 0,
+          "compact": "病危医嘱 · 1 项动态",
+          "title": "病危医嘱有新增",
+          "body": "源系统发布一项新医嘱。请在原医嘱单核对。",
+          "sourceState": "源系统：已发布",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "变更类型",
+              "value": "新增",
+              "at": 1799999940000
+            },
+            {
+              "label": "执行状态",
+              "value": "来源未提供",
+              "at": 1799999880000
+            }
+          ],
+          "tone": "warning",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "医嘱事实以源系统为准；此处不接收、不执行、不撤销医嘱。",
+          "actionLabel": "打开医嘱单",
+          "withdrawn": false,
+          "scenario": "S02",
+          "routeKind": "orders"
+        },
+        {
+          "identity": {
+            "source": "HIS",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S02-15"
+          },
+          "version": 1,
+          "stage": 0,
+          "compact": "病危医嘱 · 1 项动态",
+          "title": "病危医嘱有新增",
+          "body": "源系统发布一项新医嘱。请在原医嘱单核对。",
+          "sourceState": "源系统：已发布",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "变更类型",
+              "value": "新增",
+              "at": 1799999940000
+            },
+            {
+              "label": "执行状态",
+              "value": "来源未提供",
+              "at": 1799999880000
+            }
+          ],
+          "tone": "warning",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "医嘱事实以源系统为准；此处不接收、不执行、不撤销医嘱。",
+          "actionLabel": "打开医嘱单",
+          "withdrawn": false,
+          "scenario": "S02",
+          "routeKind": "orders"
+        },
+        {
+          "identity": {
+            "source": "HIS",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S02-16"
+          },
+          "version": 1,
+          "stage": 0,
+          "compact": "病危医嘱 · 1 项动态",
+          "title": "病危医嘱有新增",
+          "body": "源系统发布一项新医嘱。请在原医嘱单核对。",
+          "sourceState": "源系统：已发布",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "变更类型",
+              "value": "新增",
+              "at": 1799999940000
+            },
+            {
+              "label": "执行状态",
+              "value": "来源未提供",
+              "at": 1799999880000
+            }
+          ],
+          "tone": "warning",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "医嘱事实以源系统为准；此处不接收、不执行、不撤销医嘱。",
+          "actionLabel": "打开医嘱单",
+          "withdrawn": false,
+          "scenario": "S02",
+          "routeKind": "orders"
+        },
+        {
+          "identity": {
+            "source": "HIS",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S02-17"
+          },
+          "version": 1,
+          "stage": 0,
+          "compact": "病危医嘱 · 1 项动态",
+          "title": "病危医嘱有新增",
+          "body": "源系统发布一项新医嘱。请在原医嘱单核对。",
+          "sourceState": "源系统：已发布",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "变更类型",
+              "value": "新增",
+              "at": 1799999940000
+            },
+            {
+              "label": "执行状态",
+              "value": "来源未提供",
+              "at": 1799999880000
+            }
+          ],
+          "tone": "warning",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "医嘱事实以源系统为准；此处不接收、不执行、不撤销医嘱。",
+          "actionLabel": "打开医嘱单",
+          "withdrawn": false,
+          "scenario": "S02",
+          "routeKind": "orders"
+        },
+        {
+          "identity": {
+            "source": "HIS",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S02-18"
+          },
+          "version": 1,
+          "stage": 0,
+          "compact": "病危医嘱 · 1 项动态",
+          "title": "病危医嘱有新增",
+          "body": "源系统发布一项新医嘱。请在原医嘱单核对。",
+          "sourceState": "源系统：已发布",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "变更类型",
+              "value": "新增",
+              "at": 1799999940000
+            },
+            {
+              "label": "执行状态",
+              "value": "来源未提供",
+              "at": 1799999880000
+            }
+          ],
+          "tone": "warning",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "医嘱事实以源系统为准；此处不接收、不执行、不撤销医嘱。",
+          "actionLabel": "打开医嘱单",
+          "withdrawn": false,
+          "scenario": "S02",
+          "routeKind": "orders"
+        },
+        {
+          "identity": {
+            "source": "HIS",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S02-19"
+          },
+          "version": 1,
+          "stage": 0,
+          "compact": "病危医嘱 · 1 项动态",
+          "title": "病危医嘱有新增",
+          "body": "源系统发布一项新医嘱。请在原医嘱单核对。",
+          "sourceState": "源系统：已发布",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "变更类型",
+              "value": "新增",
+              "at": 1799999940000
+            },
+            {
+              "label": "执行状态",
+              "value": "来源未提供",
+              "at": 1799999880000
+            }
+          ],
+          "tone": "warning",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "医嘱事实以源系统为准；此处不接收、不执行、不撤销医嘱。",
+          "actionLabel": "打开医嘱单",
+          "withdrawn": false,
+          "scenario": "S02",
+          "routeKind": "orders"
+        },
+        {
+          "identity": {
+            "source": "HIS",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S02-20"
+          },
+          "version": 1,
+          "stage": 0,
+          "compact": "病危医嘱 · 1 项动态",
+          "title": "病危医嘱有新增",
+          "body": "源系统发布一项新医嘱。请在原医嘱单核对。",
+          "sourceState": "源系统：已发布",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "变更类型",
+              "value": "新增",
+              "at": 1799999940000
+            },
+            {
+              "label": "执行状态",
+              "value": "来源未提供",
+              "at": 1799999880000
+            }
+          ],
+          "tone": "warning",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "医嘱事实以源系统为准；此处不接收、不执行、不撤销医嘱。",
+          "actionLabel": "打开医嘱单",
+          "withdrawn": false,
+          "scenario": "S02",
+          "routeKind": "orders"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "revision-replacement",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S08",
+        "stage": 0
+      },
+      {
+        "type": "clinical:scenario",
+        "scenario": "S08",
+        "stage": 5
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [
+        {
+          "identity": {
+            "source": "报告中心",
+            "campus": "DEMO-本部",
+            "encounter": "DEMO-VISIT-006",
+            "object": "DEMO-S08"
+          },
+          "version": 2,
+          "stage": 5,
+          "compact": "报告更正 / 撤回 · 1 项动态",
+          "title": "原报告已撤回",
+          "body": "来源未提供替代版本，不把历史报告当成当前有效报告。",
+          "sourceState": "来源：已撤回 / 无替代版本",
+          "sourceAt": 1799999940000,
+          "syncedAt": 1800000000000,
+          "fields": [
+            {
+              "label": "替代版本",
+              "value": "来源未提供",
+              "at": 1799999940000
+            }
+          ],
+          "tone": "neutral",
+          "priority": "routine",
+          "scope": "clinician",
+          "patient": "王某某 · 成人 · 06床（仅模拟）",
+          "guard": "版本按源对象追踪；旧报告已打开不代表新版已核对。",
+          "actionLabel": "查看版本记录",
+          "withdrawn": true,
+          "scenario": "S08",
+          "routeKind": "report-version"
+        }
+      ],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  },
+  {
+    "name": "reset-source-only",
+    "commands": [
+      {
+        "type": "clinical:scenario",
+        "scenario": "S03"
+      },
+      {
+        "type": "clinical:reset"
+      }
+    ],
+    "snapshot": {
+      "type": "clinical:snapshot",
+      "activities": [],
+      "settings": {
+        "privacy": false,
+        "role": "clinician",
+        "locked": false,
+        "fullscreen": false,
+        "connectivity": "fresh",
+        "routeFault": "none"
+      }
+    }
+  }
+]

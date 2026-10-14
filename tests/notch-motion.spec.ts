@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 import {evidencePath} from './evidence-path';
-async function post(request: any, data: object) { expect((await request.post('http://127.0.0.1:17321/api/push', { data })).ok()).toBeTruthy(); }
+async function post(request: any, data: object) { expect((await request.post(((process.env.ISLAND_TEST_LEGACY_URL??'http://127.0.0.1:17321')+'/api/push'), { data })).ok()).toBeTruthy(); }
 test.beforeEach(async ({ page, request }) => {
   await post(request,{type:'reset'}); await post(request,{type:'configure',settings:{engine:'gsap',shape:'notch',theme:'ink',focus:false,privacy:true,reduced:false}});
   await page.goto('/'); await expect(page.getByTestId('scenario-critical')).toBeEnabled();
@@ -33,7 +33,7 @@ test('rapid interrupts settle at the newest state, with no invisible interaction
   const island=page.getByTestId('island');await expect(island).toHaveAttribute('data-mode','expanded');await expect(island).toHaveAttribute('data-motion-phase','settled');
   await page.getByRole('button',{name:'确认收到',exact:true}).click();
   await expect(island).toHaveAttribute('data-mode','success');
-  const data=await (await request.get('http://127.0.0.1:17321/api/state')).json(); expect(data.receipts).toHaveLength(1);
+  const data=await (await request.get(((process.env.ISLAND_TEST_LEGACY_URL??'http://127.0.0.1:17321')+'/api/state'))).json(); expect(data.receipts).toHaveLength(1);
 });
 test('reduced-motion updates live, restores opacity and keeps the receipt path', async ({ page, request }) => {
   await page.emulateMedia({reducedMotion:'reduce'});
@@ -53,7 +53,7 @@ for (const scale of [1.25, 1.5, 2]) test(`browser DPR ${scale}: U silhouette, ce
   // Browser raster-scale coverage only; this does not claim Windows OS-DPI hardware validation.
   const context=await browser.newContext({viewport:{width:1280,height:200},deviceScaleFactor:scale});
   try {
-    const page=await context.newPage();await page.goto('http://127.0.0.1:1420/?view=island');
+    const page=await context.newPage();await page.goto(`http://127.0.0.1:${process.env.ISLAND_TEST_WEB_PORT??1420}/?view=island`);
     const island=page.getByTestId('island');await expect(island).toHaveAttribute('data-motion-phase','settled');
     expect(await page.evaluate(()=>devicePixelRatio)).toBe(scale);
     await post(request,{type:'demo',scenario:'critical'});await expect(island).toHaveAttribute('data-mode','expanded');await expect(island).toHaveAttribute('data-motion-phase','settled');

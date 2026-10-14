@@ -1,0 +1,30 @@
+[package]
+name = "samewave-workbench"
+version = "0.1.0"
+description = "Samewave isolated synthetic prototype workbench"
+edition = "2021"
+rust-version = "1.85"
+
+[lib]
+name = "samewave_workbench_lib"
+crate-type = ["rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "=2.11.6", features = [] }
+tauri-plugin-single-instance = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tokio = { version = "1", features = ["sync", "time", "net", "macros"] }
+axum = { version = "0.8.9", default-features = false, features = ["http1", "tokio", "ws", "json"] }
+futures-util = "0.3"
+uuid = { version = "1", features = ["v4"] }
+
+[profile.release]
+opt-level = "s"
+lto = "thin"
+codegen-units = 8
+strip = true
+panic = "abort"

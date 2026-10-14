@@ -1,0 +1,53 @@
+{
+  "normalLaunch": true,
+  "pid": 11852,
+  "executable": "D:\\Projects\\island-protype\\src-tauri\\target\\release\\samewave-island.exe",
+  "commandLine": "\"D:\\Projects\\island-protype\\src-tauri\\target\\release\\samewave-island.exe\" ",
+  "exeSHA256": "1ab433671b44ff2b048c370654903e02d47d242da58dde0bb7d34e8821dafa14",
+  "qaPortClosed": true,
+  "qaWitnessClosed": true,
+  "window": {
+    "hwnd": 4523920,
+    "pid": 11852,
+    "title": "Samewave Island",
+    "class": "Tauri Window",
+    "path": "D:\\Projects\\island-protype\\src-tauri\\target\\release\\samewave-island.exe",
+    "dwm": {
+      "1": {
+        "hresult": 0,
+        "value": 0
+      },
+      "2": {
+        "hresult": -2147024809,
+        "value": 0
+      },
+      "33": {
+        "hresult": 0,
+        "value": 1
+      },
+      "34": {
+        "hresult": -2147024809,
+        "value": 0
+      },
+      "37": {
+        "hresult": 0,
+        "value": 1
+      },
+      "38": {
+        "hresult": 0,
+        "value": 0
+      }
+    },
+    "backgroundBrush": "0x0",
+    "visible": true,
+    "rect": [
+      608,
+      0,
+      1312,
+      622
+    ],
+    "style": "0x14080000",
+    "exStyle": "0x8000098"
+  },
+  "capturedAt": "2026-10-13T22:48:57.0153571+08:00"
+}

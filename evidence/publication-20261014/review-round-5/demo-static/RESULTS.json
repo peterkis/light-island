@@ -1,0 +1,57 @@
+{
+  "pass": true,
+  "pid": 20856,
+  "port": 17327,
+  "pages": [
+    {
+      "path": "/",
+      "status": 200
+    },
+    {
+      "path": "/workbench.html",
+      "status": 200
+    },
+    {
+      "path": "/clinical.html",
+      "status": 200
+    }
+  ],
+  "assets": [
+    {
+      "path": "/assets/index-UFZxBnkc.js",
+      "status": 200
+    },
+    {
+      "path": "/assets/CustomEase-D5iAENeQ.js",
+      "status": 200
+    },
+    {
+      "path": "/assets/index-BRSRqugz.css",
+      "status": 200
+    },
+    {
+      "path": "/assets/workbench-6hpDSptk.js",
+      "status": 200
+    },
+    {
+      "path": "/assets/performance-BNeH42V5.js",
+      "status": 200
+    },
+    {
+      "path": "/assets/workbench-ChdU9oGQ.css",
+      "status": 200
+    },
+    {
+      "path": "/assets/clinical-C7WQtwb7.js",
+      "status": 200
+    },
+    {
+      "path": "/assets/client-CIQ2UTlV.js",
+      "status": 200
+    },
+    {
+      "path": "/assets/clinical-DfgX3YJP.css",
+      "status": 200
+    }
+  ]
+}

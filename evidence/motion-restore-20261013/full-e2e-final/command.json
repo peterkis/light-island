@@ -1,0 +1,10 @@
+{
+  "command": [
+    "cmd",
+    "/c",
+    "npm run test:e2e"
+  ],
+  "exitCode": 1,
+  "seconds": 559.68,
+  "excluded": []
+}

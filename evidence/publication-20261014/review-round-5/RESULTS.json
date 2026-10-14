@@ -1,0 +1,88 @@
+{
+  "status": "PASS_AS_TESTED",
+  "recordedAt": "2026-10-14T11:49:57.698936+08:00",
+  "reviewedBase": "6ba4c729b7db88acbe2927753595d38821c7e905",
+  "findings": [
+    {
+      "commentId": 4266410062,
+      "priority": "P2",
+      "disposition": "FIXED",
+      "change": "launch_island requires the workbench owned listener to be live; shutdown and serve completion clear readiness."
+    },
+    {
+      "commentId": 4266410066,
+      "priority": "P2",
+      "disposition": "NOT_REPRODUCED_HARDENED",
+      "change": "Baseline already includes all five character nodes and rolls the correct previous glyphs across 00:20 to 00:19. Indexing now explicitly reads data-digit rather than query ordinal."
+    },
+    {
+      "commentId": 4266410071,
+      "priority": "P2",
+      "disposition": "FIXED",
+      "change": "Node static routes serve generated workbench/island entries and hashed assets without a top-level dist index."
+    }
+  ],
+  "validation": {
+    "unitPassed": 257,
+    "targetedBrowserPassed": 14,
+    "digitBaselineBrowserPassed": 8,
+    "digitBaselineIncludesColonNode": true,
+    "rustWorkbenchTestsPassed": 15,
+    "rustIslandCodeUnchangedSinceRound4With20Tests": true,
+    "strictWorkbenchClippy": "PASS",
+    "frontendTypecheckAndBuilds": "PASS",
+    "bundleCheck": "PASS",
+    "protocolCases": 95,
+    "releaseBuildBoth": "PASS",
+    "nativeFunctional": "PASS",
+    "nativePortCollisionLaunchRefused": true,
+    "contactsToUnrelatedV2": 0,
+    "staticHTTPPagesPassed": 3,
+    "staticHTTPAssetsPassed": 9,
+    "nativeLifecycleCases": [
+      {
+        "name": "graceful workbench exit preserves island timer",
+        "pass": true
+      },
+      {
+        "name": "restart replaces source session without replacing deadline",
+        "pass": true
+      },
+      {
+        "name": "workbench motion enum survives restart without changing island preference",
+        "pass": true
+      },
+      {
+        "name": "abrupt workbench termination preserves island timer",
+        "pass": true
+      },
+      {
+        "name": "a replacement workbench motion enum survives abrupt exit",
+        "pass": true
+      },
+      {
+        "name": "island exit leaves independent workbench running",
+        "pass": true
+      }
+    ],
+    "sourceFiles": 319,
+    "sourceDrift": 0
+  },
+  "products": [
+    {
+      "kind": "island",
+      "path": "dist/desktop/samewave-island.exe",
+      "sha256": "d48b1c0a4260125f9a9fa60e993cddeb1397c90c33d2301a782bc74ad1fff71a",
+      "bytes": 4602880
+    },
+    {
+      "kind": "workbench",
+      "path": "dist/desktop/samewave-workbench.exe",
+      "sha256": "4493d95f248f9b26844796c936cb470a3f05dda4680b0c9c30cd89fc15d5e587",
+      "bytes": 4900864
+    }
+  ],
+  "nativeEvidence": "evidence/app-split-20261013/review-round-5-native",
+  "portEvidence": "evidence/app-split-20261013/review-round-5-port-v2",
+  "scope": "Synthetic read-only Windows 11 / 96 DPI validation; prior screen and Rust evidence remain unchanged, no new DWM or device claims."
+}

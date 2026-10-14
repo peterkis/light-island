@@ -1,0 +1,95 @@
+{
+  "status": "PASS_AS_TESTED",
+  "recordedAt": "2026-10-14T09:41:25.742267+08:00",
+  "reviewedBase": "ece2ad4e788ab19ea1877873fefe0a8e08d349b1",
+  "findings": [
+    {
+      "commentId": 4265712714,
+      "priority": "P2",
+      "disposition": "FIXED",
+      "change": "Never connect while native listener is down; pin each hello to the native source session; reject late disposed status replies."
+    },
+    {
+      "commentId": 4265712716,
+      "priority": "P2",
+      "disposition": "FIXED",
+      "change": "Use independent per-app native preference state and app_config_dir; persist only the existing motion enum outside incognito storage."
+    },
+    {
+      "commentId": 4265712723,
+      "priority": "P2",
+      "disposition": "FALSE_POSITIVE_WITH_REGRESSION",
+      "reason": "Rust 1.94.0 Windows fs::rename uses MoveFileExW with MOVEFILE_REPLACE_EXISTING. Five sequential save/reloads pass in both Rust packages; native replacement/restart/crash checks pass. Retain the existing same-folder synced rename strategy.",
+      "source": "https://github.com/rust-lang/rust/blob/1.94.0/library/std/src/sys/fs/windows.rs#L1239-L1240"
+    }
+  ],
+  "validation": {
+    "unitPassed": 243,
+    "targetedBrowserPassed": 13,
+    "priorFullBrowserScope": "106 distinct scenarios previously covered across the complete and DPR rerun; original records unchanged.",
+    "rustTests": {
+      "island": 17,
+      "workbench": 11
+    },
+    "strictClippy": "PASS",
+    "frontendAndBothReleaseBuilds": "PASS",
+    "bundleAndProtocolCases": 95,
+    "unrelatedV2Contacts": 0,
+    "lifecycleCases": [
+      {
+        "name": "graceful workbench exit preserves island timer",
+        "pass": true
+      },
+      {
+        "name": "restart replaces source session without replacing deadline",
+        "pass": true
+      },
+      {
+        "name": "workbench motion enum survives restart without changing island preference",
+        "pass": true
+      },
+      {
+        "name": "abrupt workbench termination preserves island timer",
+        "pass": true
+      },
+      {
+        "name": "a replacement workbench motion enum survives abrupt exit",
+        "pass": true
+      },
+      {
+        "name": "island exit leaves independent workbench running",
+        "pass": true
+      }
+    ],
+    "nativeS0": {
+      "width": 124,
+      "height": 32,
+      "background": "rgba(0, 0, 0, 0)",
+      "cursor": "pointer",
+      "fill": "rgb(0, 0, 0)",
+      "mark": "0"
+    },
+    "nativeScreenSamples": 49,
+    "blankScreenSamples": 0,
+    "brightBorderPixels": 0,
+    "clickThroughCases": 3,
+    "rafIsNotDwmPresentation": true
+  },
+  "products": [
+    {
+      "kind": "island",
+      "path": "dist/desktop/samewave-island.exe",
+      "sha256": "4022501923e843fe0fa785fe0e5ae7e0a2ba5667f35d93a2c9e82c9edac508d8",
+      "bytes": 4602368
+    },
+    {
+      "kind": "workbench",
+      "path": "dist/desktop/samewave-workbench.exe",
+      "sha256": "b9e3d44555574a72d52e1552f939e653a3599085de6a380cd0e2c2387f3b8094",
+      "bytes": 4898816
+    }
+  ],
+  "nativeEvidence": "evidence/app-split-20261013/review-round-1-native",
+  "collisionEvidence": "evidence/app-split-20261013/review-port-v2/port-collision.json",
+  "scope": "Synthetic read-only prototype; Windows 11 96 DPI native validation; other device/DWM matrix remains NOT_RUN."
+}

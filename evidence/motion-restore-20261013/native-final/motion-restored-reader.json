@@ -1,0 +1,469 @@
+{
+  "scope": "Full-mode native WebView2 / synthetic report / CSS progression and bounded screenshots, not DWM telemetry",
+  "burn": [
+    {
+      "t": 6.7000000000116415,
+      "name": "lab-burn",
+      "burnPosition": "-11.5717%"
+    },
+    {
+      "t": 23.099999999976717,
+      "name": "lab-burn",
+      "burnPosition": "-11.3283%"
+    },
+    {
+      "t": 39.59999999997672,
+      "name": "lab-burn",
+      "burnPosition": "-11.0587%"
+    },
+    {
+      "t": 56.20000000001164,
+      "name": "lab-burn",
+      "burnPosition": "-10.7617%"
+    },
+    {
+      "t": 72.90000000002328,
+      "name": "lab-burn",
+      "burnPosition": "-10.4358%"
+    },
+    {
+      "t": 89.70000000001164,
+      "name": "lab-burn",
+      "burnPosition": "-10.0797%"
+    },
+    {
+      "t": 106.5,
+      "name": "lab-burn",
+      "burnPosition": "-9.69423%"
+    },
+    {
+      "t": 123.5,
+      "name": "lab-burn",
+      "burnPosition": "-9.27311%"
+    },
+    {
+      "t": 140.09999999997672,
+      "name": "lab-burn",
+      "burnPosition": "-8.83069%"
+    },
+    {
+      "t": 156.40000000002328,
+      "name": "lab-burn",
+      "burnPosition": "-8.36516%"
+    },
+    {
+      "t": 172.90000000002328,
+      "name": "lab-burn",
+      "burnPosition": "-7.8614%"
+    },
+    {
+      "t": 189.59999999997672,
+      "name": "lab-burn",
+      "burnPosition": "-7.31697%"
+    },
+    {
+      "t": 206.29999999998836,
+      "name": "lab-burn",
+      "burnPosition": "-6.73648%"
+    },
+    {
+      "t": 223.29999999998836,
+      "name": "lab-burn",
+      "burnPosition": "-6.10711%"
+    },
+    {
+      "t": 239.70000000001164,
+      "name": "lab-burn",
+      "burnPosition": "-5.46178%"
+    },
+    {
+      "t": 256.5999999999767,
+      "name": "lab-burn",
+      "burnPosition": "-4.75604%"
+    },
+    {
+      "t": 273.20000000001164,
+      "name": "lab-burn",
+      "burnPosition": "-4.021%"
+    },
+    {
+      "t": 290,
+      "name": "lab-burn",
+      "burnPosition": "-3.23325%"
+    },
+    {
+      "t": 306.5,
+      "name": "lab-burn",
+      "burnPosition": "-2.41493%"
+    },
+    {
+      "t": 323.4000000000233,
+      "name": "lab-burn",
+      "burnPosition": "-1.52909%"
+    },
+    {
+      "t": 339.5999999999767,
+      "name": "lab-burn",
+      "burnPosition": "-0.632842%"
+    },
+    {
+      "t": 372.9000000000233,
+      "name": "lab-burn",
+      "burnPosition": "1.36203%"
+    },
+    {
+      "t": 389.70000000001164,
+      "name": "lab-burn",
+      "burnPosition": "2.45058%"
+    }
+  ],
+  "sourceUnchanged": true,
+  "reportRowsRemoved": true,
+  "digits": [
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 1
+    },
+    {
+      "width": 268,
+      "moving": 1
+    },
+    {
+      "width": 268,
+      "moving": 1
+    },
+    {
+      "width": 268,
+      "moving": 1
+    },
+    {
+      "width": 268,
+      "moving": 1
+    },
+    {
+      "width": 268,
+      "moving": 1
+    },
+    {
+      "width": 268,
+      "moving": 1
+    },
+    {
+      "width": 268,
+      "moving": 1
+    },
+    {
+      "width": 268,
+      "moving": 1
+    },
+    {
+      "width": 268,
+      "moving": 1
+    },
+    {
+      "width": 268,
+      "moving": 1
+    },
+    {
+      "width": 268,
+      "moving": 1
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 0
+    },
+    {
+      "width": 268,
+      "moving": 1
+    },
+    {
+      "width": 268,
+      "moving": 1
+    },
+    {
+      "width": 268,
+      "moving": 1
+    },
+    {
+      "width": 268,
+      "moving": 1
+    },
+    {
+      "width": 268,
+      "moving": 1
+    },
+    {
+      "width": 268,
+      "moving": 1
+    },
+    {
+      "width": 268,
+      "moving": 1
+    },
+    {
+      "width": 268,
+      "moving": 1
+    },
+    {
+      "width": 268,
+      "moving": 1
+    },
+    {
+      "width": 268,
+      "moving": 1
+    },
+    {
+      "width": 268,
+      "moving": 1
+    }
+  ],
+  "status": "PASS"
+}

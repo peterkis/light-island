@@ -3,10 +3,10 @@ import {writeFile} from 'node:fs/promises';
 import {evidencePath} from './evidence-path';
 
 for(const baseline of process.env.ISLAND_PROFILE_BASELINE==='1'?[true,false]:[false])test(`reader profiling ${baseline?'baseline':'optimized'}: running and paused budgets`,async({page,request})=>{
- await request.post('http://127.0.0.1:17322/api/push',{data:{type:'clinical:reset'}});
- await request.post('http://127.0.0.1:17322/api/push',{data:{type:'clinical:scenario',scenario:'S04',labVariant:'baseline'}});
- const state=await(await request.get('http://127.0.0.1:17322/api/clinical-state')).json();
- await page.routeWebSocket('ws://127.0.0.1:17322/events',socket=>{
+ await request.post(((process.env.ISLAND_TEST_SOURCE_URL??'http://127.0.0.1:17322')+'/api/push'),{data:{type:'clinical:reset'}});
+ await request.post(((process.env.ISLAND_TEST_SOURCE_URL??'http://127.0.0.1:17322')+'/api/push'),{data:{type:'clinical:scenario',scenario:'S04',labVariant:'baseline'}});
+ const state=await(await request.get(((process.env.ISLAND_TEST_SOURCE_URL??'http://127.0.0.1:17322')+'/api/clinical-state'))).json();
+ await page.routeWebSocket(((process.env.ISLAND_TEST_SOURCE_URL??'http://127.0.0.1:17322').replace('http:','ws:')+'/events'),socket=>{
   const server=socket.connectToServer();server.onMessage(raw=>{
    const event=JSON.parse(raw.toString());if(event.type==='clinical:lab-report'&&event.report){const items=event.report.items;event.report.items=Array.from({length:128},(_,i)=>({...items[i%items.length],id:'profile-'+i}));}
    socket.send(JSON.stringify(event));

@@ -1,0 +1,12 @@
+import {readFileSync,readdirSync} from 'node:fs';
+import {join} from 'node:path';
+import assert from 'node:assert/strict';
+const root='dist/island/assets',maps=readdirSync(root).filter(name=>name.endsWith('.js.map'));
+const sources=maps.flatMap(name=>JSON.parse(readFileSync(join(root,name),'utf8')).sources);
+const forbidden=sources.filter(source=>/\/workbench\/|\/ClinicalStudio\.tsx$|\/components\/Studio\.tsx$|\/catalogue\.json$|\/server\//.test(source));
+assert.deepEqual(forbidden,[],'Island resource package contains simulation/workbench code');
+const island=JSON.parse(readFileSync('src-tauri/capabilities/default.json','utf8'));
+const workbench=JSON.parse(readFileSync('workbench/src-tauri/capabilities/default.json','utf8'));
+assert.deepEqual(island.windows,['island','clinical-source']);assert.deepEqual(workbench.windows,['workbench']);
+const native=readFileSync('src-tauri/src/lib.rs','utf8');assert(!native.includes('WebviewWindowBuilder::new(&app, "studio"'));
+console.log(JSON.stringify({islandSources:sources.length,simulatorCodeAbsent:true,separateCapabilities:true},null,2));

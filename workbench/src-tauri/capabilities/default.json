@@ -1,0 +1,7 @@
+{
+  "$schema":"../gen/schemas/desktop-schema.json",
+  "identifier":"workbench-local",
+  "description":"Only the synthetic workbench. No island geometry, capture or remote shell permissions.",
+  "windows":["workbench"],
+  "permissions":["core:default"]
+}

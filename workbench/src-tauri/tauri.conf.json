@@ -1,0 +1,38 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Samewave Workbench",
+  "version": "0.1.0",
+  "identifier": "local.samewave.workbench.prototype",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://127.0.0.1:1420",
+    "beforeBuildCommand": "npm run build:workbench",
+    "frontendDist": "../../dist/workbench"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "workbench",
+        "url": "workbench.html?app=workbench",
+        "title": "同频 · 原型工作台 · 仅模拟数据",
+        "width": 1380,
+        "height": 980,
+        "minWidth": 900,
+        "minHeight": 700,
+        "center": true
+      }
+    ],
+    "security": {
+      "capabilities": [
+        "workbench-local"
+      ],
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' ipc: http://ipc.localhost http://127.0.0.1:* ws://127.0.0.1:* http://localhost:1420 ws://localhost:1420"
+    }
+  },
+  "bundle": {
+    "active": false,
+    "icon": [
+      "../../src-tauri/icons/icon.ico"
+    ]
+  }
+}

@@ -4,7 +4,6 @@
   "description": "Local prototype windows only. No filesystem, shell, remote navigation or broad network plugin permissions.",
   "windows": [
     "island",
-    "studio",
     "clinical-source"
   ],
   "permissions": [

@@ -19,15 +19,13 @@ const identityOf=value=>record(value)&&typeof value.source==='string'&&typeof va
 const routes=/** @type {const} */ ({S02:'orders',S03:'critical',S04:'reports',S05:'finance',S06:'handoff',S07:'followup',S08:'report-version',S09:'specimen',S10:'blood',S11:'pharmacy',S12:'examination',S13:'transport',S14:'consult',S15:'equipment'});
 /** @param {unknown} value @returns {value is ScenarioId} */
 const scenarioId=value=>typeof value==='string'&&Object.hasOwn(routes,value);
-/** @returns {Settings} */
-const defaultSettings=()=>({privacy:false,role:'clinician',locked:false,fullscreen:false,reduced:false,textScale:1,connectivity:'fresh',routeFault:'none',quiet:false,dock:'notch',compactText:false,backgroundDark:false,hideIdle:false,autoPreview:true});
-/** @returns {TimerState} */
-const defaultTimer=()=>({status:'idle',duration:1500000,remaining:1500000,deadline:null});
+/** @returns {import('../src/lib/protocol').SourceSettings} */
+const defaultSettings=()=>({privacy:false,role:'clinician',locked:false,fullscreen:false,connectivity:'fresh',routeFault:'none'});
 /** @param {Identity} i */
 const key=i=>JSON.stringify([i.source,i.campus,i.encounter,i.object]);
 /** @param {(event:ClinicalIncomingEvent)=>void} broadcast @param {()=>number} [clock] */
 export function createClinicalDemo(broadcast,clock=Date.now){
- let settings=defaultSettings(),timer=defaultTimer(),serial=0;
+ let settings=defaultSettings(),serial=0;
  const activities=new Map(/** @type {Array<[string,Activity]>} */([])),tickets=new Map(/** @type {Array<[string,{activity:Activity,expires:number}]>} */([])),labReports=new Map(/** @type {Array<[string,import('../src/clinical/lab-reader/model').LabReport]>} */([]));
  /** @param {Activity} a */
  const allowed=a=>!settings.privacy&&!settings.locked&&!settings.fullscreen&&settings.role!=='none'&&(a.scope===settings.role||(a.scope==='logistics'&&settings.role==='clinician'));
@@ -39,7 +37,7 @@ export function createClinicalDemo(broadcast,clock=Date.now){
   return masked;
  };
  /** @returns {Extract<ClinicalIncomingEvent,{type:'clinical:snapshot'}>} */
- const snapshot=()=>({type:'clinical:snapshot',activities:[...activities.values()].map(publicItem),settings:{...settings},timer:{...timer}});
+ const snapshot=()=>({type:'clinical:snapshot',activities:[...activities.values()].map(publicItem),settings:{...settings}});
  function publish(){broadcast(snapshot());}
  /** @param {unknown} id @param {unknown} [stage] @param {{separate?:boolean,labVariant?:unknown}} [options] */
  function scenario(id,stage=0,options={}){
@@ -91,17 +89,14 @@ export function createClinicalDemo(broadcast,clock=Date.now){
   switch(data.type){
    case 'clinical:sync':reply(snapshot());break;
    case 'clinical:scenario':scenario(data.scenario,data.stage??0,{separate:data.separate===true,labVariant:data.labVariant});break;
-   case 'clinical:reset':activities.clear();tickets.clear();labReports.clear();settings=defaultSettings();timer=defaultTimer();broadcast({type:'clinical:reset'});publish();break;
-   case 'clinical:preferences':
+   case 'clinical:reset':activities.clear();tickets.clear();labReports.clear();settings=defaultSettings();broadcast({type:'clinical:reset'});publish();break;
    case 'clinical:configure':{
     const p=record(data.settings)?data.settings:{};
-    if(data.type==='clinical:preferences'&&Object.keys(p).some(k=>!['dock','compactText','backgroundDark','hideIdle','autoPreview','reduced','quiet'].includes(k)))throw new Error('Only presentation preferences are permitted');
-    for(const k of /** @type {const} */ (['privacy','locked','fullscreen','reduced','quiet','compactText','backgroundDark','hideIdle','autoPreview']))if(typeof p[k]==='boolean')settings[k]=p[k];
-    if(member(p.dock,['notch','floating']))settings.dock=p.dock;
+    if(Object.keys(p).some(k=>!['privacy','role','locked','fullscreen','connectivity','routeFault'].includes(k)))throw new Error('Presentation preferences belong to each viewer');
+    for(const k of /** @type {const} */ (['privacy','locked','fullscreen']))if(typeof p[k]==='boolean')settings[k]=p[k];
     if(member(p.role,['clinician','finance','logistics','none']))settings.role=p.role;
     if(member(p.connectivity,['fresh','stale','offline']))settings.connectivity=p.connectivity;
     if(member(p.routeFault,['none','failed','mismatch']))settings.routeFault=p.routeFault;
-    if(typeof p.textScale==='number'&&Number.isFinite(p.textScale))settings.textScale=Math.min(2.25,Math.max(1,p.textScale));
     tickets.clear();broadcast({type:'clinical:settings',settings:{...settings}});publish();break;
    }
    case 'clinical:refresh':{
@@ -109,20 +104,6 @@ export function createClinicalDemo(broadcast,clock=Date.now){
     if(settings.connectivity!=='fresh'){reply({type:'clinical:refresh-failed'});break;}
     for(const [k,a]of activities)activities.set(k,{...a,syncedAt:clock()});publish();break;
    }
-   case 'clinical:personal':{
-    const now=clock();const command=data.command;
-    if(command==='start'){
-     const duration=typeof data.duration==='number'&&Number.isFinite(data.duration)?Math.min(3600000,Math.max(1000,data.duration)):1500000;
-     timer={status:'running',duration,remaining:duration,deadline:now+duration};
-    }else if(command==='pause'&&timer.status==='running')timer={...timer,status:'paused',remaining:Math.max(0,timer.deadline-now),deadline:null};
-    else if(command==='resume'&&timer.status==='paused')timer={...timer,status:'running',deadline:now+timer.remaining};
-    else if(command==='end')timer=defaultTimer();
-    else if(!member(command,['pause','resume']))throw new Error('Unknown personal timer command');
-    broadcast({type:'clinical:timer',timer:{...timer}});break;
-   }
-   case 'clinical:view':
-    if(!member(data.mode,['open','compact','timer']))throw new Error('Unknown clinical view');
-    broadcast({type:'clinical:view',mode:data.mode,...(scenarioId(data.scenario)||data.scenario==='S01'?{scenario:data.scenario}:{})});break;
    case 'clinical:open':{
     const id=data.requestId,identity=identityOf(data.identity); if(typeof id!=='string'||id.length>80||!identity)throw new Error('Invalid route request');
     const a=activities.get(key(identity));const answer={type:/** @type {const} */('clinical:route'),requestId:id};
@@ -152,5 +133,5 @@ export function createClinicalDemo(broadcast,clock=Date.now){
   }
   return true;
  }
- return {handle,snapshot,inspect:()=>({settings:{...settings},timer:{...timer},activities:[...activities.values()],tickets:tickets.size})};
+ return {handle,snapshot,inspect:()=>({settings:{...settings},activities:[...activities.values()],tickets:tickets.size})};
 }

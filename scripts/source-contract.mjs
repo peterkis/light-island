@@ -1,0 +1,15 @@
+import catalogue from '../src/clinical/catalogue.json' with {type:'json'};
+import {createClinicalDemo} from '../server/clinical-demo.mjs';
+import {writeFileSync,readFileSync} from 'node:fs';
+import assert from 'node:assert/strict';
+const cases=[];
+const add=(name,commands)=>{const demo=createClinicalDemo(()=>{},()=>1800000000000);for(const command of commands)demo.handle(command);cases.push({name,commands,snapshot:demo.snapshot()});};
+for(const d of catalogue)for(let stage=0;stage<d.stages.length;stage++)add(`${d.id}-${stage}`,[{type:'clinical:scenario',scenario:d.id,stage}]);
+for(const labVariant of ['baseline','normal','extended'])add('report-'+labVariant,[{type:'clinical:scenario',scenario:'S04',labVariant}]);
+for(const settings of [{privacy:true},{role:'none'},{role:'finance'},{locked:true},{fullscreen:true}])add('authorization-'+JSON.stringify(settings),[{type:'clinical:scenario',scenario:'S04',labVariant:'baseline'},{type:'clinical:configure',settings}]);
+add('bounded-separate-objects',Array.from({length:21},()=>({type:'clinical:scenario',scenario:'S02',separate:true})));
+add('revision-replacement',[{type:'clinical:scenario',scenario:'S08',stage:0},{type:'clinical:scenario',scenario:'S08',stage:5}]);
+add('reset-source-only',[{type:'clinical:scenario',scenario:'S03'},{type:'clinical:reset'}]);
+const path=new URL('../shared/source-contract.json',import.meta.url),output=JSON.stringify(cases,null,2)+'\n';
+if(process.argv.includes('--check'))assert.deepEqual(JSON.parse(readFileSync(path,'utf8')),cases,'Node source semantics changed; review and regenerate the shared contract deliberately');else writeFileSync(path,output);
+console.log(`${cases.length} deterministic source cases ${process.argv.includes('--check')?'verified':'generated'}`);

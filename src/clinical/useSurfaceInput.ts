@@ -7,6 +7,7 @@ import T from './tokens.json';
 import {swipeDecision} from './presentation';
 interface Gesture {shift:number;dragging:boolean;velocity:number;dismissing:boolean}
 interface InputActions {expanded:boolean;surface:string;hidden:boolean;reduced:boolean;peekable?:boolean;gesturesDisabled?:boolean;hover:(v:boolean)=>void;expand:()=>void;collapse:()=>void;stack:()=>void;dismiss:()=>void;cycle:(direction:number)=>void;keyboardExpand?:()=>void}
+const canPeek=(actions:InputActions)=>!actions.hidden&&!actions.reduced&&(actions.surface==='compact'||actions.peekable===true);
 export function useSurfaceInput(host:RefObject<HTMLDivElement|null>,actions:InputActions){
  const latest=useRef(actions);latest.current=actions;
  const [peek,setPeek]=useState(false),[pressed,setPressed]=useState(false);
@@ -27,9 +28,9 @@ export function useSurfaceInput(host:RefObject<HTMLDivElement|null>,actions:Inpu
   }
   return()=>{dead=true;alive.current=false;cancelGestureFrame();revision.current++;cancel();clearTimeout(dismissTimer.current);offOutside?.();offShortcut?.();document.removeEventListener('pointerup',up);document.removeEventListener('pointercancel',abort);window.removeEventListener('blur',abort);};
  },[]);
- useEffect(()=>{if(actions.expanded||actions.hidden||actions.reduced){revision.current++;cancel();setPeek(false);setPressed(false);}if(actions.hidden){cancelGestureFrame();clearTimeout(dismissTimer.current);origin.current=null;setGesture({shift:0,dragging:false,velocity:0,dismissing:false});}},[actions.expanded,actions.hidden,actions.reduced]);
+ useEffect(()=>{if(!canPeek(actions)){revision.current++;cancel();setPeek(false);setPressed(false);}if(actions.hidden){cancelGestureFrame();clearTimeout(dismissTimer.current);origin.current=null;setGesture({shift:0,dragging:false,velocity:0,dismissing:false});}},[actions.surface,actions.peekable,actions.hidden,actions.reduced]);
  useEffect(()=>{cancelGestureFrame();clearTimeout(dismissTimer.current);origin.current=null;setGesture({shift:0,dragging:false,velocity:0,dismissing:false});},[actions.surface]);
- const enter=()=>{revision.current++;clearTimeout(leaveTimer.current);clearTimeout(enterTimer.current);latest.current.hover(true);if((!latest.current.expanded||latest.current.peekable)&&!latest.current.reduced)enterTimer.current=window.setTimeout(()=>{if(alive.current&&(!latest.current.expanded||latest.current.peekable)&&!latest.current.hidden)setPeek(true);},T.motion.hover.delay);};
+ const enter=()=>{revision.current++;clearTimeout(leaveTimer.current);clearTimeout(enterTimer.current);latest.current.hover(true);if(canPeek(latest.current))enterTimer.current=window.setTimeout(()=>{if(alive.current&&canPeek(latest.current))setPeek(true);},T.motion.hover.delay);};
  const leave=()=>{const rev=++revision.current;clearTimeout(enterTimer.current);clearTimeout(longTimer.current);setPressed(false);clearTimeout(leaveTimer.current);
   leaveTimer.current=window.setTimeout(()=>{void(async()=>{
    let inside=host.current?.matches(':hover')??false;

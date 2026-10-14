@@ -2,9 +2,9 @@ import {test,expect} from '@playwright/test';
 interface ReaderClock {session:number;remainingMs:number;paused:boolean}
 declare global {interface Window {__READER_NATIVE_QA__?:{failLayout:boolean;clocks:ReaderClock[]}}}
 test('a failed native handoff masks a hover-paused reader and preserves its bounded lifetime',async({page,request})=>{
- await page.addInitScript(()=>{
+ await page.addInitScript((sourceURL:string)=>{
   const state={failLayout:false,clocks:[] as ReaderClock[]};window.__READER_NATIVE_QA__=state;
-  let serial=0,socket:WebSocket|undefined;
+  let serial=0,socket:WebSocket|undefined,sourceSessionId:string|undefined;
   const callbacks=new Map<number,(event:unknown)=>void>(),listeners=new Map<number,{event:string;handler:number}>();
   const emit=(event:string,payload:unknown)=>{for(const [id,listener] of listeners)if(listener.event===event)callbacks.get(listener.handler)?.({event,id,payload});};
   const internals={metadata:{currentWindow:{label:'island'},currentWebview:{label:'island'}},transformCallback:(fn:(e:unknown)=>void)=>{callbacks.set(++serial,fn);return serial;},invoke:async(command:string,args:Record<string,unknown>={})=>{
@@ -17,16 +17,16 @@ test('a failed native handoff masks a hover-paused reader and preserves its boun
    if(command==='clinical_capture')return {mode:'exclude'};
    if(command==='clinical_reader_clock'){state.clocks.push({session:Number(args.session),remainingMs:Number(args.remainingMs),paused:Boolean(args.paused)});return;}
    if(command==='island_pointer_inside')return {inside:false};
-   if(command==='send_wire'){if(socket?.readyState!==WebSocket.OPEN)throw new Error('Offline');socket.send(JSON.stringify(args.payload));return;}
+   if(command==='send_wire'){if(socket?.readyState!==WebSocket.OPEN)throw new Error('Offline');socket.send(JSON.stringify({...args.payload as object,sourceSessionId}));return;}
    if(command==='connect_stream'){
     if(socket){if(socket.readyState===WebSocket.OPEN)emit('island://connection','online');return;}
-    socket=new WebSocket('ws://127.0.0.1:17322/events');socket.onopen=()=>emit('island://connection','online');socket.onmessage=e=>emit('island://wire',JSON.parse(e.data));socket.onclose=()=>emit('island://connection','offline');return;
+    socket=new WebSocket(sourceURL);socket.onmessage=e=>{const value=JSON.parse(e.data);if(value.type==='transport:hello'){sourceSessionId=value.sourceSessionId;socket?.send(JSON.stringify({type:'transport:subscribe',protocolVersion:2,role:'island',clientId:crypto.randomUUID()}));}else if(value.type==='transport:ready'){emit('island://wire',{type:'transport:session',sourceSessionId});emit('island://connection','online');}else if(value.type!=='hello')emit('island://wire',value);};socket.onclose=()=>emit('island://connection','offline');return;
    }
    throw new Error('Unexpected native command '+command);
   }};
   window.__TAURI_INTERNALS__=internals;Object.assign(window,{__TAURI_EVENT_PLUGIN_INTERNALS__:{unregisterListener:()=>{}}});
- });
- const push=async(data:object)=>expect((await request.post('http://127.0.0.1:17322/api/push',{data})).ok()).toBeTruthy();
+ },(process.env.ISLAND_TEST_SOURCE_URL??'http://127.0.0.1:17322').replace('http:','ws:')+'/events');
+ const push=async(data:object)=>expect((await request.post(((process.env.ISLAND_TEST_SOURCE_URL??'http://127.0.0.1:17322')+'/api/push'),{data})).ok()).toBeTruthy();
  await push({type:'clinical:reset'});await page.clock.install();await page.goto('/clinical.html?view=island');
  const island=page.getByTestId('clinical-island');await expect(island).toHaveAttribute('data-motion-phase','settled');
  await push({type:'clinical:scenario',scenario:'S04',labVariant:'baseline'});await island.getByRole('button',{name:'查看检验报告摘要'}).click();

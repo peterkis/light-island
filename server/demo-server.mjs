@@ -1,14 +1,12 @@
 /** Loopback-only synthetic message source. Never point this demo at clinical systems. */
 import http from 'node:http';
 import { createClinicalDemo } from './clinical-demo.mjs';
-import { readFile } from 'node:fs/promises';
-import { resolve, dirname, extname } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { extname } from 'node:path';
+import { readFrontend } from './static-frontend.mjs';
 import { randomUUID } from 'node:crypto';
 import { WebSocketServer, WebSocket } from 'ws';
-const root = resolve(dirname(fileURLToPath(import.meta.url)), '../dist');
 const port = Number(process.env.ISLAND_DEMO_PORT || 17321);
-const origins = new Set(['http://127.0.0.1:17322', 'http://localhost:17322','http://127.0.0.1:17321', 'http://localhost:17321', 'http://127.0.0.1:1420', 'http://localhost:1420', 'http://tauri.localhost', 'tauri://localhost', 'https://tauri.localhost']);
+const origins = new Set([`http://127.0.0.1:${process.env.ISLAND_TEST_WEB_PORT??1420}`,`http://localhost:${process.env.ISLAND_TEST_WEB_PORT??1420}`,'http://127.0.0.1:17322', 'http://localhost:17322','http://127.0.0.1:17321', 'http://localhost:17321', 'http://127.0.0.1:1420', 'http://localhost:1420', 'http://tauri.localhost', 'tauri://localhost', 'https://tauri.localhost']);
 const notices = new Map(); const receipts = new Map(); const timers = new Set();
 let settings = { theme: 'ink', engine: 'gsap', focus: false, privacy: true, reduced: false, top: 0, shape: 'notch' };
 let sequence = 0; let epoch = 0;
@@ -33,14 +31,38 @@ const server = http.createServer(async (req, res) => {
   }
   if (req.method !== 'GET') return json(res, 405, { error: 'Method not allowed' });
   try {
-    const path = resolve(root, '.' + decodeURIComponent(url.pathname === '/' ? '/index.html' : url.pathname));
-    if (!path.startsWith(root + '/'.replace('/', process.platform === 'win32' ? '\\' : '/')) && path !== resolve(root, 'index.html')) return json(res, 403, { error: 'Invalid path' });
-    const bytes = await readFile(path);
+    const {path,bytes} = await readFrontend(url.pathname);
     const types = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.svg': 'image/svg+xml', '.png': 'image/png', '.json': 'application/json' };
     res.writeHead(200, { 'Content-Type': types[extname(path)] || 'application/octet-stream', 'Cache-Control': 'no-cache', 'X-Content-Type-Options': 'nosniff' }); res.end(bytes);
-  } catch { json(res, 404, { error: 'Build UI with npm run build, or use http://127.0.0.1:1420 in development.' }); }
+  } catch (error) { json(res, error instanceof RangeError ? 403 : 404, { error: error instanceof RangeError ? 'Invalid path' : 'Build UI with npm run build, or use http://127.0.0.1:1420 in development.' }); }
 });
-const clinical = createClinicalDemo(broadcast);
+const sourceSessionId=randomUUID(), peers=new Map();
+const clinical=createClinicalDemo(event=>broadcastClinical(event,'preview'));
+const desktopClinical=createClinicalDemo(event=>broadcastClinical(event,'island'));
+const stamp=event=>({...event,sourceSessionId});
+function broadcastClinical(event,audience){for(const client of wss.clients){const peer=peers.get(client);if(client.readyState===WebSocket.OPEN&&peer&&(peer.role==='island'?'island':'preview')===audience)client.send(JSON.stringify(stamp(event)));}}
+function publishControls(){for(const [client,peer]of peers)if(peer.role!=='island')client.send(JSON.stringify(stamp({type:'transport:controls',settings:{preview:clinical.inspect().settings,desktop:desktopClinical.inspect().settings}})));}
+function publishClients(){const event=stamp({type:'transport:clients',clients:[...peers.values()]});for(const client of peers.keys())if(client.readyState===WebSocket.OPEN)client.send(JSON.stringify(event));}
+function dispatchExperiment(action,targetClientId='*',requestId=randomUUID()){
+ let count=0;for(const [client,peer]of peers)if(client.readyState===WebSocket.OPEN&&(targetClientId==='*'||targetClientId===peer.clientId)){client.send(JSON.stringify(stamp({type:'experiment:action',requestId,targetClientId:peer.clientId,action})));count++;}return count;
+}
+function clinicalControl(data){
+ const target=data.targetClientId??'*';
+ const audience=target==='preview'?'preview':peers.size&&[...peers.values()].some(p=>p.clientId===target&&p.role==='island')?'island':target==='*'?'all':null;
+ if(data.type==='experiment:dispatch'){if(!dispatchExperiment(data.action,target,data.requestId))throw new Error('Target offline');return true;}
+ if(typeof data.type!=='string'||!data.type.startsWith('clinical:'))return false;
+ if(!audience)throw new Error('Target offline');
+ const action=data.type==='clinical:personal'?{kind:'personal',command:data.command,...(data.duration===undefined?{}:{duration:data.duration})}:data.type==='clinical:view'?{kind:'view',mode:data.mode,...(data.scenario?{scenario:data.scenario}:{})}:data.type==='clinical:preferences'?{kind:'preferences',settings:data.settings}:null;
+ const dispatch=action=>{for(const [client,peer]of peers)if(audience==='all'||(peer.role==='island'?'island':'preview')===audience)client.send(JSON.stringify(stamp({type:'experiment:action',requestId:randomUUID(),targetClientId:peer.clientId,action})));};
+ if(action){dispatch(action);return true;}
+ let payload=data;
+ if(data.type==='clinical:configure'){
+  const source={},preferences={};for(const [key,value]of Object.entries(data.settings??{})){if(['privacy','role','locked','fullscreen','connectivity','routeFault'].includes(key))source[key]=value;else preferences[key]=value;}
+  if(Object.keys(preferences).length)dispatch({kind:'preferences',settings:preferences});if(!Object.keys(source).length)return true;payload={...data,settings:source};
+ }
+ if(audience==='all'||audience==='preview')clinical.handle(payload);if(audience==='all'||audience==='island')desktopClinical.handle(payload);publishControls();return true;
+}
+
 const wss = new WebSocketServer({ noServer: true, maxPayload: 32768 });
 server.on('upgrade', (req, socket, head) => {
   if ((req.headers.origin && !origins.has(req.headers.origin)) || req.url !== '/events') { socket.destroy(); return; }
@@ -85,7 +107,17 @@ function configure(patch) {
 }
 function handle(data, client) {
   if (!data || typeof data !== 'object') return;
-  if (clinical.handle(data, event => client?.send(JSON.stringify(event)))) return;
+  if(data.type==='transport:subscribe'&&client){
+    if(data.protocolVersion!==2||!['island','preview','source'].includes(data.role)||typeof data.clientId!=='string'||data.clientId.length>80||[...peers.values()].some(p=>p.clientId===data.clientId))throw new Error('Invalid subscription');
+    peers.set(client,{clientId:data.clientId,role:data.role});client.send(JSON.stringify(stamp({type:'transport:ready'})));publishClients();publishControls();return;
+  }
+  if(!client&&clinicalControl(data))return;
+  if(client&&(String(data.type).startsWith('clinical:')||data.type==='experiment:result')){
+    const peer=peers.get(client);if(!peer||data.sourceSessionId!==sourceSessionId)throw new Error('Invalid source session');
+    if(data.type==='experiment:result')return;
+    if(!['clinical:sync','clinical:refresh','clinical:open','clinical:source-read','clinical:lab-read'].includes(data.type))throw new Error('Viewer is read-only');
+    (peer.role==='island'?desktopClinical:clinical).handle(data,event=>client.send(JSON.stringify(stamp(event))));return;
+  }
   if (data.type === 'sync') client?.send(JSON.stringify({ type: 'hello', settings, notices: [...notices.values()], receipts: [...receipts.values()] }));
   if (data.type === 'demo') scenario(data.scenario);
   if (data.type === 'configure') configure(data.settings);
@@ -100,6 +132,8 @@ function handle(data, client) {
   }
 }
 wss.on('connection', client => {
+  client.send(JSON.stringify({type:'transport:hello',protocolVersion:2,sourceSessionId}));
+  client.on('close',()=>{peers.delete(client);publishClients();});
   client.send(JSON.stringify({ type: 'hello', settings, notices: [...notices.values()], receipts: [...receipts.values()] }));
   client.on('message', raw => { try { handle(JSON.parse(raw.toString()), client); } catch { client.send(JSON.stringify({ type: 'server-error', reason: 'Unsupported demo command' })); } });
   client.on('error', () => {});

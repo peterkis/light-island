@@ -1,6 +1,7 @@
 import {useCallback,useLayoutEffect,useRef,useState} from 'react';
 import {invoke} from '@tauri-apps/api/core';
 import gsap from 'gsap';
+import {contentEaseIn,contentEaseOut} from './contentEases';
 import {nativeIsland} from '../lib/bridge';
 import {contour,layoutHeight,layoutWidth,radiusAt,motionShape,shapePolygons,satelliteGeometry,satelliteNeck} from './geometry';
 import type {Shape,Surface,Dock} from './geometry';
@@ -111,18 +112,25 @@ export function useClinicalLayout(requestedView:'idle'|'compact'|'expanded',cont
      .finally(()=>{busy=false;if(queued&&valid()&&!finishing)enqueue(queued);});
    });
   };
+  // kill() stops a timeline but does not restore inline styles. A reduced-mode
+  // switch or same-content reversal must not strand a partially revealed child.
+  const clearOwnedChildMotion=()=>{
+   const children=body.querySelectorAll<HTMLElement>('[data-stagger],[data-lab-i]');
+   if(children.length)gsap.set(children,{clearProps:'opacity,transform'});
+  };
   const reveal=(immediate=false)=>{
    if(!valid())return;
    revealed=true;committedKey.current=contentKey;setPresented(requested);body.inert=false;body.style.visibility='visible';
    fade?.kill();
+   if(immediate||reduced)clearOwnedChildMotion();
    if(immediate){body.style.opacity='1';body.style.filter='none';body.style.transform='none';return;}
    // Presentation updates before the next paint; final text layout never tracks shell width.
    finalFrame=requestAnimationFrame(()=>{
     if(!valid())return;
     fade=gsap.timeline();
-    fade.fromTo(body,{opacity:0,filter:reduced?'none':`blur(${T.motion.content.enterBlur}px)`,y:reduced?0:T.motion.content.translateY,scale:1},
-     {opacity:1,filter:'blur(0px)',y:0,scale:1,duration:(reduced?T.motion.reduced.duration:T.motion.content.enter)/1000,ease:reduced?'none':'power2.out',clearProps:'filter,transform'});
-    if(!reduced){if(labTarget){body.querySelectorAll<HTMLElement>('[data-lab-i]').forEach(node=>fade!.fromTo(node,{opacity:0,y:8},{opacity:1,y:0,duration:.42,ease:'power2.out',clearProps:'opacity,transform'},Math.min(11,Number(node.dataset.labI))*.04));}else{const children=body.querySelectorAll('[data-stagger]');fade.fromTo(children,{opacity:0,y:4},{opacity:1,y:0,stagger:T.motion.content.stagger/1000,duration:.2,ease:'power2.out',clearProps:'opacity,transform'},0);}}
+    fade.fromTo(body,{opacity:0,filter:reduced?'none':`blur(${T.motion.content.enterBlur}px)`,y:reduced?0:T.motion.content.translateY,scale:reduced||labTarget?1:T.motion.content.scale},
+     {opacity:1,filter:'blur(0px)',y:0,scale:1,duration:(reduced?T.motion.reduced.duration:T.motion.content.enter)/1000,ease:reduced?'none':labTarget?'power2.out':contentEaseOut,clearProps:'filter,transform'});
+    if(!reduced){if(labTarget){body.querySelectorAll<HTMLElement>('[data-lab-i]').forEach(node=>fade!.fromTo(node,{opacity:0,y:8},{opacity:1,y:0,duration:.42,ease:'power2.out',clearProps:'opacity,transform'},Math.min(11,Number(node.dataset.labI))*.04));}else{const children=body.querySelectorAll('[data-stagger]');fade.fromTo(children,{opacity:0,y:4},{opacity:1,y:0,stagger:T.motion.content.stagger/1000,duration:.2,ease:contentEaseOut,clearProps:'opacity,transform'},0);}}
    });
   };
   const settle=async()=>{
@@ -141,16 +149,16 @@ export function useClinicalLayout(requestedView:'idle'|'compact'|'expanded',cont
   };
   e.dataset.layoutEpoch=String(epoch);e.dataset.motionPhase='preparing';e.dataset.motionDriver='numerical-spring';
   e.dataset.targetWidth=String(target.width);e.dataset.targetHeight=String(target.height);
-  e.dataset.targetSurface=requested;e.dataset.dock=dock;
+  e.dataset.targetSurface=requested;e.dataset.dock=dock;e.dataset.effectiveReduced=String(reduced);
   const run=async()=>{
     try{const applied=await native(painted.current??target,'frame',painted.current??target);if(!valid())return;if(!applied){fail('Native initial frame rejected');return;}}catch(err){fail(String(err));return;}
    if(initial||hidden){await settle();return;}
    if(reduced){reveal();await settle();return;}
    e.dataset.motionPhase=closing?'collapsing':'expanding';e.style.willChange='width,height';
    if(newContent){
-    body.inert=true;fade=gsap.timeline().to(body,{opacity:0,filter:`blur(${closing?T.motion.content.exitCollapseBlur:T.motion.content.exitBlur}px)`,scale:1,duration:T.motion.content.exit/1000,ease:'power2.in'});
+    body.inert=true;fade=gsap.timeline().to(body,{opacity:0,filter:`blur(${closing?T.motion.content.exitCollapseBlur:T.motion.content.exitBlur}px)`,scale:closing||labTarget?1:T.motion.content.scale,duration:T.motion.content.exit/1000,ease:labTarget?'power2.in':contentEaseIn});
     if(!closing)swapTimer=window.setTimeout(()=>reveal(),T.motion.content.delay);
-   }else{body.inert=false;body.style.opacity='1';body.style.filter='none';body.style.transform='none';}
+   }else{clearOwnedChildMotion();body.inert=false;body.style.opacity='1';body.style.filter='none';body.style.transform='none';}
    let previousTime=performance.now(),started=previousTime;
    const tick=(now:number)=>{
     if(!valid())return;

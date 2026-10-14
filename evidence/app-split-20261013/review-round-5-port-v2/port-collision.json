@@ -1,0 +1,38 @@
+{
+  "pass": true,
+  "contactsToUnrelatedV2": 0,
+  "app": {
+    "startedTicks": "639275463690943914",
+    "rootPid": 15752,
+    "executable": "D:\\Projects\\island-protype\\dist\\desktop\\samewave-workbench.exe",
+    "sha256": "4493d95f248f9b26844796c936cb470a3f05dda4680b0c9c30cd89fc15d5e587"
+  },
+  "status": {
+    "clients": [],
+    "error": "模拟端口 17326 无法启动：通常每个套接字地址(协议/网络地址/端口)只允许使用一次。 (os error 10048)。未停止其他进程。",
+    "listening": false,
+    "messages": [],
+    "port": 17326,
+    "sourceSessionId": "6f059503-55c3-41c0-ab31-1eee3a25f571",
+    "sourceSettings": {
+      "desktop": {
+        "connectivity": "fresh",
+        "fullscreen": false,
+        "locked": false,
+        "privacy": false,
+        "role": "clinician",
+        "routeFault": "none"
+      },
+      "preview": {
+        "connectivity": "fresh",
+        "fullscreen": false,
+        "locked": false,
+        "privacy": false,
+        "role": "clinician",
+        "routeFault": "none"
+      }
+    }
+  },
+  "launchError": "模拟消息源未监听（端口 17326），无法启动灵动岛。",
+  "islandLaunchRefused": true
+}

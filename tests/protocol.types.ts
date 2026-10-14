@@ -5,6 +5,8 @@ declare function simulator(command:ClinicalSimulatorCommand):void;
 declare function timer(value:TimerState):void;
 declare function activity(value:Activity):void;
 declare const fields:Omit<Activity,'scenario'|'routeKind'|'labRef'>;
+island({type:'clinical:sync'});
+// @ts-expect-error Personal tools cannot be sent to a source.
 island({type:'clinical:personal',command:'pause'});
 simulator({type:'clinical:configure',settings:{role:'finance'}});
 // @ts-expect-error Simulator authorization controls are not island preferences.

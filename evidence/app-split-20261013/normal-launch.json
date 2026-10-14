@@ -1,0 +1,50 @@
+{
+  "pass": true,
+  "capturedAt": "2026-10-14T01:36:00.7337028+08:00",
+  "sourcePort": 17323,
+  "defaultPort": 17322,
+  "defaultPortWasOccupied": true,
+  "previousSourceUntouched": true,
+  "qaEndpointsClosed": true,
+  "qaControlHttpStatus": 404,
+  "health": {
+    "clients": [
+      {
+        "clientId": "island-240-1791912843695",
+        "role": "island"
+      },
+      {
+        "clientId": "3340ae31-73f5-4658-994e-e029abdc0b9f",
+        "role": "preview"
+      }
+    ],
+    "name": "samewave-workbench",
+    "protocolVersion": 2,
+    "sourceSessionId": "c9b0a97e-88db-4e0a-b4db-41b8827c9101"
+  },
+  "apps": [
+    {
+      "processCount": 7,
+      "privateWorkingSetMiB": 110.12,
+      "kind": "workbench",
+      "sha256": "3edc7f7ae979b7c07865ae23e64ba0b335c10c947f23fca13365e71ba198bf8a",
+      "rootPid": 29660,
+      "startedTicks": "639275096414052377",
+      "commandLine": "\"D:\\Projects\\island-protype\\dist\\desktop\\samewave-workbench.exe\" ",
+      "privateCommitMiB": 169.01,
+      "executable": "D:\\Projects\\island-protype\\dist\\desktop\\samewave-workbench.exe"
+    },
+    {
+      "processCount": 7,
+      "privateWorkingSetMiB": 93.88,
+      "kind": "island",
+      "sha256": "9bf31a6d1adb5732a55d03b40a8ba985fc6208f7c1481d341192add458bc8278",
+      "rootPid": 240,
+      "startedTicks": "639275096418223256",
+      "commandLine": "\"D:\\Projects\\island-protype\\dist\\desktop\\samewave-island.exe\" ",
+      "privateCommitMiB": 154.16,
+      "executable": "D:\\Projects\\island-protype\\dist\\desktop\\samewave-island.exe"
+    }
+  ],
+  "memoryScope": "One normal-launch sample of each complete application/WebView2 process tree; not a steady-state budget."
+}

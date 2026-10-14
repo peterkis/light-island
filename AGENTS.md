@@ -8,7 +8,7 @@
 - A bounded in-memory queue is not durable delivery. Do not describe this prototype as lossless or production-ready.
 
 ## Implementation
-- Native `island` window and optional `studio` window share one Rust WebSocket connection.
+- `samewave-island.exe` and `samewave-workbench.exe` are independent applications. Only island-owned source readers share the island Rust connection; the workbench owns its simulation service.
 - Only the `island` window uses native window-region synchronization. Browser and studio previews must not modify native geometry.
 - Windows region ownership transfers to the OS only after successful `SetWindowRgn`.
 - Incoming notifications must not acquire keyboard focus. Explicit user clicks may acquire focus.
@@ -19,7 +19,7 @@
 ## Commands and evidence
 - `npm run build`, `npm test`, `npm run test:e2e`, `npm run desktop:build`.
 - Playwright uses the installed Chrome with an isolated test profile.
-- `--qa-cdp` explicitly enables local port 9223 for this prototype only. Never use it for normal launches.
+- `--qa-cdp` explicitly enables island port 9223 or workbench port 9224 in owned QA profiles only. `--qa-control` enables the workbench test HTTP adapter. Normal launches enable neither.
 - Native QA scripts live in `scripts/`; results belong in `evidence/`.
 - Report runtime frame samples as rAF cadence, not guaranteed DWM-presented frames.
 - Measure the full application/WebView2 process tree. Do not quote the Rust process alone as total memory.
@@ -85,3 +85,26 @@ SVG width/height/viewBox/path must have one animation owner. React declares only
 - Local control settings are not authorization. Clinical writes stay forbidden. Source importance may interrupt the personal tool, but never change its timer deadline or simulate clinical receipt.
 - Same-size content changes must reveal and unlock the content; panel ownership resets on object/auth changes. Never count stale 15px/old-card accessibility tests as current compliance.
 - Current implementation decisions and explicit deviations: `docs/UIUX-V1-IMPLEMENTATION.md`. Fresh evidence only: `evidence/uiux-final-20261006`. No commit/push without instruction.
+
+## Motion restoration (2026-10-13)
+- Do not diagnose a missing animation from library presence or rAF alone. Record the effective app/media/Windows reduction signals. This machine's Windows client-area animation flag was OFF during the restoration baseline.
+- New installs follow the system. An explicit per-app `full` preference may override system reduction without changing Windows; the existing app reduced switch always wins. CSS and JS must use the same resolved policy. Show its reason in settings.
+- Persist only the motion enum outside ephemeral clinical profiles; never put source objects, patient data or report state in that preference file.
+- General clinical content uses the authored .96-to-1 entrance scale; the separately specified lab reader remains unscaled. Per-digit rolling animates changed positions only and stops after 200ms; never create an idle ticker for decorative motion.
+- Keep all current Rust performance improvements, stable HWND, single SVG owner, ordered native silhouette handoff, typed source protocol and immediate authorization/reading cleanup. Evidence: `evidence/motion-restore-20261013`; explanation: `docs/MOTION-RESTORE-20261013.md`.
+
+## UI/UX visual refinement (2026-10-13)
+- The user's explicit S0 hover rule supersedes generic Peek for the empty island: keep 124x32, pure black and a pointer cursor. Keyboard focus remains visible. Active Compact and the separately specified lab alert retain finite Peek.
+- Refresh native chrome after the first silhouette is installed and the HWND is first shown. Preserve the transparent 2-physical-pixel AA fringe; verify bright edges using desktop pixels as well as window flags.
+- Read `docs/UIUX-REFINEMENT-20261013.md` when changing these behaviors. Fresh evidence: `evidence/uiux-refinement-20261013/`. Synthetic QA backgrounds close on every exit; normal review launches exclude QA flags.
+
+## Separate workbench and island (2026-10-14)
+- Read `docs/APP-SPLIT-20261014.md` before changing application ownership, protocol, launch or packaging.
+- The workbench owns separate preview and desktop synthetic source states. Experiments select an explicit target; ordinary preview clicks cannot control the desktop.
+- Source snapshots contain source settings and activities only. Personal timer deadlines, presentation preferences, opened state and reading sessions belong to each viewer. Source reset/reconnect must not overwrite a timer or presentation choice.
+- Clinical protocol v2 requires a compatible handshake and source session. Reject prior-session frames, private replies and tickets; reconnect does not freshen source timestamps.
+- The island source channel allows read requests and correlated experiment results only. Simulation controls execute in the workbench process. Local preferences cannot grant source permissions.
+- Workbench exit closes its listener; island local tools continue. Disconnect removes reports/details immediately and retains only offline summaries. No extra daemon or Node runtime is required for the two release EXEs.
+- Source readers remain island-owned. Workbench preview never invokes island geometry, capture, reader clock or focus commands.
+- `npm run desktop:build` produces both EXEs in `dist/desktop`; per-app commands use `:island` or `:workbench`. `--studio` launches the separate workbench for compatibility.
+- Fresh split evidence belongs to `evidence/app-split-20261013/` (the session began before midnight). Preserve earlier evidence and the user's immutable UI specs. No commit/push without instruction.

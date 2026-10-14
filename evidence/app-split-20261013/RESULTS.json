@@ -1,0 +1,249 @@
+{
+  "status": "PASS_AS_TESTED",
+  "recordedAt": "2026-10-14T01:40:02.114458+08:00",
+  "scope": "Two synthetic read-only Windows prototypes. No production or clinical acceptance.",
+  "environment": {
+    "os": "Windows 11 Pro",
+    "build": "26300",
+    "nativeWindows": [
+      {
+        "dpi": 96,
+        "title": "Samewave Island"
+      }
+    ],
+    "nativeDpi": 96,
+    "browserDprCases": [
+      1,
+      1.25,
+      1.5
+    ],
+    "otherWindowsAndNativeDpiMatrix": "NOT_RUN"
+  },
+  "products": [
+    {
+      "program": "island",
+      "path": "dist/desktop/samewave-island.exe",
+      "bytes": 4601856,
+      "sha256": "9bf31a6d1adb5732a55d03b40a8ba985fc6208f7c1481d341192add458bc8278"
+    },
+    {
+      "program": "workbench",
+      "path": "dist/desktop/samewave-workbench.exe",
+      "bytes": 4875264,
+      "sha256": "3edc7f7ae979b7c07865ae23e64ba0b335c10c947f23fca13365e71ba198bf8a"
+    }
+  ],
+  "immutableInputs": [
+    {
+      "path": "docs/Windows 灵动岛 UI UX 设计规范 v1.0.md",
+      "sha256": "a9f37ea76becf4b74c4388a2172e4d46dbc7a4600558cee3b71f445f3e67b1fa",
+      "unchangedFromBaseline": true
+    },
+    {
+      "path": "docs/protype/灵动岛「检验报告阅读」开发文档（Agent 可读版）.md",
+      "sha256": "beca7ca59cce18f7898f97caf497a9f63e8e30b55a91fd74e1cb2bb2d74c9aff",
+      "unchangedFromBaseline": true
+    },
+    {
+      "path": "docs/protype/灵动岛 · 检验报告阅读（阅后即焚）.html",
+      "sha256": "625664a43eea9ceb14763ef27e650a1f8d8766ded933e8d6704a451416146dad",
+      "unchangedFromBaseline": true
+    }
+  ],
+  "validation": {
+    "frontendBuildAndTypecheck": "PASS",
+    "desktopBuild": "PASS",
+    "desktopBuildEvidence": "desktop-build-final.log",
+    "unit": {
+      "passed": 240,
+      "failed": 0,
+      "evidence": "unit-final.json"
+    },
+    "protocol": {
+      "nodeAndRustGoldenCases": 95,
+      "status": "PASS",
+      "contractSha256": "a4b2dc18b1e6543eb0ca24cc3c9b230918743c4f5613713cfd67eef2cea40d1a"
+    },
+    "browser": {
+      "status": "PASS_ACROSS_TWO_RUNS",
+      "uniqueScenariosPassed": 106,
+      "fullRun": {
+        "startTime": "2026-10-13T16:38:05.699Z",
+        "duration": 534598.498,
+        "expected": 103,
+        "skipped": 0,
+        "unexpected": 3,
+        "flaky": 0
+      },
+      "targetedFileRerun": {
+        "startTime": "2026-10-13T16:48:10.188Z",
+        "duration": 43120.218,
+        "expected": 8,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "reasonForRerun": "Three DPR tests used the historical fixed 1420 URL; corrected them to the isolated configured test origin. The original failures remain in browser-corrected/.",
+      "evidence": [
+        "browser-corrected/playwright-results.json",
+        "browser-dpr-final/playwright-results.json"
+      ]
+    },
+    "rust": {
+      "island": {
+        "testsPassed": 15,
+        "checkAndClippy": "PASS",
+        "testsEvidence": "evidence/app-split-20261013/rust-island-final.log",
+        "clippyEvidence": "evidence/app-split-20261013/island-clippy-final.log"
+      },
+      "workbench": {
+        "testsPassed": 7,
+        "checkAndClippy": "PASS",
+        "testsEvidence": "evidence/app-split-20261013/rust-workbench-final.log",
+        "clippyEvidence": "evidence/app-split-20261013/workbench-clippy-delivery.log"
+      }
+    },
+    "separateBundlesAndCapabilities": "PASS",
+    "diffWhitespace": "PASS",
+    "native": {
+      "status": "PASS",
+      "evidence": "native-delivery/",
+      "s0": {
+        "width": 124,
+        "height": 32,
+        "background": "rgba(0, 0, 0, 0)",
+        "cursor": "pointer",
+        "fill": "rgb(0, 0, 0)",
+        "mark": "0"
+      },
+      "brightBorderPixels": 0,
+      "screenSamples": 52,
+      "blankScreenSamples": 0,
+      "physicalRectCount": 1,
+      "clickThroughCases": 3,
+      "importantAndRoutinePreserveFocus": true,
+      "timerIsolationAndReadingCleanup": "PASS",
+      "fullAndReducedMotion": "PASS",
+      "rafCadence": "Not a DWM-presented frame measurement. Native screen samples and motion phase assertions are separate; no FPS guarantee is made."
+    },
+    "startup": {
+      "cases": [
+        {
+          "name": "island alone starts its personal timer while source is offline",
+          "pass": true
+        },
+        {
+          "name": "island-first startup connects without replacing the personal deadline",
+          "pass": true
+        },
+        {
+          "name": "each EXE owns a separate WebView data directory",
+          "pass": true
+        },
+        {
+          "name": "repeated launches affect only the matching existing application",
+          "pass": true
+        },
+        {
+          "name": "workbench alone starts its embedded source and independent preview",
+          "pass": true
+        },
+        {
+          "name": "workbench-first startup connects the separate island",
+          "pass": true
+        }
+      ],
+      "evidence": "startup-delivery/startup.json"
+    },
+    "lifecycle": {
+      "cases": [
+        {
+          "name": "graceful workbench exit preserves island timer",
+          "pass": true
+        },
+        {
+          "name": "restart replaces source session without replacing deadline",
+          "pass": true
+        },
+        {
+          "name": "abrupt workbench termination preserves island timer",
+          "pass": true
+        },
+        {
+          "name": "island exit leaves independent workbench running",
+          "pass": true
+        }
+      ],
+      "evidence": "native-delivery/lifecycle.json"
+    },
+    "portConflictAndIncompatibleProtocol": {
+      "status": "PASS",
+      "evidence": "compatibility/compatibility.json"
+    },
+    "legacyReceivedNotTreated": {
+      "status": "PASS",
+      "matchingRevisionDelayMs": 705,
+      "evidence": "legacy-native/legacy.json"
+    },
+    "normalLaunch": {
+      "status": "PASS",
+      "sourcePort": 17323,
+      "defaultPort": 17322,
+      "previousSourceUntouched": true,
+      "qaEndpointsClosed": true,
+      "qaControlHttpStatus": 404,
+      "evidence": "normal-launch.json"
+    }
+  },
+  "memory": {
+    "scope": "Complete root plus WebView2 descendants; one active QA sample and one normal launch sample, not a performance budget.",
+    "qa": [
+      {
+        "privateWorkingSetMiB": 135.73,
+        "privateCommitMiB": 197.59,
+        "processCount": 7,
+        "kind": "workbench"
+      },
+      {
+        "privateWorkingSetMiB": 172.86,
+        "privateCommitMiB": 234.95,
+        "processCount": 7,
+        "kind": "island"
+      }
+    ],
+    "normal": [
+      {
+        "kind": "workbench",
+        "processCount": 7,
+        "privateWorkingSetMiB": 110.12,
+        "privateCommitMiB": 169.01
+      },
+      {
+        "kind": "island",
+        "processCount": 7,
+        "privateWorkingSetMiB": 93.88,
+        "privateCommitMiB": 154.16
+      }
+    ]
+  },
+  "preservation": {
+    "baselineFiles": 274,
+    "headUnchanged": "b19121a38ee8b4e3bb815b4885f6d44d9d4259a3",
+    "commit": "NOT_PERFORMED",
+    "push": "NOT_PERFORMED",
+    "sourceManifest": "source-manifest.json"
+  },
+  "notRun": [
+    "Windows 10 native matrix",
+    "Native 120/144/192/216 DPI and mixed monitor hot-plug",
+    "Real OS lock/fullscreen and production identity/clinical integration",
+    "Production signing/installer or durable delivery acceptance"
+  ],
+  "retainedFailures": [
+    "Earlier dependency and Windows manifest build failures remain in their original logs.",
+    "Earlier browser failures remain in browser-initial/, browser-full/, browser-corrected/.",
+    "Native fixture corrections remain in native-final/*-initial.json.",
+    "Startup helper Get-FileHash autoload failure remains in startup-delivery/startup-initial.json.",
+    "The first normal launch HTTP probe used text/plain and received 415; preserved in normal-launch-initial.json. Correct JSON receives 404."
+  ]
+}

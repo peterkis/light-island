@@ -1,10 +1,10 @@
 import type {Page,APIRequestContext} from '@playwright/test';
 import {test,expect} from '@playwright/test';
-const base='http://127.0.0.1:17322';
+const base=(process.env.ISLAND_TEST_SOURCE_URL??'http://127.0.0.1:17322');
 const post=async(request:APIRequestContext,data:object)=>expect((await request.post(base+'/api/push',{data})).ok()).toBeTruthy();
 const island=(page:Page)=>page.getByTestId('clinical-island');
 const settle=async(page:Page,surface?:string)=>{const e=island(page);if(surface)await expect(e).toHaveAttribute('data-surface',surface);await expect(e).toHaveAttribute('data-motion-phase','settled');await page.waitForTimeout(350);return e;};
-test.beforeEach(async({page,request})=>{await post(request,{type:'clinical:reset'});await page.goto('/clinical.html');await settle(page,'idle');});
+test.beforeEach(async({page,request})=>{await post(request,{type:'clinical:reset'});await page.goto('/workbench.html');await settle(page,'idle');});
 
 test('swipe ignores only this preview and undo opens the exact intact source',async({page,request})=>{
  await post(request,{type:'clinical:scenario',scenario:'S04',stage:0});const e=await settle(page,'alert');await e.hover();

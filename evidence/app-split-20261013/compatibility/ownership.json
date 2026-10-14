@@ -1,0 +1,14 @@
+[
+  {
+    "startedTicks": "639275081504900315",
+    "executable": "D:\\Projects\\island-protype\\dist\\desktop\\samewave-workbench.exe",
+    "rootPid": 12580,
+    "kind": "workbench"
+  },
+  {
+    "startedTicks": "639275081505092482",
+    "executable": "D:\\Projects\\island-protype\\dist\\desktop\\samewave-island.exe",
+    "rootPid": 35996,
+    "kind": "island"
+  }
+]
