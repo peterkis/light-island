@@ -23,7 +23,8 @@ const reattach=async(root)=>{
  workbenchBrowser=await chromium.connectOverCDP('http://127.0.0.1:9224');workbench=find(workbenchBrowser,'workbench.html?app=workbench');await expect(el).toHaveAttribute('data-connection','online',{timeout:20000});
 };
 try{
- const originalMotion=await invoke(island,'get_motion_preference');await invoke(island,'set_motion_preference',{preference:'full'});
+ const originalMotion=await invoke(island,'get_motion_preference'),originalWorkbenchMotion=await invoke(workbench,'get_motion_preference');await invoke(island,'set_motion_preference',{preference:'full'});
+ await invoke(workbench,'set_motion_preference',{preference:'reduced'});assert.equal(await invoke(island,'get_motion_preference'),'full');
  await workbench.getByRole('combobox',{name:'实验目标'}).selectOption('preview');
  await invoke(workbench,'simulator_command',{payload:{type:'clinical:reset',targetClientId:(await invoke(workbench,'workbench_status')).clients.find(c=>c.role==='island').clientId}});
  await el.getByRole('button',{name:'打开协作动态'}).click();await expect(el).toHaveAttribute('data-surface','rich');await expect(el).toHaveAttribute('data-motion-phase','settled');await el.getByRole('button',{name:'开始 25 分钟'}).click();
@@ -31,8 +32,9 @@ try{
  const originalSession=(await invoke(workbench,'workbench_status')).sourceSessionId;
  await invoke(workbench,'qa_exit').catch(()=>{});await closed(9224);await expect(el).toHaveAttribute('data-connection','offline');assert.equal(Number(await el.getAttribute('data-timer-deadline')),deadline);report.cases.push({name:'graceful workbench exit preserves island timer',pass:true});
  await reattach(restart());assert.notEqual((await invoke(workbench,'workbench_status')).sourceSessionId,originalSession);assert.equal(Number(await el.getAttribute('data-timer-deadline')),deadline);report.cases.push({name:'restart replaces source session without replacing deadline',pass:true});
+ assert.equal(await invoke(workbench,'get_motion_preference'),'reduced');assert.equal(await invoke(island,'get_motion_preference'),'full');report.cases.push({name:'workbench motion enum survives restart without changing island preference',pass:true});await invoke(workbench,'set_motion_preference',{preference:'full'});
  await invoke(workbench,'qa_exit',{abrupt:true}).catch(()=>{});await closed(9224);await expect(el).toHaveAttribute('data-connection','offline');assert.equal(Number(await el.getAttribute('data-timer-deadline')),deadline);report.cases.push({name:'abrupt workbench termination preserves island timer',pass:true});
- await reattach(restart());assert.equal(Number(await el.getAttribute('data-timer-deadline')),deadline);
+ await reattach(restart());assert.equal(Number(await el.getAttribute('data-timer-deadline')),deadline);assert.equal(await invoke(workbench,'get_motion_preference'),'full');report.cases.push({name:'a replacement workbench motion enum survives abrupt exit',pass:true});await invoke(workbench,'set_motion_preference',{preference:originalWorkbenchMotion});
  await invoke(island,'set_motion_preference',{preference:originalMotion});await invoke(island,'qa_exit').catch(()=>{});await closed(9223);assert((await fetch('http://127.0.0.1:17323/api/health')).ok);report.cases.push({name:'island exit leaves independent workbench running',pass:true});
  report.pass=true;
 }finally{

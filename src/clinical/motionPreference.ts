@@ -1,7 +1,7 @@
 import {useCallback,useEffect,useRef,useState} from 'react';
 import {listen} from '@tauri-apps/api/event';
 import {invoke} from '@tauri-apps/api/core';
-import {native,nativeWorkbench} from '../lib/bridge';
+import {native} from '../lib/bridge';
 
 export type MotionPreference='system'|'full'|'reduced';
 export const MOTION_PREFERENCE_KEY=typeof location!=='undefined'&&location.pathname.endsWith('workbench.html')?'samewave.workbench.motion-preference.v1':'samewave.motion-preference.v1';
@@ -32,7 +32,7 @@ export function useMotionPreference(){
   const storage=(event:StorageEvent)=>{if(event.key===MOTION_PREFERENCE_KEY)apply(event.newValue??'system');};
   const media=matchMedia('(prefers-reduced-motion: reduce)'),change=()=>setMediaReduced(media.matches);
   window.addEventListener(EVENT,local);window.addEventListener('storage',storage);media.addEventListener('change',change);
-  if(native&&!nativeWorkbench)void listen<unknown>(EVENT,event=>apply(event.payload)).then(off=>{
+  if(native)void listen<unknown>(EVENT,event=>apply(event.payload)).then(off=>{
    if(disposed){off();return;}unlisten=off;const current=revision.current;
    void invoke<unknown>('get_motion_preference').then(value=>{if(!disposed&&revision.current===current)apply(value);}).catch(()=>{});
   }).catch(()=>{});
@@ -40,7 +40,7 @@ export function useMotionPreference(){
  },[]);
  const choose=useCallback((value:MotionPreference)=>{
   revision.current++;setSaveError('');persist(value);setPreference(value);window.dispatchEvent(new CustomEvent(EVENT,{detail:value}));
-  if(native&&!nativeWorkbench)void invoke('set_motion_preference',{preference:value}).catch(()=>setSaveError('当前窗口已切换，但偏好未保存；请重试'));
+  if(native)void invoke('set_motion_preference',{preference:value}).catch(()=>setSaveError('当前窗口已切换，但偏好未保存；请重试'));
  },[]);
  return {preference,mediaReduced,choose,saveError};
 }

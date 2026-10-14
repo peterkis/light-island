@@ -5,6 +5,9 @@ pub mod engine;
 mod legacy;
 mod service;
 mod session_profile;
+#[path = "../../../src-tauri/src/motion_preferences.rs"]
+mod motion_preferences;
+use motion_preferences::{get_motion_preference, set_motion_preference, MotionPreferenceState};
 use service::Service;
 
 #[tauri::command]
@@ -178,7 +181,10 @@ pub fn run() {
             }
         }))
         .manage(state)
+        .manage(MotionPreferenceState::default())
         .invoke_handler(tauri::generate_handler![
+            get_motion_preference,
+            set_motion_preference,
             simulator_command,
             workbench_status,
             launch_island,

@@ -37,11 +37,19 @@ export function createEventConnection(role:ClientRole,endpoint=(role==='legacy'?
    }catch(error){if(valid())state('offline');cleanup();throw error;}
   }
   let socket:WebSocket|undefined,retry:ReturnType<typeof setTimeout>|undefined,handshake:ReturnType<typeof setTimeout>|undefined,attempt=0,session:string|null=null,incompatible=false;
-  let actualEndpoint=endpoint;
- if(nativeWorkbench){try{const status=await invoke<{port:number}>('workbench_status');actualEndpoint=`ws://127.0.0.1:${status.port}/events`;}catch{/* The status panel reports native startup errors. */}}
- const open=()=>{
+  const schedule=()=>{retry=setTimeout(()=>void open(),Math.min(15000,500*2**Math.min(attempt++,5))+Math.random()*250);};
+ const open=async()=>{
    if(!valid())return;state('connecting');session=null;incompatible=false;
-   const peer=new WebSocket(actualEndpoint);socket=peer;
+   let actualEndpoint=endpoint,expectedSession:string|null=null;
+   if(nativeWorkbench){
+    try{
+     const status=await invoke<{port:number;listening:boolean;sourceSessionId:string}>('workbench_status');
+     if(!valid())return;
+     if(status.listening!==true||!Number.isInteger(status.port)||status.port<1||status.port>65535||typeof status.sourceSessionId!=='string'||!status.sourceSessionId||status.sourceSessionId.length>80){state('offline');schedule();return;}
+     actualEndpoint=`ws://127.0.0.1:${status.port}/events`;expectedSession=status.sourceSessionId;
+    }catch{if(valid()){state('offline');schedule();}return;}
+   }
+   let peer:WebSocket;try{peer=new WebSocket(actualEndpoint);}catch{state('offline');schedule();return;}socket=peer;
    peer.onopen=()=>{if(!valid()||socket!==peer)return;if(role==='legacy'){attempt=0;state('online');}else handshake=setTimeout(()=>peer.close(),5000);};
    peer.onmessage=event=>{
     if(!valid()||socket!==peer||typeof event.data!=='string'||event.data.length>262144)return;
@@ -49,7 +57,7 @@ export function createEventConnection(role:ClientRole,endpoint=(role==='legacy'?
      const value=parseEnvelope(JSON.parse(event.data));if(!value)return;
      if(role==='legacy'){receive(value);return;}
      if(value.type==='transport:hello'){
-      if(value.protocolVersion!==SOURCE_PROTOCOL_VERSION||typeof value.sourceSessionId!=='string'||value.sourceSessionId.length>80){incompatible=true;clearTimeout(handshake);state('incompatible');peer.close();return;}
+      if(value.protocolVersion!==SOURCE_PROTOCOL_VERSION||typeof value.sourceSessionId!=='string'||!value.sourceSessionId||value.sourceSessionId.length>80||(expectedSession!==null&&value.sourceSessionId!==expectedSession)){incompatible=true;clearTimeout(handshake);state('incompatible');peer.close();return;}
       session=value.sourceSessionId;peer.send(JSON.stringify({type:'transport:subscribe',protocolVersion:SOURCE_PROTOCOL_VERSION,role,clientId}));return;
      }
      if(value.sourceSessionId!==session||!session)return;
@@ -57,13 +65,13 @@ export function createEventConnection(role:ClientRole,endpoint=(role==='legacy'?
      if(lastState==='online')receive(value);
     }catch{/* Invalid data cannot become an event. */}
    };
-   peer.onerror=()=>peer.close();peer.onclose=()=>{clearTimeout(handshake);if(!valid()||socket!==peer)return;session=null;if(!incompatible)state('offline');retry=setTimeout(open,Math.min(15000,500*2**Math.min(attempt++,5))+Math.random()*250);};
+   peer.onerror=()=>peer.close();peer.onclose=()=>{clearTimeout(handshake);if(!valid()||socket!==peer)return;session=null;if(!incompatible)state('offline');schedule();};
   };
   transmit=async payload=>{
    if(!valid()||socket?.readyState!==WebSocket.OPEN||lastState!=='online')return false;
    try{socket.send(JSON.stringify({...payload,...(role==='legacy'?{}:{sourceSessionId:session})}));return true;}catch{return false;}
   };
-  cleanups.push(()=>{clearTimeout(retry);clearTimeout(handshake);socket?.close();});open();return cleanup;
+  cleanups.push(()=>{clearTimeout(retry);clearTimeout(handshake);socket?.close();});void open();return cleanup;
  }};
  return connection;
 }

@@ -17,6 +17,7 @@ const report={pass:false,scope:'Windows owned release applications; rAF cadence 
 const settle=async(surface)=>{if(surface)await expect(el).toHaveAttribute('data-surface',surface);await expect(el).toHaveAttribute('data-motion-phase','settled',{timeout:12000});};
 const post=async(data)=>{const response=await fetch(source+'/api/push',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});assert(response.ok,await response.text());};
 try{
+ report.workbenchMotion=await invoke(workbench,'get_motion_preference');
  await workbench.getByRole('combobox',{name:'实验目标'}).selectOption('preview');
  const setup=await invoke(workbench,'workbench_status'),desktopId=setup.clients.find(c=>c.role==='island')?.clientId;assert(desktopId);await invoke(workbench,'simulator_command',{payload:{type:'experiment:dispatch',requestId:crypto.randomUUID(),targetClientId:desktopId,action:{kind:'personal',command:'end'}}});await invoke(workbench,'simulator_command',{payload:{type:'experiment:dispatch',requestId:crypto.randomUUID(),targetClientId:desktopId,action:{kind:'view',mode:'compact'}}});for(const targetClientId of ['preview',desktopId])await invoke(workbench,'simulator_command',{payload:{type:'clinical:reset',targetClientId}});
  await expect(el).toHaveAttribute('data-connection','online');await expect(preview).toHaveAttribute('data-connection','online');await settle('idle');
@@ -43,6 +44,7 @@ try{
  await workbench.screenshot({path:out+'/workbench.png',fullPage:true});report.pass=true;
 }finally{
  if(report.motion)await invoke(island,'set_motion_preference',{preference:report.motion}).catch(()=>{});
+ if(report.workbenchMotion)await invoke(workbench,'set_motion_preference',{preference:report.workbenchMotion}).catch(()=>{});
  await writeFile(out+'/native-apps.json',JSON.stringify(report,null,2));console.log(JSON.stringify({pass:report.pass,s0:report.s0,timerDeadline:report.timerDeadline,reduced:report.reduced}));
  // Keep both owned applications for the screen and lifecycle phases.
  await islandBrowser.close();await workbenchBrowser.close();

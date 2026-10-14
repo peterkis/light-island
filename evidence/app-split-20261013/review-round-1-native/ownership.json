@@ -1,0 +1,22 @@
+{
+  "sourcePort": 17323,
+  "capturedAt": "2026-10-14T09:34:04.4244375+08:00",
+  "apps": [
+    {
+      "kind": "workbench",
+      "rootPid": 38460,
+      "startedTicks": "639275385148347353",
+      "executable": "D:\\Projects\\island-protype\\dist\\desktop\\samewave-workbench.exe",
+      "sha256": "b9e3d44555574a72d52e1552f939e653a3599085de6a380cd0e2c2387f3b8094",
+      "port": 9224
+    },
+    {
+      "kind": "island",
+      "rootPid": 17736,
+      "startedTicks": "639275384443456646",
+      "executable": "D:\\Projects\\island-protype\\dist\\desktop\\samewave-island.exe",
+      "sha256": "4022501923e843fe0fa785fe0e5ae7e0a2ba5667f35d93a2c9e82c9edac508d8",
+      "port": 9223
+    }
+  ]
+}
