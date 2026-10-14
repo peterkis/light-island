@@ -1,0 +1,54 @@
+{
+  "exe": "workbench\\src-tauri\\target\\debug\\deps\\samewave_workbench_lib-2ec14b96d0f62633.exe",
+  "dlls": [
+    "bcryptprimitives.dll",
+    "advapi32.dll",
+    "ntdll.dll",
+    "kernel32.dll",
+    "api-ms-win-core-synch-l1-2-0.dll",
+    "user32.dll",
+    "comctl32.dll",
+    "ole32.dll",
+    "dwmapi.dll",
+    "gdi32.dll",
+    "shell32.dll",
+    "oleaut32.dll",
+    "userenv.dll",
+    "VCRUNTIME140.dll",
+    "api-ms-win-crt-math-l1-1-0.dll",
+    "api-ms-win-crt-runtime-l1-1-0.dll",
+    "api-ms-win-crt-stdio-l1-1-0.dll",
+    "api-ms-win-crt-locale-l1-1-0.dll",
+    "api-ms-win-crt-heap-l1-1-0.dll"
+  ],
+  "missing": [
+    {
+      "dll": "api-ms-win-core-synch-l1-2-0.dll",
+      "loadError": "Could not find module 'C:\\Windows\\System32\\api-ms-win-core-synch-l1-2-0.dll' (or one of its dependencies). Try using the full path with constructor syntax."
+    },
+    {
+      "dll": "comctl32.dll",
+      "entry": "TaskDialogIndirect"
+    },
+    {
+      "dll": "api-ms-win-crt-math-l1-1-0.dll",
+      "loadError": "Could not find module 'C:\\Windows\\System32\\api-ms-win-crt-math-l1-1-0.dll' (or one of its dependencies). Try using the full path with constructor syntax."
+    },
+    {
+      "dll": "api-ms-win-crt-runtime-l1-1-0.dll",
+      "loadError": "Could not find module 'C:\\Windows\\System32\\api-ms-win-crt-runtime-l1-1-0.dll' (or one of its dependencies). Try using the full path with constructor syntax."
+    },
+    {
+      "dll": "api-ms-win-crt-stdio-l1-1-0.dll",
+      "loadError": "Could not find module 'C:\\Windows\\System32\\api-ms-win-crt-stdio-l1-1-0.dll' (or one of its dependencies). Try using the full path with constructor syntax."
+    },
+    {
+      "dll": "api-ms-win-crt-locale-l1-1-0.dll",
+      "loadError": "Could not find module 'C:\\Windows\\System32\\api-ms-win-crt-locale-l1-1-0.dll' (or one of its dependencies). Try using the full path with constructor syntax."
+    },
+    {
+      "dll": "api-ms-win-crt-heap-l1-1-0.dll",
+      "loadError": "Could not find module 'C:\\Windows\\System32\\api-ms-win-crt-heap-l1-1-0.dll' (or one of its dependencies). Try using the full path with constructor syntax."
+    }
+  ]
+}

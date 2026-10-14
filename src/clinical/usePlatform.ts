@@ -2,12 +2,13 @@ import {useEffect,useRef,useState} from 'react';
 import type {RefObject} from 'react';
 import {invoke} from '@tauri-apps/api/core';
 import {listen} from '@tauri-apps/api/event';
-import {nativeIsland} from '../lib/bridge';
+import {nativeIsland,nativeWorkbench} from '../lib/bridge';
 import {parsePlatform} from './native-contract';
 import type {Platform} from './native-contract';
 export function usePlatform(host:RefObject<HTMLDivElement|null>,sourceKey:string,samplingSuspended:boolean){
  const [status,setStatus]=useState<Platform>({notificationState:5,animationsEnabled:true,outsideClickAvailable:false,shortcutRegistered:false});
  const samplingBusy=useRef(false);
+ useEffect(()=>{if(!nativeWorkbench)return;let dead=false;void invoke<unknown>('workbench_platform_status').then(value=>{const next=parsePlatform(value);if(next&&!dead)setStatus(next);}).catch(()=>{});return()=>{dead=true;};},[]);
  const [dark,setDark]=useState(false);const live=useRef(samplingSuspended);live.current=samplingSuspended;
  useEffect(()=>{
   if(!nativeIsland)return;let dead=false,off:(()=>void)|undefined;

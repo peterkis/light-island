@@ -1,0 +1,5 @@
+{
+  "pass": false,
+  "qaControlHttpStatus": 415,
+  "reason": "The first normal-launch check omitted application/json; request extraction rejected it before the disabled QA handler."
+}

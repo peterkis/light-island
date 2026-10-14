@@ -1,9 +1,10 @@
 import {useCallback,useEffect,useMemo,useRef,useState} from 'react';
 import {invoke} from '@tauri-apps/api/core';
-import {connect,sendClinical as send,sendSimulator,native} from '../lib/bridge';
+import {createEventConnection,nativeIsland} from '../lib/bridge';
+import type {EventConnection} from '../lib/bridge';
 import type {Connection,Wire} from '../lib/bridge';
-import {canView,defaults,emptyQueue,emptyTimer,identityKey,ingest,parseActivity,routeMatches,safeSettings,timerRemaining,versionKey} from './model';
-import type {Activity,Settings,TimerState,ScenarioId} from './model';
+import {canView,defaults,emptyQueue,emptyTimer,identityKey,ingest,parseActivity,routeMatches,safeSettings,timerRemaining,timerAction,versionKey} from './model';
+import type {Activity,Settings,TimerState} from './model';
 import tokens from './tokens.json';
 import {previewDuration,mayInterrupt,previewAllowed,sortActivities} from './attention';
 import {previewMuted,undoActivity} from './presentation';
@@ -11,10 +12,15 @@ import type {UndoPreview} from './presentation';
 import {useLabReader} from './lab-reader/useLabReader';
 import {parseLabReport,disposeLabReport} from './lab-reader/model';
 import type {LabReport} from './lab-reader/model';
-import {parseClinicalEvent} from '../lib/protocol';
+import {parseClinicalEvent,parseExperimentAction,sourceSettingKeys} from '../lib/protocol';
+import type {ExperimentAction} from '../lib/protocol';
 import type {PresentationPreferences} from '../lib/protocol';
 export type View='idle'|'compact'|'expanded';
-export function useClinical(){
+export function useClinical(adapter?:EventConnection){
+ const [stream]=useState(()=>adapter??createEventConnection(new URLSearchParams(location.search).get('view')==='island'?'island':'preview'));
+ const send=stream.send;
+ const [controls,setControls]=useState<{desktop:Partial<Settings>}>({desktop:{}});
+ const [clients,setClients]=useState<Array<{clientId:string;role:string}>>([]);
  const [queue,setQueue]=useState(emptyQueue),[settings,setSettings]=useState(defaults),[connection,setConnection]=useState<Connection>('connecting');
  const [timer,setTimer]=useState<TimerState>(emptyTimer),[now,setNow]=useState(Date.now());
  const [selected,setSelected]=useState<string|null>(null),[view,setView]=useState<View>('idle'),[reason,setReason]=useState<'explicit'|'preview'>('explicit');
@@ -38,7 +44,7 @@ export function useClinical(){
  const sourcePreviews=useRef(new Map<string,number>());
  const [pendingCount,setPendingCount]=useState(0),[log,setLog]=useState<string[]>([]);
  const latest=useRef({queue,settings,selected,view,connection,followed,timer});latest.current={queue,settings,selected,view,connection,followed,timer};
- const lab=useLabReader(()=>{setView(latest.current.queue.items.length||latest.current.timer.status!=='idle'?'compact':'idle');setReason('explicit');});
+ const lab=useLabReader(()=>{setView(latest.current.queue.items.length||latest.current.timer.status!=='idle'?'compact':'idle');setReason('explicit');},send);
  useEffect(()=>()=>{disposeLabReport(sourceState.current.report);sourceState.current={activity:null,report:null};},[]);
  const request=useRef<{id:string;key:string;version:number;ticket?:string}|null>(null),routeTimer=useRef(0),alive=useRef(true);
  const invalidateSource=useCallback((items:Activity[],policy:Settings)=>{
@@ -49,11 +55,38 @@ export function useClinical(){
   request.current=null;clearTimeout(routeTimer.current);setRoute('failed');
  },[setSource]);
  const addLog=useCallback((text:string)=>setLog(l=>[text,...l].slice(0,30)),[]);
+ const personal=useCallback((command:'start'|'pause'|'resume'|'end',duration?:number)=>{
+  const current=latest.current.timer,at=Date.now(),bounded=duration===undefined?1500000:Math.min(3600000,Math.max(1000,duration));
+  const next=timerAction(current,command,at,bounded);latest.current.timer=next;setTimer(next);setNow(at);
+ },[]);
+ const configurePreferences=useCallback((patch:Partial<PresentationPreferences>)=>{const next=safeSettings(patch,latest.current.settings);latest.current.settings=next;setSettings(next);},[]);
+ const present=useCallback((action:Extract<ExperimentAction,{kind:'view'}>)=>{
+  if(lab.protectedSession())return false;
+  if(action.mode==='compact'){setView(latest.current.queue.items.length||latest.current.timer.status!=='idle'?'compact':'idle');setRoute('idle');return true;}
+  const a=latest.current.queue.items.find(x=>x.scenario===action.scenario);
+  lab.close();if(a?.labRef&&action.mode!=='timer')lab.start(a,'sum');setSelected(action.mode==='timer'?'timer':a?identityKey(a.identity):null);setView('expanded');setReason('explicit');setPendingCount(0);return true;
+ },[lab.protectedSession,lab.close,lab.start]);
+ const sourceSession=useRef<string|null>(null);
+ const clearSourceSession=useCallback(()=>{
+  lab.close();request.current=null;clearTimeout(routeTimer.current);setReadable(false);latest.current.queue=emptyQueue();setQueue(latest.current.queue);setRoute('idle');setSource(null);setOpened({});setPendingCount(0);sourcePreviews.current.clear();
+  if(latest.current.selected!=='timer'){setSelected(latest.current.timer.status!=='idle'?'timer':null);setView(latest.current.timer.status!=='idle'?'compact':'idle');}
+ },[lab.close,setSource]);
  const receive=useCallback((raw:Wire)=>{
+  if(raw.type==='transport:controls'){if(raw.settings&&typeof raw.settings==='object'&&'desktop' in raw.settings){const source=raw.settings.desktop;if(source&&typeof source==='object'){const filtered=Object.fromEntries(sourceSettingKeys.filter(k=>Object.hasOwn(source,k)).map(k=>[k,source[k as keyof typeof source]]));setControls({desktop:filtered});}}return;}
+  if(raw.type==='transport:clients'){if(Array.isArray(raw.clients))setClients(raw.clients.flatMap(peer=>peer&&typeof peer==='object'&&typeof peer.clientId==='string'&&typeof peer.role==='string'?[{clientId:peer.clientId,role:peer.role}]:[]));return;}
+  if(raw.type==='transport:session'){
+   if(typeof raw.sourceSessionId==='string'){if(sourceSession.current!==null&&sourceSession.current!==raw.sourceSessionId)clearSourceSession();sourceSession.current=raw.sourceSessionId;}return;
+  }
+  if(raw.type==='experiment:action'){
+   const action=parseExperimentAction(raw.action);let applied=false;
+   if(action?.kind==='personal'){personal(action.command,action.duration);applied=true;}
+   else if(action?.kind==='preferences'){configurePreferences(action.settings);applied=true;}
+   else if(action?.kind==='view')applied=present(action);
+   if(typeof raw.requestId==='string')void send({type:'experiment:result',requestId:raw.requestId,status:applied?'applied':'rejected'});return;
+  }
   const e=parseClinicalEvent(raw);if(!e){if(raw.type.startsWith('clinical:'))setQueue(q=>({...q,rejected:Math.min(Number.MAX_SAFE_INTEGER,q.rejected+1)}));return;}
   lab.receive(e);
-  if(e.type==='clinical:reset'){lab.close();setSourceLabReport(null);}
-  if(e.type==='clinical:reset'){request.current=null;clearTimeout(routeTimer.current);clearTimeout(undoTimer.current);presentation.current={mutedSources:[],dismissed:[]};setMutedSources([]);setDismissed([]);setUndo(null);sourcePreviews.current.clear();setReadable(false);setQueue(emptyQueue());setTimer(emptyTimer());setSelected(null);setView('idle');setRoute('idle');setSource(null);setOpened({});setFollowed({});setPendingCount(0);setLog([]);}
+  if(e.type==='clinical:reset'){clearSourceSession();setLog([]);}
   if(e.type==='clinical:settings'||e.type==='clinical:snapshot'){
    const next=safeSettings(e.settings,latest.current.settings);
    const old=latest.current.settings;
@@ -62,7 +95,7 @@ export function useClinical(){
   }
   if(e.type==='clinical:snapshot'){
    let q=emptyQueue(); if(Array.isArray(e.activities))for(const a of e.activities)q=ingest(q,a);
-   snapshotSeen.current=true;latest.current.queue=q;latest.current.timer=e.timer;setQueue(q);setTimer(e.timer);invalidateSource(q.items,latest.current.settings);
+   snapshotSeen.current=true;latest.current.queue=q;setQueue(q);invalidateSource(q.items,latest.current.settings);
    const target=lab.currentActivity();if(target){const current=q.items.find(a=>identityKey(a.identity)===identityKey(target.identity));lab.invalidate(current,canView(current,latest.current.settings)&&latest.current.connection==='online'&&latest.current.settings.connectivity==='fresh');}
    // A snapshot refresh restores authorized source records, not responsibility or local opened state.
   }
@@ -82,13 +115,6 @@ export function useClinical(){
    addLog(`${a.scenario} · 来源对象 v${a.version} 已同步`);
   }
   if(e.type==='clinical:overflow')setQueue(q=>({...q,overflow:q.overflow+Number(e.count||1)}));
-  if(e.type==='clinical:timer'){latest.current.timer=e.timer;setTimer(e.timer);setNow(Date.now());}
-  if(e.type==='clinical:view'){
-   if(lab.protectedSession())return;
-   if(e.mode==='compact'){setView(latest.current.queue.items.length?'compact':'idle');setRoute('idle');return;}
-   const a=latest.current.queue.items.find(x=>x.scenario===e.scenario);
-   lab.close();if(a?.labRef&&e.mode!=='timer')lab.start(a,'sum');setSelected(e.mode==='timer'?'timer':a?identityKey(a.identity):null);setView('expanded');setReason('explicit');setPendingCount(0);
-  }
   if(e.type==='clinical:route'){
    const pending=request.current;if(!pending||pending.id!==e.requestId)return;
    clearTimeout(routeTimer.current);
@@ -97,7 +123,7 @@ export function useClinical(){
    if(!a||!canView(a,latest.current.settings)||!routeMatches(a,e.identity,e.version)||pending.key!==latest.current.selected){setRoute('mismatch');request.current=null;return;}
    if(typeof e.ticket!=='string'||!/^[\da-f-]{36}$/.test(e.ticket)){setRoute('failed');return;}
    pending.ticket=e.ticket;setRoute('requested');
-   if(native)void invoke('open_clinical_source',{ticket:e.ticket}).catch(()=>{if(alive.current&&request.current===pending)setRoute('failed');});
+   if(nativeIsland)void invoke('open_clinical_source',{ticket:e.ticket}).catch(()=>{if(alive.current&&request.current===pending)setRoute('failed');});
    else void send({type:'clinical:source-read',ticket:e.ticket});
   }
   if(e.type==='clinical:source'){
@@ -114,14 +140,14 @@ export function useClinical(){
    }else{setSource(null);setSourceError('来源对象、权限或版本已变化，请返回重新打开。');setRoute('failed');}
   }
   if(e.type==='view'&&(e.mode==='compact'||e.mode==='inbox')){setView(e.mode==='compact'?'compact':'expanded');setReason('explicit');}
- },[addLog,lab.receive,lab.close,lab.start,lab.protectedSession,setSource,setSourceLabReport,invalidateSource,lab.currentActivity,lab.invalidate]);
+ },[addLog,lab.receive,lab.close,lab.start,lab.protectedSession,setSource,setSourceLabReport,invalidateSource,lab.currentActivity,lab.invalidate,clearSourceSession,personal,configurePreferences,present,send]);
  useEffect(()=>{
   alive.current=true;let off:(()=>void)|undefined,dead=false;const abort=new AbortController();
-  void connect(receive,s=>{if(!dead){latest.current.connection=s;setConnection(s);if(s==='online'){void send({type:'clinical:sync'});}}},abort.signal).then(clean=>{
+  void stream.connect(receive,s=>{if(!dead){latest.current.connection=s;setConnection(s);if(s==='online'){void send({type:'clinical:sync'});}else{lab.close();request.current=null;clearTimeout(routeTimer.current);setRoute('idle');setSource(null);snapshotSeen.current=false;setQueue(q=>{const items=q.items.flatMap(a=>{const copy={...a,title:a.compact,body:'来源连接已断开，请重新连接后阅读详情。',patient:'详情暂不可用',sourceState:'来源离线',fields:[]};delete copy.labRef;const parsed=parseActivity(copy);return parsed?[parsed]:[];});const next={...q,items};latest.current.queue=next;return next;});}}},abort.signal).then(clean=>{
    if(dead)clean();else off=clean;
   }).catch(()=>{if(!dead){latest.current.connection='offline';setConnection('offline');}});
   return()=>{alive.current=false;dead=true;abort.abort();off?.();clearTimeout(routeTimer.current);clearTimeout(undoTimer.current);request.current=null;};
- },[receive]);
+ },[receive,stream,send,lab.close,setSource]);
  useEffect(()=>{
   if(timer.status!=='running'||timer.deadline===null)return;
   setNow(Date.now());if(timer.deadline<=Date.now())return;
@@ -190,20 +216,13 @@ export function useClinical(){
   if(request.current!==p)return;
   if(!ok){clearTimeout(routeTimer.current);request.current=null;setRoute('failed');return;}
  };
- const personal=useCallback((command:'start'|'pause'|'resume'|'end',duration?:number)=>void send({type:'clinical:personal',command,...(duration===undefined?{}:{duration})}),[]);
- const configurePreferences=useCallback((patch:Partial<PresentationPreferences>)=>{setSettings(s=>safeSettings(patch,s));void send({type:'clinical:preferences',settings:patch});},[]);
- const configureSimulation=useCallback((patch:Partial<Settings>)=>{setSettings(s=>safeSettings(patch,s));void sendSimulator({type:'clinical:configure',settings:patch});},[]);
- const stale=connection!=='online'||settings.connectivity!=='fresh'||Boolean(selectedActivity?.syncedAt&&Date.now()-selectedActivity.syncedAt>1800000);
- return {queue,settings,connection,timer,remaining:timerRemaining(timer,now),selected,selectedActivity,view,reason,route,source,sourceLabReport,sourceError,pendingCount,opened,followed,log,stale,displayItems,mutedSources,undo,focusWithin,lab,
+ const stale=Boolean(selectedActivity&&(connection!=='online'||settings.connectivity!=='fresh'||(selectedActivity.syncedAt&&Date.now()-selectedActivity.syncedAt>1800000)));
+ return {controls,clients,queue,settings,connection,timer,remaining:timerRemaining(timer,now),selected,selectedActivity,view,reason,route,source,sourceLabReport,sourceError,pendingCount,opened,followed,log,stale,displayItems,mutedSources,undo,focusWithin,lab,
   dismissPreview,undoPreview,muteSource,
-  choose,expand,collapse,openSource,personal,configurePreferences,configureSimulation,setHovered,setFocusWithin,setSource:(a:Activity|null)=>{setSource(a);if(!a)setSourceLabReport(null);},hovered,readable,setReadable,
+  choose,expand,collapse,openSource,personal,configurePreferences,setHovered,setFocusWithin,setSource:(a:Activity|null)=>{setSource(a);if(!a)setSourceLabReport(null);},hovered,readable,setReadable,
   promote:()=>setReason('explicit'),collapseDisplay:()=>{setView(queue.items.length||timer.status!=='idle'?'compact':'idle');setReason('explicit');},
   follow:(a:Activity)=>setFollowed(f=>({...f,[identityKey(a.identity)]:f[identityKey(a.identity)]===false})),
-  demo:(scenario:ScenarioId,stage=0,separate=false)=>sendSimulator({type:'clinical:scenario',scenario,stage,separate}),
-  labDemo:(variant:'baseline'|'normal'|'extended'='baseline')=>{if(lab.stage==='burn')return;lab.close();sourcePreviews.current.clear();return sendSimulator({type:'clinical:scenario',scenario:'S04',stage:0,labVariant:variant});},
-  show:(scenario:ScenarioId|'S01')=>sendSimulator({type:'clinical:view',mode:scenario==='S01'?'timer':'open',scenario}),
-  reset:()=>sendSimulator({type:'clinical:reset'}),refresh:()=>send({type:'clinical:refresh'})};
+  present,refresh:()=>send({type:'clinical:refresh'})};
 }
 export type ClinicalController=ReturnType<typeof useClinical>;
-
-export type ClinicalIslandController=Omit<ClinicalController,'configureSimulation'|'demo'|'labDemo'|'show'|'reset'>;
+export type ClinicalIslandController=ClinicalController;

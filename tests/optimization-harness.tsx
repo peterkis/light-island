@@ -9,6 +9,7 @@ import type {Activity} from '../src/clinical/model';
 import type {LabReport} from '../src/clinical/lab-reader/model';
 import type {useLabReader} from '../src/clinical/lab-reader/useLabReader';
 import type {connect} from '../src/lib/bridge';
+import type {createEventConnection} from '../src/lib/bridge';
 import type {ReportRows} from '../src/clinical/lab-reader/ReportRows';
 
 export interface HarnessApi {
@@ -53,15 +54,16 @@ let Reader=()=> <></>;
 if(kind==='reader'){
  const prefix=query.has('baseline')?'/evidence/backups/optimization-20261013/baseline-source/src':'/src';
  const readerModule=await import(/* @vite-ignore */ `${prefix}/clinical/lab-reader/useLabReader.ts`) as {useLabReader:typeof useLabReader};
- const bridgeModule=await import(/* @vite-ignore */ `${prefix}/lib/bridge.ts`) as {connect:typeof connect};
+ const bridgeModule=await import(/* @vite-ignore */ `${prefix}/lib/bridge.ts`) as {connect:typeof connect;createEventConnection:typeof createEventConnection};
+ const stream=bridgeModule.createEventConnection('preview');
  const rowsModule=await import(/* @vite-ignore */ `${prefix}/clinical/lab-reader/${query.has('baseline')?'LabScene':'ReportRows'}.tsx`) as {ReportRows:typeof ReportRows};
  const Rows=rowsModule.ReportRows;
  Reader=function ReaderHarness(){
-  const reader=readerModule.useLabReader(()=>{}),owned=useRef<LabReport|null>(null);
+  const reader=readerModule.useLabReader(()=>{},stream.send),owned=useRef<LabReport|null>(null);
   if(reader.report)owned.current=reader.report;
   useEffect(()=>{
    let dead=false,off:(()=>void)|undefined;const abort=new AbortController();
-   void bridgeModule.connect(reader.receive,()=>{},abort.signal).then(clean=>{if(dead)clean();else off=clean;});
+   void stream.connect(reader.receive,()=>{},abort.signal).then(clean=>{if(dead)clean();else off=clean;});
    return()=>{dead=true;abort.abort();off?.();};
   },[reader.receive]);
   api.start=a=>reader.start(a,'sum');api.read=()=>reader.read(true);api.hover=reader.hover;api.close=reader.close;

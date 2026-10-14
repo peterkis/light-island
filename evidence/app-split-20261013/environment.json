@@ -1,0 +1,17 @@
+{
+  "os": "Windows 11 Pro",
+  "build": "26300",
+  "nativeWindows": [
+    {
+      "dpi": 96,
+      "title": "Samewave Island"
+    }
+  ],
+  "nativeDpi": 96,
+  "browserDprCases": [
+    1,
+    1.25,
+    1.5
+  ],
+  "otherWindowsAndNativeDpiMatrix": "NOT_RUN"
+}

@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 import {evidencePath} from './evidence-path';
-async function control(request: any, value: object) { await request.post('http://127.0.0.1:17321/api/push', { data: value }); }
+async function control(request: any, value: object) { await request.post(((process.env.ISLAND_TEST_LEGACY_URL??'http://127.0.0.1:17321')+'/api/push'), { data: value }); }
 test.beforeEach(async ({ page, request }) => {
   await control(request, { type: 'reset' });
   await control(request, { type: 'configure', settings: { theme: 'ink', engine: 'gsap', shape: 'notch', focus: false, privacy: true, reduced: false } });
@@ -44,7 +44,7 @@ test('critical stays pending, server confirms only after roundtrip', async ({ pa
   await page.getByRole('button', { name: '确认收到', exact: true }).click();
   await expect(page.getByRole('button', { name: '等待服务端回执' })).toBeVisible();
   await expect(page.getByTestId('island')).toHaveAttribute('data-mode', 'success');
-  const response = await request.get('http://127.0.0.1:17321/api/state');
+  const response = await request.get(((process.env.ISLAND_TEST_LEGACY_URL??'http://127.0.0.1:17321')+'/api/state'));
   const body = await response.json(); expect(body.receipts).toHaveLength(1); expect(body.receipts[0].kind).toBe('received-not-treated');
 });
 test('ordinary arrivals cannot replace pending critical', async ({ page }) => {

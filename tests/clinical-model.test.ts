@@ -26,7 +26,7 @@ describe('source boundary is read-only and version-guarded',()=>{
 });
 describe('personal timer remains independent',()=>{
  it('uses a deadline, pauses remaining time, resumes and ends locally',()=>{let t=timerAction(emptyTimer(),'start',1000,1500000);expect(timerRemaining(t,61000)).toBe(1440000);t=timerAction(t,'pause',61000);expect(timerRemaining(t,80000)).toBe(1440000);t=timerAction(t,'resume',100000);expect(t.deadline).toBe(1540000);expect(timerRemaining(t,1600000)).toBe(0);expect(timerAction(t,'end').status).toBe('idle');});
- it('critical source updates do not restart or pause the timer',()=>{const d=createClinicalDemo(()=>{},()=>1000);d.handle({type:'clinical:personal',command:'start'});const before=d.inspect().timer;d.handle({type:'clinical:scenario',scenario:'S03',stage:0});expect(d.inspect().timer).toEqual(before);});
+ it('source reset and important updates cannot own or overwrite a personal timer',()=>{const timer=timerAction(emptyTimer(),'start',1000,60000),deadline=timer.deadline,d=createClinicalDemo(()=>{},()=>1800000000000);d.handle({type:'clinical:scenario',scenario:'S03',stage:0});d.handle({type:'clinical:reset'});expect(d.snapshot()).not.toHaveProperty('timer');expect(timer.deadline).toBe(deadline);expect(()=>d.handle({type:'clinical:personal',command:'start'})).toThrow(/read-only/);});
 });
 describe('clinical responsive geometry',()=>{
  for(const textScale of [1,2,2.25])it(`text ${textScale}: bounded width and scrollable height`,()=>{

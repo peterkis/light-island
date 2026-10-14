@@ -1,0 +1,19 @@
+{
+  "exeSHA256": "943a287315e9fc416d44e0cee301c9fd1c09612492fa91480b6047353bbd47f0",
+  "transitions": [],
+  "hover": [],
+  "errors": [],
+  "scope": "Actual Windows WebView2 / explicit app full-mode, not a change to Windows preferences",
+  "platformBefore": {
+    "animationsEnabled": false,
+    "notificationState": 5,
+    "outsideClickAvailable": true,
+    "shortcutRegistered": true
+  },
+  "preferenceBefore": "system",
+  "systemEffective": "reduced",
+  "systemReason": "跟随 Windows：系统动画效果已关闭",
+  "preservesPushFocus": false,
+  "status": "FAIL",
+  "failure": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert(report.preservesPushFocus)\n"
+}

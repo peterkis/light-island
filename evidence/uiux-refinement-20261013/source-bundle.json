@@ -1,0 +1,16 @@
+{
+  "entry": "clinical-BI6YWAhZ.js",
+  "source": "SourcePage-EQgz44LD.js",
+  "chunks": [
+    "clinical-BI6YWAhZ.js",
+    "client-DF7tKrzX.js",
+    "SourcePage-EQgz44LD.js",
+    "arrow-up-right-DsKWUakw.js",
+    "SourceView-B8lcu3rf.js",
+    "shield-check-CQYEczs5.js"
+  ],
+  "bytes": 265334,
+  "gzipBytes": 84061,
+  "islandRuntimeAbsent": true,
+  "scope": "Clinical bootstrap plus selected source chunk and recursive static JS imports; excludes CSS, sourcemaps and unloaded dynamic imports"
+}

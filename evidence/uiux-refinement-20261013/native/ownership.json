@@ -1,0 +1,33 @@
+{
+  "verified": true,
+  "rootPid": 36564,
+  "rootStartedTicks": 639274977164419904,
+  "serverPid": 33092,
+  "serverStartedTicks": 639274977150736752,
+  "sourcePort": 17323,
+  "port": 9223,
+  "executable": "D:\\Projects\\island-protype\\src-tauri\\target\\release\\samewave-island.exe",
+  "exeSHA256": "0e5f96525be23ead0c06541d4768f26713eedec37a625aa4555ce78afcc3a5a0",
+  "arguments": "--qa-cdp --hover-diagnostics",
+  "studio": false,
+  "capturedAt": "2026-10-13T22:15:16.5075177+08:00",
+  "qaEndpointReadyMs": 8613,
+  "browser": "Edg/154.0.4258.62",
+  "processes": [
+    {
+      "ProcessId": 36564,
+      "ParentProcessId": 4604,
+      "Name": "samewave-island.exe"
+    },
+    {
+      "ProcessId": 7880,
+      "ParentProcessId": 36564,
+      "Name": "msedgewebview2.exe"
+    },
+    {
+      "ProcessId": 33772,
+      "ParentProcessId": 7880,
+      "Name": "msedgewebview2.exe"
+    }
+  ]
+}

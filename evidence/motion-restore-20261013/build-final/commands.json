@@ -1,0 +1,73 @@
+[
+  {
+    "name": "typecheck",
+    "command": [
+      "cmd",
+      "/c",
+      "npm run typecheck"
+    ],
+    "exitCode": 0,
+    "seconds": 9.73
+  },
+  {
+    "name": "unit",
+    "command": [
+      "cmd",
+      "/c",
+      "npm test -- --reporter=json --outputFile=D:\\Projects\\island-protype\\evidence\\motion-restore-20261013\\build-final\\unit.json"
+    ],
+    "exitCode": 0,
+    "seconds": 5.0
+  },
+  {
+    "name": "rust",
+    "command": [
+      "cargo",
+      "test",
+      "--manifest-path",
+      "src-tauri/Cargo.toml",
+      "--lib",
+      "--release",
+      "--locked"
+    ],
+    "exitCode": 0,
+    "seconds": 3.84
+  },
+  {
+    "name": "clippy",
+    "command": [
+      "cargo",
+      "clippy",
+      "--manifest-path",
+      "src-tauri/Cargo.toml",
+      "--all-targets",
+      "--all-features",
+      "--locked",
+      "--",
+      "-D",
+      "warnings"
+    ],
+    "exitCode": 0,
+    "seconds": 6.8
+  },
+  {
+    "name": "desktop",
+    "command": [
+      "cmd",
+      "/c",
+      "npm run desktop:build"
+    ],
+    "exitCode": 0,
+    "seconds": 188.32
+  },
+  {
+    "name": "bundle",
+    "command": [
+      "cmd",
+      "/c",
+      "npm run bundle:check"
+    ],
+    "exitCode": 0,
+    "seconds": 0.55
+  }
+]

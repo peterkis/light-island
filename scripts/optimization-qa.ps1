@@ -2,7 +2,8 @@ param(
  [Parameter(Mandatory=$true)][ValidateSet('Start','Verify','Measure','Stop')][string]$Action,
  [Parameter(Mandatory=$true)][string]$Output,
  [string]$Executable,
- [ValidatePattern('^[a-z0-9-]+$')][string]$SampleName='process-tree'
+ [ValidatePattern('^[a-z0-9-]+$')][string]$SampleName='process-tree',
+ [ValidateSet(17322,17323)][int]$SourcePort=17322
 )
 $ErrorActionPreference='Stop'
 $taskRoot=Split-Path $PSScriptRoot -Parent
@@ -17,6 +18,8 @@ function Get-Tree([int]$RootId){
  @($all | Where-Object {$ids.Contains([int]$_.ProcessId)})
 }
 function Verify-Owned($Owner){
+ $sourcePort=if($Owner.sourcePort){[int]$Owner.sourcePort}else{17322}
+ if($sourcePort -notin 17322,17323){throw 'Unexpected synthetic source port'}
  $app=Get-Process -Id $Owner.rootPid -ErrorAction Stop
  if($app.Path -ne $Owner.executable -or $app.StartTime.ToUniversalTime().Ticks -ne [long]$Owner.rootStartedTicks){throw 'QA application identity changed'}
  $tree=Get-Tree $Owner.rootPid
@@ -26,7 +29,7 @@ function Verify-Owned($Owner){
  if(-not $server -or $server.CommandLine -notlike '*server\demo-server.mjs*'){throw 'Synthetic server identity changed'}
  $serverProcess=Get-Process -Id $Owner.serverPid
  if($serverProcess.StartTime.ToUniversalTime().Ticks -ne [long]$Owner.serverStartedTicks){throw 'Synthetic server PID was reused'}
- $source=@(Get-NetTCPConnection -LocalPort 17322 -State Listen -ErrorAction Stop)
+ $source=@(Get-NetTCPConnection -LocalPort $sourcePort -State Listen -ErrorAction Stop)
  if(@($source | Where-Object {$_.OwningProcess -ne $Owner.serverPid}).Count){throw 'Synthetic port is no longer owned by this session'}
  $tree
 }
@@ -41,19 +44,19 @@ if($Action -eq 'Start'){
   if((Get-FileHash -LiteralPath $exe -Algorithm SHA256).Hash.ToLowerInvariant() -ne $baselineOwner.exeSHA256){throw 'Rust baseline executable hash changed'}
  }
  if(Get-Process -Name samewave-island -ErrorAction SilentlyContinue){throw 'An island process already exists; no process was stopped'}
- if(Get-NetTCPConnection -LocalPort 17322,9223 -State Listen -ErrorAction SilentlyContinue){throw 'A QA port is occupied; no existing process was stopped'}
+ if(Get-NetTCPConnection -LocalPort $SourcePort,9223 -State Listen -ErrorAction SilentlyContinue){throw 'A QA port is occupied; no existing process was stopped'}
  New-Item -ItemType Directory -Force -Path $out,(Join-Path $out 'temp') | Out-Null
- $oldTemp=$env:TEMP;$oldTmp=$env:TMP;$oldPort=$env:ISLAND_DEMO_PORT
+ $oldTemp=$env:TEMP;$oldTmp=$env:TMP;$oldPort=$env:ISLAND_DEMO_PORT;$oldUrl=$env:ISLAND_DEMO_URL
  $server=$null;$app=$null
  try{
-  $env:TEMP=Join-Path $out 'temp';$env:TMP=$env:TEMP;$env:ISLAND_DEMO_PORT='17322'
+  $env:TEMP=Join-Path $out 'temp';$env:TMP=$env:TEMP;$env:ISLAND_DEMO_PORT=[string]$SourcePort;$env:ISLAND_DEMO_URL="ws://127.0.0.1:$SourcePort/events"
   $server=Start-Process (Get-Command node).Source -ArgumentList ('"'+(Join-Path $taskRoot 'server\demo-server.mjs')+'"') -WorkingDirectory $taskRoot -WindowStyle Hidden -PassThru -RedirectStandardOutput (Join-Path $out 'server.log') -RedirectStandardError (Join-Path $out 'server-error.log')
   $healthy=$false
-  for($attempt=0;$attempt -lt 40;$attempt++){try{$response=Invoke-RestMethod 'http://127.0.0.1:17322/api/clinical-state' -TimeoutSec 1;if($response.type -eq 'clinical:snapshot'){$healthy=$true;break}}catch{};Start-Sleep -Milliseconds 250}
+  for($attempt=0;$attempt -lt 40;$attempt++){try{$response=Invoke-RestMethod "http://127.0.0.1:$SourcePort/api/clinical-state" -TimeoutSec 1;if($response.type -eq 'clinical:snapshot'){$healthy=$true;break}}catch{};Start-Sleep -Milliseconds 250}
   if(-not $healthy){throw 'Owned synthetic server failed to start'}
   $clock=[Diagnostics.Stopwatch]::StartNew()
   $app=Start-Process $exe -ArgumentList '--qa-cdp --hover-diagnostics' -WorkingDirectory $taskRoot -WindowStyle Hidden -PassThru
-  $owner=[ordered]@{verified=$false;rootPid=$app.Id;rootStartedTicks=$app.StartTime.ToUniversalTime().Ticks;serverPid=$server.Id;serverStartedTicks=$server.StartTime.ToUniversalTime().Ticks;port=9223;executable=$exe;exeSHA256=(Get-FileHash -LiteralPath $exe -Algorithm SHA256).Hash.ToLowerInvariant();arguments='--qa-cdp --hover-diagnostics';studio=$false;capturedAt=(Get-Date -Format o)}
+  $owner=[ordered]@{verified=$false;rootPid=$app.Id;rootStartedTicks=$app.StartTime.ToUniversalTime().Ticks;serverPid=$server.Id;serverStartedTicks=$server.StartTime.ToUniversalTime().Ticks;sourcePort=$SourcePort;port=9223;executable=$exe;exeSHA256=(Get-FileHash -LiteralPath $exe -Algorithm SHA256).Hash.ToLowerInvariant();arguments='--qa-cdp --hover-diagnostics';studio=$false;capturedAt=(Get-Date -Format o)}
   for($attempt=0;$attempt -lt 80;$attempt++){
    try{$tree=Verify-Owned ([pscustomobject]$owner);$version=Invoke-RestMethod 'http://127.0.0.1:9223/json/version' -TimeoutSec 1;$owner.verified=$true;break}catch{Start-Sleep -Milliseconds 250}
   }
@@ -65,7 +68,7 @@ if($Action -eq 'Start'){
   if($app){$p=Get-Process -Id $app.Id -ErrorAction SilentlyContinue;if($p -and $p.Path -eq $exe){Stop-Process -Id $p.Id}}
   if($server){$p=Get-Process -Id $server.Id -ErrorAction SilentlyContinue;if($p -and $p.StartTime -eq $server.StartTime){Stop-Process -Id $p.Id}}
   throw
- }finally{$env:TEMP=$oldTemp;$env:TMP=$oldTmp;$env:ISLAND_DEMO_PORT=$oldPort}
+ }finally{$env:TEMP=$oldTemp;$env:TMP=$oldTmp;$env:ISLAND_DEMO_PORT=$oldPort;$env:ISLAND_DEMO_URL=$oldUrl}
  exit
 }
 $owner=Get-Content -LiteralPath $manifestPath -Raw | ConvertFrom-Json
@@ -96,7 +99,8 @@ if($Action -eq 'Stop'){
  foreach($item in $owned){$p=Get-Process -Id $item.id -ErrorAction SilentlyContinue;if($p -and $p.StartTime.ToUniversalTime().Ticks -eq $item.ticks -and $p.Path -eq $item.path){Stop-Process -Id $p.Id}}
  $server=Get-Process -Id $owner.serverPid -ErrorAction SilentlyContinue
  if($server -and $server.StartTime.ToUniversalTime().Ticks -eq [long]$owner.serverStartedTicks){Stop-Process -Id $server.Id}
- $result=[ordered]@{stoppedOwnedRoot=$owner.rootPid;stoppedOwnedServer=$owner.serverPid;remainingListeners=@(Get-NetTCPConnection -LocalPort 17322,9223 -State Listen -ErrorAction SilentlyContinue | Select-Object LocalPort,OwningProcess);termination='QA-owned processes stopped; not a normal-exit profile-cleanup acceptance'}
+ $sourcePort=if($owner.sourcePort){[int]$owner.sourcePort}else{17322}
+ $result=[ordered]@{stoppedOwnedRoot=$owner.rootPid;stoppedOwnedServer=$owner.serverPid;remainingListeners=@(Get-NetTCPConnection -LocalPort $sourcePort,9223 -State Listen -ErrorAction SilentlyContinue | Select-Object LocalPort,OwningProcess);termination='QA-owned processes stopped; not a normal-exit profile-cleanup acceptance'}
  $result | ConvertTo-Json -Depth 4 | Set-Content -LiteralPath (Join-Path $out 'cleanup.json') -Encoding UTF8
  $result | ConvertTo-Json -Depth 4
 }

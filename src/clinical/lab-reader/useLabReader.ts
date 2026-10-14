@@ -1,16 +1,17 @@
 import {useCallback,useEffect,useRef,useState} from 'react';
 import {invoke} from '@tauri-apps/api/core';
 import {listen} from '@tauri-apps/api/event';
-import {nativeIsland,sendClinical as send} from '../../lib/bridge';
+import {nativeIsland} from '../../lib/bridge';
 import {identityKey} from '../model';
 import type {Activity} from '../model';
 import type {Wire} from '../../lib/bridge';
+import type {ClinicalIslandCommand} from '../../lib/protocol';
 import {LAB,ReadBudget,parseLabReport,disposeLabReport} from './model';
 import type {LabReport,LabState} from './model';
 interface Snapshot {stage:LabState;privacy:boolean;remaining:number;loading:boolean;error:string;session:number}
 let serial=Date.now();
 const initial=():Snapshot=>({stage:'idle',privacy:false,remaining:LAB.readMs,loading:false,error:'',session:0});
-export function useLabReader(onExit:()=>void){
+export function useLabReader(onExit:()=>void,send:(event:ClinicalIslandCommand)=>Promise<boolean>){
  const [snapshot,setSnapshot]=useState(initial),state=useRef(snapshot),report=useRef<LabReport|null>(null),activity=useRef<Activity|null>(null),budget=useRef<ReadBudget|null>(null);
  const timers=useRef({alert:0,privacy:0,transition:0,request:0,clock:0}),request=useRef<string|null>(null),mouse=useRef(false),alive=useRef(true),exit=useRef(onExit);exit.current=onExit;
  const reduction=useRef(false),setReduced=useCallback((value:boolean)=>{reduction.current=value;},[]);
@@ -68,7 +69,7 @@ export function useLabReader(onExit:()=>void){
   if(state.current.session!==session||request.current!==id)return;
   timers.current.request=window.setTimeout(()=>{if(request.current===id){request.current=null;update({loading:false,error:'报告读取超时，请重试'});}},5000);
   if(!await send({type:'clinical:lab-read',requestId:id,identity:a.identity,version:a.version,reportId:a.labRef.id})&&request.current===id){clearTimeout(timers.current.request);request.current=null;update({loading:false,error:'模拟来源未连接，请重试'});}
- },[update]);
+ },[update,send]);
  const start=useCallback((a:Activity,stage:'alert'|'sum'='alert')=>{
   if(state.current.stage==='burn'||!a.labRef)return;
   clear();disposeLabReport(report.current);report.current=null;activity.current=a;const session=++serial;update({...initial(),stage,session});

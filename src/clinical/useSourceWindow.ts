@@ -1,5 +1,5 @@
 import {useCallback,useEffect,useRef,useState} from 'react';
-import {connect,sendClinical} from '../lib/bridge';
+import {createEventConnection} from '../lib/bridge';
 import {parseClinicalEvent} from '../lib/protocol';
 import {canView,defaults,emptyQueue,identityKey,ingest,safeSettings} from './model';
 import type {Activity,Settings} from './model';
@@ -8,6 +8,8 @@ import type {LabReport} from './lab-reader/model';
 
 /** A source window owns only its verified mirror and report, never an island reader/clock. */
 export function useSourceWindow(ticket:string){
+ const [stream]=useState(()=>createEventConnection('source'));
+ const sendClinical=stream.send;
  const [source,setSource]=useState<Activity|null>(null),[report,setReport]=useState<LabReport|null>(null),[error,setError]=useState('');
  const [settings,setSettings]=useState<Settings>(defaults);
  const cancelRequest=useRef<()=>void>(()=>{});
@@ -23,7 +25,7 @@ export function useSourceWindow(ticket:string){
    if(current&&current.version===shown.version&&!current.withdrawn&&canView(current,policy)&&policy.connectivity==='fresh')return;
    awaiting=false;clear(invalid);
   };
-  void connect(raw=>{
+  void stream.connect(raw=>{
    if(dead)return;const event=parseClinicalEvent(raw);if(!event)return;
    if(event.type==='clinical:reset'){awaiting=false;requested=true;queue=emptyQueue();snapshotSeen=true;policy=defaults;setSettings(policy);clear(invalid);return;}
    if(event.type==='clinical:settings'||event.type==='clinical:snapshot'){
@@ -51,6 +53,6 @@ export function useSourceWindow(ticket:string){
    else {awaiting=false;clear(state==='offline'?'模拟来源连接已断开，请返回重新打开。':'');}
   },abort.signal).catch(()=>{if(!dead)clear('模拟来源连接失败，请返回重新打开。');});
   return()=>{dead=true;cancelRequest.current();cancelRequest.current=()=>{};abort.abort();disposeLabReport(owned.current.report);owned.current={source:null,report:null};};
- },[ticket,clear]);
+ },[ticket,clear,stream,sendClinical]);
  return {source,sourceLabReport:report,sourceError:error,settings,clear};
 }

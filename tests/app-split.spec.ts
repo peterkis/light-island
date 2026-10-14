@@ -1,0 +1,26 @@
+import {test,expect} from '@playwright/test';
+const source=process.env.ISLAND_TEST_SOURCE_URL??'http://127.0.0.1:17322';
+test('preview tools, source reset and desktop tools stay independently owned',async({context,page,request})=>{
+ await request.post(source+'/api/push',{data:{type:'clinical:reset'}});
+ await page.goto('/workbench.html');await expect(page.locator('.cs-connection')).toContainText('模拟消息源已连接');
+ const desktop=await context.newPage();await desktop.goto('/clinical.html?view=island');
+ const status=async()=>((await request.get(source+'/api/health')).json()) as Promise<{clients:number}>;
+ await expect.poll(async()=>(await status()).clients).toBeGreaterThanOrEqual(2);
+ const d=desktop.getByTestId('clinical-island'),p=page.getByTestId('clinical-island');
+ await d.getByRole('button',{name:'打开协作动态'}).click();await expect(d).toHaveAttribute('data-surface','rich');
+ await d.getByRole('button',{name:'开始 25 分钟'}).click();
+ const deadline=await desktop.evaluate(()=>window.__CLINICAL_DEBUG__?.().timer.deadline);expect(deadline).toBeGreaterThan(Date.now());
+ await page.getByRole('button',{name:/01 个人番茄钟/}).click();await expect(p).toHaveAttribute('data-surface','rich');await p.getByRole('button',{name:'开始 25 分钟'}).click();await p.getByRole('button',{name:'结束本次'}).click();
+ expect(await desktop.evaluate(()=>window.__CLINICAL_DEBUG__?.().timer.deadline)).toBe(deadline);
+ await page.getByTestId('clinical-scenario-S03').click();await expect(p).toContainText('检验危急值');
+ expect(await desktop.evaluate(()=>window.__CLINICAL_DEBUG__?.().queue.items)).toEqual([]);
+ await page.getByRole('button',{name:'重置本地模拟场景'}).click();await expect.poll(()=>page.evaluate(()=>window.__CLINICAL_DEBUG__?.().queue.items.length)).toBe(0);
+ expect(await desktop.evaluate(()=>window.__CLINICAL_DEBUG__?.().timer.deadline)).toBe(deadline);
+ const target=page.getByRole('combobox',{name:'实验目标'});await expect(target.locator('option',{hasText:'桌面灵动岛'})).toHaveCount(1);await target.selectOption({label:'桌面灵动岛'});
+ await page.getByTestId('clinical-scenario-S03').click();await expect.poll(()=>desktop.evaluate(()=>window.__CLINICAL_DEBUG__?.().queue.items.length)).toBe(1);
+ expect(await page.evaluate(()=>window.__CLINICAL_DEBUG__?.().queue.items)).toEqual([]);
+ expect(await desktop.evaluate(()=>window.__CLINICAL_DEBUG__?.().timer.deadline)).toBe(deadline);
+ await page.getByRole('button',{name:'重置本地模拟场景'}).click();await expect.poll(()=>desktop.evaluate(()=>window.__CLINICAL_DEBUG__?.().queue.items.length)).toBe(0);
+ expect(await desktop.evaluate(()=>window.__CLINICAL_DEBUG__?.().timer.deadline)).toBe(deadline);
+ await page.close();expect(await desktop.evaluate(()=>window.__CLINICAL_DEBUG__?.().timer.deadline)).toBe(deadline);await desktop.close();
+});

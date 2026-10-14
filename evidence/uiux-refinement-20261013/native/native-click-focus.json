@@ -1,0 +1,15 @@
+{
+  "cases": [],
+  "frames": [],
+  "errors": [
+    "S0 native composite contains an unexpected bright border"
+  ],
+  "baseline": [
+    608,
+    0,
+    1312,
+    622
+  ],
+  "s0BrightBorderPixels": 108,
+  "receivedClicks": []
+}

@@ -1,0 +1,340 @@
+{
+  "baseline": {
+    "id": "LAB-",
+    "identity": {
+      "source": "",
+      "campus": "",
+      "encounter": "",
+      "object": ""
+    },
+    "version": 1,
+    "title": "血常规 + 肝功能 + CRP",
+    "source": "检验科 LIS",
+    "maskedName": "张**",
+    "sex": "男",
+    "age": 41,
+    "specimen": "静脉血",
+    "reportedAt": "10:42",
+    "items": [
+      {
+        "id": "item-0",
+        "name": "白细胞",
+        "abbr": "WBC",
+        "value": 11.2,
+        "lo": 3.5,
+        "hi": 9.5,
+        "unit": "×10⁹/L",
+        "flag": "H"
+      },
+      {
+        "id": "item-1",
+        "name": "血红蛋白",
+        "abbr": "HGB",
+        "value": 128,
+        "lo": 130,
+        "hi": 175,
+        "unit": "g/L",
+        "flag": "L"
+      },
+      {
+        "id": "item-2",
+        "name": "C反应蛋白",
+        "abbr": "CRP",
+        "value": 18.4,
+        "lo": 0,
+        "hi": 6,
+        "unit": "mg/L",
+        "flag": "H"
+      },
+      {
+        "id": "item-3",
+        "name": "红细胞",
+        "abbr": "RBC",
+        "value": 4.6,
+        "lo": 4.3,
+        "hi": 5.8,
+        "unit": "×10¹²/L",
+        "flag": "N"
+      },
+      {
+        "id": "item-4",
+        "name": "血小板",
+        "abbr": "PLT",
+        "value": 235,
+        "lo": 125,
+        "hi": 350,
+        "unit": "×10⁹/L",
+        "flag": "N"
+      },
+      {
+        "id": "item-5",
+        "name": "谷丙转氨酶",
+        "abbr": "ALT",
+        "value": 32,
+        "lo": 9,
+        "hi": 50,
+        "unit": "U/L",
+        "flag": "N"
+      },
+      {
+        "id": "item-6",
+        "name": "谷草转氨酶",
+        "abbr": "AST",
+        "value": 28,
+        "lo": 15,
+        "hi": 40,
+        "unit": "U/L",
+        "flag": "N"
+      },
+      {
+        "id": "item-7",
+        "name": "总胆红素",
+        "abbr": "TBIL",
+        "value": 14.2,
+        "lo": 3.4,
+        "hi": 20.5,
+        "unit": "μmol/L",
+        "flag": "N"
+      }
+    ]
+  },
+  "normal": {
+    "id": "LAB-",
+    "identity": {
+      "source": "",
+      "campus": "",
+      "encounter": "",
+      "object": ""
+    },
+    "version": 1,
+    "title": "血常规 + 肝功能 + CRP",
+    "source": "检验科 LIS",
+    "maskedName": "张**",
+    "sex": "男",
+    "age": 41,
+    "specimen": "静脉血",
+    "reportedAt": "10:42",
+    "items": [
+      {
+        "id": "item-0",
+        "name": "白细胞",
+        "abbr": "WBC",
+        "value": 6.5,
+        "lo": 3.5,
+        "hi": 9.5,
+        "unit": "×10⁹/L",
+        "flag": "N"
+      },
+      {
+        "id": "item-1",
+        "name": "血红蛋白",
+        "abbr": "HGB",
+        "value": 152.5,
+        "lo": 130,
+        "hi": 175,
+        "unit": "g/L",
+        "flag": "N"
+      },
+      {
+        "id": "item-2",
+        "name": "C反应蛋白",
+        "abbr": "CRP",
+        "value": 3,
+        "lo": 0,
+        "hi": 6,
+        "unit": "mg/L",
+        "flag": "N"
+      },
+      {
+        "id": "item-3",
+        "name": "红细胞",
+        "abbr": "RBC",
+        "value": 5.05,
+        "lo": 4.3,
+        "hi": 5.8,
+        "unit": "×10¹²/L",
+        "flag": "N"
+      },
+      {
+        "id": "item-4",
+        "name": "血小板",
+        "abbr": "PLT",
+        "value": 237.5,
+        "lo": 125,
+        "hi": 350,
+        "unit": "×10⁹/L",
+        "flag": "N"
+      },
+      {
+        "id": "item-5",
+        "name": "谷丙转氨酶",
+        "abbr": "ALT",
+        "value": 29.5,
+        "lo": 9,
+        "hi": 50,
+        "unit": "U/L",
+        "flag": "N"
+      },
+      {
+        "id": "item-6",
+        "name": "谷草转氨酶",
+        "abbr": "AST",
+        "value": 27.5,
+        "lo": 15,
+        "hi": 40,
+        "unit": "U/L",
+        "flag": "N"
+      },
+      {
+        "id": "item-7",
+        "name": "总胆红素",
+        "abbr": "TBIL",
+        "value": 11.95,
+        "lo": 3.4,
+        "hi": 20.5,
+        "unit": "μmol/L",
+        "flag": "N"
+      }
+    ]
+  },
+  "extended": {
+    "id": "LAB-",
+    "identity": {
+      "source": "",
+      "campus": "",
+      "encounter": "",
+      "object": ""
+    },
+    "version": 1,
+    "title": "血常规 + 肝功能 + CRP",
+    "source": "检验科 LIS",
+    "maskedName": "张**",
+    "sex": "男",
+    "age": 41,
+    "specimen": "静脉血",
+    "reportedAt": "10:42",
+    "items": [
+      {
+        "id": "item-0",
+        "name": "白细胞",
+        "abbr": "WBC",
+        "value": 11.2,
+        "lo": 3.5,
+        "hi": 9.5,
+        "unit": "×10⁹/L",
+        "flag": "H"
+      },
+      {
+        "id": "item-1",
+        "name": "血红蛋白",
+        "abbr": "HGB",
+        "value": 128,
+        "lo": 130,
+        "hi": 175,
+        "unit": "g/L",
+        "flag": "L"
+      },
+      {
+        "id": "item-2",
+        "name": "C反应蛋白",
+        "abbr": "CRP",
+        "value": 18.4,
+        "lo": 0,
+        "hi": 6,
+        "unit": "mg/L",
+        "flag": "H"
+      },
+      {
+        "id": "item-3",
+        "name": "红细胞",
+        "abbr": "RBC",
+        "value": 4.6,
+        "lo": 4.3,
+        "hi": 5.8,
+        "unit": "×10¹²/L",
+        "flag": "N"
+      },
+      {
+        "id": "item-4",
+        "name": "血小板",
+        "abbr": "PLT",
+        "value": 235,
+        "lo": 125,
+        "hi": 350,
+        "unit": "×10⁹/L",
+        "flag": "N"
+      },
+      {
+        "id": "item-5",
+        "name": "谷丙转氨酶",
+        "abbr": "ALT",
+        "value": 32,
+        "lo": 9,
+        "hi": 50,
+        "unit": "U/L",
+        "flag": "N"
+      },
+      {
+        "id": "item-6",
+        "name": "谷草转氨酶",
+        "abbr": "AST",
+        "value": 28,
+        "lo": 15,
+        "hi": 40,
+        "unit": "U/L",
+        "flag": "N"
+      },
+      {
+        "id": "item-7",
+        "name": "总胆红素",
+        "abbr": "TBIL",
+        "value": 14.2,
+        "lo": 3.4,
+        "hi": 20.5,
+        "unit": "μmol/L",
+        "flag": "N"
+      },
+      {
+        "id": "qual",
+        "name": "定性项目（模拟）",
+        "abbr": "QUAL",
+        "unit": "",
+        "value": null,
+        "lo": null,
+        "hi": null,
+        "text": "阳性",
+        "flag": "A"
+      },
+      {
+        "id": "single",
+        "name": "单侧参考（模拟）",
+        "abbr": "ONE",
+        "unit": "U/L",
+        "value": 12,
+        "lo": null,
+        "hi": 10,
+        "flag": "H"
+      },
+      {
+        "id": "equal",
+        "name": "退化参考（模拟）",
+        "abbr": "EQ",
+        "unit": "",
+        "value": 5,
+        "lo": 5,
+        "hi": 5,
+        "flag": "unknown"
+      },
+      {
+        "id": "missing",
+        "name": "结果尚未提供",
+        "abbr": "WAIT",
+        "unit": "",
+        "value": null,
+        "lo": null,
+        "hi": null,
+        "flag": "unknown"
+      }
+    ]
+  }
+}

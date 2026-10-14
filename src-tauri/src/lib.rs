@@ -1,149 +1,9 @@
-use futures_util::{SinkExt, StreamExt};
-use serde_json::{json, Value};
-use std::sync::{atomic::{AtomicBool, Ordering}, Arc, Mutex};
-use std::time::{Duration, SystemTime, UNIX_EPOCH};
-use tauri::{AppHandle, Emitter, Manager};
-use tokio::sync::mpsc;
-use tokio_tungstenite::{connect_async_with_config, tungstenite::{Message, protocol::WebSocketConfig}};
-use std::collections::HashMap;
-
-#[derive(Default)]
-struct Transport {
-    running: AtomicBool,
-    writer: Mutex<Option<mpsc::Sender<String>>>,
-    online: AtomicBool,
-    routes: Mutex<HashMap<String,(String,std::time::Instant)>>,
-}
-
-#[tauri::command]
-fn connect_stream(app: AppHandle, state: tauri::State<'_, Arc<Transport>>) -> Result<(), String> {
-    if state.running.swap(true, Ordering::SeqCst) {
-        let online = state.online.load(Ordering::SeqCst);
-        let _ = app.emit("island://connection", if online { "online" } else { "connecting" });
-        // Each newly-online window requests its own protocol snapshot.
-        return Ok(());
-    }
-    let transport = state.inner().clone();
-    let url = std::env::var("ISLAND_DEMO_URL").unwrap_or_else(|_| (if std::env::args().any(|a|a=="--legacy") { "ws://127.0.0.1:17321/events" } else { "ws://127.0.0.1:17322/events" }).into());
-    // Prototype transport is deliberately loopback-only. Production requires a different authenticated adapter.
-    let safe_url = url::Url::parse(&url).is_ok_and(|u| u.scheme() == "ws" && matches!(u.host_str(), Some("127.0.0.1") | Some("localhost")) && u.username().is_empty() && u.password().is_none());
-    if !safe_url {
-        transport.running.store(false, Ordering::SeqCst);
-        return Err("Only a loopback synthetic WebSocket is permitted in this prototype".into());
-    }
-    tauri::async_runtime::spawn(async move {
-        let mut attempt = 0_u32;
-        loop {
-            let _ = app.emit("island://connection", "connecting");
-            let config = WebSocketConfig::default().max_message_size(Some(262_144)).max_frame_size(Some(262_144)).read_buffer_size(16_384).write_buffer_size(16_384).max_write_buffer_size(524_288);
-            if let Ok((socket, _)) = connect_async_with_config(&url, Some(config), true).await {
-                attempt = 0;
-                let (mut sink, mut stream) = socket.split();
-                let (tx, mut rx) = mpsc::channel::<String>(64);
-                if let Ok(mut writer) = transport.writer.lock() { *writer = Some(tx); }
-                transport.online.store(true, Ordering::SeqCst);
-                let _ = app.emit("island://connection", "online");
-                let mut heartbeat = tokio::time::interval(Duration::from_secs(20));
-                let mut last_seen = tokio::time::Instant::now();
-                loop {
-                    tokio::select! {
-                        frame = stream.next() => {
-                            match frame {
-                                Some(Ok(Message::Text(text))) => {
-                                    last_seen = tokio::time::Instant::now();
-                                    if text.len() > 262_144 { break; }
-                                    if let Ok(value) = serde_json::from_str::<Value>(&text) {
-                                        let kind=value.get("type").and_then(Value::as_str).unwrap_or("");
-                                        let field=if kind=="clinical:source"{"ticket"}else{"requestId"};
-                                        if ["clinical:lab-report","clinical:source","clinical:route"].contains(&kind){
-                                            let key=value.get(field).and_then(Value::as_str).unwrap_or("");
-                                            let target=transport.routes.lock().ok().and_then(|mut map|map.remove(key));
-                                            if let Some((label,at))=target{if at.elapsed()<Duration::from_secs(10){
-                                                let mut private=value;
-                                                if private.get("labReport").is_some(){if let Some(w)=app.get_webview_window(&label){let epoch=SystemTime::now().duration_since(UNIX_EPOCH).unwrap_or_default().as_millis() as u64;if reader_native::clinical_capture(w,true,epoch).is_err(){private=json!({"type":"clinical:source","ticket":private.get("ticket"),"error":"窗口捕获保护不可用"});}}else{continue;}}
-                                                let _=app.emit_to(label,"island://wire",private);
-                                            }}
-                                        }else{let _ = app.emit("island://wire", value);}
-                                    }
-                                },
-                                Some(Ok(Message::Pong(_))) => last_seen = tokio::time::Instant::now(),
-                                Some(Ok(Message::Ping(data))) => { if sink.send(Message::Pong(data)).await.is_err() { break; } },
-                                Some(Ok(Message::Close(_))) | Some(Err(_)) | None => break,
-                                _ => {}
-                            }
-                        },
-                        outgoing = rx.recv() => {
-                            match outgoing {
-                                Some(text) => if sink.send(Message::Text(text.into())).await.is_err() { break; },
-                                None => break
-                            }
-                        },
-                        _ = heartbeat.tick() => {
-                            if last_seen.elapsed() > Duration::from_secs(65) { break; }
-                            if sink.send(Message::Ping(Vec::new().into())).await.is_err() { break; }
-                        }
-                    }
-                }
-            }
-            transport.online.store(false, Ordering::SeqCst);
-            if let Ok(mut writer) = transport.writer.lock() { *writer = None; }
-            let _ = app.emit("island://connection", "offline");
-            let jitter = SystemTime::now().duration_since(UNIX_EPOCH).unwrap_or_default().subsec_millis() as u64 % 251;
-            tokio::time::sleep(Duration::from_millis((500_u64 * 2_u64.pow(attempt.min(5))).min(15_000) + jitter)).await;
-            attempt = attempt.saturating_add(1);
-        }
-    });
-    Ok(())
-}
-
-fn wire_allowed(clinical: bool, label: &str, kind: &str) -> bool {
-    if clinical {
-        let readonly = ["clinical:sync", "clinical:refresh", "clinical:open", "clinical:source-read", "clinical:lab-read", "clinical:personal", "clinical:preferences"];
-        let simulator = ["clinical:scenario", "clinical:configure", "clinical:reset", "clinical:view"];
-        readonly.contains(&kind) || (label == "studio" && simulator.contains(&kind))
-    } else {
-        ["sync", "ack", "demo", "configure", "reset", "view"].contains(&kind)
-    }
-}
-
-#[tauri::command]
-fn send_wire(window: tauri::WebviewWindow, payload: Value, state: tauri::State<'_, Arc<Transport>>) -> Result<(), String> {
-    let kind = payload.get("type").and_then(Value::as_str).ok_or("Missing event type")?;
-    let clinical = window.url().map_err(|e|e.to_string())?.path().ends_with("clinical.html");
-    if !wire_allowed(clinical, window.label(), kind) {
-        return Err(if clinical { "Clinical surface is read-only; simulator commands require the studio" } else { "Unsupported event type" }.into());
-    }
-    if !state.online.load(Ordering::SeqCst) { return Err("Message channel is offline".into()); }
-    let encoded = serde_json::to_string(&payload).map_err(|e| e.to_string())?;
-    if encoded.len() > 32768 { return Err("Payload exceeds prototype limit".into()); }
-    if ["clinical:lab-read","clinical:source-read","clinical:open"].contains(&kind){
-        let field=if kind=="clinical:source-read"{"ticket"}else{"requestId"};
-        let key=payload.get(field).and_then(Value::as_str).filter(|s|!s.is_empty()&&s.len()<=80).ok_or("Invalid private read correlation")?;
-        let mut routes=state.routes.lock().map_err(|_|"Private routing unavailable")?;routes.retain(|_,(_,at)|at.elapsed()<Duration::from_secs(10));
-        if routes.len()>=64{return Err("Private read capacity reached".into());}
-        if routes.contains_key(key){return Err("Duplicate private read correlation".into());}
-        routes.insert(key.into(),(window.label().into(),std::time::Instant::now()));
-    }
-    let tx = state.writer.lock().map_err(|_| "Writer state unavailable")?.clone().ok_or("No connected writer")?;
-    tx.try_send(encoded).map_err(|e| e.to_string())
-}
-
-#[cfg(test)]
-mod protocol_tests {
-    use super::wire_allowed;
-    #[test]
-    fn per_window_sync_preserves_the_clinical_readonly_boundary() {
-        assert!(wire_allowed(false, "island", "sync"));
-        assert!(wire_allowed(true, "island", "clinical:sync"));
-        assert!(wire_allowed(true, "clinical-source", "clinical:source-read"));
-        assert!(wire_allowed(true, "studio", "clinical:configure"));
-        for kind in ["sync", "ack", "clinical:ack", "clinical:complete", "clinical:dispatch", "clinical:configure", "clinical:scenario"] {
-            assert!(!wire_allowed(true, "island", kind), "{kind}");
-            assert!(!wire_allowed(true, "clinical-source", kind), "{kind}");
-        }
-    }
-}
-
+use serde_json::json;
+use std::sync::Arc;
+use std::time::Duration;
+use tauri::{AppHandle,Emitter,Manager};
+mod transport;
+use transport::{Transport,connect_stream,send_wire};
 #[cfg(target_os = "windows")]
 mod win32 {
     #[link(name = "user32")]
@@ -152,6 +12,8 @@ mod win32 {
 mod notch_window;
 mod clinical_window;
 mod clinical_input;
+mod motion_preferences;
+use motion_preferences::{get_motion_preference,set_motion_preference,MotionPreferenceState};
 mod clinical_shadow;
 #[cfg(target_os = "windows")]
 mod shadow_raster;
@@ -178,25 +40,19 @@ fn position_island(app: AppHandle, top: f64) -> Result<(), String> {
 }
 
 #[tauri::command]
-async fn open_studio(app: AppHandle) -> Result<(), String> {
-    if let Some(window) = app.get_webview_window("studio") {
-        window.show().map_err(|e| e.to_string())?;
-        window.set_focus().map_err(|e| e.to_string())?;
-        return Ok(());
-    }
-    let mut builder = tauri::WebviewWindowBuilder::new(&app, "studio", tauri::WebviewUrl::App(if std::env::args().any(|a|a=="--legacy") { "index.html" } else { "clinical.html" }.into()))
-        .title("同频 Island · 原型试验台 · 仅模拟数据").inner_size(1380.0, 980.0)
-        .min_inner_size(900.0, 700.0).center();
-    // A shared WebView2 data directory requires identical browser arguments in every window.
-    // Read the existing config: normal launches have no debugging arguments.
-    if let Some(args) = app.config().app.windows.iter().find(|w|w.label=="island").and_then(|w|w.additional_browser_args.as_ref()) {
-        builder = builder.additional_browser_args(args);
-    }
-    if let Some(config)=app.config().app.windows.iter().find(|w|w.label=="island") {if let Some(path)=&config.data_directory{builder=builder.data_directory(path.clone());}builder=builder.incognito(config.incognito);}
-    builder.build().map_err(|e|e.to_string())?;
-    Ok(())
+fn launch_workbench()->Result<(),String>{
+ let current=std::env::current_exe().map_err(|e|e.to_string())?;let folder=current.parent().ok_or("Executable directory unavailable")?;
+ let sibling=folder.join("samewave-workbench.exe");
+ let development=std::path::PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("../workbench/src-tauri/target/release/samewave-workbench.exe");
+ let executable=if sibling.is_file(){sibling}else if development.is_file(){development}else{return Err("Workbench executable unavailable".into());};
+ let mut command=std::process::Command::new(executable);if std::env::args().any(|a|a=="--legacy"){command.arg("--legacy");}command.spawn().map_err(|e|e.to_string())?;Ok(())
 }
 
+#[tauri::command]
+fn qa_exit(app:AppHandle,window:tauri::WebviewWindow,abrupt:Option<bool>)->Result<(),String>{
+ if window.label()!="island"||!std::env::args().any(|a|a=="--qa-cdp"){return Err("Owned QA launch required".into());}
+ if abrupt.unwrap_or(false){std::process::exit(97);}clinical_input::stop();clinical_shadow::close();app.exit(0);Ok(())
+}
 pub fn run() {
     let mut context = tauri::generate_context!();
     let profile=if !std::env::args().any(|a|a=="--legacy"){Some(reader_profile::create().expect("Unable to create owned session profile"))}else{None};
@@ -211,30 +67,32 @@ pub fn run() {
         }
     }
     tauri::Builder::default()
-        .plugin(tauri_plugin_single_instance::init(|app, _, _| { let app=app.clone(); tauri::async_runtime::spawn(async move { let _=open_studio(app).await; }); }))
+        .plugin(tauri_plugin_single_instance::init(|app, _, _| { let _=app.emit_to("island","island://wire",json!({"type":"view","mode":"inbox"})); }))
         .manage(Arc::new(Transport::default()))
-        .invoke_handler(tauri::generate_handler![clinical_capture,clinical_reader_clock,clinical_background_luminance, clinical_platform_status, clinical_layout, clinical_metrics, open_clinical_source, close_clinical_source, update_island_region, cancel_island_transition, island_pointer_inside, hover_diagnostics, connect_stream, send_wire, island_metrics, resize_island_window, commit_island_geometry, position_island, open_studio])
+        .manage(MotionPreferenceState::default())
+        .invoke_handler(tauri::generate_handler![get_motion_preference,set_motion_preference,clinical_capture,clinical_reader_clock,clinical_background_luminance, clinical_platform_status, clinical_layout, clinical_metrics, open_clinical_source, close_clinical_source, update_island_region, cancel_island_transition, island_pointer_inside, hover_diagnostics, connect_stream, send_wire, island_metrics, resize_island_window, commit_island_geometry, position_island, launch_workbench, qa_exit])
         .setup(|app| {
             use tauri::menu::{Menu, MenuItem};
             use tauri::tray::TrayIconBuilder;
-            let studio = MenuItem::with_id(app, "studio", "打开原型试验台", true, None::<&str>)?;
             let inbox = MenuItem::with_id(app, "inbox", "打开消息中心", true, None::<&str>)?;
             let collapse = MenuItem::with_id(app, "compact", "收起灵动岛", true, None::<&str>)?;
             let quit = MenuItem::with_id(app, "quit", "退出同频", true, None::<&str>)?;
-            let menu = Menu::with_items(app, &[&studio, &inbox, &collapse, &quit])?;
+            let menu = Menu::with_items(app, &[&inbox, &collapse, &quit])?;
             let mut tray = TrayIconBuilder::with_id("samewave").tooltip("同频 Island · 模拟原型").menu(&menu);
             if let Some(icon) = app.default_window_icon() { tray = tray.icon(icon.clone()); }
             tray.on_menu_event(|app, event| match event.id.as_ref() {
-                "studio" => { let app=app.clone(); tauri::async_runtime::spawn(async move { let _=open_studio(app).await; }); },
                 "inbox" | "compact" => {
                     #[cfg(target_os = "windows")]
                     if let Some(w) = app.get_webview_window("island") { if let Ok(h) = w.hwnd() { unsafe { win32::ShowWindow(h.0 as _, 4); } } }
                     let _ = app.emit("island://wire", json!({"type":"view", "mode":event.id.as_ref()})); },
                 "quit" => {clinical_input::stop();clinical_shadow::close();app.exit(0)}, _ => {}
             }).build(app)?;
+            if !std::env::args().any(|a|a=="--legacy") {
+                clinical_window::initialize(&app.get_webview_window("island").ok_or("Island unavailable")?)?;
+            }
             let _ = position_island(app.handle().clone(), 0.0);
             if !std::env::args().any(|a|a=="--legacy"){clinical_input::start(app.handle().clone());}
-            if std::env::args().any(|a| a == "--studio") { let app=app.handle().clone(); tauri::async_runtime::spawn(async move { let _=open_studio(app).await; }); }
+            if std::env::args().any(|a| a == "--studio") { let _=launch_workbench(); }
             Ok(())
         })
         .on_window_event(|window, event| {

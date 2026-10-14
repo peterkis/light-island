@@ -30,6 +30,9 @@ mod ffi{
   pub fn SetWindowPos(h:*mut c_void,after:*mut c_void,x:i32,y:i32,w:i32,height:i32,flags:u32)->i32;
   pub fn ShowWindow(h:*mut c_void,mode:i32)->i32;
   pub fn IsWindowVisible(h:*mut c_void)->i32;
+  pub fn GetWindowLongPtrW(h:*mut c_void,index:i32)->isize;
+  pub fn SetWindowLongPtrW(h:*mut c_void,index:i32,value:isize)->isize;
+  pub fn RedrawWindow(h:*mut c_void,rect:*const Rect,region:*mut c_void,flags:u32)->i32;
   pub fn MonitorFromPoint(p:Point,flags:u32)->*mut c_void;
   pub fn GetMonitorInfoW(h:*mut c_void,info:*mut MonitorInfo)->i32;
  }
@@ -38,6 +41,40 @@ mod ffi{
   pub fn EqualRgn(a:*mut c_void,b:*mut c_void)->i32;
   pub fn DeleteObject(h:*mut c_void)->i32;
  }
+ #[link(name="kernel32")]extern "system"{
+  pub fn SetLastError(code:u32);
+  pub fn GetLastError()->u32;
+ }
+ #[link(name="dwmapi")]extern "system"{
+  pub fn DwmSetWindowAttribute(h:*mut c_void,attribute:u32,value:*const c_void,size:u32)->i32;
+ }
+}
+/// Tao retains caption/edge flags for its custom client calculation even when
+/// decorations=false. SetWindowRgn can expose their bright non-client outline.
+/// Strip only native chrome before showing this clinical window, once per dock
+/// lifecycle. The SVG still owns its optional hairline and physical AA fringe.
+pub fn initialize(window:&WebviewWindow)->Result<(),String>{
+ if window.label()!="island"{return Err("Clinical island window required".into());}
+ #[cfg(target_os="windows")]unsafe{
+  let h=window.hwnd().map_err(|e|e.to_string())?.0 as _;
+  let style=ffi::GetWindowLongPtrW(h,-16);
+  let ex=ffi::GetWindowLongPtrW(h,-20);
+  let borderless=style&!(0x00c00000|0x00040000); // WS_CAPTION | WS_THICKFRAME
+  let tool=(ex&!(0x00040000|0x00000100|0x00000200))|0x00000080|0x08000000;
+  for (index,old,next) in [(-16,style,borderless),(-20,ex,tool)]{
+   if old!=next{
+    ffi::SetLastError(0);
+    if ffi::SetWindowLongPtrW(h,index,next)==0&&ffi::GetLastError()!=0{return Err("Cannot remove native clinical window chrome".into());}
+   }
+  }
+  // Non-client rendering is disabled on Windows 10 too. The two Windows 11
+  // attributes are optional there; an unsupported attribute is harmless.
+  for (attribute,value) in [(2,1_u32),(33,1_u32),(34,0xfffffffe_u32)]{
+   ffi::DwmSetWindowAttribute(h,attribute,&value as *const u32 as _,4);
+  }
+  if (style!=borderless||ex!=tool)&&ffi::SetWindowPos(h,std::ptr::null_mut(),0,0,0,0,0x0001|0x0002|0x0004|0x0010|0x0020)==0{return Err("Cannot refresh borderless clinical frame".into());}
+ }
+ Ok(())
 }
 struct Plan{scale:f64,x:i32,y:i32,w:u32,h:u32,available:f64,available_height:f64}
 fn plan(window:&WebviewWindow)->Result<Plan,String>{
@@ -68,7 +105,7 @@ fn canvas(window:&WebviewWindow,p:&Plan)->Result<(),String>{
 }
 #[tauri::command]
 pub fn clinical_metrics(window:WebviewWindow)->Result<Value,String>{ensure(&window)?;let p=plan(&window)?;Ok(json!({"available":p.available,"height":p.available_height,"scale":p.scale,"canvasWidth":p.w,"canvasHeight":p.h,"y":p.y,"topReserved":p.y>window.primary_monitor().ok().flatten().map(|m|m.position().y).unwrap_or(0)}))}
-pub fn redock(window:&WebviewWindow)->Result<(),String>{let p=plan(window)?;canvas(window,&p)}
+pub fn redock(window:&WebviewWindow)->Result<(),String>{initialize(window)?;let p=plan(window)?;canvas(window,&p)}
 
 fn contour(w:f64,h:f64,radius:f64,ear:f64)->Vec<[f64;2]>{
  let e=ear.min(w/8.0).min(h/4.0);let r=radius.min((w-2.0*e)/2.0).min(h-e);
@@ -135,7 +172,13 @@ pub fn clinical_layout(window:WebviewWindow,epoch:u64,body_width:f64,height:f64,
   let old=ffi::CreateRectRgn(0,0,0,0);let equal=!old.is_null()&&ffi::GetWindowRgn(hwnd.0 as _,old)>0&&ffi::EqualRgn(old,region)!=0;
   if !old.is_null(){ffi::DeleteObject(old);}
   if equal{ffi::DeleteObject(region);}else if ffi::SetWindowRgn(hwnd.0 as _,region,0)==0{ffi::DeleteObject(region);return Err("Cannot install clinical outline".into());}
-  if ffi::IsWindowVisible(hwnd.0 as _)==0{ffi::ShowWindow(hwnd.0 as _,4);}
+  if ffi::IsWindowVisible(hwnd.0 as _)==0{
+   ffi::ShowWindow(hwnd.0 as _,4);
+   // Clear Tao's cached light non-client pixels only after the first region is
+   // installed. AA fringe stays transparent; regular motion never does this.
+   // RDW_INVALIDATE | RDW_ERASE | RDW_ALLCHILDREN | RDW_UPDATENOW | RDW_FRAME.
+   ffi::RedrawWindow(hwnd.0 as _,std::ptr::null(),std::ptr::null_mut(),0x0585);
+  }
   let region_ready=sampled.map(|clock|clock.elapsed());
   if let Err(error)=crate::clinical_shadow::draw(&window,body_width,height,radius,target.top,shadow_alpha.unwrap_or(0.0)){record(&window,"clinical-shadow-error",json!({"reason":error}));}
   // Reuse the bounded, opt-in diagnostics stream; normal frames allocate no detail JSON.
@@ -149,7 +192,7 @@ pub fn clinical_layout(window:WebviewWindow,epoch:u64,body_width:f64,height:f64,
 
 #[tauri::command]
 pub async fn open_clinical_source(app:AppHandle,window:WebviewWindow,ticket:String)->Result<(),String>{
- if !["island","studio"].contains(&window.label())||ticket.len()!=36||!ticket.chars().all(|c|c.is_ascii_hexdigit()||c=='-'){return Err("Invalid local source ticket".into());}
+ if window.label()!="island"||ticket.len()!=36||!ticket.chars().all(|c|c.is_ascii_hexdigit()||c=='-'){return Err("Invalid local source ticket".into());}
  if let Some(w)=app.get_webview_window("clinical-source"){
   let mut url=w.url().map_err(|e|e.to_string())?;url.set_query(Some(&format!("source={ticket}")));w.navigate(url).map_err(|e|e.to_string())?;w.show().map_err(|e|e.to_string())?;w.set_focus().map_err(|e|e.to_string())?;
  }else{

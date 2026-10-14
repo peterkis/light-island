@@ -1,0 +1,58 @@
+{
+  "windows": [
+    {
+      "hwnd": 10357916,
+      "pid": 23632,
+      "title": "Samewave Island",
+      "class": "Tauri Window",
+      "path": "D:\\Projects\\island-protype\\src-tauri\\target\\release\\samewave-island.exe",
+      "visible": true,
+      "rect": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "style": "0x14c80000",
+      "exStyle": "0x40118"
+    },
+    {
+      "hwnd": 7800544,
+      "pid": 23632,
+      "title": "Samewave Island Shadow",
+      "class": "Static",
+      "path": "D:\\Projects\\island-protype\\src-tauri\\target\\release\\samewave-island.exe",
+      "visible": false,
+      "rect": [
+        560,
+        0,
+        1360,
+        670
+      ],
+      "style": "0x84000000",
+      "exStyle": "0x80800a8"
+    }
+  ],
+  "pass": false,
+  "idle": {
+    "box": {
+      "width": 124,
+      "height": 32
+    },
+    "rim": "rgba(0, 0, 0, 0)",
+    "fill": "rgb(0, 0, 0)"
+  },
+  "hover": {
+    "width": 130.1875,
+    "height": 33.59375,
+    "background": "rgb(44, 44, 46)",
+    "cursor": "pointer",
+    "markOpacity": "1"
+  },
+  "violations": [
+    "Native WS_CAPTION/WS_THICKFRAME border",
+    "S0 hover paints a grey background",
+    "S0 hover reveals a grey mark",
+    "S0 hover changes geometry"
+  ]
+}

@@ -17,3 +17,5 @@ evidence/backups/
 evidence/**/temp/
 playwright-report/
 test-results/
+
+workbench/src-tauri/target/

@@ -1,0 +1,299 @@
+{
+  "status": "PASS_IN_RECORDED_SCOPE",
+  "gitHead": "b19121a38ee8b4e3bb815b4885f6d44d9d4259a3",
+  "committed": false,
+  "pushed": false,
+  "exe": "D:\\Projects\\island-protype\\src-tauri\\target\\release\\samewave-island.exe",
+  "exeSHA256": "1ab433671b44ff2b048c370654903e02d47d242da58dde0bb7d34e8821dafa14",
+  "immutableInputs": {
+    "docs/Windows 灵动岛 UI UX 设计规范 v1.0.md": "a9f37ea76becf4b74c4388a2172e4d46dbc7a4600558cee3b71f445f3e67b1fa",
+    "docs/protype/灵动岛「检验报告阅读」开发文档（Agent 可读版）.md": "beca7ca59cce18f7898f97caf497a9f63e8e30b55a91fd74e1cb2bb2d74c9aff",
+    "docs/protype/灵动岛 · 检验报告阅读（阅后即焚）.html": "625664a43eea9ceb14763ef27e650a1f8d8766ded933e8d6704a451416146dad"
+  },
+  "checks": {
+    "unit": {
+      "passed": 238,
+      "total": 238
+    },
+    "browser": {
+      "startTime": "2026-10-13T14:17:08.127Z",
+      "duration": 590392.3629999999,
+      "expected": 105,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "rust": {
+      "passed": 15,
+      "log": "rust-frame-final.log"
+    },
+    "clippy": {
+      "status": "PASS",
+      "log": "clippy-frame-final.log"
+    },
+    "desktop": {
+      "status": "PASS",
+      "log": "desktop-frame-final.log"
+    },
+    "sourceBundle": {
+      "entry": "clinical-BI6YWAhZ.js",
+      "source": "SourcePage-EQgz44LD.js",
+      "chunks": [
+        "clinical-BI6YWAhZ.js",
+        "client-DF7tKrzX.js",
+        "SourcePage-EQgz44LD.js",
+        "arrow-up-right-DsKWUakw.js",
+        "SourceView-B8lcu3rf.js",
+        "shield-check-CQYEczs5.js"
+      ],
+      "bytes": 265334,
+      "gzipBytes": 84061,
+      "islandRuntimeAbsent": true,
+      "scope": "Clinical bootstrap plus selected source chunk and recursive static JS imports; excludes CSS, sourcemaps and unloaded dynamic imports"
+    }
+  },
+  "issues": {
+    "greyFrame": {
+      "attachmentColour": [
+        219,
+        229,
+        232
+      ],
+      "attachmentBounds": [
+        23,
+        0,
+        923,
+        590
+      ],
+      "qaWitnessSize": [
+        900,
+        590
+      ],
+      "nativeCanvas": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "temporaryWitnessClosed": true
+    },
+    "brightEdges": {
+      "unexpectedBrightPixels": 0,
+      "alphaComposite": {
+        "pixelsOver24": 0,
+        "maxChannelError": 12,
+        "scope": "Actual native desktop composite vs WebView alpha over the known synthetic dark background; 96 DPI resting S0"
+      }
+    },
+    "s0Hover": {
+      "width": 124,
+      "height": 32,
+      "background": "rgba(0, 0, 0, 0)",
+      "cursor": "pointer",
+      "markOpacity": "0"
+    }
+  },
+  "native": {
+    "scope": "Fresh owned synthetic QA, Windows 11 / 96 DPI / WebView2; includes full and reduced app modes",
+    "screenFrames": 58,
+    "blankFrames": 0,
+    "realPassThroughClicks": 3,
+    "physicalHWNDRectangles": [
+      [
+        608,
+        0,
+        1312,
+        622
+      ]
+    ],
+    "hwndChanges": 0,
+    "regionUpdates": 230,
+    "restDOMMutations": 0,
+    "restRegionUpdates": 0,
+    "motionTransitions": [
+      {
+        "mode": "compact",
+        "frames": 109,
+        "uniqueMovingWidths": 35,
+        "fullContentScaleObserved": true,
+        "blurObserved": true,
+        "p95RafMs": 17.10000000000582,
+        "over25ms": 1
+      },
+      {
+        "mode": "open",
+        "frames": 110,
+        "uniqueMovingWidths": 43,
+        "fullContentScaleObserved": true,
+        "blurObserved": true,
+        "p95RafMs": 17.099999999976717,
+        "over25ms": 0
+      },
+      {
+        "mode": "compact",
+        "frames": 109,
+        "uniqueMovingWidths": 36,
+        "fullContentScaleObserved": true,
+        "blurObserved": true,
+        "p95RafMs": 17,
+        "over25ms": 0
+      },
+      {
+        "mode": "open",
+        "frames": 110,
+        "uniqueMovingWidths": 41,
+        "fullContentScaleObserved": true,
+        "blurObserved": true,
+        "p95RafMs": 17.10000000000582,
+        "over25ms": 0
+      }
+    ],
+    "windowsAnimationsEnabled": false,
+    "appPreference": "full",
+    "performance": {
+      "capturedAt": "2026-10-13T22:41:11.1796572+08:00",
+      "exeSHA256": "1ab433671b44ff2b048c370654903e02d47d242da58dde0bb7d34e8821dafa14",
+      "scope": "Owned native application and all discovered WebView2 descendants, no studio; excludes synthetic Node server and QA tools",
+      "sampleSeconds": 10.762398,
+      "privateWorkingSetMiB": 134.22,
+      "privateCommitMiB": 194.4,
+      "cpuMachinePercent": 0.0,
+      "processes": [
+        {
+          "pid": 17692,
+          "name": "samewave-island",
+          "privateCommitMiB": 10.0,
+          "workingSetMiB": 32.55,
+          "cpuDeltaSeconds": 0,
+          "newDuringSample": false
+        },
+        {
+          "pid": 23480,
+          "name": "msedgewebview2",
+          "privateCommitMiB": 36.07,
+          "workingSetMiB": 124.73,
+          "cpuDeltaSeconds": 0,
+          "newDuringSample": false
+        },
+        {
+          "pid": 32264,
+          "name": "msedgewebview2",
+          "privateCommitMiB": 2.83,
+          "workingSetMiB": 12.57,
+          "cpuDeltaSeconds": 0,
+          "newDuringSample": false
+        },
+        {
+          "pid": 32416,
+          "name": "msedgewebview2",
+          "privateCommitMiB": 76.93,
+          "workingSetMiB": 93.47,
+          "cpuDeltaSeconds": 0,
+          "newDuringSample": false
+        },
+        {
+          "pid": 5348,
+          "name": "msedgewebview2",
+          "privateCommitMiB": 11.15,
+          "workingSetMiB": 37.23,
+          "cpuDeltaSeconds": 0,
+          "newDuringSample": false
+        },
+        {
+          "pid": 33568,
+          "name": "msedgewebview2",
+          "privateCommitMiB": 7.42,
+          "workingSetMiB": 20.18,
+          "cpuDeltaSeconds": 0,
+          "newDuringSample": false
+        },
+        {
+          "pid": 31840,
+          "name": "msedgewebview2",
+          "privateCommitMiB": 50.0,
+          "workingSetMiB": 102.12,
+          "cpuDeltaSeconds": 0,
+          "newDuringSample": false
+        }
+      ]
+    }
+  },
+  "limitations": [
+    "rAF cadence is not DWM-presented frames",
+    "Physical mixed DPI/multi-monitor/120Hz/Narrator/touch/Windows10 NOT_RUN",
+    "Curve and shadow remain documented mathematical approximations",
+    "Synthetic/read-only prototype; no real clinical delivery acceptance"
+  ],
+  "preservedFailures": [
+    "native-red",
+    "browser-red",
+    "full-e2e.log (CustomEase parse failure, interrupted)",
+    "ease-fixed (new Compact fixture)",
+    "visual-matrix (new Minimal fixture)",
+    "desktop.log (old EXE lock)",
+    "native/screen.log",
+    "native/screen-settled.log",
+    "screen-no-blur",
+    "screen-redraw",
+    "screen-alpha"
+  ],
+  "nativeCleanup": {
+    "stoppedOwnedRoot": 17692,
+    "stoppedOwnedServer": 20808,
+    "remainingListeners": [],
+    "termination": "QA-owned processes stopped; not a normal-exit profile-cleanup acceptance"
+  },
+  "normalReview": {
+    "normalLaunch": true,
+    "pid": 11852,
+    "executable": "D:\\Projects\\island-protype\\src-tauri\\target\\release\\samewave-island.exe",
+    "commandLine": "\"D:\\Projects\\island-protype\\src-tauri\\target\\release\\samewave-island.exe\" ",
+    "exeSHA256": "1ab433671b44ff2b048c370654903e02d47d242da58dde0bb7d34e8821dafa14",
+    "qaPortClosed": true,
+    "qaWitnessClosed": true,
+    "window": {
+      "hwnd": 4523920,
+      "pid": 11852,
+      "title": "Samewave Island",
+      "class": "Tauri Window",
+      "path": "D:\\Projects\\island-protype\\src-tauri\\target\\release\\samewave-island.exe",
+      "dwm": {
+        "1": {
+          "hresult": 0,
+          "value": 0
+        },
+        "2": {
+          "hresult": -2147024809,
+          "value": 0
+        },
+        "33": {
+          "hresult": 0,
+          "value": 1
+        },
+        "34": {
+          "hresult": -2147024809,
+          "value": 0
+        },
+        "37": {
+          "hresult": 0,
+          "value": 1
+        },
+        "38": {
+          "hresult": 0,
+          "value": 0
+        }
+      },
+      "backgroundBrush": "0x0",
+      "visible": true,
+      "rect": [
+        608,
+        0,
+        1312,
+        622
+      ],
+      "style": "0x14080000",
+      "exStyle": "0x8000098"
+    },
+    "capturedAt": "2026-10-13T22:48:57.0153571+08:00"
+  }
+}

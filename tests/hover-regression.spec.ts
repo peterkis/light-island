@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-const base='http://127.0.0.1:17321';
+const base=((process.env.ISLAND_TEST_LEGACY_URL??'http://127.0.0.1:17321')+'');
 async function post(request:any,data:object){expect((await request.post(`${base}/api/push`,{data})).ok()).toBeTruthy();}
 async function settled(page:any, mode='compact') { const p=page.getByTestId('island');await expect(p).toHaveAttribute('data-mode',mode);await expect(p).toHaveAttribute('data-motion-phase','settled');return p; }
 test.beforeEach(async({page,request})=>{

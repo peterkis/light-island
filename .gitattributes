@@ -11,3 +11,12 @@ evidence/pr-review-20261011/**/error-context.md -whitespace
 evidence/lab-reader-20261009/**/error-context.md -whitespace
 evidence/uiux-continuation-20261008/**/error-context.md -whitespace
 evidence/lab-reader-20261009/preexisting.diff -whitespace
+
+# Preserve the original bytes of motion, visual, and application split evidence.
+evidence/motion-restore-20261013/** -text whitespace=cr-at-eol
+evidence/uiux-refinement-20261013/** -text whitespace=cr-at-eol
+evidence/app-split-20261013/** -text whitespace=cr-at-eol
+evidence/publication-20261014/** -text whitespace=cr-at-eol
+evidence/motion-restore-20261013/**/error-context.md -whitespace
+evidence/uiux-refinement-20261013/**/error-context.md -whitespace
+evidence/app-split-20261013/**/error-context.md -whitespace

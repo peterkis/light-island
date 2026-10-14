@@ -1,0 +1,130 @@
+{
+  "pass": true,
+  "sourcePort": 17323,
+  "cases": [
+    {
+      "name": "island alone starts its personal timer while source is offline",
+      "pass": true
+    },
+    {
+      "name": "island-first startup connects without replacing the personal deadline",
+      "pass": true
+    },
+    {
+      "name": "each EXE owns a separate WebView data directory",
+      "pass": true
+    },
+    {
+      "name": "repeated launches affect only the matching existing application",
+      "pass": true
+    },
+    {
+      "name": "workbench alone starts its embedded source and independent preview",
+      "pass": true
+    },
+    {
+      "name": "workbench-first startup connects the separate island",
+      "pass": true
+    }
+  ],
+  "launches": [
+    {
+      "port": 9223,
+      "executable": "D:\\Projects\\island-protype\\dist\\desktop\\samewave-island.exe",
+      "startedTicks": "639275092928003714",
+      "rootPid": 32232,
+      "kind": "island",
+      "sha256": "9bf31a6d1adb5732a55d03b40a8ba985fc6208f7c1481d341192add458bc8278"
+    },
+    {
+      "port": 9224,
+      "executable": "D:\\Projects\\island-protype\\dist\\desktop\\samewave-workbench.exe",
+      "startedTicks": "639275092986923843",
+      "rootPid": 28544,
+      "kind": "workbench",
+      "sha256": "3edc7f7ae979b7c07865ae23e64ba0b335c10c947f23fca13365e71ba198bf8a"
+    },
+    {
+      "port": 9224,
+      "executable": "D:\\Projects\\island-protype\\dist\\desktop\\samewave-workbench.exe",
+      "startedTicks": "639275093192947156",
+      "rootPid": 39100,
+      "kind": "workbench",
+      "sha256": "3edc7f7ae979b7c07865ae23e64ba0b335c10c947f23fca13365e71ba198bf8a"
+    },
+    {
+      "port": 9223,
+      "executable": "D:\\Projects\\island-protype\\dist\\desktop\\samewave-island.exe",
+      "startedTicks": "639275093227270664",
+      "rootPid": 39892,
+      "kind": "island",
+      "sha256": "9bf31a6d1adb5732a55d03b40a8ba985fc6208f7c1481d341192add458bc8278"
+    }
+  ],
+  "profiles": [
+    {
+      "kind": "island",
+      "profiles": [
+        "C:\\Users\\zqpet\\AppData\\Local\\local.samewave.island.prototype\\EBWebView"
+      ],
+      "processIds": [
+        32232,
+        24636,
+        41076,
+        24488,
+        27784,
+        36904,
+        41804
+      ],
+      "rootPid": 32232
+    },
+    {
+      "kind": "workbench",
+      "profiles": [
+        "C:\\Users\\zqpet\\AppData\\Local\\local.samewave.workbench.prototype\\EBWebView"
+      ],
+      "processIds": [
+        28544,
+        22184,
+        33816,
+        25240,
+        41492,
+        40260,
+        38600
+      ],
+      "rootPid": 28544
+    },
+    {
+      "kind": "workbench",
+      "profiles": [
+        "C:\\Users\\zqpet\\AppData\\Local\\local.samewave.workbench.prototype\\EBWebView"
+      ],
+      "processIds": [
+        39100,
+        41696,
+        37980,
+        2232,
+        18700,
+        40720,
+        7376
+      ],
+      "rootPid": 39100
+    },
+    {
+      "kind": "island",
+      "profiles": [
+        "C:\\Users\\zqpet\\AppData\\Local\\local.samewave.island.prototype\\EBWebView"
+      ],
+      "processIds": [
+        39892,
+        28964,
+        17836,
+        39888,
+        40956,
+        40604,
+        9872
+      ],
+      "rootPid": 39892
+    }
+  ]
+}

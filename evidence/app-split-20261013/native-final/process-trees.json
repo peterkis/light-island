@@ -1,0 +1,14 @@
+﻿[
+    {
+        "privateWorkingSetMiB":  141.91,
+        "privateCommitMiB":  203.8,
+        "processCount":  7,
+        "kind":  "workbench"
+    },
+    {
+        "privateWorkingSetMiB":  180.24,
+        "privateCommitMiB":  242.29,
+        "processCount":  7,
+        "kind":  "island"
+    }
+]

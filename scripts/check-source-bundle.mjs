@@ -2,7 +2,7 @@ import {readFileSync,readdirSync,mkdirSync,writeFileSync} from 'node:fs';
 import {basename,join,resolve} from 'node:path';
 import {gzipSync} from 'node:zlib';
 import assert from 'node:assert/strict';
-const directory=resolve('dist'),assets=join(directory,'assets');
+const directory=resolve('dist/island'),assets=join(directory,'assets');
 const files=readdirSync(assets).filter(name=>name.endsWith('.js'));
 const maps=new Map(files.map(name=>[name,JSON.parse(readFileSync(join(assets,name+'.map'),'utf8'))]));
 const source=files.find(name=>maps.get(name).sources.some(/** @param {string} path */path=>path.endsWith('/SourcePage.tsx')));
