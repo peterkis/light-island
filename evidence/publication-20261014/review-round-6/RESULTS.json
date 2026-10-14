@@ -1,0 +1,76 @@
+{
+  "status": "PASS_AS_TESTED",
+  "recordedAt": "2026-10-14T12:28:14.248521+08:00",
+  "reviewedBase": "1a9dfabbd21fc8e2896756dcb9e48e902eb5b9e8",
+  "findings": [
+    {
+      "commentId": 4266605239,
+      "priority": "P2",
+      "disposition": "FIXED",
+      "change": "Only preview-target replay closes or blocks on the preview reader; all desktop report variants preserve the preview reading session."
+    }
+  ],
+  "validation": {
+    "unitPassed": 257,
+    "targetedReadingBrowserPassed": 5,
+    "readingSessionIsolationFailedBeforeFix": true,
+    "setupFailuresPreserved": [
+      "reading-red",
+      "reading-red-2"
+    ],
+    "actualRegressionFailure": "reading-red-3",
+    "islandAssetsVerifiedUnchanged": 21,
+    "islandReleaseUnchangedSinceRound5": true,
+    "workbenchReleaseBuild": "PASS",
+    "bothFrontendBuildsAndTypecheck": "PASS",
+    "bundleCheck": "PASS",
+    "rustCodeUnchangedSincePrior20And15Tests": true,
+    "protocolCodeUnchangedSincePrior95Cases": true,
+    "nativePreviewReadingTargetIsolation": true,
+    "nativeFunctional": "PASS",
+    "nativeLifecycleCases": [
+      {
+        "name": "graceful workbench exit preserves island timer",
+        "pass": true
+      },
+      {
+        "name": "restart replaces source session without replacing deadline",
+        "pass": true
+      },
+      {
+        "name": "workbench motion enum survives restart without changing island preference",
+        "pass": true
+      },
+      {
+        "name": "abrupt workbench termination preserves island timer",
+        "pass": true
+      },
+      {
+        "name": "a replacement workbench motion enum survives abrupt exit",
+        "pass": true
+      },
+      {
+        "name": "island exit leaves independent workbench running",
+        "pass": true
+      }
+    ],
+    "sourceFiles": 319,
+    "sourceDrift": 0
+  },
+  "products": [
+    {
+      "kind": "island",
+      "path": "dist/desktop/samewave-island.exe",
+      "sha256": "d48b1c0a4260125f9a9fa60e993cddeb1397c90c33d2301a782bc74ad1fff71a",
+      "bytes": 4602880
+    },
+    {
+      "kind": "workbench",
+      "path": "dist/desktop/samewave-workbench.exe",
+      "sha256": "90d97679a6d38b53bb3bcc05cb08eda498f693bde377b05bbaa190108d13d4f9",
+      "bytes": 4900864
+    }
+  ],
+  "nativeEvidence": "evidence/app-split-20261013/review-round-6-native",
+  "scope": "Synthetic read-only Windows 11 / 96 DPI validation; prior source, visual, protocol and Rust results retained separately."
+}

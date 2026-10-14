@@ -51,6 +51,12 @@ try{
  await post({type:'clinical:configure',settings:{privacy:true}});await expect(el.locator('.lab-row')).toHaveCount(0);await expect(el).not.toContainText('张**');
  await post({type:'clinical:reset'});await settle('idle');await invoke(island,'set_motion_preference',{preference:'reduced'});await post({type:'clinical:view',mode:'timer'});await settle('rich');report.reduced=await island.locator('.ci-anchor').getAttribute('data-motion');assert.equal(report.reduced,'reduced');
  await invoke(island,'set_motion_preference',{preference:report.motion});await post({type:'clinical:view',mode:'compact'});await settle('idle');
+ await target.selectOption('preview');const privacy=workbench.getByRole('switch',{name:'隐私保护',exact:true});if(await privacy.getAttribute('aria-checked')==='true')await privacy.click();
+ await workbench.getByRole('button',{name:'重播：收到检验报告',exact:true}).click();await expect(preview).toHaveAttribute('data-lab-state','alert');
+ await preview.getByRole('button',{name:'查看检验报告摘要'}).click();await expect(preview).toHaveAttribute('data-lab-state','sum');await preview.getByRole('button',{name:'阅读报告',exact:true}).click();await expect(preview).toHaveAttribute('data-lab-state','read');await expect(preview.locator('.lab-row')).toHaveCount(8);
+ await target.selectOption(client.clientId);
+ for(const name of ['重播：收到检验报告','全部正常夹具','定性与缺失值夹具']){await workbench.getByRole('button',{name,exact:true}).click();await workbench.waitForTimeout(800);await expect(preview).toHaveAttribute('data-lab-state','read');}
+ await expect(el).not.toHaveAttribute('data-surface','idle');report.previewReadingTargetIsolation=true;await target.selectOption('preview');
  await workbench.screenshot({path:out+'/workbench.png',fullPage:true});report.pass=true;
 }finally{
  if(report.motion)await invoke(island,'set_motion_preference',{preference:report.motion}).catch(()=>{});

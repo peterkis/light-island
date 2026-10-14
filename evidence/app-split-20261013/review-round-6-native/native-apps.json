@@ -1,0 +1,125 @@
+{
+  "pass": true,
+  "scope": "Windows owned release applications; rAF cadence and screen continuity are separate",
+  "workbenchMotion": "system",
+  "workbenchPlatform": {
+    "animationsEnabled": false,
+    "notificationState": 5,
+    "outsideClickAvailable": false,
+    "shortcutRegistered": false
+  },
+  "workbenchPlatformRefresh": true,
+  "motion": "full",
+  "s0": {
+    "width": 124,
+    "height": 32,
+    "background": "rgba(0, 0, 0, 0)",
+    "cursor": "pointer",
+    "fill": "rgb(0, 0, 0)",
+    "mark": "0"
+  },
+  "status": {
+    "clients": [
+      {
+        "clientId": "island-16412-1791951847278",
+        "role": "island"
+      },
+      {
+        "clientId": "ca202a13-d014-41f0-b10c-78a7bde8c181",
+        "role": "preview"
+      }
+    ],
+    "error": "",
+    "listening": true,
+    "messages": [
+      {
+        "at": 1791951847139,
+        "clientId": "ca202a13-d014-41f0-b10c-78a7bde8c181",
+        "direction": "in",
+        "requestId": null,
+        "status": null,
+        "type": "clinical:sync"
+      },
+      {
+        "at": 1791951847291,
+        "clientId": "island-16412-1791951847278",
+        "direction": "in",
+        "requestId": null,
+        "status": null,
+        "type": "clinical:sync"
+      },
+      {
+        "at": 1791951857338,
+        "clientId": "island-16412-1791951847278",
+        "direction": "out",
+        "requestId": "b7a53558-ee17-4760-a4c4-87c1b3389c0b",
+        "status": null,
+        "type": "experiment:action"
+      },
+      {
+        "at": 1791951857348,
+        "clientId": "island-16412-1791951847278",
+        "direction": "in",
+        "requestId": "b7a53558-ee17-4760-a4c4-87c1b3389c0b",
+        "status": "applied",
+        "type": "experiment:result"
+      },
+      {
+        "at": 1791951857355,
+        "clientId": "island-16412-1791951847278",
+        "direction": "out",
+        "requestId": "899c415f-3250-41b3-b74c-7d0502c2f37c",
+        "status": null,
+        "type": "experiment:action"
+      },
+      {
+        "at": 1791951857360,
+        "clientId": "island-16412-1791951847278",
+        "direction": "in",
+        "requestId": "899c415f-3250-41b3-b74c-7d0502c2f37c",
+        "status": "applied",
+        "type": "experiment:result"
+      },
+      {
+        "at": 1791951857378,
+        "clientId": "preview",
+        "direction": "out",
+        "requestId": null,
+        "status": null,
+        "type": "simulator"
+      },
+      {
+        "at": 1791951857395,
+        "clientId": "island-16412-1791951847278",
+        "direction": "out",
+        "requestId": null,
+        "status": null,
+        "type": "simulator"
+      }
+    ],
+    "port": 17323,
+    "sourceSessionId": "2b09079a-120d-4fca-b632-7195bf68c69f",
+    "sourceSettings": {
+      "desktop": {
+        "connectivity": "fresh",
+        "fullscreen": false,
+        "locked": false,
+        "privacy": false,
+        "role": "clinician",
+        "routeFault": "none"
+      },
+      "preview": {
+        "connectivity": "fresh",
+        "fullscreen": false,
+        "locked": false,
+        "privacy": false,
+        "role": "clinician",
+        "routeFault": "none"
+      }
+    }
+  },
+  "motionTargetIsolation": true,
+  "timerDeadline": 1791953361154,
+  "reduced": "reduced",
+  "previewReadingTargetIsolation": true
+}

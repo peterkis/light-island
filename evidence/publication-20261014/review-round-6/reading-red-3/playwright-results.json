@@ -1,0 +1,167 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "D:\\Projects\\island-protype\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/app-split.spec.ts",
+      "--grep",
+      "desktop report replay"
+    ],
+    "configFile": "D:\\Projects\\island-protype\\playwright.config.ts",
+    "rootDir": "D:/Projects/island-protype/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/Projects/island-protype/evidence/publication-20261014/review-round-6/reading-red-3/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "D:/Projects/island-protype/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "/.*\\.spec\\.ts/"
+        ],
+        "timeout": 35000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "D:\\Projects\\island-protype\\evidence\\publication-20261014\\review-round-6\\reading-red-3\\playwright-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "app-split.spec.ts",
+      "file": "app-split.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "desktop report replay preserves the active preview reading session",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 10685,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('clinical-island')\nExpected: \u001b[32m\"read\"\u001b[39m\nReceived: \u001b[31m\"idle\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" getByTestId('clinical-island') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('clinical-island')\u001b[22m\n\u001b[2m    14 × locator resolved to <div data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-view=\"compact\" data-native=\"false\" data-hidden=\"false\" data-lab-state=\"idle\" data-enlarged=\"false\" data-surface=\"compact\" data-timer-deadline=\"0\" data-target-width=\"268\" data-target-height=\"36\" class=\"ci-host ux-host \" data-connection=\"online\" data-timer-status=\"idle\" data-velocity-x=\"0.0000\" data-velocity-y=\"0.0000\" data-motion-phase=\"settled\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-target-surf…>…</div>\u001b[22m\n\u001b[2m       - unexpected value \"idle\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('clinical-island')\nExpected: \u001b[32m\"read\"\u001b[39m\nReceived: \u001b[31m\"idle\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" getByTestId('clinical-island') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('clinical-island')\u001b[22m\n\u001b[2m    14 × locator resolved to <div data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-view=\"compact\" data-native=\"false\" data-hidden=\"false\" data-lab-state=\"idle\" data-enlarged=\"false\" data-surface=\"compact\" data-timer-deadline=\"0\" data-target-width=\"268\" data-target-height=\"36\" class=\"ci-host ux-host \" data-connection=\"online\" data-timer-status=\"idle\" data-velocity-x=\"0.0000\" data-velocity-y=\"0.0000\" data-motion-phase=\"settled\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-target-surf…>…</div>\u001b[22m\n\u001b[2m       - unexpected value \"idle\"\u001b[22m\n\n    at D:\\Projects\\island-protype\\tests\\app-split.spec.ts:53:25",
+                    "location": {
+                      "file": "D:\\Projects\\island-protype\\tests\\app-split.spec.ts",
+                      "column": 25,
+                      "line": 53
+                    },
+                    "snippet": "  51 |   const before=await desktop.evaluate(()=>JSON.stringify(window.__CLINICAL_DEBUG__?.().queue.items));await page.getByRole('button',{name,exact:true}).click();\n  52 |   await expect.poll(()=>desktop.evaluate(()=>JSON.stringify(window.__CLINICAL_DEBUG__?.().queue.items))).not.toBe(before);\n> 53 |   await expect(preview).toHaveAttribute('data-lab-state','read');expect(await page.evaluate(()=>window.__CLINICAL_DEBUG__?.().lab.session)).toBe(session);\n     |                         ^\n  54 |  }\n  55 |  await desktop.close();\n  56 | });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\Projects\\island-protype\\tests\\app-split.spec.ts",
+                        "column": 25,
+                        "line": 53
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('clinical-island')\nExpected: \u001b[32m\"read\"\u001b[39m\nReceived: \u001b[31m\"idle\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" getByTestId('clinical-island') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('clinical-island')\u001b[22m\n\u001b[2m    14 × locator resolved to <div data-rim=\"false\" data-peek=\"false\" data-dock=\"notch\" data-neck=\"false\" data-view=\"compact\" data-native=\"false\" data-hidden=\"false\" data-lab-state=\"idle\" data-enlarged=\"false\" data-surface=\"compact\" data-timer-deadline=\"0\" data-target-width=\"268\" data-target-height=\"36\" class=\"ci-host ux-host \" data-connection=\"online\" data-timer-status=\"idle\" data-velocity-x=\"0.0000\" data-velocity-y=\"0.0000\" data-motion-phase=\"settled\" data-native-fallback=\"false\" data-testid=\"clinical-island\" data-target-surf…>…</div>\u001b[22m\n\u001b[2m       - unexpected value \"idle\"\u001b[22m\n\n\n  51 |   const before=await desktop.evaluate(()=>JSON.stringify(window.__CLINICAL_DEBUG__?.().queue.items));await page.getByRole('button',{name,exact:true}).click();\n  52 |   await expect.poll(()=>desktop.evaluate(()=>JSON.stringify(window.__CLINICAL_DEBUG__?.().queue.items))).not.toBe(before);\n> 53 |   await expect(preview).toHaveAttribute('data-lab-state','read');expect(await page.evaluate(()=>window.__CLINICAL_DEBUG__?.().lab.session)).toBe(session);\n     |                         ^\n  54 |  }\n  55 |  await desktop.close();\n  56 | });\n    at D:\\Projects\\island-protype\\tests\\app-split.spec.ts:53:25"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T04:12:10.863Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "D:\\Projects\\island-protype\\evidence\\publication-20261014\\review-round-6\\reading-red-3\\test-results\\app-split-desktop-report-r-34c7e-ive-preview-reading-session\\test-failed-2.png"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "D:\\Projects\\island-protype\\evidence\\publication-20261014\\review-round-6\\reading-red-3\\test-results\\app-split-desktop-report-r-34c7e-ive-preview-reading-session\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\Projects\\island-protype\\evidence\\publication-20261014\\review-round-6\\reading-red-3\\test-results\\app-split-desktop-report-r-34c7e-ive-preview-reading-session\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\Projects\\island-protype\\evidence\\publication-20261014\\review-round-6\\reading-red-3\\test-results\\app-split-desktop-report-r-34c7e-ive-preview-reading-session\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\Projects\\island-protype\\tests\\app-split.spec.ts",
+                    "column": 25,
+                    "line": 53
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "ff9c6b2dd801a95bee93-5c6ba9c4623f0afd8874",
+          "file": "app-split.spec.ts",
+          "line": 41,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-14T04:12:08.677Z",
+    "duration": 14667.482,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}
