@@ -18,6 +18,12 @@ const settle=async(surface)=>{if(surface)await expect(el).toHaveAttribute('data-
 const post=async(data)=>{const response=await fetch(source+'/api/push',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});assert(response.ok,await response.text());};
 try{
  report.workbenchMotion=await invoke(workbench,'get_motion_preference');
+ report.workbenchPlatform=await invoke(workbench,'workbench_platform_status');assert.equal(typeof report.workbenchPlatform.animationsEnabled,'boolean');
+ let platformQueries=0;const observe=request=>{if(request.url().includes('ipc.localhost/workbench_platform_status'))platformQueries++;};workbench.on('request',observe);
+ try{
+  await workbench.evaluate(()=>window.dispatchEvent(new Event('focus')));
+  await expect.poll(()=>platformQueries).toBeGreaterThanOrEqual(2);report.workbenchPlatformRefresh=true;
+ }finally{workbench.off('request',observe);}
  await workbench.getByRole('combobox',{name:'实验目标'}).selectOption('preview');
  const setup=await invoke(workbench,'workbench_status'),desktopId=setup.clients.find(c=>c.role==='island')?.clientId;assert(desktopId);await invoke(workbench,'simulator_command',{payload:{type:'experiment:dispatch',requestId:crypto.randomUUID(),targetClientId:desktopId,action:{kind:'personal',command:'end'}}});await invoke(workbench,'simulator_command',{payload:{type:'experiment:dispatch',requestId:crypto.randomUUID(),targetClientId:desktopId,action:{kind:'view',mode:'compact'}}});for(const targetClientId of ['preview',desktopId])await invoke(workbench,'simulator_command',{payload:{type:'clinical:reset',targetClientId}});
  await expect(el).toHaveAttribute('data-connection','online');await expect(preview).toHaveAttribute('data-connection','online');await settle('idle');

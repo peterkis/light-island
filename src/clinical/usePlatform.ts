@@ -5,11 +5,12 @@ import {listen} from '@tauri-apps/api/event';
 import {nativeIsland,nativeWorkbench} from '../lib/bridge';
 import {parsePlatform} from './native-contract';
 import type {Platform} from './native-contract';
+import {watchPlatformStatus} from './platformStatus';
 export function usePlatform(host:RefObject<HTMLDivElement|null>,sourceKey:string,samplingSuspended:boolean){
  // Native system mode stays conservative until its read-only OS query succeeds.
  const [status,setStatus]=useState<Platform>({notificationState:5,animationsEnabled:!nativeIsland&&!nativeWorkbench,outsideClickAvailable:false,shortcutRegistered:false});
  const samplingBusy=useRef(false);
- useEffect(()=>{if(!nativeWorkbench)return;let dead=false;void invoke<unknown>('workbench_platform_status').then(value=>{const next=parsePlatform(value);if(next&&!dead)setStatus(next);}).catch(()=>{});return()=>{dead=true;};},[]);
+ useEffect(()=>{if(!nativeWorkbench)return;return watchPlatformStatus(()=>invoke<unknown>('workbench_platform_status'),next=>setStatus(old=>next??{...old,animationsEnabled:false}));},[]);
  const [dark,setDark]=useState(false);const live=useRef(samplingSuspended);live.current=samplingSuspended;
  useEffect(()=>{
   if(!nativeIsland)return;let dead=false,off:(()=>void)|undefined;

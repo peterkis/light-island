@@ -7,6 +7,8 @@ mod service;
 mod session_profile;
 #[path = "../../../src-tauri/src/motion_preferences.rs"]
 mod motion_preferences;
+#[path = "../../../src-tauri/src/platform_motion.rs"]
+mod platform_motion;
 use motion_preferences::{get_motion_preference, set_motion_preference, MotionPreferenceState};
 use service::Service;
 
@@ -118,22 +120,8 @@ fn workbench_platform_status(window: tauri::WebviewWindow) -> Result<Value, Stri
     if window.label() != "workbench" {
         return Err("Workbench window required".into());
     }
-    let mut enabled = 1_i32;
-    #[cfg(target_os = "windows")]
-    unsafe {
-        #[link(name = "user32")]
-        extern "system" {
-            fn SystemParametersInfoW(
-                action: u32,
-                param: u32,
-                value: *mut std::ffi::c_void,
-                flags: u32,
-            ) -> i32;
-        }
-        let _ = SystemParametersInfoW(0x1042, 0, (&mut enabled as *mut i32).cast(), 0);
-    }
     Ok(
-        serde_json::json!({"notificationState":5,"animationsEnabled":enabled!=0,"outsideClickAvailable":false,"shortcutRegistered":false}),
+        serde_json::json!({"notificationState":5,"animationsEnabled":platform_motion::animations_enabled(),"outsideClickAvailable":false,"shortcutRegistered":false}),
     )
 }
 pub fn run() {

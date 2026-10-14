@@ -1,0 +1,96 @@
+{
+  "status": "PASS_AS_TESTED",
+  "recordedAt": "2026-10-14T11:13:02.646059+08:00",
+  "reviewedBase": "140980e77b1ed6bfe3f5a209f1f0809ab8f911dc",
+  "findings": [
+    {
+      "commentId": 4266232946,
+      "priority": "P2",
+      "disposition": "FIXED",
+      "change": "Refresh workbench OS status on focus/visible transitions, coalesce queries, ignore stale replies and clean up listeners."
+    },
+    {
+      "commentId": 4266232954,
+      "priority": "P2",
+      "disposition": "FIXED",
+      "change": "Both native applications require a successful Windows query with enabled output before reporting animationsEnabled=true."
+    }
+  ],
+  "validation": {
+    "unitPassed": 254,
+    "eventRefreshRegressions": 5,
+    "targetedBrowserPassed": 13,
+    "rustIslandTestsPassed": 20,
+    "rustWorkbenchTestsPassed": 14,
+    "strictClippyBoth": "PASS",
+    "typecheckAndFrontendBuilds": "PASS",
+    "bundleCheck": "PASS",
+    "protocolCases": 95,
+    "releaseBuildBoth": "PASS",
+    "releaseBuildAttempts": [
+      {
+        "log": "desktop-build.log",
+        "jobs": 2,
+        "status": "FAIL",
+        "reason": "rustc LLVM out of memory"
+      },
+      {
+        "log": "desktop-build-green.log",
+        "jobs": 1,
+        "status": "FAIL",
+        "reason": "rustc LLVM out of memory"
+      },
+      {
+        "log": "desktop-build-retry-2.log",
+        "jobs": 1,
+        "status": "PASS"
+      }
+    ],
+    "sourceFiles": 316,
+    "sourceDrift": 0,
+    "nativeFocusRefresh": true,
+    "nativeMotionTargetIsolation": true,
+    "nativeLifecycleCases": [
+      {
+        "name": "graceful workbench exit preserves island timer",
+        "pass": true
+      },
+      {
+        "name": "restart replaces source session without replacing deadline",
+        "pass": true
+      },
+      {
+        "name": "workbench motion enum survives restart without changing island preference",
+        "pass": true
+      },
+      {
+        "name": "abrupt workbench termination preserves island timer",
+        "pass": true
+      },
+      {
+        "name": "a replacement workbench motion enum survives abrupt exit",
+        "pass": true
+      },
+      {
+        "name": "island exit leaves independent workbench running",
+        "pass": true
+      }
+    ]
+  },
+  "products": [
+    {
+      "kind": "island",
+      "path": "dist/desktop/samewave-island.exe",
+      "sha256": "b98dce29f8ab54ac5dd7b71f8e6ee88463f2694b16792287ee77468e364c89f6",
+      "bytes": 4602880
+    },
+    {
+      "kind": "workbench",
+      "path": "dist/desktop/samewave-workbench.exe",
+      "sha256": "d0de78a028b31c73427ce45aa3d7b63f3747fc7e8285c73ba87471f7dc60642f",
+      "bytes": 4899328
+    }
+  ],
+  "nativeEvidence": "evidence/app-split-20261013/review-round-4-native",
+  "scope": "Synthetic read-only Windows 11 / 96 DPI validation. Screen continuity evidence remains separate from rAF and focus refresh; historical failures unchanged."
+}

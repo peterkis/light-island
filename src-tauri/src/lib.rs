@@ -13,6 +13,7 @@ mod notch_window;
 mod clinical_window;
 mod clinical_input;
 mod motion_preferences;
+mod platform_motion;
 use motion_preferences::{get_motion_preference,set_motion_preference,MotionPreferenceState};
 mod clinical_shadow;
 #[cfg(target_os = "windows")]

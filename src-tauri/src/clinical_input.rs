@@ -30,7 +30,6 @@ mod ffi{
   pub fn UnregisterHotKey(h:*mut c_void,id:i32)->i32;
   pub fn SetWinEventHook(min:u32,max:u32,module:*mut c_void,callback:Option<unsafe extern "system" fn(*mut c_void,u32,*mut c_void,i32,i32,u32,u32)>,process:u32,thread:u32,flags:u32)->*mut c_void;
   pub fn UnhookWinEvent(h:*mut c_void)->i32;
-  pub fn SystemParametersInfoW(action:u32,param:u32,data:*mut c_void,flags:u32)->i32;
  }
  #[link(name="kernel32")]extern "system"{pub fn GetCurrentThreadId()->u32;pub fn GetModuleHandleW(name:*const u16)->*mut c_void;}
  #[link(name="shell32")]extern "system"{pub fn SHQueryUserNotificationState(state:*mut i32)->i32;}
@@ -50,9 +49,9 @@ unsafe extern "system" fn foreground(_: *mut std::ffi::c_void,_:u32,_:*mut std::
  ffi::PostThreadMessageW(THREAD.load(Ordering::Relaxed),0x8002,0,0);
 }
 pub fn status()->Value{
- let mut state=0_i32;let mut animated=1_i32;
- #[cfg(target_os="windows")]unsafe{ffi::SHQueryUserNotificationState(&mut state);ffi::SystemParametersInfoW(0x1042,0,&mut animated as *mut i32 as _,0);}
- json!({"notificationState":state,"animationsEnabled":animated!=0,"outsideClickAvailable":POINTER_HOOK.load(Ordering::Relaxed),"shortcutRegistered":HOTKEY.load(Ordering::Relaxed)})
+ let mut state=0_i32;
+ #[cfg(target_os="windows")]unsafe{ffi::SHQueryUserNotificationState(&mut state);}
+ json!({"notificationState":state,"animationsEnabled":crate::platform_motion::animations_enabled(),"outsideClickAvailable":POINTER_HOOK.load(Ordering::Relaxed),"shortcutRegistered":HOTKEY.load(Ordering::Relaxed)})
 }
 #[tauri::command]
 pub fn clinical_platform_status(window:tauri::WebviewWindow)->Result<Value,String>{if !["island","studio"].contains(&window.label()){return Err("Prototype window required".into());}Ok(status())}
