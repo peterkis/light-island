@@ -6,7 +6,8 @@ import {nativeIsland,nativeWorkbench} from '../lib/bridge';
 import {parsePlatform} from './native-contract';
 import type {Platform} from './native-contract';
 export function usePlatform(host:RefObject<HTMLDivElement|null>,sourceKey:string,samplingSuspended:boolean){
- const [status,setStatus]=useState<Platform>({notificationState:5,animationsEnabled:true,outsideClickAvailable:false,shortcutRegistered:false});
+ // Native system mode stays conservative until its read-only OS query succeeds.
+ const [status,setStatus]=useState<Platform>({notificationState:5,animationsEnabled:!nativeIsland&&!nativeWorkbench,outsideClickAvailable:false,shortcutRegistered:false});
  const samplingBusy=useRef(false);
  useEffect(()=>{if(!nativeWorkbench)return;let dead=false;void invoke<unknown>('workbench_platform_status').then(value=>{const next=parsePlatform(value);if(next&&!dead)setStatus(next);}).catch(()=>{});return()=>{dead=true;};},[]);
  const [dark,setDark]=useState(false);const live=useRef(samplingSuspended);live.current=samplingSuspended;

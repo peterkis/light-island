@@ -24,3 +24,17 @@ test('preview tools, source reset and desktop tools stay independently owned',as
  expect(await desktop.evaluate(()=>window.__CLINICAL_DEBUG__?.().timer.deadline)).toBe(deadline);
  await page.close();expect(await desktop.evaluate(()=>window.__CLINICAL_DEBUG__?.().timer.deadline)).toBe(deadline);await desktop.close();
 });
+test('workbench motion selection remains local while the desktop experiment target is selected',async({context,page,request})=>{
+ await request.post(source+'/api/push',{data:{type:'clinical:reset'}});
+ await page.goto('/workbench.html');await expect(page.locator('.cs-connection')).toContainText('模拟消息源已连接');
+ const desktop=await context.newPage();await desktop.goto('/clinical.html?view=island');
+ await expect(page.getByRole('combobox',{name:'实验目标'}).locator('option',{hasText:'桌面灵动岛'})).toHaveCount(1);
+ const target=page.getByRole('combobox',{name:'实验目标'}),selector=page.getByRole('combobox',{name:'工作台动效模式'});
+ const preview=page.locator('.ci-anchor'),island=desktop.locator('.ci-anchor');
+ await page.getByRole('switch',{name:'减少动态',exact:true}).click();await expect(preview).toHaveAttribute('data-motion','reduced');
+ await target.selectOption({label:'桌面灵动岛'});await page.getByRole('switch',{name:'减少动态',exact:true}).click();await expect(island).toHaveAttribute('data-motion','reduced');
+ await selector.selectOption('full');await expect(preview).toHaveAttribute('data-motion','full');await expect(island).toHaveAttribute('data-motion','reduced');
+ await expect.poll(()=>desktop.evaluate(()=>window.__CLINICAL_DEBUG__?.().settings.reduced)).toBe(true);
+ await selector.selectOption('reduced');await expect(preview).toHaveAttribute('data-motion','reduced');await expect(island).toHaveAttribute('data-motion','reduced');
+ await desktop.close();
+});

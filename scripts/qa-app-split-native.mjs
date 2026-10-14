@@ -28,6 +28,10 @@ try{
  await island.screenshot({path:out+'/island-s0.png',omitBackground:true});
  const status=await invoke(workbench,'workbench_status'),client=status.clients.find(c=>c.role==='island');assert(client);
  report.status=status;const target=workbench.getByRole('combobox',{name:'实验目标'});
+ await workbench.getByRole('switch',{name:'减少动态',exact:true}).click();await expect(workbench.locator('.ci-anchor')).toHaveAttribute('data-motion','reduced');
+ await target.selectOption(client.clientId);await workbench.getByRole('switch',{name:'减少动态',exact:true}).click();await expect(island.locator('.ci-anchor')).toHaveAttribute('data-motion','reduced');
+ await workbench.getByRole('combobox',{name:'工作台动效模式'}).selectOption('full');await expect(workbench.locator('.ci-anchor')).toHaveAttribute('data-motion','full');await expect(island.locator('.ci-anchor')).toHaveAttribute('data-motion','reduced');report.motionTargetIsolation=true;
+ await workbench.getByRole('switch',{name:'减少动态',exact:true}).click();await expect(island.locator('.ci-anchor')).toHaveAttribute('data-motion','full');await target.selectOption('preview');
  await el.getByRole('button',{name:'打开协作动态'}).click();await settle('rich');await el.getByRole('button',{name:'开始 25 分钟'}).click();
  const deadline=Number(await el.getAttribute('data-timer-deadline'));assert(deadline>Date.now());report.timerDeadline=deadline;
  await workbench.getByTestId('clinical-scenario-S03').click();await expect(preview).toHaveAttribute('data-surface',/^(alert|rich)$/);

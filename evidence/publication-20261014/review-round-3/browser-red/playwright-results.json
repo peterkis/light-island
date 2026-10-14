@@ -1,0 +1,167 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "D:\\Projects\\island-protype\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/app-split.spec.ts",
+      "--grep",
+      "workbench motion selection"
+    ],
+    "configFile": "D:\\Projects\\island-protype\\playwright.config.ts",
+    "rootDir": "D:/Projects/island-protype/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/Projects/island-protype/evidence/publication-20261014/review-round-3/browser-red/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "D:/Projects/island-protype/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "/.*\\.spec\\.ts/"
+        ],
+        "timeout": 35000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "D:\\Projects\\island-protype\\evidence\\publication-20261014\\review-round-3\\browser-red\\playwright-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "app-split.spec.ts",
+      "file": "app-split.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "workbench motion selection remains local while the desktop experiment target is selected",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 14850,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('.ci-anchor')\nExpected: \u001b[32m\"full\"\u001b[39m\nReceived: \u001b[31m\"reduced\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('.ci-anchor') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.ci-anchor')\u001b[22m\n\u001b[2m    14 × locator resolved to <div class=\"ci-anchor\" data-motion=\"reduced\" data-motion-preference=\"full\" data-motion-reason=\"应用已选择减弱动效\">…</div>\u001b[22m\n\u001b[2m       - unexpected value \"reduced\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('.ci-anchor')\nExpected: \u001b[32m\"full\"\u001b[39m\nReceived: \u001b[31m\"reduced\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('.ci-anchor') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.ci-anchor')\u001b[22m\n\u001b[2m    14 × locator resolved to <div class=\"ci-anchor\" data-motion=\"reduced\" data-motion-preference=\"full\" data-motion-reason=\"应用已选择减弱动效\">…</div>\u001b[22m\n\u001b[2m       - unexpected value \"reduced\"\u001b[22m\n\n    at D:\\Projects\\island-protype\\tests\\app-split.spec.ts:36:60",
+                    "location": {
+                      "file": "D:\\Projects\\island-protype\\tests\\app-split.spec.ts",
+                      "column": 60,
+                      "line": 36
+                    },
+                    "snippet": "  34 |  await page.getByRole('switch',{name:'减少动态',exact:true}).click();await expect(preview).toHaveAttribute('data-motion','reduced');\n  35 |  await target.selectOption({label:'桌面灵动岛'});await page.getByRole('switch',{name:'减少动态',exact:true}).click();await expect(island).toHaveAttribute('data-motion','reduced');\n> 36 |  await selector.selectOption('full');await expect(preview).toHaveAttribute('data-motion','full');await expect(island).toHaveAttribute('data-motion','reduced');\n     |                                                            ^\n  37 |  await expect.poll(()=>desktop.evaluate(()=>window.__CLINICAL_DEBUG__?.().settings.reduced)).toBe(true);\n  38 |  await selector.selectOption('reduced');await expect(preview).toHaveAttribute('data-motion','reduced');await expect(island).toHaveAttribute('data-motion','reduced');\n  39 |  await desktop.close();"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\Projects\\island-protype\\tests\\app-split.spec.ts",
+                        "column": 60,
+                        "line": 36
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('.ci-anchor')\nExpected: \u001b[32m\"full\"\u001b[39m\nReceived: \u001b[31m\"reduced\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('.ci-anchor') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.ci-anchor')\u001b[22m\n\u001b[2m    14 × locator resolved to <div class=\"ci-anchor\" data-motion=\"reduced\" data-motion-preference=\"full\" data-motion-reason=\"应用已选择减弱动效\">…</div>\u001b[22m\n\u001b[2m       - unexpected value \"reduced\"\u001b[22m\n\n\n  34 |  await page.getByRole('switch',{name:'减少动态',exact:true}).click();await expect(preview).toHaveAttribute('data-motion','reduced');\n  35 |  await target.selectOption({label:'桌面灵动岛'});await page.getByRole('switch',{name:'减少动态',exact:true}).click();await expect(island).toHaveAttribute('data-motion','reduced');\n> 36 |  await selector.selectOption('full');await expect(preview).toHaveAttribute('data-motion','full');await expect(island).toHaveAttribute('data-motion','reduced');\n     |                                                            ^\n  37 |  await expect.poll(()=>desktop.evaluate(()=>window.__CLINICAL_DEBUG__?.().settings.reduced)).toBe(true);\n  38 |  await selector.selectOption('reduced');await expect(preview).toHaveAttribute('data-motion','reduced');await expect(island).toHaveAttribute('data-motion','reduced');\n  39 |  await desktop.close();\n    at D:\\Projects\\island-protype\\tests\\app-split.spec.ts:36:60"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T02:24:19.059Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "D:\\Projects\\island-protype\\evidence\\publication-20261014\\review-round-3\\browser-red\\test-results\\app-split-workbench-motion-69a60-periment-target-is-selected\\test-failed-2.png"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "D:\\Projects\\island-protype\\evidence\\publication-20261014\\review-round-3\\browser-red\\test-results\\app-split-workbench-motion-69a60-periment-target-is-selected\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\Projects\\island-protype\\evidence\\publication-20261014\\review-round-3\\browser-red\\test-results\\app-split-workbench-motion-69a60-periment-target-is-selected\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\Projects\\island-protype\\evidence\\publication-20261014\\review-round-3\\browser-red\\test-results\\app-split-workbench-motion-69a60-periment-target-is-selected\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\Projects\\island-protype\\tests\\app-split.spec.ts",
+                    "column": 60,
+                    "line": 36
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "ff9c6b2dd801a95bee93-58b987b0923033c39138",
+          "file": "app-split.spec.ts",
+          "line": 27,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-14T02:24:14.194Z",
+    "duration": 21807.408000000003,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

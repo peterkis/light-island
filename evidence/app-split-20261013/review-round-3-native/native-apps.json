@@ -1,0 +1,117 @@
+{
+  "pass": true,
+  "scope": "Windows owned release applications; rAF cadence and screen continuity are separate",
+  "workbenchMotion": "system",
+  "motion": "full",
+  "s0": {
+    "width": 124,
+    "height": 32,
+    "background": "rgba(0, 0, 0, 0)",
+    "cursor": "pointer",
+    "fill": "rgb(0, 0, 0)",
+    "mark": "0"
+  },
+  "status": {
+    "clients": [
+      {
+        "clientId": "7dcc2634-8f56-4b04-b045-feeea5181113",
+        "role": "preview"
+      },
+      {
+        "clientId": "island-32420-1791945293903",
+        "role": "island"
+      }
+    ],
+    "error": "",
+    "listening": true,
+    "messages": [
+      {
+        "at": 1791945293546,
+        "clientId": "7dcc2634-8f56-4b04-b045-feeea5181113",
+        "direction": "in",
+        "requestId": null,
+        "status": null,
+        "type": "clinical:sync"
+      },
+      {
+        "at": 1791945293911,
+        "clientId": "island-32420-1791945293903",
+        "direction": "in",
+        "requestId": null,
+        "status": null,
+        "type": "clinical:sync"
+      },
+      {
+        "at": 1791945299374,
+        "clientId": "island-32420-1791945293903",
+        "direction": "out",
+        "requestId": "ea13f010-2c1b-4cb2-aa65-f56a0a5da1f2",
+        "status": null,
+        "type": "experiment:action"
+      },
+      {
+        "at": 1791945299380,
+        "clientId": "island-32420-1791945293903",
+        "direction": "in",
+        "requestId": "ea13f010-2c1b-4cb2-aa65-f56a0a5da1f2",
+        "status": "applied",
+        "type": "experiment:result"
+      },
+      {
+        "at": 1791945299384,
+        "clientId": "island-32420-1791945293903",
+        "direction": "out",
+        "requestId": "facc80a8-84d7-4943-ba07-4328466c08d5",
+        "status": null,
+        "type": "experiment:action"
+      },
+      {
+        "at": 1791945299387,
+        "clientId": "island-32420-1791945293903",
+        "direction": "in",
+        "requestId": "facc80a8-84d7-4943-ba07-4328466c08d5",
+        "status": "applied",
+        "type": "experiment:result"
+      },
+      {
+        "at": 1791945299393,
+        "clientId": "preview",
+        "direction": "out",
+        "requestId": null,
+        "status": null,
+        "type": "simulator"
+      },
+      {
+        "at": 1791945299398,
+        "clientId": "island-32420-1791945293903",
+        "direction": "out",
+        "requestId": null,
+        "status": null,
+        "type": "simulator"
+      }
+    ],
+    "port": 17323,
+    "sourceSessionId": "a1533265-3b7f-4e26-925f-ad64a5fd15db",
+    "sourceSettings": {
+      "desktop": {
+        "connectivity": "fresh",
+        "fullscreen": false,
+        "locked": false,
+        "privacy": false,
+        "role": "clinician",
+        "routeFault": "none"
+      },
+      "preview": {
+        "connectivity": "fresh",
+        "fullscreen": false,
+        "locked": false,
+        "privacy": false,
+        "role": "clinician",
+        "routeFault": "none"
+      }
+    }
+  },
+  "motionTargetIsolation": true,
+  "timerDeadline": 1791946802442,
+  "reduced": "reduced"
+}
