@@ -1,0 +1,64 @@
+{
+  "status": "PASS_AS_TESTED",
+  "recordedAt": "2026-10-14T10:08:25.801755+08:00",
+  "reviewedBase": "8a8251b6623a480a65cb1e2a96503f9804cbefca",
+  "finding": {
+    "commentId": 4265941418,
+    "priority": "P2",
+    "disposition": "FIXED",
+    "change": "Native first render conservatively uses reduced motion until the native preference is confirmed or the user explicitly chooses a policy."
+  },
+  "validation": {
+    "firstPaintRegressionFailedBeforeFix": 2,
+    "unitPassedAfterFix": 245,
+    "typecheck": "PASS",
+    "bothFrontendAndReleaseBuilds": "PASS",
+    "bundleCheck": "PASS",
+    "protocolCases": 95,
+    "nativeFunctional": "PASS",
+    "nativeLifecycleCases": [
+      {
+        "name": "graceful workbench exit preserves island timer",
+        "pass": true
+      },
+      {
+        "name": "restart replaces source session without replacing deadline",
+        "pass": true
+      },
+      {
+        "name": "workbench motion enum survives restart without changing island preference",
+        "pass": true
+      },
+      {
+        "name": "abrupt workbench termination preserves island timer",
+        "pass": true
+      },
+      {
+        "name": "a replacement workbench motion enum survives abrupt exit",
+        "pass": true
+      },
+      {
+        "name": "island exit leaves independent workbench running",
+        "pass": true
+      }
+    ],
+    "rustUnchangedSincePrior17And11Tests": true,
+    "priorTargetedBrowserPassed": 13
+  },
+  "products": [
+    {
+      "kind": "island",
+      "path": "dist/desktop/samewave-island.exe",
+      "sha256": "10c319d125453f11fd839861049467a69858622ac6a36a48d28c8a70bdd2c241",
+      "bytes": 4602368
+    },
+    {
+      "kind": "workbench",
+      "path": "dist/desktop/samewave-workbench.exe",
+      "sha256": "c7fb20e7824e2b48a6d29305a8c4eadc9f38f0ad2349af834997bc0520f665a7",
+      "bytes": 4898816
+    }
+  ],
+  "nativeEvidence": "evidence/app-split-20261013/review-round-2-native",
+  "scope": "Synthetic read-only Windows 11 / 96 DPI validation; historical full browser and screen records remain unchanged."
+}

@@ -22,7 +22,9 @@ function readPreference():MotionPreference {
 function persist(value:MotionPreference){try{localStorage.setItem(MOTION_PREFERENCE_KEY,value);}catch{/* Session choice still applies when storage is unavailable. */}}
 /** Explicit, display-only preference. No OS setting, clinical state or source permission is written. */
 export function useMotionPreference(){
- const [preference,setPreference]=useState(readPreference);
+ // A native profile cannot recover the file choice before its first paint.
+ // Stay reduced until the native read confirms the policy, or the user chooses it.
+ const [preference,setPreference]=useState<MotionPreference>(()=>native?'reduced':readPreference());
  const [saveError,setSaveError]=useState('');const revision=useRef(0);
  const [mediaReduced,setMediaReduced]=useState(()=>matchMedia('(prefers-reduced-motion: reduce)').matches);
  useEffect(()=>{
