@@ -4,6 +4,8 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
+    "instructions:check": "node scripts/check-project-guidance.mjs",
+    "check": "npm run instructions:check && npm test && npm run test:protocol && npm run build && npm run bundle:check",
     "dev": "vite --host 127.0.0.1",
     "demo:server": "node server/demo-server.mjs",
     "dev:all": "concurrently -k -n WEB,DEMO \"npm:dev\" \"npm:demo:server\"",

@@ -2,6 +2,8 @@
 
 # 同频 · Samewave Island / 原型 0.1
 
+当前入口：[文档索引](docs/README.md) · [复盘与避坑](docs/retrospectives/README.md) · [开发/验证脚本](scripts/README.md)。`npm run check` 执行已接线的前端与文档检查；原生验证按 [验证指南](docs/agents/validation.md) 选择。
+
 > **2026-10-06 当前视觉规范：** `docs/Windows 灵动岛 UI UX 设计规范 v1.0.md`。临床默认入口现在使用 S0/S1/S2/S4/S5/S6、Notch/Floating、数值弹簧与单一语义色；历史 160×34/540ms 说明仅用于旧版对照。解释、边界和未验收项见 `docs/UIUX-V1-IMPLEMENTATION.md`；本轮证据在 `evidence/uiux-final-20261006`。临床业务仍为只读模拟来源。
 
 > **当前默认入口（2026-10-04）：临床协作原型。** 根据 `docs/prd` 三份文档与新 UI 规范实现个人番茄钟、8 个核心来源场景和 6 个研究扩展场景。临床状态只读，来源按钮打开经过对象/版本校验的本机模拟来源窗口，不写临床确认。

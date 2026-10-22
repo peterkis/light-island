@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "status": "PASS_AS_TESTED",
+  "recordedAt": "2026-10-16T15:37:38.246542+00:00",
+  "scope": "Project retrospective, guidance refactor, read-only input/navigation checker, and frontend CI wiring. No application runtime changes.",
+  "baseline": "b57c8f1d3e7f2c80628123322967641baa077a1a",
+  "sourceCoverage": {
+    "codexMainSessions": 5,
+    "relatedChatGPTDesignThreads": 2,
+    "historicalReadOnlySubaudits": 3,
+    "branchHistoryOverlapNotIndependentValidation": true,
+    "details": "docs/retrospectives/2026-10-16-sources.md"
+  },
+  "retrospective": {
+    "topics": 17,
+    "priorityCounts": {
+      "P1": 5,
+      "P2": 10,
+      "P3": 2
+    },
+    "prioritiesDescribeRecurrenceImpactNotOpenBugCount": true
+  },
+  "guidance": {
+    "ok": true,
+    "issues": [],
+    "filesChecked": 12,
+    "linksChecked": 169,
+    "rootBytes": 2774,
+    "rootBudget": 4096,
+    "immutableInputs": 3,
+    "beforeBytes": 14131,
+    "afterBytes": 2774,
+    "beforeLines": 110,
+    "afterLines": 32,
+    "byteReductionPercent": 80.37,
+    "budgetIsProjectChoiceNotOpenAIRule": true,
+    "migrationSections": 13
+  },
+  "validation": {
+    "aggregateCommand": "npm run check",
+    "aggregateExitCode": 0,
+    "unitPassed": 260,
+    "unitFilesPassed": 19,
+    "newCheckerNegativeTestsPassed": 3,
+    "nodeProtocolGoldenCases": 95,
+    "typecheck": "PASS",
+    "frontendBuilds": {
+      "island": "PASS",
+      "workbench": "PASS"
+    },
+    "sourceAndApplicationBundleBoundaries": "PASS",
+    "generatedTokensGitDiff": "CLEAN",
+    "workflowYamlAndWiring": "PASS_LOCAL_PARSE_AND_INSPECTION",
+    "diffCheck": "PASS",
+    "newTextUtf8AndWhitespace": "PASS"
+  },
+  "preservation": {
+    "baselineTrackedFiles": 2237,
+    "intentionalTrackedChanges": [
+      "AGENTS.md",
+      "README.md",
+      "package.json",
+      "scripts/README.md"
+    ],
+    "unrelatedTrackedFilesUnchanged": 2233,
+    "unexpectedTrackedDrift": [],
+    "historicalEvidenceFilesUnchanged": 1918,
+    "immutableInputsUnchanged": 3,
+    "products": [
+      {
+        "path": "dist/desktop/samewave-island.exe",
+        "sha256": "d48b1c0a4260125f9a9fa60e993cddeb1397c90c33d2301a782bc74ad1fff71a",
+        "unchanged": true
+      },
+      {
+        "path": "dist/desktop/samewave-workbench.exe",
+        "sha256": "90d97679a6d38b53bb3bcc05cb08eda498f693bde377b05bbaa190108d13d4f9",
+        "unchanged": true
+      }
+    ],
+    "rustCachesRecreated": false,
+    "globalConfigurationSkillsAndMemoriesModified": false
+  },
+  "toolLimitationsPreserved": [
+    "Official best-practices Markdown fetch returned 404; official HTML was read instead.",
+    "Initial thread inventory limit 70 exceeded the tool limit; retried with 50.",
+    "Initial multi-document/full tool responses were truncated; subsequent reads used field projection and focused extracts.",
+    "Initial patch validation rejected duplicate delete/add operations on AGENTS.md before changes; corrected to a single update."
+  ],
+  "notRun": [
+    {
+      "check": "Hosted CI",
+      "reason": "Workflow added locally; this task does not publish it."
+    },
+    {
+      "check": "Rust tests/Clippy and desktop rebuild",
+      "reason": "No Rust/native/application changes; previously removed multi-GB caches intentionally remain absent."
+    },
+    {
+      "check": "Browser E2E and native screen/device QA",
+      "reason": "Runtime and visual source unchanged; this task verifies documentation and check wiring."
+    }
+  ],
+  "publication": {
+    "commitCreated": false,
+    "pushed": false,
+    "branchOrWorktreeDeletion": false
+  },
+  "localLog": "evidence/retro-20261016/check.log",
+  "localPreservationManifest": "evidence/backups/retro-20261016/preservation-before.json"
+}

@@ -1,0 +1,29 @@
+name: Frontend and project guidance
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: windows-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npm run check
+      - name: Generated tokens match the candidate
+        run: git diff --exit-code -- src/clinical/tokens.json src/clinical/tokens.css src/clinical/lab-reader/tokens.json
